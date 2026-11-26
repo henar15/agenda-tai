@@ -125,12 +125,17 @@ function vMascota(){const r=R(),st=etapa(r.n),ac=accDe((S.rec||{}).acMax||0),moo
   <div class="meta"><div class="mbar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="${r.meta}" aria-valuenow="${Math.min(r.pts,r.meta)}"><i style="width:${pct}%"></i></div><span>${Math.min(r.pts,r.meta)} / ${r.meta} puntos hoy${r.hoy?' ✓':''}</span></div>
   <div class="mstats"><span title="Días seguidos cumpliendo la meta">🔥 <b>${r.n}</b> ${r.n===1?'día':'días'}</span><span title="Cada escudo salva un día que no estudies">🛡️ <b>${r.esc}</b>/2 escudos</span></div>
   ${sig?`<p class="fine">${sig.d-r.n===1?'Mañana':`En ${sig.d-r.n} días`} se convierte en <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Ha llegado a su forma final!</p>'}
-  ${ui.mcfg?`<form class="mcfg" data-mcfg="1"><label>Nombre<input name="n" maxlength="16" value="${esc(nm)}"></label><fieldset><legend>Meta diaria</legend>${[10,20,40].map(m=>`<label class="chip"><input type="radio" name="m" value="${m}"${m===r.meta?' checked':''}> ${m} puntos</label>`).join('')}</fieldset><p class="fine">1 punto por cada tarjeta que clasificas o pregunta de test que respondes. Ganas un escudo cada 7 días de racha (máximo 2).</p><button class="btn">Guardar</button></form>`:''}
+  ${ui.mcfg?`<form class="mcfg" data-mcfg="1"><div class="fld"><label for="mname">Nombre de tu mascota</label><input id="mname" name="n" maxlength="16" value="${esc(nm)}" autocomplete="off"></div>
+  <div class="fld" role="radiogroup" aria-labelledby="mmeta"><span id="mmeta" class="lbl">Meta diaria (puntos al día)</span><div class="seg">${[[10,'Suave','≈10 min'],[20,'Normal','≈20 min'],[40,'Intensa','≈40 min']].map(([m,t,d])=>`<label><input type="radio" name="m" value="${m}"${m===r.meta?' checked':''}><span><b>${m}</b><small>${t}</small><small>${d}</small></span></label>`).join('')}</div></div>
+  <p class="fine">Cada tarjeta que clasificas o pregunta que respondes es 1 punto. Cada 7 días de racha ganas un escudo 🛡️ (máximo 2) que te salva un día que no puedas estudiar.</p>
+  <div class="acts"><button class="btn">Guardar</button><button type="button" class="btn ghost" data-act="mascCfg">Cancelar</button></div></form>`:''}
   </div></div>`}
 function vEvolucion(){const r=R(),st=etapa(r.n),mx=Math.max(st,(S.rec||{}).stMax||0),am=(S.rec||{}).acMax||0;
-  return `<div class="card"><h3>Evolución de ${esc(mascName())}</h3><p class="sub" style="margin-bottom:10px">Crece con tu racha de días. Los accesorios se ganan con aciertos seguidos en los tests (récord: ${am}).</p>
-  <div class="evo">${ETAPAS.map((e,k)=>`<div class="${k<=mx?'on':''}">${k<=mx?mascSVG(k,null,'happy',72,e.n):mascSVG(k,null,'wait',72,e.n+' (bloqueado)')}<b>${esc(e.n)}</b><small>${e.d?e.d+(e.d===1?' día':' días'):'Inicio'}</small></div>`).join('')}</div>
-  <div class="evo acc">${ACCS.map(a=>`<div class="${am>=a.a?'on':''}">${mascSVG(4,a,'happy',72,a.n+(am>=a.a?'':' (bloqueado)'))}<b>${esc(a.n)}</b><small>${a.a} aciertos seguidos</small></div>`).join('')}</div></div>`}
+  const it=(svg,nom,sub,on,cur)=>`<li class="${on?'on':'off'}${cur?' cur':''}">${svg}<b>${esc(nom)}</b><small>${esc(sub)}</small>${cur?'<span class="ya">Ahora</span>':on?'':'<span class="lock" aria-hidden="true">🔒</span>'}</li>`;
+  return `<div class="card evocard"><h3>Evolución de ${esc(mascName())}</h3><p class="sub">Crece con tu racha de días. Desliza para ver todas las formas →</p>
+  <ul class="evo" aria-label="Formas de la mascota">${ETAPAS.map((e,k)=>it(mascSVG(k,null,k<=mx?'happy':'wait',76,e.n+(k<=mx?'':' (bloqueado)')),e.n,e.d?e.d+(e.d===1?' día':' días'):'Al empezar',k<=mx,k===st)).join('')}</ul>
+  <h4 class="evo-h">Accesorios <small>· se ganan con aciertos seguidos en los tests (tu récord: ${am})</small></h4>
+  <ul class="evo" aria-label="Accesorios">${ACCS.map(a=>it(mascSVG(4,a,'happy',76,a.n+(am>=a.a?'':' (bloqueado)')),a.n,a.a+' aciertos seguidos',am>=a.a,false)).join('')}</ul></div>`}
 function celebrar(){if(!S.user||!S.ready||document.querySelector('.modal'))return;const r=R(),st=etapa(r.n),rec=S.rec||{};const am=rec.acMax||0,ac=accDe(am);
   let msg=null;
   if(rec.stMax==null){S.rec=Object.assign({},rec,{stMax:st,acSeen:ac?ac.id:null});kvSet('records');return}
@@ -417,6 +422,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
+  {const V=8;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];

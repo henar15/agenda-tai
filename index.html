@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-v="8">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -223,13 +223,26 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 .bubble{position:relative;background:var(--bg);border-radius:14px;padding:10px 14px;margin:10px 0;font-weight:700;border:1px solid var(--line)}
 .meta{display:grid;gap:4px;margin:8px 0}.mbar{height:14px;border-radius:99px;background:var(--line);overflow:hidden}.mbar i{display:block;height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;transition:width .5s}.meta span{font-size:14px;font-weight:800;color:var(--muted)}
 .mstats{display:flex;gap:16px;flex-wrap:wrap;font-size:16px;margin:6px 0}
-.mcfg{display:grid;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.mcfg label{display:grid;gap:4px;font-weight:800;font-size:14px}.mcfg input[name=n]{min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 10px;font:inherit}
-.mcfg fieldset{border:0;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap}.mcfg legend{font-weight:800;font-size:14px;margin-bottom:6px}.chip{display:flex!important;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;min-height:44px;cursor:pointer;background:var(--bg)}
-.evo{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;text-align:center}.evo div{background:var(--bg);border-radius:14px;padding:8px 4px}.evo div:not(.on) svg{filter:grayscale(1) brightness(.55);opacity:.45}.evo b{display:block;font-size:13px}.evo small{font-size:12px;color:var(--muted)}.evo svg{margin:auto;animation:none}.evo.acc{margin-top:12px}
 .modal{position:fixed;inset:0;z-index:60;background:rgb(10 5 30 / .55);display:grid;place-items:center;padding:16px}.mbox{background:var(--panel);border-radius:24px;padding:24px;text-align:center;max-width:360px;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}.mbox svg{margin:auto;display:block}.mbox h2{margin:8px 0}
 @keyframes pop{from{transform:scale(.6);opacity:0}}
 @media(prefers-reduced-motion:reduce){.masc svg,.mbox,.toast{animation:none}.mbar i{transition:none}}
 @media(max-width:700px){.mascard{grid-template-columns:1fr;justify-items:center;text-align:left}.mascard .mtx{width:100%}.masc svg{width:130px;height:130px}}
+.evocard .sub{margin-bottom:8px}
+.evo{list-style:none;margin:0;padding:4px 2px 12px;display:flex;gap:10px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.evo li{position:relative;flex:0 0 112px;scroll-snap-align:start;background:var(--bg);border:2px solid transparent;border-radius:16px;padding:10px 6px;text-align:center;display:grid;justify-items:center;gap:2px}
+.evo li svg{animation:none;display:block}.evo li b{font-size:13px;line-height:1.2;margin-top:4px}.evo li small{font-size:12px;color:var(--muted)}
+.evo li.off svg{filter:grayscale(1);opacity:.35}.evo li.off b{color:var(--muted)}
+.evo li.cur{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 10%,var(--bg))}
+.evo .ya{position:absolute;top:6px;right:6px;font-size:11px;font-weight:900;color:#fff;background:var(--acc);border-radius:6px;padding:1px 6px}.evo .lock{position:absolute;top:6px;right:8px;font-size:13px}
+.evo-h{margin:10px 0 8px;font-size:16px}.evo-h small{font-weight:700;color:var(--muted);font-size:13px}
+.mcfg{display:grid;gap:16px;margin-top:14px;padding:16px;border-radius:16px;background:var(--bg);border:1px solid var(--line)}
+.fld{display:grid;gap:6px}.fld label,.fld .lbl{font-weight:800;font-size:14px}
+.fld input[type=text],.fld input:not([type]){min-height:46px;border-radius:12px;border:2px solid var(--line);background:var(--panel);color:var(--ink);padding:8px 12px;font:inherit;font-size:17px}.fld input:focus{border-color:var(--acc);outline:none}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.seg label{cursor:pointer}.seg input{position:absolute;opacity:0;pointer-events:none}
+.seg span{display:grid;gap:2px;text-align:center;padding:10px 6px;border-radius:12px;border:2px solid var(--line);background:var(--panel);min-height:56px;align-content:center}.seg span b{font-size:15px}.seg span small{font-size:12px;color:var(--muted)}
+.seg input:checked+span{border-color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,var(--panel))}.seg input:focus-visible+span{outline:3px solid var(--acc);outline-offset:2px}
+.mcfg .acts{margin:0}
+.mascard{align-items:start}.masc{align-self:start}.seg span b{font-size:20px}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -250,7 +263,7 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=6"></script>
-<script src="app.js?v=6"></script>
+<script src="firebase-config.js?v=8"></script>
+<script src="app.js?v=8"></script>
 </body>
 </html>
