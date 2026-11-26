@@ -1,0 +1,82 @@
+{
+  "tema": "II-2",
+  "ramas": [
+    {
+      "t": "Puertos",
+      "e": "🔌",
+      "items": [
+        "**Serie** RS-232 (bit a bit) · **paralelo** (8 bits)",
+        "**PS/2**: teclado morado, ratón verde, sin caliente",
+        "**FireWire** = IEEE 1394, para cámaras de vídeo",
+        "**USB**: plug&play, en caliente, hasta **127**",
+        "**USB-C**: 24 pines, reversible, **100 W**",
+        "**USB4** y **Thunderbolt 3/4**: **40 Gb/s**"
+      ]
+    },
+    {
+      "t": "Gestión de E/S",
+      "e": "🔔",
+      "items": [
+        "Por **programa**: bucle de espera activa",
+        "Por **interrupciones**: el periférico avisa",
+        "**DMA**: la CPU solo al inicio y al final",
+        "**Procesador de E/S**: control completo"
+      ]
+    },
+    {
+      "t": "Discos",
+      "e": "💿",
+      "items": [
+        "HDD: platos, cabezales, brazo y 2 motores",
+        "Pista · cilindro · sector · **clúster**",
+        "**MBR**: 1.er sector con la tabla de particiones",
+        "Acceso = **búsqueda + latencia rotacional**",
+        "**SATA 3 = 600 MB/s** · IDE: máx. 4 discos",
+        "SSD: **NVMe** > AHCI · SLC rápida, QLC barata"
+      ]
+    },
+    {
+      "t": "Sistemas de archivos",
+      "e": "📁",
+      "items": [
+        "**FAT32**: archivos ≤ **4 GB**, particiones ≤ **8 TB**",
+        "**NTFS**: permisos, diario y cifrado",
+        "**exFAT**: para flash, compatible Win/Mac/Linux",
+        "FAT32 → NTFS con **convert** (no al revés)"
+      ]
+    },
+    {
+      "t": "Almacenamiento en red",
+      "e": "🌐",
+      "items": [
+        "**DAS**: conectado directo a un equipo",
+        "**NAS**: archivos por la LAN (**NFS**, **SMB**)",
+        "**SAN**: bloques como disco local",
+        "SAN: **FC**, FCoE, **iSCSI**, NVMeoF"
+      ]
+    },
+    {
+      "t": "RAID",
+      "e": "🧲",
+      "items": [
+        "**RAID 0**: striping, sin redundancia (N×S)",
+        "**RAID 1**: espejo (capacidad S)",
+        "**RAID 5**: paridad distribuida, mín. 3, **(N−1)×S**",
+        "**RAID 6**: doble paridad, mín. 4, **(N−2)×S**",
+        "**RAID 10** = división de espejos, más robusto"
+      ]
+    },
+    {
+      "t": "Impresión y pantalla",
+      "e": "🖨️",
+      "items": [
+        "Impacto (matricial) vs sin impacto",
+        "Tinta: **piezoeléctrico** · burbuja: **calor**",
+        "**Láser**: tambor + tóner + **fusor**",
+        "VGA **analógico** · DVI, HDMI, DP digitales",
+        "Capacitiva = **multitouch**; resistiva = presión",
+        "**RGB** aditivo (luz) · **CMYK** sustractivo (tinta)"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,737 @@
+{
+  "tema": "II-2",
+  "cards": [
+    {
+      "id": "ii2c1",
+      "n": "1",
+      "e": "🖱️",
+      "t": false,
+      "q": "¿Qué es un periférico?",
+      "a": "Hardware que **no pertenece al núcleo** del ordenador (la CPU) y con el que el procesador hace **entrada/salida**. Incluye el **almacenamiento**"
+    },
+    {
+      "id": "ii2c2",
+      "n": "2",
+      "e": "🔀",
+      "t": true,
+      "q": "Tipos de periféricos según su función",
+      "a": "**Entrada** (teclado), **salida** (monitor), **entrada/salida** (pantalla táctil) y **almacenamiento** (pendrive)"
+    },
+    {
+      "id": "ii2c3",
+      "n": "3",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es un puerto?",
+      "a": "Una **interfaz** que adapta el periférico al **bus del sistema**. Puede ser **físico** o **virtual**"
+    },
+    {
+      "id": "ii2c4",
+      "n": "4",
+      "e": "〰️",
+      "t": false,
+      "q": "¿Qué es el puerto serie?",
+      "a": "Transmite **bit a bit**. Norma **RS-232** (de **1962**), también llamado **COM**. Conectores **DB-9** y DB-25. Lento",
+      "h": "Necesita reiniciar para reconocer el dispositivo"
+    },
+    {
+      "id": "ii2c5",
+      "n": "5",
+      "e": "🖨️",
+      "t": false,
+      "q": "¿Qué es el puerto paralelo?",
+      "a": "Envía hasta **8 bits a la vez** por 8 hilos. Conector de **25 pines**. Se usaba para **impresoras**",
+      "h": "Versiones: EPP y ECP (HP y Microsoft)"
+    },
+    {
+      "id": "ii2c6",
+      "n": "6",
+      "e": "🟣",
+      "t": true,
+      "q": "¿Qué es el puerto PS/2?",
+      "a": "Mini-DIN de **6 pines** para **teclado (morado)** y **ratón (verde)**. **No admite conexión en caliente**"
+    },
+    {
+      "id": "ii2c7",
+      "n": "7",
+      "e": "🔥",
+      "t": false,
+      "q": "¿Qué es FireWire?",
+      "a": "**IEEE 1394**: puerto serie rápido, con **conexión en caliente** y plug&play. Para **cámaras de vídeo**. FireWire 400 = **400 Mbit/s**"
+    },
+    {
+      "id": "ii2c8",
+      "n": "8",
+      "e": "🔗",
+      "t": true,
+      "q": "Características del USB",
+      "a": "**Bus Universal en Serie**: **plug and play**, **conexión en caliente** y hasta **127 dispositivos** con hubs"
+    },
+    {
+      "id": "ii2c9",
+      "n": "9",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué tiene de especial el USB-C?",
+      "a": "Es **simétrico y reversible**, tiene **24 pines** y admite hasta **100 W** de carga. Soporta DisplayPort y Thunderbolt"
+    },
+    {
+      "id": "ii2c10",
+      "n": "10",
+      "e": "4️⃣",
+      "t": true,
+      "q": "¿Qué es USB4?",
+      "a": "Publicado en **2019** por el **USB-IF**, se basa en **Thunderbolt 3**, llega a **40 Gbit/s**, usa **USB-C** y exige **Power Delivery**"
+    },
+    {
+      "id": "ii2c11",
+      "n": "11",
+      "e": "⚡",
+      "t": false,
+      "q": "Límites de USB Power Delivery",
+      "a": "Mínimo **7,5 W** (5 V y 1,5 A) y máximo **100 W** (**20 V y 5 A**). Hay **negociación** entre los dispositivos"
+    },
+    {
+      "id": "ii2c12",
+      "n": "12",
+      "e": "📲",
+      "t": false,
+      "q": "¿Qué es USB OTG?",
+      "a": "**On-The-Go**: un dispositivo USB puede actuar como **servidor o receptor** y pasar datos **sin ordenador**"
+    },
+    {
+      "id": "ii2c13",
+      "n": "13",
+      "e": "🍎",
+      "t": false,
+      "q": "Evolución de los conectores de Apple",
+      "a": "**30 pines** (2003) → **Lightning** (2012, iPhone 5) → **USB-C** (iPhone 15, 2023) por la **normativa europea**"
+    },
+    {
+      "id": "ii2c14",
+      "n": "14",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es Thunderbolt?",
+      "a": "Conexión de **Intel con Apple** basada en **PCI Express y DisplayPort**. TB3 y TB4: **40 Gb/s**, **USB-C** y **100 W**"
+    },
+    {
+      "id": "ii2c15",
+      "n": "15",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es un puerto virtual?",
+      "a": "Puntos de conexión de protocolos como **TCP** y **UDP**. El número de puerto es un entero de **16 bits**"
+    },
+    {
+      "id": "ii2c16",
+      "n": "16",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Qué es la E/S controlada por programa?",
+      "a": "La CPU **espera** comprobando el estado del periférico: **bucle de espera activa**. Pierde tiempo"
+    },
+    {
+      "id": "ii2c17",
+      "n": "17",
+      "e": "🔔",
+      "t": true,
+      "q": "¿Qué es la E/S por interrupciones?",
+      "a": "La CPU sigue con otras tareas y el periférico **lanza una interrupción** cuando está listo"
+    },
+    {
+      "id": "ii2c18",
+      "n": "18",
+      "e": "🚀",
+      "t": true,
+      "q": "¿Qué es el DMA?",
+      "a": "**Acceso directo a memoria**: un **controlador de DMA** pasa los datos y la CPU solo actúa **al principio y al final**",
+      "h": "Registros: datos, dirección (sube) y contador (baja)"
+    },
+    {
+      "id": "ii2c19",
+      "n": "19",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Qué es el procesador de E/S?",
+      "a": "Un controlador de E/S convertido en **procesador**, con instrucciones propias y **control completo** de la operación"
+    },
+    {
+      "id": "ii2c20",
+      "n": "20",
+      "e": "🔩",
+      "t": false,
+      "q": "Teclado mecánico vs de membrana",
+      "a": "**Mecánico**: cada tecla con **muelle**, muy duradero · **Membrana**: **tres capas** que se tocan al pulsar"
+    },
+    {
+      "id": "ii2c21",
+      "n": "21",
+      "e": "🖱️",
+      "t": false,
+      "q": "Tipos de ratón por tecnología",
+      "a": "**Mecánico** (bola), **óptico** (sensor), **láser** (más preciso), **trackball** (bola con el pulgar) y **touchpad**"
+    },
+    {
+      "id": "ii2c22",
+      "n": "22",
+      "e": "📼",
+      "t": false,
+      "q": "¿Para qué se usan hoy las cintas magnéticas?",
+      "a": "Para **copias de seguridad**: son de **acceso secuencial**, lentas pero **baratas**. Estándar **LTO** (LTO-8: **12 TB** nativos)"
+    },
+    {
+      "id": "ii2c23",
+      "n": "23",
+      "e": "💿",
+      "t": false,
+      "q": "Partes mecánicas de un disco duro magnético",
+      "a": "**Platos**, **cabezales** de lectura/escritura (uno por cara), **brazo** y **2 motores**",
+      "h": "Los platos giran a 5000-7200 rpm"
+    },
+    {
+      "id": "ii2c24",
+      "n": "24",
+      "e": "🎯",
+      "t": true,
+      "q": "Pista, cilindro, sector y clúster",
+      "a": "**Pista**: anillo de cada cara (la **0** es la exterior) · **Cilindro**: pistas alineadas · **Sector**: trozo de pista · **Clúster**: unidad mínima que asigna el SO"
+    },
+    {
+      "id": "ii2c25",
+      "n": "25",
+      "e": "🥇",
+      "t": true,
+      "q": "¿Qué es el MBR?",
+      "a": "El **primer sector** del disco (pista 0, cilindro 0, sector 1): guarda la **tabla de particiones** y el **Master Boot Code**"
+    },
+    {
+      "id": "ii2c26",
+      "n": "26",
+      "e": "⏱️",
+      "t": false,
+      "q": "¿Qué es el tiempo de acceso de un disco?",
+      "a": "**Tiempo de búsqueda** (llegar a la pista) **+ tiempo de espera** o latencia rotacional (que llegue el sector)"
+    },
+    {
+      "id": "ii2c27",
+      "n": "27",
+      "e": "🧹",
+      "t": false,
+      "q": "¿Qué hace el formateo (sectorización lógica)?",
+      "a": "Define por **software** las pistas y sectores y **detecta y elimina zonas dañadas**"
+    },
+    {
+      "id": "ii2c28",
+      "n": "28",
+      "e": "🧓",
+      "t": false,
+      "q": "¿Qué es ATA/IDE (PATA)?",
+      "a": "Interfaz **paralela**: cable de **40 u 80 hilos**, **maestro y esclavo**, **2 canales** → máximo **4 dispositivos**",
+      "h": "ATAPI permite conectar lectores de CD/DVD"
+    },
+    {
+      "id": "ii2c29",
+      "n": "29",
+      "e": "🚄",
+      "t": true,
+      "q": "Velocidades de SATA",
+      "a": "**SATA 1: 1,5 Gb/s (150 MB/s)** · **SATA 2: 3 Gb/s (300 MB/s)** · **SATA 3: 6 Gb/s (600 MB/s)**",
+      "h": "Pierde un 20 % por la codificación 8b/10b"
+    },
+    {
+      "id": "ii2c30",
+      "n": "30",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Cómo es el cable SATA?",
+      "a": "**7 hilos**, **un dispositivo por cable** (punto a punto) y **conexión en caliente**. Hasta **1 m** (IDE: 45 cm)"
+    },
+    {
+      "id": "ii2c31",
+      "n": "31",
+      "e": "🏢",
+      "t": false,
+      "q": "SCSI y SAS",
+      "a": "**SCSI**: necesita **controladora**; SCSI-3 hasta **32 dispositivos** · **SAS**: SCSI en serie, hasta **16.384** dispositivos y **conexión en caliente**"
+    },
+    {
+      "id": "ii2c32",
+      "n": "32",
+      "e": "💾",
+      "t": false,
+      "q": "¿Qué es un SSD?",
+      "a": "Almacenamiento con **memoria flash**. Su parte clave es el **controlador**"
+    },
+    {
+      "id": "ii2c33",
+      "n": "33",
+      "e": "🏎️",
+      "t": true,
+      "q": "AHCI vs NVMe",
+      "a": "**AHCI**: protocolo veterano de SATA (hasta **100.000 IOPS**) · **NVMe**: diseñado para SSD, **más de un millón de IOPS**"
+    },
+    {
+      "id": "ii2c34",
+      "n": "34",
+      "e": "📏",
+      "t": false,
+      "q": "¿Qué es el formato M.2?",
+      "a": "Formato pequeño de SSD. El más usado es **M.2 2280** (**22 mm** de ancho y **80 mm** de largo). Puede ser **SATA o NVMe**"
+    },
+    {
+      "id": "ii2c35",
+      "n": "35",
+      "e": "🧱",
+      "t": true,
+      "q": "Tipos de celda NAND: SLC, MLC, TLC, QLC",
+      "a": "**1, 2, 3 y 4 bits por celda**. **SLC**: la más rápida, duradera y cara · **QLC**: la más barata y lenta"
+    },
+    {
+      "id": "ii2c36",
+      "n": "36",
+      "e": "📄",
+      "t": false,
+      "q": "Unidades de lectura y borrado en un SSD",
+      "a": "Se lee y escribe por **páginas**, pero se **borra por bloques**"
+    },
+    {
+      "id": "ii2c37",
+      "n": "37",
+      "e": "📉",
+      "t": false,
+      "q": "¿Qué marca la vida útil de un SSD?",
+      "a": "Los ciclos **P/E** (Program/Erase). Se mide en ciclos P/E o en **TBW** (terabytes escritos) y MTBF"
+    },
+    {
+      "id": "ii2c38",
+      "n": "38",
+      "e": "⚖️",
+      "t": false,
+      "q": "¿Qué es el wear levelling?",
+      "a": "Algoritmo del **FTL** que **reparte las escrituras** entre todas las celdas para que se desgasten por igual"
+    },
+    {
+      "id": "ii2c39",
+      "n": "39",
+      "e": "📁",
+      "t": true,
+      "q": "Límites de FAT32",
+      "a": "Archivos de **máximo 4 GB** y particiones de **máximo 8 TB**. A cambio, es **compatible con casi todo**"
+    },
+    {
+      "id": "ii2c40",
+      "n": "40",
+      "e": "🗃️",
+      "t": false,
+      "q": "FAT12 y FAT16",
+      "a": "**FAT12**: hasta **32 MB** · **FAT16**: hasta **2 GB** (clústeres de 32 KB). Ambos en desuso"
+    },
+    {
+      "id": "ii2c41",
+      "n": "41",
+      "e": "🛡️",
+      "t": false,
+      "q": "Ventajas de NTFS",
+      "a": "Sin los límites de FAT32, **permisos**, **diario de cambios** y **cifrado**. Inconveniente: **compatibilidad** (Mac solo lee)"
+    },
+    {
+      "id": "ii2c42",
+      "n": "42",
+      "e": "💳",
+      "t": true,
+      "q": "¿Qué es exFAT?",
+      "a": "**FAT 64** de Microsoft para **memorias flash** (**2006**): sin los límites de FAT32 y compatible con **Windows, Mac y Linux**",
+      "h": "Límite de archivo: 16 EiB"
+    },
+    {
+      "id": "ii2c43",
+      "n": "43",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Cómo se pasa de FAT32 a NTFS?",
+      "a": "Con **convert [unidad]: /fs:ntfs**, sin perder datos. Al revés **no** se puede"
+    },
+    {
+      "id": "ii2c44",
+      "n": "44",
+      "e": "📀",
+      "t": false,
+      "q": "Discos ópticos: CD, DVD y Blu-ray",
+      "a": "Se leen con un **láser**. De menos a más capacidad: **CD < DVD < Blu-ray**",
+      "h": "Su rival HD DVD (Toshiba) se abandonó"
+    },
+    {
+      "id": "ii2c45",
+      "n": "45",
+      "e": "🃏",
+      "t": false,
+      "q": "¿Qué es la memoria flash?",
+      "a": "**Semiconductores**, **regrabable** y **no volátil**. Pendrives y tarjetas (**SD**, CF, MMC, xD, Memory Stick)"
+    },
+    {
+      "id": "ii2c46",
+      "n": "46",
+      "e": "🧮",
+      "t": false,
+      "q": "Datos estructurados vs no estructurados",
+      "a": "**Estructurados**: filas y columnas (bases de datos) · **No estructurados**: sin estructura interna (correos, audio, documentos)"
+    },
+    {
+      "id": "ii2c47",
+      "n": "47",
+      "e": "📦",
+      "t": false,
+      "q": "4 factores de la gestión del almacenamiento",
+      "a": "**Capacidad, rendimiento, fiabilidad** (tolerancia a fallos) y **recuperabilidad** (backups)"
+    },
+    {
+      "id": "ii2c48",
+      "n": "48",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es DAS?",
+      "a": "**Direct-Attached Storage**: almacenamiento conectado **directamente** a un equipo; **solo accesible desde él**"
+    },
+    {
+      "id": "ii2c49",
+      "n": "49",
+      "e": "🏠",
+      "t": true,
+      "q": "¿Qué es NAS?",
+      "a": "**Network-Attached Storage**: servidor de **archivos** en la **red LAN** (TCP/IP, Ethernet). Protocolos **NFS, SMB/CIFS**, FTP"
+    },
+    {
+      "id": "ii2c50",
+      "n": "50",
+      "e": "🐧",
+      "t": false,
+      "q": "NFS vs SMB",
+      "a": "**NFS**: típico de **Linux/UNIX** y VMware · **SMB**: cliente-servidor de Windows; usa **TCP**. **CIFS** = **SMB 1.0**"
+    },
+    {
+      "id": "ii2c51",
+      "n": "51",
+      "e": "🏗️",
+      "t": true,
+      "q": "¿Qué es SAN?",
+      "a": "**Storage Area Network**: los clientes leen y escriben en el volumen compartido **como si fuera local**. Protocolos **FC, FCoE, iSCSI y NVMeoF**"
+    },
+    {
+      "id": "ii2c52",
+      "n": "52",
+      "e": "💡",
+      "t": false,
+      "q": "FCoE e iSCSI",
+      "a": "**FCoE**: Fibre Channel sobre **Ethernet**, ahorra **HBA** · **iSCSI**: comandos **SCSI por la red**, más **barato** que FC"
+    },
+    {
+      "id": "ii2c53",
+      "n": "53",
+      "e": "🧲",
+      "t": false,
+      "q": "¿Qué es RAID y qué busca?",
+      "a": "Varios discos que el sistema ve como **una sola unidad**. Busca **tolerancia a fallos** (redundancia) y **rendimiento**",
+      "h": "Redundant Array of Independent Disks"
+    },
+    {
+      "id": "ii2c54",
+      "n": "54",
+      "e": "⚡",
+      "t": true,
+      "q": "RAID 0",
+      "a": "**Striping**: reparte los datos entre discos. **Más rápido** pero **sin redundancia**. Mínimo **2 discos**. Capacidad **N × S**"
+    },
+    {
+      "id": "ii2c55",
+      "n": "55",
+      "e": "🪞",
+      "t": true,
+      "q": "RAID 1",
+      "a": "**Espejo** (mirroring): copia exacta en 2 o más discos. Capacidad = **el disco más pequeño (S)**. Mejora la **lectura**"
+    },
+    {
+      "id": "ii2c56",
+      "n": "56",
+      "e": "🧬",
+      "t": false,
+      "q": "RAID 2",
+      "a": "Reparte a **nivel de bit** con código **Hamming (ECC)**. **Obsoleto**"
+    },
+    {
+      "id": "ii2c57",
+      "n": "57",
+      "e": "3️⃣",
+      "t": false,
+      "q": "RAID 3 y RAID 4",
+      "a": "**Disco de paridad dedicado**. RAID 3: nivel de **byte** · RAID 4: nivel de **bloque**. Mínimo **3 discos**"
+    },
+    {
+      "id": "ii2c58",
+      "n": "58",
+      "e": "5️⃣",
+      "t": true,
+      "q": "RAID 5",
+      "a": "Bloques con **paridad distribuida**. Mínimo **3 discos**, aguanta **1 fallo**. Capacidad **(N − 1) × S**",
+      "h": "6 discos de 0,5 TB → 2,5 TB"
+    },
+    {
+      "id": "ii2c59",
+      "n": "59",
+      "e": "6️⃣",
+      "t": true,
+      "q": "RAID 6",
+      "a": "**Doble paridad** distribuida. Mínimo **4 discos**, aguanta **2 fallos**. Capacidad **(N − 2) × S**"
+    },
+    {
+      "id": "ii2c60",
+      "n": "60",
+      "e": "🔟",
+      "t": true,
+      "q": "RAID 0+1 vs RAID 1+0",
+      "a": "**0+1**: **espejo de divisiones** · **1+0 (10)**: **división de espejos**, **más robusto**. Ambos mínimo **4 discos**"
+    },
+    {
+      "id": "ii2c61",
+      "n": "61",
+      "e": "🏢",
+      "t": false,
+      "q": "RAID 50",
+      "a": "**RAID 0** sobre varios **RAID 5**: puede fallar **un disco en cada RAID 5**"
+    },
+    {
+      "id": "ii2c62",
+      "n": "62",
+      "e": "📚",
+      "t": false,
+      "q": "Volumen lógico y LVM",
+      "a": "Agrupa discos o particiones en **un volumen virtual** que puede **cambiar de tamaño en uso**. También EVMS, **ZFS** y **Btrfs**"
+    },
+    {
+      "id": "ii2c63",
+      "n": "63",
+      "e": "🖨️",
+      "t": false,
+      "q": "Clasificación de impresoras por mecanismo",
+      "a": "**De impacto** (golpean el papel) y **sin impacto**"
+    },
+    {
+      "id": "ii2c64",
+      "n": "64",
+      "e": "🔨",
+      "t": false,
+      "q": "¿Para qué siguen sirviendo las matriciales?",
+      "a": "Para **papel autocopiativo** y continuo (**nóminas**). Usan **agujas** (9 o 24) y son **ruidosas**"
+    },
+    {
+      "id": "ii2c65",
+      "n": "65",
+      "e": "💧",
+      "t": false,
+      "q": "Inyección de tinta vs burbuja",
+      "a": "**Inyección**: carga en un cristal **piezoeléctrico** (cuarzo) · **Burbuja**: la gota se controla con **calor**"
+    },
+    {
+      "id": "ii2c66",
+      "n": "66",
+      "e": "🔆",
+      "t": true,
+      "q": "¿Cómo funciona la impresora láser?",
+      "a": "**Electrofotográfica** (como las fotocopiadoras): el láser carga el **tambor**, atrae el **tóner** y el **fusor** lo funde con calor y presión"
+    },
+    {
+      "id": "ii2c67",
+      "n": "67",
+      "e": "🧾",
+      "t": false,
+      "q": "¿Dónde se usan las impresoras térmicas?",
+      "a": "En **tickets**, etiquetas y cajeros. Papel **termosensible**, que **se borra con el tiempo**"
+    },
+    {
+      "id": "ii2c68",
+      "n": "68",
+      "e": "🎨",
+      "t": false,
+      "q": "¿Qué es la impresión por sublimación?",
+      "a": "La tinta pasa de **sólido a gas**. Calidad **fotográfica**, pero lenta y con papel caro"
+    },
+    {
+      "id": "ii2c69",
+      "n": "69",
+      "e": "🦴",
+      "t": false,
+      "q": "Usos de la impresión 3D",
+      "a": "**Prototipos** y, sobre todo, **prótesis médicas** a medida"
+    },
+    {
+      "id": "ii2c70",
+      "n": "70",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué es un plotter?",
+      "a": "Impresora para **planos en gran formato** (A1 y más). Hoy casi todos de **inyección**; los **de corte** hacen vinilos"
+    },
+    {
+      "id": "ii2c71",
+      "n": "71",
+      "e": "🎮",
+      "t": false,
+      "q": "Partes de una tarjeta gráfica",
+      "a": "**GPU**, **VRAM**, **VRM** (regula el voltaje), **refrigeración** e interfaces"
+    },
+    {
+      "id": "ii2c72",
+      "n": "72",
+      "e": "🖥️",
+      "t": false,
+      "q": "Gráfica integrada vs dedicada",
+      "a": "**Integrada**: en placa o CPU, barata, **usa recursos de la CPU** · **Dedicada**: en **PCIe**, con **GPU y memoria propias**"
+    },
+    {
+      "id": "ii2c73",
+      "n": "73",
+      "e": "📺",
+      "t": false,
+      "q": "VGA, DVI, HDMI y DisplayPort",
+      "a": "**VGA**: **analógico**, 15 pines · **DVI**: digital · **HDMI**: audio y vídeo digital · **DisplayPort**: rival del HDMI, **libre de patentes**"
+    },
+    {
+      "id": "ii2c74",
+      "n": "74",
+      "e": "🟦",
+      "t": false,
+      "q": "Tipos de panel LCD",
+      "a": "**IPS**: mejores colores y ángulos · **TN**: respuesta rápida (gaming) · **VA**: alto **contraste** y negros"
+    },
+    {
+      "id": "ii2c75",
+      "n": "75",
+      "e": "🌟",
+      "t": false,
+      "q": "¿Qué ventaja tiene OLED?",
+      "a": "**Cada píxel emite su propia luz**: no necesita retroiluminación, **negros puros**, más fino y consume menos"
+    },
+    {
+      "id": "ii2c76",
+      "n": "76",
+      "e": "📏",
+      "t": false,
+      "q": "Resolución, ratio y tasa de refresco",
+      "a": "**Resolución**: píxeles ancho × alto · **Ratio**: proporción (1920×1080 → **16:9**) · **Refresco**: imágenes por segundo en **Hz**"
+    },
+    {
+      "id": "ii2c77",
+      "n": "77",
+      "e": "↕️",
+      "t": false,
+      "q": "1080p vs 1080i",
+      "a": "**p = progresivo**: imagen completa cada vez · **i = entrelazado**: alterna líneas **impares y pares**"
+    },
+    {
+      "id": "ii2c78",
+      "n": "78",
+      "e": "👆",
+      "t": true,
+      "q": "Pantalla resistiva vs capacitiva",
+      "a": "**Resistiva**: por **presión**, pierde ~**25 % de brillo**, **sin multitouch** · **Capacitiva**: con el **dedo**, **multitouch**, no sirve con guantes"
+    },
+    {
+      "id": "ii2c79",
+      "n": "79",
+      "e": "📠",
+      "t": false,
+      "q": "Estándares de interfaz para escáneres",
+      "a": "**TWAIN** (uso general), **ISIS** (empresas) y **WIA** de Windows (desde **2000**, Windows Me)"
+    },
+    {
+      "id": "ii2c80",
+      "n": "80",
+      "e": "🗞️",
+      "t": false,
+      "q": "Tipos de escáner",
+      "a": "**De mano**, **de mesa** (el más usado), **cenital** (libros frágiles) y **de tambor** (la mayor calidad)"
+    },
+    {
+      "id": "ii2c81",
+      "n": "81",
+      "e": "🔍",
+      "t": false,
+      "q": "¿Qué es el OCR?",
+      "a": "**Reconocimiento óptico de caracteres**: saca el **texto** de una imagen"
+    },
+    {
+      "id": "ii2c82",
+      "n": "82",
+      "e": "🏭",
+      "t": false,
+      "q": "¿Qué es el mecanizado CNC?",
+      "a": "**Control numérico por computadora**: fabricación **sustractiva** que quita material para crear una pieza"
+    },
+    {
+      "id": "ii2c83",
+      "n": "83",
+      "e": "🧾",
+      "t": true,
+      "q": "Programa CNC: códigos G y M",
+      "a": "Lenguaje normalizado (**ISO 6983**). **G** = **movimientos** · **M** = funciones **misceláneas** (husillo, herramienta, refrigerante)",
+      "h": "Bloques encabezados por la letra N"
+    },
+    {
+      "id": "ii2c84",
+      "n": "84",
+      "e": "🛠️",
+      "t": false,
+      "q": "CAD vs CAM",
+      "a": "**CAD**: crea los **modelos 3D** · **CAM**: genera el **código** para las máquinas CNC"
+    },
+    {
+      "id": "ii2c85",
+      "n": "85",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es un sistema DNC?",
+      "a": "Un ordenador **en red** con una o más máquinas CNC para **cargarles los programas**"
+    },
+    {
+      "id": "ii2c86",
+      "n": "86",
+      "e": "🔦",
+      "t": false,
+      "q": "Tipos de cortadora láser",
+      "a": "**De gas** (CO₂ o nitrógeno), **de cristal** (Nd:YAG) y **de fibra** (la más duradera, unas **25.000 h**)"
+    },
+    {
+      "id": "ii2c87",
+      "n": "87",
+      "e": "🌈",
+      "t": true,
+      "q": "RGB vs CMYK",
+      "a": "**RGB**: síntesis **aditiva** de la **luz** (pantallas) · **CMYK**: **sustractiva**, de **pigmentos** (impresión)",
+      "h": "K = Key (negro)"
+    },
+    {
+      "id": "ii2c88",
+      "n": "88",
+      "e": "🎡",
+      "t": false,
+      "q": "¿Qué es HSV o HSB?",
+      "a": "Define el color por **Matiz, Saturación y Valor/Brillo**"
+    },
+    {
+      "id": "ii2c89",
+      "n": "89",
+      "e": "🖼️",
+      "t": false,
+      "q": "¿Qué es la profundidad de color?",
+      "a": "**Bits por píxel**: con n bits hay **2ⁿ colores**. 1 bit = 2 colores · 8 bits = **256 colores**"
+    },
+    {
+      "id": "ii2c90",
+      "n": "90",
+      "e": "🖨️",
+      "t": false,
+      "q": "¿Qué resolución de impresión es buena?",
+      "a": "A partir de **200 ppp**; para asegurar, **300 ppp**"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "tema": "II-2",
+  "preguntas": [
+    {
+      "id": "ii2-01",
+      "tipico": true,
+      "q": "Una pantalla táctil es un periférico de…",
+      "opts": [
+        "Almacenamiento",
+        "Salida",
+        "Entrada",
+        "Entrada/salida"
+      ],
+      "c": 3,
+      "exp": "Recibe pulsaciones y muestra información."
+    },
+    {
+      "id": "ii2-02",
+      "tipico": true,
+      "q": "¿Qué puerto NO admite conexión en caliente según el tema?",
+      "opts": [
+        "FireWire",
+        "SATA",
+        "PS/2",
+        "USB"
+      ],
+      "c": 2,
+      "exp": "El PS/2 debe conectarse con el equipo apagado."
+    },
+    {
+      "id": "ii2-03",
+      "tipico": true,
+      "q": "¿Cuántos dispositivos se pueden encadenar como máximo con hubs USB?",
+      "opts": [
+        "16",
+        "32",
+        "127",
+        "255"
+      ],
+      "c": 2,
+      "exp": "Hasta 127 dispositivos."
+    },
+    {
+      "id": "ii2-04",
+      "tipico": true,
+      "q": "La potencia máxima de USB Power Delivery es…",
+      "opts": [
+        "7,5 W",
+        "60 W",
+        "100 W",
+        "240 W"
+      ],
+      "c": 2,
+      "exp": "Máximo 100 W (20 V y 5 A); mínimo 7,5 W."
+    },
+    {
+      "id": "ii2-05",
+      "tipico": true,
+      "q": "USB4 se basa en la tecnología…",
+      "opts": [
+        "Thunderbolt 3",
+        "SATA Express",
+        "FireWire 800",
+        "Lightning"
+      ],
+      "c": 0,
+      "exp": "USB4 se basa en Thunderbolt 3 y alcanza 40 Gbit/s."
+    },
+    {
+      "id": "ii2-06",
+      "tipico": true,
+      "q": "En la E/S controlada por programa, la CPU…",
+      "opts": [
+        "Usa un procesador de E/S",
+        "Recibe una interrupción al terminar",
+        "Delega en un controlador DMA",
+        "Espera en un bucle de espera activa"
+      ],
+      "c": 3,
+      "exp": "La CPU comprueba continuamente el estado del periférico."
+    },
+    {
+      "id": "ii2-07",
+      "tipico": true,
+      "q": "Con DMA, la CPU interviene…",
+      "opts": [
+        "Nunca",
+        "En cada palabra transferida",
+        "Solo si hay error",
+        "Solo al comienzo y al final de la transferencia"
+      ],
+      "c": 3,
+      "exp": "El controlador de DMA hace la transferencia."
+    },
+    {
+      "id": "ii2-08",
+      "tipico": false,
+      "q": "En el controlador de DMA, el registro que se autodecrementa es el…",
+      "opts": [
+        "Registro de dirección",
+        "Registro contador",
+        "Registro de datos",
+        "Contador de programa"
+      ],
+      "c": 1,
+      "exp": "El registro contador lleva las palabras que faltan; el de dirección se autoincrementa."
+    },
+    {
+      "id": "ii2-09",
+      "tipico": true,
+      "q": "El conjunto de pistas alineadas verticalmente en todos los platos es el…",
+      "opts": [
+        "Cilindro",
+        "Clúster",
+        "MBR",
+        "Sector"
+      ],
+      "c": 0,
+      "exp": "Un cilindro agrupa las pistas alineadas."
+    },
+    {
+      "id": "ii2-10",
+      "tipico": true,
+      "q": "El tiempo de acceso de un disco duro es la suma de…",
+      "opts": [
+        "Latencia + MTBF",
+        "Tiempo de lectura + escritura",
+        "Tiempo de búsqueda + tiempo de espera",
+        "Tiempo de búsqueda + transferencia"
+      ],
+      "c": 2,
+      "exp": "Búsqueda (llegar a la pista) + espera (latencia rotacional)."
+    },
+    {
+      "id": "ii2-11",
+      "tipico": true,
+      "q": "SATA 3 alcanza una velocidad efectiva de…",
+      "opts": [
+        "150 MB/s",
+        "300 MB/s",
+        "600 MB/s",
+        "750 MB/s"
+      ],
+      "c": 2,
+      "exp": "6 Gb/s → 600 MB/s por la codificación 8b/10b."
+    },
+    {
+      "id": "ii2-12",
+      "tipico": true,
+      "q": "¿Qué protocolo se diseñó específicamente para unidades SSD?",
+      "opts": [
+        "NVMe",
+        "AHCI",
+        "IDE",
+        "ATAPI"
+      ],
+      "c": 0,
+      "exp": "NVMe supera el millón de IOPS; AHCI se queda en unas 100.000."
+    },
+    {
+      "id": "ii2-13",
+      "tipico": false,
+      "q": "¿Qué tipo de celda NAND es la más rápida y duradera?",
+      "opts": [
+        "TLC",
+        "QLC",
+        "SLC",
+        "MLC"
+      ],
+      "c": 2,
+      "exp": "SLC: 1 bit por celda; también la más cara."
+    },
+    {
+      "id": "ii2-14",
+      "tipico": true,
+      "q": "FAT32 no puede almacenar archivos de más de…",
+      "opts": [
+        "2 GB",
+        "4 GB",
+        "8 GB",
+        "16 GB"
+      ],
+      "c": 1,
+      "exp": "Límite de 4 GB por archivo y 8 TB por partición."
+    },
+    {
+      "id": "ii2-15",
+      "tipico": false,
+      "q": "¿Qué sistema de archivos se recomienda para un USB con archivos de más de 4 GB compatible con Windows y Mac?",
+      "opts": [
+        "FAT32",
+        "FAT16",
+        "NTFS",
+        "exFAT"
+      ],
+      "c": 3,
+      "exp": "exFAT: sin los límites de FAT32 y multiplataforma."
+    },
+    {
+      "id": "ii2-16",
+      "tipico": true,
+      "q": "¿Qué tipo de almacenamiento es un servidor de archivos en la LAN que usa NFS o SMB?",
+      "opts": [
+        "DAS",
+        "SAN",
+        "JBOD",
+        "NAS"
+      ],
+      "c": 3,
+      "exp": "NAS: Network-Attached Storage."
+    },
+    {
+      "id": "ii2-17",
+      "tipico": true,
+      "q": "¿Qué nivel RAID mejora el rendimiento pero no ofrece redundancia?",
+      "opts": [
+        "RAID 1",
+        "RAID 6",
+        "RAID 5",
+        "RAID 0"
+      ],
+      "c": 3,
+      "exp": "RAID 0 (striping): si falla un disco se pierde todo."
+    },
+    {
+      "id": "ii2-18",
+      "tipico": true,
+      "q": "Con 6 discos de 500 GB en RAID 5, la capacidad útil es…",
+      "opts": [
+        "3 TB",
+        "2,5 TB",
+        "2 TB",
+        "500 GB"
+      ],
+      "c": 1,
+      "exp": "(N − 1) × S = 5 × 0,5 TB = 2,5 TB."
+    },
+    {
+      "id": "ii2-19",
+      "tipico": true,
+      "q": "El número mínimo de discos para RAID 6 es…",
+      "opts": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "c": 2,
+      "exp": "Dos para datos y dos para la doble paridad."
+    },
+    {
+      "id": "ii2-20",
+      "tipico": false,
+      "q": "¿Qué nivel RAID es una «división de espejos» y es más robusto que RAID 0+1?",
+      "opts": [
+        "RAID 1+0",
+        "RAID 50",
+        "RAID 3",
+        "RAID 4"
+      ],
+      "c": 0,
+      "exp": "RAID 1+0 (RAID 10): primero espejos y luego striping."
+    },
+    {
+      "id": "ii2-21",
+      "tipico": true,
+      "q": "La impresora láser funde el tóner sobre el papel mediante…",
+      "opts": [
+        "El fusor",
+        "El cabezal piezoeléctrico",
+        "El tambor de margarita",
+        "La cinta entintada"
+      ],
+      "c": 0,
+      "exp": "El fusor aplica calor y presión."
+    },
+    {
+      "id": "ii2-22",
+      "tipico": true,
+      "q": "¿Qué modelo de color es sustractivo y se usa en impresión?",
+      "opts": [
+        "CMYK",
+        "HSV",
+        "RGB",
+        "HSB"
+      ],
+      "c": 0,
+      "exp": "CMYK: cian, magenta, amarillo y Key (negro)."
+    },
+    {
+      "id": "ii2-23",
+      "tipico": true,
+      "q": "Una pantalla capacitiva, a diferencia de una resistiva…",
+      "opts": [
+        "Funciona con guantes",
+        "Pierde un 25 % de brillo",
+        "Se activa por presión",
+        "Es multitouch"
+      ],
+      "c": 3,
+      "exp": "La capacitiva es multitouch y no pierde brillo, pero no sirve con guantes."
+    },
+    {
+      "id": "ii2-24",
+      "tipico": false,
+      "q": "En un programa CNC, el código G describe…",
+      "opts": [
+        "La herramienta elegida",
+        "Los movimientos de la máquina",
+        "Las funciones misceláneas",
+        "La velocidad del husillo"
+      ],
+      "c": 1,
+      "exp": "G = movimientos; M = misceláneas."
+    },
+    {
+      "id": "ii2-25",
+      "tipico": false,
+      "q": "¿Qué interfaz de vídeo transmite una señal analógica?",
+      "opts": [
+        "VGA",
+        "DisplayPort",
+        "HDMI",
+        "DVI"
+      ],
+      "c": 0,
+      "exp": "VGA convierte la señal digital en analógica."
+    }
+  ]
+}

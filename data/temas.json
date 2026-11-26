@@ -136,8 +136,9 @@
   "orden": 2,
   "titulo": "Periféricos: conectividad, impresión, almacenamiento, visualización y videoconferencia",
   "semana": "2027-01-11",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 128,
   "pagIni": 3
  },
