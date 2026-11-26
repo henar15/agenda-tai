@@ -1,0 +1,77 @@
+{
+  "tema": "I-8",
+  "ramas": [
+    {
+      "t": "Normas",
+      "e": "📚",
+      "items": [
+        "**Ley 39/2015** (LPAC) y **Ley 40/2015** (LRJSP)",
+        "**RD 203/2021**: reglamento de medios electrónicos",
+        "ENS: **RD 311/2022** · ENI: **RD 4/2010**",
+        "Registros, PAGe y archivo: efectos **2/04/2021**"
+      ]
+    },
+    {
+      "t": "Principios y derechos",
+      "e": "🙋",
+      "items": [
+        "Neutralidad, accesibilidad, facilidad de uso",
+        "Interoperabilidad, proporcionalidad, proactividad",
+        "Preferencia del medio electrónico (art. 3.2 L40)",
+        "Derechos: art. 13 (personas) y art. 53 (interesados)",
+        "No aportar lo que ya tiene la Administración"
+      ]
+    },
+    {
+      "t": "¿Quién va por vía electrónica?",
+      "e": "💻",
+      "items": [
+        "Persona física: **elige** (y puede cambiar)",
+        "Obligados: personas jurídicas, entes sin personalidad",
+        "Colegiados, representantes de obligados, empleados públicos",
+        "Si presentan en papel: **subsanar** (cuenta esa fecha)"
+      ]
+    },
+    {
+      "t": "Registros y plazos",
+      "e": "🗃️",
+      "items": [
+        "Apoderamientos (poder máx. **5 años**), habilitados y REG",
+        "Registro electrónico: **24 h, 365 días**",
+        "Horas: máx. **24 h** · días: hábiles",
+        "Ampliación: máx. **la mitad** · urgencia: plazos a la mitad"
+      ]
+    },
+    {
+      "t": "Notificaciones",
+      "e": "✉️",
+      "items": [
+        "Preferentemente **electrónicas**: sede o **DEHú**",
+        "Practicada al **acceder** al contenido",
+        "Rechazada a los **10 días naturales**",
+        "Aviso al móvil o correo: solo informativo",
+        "Infructuosa: anuncio en el **BOE**"
+      ]
+    },
+    {
+      "t": "Documentos y archivo",
+      "e": "📄",
+      "items": [
+        "Requisitos: formato, identificación, fecha, metadatos, firma",
+        "Copias auténticas = **misma validez** que el original",
+        "Expediente electrónico con **índice** numerado",
+        "**Archivo electrónico único** de procedimientos finalizados"
+      ]
+    },
+    {
+      "t": "ENS y ENI",
+      "e": "🛡️",
+      "items": [
+        "ENS: principios básicos + requisitos mínimos",
+        "Gestión por **riesgos**, vigilancia continua, líneas de defensa",
+        "ENI: interoperabilidad **organizativa, semántica y técnica**",
+        "**Red SARA**, **CTT** (reutilizar) y **NTI** obligatorias"
+      ]
+    }
+  ]
+}

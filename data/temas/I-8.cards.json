@@ -1,0 +1,662 @@
+{
+  "tema": "I-8",
+  "cards": [
+    {
+      "id": "i8c1",
+      "n": "1",
+      "e": "📘",
+      "t": true,
+      "q": "¿Qué dos leyes regulan la Administración electrónica?",
+      "a": "La **Ley 39/2015**, de 1 de octubre, del **Procedimiento Administrativo Común** (LPAC) y la **Ley 40/2015**, de 1 de octubre, de **Régimen Jurídico del Sector Público**"
+    },
+    {
+      "id": "i8c2",
+      "n": "2",
+      "e": "📅",
+      "q": "¿Cuándo entró en vigor la Ley 39/2015?",
+      "a": "El **2 de octubre de 2016**, un año después de su publicación"
+    },
+    {
+      "id": "i8c3",
+      "n": "3",
+      "e": "⏳",
+      "t": true,
+      "q": "¿Desde cuándo producen efectos los registros electrónicos, el PAGe y el archivo único?",
+      "a": "Desde el **2 de abril de 2021** (disposición final 7.ª de la Ley 39/2015)",
+      "h": "Registro de apoderamientos, registro electrónico, empleados habilitados, PAGe y archivo único"
+    },
+    {
+      "id": "i8c4",
+      "n": "4",
+      "e": "🗑️",
+      "q": "¿Qué ley anterior de acceso electrónico quedó derogada?",
+      "a": "La **Ley 11/2007**, de 22 de junio, de acceso electrónico de los ciudadanos a los Servicios Públicos"
+    },
+    {
+      "id": "i8c5",
+      "n": "5",
+      "e": "📗",
+      "t": true,
+      "q": "¿Qué Real Decreto aprueba el Reglamento de actuación y funcionamiento del sector público por medios electrónicos?",
+      "a": "El **Real Decreto 203/2021**, de 30 de marzo",
+      "h": "Deroga el RD 1671/2009"
+    },
+    {
+      "id": "i8c6",
+      "n": "6",
+      "e": "🎯",
+      "q": "Los 4 objetivos del RD 203/2021",
+      "a": "Mejorar la **eficiencia** administrativa, aumentar la **transparencia y participación**, servicios digitales **fáciles de usar** y mejorar la **seguridad jurídica**"
+    },
+    {
+      "id": "i8c7",
+      "n": "7",
+      "e": "🔒",
+      "t": true,
+      "q": "¿Qué Real Decreto regula el Esquema Nacional de Seguridad (ENS)?",
+      "a": "El **Real Decreto 311/2022**, de 3 de mayo",
+      "h": "Derogó el RD 3/2010"
+    },
+    {
+      "id": "i8c8",
+      "n": "8",
+      "e": "🔗",
+      "t": true,
+      "q": "¿Qué Real Decreto regula el Esquema Nacional de Interoperabilidad (ENI)?",
+      "a": "El **Real Decreto 4/2010**, de 8 de enero"
+    },
+    {
+      "id": "i8c9",
+      "n": "9",
+      "e": "⚖️",
+      "q": "¿Qué artículo de la Ley 40/2015 recoge el ENS y el ENI?",
+      "a": "El **art. 156** de la Ley 40/2015"
+    },
+    {
+      "id": "i8c10",
+      "n": "10",
+      "e": "🏢",
+      "q": "¿Qué regula la Orden HAP/1949/2014?",
+      "a": "El **Punto de Acceso General** de la AGE y crea su sede electrónica"
+    },
+    {
+      "id": "i8c11",
+      "n": "11",
+      "e": "📝",
+      "q": "¿Qué regulan las Órdenes PCM/1382, 1383 y 1384/2021?",
+      "a": "**1382**: Registro Electrónico General. **1383**: Registro de Funcionarios Habilitados. **1384**: Registro Electrónico de Apoderamientos",
+      "h": "Todas de 9 de diciembre de 2021"
+    },
+    {
+      "id": "i8c12",
+      "n": "12",
+      "e": "🇪🇺",
+      "q": "¿Qué directiva europea regula los datos abiertos y la reutilización?",
+      "a": "La **Directiva (UE) 2019/1024**"
+    },
+    {
+      "id": "i8c13",
+      "n": "13",
+      "e": "🧭",
+      "q": "¿Dónde están hoy los principios de la Administración electrónica?",
+      "a": "En el **art. 2 del RD 203/2021** (antes en la Ley 11/2007)"
+    },
+    {
+      "id": "i8c14",
+      "n": "14",
+      "e": "🧩",
+      "t": true,
+      "q": "Principios del art. 2 del RD 203/2021",
+      "a": "**Neutralidad tecnológica** y adaptabilidad, **accesibilidad**, **facilidad de uso**, **interoperabilidad**, **proporcionalidad** y **personalización y proactividad**"
+    },
+    {
+      "id": "i8c15",
+      "n": "15",
+      "e": "🔮",
+      "q": "¿Qué es el principio de personalización y proactividad?",
+      "a": "La Administración usa lo que sabe del usuario para dar servicios **precumplimentados** y **anticiparse** a sus necesidades"
+    },
+    {
+      "id": "i8c16",
+      "n": "16",
+      "e": "⚖️",
+      "q": "¿Qué es el principio de proporcionalidad?",
+      "a": "Solo se exigen las **garantías y medidas de seguridad adecuadas** a cada trámite"
+    },
+    {
+      "id": "i8c17",
+      "n": "17",
+      "e": "💻",
+      "t": true,
+      "q": "¿Qué principio consagra por primera vez la Ley 40/2015?",
+      "a": "La **preferencia del medio electrónico**: las Administraciones se relacionan **entre sí** por medios electrónicos (**art. 3.2**)"
+    },
+    {
+      "id": "i8c18",
+      "n": "18",
+      "e": "🌐",
+      "q": "Principios de las sedes electrónicas (art. 38.3 Ley 40/2015)",
+      "a": "**Transparencia, publicidad, responsabilidad, calidad, seguridad, disponibilidad, accesibilidad, neutralidad e interoperabilidad**"
+    },
+    {
+      "id": "i8c19",
+      "n": "19",
+      "e": "🙋",
+      "q": "¿Qué artículo de la Ley 39/2015 recoge los derechos de las personas ante la Administración?",
+      "a": "El **art. 13**: comunicarse por el **PAGe**, ser **asistidos**, usar lenguas oficiales, acceso a información, identificación y firma, protección de datos..."
+    },
+    {
+      "id": "i8c20",
+      "n": "20",
+      "e": "🔀",
+      "q": "¿Pueden las personas físicas elegir si se relacionan electrónicamente?",
+      "a": "**Sí, en todo momento** (art. 14.1), salvo que estén obligadas, y pueden **cambiar** de medio cuando quieran"
+    },
+    {
+      "id": "i8c21",
+      "n": "21",
+      "e": "🏭",
+      "t": true,
+      "q": "¿Quién está obligado a relacionarse electrónicamente (art. 14.2)?",
+      "a": "**Personas jurídicas**, **entidades sin personalidad jurídica**, profesionales con **colegiación obligatoria**, **representantes** de obligados y **empleados públicos** por su condición",
+      "h": "Notarios y registradores incluidos"
+    },
+    {
+      "id": "i8c22",
+      "n": "22",
+      "e": "📜",
+      "q": "¿Se puede obligar por reglamento a otras personas físicas?",
+      "a": "Sí, a colectivos con acceso acreditado a medios electrónicos por **capacidad económica, técnica o profesional** (art. 14.3)"
+    },
+    {
+      "id": "i8c23",
+      "n": "23",
+      "e": "📆",
+      "q": "¿Cuándo tiene efecto el cambio de canal (electrónico o no) de una persona física?",
+      "a": "Desde el **quinto día hábil** siguiente a que el órgano tenga constancia (RD 203/2021)"
+    },
+    {
+      "id": "i8c24",
+      "n": "24",
+      "e": "🛠️",
+      "q": "Si un obligado presenta en papel, ¿qué pasa?",
+      "a": "Se le requiere que **subsane** por vía electrónica; la fecha de presentación es la de la **subsanación** (art. 68.4)"
+    },
+    {
+      "id": "i8c25",
+      "n": "25",
+      "e": "⏰",
+      "t": true,
+      "q": "Plazo general para subsanar una solicitud",
+      "a": "**10 días**; si no, se le tiene por **desistido**. Puede ampliarse hasta **5 días** más (no en procesos selectivos ni de concurrencia competitiva)"
+    },
+    {
+      "id": "i8c26",
+      "n": "26",
+      "e": "🧑‍💼",
+      "q": "Derecho a ser asistido: ¿quién puede firmar por el interesado sin medios?",
+      "a": "Un **funcionario habilitado**, con su sistema de firma, si el interesado se **identifica** y da su **consentimiento expreso** (art. 12)"
+    },
+    {
+      "id": "i8c27",
+      "n": "27",
+      "e": "📂",
+      "q": "¿Qué ley regula el acceso a la información pública?",
+      "a": "La **Ley 19/2013**, de 9 de diciembre, de transparencia, según el **art. 105 b) CE**"
+    },
+    {
+      "id": "i8c28",
+      "n": "28",
+      "e": "🚧",
+      "q": "Algunos límites del derecho de acceso (art. 14 Ley 19/2013)",
+      "a": "**Seguridad nacional**, **defensa**, relaciones exteriores, seguridad pública, intereses económicos, secreto profesional, **medio ambiente**..."
+    },
+    {
+      "id": "i8c29",
+      "n": "29",
+      "e": "📑",
+      "q": "¿Qué artículo de la Ley 39/2015 recoge los derechos del interesado en el procedimiento?",
+      "a": "El **art. 53**: conocer el estado de la tramitación, no presentar **originales**, no aportar documentos **ya en poder** de la Administración, alegar, pagar electrónicamente..."
+    },
+    {
+      "id": "i8c30",
+      "n": "30",
+      "e": "💳",
+      "q": "Medios electrónicos de pago del art. 53",
+      "a": "**Tarjeta** de crédito y débito, **transferencia**, **domiciliación** y otros autorizados por Hacienda"
+    },
+    {
+      "id": "i8c31",
+      "n": "31",
+      "e": "🛡️",
+      "q": "Derechos extra en procedimientos sancionadores",
+      "a": "Ser **notificado** de los hechos e infracciones y la **presunción de no existencia de responsabilidad**"
+    },
+    {
+      "id": "i8c32",
+      "n": "32",
+      "e": "🗃️",
+      "t": true,
+      "q": "Los 3 registros de la Ley 39/2015",
+      "a": "**Registro electrónico de apoderamientos** (art. 6), **Registro de empleados públicos habilitados** (art. 12) y **Registro Electrónico General** (art. 16)"
+    },
+    {
+      "id": "i8c33",
+      "n": "33",
+      "e": "🤝",
+      "q": "¿Qué es el apoderamiento «apud acta»?",
+      "a": "Un poder otorgado por **comparecencia electrónica** en sede o **personal** en la oficina de registro"
+    },
+    {
+      "id": "i8c34",
+      "n": "34",
+      "e": "📋",
+      "q": "Los 3 tipos de poderes inscribibles",
+      "a": "**General** (cualquier Administración), ante **una Administración u organismo concreto**, y para **trámites determinados**"
+    },
+    {
+      "id": "i8c35",
+      "n": "35",
+      "e": "⌛",
+      "t": true,
+      "q": "¿Cuánto dura como máximo un poder inscrito en el registro?",
+      "a": "**5 años** desde la inscripción; se puede **revocar o prorrogar** (cada prórroga, máx. 5 años)"
+    },
+    {
+      "id": "i8c36",
+      "n": "36",
+      "e": "🔐",
+      "q": "¿Es público el Registro Electrónico de Apoderamientos?",
+      "a": "**No**: solo accedes a los poderes en los que seas **poderdante o apoderado**"
+    },
+    {
+      "id": "i8c37",
+      "n": "37",
+      "e": "✍️",
+      "q": "¿Qué funcionarios figuran en el Registro de Funcionarios Habilitados?",
+      "a": "Los habilitados para **identificar y firmar** por el interesado y para expedir **copias auténticas**, y los de las **oficinas de registro**"
+    },
+    {
+      "id": "i8c38",
+      "n": "38",
+      "e": "📥",
+      "q": "¿Qué es el Registro Electrónico General?",
+      "a": "Cada Administración tiene uno donde se anota **todo documento presentado o recibido**; funciona como portal de los registros de sus organismos"
+    },
+    {
+      "id": "i8c39",
+      "n": "39",
+      "e": "🧾",
+      "q": "¿Qué recibo da el registro electrónico?",
+      "a": "Una **copia autenticada** con **fecha, hora y número de entrada**, que garantiza **integridad y no repudio**"
+    },
+    {
+      "id": "i8c40",
+      "n": "40",
+      "e": "📮",
+      "q": "¿Dónde se pueden presentar documentos (art. 16.4)?",
+      "a": "En el **registro electrónico** de cualquier Administración, en **Correos**, en **embajadas y consulados**, en las **oficinas de asistencia en materia de registros** y otros que diga la ley"
+    },
+    {
+      "id": "i8c41",
+      "n": "41",
+      "e": "📄",
+      "q": "¿Qué se hace con los papeles presentados en persona?",
+      "a": "La oficina los **digitaliza** y **devuelve los originales** al interesado"
+    },
+    {
+      "id": "i8c42",
+      "n": "42",
+      "e": "🕐",
+      "q": "Plazos por horas: ¿cómo se cuentan?",
+      "a": "Son **horas hábiles**, de hora en hora y minuto en minuto, y **no pueden superar 24 horas** (si no, se expresan en días)"
+    },
+    {
+      "id": "i8c43",
+      "n": "43",
+      "e": "📅",
+      "t": true,
+      "q": "Plazos por días: ¿cuáles se excluyen?",
+      "a": "Son **días hábiles**: se excluyen **sábados, domingos y festivos**. Se cuentan desde el día **siguiente** a la notificación"
+    },
+    {
+      "id": "i8c44",
+      "n": "44",
+      "e": "🗓️",
+      "q": "Plazos en meses o años: ¿cuándo terminan?",
+      "a": "El **mismo día** del mes o año de vencimiento; si no existe ese día, el **último día del mes**"
+    },
+    {
+      "id": "i8c45",
+      "n": "45",
+      "e": "➡️",
+      "q": "¿Y si el último día del plazo es inhábil?",
+      "a": "Se prorroga al **primer día hábil siguiente**"
+    },
+    {
+      "id": "i8c46",
+      "n": "46",
+      "e": "🏘️",
+      "q": "Día hábil donde vive el interesado pero inhábil en la sede del órgano",
+      "a": "Se considera **inhábil en todo caso**"
+    },
+    {
+      "id": "i8c47",
+      "n": "47",
+      "e": "🌙",
+      "t": true,
+      "q": "¿Cuándo funciona el registro electrónico?",
+      "a": "**Todos los días del año, 24 horas**. Lo presentado en día inhábil se entiende en la **primera hora del primer día hábil** siguiente",
+      "h": "Se rige por la fecha y hora oficial de la sede"
+    },
+    {
+      "id": "i8c48",
+      "n": "48",
+      "e": "↔️",
+      "t": true,
+      "q": "Ampliación de plazos (art. 32)",
+      "a": "Como máximo **la mitad** del plazo, **antes de que venza**, y el acuerdo **no es recurrible**"
+    },
+    {
+      "id": "i8c49",
+      "n": "49",
+      "e": "🖥️",
+      "q": "¿Se amplían plazos por una caída técnica o ciberincidente?",
+      "a": "Sí: se amplían los plazos **no vencidos**, publicándolo en la **sede electrónica**"
+    },
+    {
+      "id": "i8c50",
+      "n": "50",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué supone la tramitación de urgencia (art. 33)?",
+      "a": "Los plazos se reducen **a la mitad**, salvo los de **solicitudes y recursos**. No cabe recurso contra el acuerdo"
+    },
+    {
+      "id": "i8c51",
+      "n": "51",
+      "e": "🗄️",
+      "q": "¿Qué es el archivo electrónico único (art. 17)?",
+      "a": "Cada Administración mantiene un archivo con los documentos de **procedimientos finalizados**, en formatos que garanticen **autenticidad, integridad y conservación**"
+    },
+    {
+      "id": "i8c52",
+      "n": "52",
+      "e": "📁",
+      "t": true,
+      "q": "¿Qué es el expediente administrativo (art. 70)?",
+      "a": "El **conjunto ordenado de documentos y actuaciones** que sirven de antecedente y fundamento a la resolución. Tiene **formato electrónico** e **índice numerado**"
+    },
+    {
+      "id": "i8c53",
+      "n": "53",
+      "e": "🚫",
+      "q": "¿Qué NO forma parte del expediente?",
+      "a": "Lo **auxiliar o de apoyo**: notas, **borradores**, opiniones, resúmenes, informes internos y juicios de valor (salvo informes preceptivos o facultativos)"
+    },
+    {
+      "id": "i8c54",
+      "n": "54",
+      "e": "🏛️",
+      "q": "¿Qué artículo de la Ley 40/2015 regula el archivo electrónico?",
+      "a": "El **art. 46**: todos los documentos se guardan por **medios electrónicos**, con medidas del **ENS**"
+    },
+    {
+      "id": "i8c55",
+      "n": "55",
+      "e": "✉️",
+      "t": true,
+      "q": "¿Cómo se practican preferentemente las notificaciones?",
+      "a": "Por **medios electrónicos** (art. 41), y siempre si el interesado está **obligado**"
+    },
+    {
+      "id": "i8c56",
+      "n": "56",
+      "e": "📃",
+      "q": "¿Qué notificaciones NUNCA son electrónicas?",
+      "a": "Las que llevan elementos **no convertibles** a formato electrónico y las que contienen **medios de pago** (p. ej. **cheques**)"
+    },
+    {
+      "id": "i8c57",
+      "n": "57",
+      "e": "🔔",
+      "q": "¿Qué pasa si no llega el aviso de notificación al correo o móvil?",
+      "a": "Nada: el aviso es **informativo** y su falta **no invalida** la notificación"
+    },
+    {
+      "id": "i8c58",
+      "n": "58",
+      "e": "📬",
+      "q": "¿Cómo se practican las notificaciones electrónicas (art. 43)?",
+      "a": "Por **comparecencia en la sede electrónica**, por la **Dirección Electrónica Habilitada única (DEHú)** o por ambas"
+    },
+    {
+      "id": "i8c59",
+      "n": "59",
+      "e": "👀",
+      "t": true,
+      "q": "¿Cuándo se entiende practicada una notificación electrónica?",
+      "a": "Cuando se **accede a su contenido**"
+    },
+    {
+      "id": "i8c60",
+      "n": "60",
+      "e": "🙅",
+      "t": true,
+      "q": "¿Cuándo se entiende rechazada una notificación electrónica?",
+      "a": "Pasados **10 días naturales** desde la puesta a disposición sin acceder"
+    },
+    {
+      "id": "i8c61",
+      "n": "61",
+      "e": "⏱️",
+      "q": "Si te notifican por varios cauces, ¿qué fecha vale?",
+      "a": "La de la notificación producida **en primer lugar**"
+    },
+    {
+      "id": "i8c62",
+      "n": "62",
+      "e": "📭",
+      "q": "¿Dónde se aloja la DEHú y quién la gestiona?",
+      "a": "En la sede del **PAGe** de la AGE; la gestiona el Ministerio de **Asuntos Económicos y Transformación Digital** con **Política Territorial y Función Pública**"
+    },
+    {
+      "id": "i8c63",
+      "n": "63",
+      "e": "✅",
+      "q": "¿Cuándo cumple la Administración su obligación de notificar en plazo?",
+      "a": "Con la **puesta a disposición** de la notificación en la sede o en la DEHú (art. 43.3)"
+    },
+    {
+      "id": "i8c64",
+      "n": "64",
+      "e": "📰",
+      "t": true,
+      "q": "Notificación infructuosa (art. 44): ¿dónde se publica?",
+      "a": "Mediante **anuncio en el BOE**"
+    },
+    {
+      "id": "i8c65",
+      "n": "65",
+      "e": "🧬",
+      "q": "Plazo del sucesor para comunicar una sucesión al órgano",
+      "a": "**15 días hábiles** desde la sucesión o la inscripción de la defunción"
+    },
+    {
+      "id": "i8c66",
+      "n": "66",
+      "e": "📄",
+      "q": "Requisitos del documento administrativo electrónico (art. 26.2)",
+      "a": "Información en **formato** identificable, **datos de identificación**, **referencia temporal**, **metadatos mínimos** y **firmas electrónicas**"
+    },
+    {
+      "id": "i8c67",
+      "n": "67",
+      "e": "🏷️",
+      "q": "¿Qué es un metadato?",
+      "a": "Un **dato que define y describe otros datos**"
+    },
+    {
+      "id": "i8c68",
+      "n": "68",
+      "e": "✒️",
+      "q": "¿Qué documentos electrónicos NO necesitan firma?",
+      "a": "Los publicados con carácter **meramente informativo** y los que **no forman parte de un expediente** (pero hay que identificar su origen)"
+    },
+    {
+      "id": "i8c69",
+      "n": "69",
+      "e": "📠",
+      "t": true,
+      "q": "¿Qué validez tienen las copias auténticas (art. 27)?",
+      "a": "La **misma validez y eficacia que los originales**, y valen en **todas** las Administraciones",
+      "h": "Las de documentos privados solo tienen efectos administrativos"
+    },
+    {
+      "id": "i8c70",
+      "n": "70",
+      "e": "🔢",
+      "q": "¿Cómo se verifica una copia en papel de un documento electrónico?",
+      "a": "Con un **código seguro de verificación (CSV)** u otro sistema que permite contrastarla en los archivos del emisor"
+    },
+    {
+      "id": "i8c71",
+      "n": "71",
+      "e": "🖨️",
+      "q": "¿Qué es la digitalización?",
+      "a": "Convertir un documento en papel en un fichero con su **imagen codificada, fiel e íntegra**"
+    },
+    {
+      "id": "i8c72",
+      "n": "72",
+      "e": "⏳",
+      "q": "Plazo para expedir una copia auténtica pedida por el interesado",
+      "a": "**15 días** desde que llega la solicitud al registro"
+    },
+    {
+      "id": "i8c73",
+      "n": "73",
+      "e": "🛡️",
+      "q": "¿Qué es el ENS?",
+      "a": "Los **principios básicos y requisitos mínimos** para proteger adecuadamente la información y fijar la **política de seguridad** en medios electrónicos"
+    },
+    {
+      "id": "i8c74",
+      "n": "74",
+      "e": "🎯",
+      "q": "¿A quién se aplica el ENS?",
+      "a": "Al **sector público** y a los sistemas de **empresas privadas** que le presten servicios por contrato",
+      "h": "Excluida la información clasificada de la Ley 9/1968 de Secretos Oficiales"
+    },
+    {
+      "id": "i8c75",
+      "n": "75",
+      "e": "🧱",
+      "t": true,
+      "q": "Principios básicos del ENS (RD 311/2022)",
+      "a": "Seguridad como **proceso integral**, gestión basada en **riesgos**, **prevención, detección, respuesta y conservación**, **líneas de defensa**, **vigilancia continua**, **reevaluación periódica** y **diferenciación de responsabilidades**"
+    },
+    {
+      "id": "i8c76",
+      "n": "76",
+      "e": "📜",
+      "q": "¿Quién aprueba la política de seguridad de un ministerio?",
+      "a": "La **persona titular del Departamento**"
+    },
+    {
+      "id": "i8c77",
+      "n": "77",
+      "e": "🔑",
+      "q": "Ejemplos de requisitos mínimos del ENS",
+      "a": "**Análisis y gestión de riesgos**, **mínimo privilegio**, control de accesos, gestión de **incidentes**, **continuidad** de la actividad y **mejora continua**"
+    },
+    {
+      "id": "i8c78",
+      "n": "78",
+      "e": "🗂️",
+      "q": "¿En qué marcos se agrupan las medidas del ENS?",
+      "a": "**Marco organizativo**, **marco operacional** y **medidas de protección**"
+    },
+    {
+      "id": "i8c79",
+      "n": "79",
+      "e": "🔗",
+      "q": "¿Qué es el ENI?",
+      "a": "El conjunto de **criterios y recomendaciones** de seguridad, conservación y normalización de información, formatos y aplicaciones para garantizar la **interoperabilidad**"
+    },
+    {
+      "id": "i8c80",
+      "n": "80",
+      "e": "🧊",
+      "t": true,
+      "q": "Las 3 dimensiones de la interoperabilidad",
+      "a": "**Organizativa**, **semántica** y **técnica**"
+    },
+    {
+      "id": "i8c81",
+      "n": "81",
+      "e": "🗣️",
+      "q": "¿Qué es la interoperabilidad semántica?",
+      "a": "Que la información intercambiada pueda **interpretarse automáticamente** y reutilizarse por otras aplicaciones",
+      "h": "Modelos de datos en el Centro de Interoperabilidad Semántica"
+    },
+    {
+      "id": "i8c82",
+      "n": "82",
+      "e": "🔌",
+      "q": "¿Qué usan las Administraciones según la interoperabilidad técnica (art. 11 ENI)?",
+      "a": "**Estándares abiertos** y, de forma complementaria, estándares de **uso generalizado**"
+    },
+    {
+      "id": "i8c83",
+      "n": "83",
+      "e": "🛣️",
+      "t": true,
+      "q": "¿Qué es la Red SARA?",
+      "a": "**Sistemas de Aplicaciones y Redes para las Administraciones**: red que conecta las Administraciones españolas y las **instituciones europeas**"
+    },
+    {
+      "id": "i8c84",
+      "n": "84",
+      "e": "♻️",
+      "q": "¿Qué es el Centro de Transferencia de Tecnología (CTT)?",
+      "a": "El **directorio general de aplicaciones reutilizables** de la AGE (art. 158 Ley 40/2015 y art. 17 ENI)"
+    },
+    {
+      "id": "i8c85",
+      "n": "85",
+      "e": "🔍",
+      "q": "¿Qué debe hacer una Administración antes de comprar o desarrollar una aplicación?",
+      "a": "Consultar el **directorio general de aplicaciones**; si hay una reutilizable, debe usarla salvo que justifique por **eficiencia** (art. 157)"
+    },
+    {
+      "id": "i8c86",
+      "n": "86",
+      "e": "🧰",
+      "q": "Soluciones del CTT: eVisor, NEDAES, SOROLLA2 y BADARAL",
+      "a": "**eVisor**: justificantes de firma. **NEDAES**: **nómina**. **SOROLLA2**: gestión **económico-presupuestaria**. **BADARAL**: **recursos humanos** y Registro Central de Personal"
+    },
+    {
+      "id": "i8c87",
+      "n": "87",
+      "e": "📏",
+      "q": "¿Qué son las Normas Técnicas de Interoperabilidad (NTI)?",
+      "a": "Normas que desarrollan el ENI (**disposición adicional 1.ª** del RD 4/2010) y son de **obligado cumplimiento**",
+      "h": "Ej.: documento, expediente, digitalización, catálogo de estándares"
+    },
+    {
+      "id": "i8c88",
+      "n": "88",
+      "e": "🪪",
+      "q": "¿Qué licencia se procura aplicar a las aplicaciones reutilizables?",
+      "a": "La **Licencia Pública de la Unión Europea** (EUPL)"
+    },
+    {
+      "id": "i8c89",
+      "n": "89",
+      "e": "📘",
+      "q": "¿Qué son las guías CCN-STIC de la serie 800?",
+      "a": "Guías del **Centro Criptológico Nacional (CCN)** que desarrollan la aplicación del **Esquema Nacional de Seguridad**"
+    }
+  ]
+}

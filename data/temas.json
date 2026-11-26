@@ -84,10 +84,11 @@
   "orden": 7,
   "titulo": "Protección de datos, derechos digitales y reglamento europeo de inteligencia artificial",
   "semana": "2026-12-28",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 96,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-8",
@@ -96,10 +97,11 @@
   "orden": 8,
   "titulo": "Acceso electrónico a los servicios públicos, gestión electrónica de procedimientos, ENS, ENI y guías CCN-STIC 800",
   "semana": "2027-01-04",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 96,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-9",

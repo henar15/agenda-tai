@@ -1,0 +1,291 @@
+{
+  "tema": "I-8",
+  "preguntas": [
+    {
+      "id": "i8-01",
+      "tipico": true,
+      "q": "El Reglamento de actuación y funcionamiento del sector público por medios electrónicos se aprobó por el…",
+      "opts": [
+        "Real Decreto 203/2021, de 30 de marzo",
+        "Real Decreto 4/2010, de 8 de enero",
+        "Real Decreto 311/2022, de 3 de mayo",
+        "Real Decreto 1671/2009, de 6 de noviembre"
+      ],
+      "c": 0,
+      "exp": "RD 203/2021, que además derogó el RD 1671/2009."
+    },
+    {
+      "id": "i8-02",
+      "tipico": true,
+      "q": "El Esquema Nacional de Seguridad está regulado actualmente por el…",
+      "opts": [
+        "RD 3/2010",
+        "RD 4/2010",
+        "RD 311/2022",
+        "RD 203/2021"
+      ],
+      "c": 2,
+      "exp": "RD 311/2022, de 3 de mayo, que derogó el RD 3/2010."
+    },
+    {
+      "id": "i8-03",
+      "tipico": true,
+      "q": "¿Cuál de estos sujetos NO está obligado por el art. 14.2 de la Ley 39/2015 a relacionarse electrónicamente?",
+      "opts": [
+        "Las personas jurídicas",
+        "Las entidades sin personalidad jurídica",
+        "Los profesionales con colegiación obligatoria en su actividad",
+        "Las personas físicas mayores de 65 años"
+      ],
+      "c": 3,
+      "exp": "Las personas físicas pueden elegir, salvo que estén obligadas por reglamento."
+    },
+    {
+      "id": "i8-04",
+      "tipico": true,
+      "q": "Una notificación electrónica se entiende rechazada cuando pasan sin acceder…",
+      "opts": [
+        "5 días hábiles",
+        "10 días hábiles",
+        "10 días naturales",
+        "15 días naturales"
+      ],
+      "c": 2,
+      "exp": "Art. 43.2 Ley 39/2015: 10 días naturales desde la puesta a disposición."
+    },
+    {
+      "id": "i8-05",
+      "tipico": true,
+      "q": "Los poderes inscritos en el registro electrónico de apoderamientos tienen una validez máxima de…",
+      "opts": [
+        "5 años",
+        "2 años",
+        "3 años",
+        "10 años"
+      ],
+      "c": 0,
+      "exp": "Máximo 5 años desde la inscripción, revocables o prorrogables."
+    },
+    {
+      "id": "i8-06",
+      "tipico": false,
+      "q": "Las previsiones sobre registro electrónico, PAGe y archivo único producen efectos desde el…",
+      "opts": [
+        "2 de octubre de 2016",
+        "2 de octubre de 2018",
+        "2 de abril de 2021",
+        "30 de marzo de 2021"
+      ],
+      "c": 2,
+      "exp": "Desde el 2 de abril de 2021, tras varias prórrogas."
+    },
+    {
+      "id": "i8-07",
+      "tipico": true,
+      "q": "Los plazos señalados por horas, según la Ley 39/2015…",
+      "opts": [
+        "No pueden durar más de 24 horas",
+        "Son horas naturales",
+        "No pueden durar más de 48 horas",
+        "Se cuentan desde las 00:00 del día siguiente"
+      ],
+      "c": 0,
+      "exp": "Son hábiles, se cuentan de hora en hora y no pueden superar 24 horas."
+    },
+    {
+      "id": "i8-08",
+      "tipico": true,
+      "q": "Un documento presentado en el registro electrónico en un día inhábil se entiende presentado…",
+      "opts": [
+        "En ese mismo momento",
+        "El último día hábil anterior",
+        "Al día siguiente a las 15:00",
+        "En la primera hora del primer día hábil siguiente"
+      ],
+      "c": 3,
+      "exp": "Art. 31 Ley 39/2015, salvo que una norma permita la recepción en día inhábil."
+    },
+    {
+      "id": "i8-09",
+      "tipico": false,
+      "q": "La ampliación de plazos del art. 32 de la Ley 39/2015 no puede exceder de…",
+      "opts": [
+        "Un tercio del plazo",
+        "La mitad del plazo",
+        "El doble del plazo",
+        "10 días"
+      ],
+      "c": 1,
+      "exp": "No más de la mitad, y se decide antes de que venza el plazo."
+    },
+    {
+      "id": "i8-10",
+      "tipico": true,
+      "q": "En la tramitación de urgencia los plazos se reducen a la mitad, salvo los relativos a…",
+      "opts": [
+        "Alegaciones y prueba",
+        "Notificaciones",
+        "Informes preceptivos",
+        "Presentación de solicitudes y recursos"
+      ],
+      "c": 3,
+      "exp": "Art. 33: no se reducen los de presentación de solicitudes y recursos."
+    },
+    {
+      "id": "i8-11",
+      "tipico": true,
+      "q": "¿Cuál de estas notificaciones NUNCA se practica por medios electrónicos?",
+      "opts": [
+        "La de una resolución sancionadora",
+        "La que contiene un cheque a favor del interesado",
+        "La de un requerimiento de subsanación",
+        "La de inicio de un procedimiento de oficio"
+      ],
+      "c": 1,
+      "exp": "No son electrónicas las que contienen medios de pago (cheques) o elementos no digitalizables."
+    },
+    {
+      "id": "i8-12",
+      "tipico": false,
+      "q": "Si un obligado a relacionarse electrónicamente presenta su solicitud en papel, la fecha de presentación será…",
+      "opts": [
+        "La de la presentación en papel",
+        "La de la subsanación electrónica",
+        "La del registro de salida",
+        "La de la resolución"
+      ],
+      "c": 1,
+      "exp": "Art. 68.4 Ley 39/2015: cuenta la fecha de la subsanación."
+    },
+    {
+      "id": "i8-13",
+      "tipico": true,
+      "q": "Cuando no se puede notificar porque se desconoce al interesado o el lugar, la notificación se hace por anuncio en…",
+      "opts": [
+        "El boletín de la provincia",
+        "El tablón del Ayuntamiento",
+        "El Boletín Oficial del Estado",
+        "La sede electrónica del órgano"
+      ],
+      "c": 2,
+      "exp": "Art. 44 Ley 39/2015: anuncio en el BOE (los demás son facultativos)."
+    },
+    {
+      "id": "i8-14",
+      "tipico": true,
+      "q": "¿Cuál NO es una dimensión de la interoperabilidad según el ENI?",
+      "opts": [
+        "Semántica",
+        "Técnica",
+        "Organizativa",
+        "Presupuestaria"
+      ],
+      "c": 3,
+      "exp": "Las tres dimensiones son organizativa, semántica y técnica."
+    },
+    {
+      "id": "i8-15",
+      "tipico": false,
+      "q": "La red que conecta las Administraciones Públicas españolas y las instituciones europeas es…",
+      "opts": [
+        "La Red SARA",
+        "La red IRIS",
+        "El CTT",
+        "La DEHú"
+      ],
+      "c": 0,
+      "exp": "Red SARA: Sistemas de Aplicaciones y Redes para las Administraciones."
+    },
+    {
+      "id": "i8-16",
+      "tipico": false,
+      "q": "¿Cuál de estas soluciones del CTT se dedica a la gestión de nóminas?",
+      "opts": [
+        "SOROLLA2",
+        "BADARAL",
+        "NEDAES",
+        "eVisor"
+      ],
+      "c": 2,
+      "exp": "NEDAES: Nómina Estándar de la Administración del Estado."
+    },
+    {
+      "id": "i8-17",
+      "tipico": true,
+      "q": "¿Cuál NO es un principio básico del ENS?",
+      "opts": [
+        "Vigilancia continua",
+        "Reevaluación periódica",
+        "Diferenciación de responsabilidades",
+        "Centralización de la seguridad en un solo órgano"
+      ],
+      "c": 3,
+      "exp": "Los principios incluyen proceso integral, riesgos, prevención-detección-respuesta-conservación, líneas de defensa, vigilancia, reevaluación y diferenciación de responsabilidades."
+    },
+    {
+      "id": "i8-18",
+      "tipico": false,
+      "q": "¿Qué NO forma parte del expediente administrativo según el art. 70 de la Ley 39/2015?",
+      "opts": [
+        "Los informes preceptivos",
+        "Los borradores y notas internas",
+        "Las notificaciones",
+        "La copia de la resolución"
+      ],
+      "c": 1,
+      "exp": "La información auxiliar o de apoyo (notas, borradores, opiniones) no forma parte del expediente."
+    },
+    {
+      "id": "i8-19",
+      "tipico": true,
+      "q": "El principio de preferencia del medio electrónico entre Administraciones se consagra en el…",
+      "opts": [
+        "Art. 13 Ley 39/2015",
+        "Art. 3.2 Ley 40/2015",
+        "Art. 156 Ley 40/2015",
+        "Art. 2 RD 203/2021"
+      ],
+      "c": 1,
+      "exp": "Art. 3.2 Ley 40/2015: las Administraciones se relacionan entre sí por medios electrónicos."
+    },
+    {
+      "id": "i8-20",
+      "tipico": false,
+      "q": "El plazo general para subsanar defectos de una solicitud es de…",
+      "opts": [
+        "5 días",
+        "15 días",
+        "10 días",
+        "1 mes"
+      ],
+      "c": 2,
+      "exp": "10 días; si no se subsana, se tiene por desistido. Ampliable 5 días en algunos casos."
+    },
+    {
+      "id": "i8-21",
+      "tipico": false,
+      "q": "El principio por el que la Administración ofrece servicios precumplimentados y se anticipa a las necesidades es el de…",
+      "opts": [
+        "Personalización y proactividad",
+        "Facilidad de uso",
+        "Neutralidad tecnológica",
+        "Proporcionalidad"
+      ],
+      "c": 0,
+      "exp": "Art. 2 RD 203/2021: personalización y proactividad."
+    },
+    {
+      "id": "i8-22",
+      "tipico": true,
+      "q": "Las copias auténticas realizadas por una Administración…",
+      "opts": [
+        "Solo valen en esa Administración",
+        "Valen en todas y tienen la misma eficacia que el original",
+        "Necesitan legalización notarial",
+        "Caducan a los 5 años"
+      ],
+      "c": 1,
+      "exp": "Art. 27 Ley 39/2015: misma validez que el original y válidas en las restantes Administraciones."
+    }
+  ]
+}
