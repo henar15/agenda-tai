@@ -1,0 +1,304 @@
+{
+  "tema": "I-7",
+  "preguntas": [
+    {
+      "id": "i7-01",
+      "tipico": true,
+      "q": "La Ley Orgánica de Protección de Datos Personales y garantía de los derechos digitales es la…",
+      "opts": [
+        "LO 15/1999, de 13 de diciembre",
+        "LO 3/2018, de 5 de diciembre",
+        "Ley 25/2007, de 18 de octubre",
+        "LO 2/2018, de 5 de diciembre"
+      ],
+      "c": 1,
+      "exp": "LO 3/2018, de 5 de diciembre (LOPDGDD). La LO 15/1999 es la anterior."
+    },
+    {
+      "id": "i7-02",
+      "tipico": true,
+      "q": "El Reglamento General de Protección de Datos es aplicable desde el…",
+      "opts": [
+        "24 de mayo de 2016",
+        "4 de mayo de 2016",
+        "25 de mayo de 2018",
+        "7 de diciembre de 2018"
+      ],
+      "c": 2,
+      "exp": "Entró en vigor el 24/05/2016 pero se aplica desde el 25 de mayo de 2018."
+    },
+    {
+      "id": "i7-03",
+      "tipico": true,
+      "q": "Según la LO 3/2018, un menor puede consentir el tratamiento de sus datos cuando sea mayor de…",
+      "opts": [
+        "13 años",
+        "14 años",
+        "16 años",
+        "18 años"
+      ],
+      "c": 1,
+      "exp": "Art. 7 LOPDGDD: mayor de 14 años. El RGPD fija 16 con mínimo de 13."
+    },
+    {
+      "id": "i7-04",
+      "tipico": false,
+      "q": "Según el RGPD, los Estados pueden rebajar la edad de consentimiento del menor, pero no por debajo de…",
+      "opts": [
+        "12 años",
+        "13 años",
+        "14 años",
+        "15 años"
+      ],
+      "c": 1,
+      "exp": "Regla general 16 años; mínimo que pueden fijar los Estados: 13."
+    },
+    {
+      "id": "i7-05",
+      "tipico": true,
+      "q": "¿Cuál NO es un principio del art. 5 del RGPD?",
+      "opts": [
+        "Minimización de datos",
+        "Exactitud",
+        "Limitación del plazo de conservación",
+        "Gratuidad del tratamiento"
+      ],
+      "c": 3,
+      "exp": "La gratuidad se refiere al ejercicio de derechos, no es un principio del art. 5."
+    },
+    {
+      "id": "i7-06",
+      "tipico": true,
+      "q": "El principio por el que el responsable debe cumplir y además poder demostrarlo es el de…",
+      "opts": [
+        "Responsabilidad proactiva",
+        "Limitación de la finalidad",
+        "Lealtad",
+        "Transparencia"
+      ],
+      "c": 0,
+      "exp": "Responsabilidad proactiva (accountability)."
+    },
+    {
+      "id": "i7-07",
+      "tipico": false,
+      "q": "¿Cuál NO es una base de licitud del art. 6 RGPD?",
+      "opts": [
+        "Interés legítimo",
+        "Protección de intereses vitales",
+        "Ejecución de un contrato",
+        "Interés comercial del encargado"
+      ],
+      "c": 3,
+      "exp": "Las bases son consentimiento, contrato, obligación legal, intereses vitales, interés público e interés legítimo."
+    },
+    {
+      "id": "i7-08",
+      "tipico": true,
+      "q": "El plazo general para responder a una solicitud de ejercicio de derechos es de…",
+      "opts": [
+        "10 días",
+        "15 días hábiles",
+        "1 mes, prorrogable 2 meses más",
+        "3 meses, prorrogable 1 mes más"
+      ],
+      "c": 2,
+      "exp": "1 mes desde la recepción, prorrogable otros 2 meses si es complejo."
+    },
+    {
+      "id": "i7-09",
+      "tipico": true,
+      "q": "Una brecha de seguridad debe notificarse a la autoridad de control, si es posible, en…",
+      "opts": [
+        "24 horas",
+        "48 horas",
+        "72 horas",
+        "7 días naturales"
+      ],
+      "c": 2,
+      "exp": "Sin dilación indebida y, a ser posible, en 72 horas."
+    },
+    {
+      "id": "i7-10",
+      "tipico": true,
+      "q": "El derecho a recibir los datos en formato estructurado, de uso común y lectura mecánica es el derecho de…",
+      "opts": [
+        "Portabilidad",
+        "Acceso",
+        "Limitación",
+        "Rectificación"
+      ],
+      "c": 0,
+      "exp": "Portabilidad, art. 20 RGPD."
+    },
+    {
+      "id": "i7-11",
+      "tipico": false,
+      "q": "Según la LOPDGDD, el derecho de acceso puede considerarse repetitivo si se ejerce más de una vez en…",
+      "opts": [
+        "1 mes",
+        "3 meses",
+        "6 meses",
+        "1 año"
+      ],
+      "c": 2,
+      "exp": "Más de una vez en 6 meses sin causa legítima."
+    },
+    {
+      "id": "i7-12",
+      "tipico": true,
+      "q": "Las multas máximas del RGPD pueden llegar a…",
+      "opts": [
+        "600.000 € o el 2 % del volumen de negocio",
+        "10 millones de € o el 1 %",
+        "20 millones de € o el 4 % del volumen de negocio",
+        "50 millones de € o el 10 %"
+      ],
+      "c": 2,
+      "exp": "Hasta 20 millones de euros o el 4 % del volumen de negocio."
+    },
+    {
+      "id": "i7-13",
+      "tipico": true,
+      "q": "La Agencia Española de Protección de Datos se relaciona con el Gobierno a través del Ministerio de…",
+      "opts": [
+        "Hacienda",
+        "Interior",
+        "Transformación Digital",
+        "Justicia"
+      ],
+      "c": 3,
+      "exp": "Se relaciona con el Gobierno a través del Ministerio de Justicia."
+    },
+    {
+      "id": "i7-14",
+      "tipico": false,
+      "q": "Están exentas de llevar el registro de actividades de tratamiento, salvo excepciones, las organizaciones con menos de…",
+      "opts": [
+        "50 empleados",
+        "100 empleados",
+        "250 empleados",
+        "500 empleados"
+      ],
+      "c": 2,
+      "exp": "Menos de 250 empleados, salvo riesgo, tratamiento no ocasional o datos especiales o penales."
+    },
+    {
+      "id": "i7-15",
+      "tipico": true,
+      "q": "El artículo de la Carta de Derechos Fundamentales de la UE dedicado a la protección de datos es el…",
+      "opts": [
+        "Art. 8",
+        "Art. 7",
+        "Art. 16",
+        "Art. 18"
+      ],
+      "c": 0,
+      "exp": "Art. 8. El art. 7 trata la vida privada y familiar."
+    },
+    {
+      "id": "i7-16",
+      "tipico": false,
+      "q": "El Convenio 108 del Consejo de Europa sobre tratamiento automatizado de datos es del año…",
+      "opts": [
+        "1950",
+        "1981",
+        "1995",
+        "2001"
+      ],
+      "c": 1,
+      "exp": "Convenio 108, de 1981. 1950 es el CEDH y 2001 la creación del SEPD."
+    },
+    {
+      "id": "i7-17",
+      "tipico": false,
+      "q": "En el Comité Europeo de Protección de Datos, la Comisión Europea…",
+      "opts": [
+        "Participa sin derecho a voto",
+        "Ostenta la presidencia",
+        "Lleva la secretaría",
+        "No puede asistir"
+      ],
+      "c": 0,
+      "exp": "La Comisión participa sin voto; la secretaría la lleva el SEPD."
+    },
+    {
+      "id": "i7-18",
+      "tipico": true,
+      "q": "Los derechos digitales se regulan en la LO 3/2018 en su…",
+      "opts": [
+        "Título III",
+        "Título VII",
+        "Título IX",
+        "Título X"
+      ],
+      "c": 3,
+      "exp": "Título X: garantía de los derechos digitales."
+    },
+    {
+      "id": "i7-19",
+      "tipico": true,
+      "q": "¿En cuál de estos lugares de trabajo NUNCA se admite la videovigilancia?",
+      "opts": [
+        "Pasillos",
+        "Vestuarios",
+        "Recepción",
+        "Aparcamiento"
+      ],
+      "c": 1,
+      "exp": "Nunca en lugares de descanso o esparcimiento: vestuarios, aseos, comedores…"
+    },
+    {
+      "id": "i7-20",
+      "tipico": false,
+      "q": "La herramienta de la AEPD que ayuda a decidir si hay que notificar una brecha a la propia AEPD (art. 33 RGPD) es…",
+      "opts": [
+        "Asesora Brecha",
+        "Comunica-Brecha RGPD",
+        "Facilita RGPD",
+        "Gestiona RGPD"
+      ],
+      "c": 0,
+      "exp": "Asesora Brecha (art. 33). Comunica-Brecha es para informar a los afectados (art. 34)."
+    },
+    {
+      "id": "i7-21",
+      "tipico": false,
+      "q": "Según la Ley 25/2007, si el juez no fija otro plazo, los operadores deben ceder los datos en…",
+      "opts": [
+        "72 horas",
+        "7 días naturales",
+        "10 días hábiles",
+        "1 mes"
+      ],
+      "c": 1,
+      "exp": "7 días naturales desde las 8:00 del día siguiente a recibir la orden."
+    },
+    {
+      "id": "i7-22",
+      "tipico": true,
+      "q": "¿Cuál de estos rasgos NO debe tener el consentimiento según el art. 4.11 RGPD?",
+      "opts": [
+        "Libre",
+        "Específico",
+        "Inequívoco",
+        "Tácito"
+      ],
+      "c": 3,
+      "exp": "Debe ser libre, específico, informado e inequívoco, por declaración o clara acción afirmativa: nunca tácito."
+    },
+    {
+      "id": "i7-23",
+      "tipico": false,
+      "q": "Para tratar datos de ideología, religión u orientación sexual cuya finalidad principal sea identificarlos, el solo consentimiento del afectado…",
+      "opts": [
+        "Basta siempre",
+        "Basta si es por escrito",
+        "No basta",
+        "Basta si es mayor de 18 años"
+      ],
+      "c": 2,
+      "exp": "Art. 9 LOPDGDD: el solo consentimiento no basta, para evitar discriminaciones."
+    }
+  ]
+}

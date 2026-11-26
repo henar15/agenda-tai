@@ -1,0 +1,80 @@
+{
+  "tema": "I-7",
+  "ramas": [
+    {
+      "t": "Normas clave",
+      "e": "📚",
+      "items": [
+        "Base: **art. 18.4 CE** (limitar la informática)",
+        "**RGPD**: Reglamento (UE) **2016/679**, aplicable **25/05/2018**",
+        "**LO 3/2018**, de 5 de diciembre (LOPDGDD)",
+        "Europa: art. 8 CEDH, **Convenio 108** (1981), art. 8 Carta UE",
+        "Ley **25/2007**: conservación de datos de comunicaciones"
+      ]
+    },
+    {
+      "t": "Principios (art. 5)",
+      "e": "📏",
+      "items": [
+        "Licitud, lealtad y transparencia",
+        "Limitación de la finalidad y **minimización**",
+        "Exactitud y limitación del plazo de conservación",
+        "Integridad y confidencialidad",
+        "**Responsabilidad proactiva** + enfoque de riesgo"
+      ]
+    },
+    {
+      "t": "Consentimiento y licitud",
+      "e": "✅",
+      "items": [
+        "**Libre, específico, informado e inequívoco**",
+        "Se retira cuando quieras, tan fácil como darlo",
+        "Menores: **14 años** en España (RGPD: 16, mín. 13)",
+        "6 bases: consentimiento, contrato, ley, vital, público, legítimo"
+      ]
+    },
+    {
+      "t": "Derechos",
+      "e": "🙋",
+      "items": [
+        "Antes ARCO; ahora + **olvido**, **limitación**, **portabilidad**",
+        "Respuesta en **1 mes** (+2 meses)",
+        "Gratis; canon si es abusivo o repetitivo",
+        "Acceso repetitivo: más de 1 vez en **6 meses**",
+        "No a decisiones solo automatizadas (art. 22)"
+      ]
+    },
+    {
+      "t": "Obligaciones",
+      "e": "🛠️",
+      "items": [
+        "Privacidad **desde el diseño y por defecto** (art. 25)",
+        "Encargado: contrato e instrucciones del responsable",
+        "Registro de actividades (exento **< 250** empleados)",
+        "**DPD**, **EIPD** si hay alto riesgo",
+        "Brecha: avisar en **72 horas**; multas hasta **20 M€ o 4 %**"
+      ]
+    },
+    {
+      "t": "AEPD",
+      "e": "🏢",
+      "items": [
+        "Autoridad administrativa **independiente**",
+        "Se relaciona vía **Ministerio de Justicia**",
+        "Presidencia + Adjunto + Consejo Consultivo",
+        "Herramientas: Facilita, Gestiona, Emprende, brechas"
+      ]
+    },
+    {
+      "t": "Derechos digitales (Tít. X)",
+      "e": "📱",
+      "items": [
+        "Neutralidad y acceso universal a Internet",
+        "**Desconexión digital** en el trabajo",
+        "Sin cámaras en vestuarios, aseos ni comedores",
+        "**Olvido** en buscadores y redes sociales",
+        "**Testamento digital**"
+      ]
+    }
+  ]
+}

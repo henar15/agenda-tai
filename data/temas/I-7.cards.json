@@ -1,0 +1,671 @@
+{
+  "tema": "I-7",
+  "cards": [
+    {
+      "id": "i7c1",
+      "n": "1",
+      "e": "🇪🇸",
+      "q": "¿Qué artículo de la Constitución es la base de la protección de datos?",
+      "a": "El **art. 18.4 CE**: la ley **limitará el uso de la informática** para garantizar el honor y la intimidad",
+      "h": "Art. 18: honor, intimidad, domicilio, comunicaciones e informática"
+    },
+    {
+      "id": "i7c2",
+      "n": "2",
+      "e": "📘",
+      "t": true,
+      "q": "¿Cuál es la ley española de protección de datos?",
+      "a": "La **Ley Orgánica 3/2018, de 5 de diciembre**, de Protección de Datos Personales y garantía de los derechos digitales (**LOPDGDD**)"
+    },
+    {
+      "id": "i7c3",
+      "n": "3",
+      "e": "📅",
+      "q": "¿Cuándo entró en vigor la LO 3/2018?",
+      "a": "El **7 de diciembre de 2018**"
+    },
+    {
+      "id": "i7c4",
+      "n": "4",
+      "e": "🗑️",
+      "q": "¿Qué ley anterior sustituyó la LO 3/2018?",
+      "a": "La **LO 15/1999**, de 13 de diciembre, de Protección de Datos de Carácter Personal"
+    },
+    {
+      "id": "i7c5",
+      "n": "5",
+      "e": "🇪🇺",
+      "t": true,
+      "q": "¿Qué es el RGPD?",
+      "a": "El **Reglamento (UE) 2016/679**, de **27 de abril de 2016**, Reglamento General de Protección de Datos. Deroga la **Directiva 95/46/CE**"
+    },
+    {
+      "id": "i7c6",
+      "n": "6",
+      "e": "⏰",
+      "t": true,
+      "q": "¿Desde cuándo es aplicable el RGPD?",
+      "a": "Desde el **25 de mayo de 2018** (art. 99). Entró en vigor el **24 de mayo de 2016**",
+      "h": "Publicado en el DOUE el 4 de mayo de 2016"
+    },
+    {
+      "id": "i7c7",
+      "n": "7",
+      "e": "⚙️",
+      "q": "¿Cómo se aplica el RGPD en los Estados?",
+      "a": "Es un reglamento: tiene **aplicación directa** en todos los Estados miembros, sin trasposición"
+    },
+    {
+      "id": "i7c8",
+      "n": "8",
+      "e": "👮",
+      "q": "¿Qué norma europea regula los datos tratados por policía y jueces penales?",
+      "a": "La **Directiva (UE) 2016/680**, de 27 de abril de 2016"
+    },
+    {
+      "id": "i7c9",
+      "n": "9",
+      "e": "🎯",
+      "q": "Los 2 objetivos de la LO 3/2018 (art. 1)",
+      "a": "**Adaptar** el ordenamiento español al **RGPD** y completarlo, y **garantizar los derechos digitales** de la ciudadanía"
+    },
+    {
+      "id": "i7c10",
+      "n": "10",
+      "e": "🚫",
+      "q": "¿A qué NO se aplica la LO 3/2018?",
+      "a": "A lo excluido por el art. 2.2 del RGPD, a los **datos de personas fallecidas** (salvo art. 3) y a las **materias clasificadas**"
+    },
+    {
+      "id": "i7c11",
+      "n": "11",
+      "e": "🧍",
+      "t": true,
+      "q": "¿Qué es un dato personal?",
+      "a": "Toda información sobre una **persona física identificada o identificable** (el **«interesado»**)",
+      "h": "Nombre, DNI, teléfono, matrícula, huella, ADN, foto..."
+    },
+    {
+      "id": "i7c12",
+      "n": "12",
+      "e": "🔐",
+      "q": "Datos públicos y datos privados (íntimos y secretos)",
+      "a": "**Públicos**: conocidos por muchos. **Privados**: se dividen en **íntimos** (obligado a darlos por ley) y **secretos** (no obligado a darlos a nadie = **datos sensibles**)"
+    },
+    {
+      "id": "i7c13",
+      "n": "13",
+      "e": "⚖️",
+      "q": "¿Qué artículo del Convenio Europeo de Derechos Humanos se relaciona con los datos?",
+      "a": "El **art. 8 del CEDH** (1950): respeto a la **vida privada y familiar**"
+    },
+    {
+      "id": "i7c14",
+      "n": "14",
+      "e": "📜",
+      "q": "¿Qué es el Convenio 108?",
+      "a": "Convenio del **Consejo de Europa** de **1981** para la protección de las personas respecto al **tratamiento automatizado** de datos"
+    },
+    {
+      "id": "i7c15",
+      "n": "15",
+      "e": "🇪🇺",
+      "t": true,
+      "q": "¿Qué artículo de la Carta de Derechos Fundamentales de la UE protege los datos?",
+      "a": "El **art. 8** (el art. 7 es la vida privada). Proclamada en **Niza** el **7 de diciembre de 2000**",
+      "h": "Vinculante desde el Tratado de Lisboa (1 de diciembre de 2009)"
+    },
+    {
+      "id": "i7c16",
+      "n": "16",
+      "e": "📑",
+      "q": "¿Qué artículo del TFUE habla de protección de datos?",
+      "a": "El **art. 16 TFUE** (y el **art. 39 TUE**)"
+    },
+    {
+      "id": "i7c17",
+      "n": "17",
+      "e": "🕵️",
+      "q": "¿Qué es el SEPD y cuándo se creó?",
+      "a": "El **Supervisor Europeo de Protección de Datos**, creado en **2001**. Vigila que las **instituciones de la UE** respeten la protección de datos",
+      "h": "Funciones: control, asesoramiento y cooperación"
+    },
+    {
+      "id": "i7c18",
+      "n": "18",
+      "e": "🤝",
+      "q": "¿Quién forma el Comité Europeo de Protección de Datos (CEPD)?",
+      "a": "El **director de cada autoridad** nacional y el **SEPD**. La **Comisión** asiste **sin voto**. La secretaría la lleva el **SEPD**",
+      "h": "Tiene personalidad jurídica y vela por una aplicación coherente del RGPD"
+    },
+    {
+      "id": "i7c19",
+      "n": "19",
+      "e": "📡",
+      "q": "¿Qué regula la Ley 25/2007, de 18 de octubre?",
+      "a": "La **conservación de datos** de las **comunicaciones electrónicas** por los operadores, para cederlos con **autorización judicial** en delitos graves",
+      "h": "Datos de tráfico y localización, NO el contenido"
+    },
+    {
+      "id": "i7c20",
+      "n": "20",
+      "e": "👮",
+      "q": "Agentes facultados para recibir datos de la Ley 25/2007",
+      "a": "**Fuerzas y Cuerpos de Seguridad** (policía judicial), **Vigilancia Aduanera** y personal del **CNI**"
+    },
+    {
+      "id": "i7c21",
+      "n": "21",
+      "e": "⏳",
+      "q": "Plazo de cesión de datos en la Ley 25/2007 si el juez no fija otro",
+      "a": "**7 días naturales** desde las **8:00 h** del día siguiente a recibir la orden"
+    },
+    {
+      "id": "i7c22",
+      "n": "22",
+      "e": "🌍",
+      "q": "Ámbito territorial del RGPD (art. 3)",
+      "a": "Se aplica a establecimientos en la UE **aunque el tratamiento sea fuera**, y a responsables **de fuera de la UE** que **ofrezcan bienes o servicios** o **controlen el comportamiento** de personas en la UE"
+    },
+    {
+      "id": "i7c23",
+      "n": "23",
+      "e": "🏠",
+      "q": "¿Se aplica el RGPD a lo que hago en casa con datos de amigos?",
+      "a": "**No**: excluye las actividades **exclusivamente personales o domésticas**"
+    },
+    {
+      "id": "i7c24",
+      "n": "24",
+      "e": "✅",
+      "t": true,
+      "q": "¿Cómo debe ser el consentimiento (art. 4.11 RGPD)?",
+      "a": "Manifestación de voluntad **libre, específica, informada e inequívoca**, mediante **declaración o clara acción afirmativa**"
+    },
+    {
+      "id": "i7c25",
+      "n": "25",
+      "e": "↩️",
+      "q": "¿Se puede retirar el consentimiento?",
+      "a": "**Sí, en cualquier momento**, y debe ser **tan fácil retirarlo como darlo**. No afecta a lo tratado antes",
+      "h": "Art. 7 RGPD"
+    },
+    {
+      "id": "i7c26",
+      "n": "26",
+      "e": "🧒",
+      "t": true,
+      "q": "Edad para que un menor consienta en España (LO 3/2018)",
+      "a": "**Mayor de 14 años** (art. 7 LOPDGDD). Por debajo, consienten los padres o tutores"
+    },
+    {
+      "id": "i7c27",
+      "n": "27",
+      "e": "🇪🇺",
+      "q": "Edad de consentimiento del menor según el RGPD",
+      "a": "**16 años** por regla general; los Estados pueden bajarla, pero **nunca por debajo de 13**"
+    },
+    {
+      "id": "i7c28",
+      "n": "28",
+      "e": "📏",
+      "t": true,
+      "q": "Los principios del art. 5 RGPD",
+      "a": "**Licitud, lealtad y transparencia**; **limitación de la finalidad**; **minimización**; **exactitud**; **limitación del plazo de conservación**; **integridad y confidencialidad**; **responsabilidad proactiva**"
+    },
+    {
+      "id": "i7c29",
+      "n": "29",
+      "e": "✂️",
+      "q": "¿Qué es la minimización de datos?",
+      "a": "Datos **adecuados, pertinentes y limitados a lo necesario** para los fines"
+    },
+    {
+      "id": "i7c30",
+      "n": "30",
+      "e": "🎯",
+      "q": "¿Qué es la limitación de la finalidad?",
+      "a": "Recoger datos para fines **determinados, explícitos y legítimos** y no usarlos después para fines **incompatibles**",
+      "h": "Archivo, investigación o estadística sí se consideran compatibles"
+    },
+    {
+      "id": "i7c31",
+      "n": "31",
+      "e": "🦾",
+      "t": true,
+      "q": "¿Qué es la responsabilidad proactiva?",
+      "a": "El responsable debe **cumplir y ser capaz de demostrarlo**, aplicando medidas técnicas y organizativas",
+      "h": "La gran novedad del RGPD junto con el enfoque de riesgo"
+    },
+    {
+      "id": "i7c32",
+      "n": "32",
+      "e": "⚠️",
+      "q": "¿Qué es el enfoque de riesgo?",
+      "a": "Las medidas se adaptan a la **naturaleza, ámbito, contexto y fines** del tratamiento y al **riesgo** para las personas"
+    },
+    {
+      "id": "i7c33",
+      "n": "33",
+      "e": "⚖️",
+      "t": true,
+      "q": "Las 6 bases de licitud del art. 6 RGPD",
+      "a": "**Consentimiento**, **contrato**, **obligación legal**, **intereses vitales**, **interés público o poderes públicos** e **interés legítimo**"
+    },
+    {
+      "id": "i7c34",
+      "n": "34",
+      "e": "🏛️",
+      "q": "¿Pueden las autoridades públicas usar el interés legítimo en sus funciones?",
+      "a": "**No**: el interés legítimo (art. 6.1.f) no se aplica a las autoridades públicas en el ejercicio de sus funciones"
+    },
+    {
+      "id": "i7c35",
+      "n": "35",
+      "e": "📜",
+      "q": "¿Qué norma hace falta para tratar datos por obligación legal o interés público (LOPDGDD)?",
+      "a": "Una norma de **Derecho de la UE** o con **rango de ley**",
+      "h": "Arts. 8 LOPDGDD y 6.1 c) y e) RGPD"
+    },
+    {
+      "id": "i7c36",
+      "n": "36",
+      "e": "🔴",
+      "t": true,
+      "q": "¿Basta el consentimiento para tratar datos de ideología, religión, sindicato, orientación sexual, creencias u origen racial?",
+      "a": "**No**: según el **art. 9 LOPDGDD**, el solo consentimiento **no basta** si la finalidad principal es identificar esos datos",
+      "h": "Para evitar discriminaciones"
+    },
+    {
+      "id": "i7c37",
+      "n": "37",
+      "e": "⚖️",
+      "q": "¿Quién puede llevar un registro completo de condenas penales?",
+      "a": "Solo bajo el **control de las autoridades públicas** (art. 10 RGPD)"
+    },
+    {
+      "id": "i7c38",
+      "n": "38",
+      "e": "🤫",
+      "q": "¿Cuánto dura el deber de confidencialidad?",
+      "a": "Se mantiene **aunque haya terminado** la relación con el responsable o encargado (art. 5 LOPDGDD)"
+    },
+    {
+      "id": "i7c39",
+      "n": "39",
+      "e": "🔤",
+      "q": "¿Qué eran los derechos ARCO?",
+      "a": "**Acceso, Rectificación, Cancelación y Oposición**. El RGPD añade **supresión (olvido)**, **limitación** y **portabilidad**, entre otros"
+    },
+    {
+      "id": "i7c40",
+      "n": "40",
+      "e": "📋",
+      "q": "Derechos que recoge la LO 3/2018 (arts. 13 a 18)",
+      "a": "**Acceso**, **rectificación**, **supresión**, **limitación**, **portabilidad** y **oposición**"
+    },
+    {
+      "id": "i7c41",
+      "n": "41",
+      "e": "📆",
+      "t": true,
+      "q": "¿En qué plazo debe responder el responsable a una solicitud de derechos?",
+      "a": "En **1 mes** desde que la recibe, prorrogable **otros 2 meses** si es complejo (avisando dentro del primer mes)"
+    },
+    {
+      "id": "i7c42",
+      "n": "42",
+      "e": "💶",
+      "q": "¿Cuesta dinero ejercer los derechos?",
+      "a": "Es **gratuito**. Si la petición es **infundada o excesiva** (repetitiva), puede cobrar un **canon razonable** o **negarse**",
+      "h": "La carga de probarlo es del responsable"
+    },
+    {
+      "id": "i7c43",
+      "n": "43",
+      "e": "ℹ️",
+      "q": "Información básica mínima que exige la LOPDGDD (información por capas)",
+      "a": "**Identidad del responsable**, **finalidad** y posibilidad de **ejercer los derechos** (arts. 15 a 22 RGPD)",
+      "h": "Más una dirección para ver el resto de la información"
+    },
+    {
+      "id": "i7c44",
+      "n": "44",
+      "e": "👪",
+      "q": "¿Quién ejerce los derechos de un menor de 14 años?",
+      "a": "Los **titulares de la patria potestad**"
+    },
+    {
+      "id": "i7c45",
+      "n": "45",
+      "e": "👁️",
+      "q": "Derecho de acceso: ¿cuándo se considera repetitivo?",
+      "a": "Si se ejerce **más de una vez en 6 meses** sin causa legítima",
+      "h": "Art. 13 LOPDGDD y 15 RGPD"
+    },
+    {
+      "id": "i7c46",
+      "n": "46",
+      "e": "💻",
+      "q": "¿Se puede cumplir el derecho de acceso con un sistema en línea?",
+      "a": "Sí: con un **acceso remoto, directo y seguro** que dé acceso permanente a **todos** los datos"
+    },
+    {
+      "id": "i7c47",
+      "n": "47",
+      "e": "✏️",
+      "q": "Derecho de rectificación (art. 16 RGPD)",
+      "a": "Corregir datos **inexactos** y completar los **incompletos**. Hay que indicar qué datos y la corrección"
+    },
+    {
+      "id": "i7c48",
+      "n": "48",
+      "e": "🧽",
+      "t": true,
+      "q": "¿Qué artículo del RGPD regula el derecho al olvido o supresión?",
+      "a": "El **art. 17 RGPD**",
+      "h": "Ej.: datos ya innecesarios, retirada del consentimiento, tratamiento ilícito"
+    },
+    {
+      "id": "i7c49",
+      "n": "49",
+      "e": "⏸️",
+      "q": "Derecho a la limitación del tratamiento (art. 18 RGPD)",
+      "a": "Congelar el uso de los datos: p. ej. mientras se comprueba su **exactitud**, si el tratamiento es **ilícito** y no se quiere borrar, o para **reclamaciones**"
+    },
+    {
+      "id": "i7c50",
+      "n": "50",
+      "e": "📦",
+      "t": true,
+      "q": "Derecho a la portabilidad (art. 20 RGPD)",
+      "a": "Recibir los datos en formato **estructurado, de uso común y lectura mecánica** y pasarlos a otro responsable",
+      "h": "Solo si se basa en consentimiento o contrato y es automatizado"
+    },
+    {
+      "id": "i7c51",
+      "n": "51",
+      "e": "✋",
+      "q": "Derecho de oposición (art. 21 RGPD)",
+      "a": "Oponerse al tratamiento por su situación particular; en **mercadotecnia directa** se puede oponer **en todo momento**"
+    },
+    {
+      "id": "i7c52",
+      "n": "52",
+      "e": "🤖",
+      "q": "Decisiones automatizadas (art. 22 RGPD)",
+      "a": "Derecho a **no ser objeto** de decisiones **solo automatizadas** (incluidos perfiles) con efectos jurídicos. Salvo contrato, ley o **consentimiento explícito**",
+      "h": "Garantía: intervención humana"
+    },
+    {
+      "id": "i7c53",
+      "n": "53",
+      "e": "🏗️",
+      "t": true,
+      "q": "Protección de datos desde el diseño y por defecto",
+      "a": "**Art. 25 RGPD**: medidas desde el inicio (p. ej. **seudonimización**) y, **por defecto**, tratar solo los datos necesarios"
+    },
+    {
+      "id": "i7c54",
+      "n": "54",
+      "e": "👥",
+      "q": "¿Qué son los corresponsables (art. 26)?",
+      "a": "Dos o más responsables que fijan **juntos** fines y medios. Reparten obligaciones por **acuerdo**, pero el interesado puede reclamar a **cualquiera**"
+    },
+    {
+      "id": "i7c55",
+      "n": "55",
+      "e": "🌐",
+      "q": "¿Cuándo debe designar representante en la UE un responsable extranjero?",
+      "a": "Cuando se aplica el **art. 3.2** (ofrece bienes o controla comportamiento en la UE). Se designa **por escrito** (art. 27)"
+    },
+    {
+      "id": "i7c56",
+      "n": "56",
+      "e": "🛠️",
+      "t": true,
+      "q": "¿Qué es el encargado del tratamiento (art. 28)?",
+      "a": "Quien trata datos **por cuenta del responsable**, mediante **contrato** escrito y siguiendo sus **instrucciones documentadas**"
+    },
+    {
+      "id": "i7c57",
+      "n": "57",
+      "e": "🔗",
+      "q": "¿Puede el encargado subcontratar a otro encargado?",
+      "a": "Solo con **autorización previa por escrito** (específica o general) del responsable"
+    },
+    {
+      "id": "i7c58",
+      "n": "58",
+      "e": "🗂️",
+      "t": true,
+      "q": "Registro de actividades de tratamiento (art. 30): ¿quién está exento?",
+      "a": "Empresas con **menos de 250 empleados**, salvo riesgo, tratamiento **no ocasional** o **datos especiales o penales**"
+    },
+    {
+      "id": "i7c59",
+      "n": "59",
+      "e": "🧑‍⚖️",
+      "q": "¿Qué es el Delegado de Protección de Datos (DPD)?",
+      "a": "Figura nueva del RGPD que **informa, asesora y supervisa** el cumplimiento y es **punto de contacto** con la autoridad de control",
+      "h": "Puede ser de plantilla o externo; actúa con autonomía"
+    },
+    {
+      "id": "i7c60",
+      "n": "60",
+      "e": "🚨",
+      "t": true,
+      "q": "¿En qué plazo se notifica una brecha de datos a la autoridad?",
+      "a": "Sin dilación y, si es posible, en **72 horas** desde que se conoce",
+      "h": "Si se tarda más, hay que explicar el motivo"
+    },
+    {
+      "id": "i7c61",
+      "n": "61",
+      "e": "🔍",
+      "q": "¿Qué es la EIPD?",
+      "a": "La **Evaluación de Impacto** relativa a la protección de datos: se hace **antes** del tratamiento cuando hay **alto riesgo**",
+      "h": "Si el riesgo no se puede mitigar, consulta previa a la autoridad"
+    },
+    {
+      "id": "i7c62",
+      "n": "62",
+      "e": "💸",
+      "t": true,
+      "q": "Multas máximas del RGPD",
+      "a": "Hasta **20 millones de euros** o el **4 % del volumen de negocio**",
+      "h": "Antes del RGPD: de 900 a 600.000 €"
+    },
+    {
+      "id": "i7c63",
+      "n": "63",
+      "e": "🏢",
+      "t": true,
+      "q": "¿Qué naturaleza tiene la AEPD?",
+      "a": "**Autoridad administrativa independiente** de ámbito estatal (Ley 40/2015), con **personalidad jurídica** y plena independencia",
+      "h": "Art. 44 LOPDGDD"
+    },
+    {
+      "id": "i7c64",
+      "n": "64",
+      "e": "🔗",
+      "q": "¿Con qué ministerio se relaciona la AEPD con el Gobierno?",
+      "a": "Con el **Ministerio de Justicia**"
+    },
+    {
+      "id": "i7c65",
+      "n": "65",
+      "e": "👤",
+      "q": "¿Quién dirige la AEPD?",
+      "a": "La **Presidencia**, auxiliada por un **Adjunto**, y asesorada por un **Consejo Consultivo**"
+    },
+    {
+      "id": "i7c66",
+      "n": "66",
+      "e": "📕",
+      "q": "¿Cómo se aprueba el Estatuto de la AEPD?",
+      "a": "Por **real decreto** del Gobierno, a propuesta de la AEPD"
+    },
+    {
+      "id": "i7c67",
+      "n": "67",
+      "e": "🧾",
+      "q": "¿Qué artículos del RGPD recogen funciones y poderes de la autoridad de control?",
+      "a": "Funciones: **art. 57**. Poderes (investigación, corrección, autorización): **art. 58**",
+      "h": "Puede multar, prohibir tratamientos o suspender flujos internacionales"
+    },
+    {
+      "id": "i7c68",
+      "n": "68",
+      "e": "🧰",
+      "q": "¿Para qué sirve Facilita RGPD?",
+      "a": "Herramienta **gratuita** de la AEPD para empresas con tratamientos de **escaso riesgo** (clientes, proveedores, RR. HH.). Genera cláusulas, registro y medidas mínimas",
+      "h": "No vale para datos de salud o tratamientos masivos"
+    },
+    {
+      "id": "i7c69",
+      "n": "69",
+      "e": "📊",
+      "q": "¿Qué es Gestiona RGPD?",
+      "a": "Herramienta para PYMES que gestiona el **Registro de Actividades** (hasta **500 tratamientos**), el **análisis de riesgos** y la necesidad de **EIPD**"
+    },
+    {
+      "id": "i7c70",
+      "n": "70",
+      "e": "🚀",
+      "q": "¿Para quién es Facilita EMPRENDE?",
+      "a": "Para **emprendedores y startups** con tratamientos innovadores"
+    },
+    {
+      "id": "i7c71",
+      "n": "71",
+      "e": "📣",
+      "q": "Comunica-Brecha y Asesora Brecha: ¿qué ayudan a decidir?",
+      "a": "**Comunica-Brecha**: si hay que informar a los **afectados** (**art. 34**). **Asesora Brecha**: si hay que notificar a la **AEPD** (**art. 33**)"
+    },
+    {
+      "id": "i7c72",
+      "n": "72",
+      "e": "📈",
+      "q": "¿Qué hace Evalúa-Riesgo RGPD?",
+      "a": "Identifica **factores de riesgo**, evalúa el riesgo y si hace falta una **EIPD**"
+    },
+    {
+      "id": "i7c73",
+      "n": "73",
+      "e": "📱",
+      "q": "¿Dónde regula la LO 3/2018 los derechos digitales?",
+      "a": "En el **Título X**"
+    },
+    {
+      "id": "i7c74",
+      "n": "74",
+      "e": "🌐",
+      "q": "Derecho a la neutralidad de Internet",
+      "a": "Los proveedores ofrecerán servicios **sin discriminación** por motivos técnicos o económicos"
+    },
+    {
+      "id": "i7c75",
+      "n": "75",
+      "e": "📶",
+      "q": "Derecho de acceso universal a Internet",
+      "a": "Acceso **universal, asequible, de calidad y no discriminatorio**, superando las brechas de **género**, **generacional** y **rural**"
+    },
+    {
+      "id": "i7c76",
+      "n": "76",
+      "e": "🔕",
+      "t": true,
+      "q": "Derecho a la desconexión digital",
+      "a": "Trabajadores y empleados públicos tienen derecho a **no conectarse fuera de su horario**, respetando descanso, permisos y vacaciones",
+      "h": "El empleador hace una política interna, oyendo a los representantes"
+    },
+    {
+      "id": "i7c77",
+      "n": "77",
+      "e": "📹",
+      "q": "¿Dónde NO se pueden poner cámaras ni grabar sonido en el trabajo?",
+      "a": "En **lugares de descanso o esparcimiento**: **vestuarios, aseos, comedores** y análogos"
+    },
+    {
+      "id": "i7c78",
+      "n": "78",
+      "e": "📍",
+      "q": "Geolocalización de trabajadores",
+      "a": "Se permite para control laboral, informando **antes** de forma **expresa, clara e inequívoca**"
+    },
+    {
+      "id": "i7c79",
+      "n": "79",
+      "e": "🔎",
+      "t": true,
+      "q": "Derecho al olvido en búsquedas de Internet",
+      "a": "Que los **buscadores** quiten de los resultados por tu **nombre** enlaces inadecuados, inexactos, no pertinentes, no actualizados o excesivos",
+      "h": "La información puede seguir en la web original"
+    },
+    {
+      "id": "i7c80",
+      "n": "80",
+      "e": "👥",
+      "q": "Derecho al olvido en redes sociales",
+      "a": "Se suprimen **a simple solicitud** los datos que tú publicaste; y si se subieron siendo **menor**, se borran **sin más requisitos**"
+    },
+    {
+      "id": "i7c81",
+      "n": "81",
+      "e": "📰",
+      "q": "Derecho a la actualización en medios digitales",
+      "a": "Pedir un **aviso de actualización** visible junto a noticias que ya no reflejan tu situación (p. ej. tras una absolución)"
+    },
+    {
+      "id": "i7c82",
+      "n": "82",
+      "e": "🪦",
+      "q": "¿Qué es el testamento digital?",
+      "a": "Familiares, herederos o el **albacea** pueden acceder a los contenidos de un **fallecido** y decidir su uso o supresión, salvo que este lo **prohibiera**"
+    },
+    {
+      "id": "i7c83",
+      "n": "83",
+      "e": "🧑‍🏫",
+      "q": "¿Qué pide la LO 3/2018 en las oposiciones de la Administración?",
+      "a": "Incluir en los temarios materias de **derechos digitales** y **protección de datos**"
+    },
+    {
+      "id": "i7c84",
+      "n": "84",
+      "e": "🧑‍⚖️",
+      "q": "¿Quién interviene si se difunden imágenes de menores que dañan sus derechos?",
+      "a": "El **Ministerio Fiscal**, con las medidas de la LO 1/1996 de Protección Jurídica del Menor"
+    },
+    {
+      "id": "i7c85",
+      "n": "85",
+      "e": "🤖",
+      "t": true,
+      "q": "¿Cuál es el Reglamento europeo de Inteligencia Artificial?",
+      "a": "El **Reglamento (UE) 2024/1689**, de Inteligencia Artificial (**RIA** o AI Act)"
+    },
+    {
+      "id": "i7c86",
+      "n": "86",
+      "e": "📶",
+      "q": "¿En qué se basa el Reglamento de IA?",
+      "a": "En un **enfoque basado en el riesgo**: riesgo **inaceptable** (prohibido), **alto**, **limitado** y **mínimo**"
+    },
+    {
+      "id": "i7c87",
+      "n": "87",
+      "e": "⛔",
+      "q": "Ejemplo de práctica de IA prohibida (riesgo inaceptable)",
+      "a": "La **puntuación social** de personas (social scoring)"
+    },
+    {
+      "id": "i7c88",
+      "n": "88",
+      "e": "🏷️",
+      "q": "¿Qué exige la IA de riesgo limitado, como un chatbot?",
+      "a": "**Transparencia**: avisar a la persona de que interactúa con una IA"
+    }
+  ]
+}
