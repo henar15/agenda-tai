@@ -1,0 +1,590 @@
+{
+  "tema": "I-6",
+  "cards": [
+    {
+      "id": "i6c1",
+      "n": "1",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Quién difundió el término «Sociedad de la Información»?",
+      "a": "El sociólogo japonés **Yoneji Masuda**, con su libro de **1980** «The Information Society as Post-Industrial Society»"
+    },
+    {
+      "id": "i6c2",
+      "n": "2",
+      "e": "📘",
+      "t": false,
+      "q": "¿Qué otros autores impulsaron el concepto?",
+      "a": "**Daniel Bell** (EE. UU., sociedad postindustrial) y **Nora y Minc** (Francia, informe de **1978**)"
+    },
+    {
+      "id": "i6c3",
+      "n": "3",
+      "e": "💡",
+      "t": false,
+      "q": "¿Qué es la Sociedad de la Información?",
+      "a": "Aquella en la que las **tecnologías** facilitan la creación, distribución y manipulación de la **información** y tienen un papel clave en la vida social, cultural y económica",
+      "h": "Paso de la sociedad industrial a la postindustrial"
+    },
+    {
+      "id": "i6c4",
+      "n": "4",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿En qué campos se basan las TIC?",
+      "a": "En la **informática**, la **microelectrónica** y las **telecomunicaciones**"
+    },
+    {
+      "id": "i6c5",
+      "n": "5",
+      "e": "🔺",
+      "t": false,
+      "q": "Según Castells, ¿qué tres procesos originan la Sociedad de la Información?",
+      "a": "La **revolución informática**, la **reestructuración del capitalismo** tras la crisis de los 60 y los **movimientos sociales**"
+    },
+    {
+      "id": "i6c6",
+      "n": "6",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Es lo mismo Sociedad de la Información que del Conocimiento?",
+      "a": "**No**: tener mucha información **no garantiza** adquirir conocimiento"
+    },
+    {
+      "id": "i6c7",
+      "n": "7",
+      "e": "🌉",
+      "t": false,
+      "q": "¿Qué es la brecha digital?",
+      "a": "La **desigualdad** en el acceso y uso de las TIC entre países y entre grupos sociales"
+    },
+    {
+      "id": "i6c8",
+      "n": "8",
+      "e": "3️⃣",
+      "t": false,
+      "q": "¿De qué 3 factores depende estar a un lado u otro de la brecha digital?",
+      "a": "**Acceso económico** a la tecnología, **formación** adecuada y **clima sociocultural** favorable"
+    },
+    {
+      "id": "i6c9",
+      "n": "9",
+      "e": "🦠",
+      "t": false,
+      "q": "¿Qué norma de 2020 impulsó la modernización de la Administración tras la COVID-19?",
+      "a": "El **Real Decreto-ley 36/2020, de 30 de diciembre** (Plan de Recuperación, Transformación y Resiliencia)"
+    },
+    {
+      "id": "i6c10",
+      "n": "10",
+      "e": "🇪🇺",
+      "t": false,
+      "q": "¿Qué directiva regula el comercio electrónico en la UE?",
+      "a": "La **Directiva 2000/31/CE**, de 8 de junio (Directiva sobre el comercio electrónico)"
+    },
+    {
+      "id": "i6c11",
+      "n": "11",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué ley española traspone la Directiva de comercio electrónico?",
+      "a": "La **Ley 34/2002, de 11 de julio**, de Servicios de la Sociedad de la Información y de Comercio Electrónico (**LSSICE**)"
+    },
+    {
+      "id": "i6c12",
+      "n": "12",
+      "e": "📲",
+      "t": false,
+      "q": "¿Qué reglamento de 2022 regula los servicios digitales?",
+      "a": "El **Reglamento (UE) 2022/2065** (Reglamento de Servicios Digitales), de aplicación directa sin trasposición"
+    },
+    {
+      "id": "i6c13",
+      "n": "13",
+      "e": "📡",
+      "t": false,
+      "q": "¿Qué directiva derogó las del paquete de telecomunicaciones de 2002?",
+      "a": "La **Directiva (UE) 2018/1972**, **Código Europeo de las Comunicaciones Electrónicas** (efectos desde el **21-12-2020**)"
+    },
+    {
+      "id": "i6c14",
+      "n": "14",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Cuándo se considera establecido en España un prestador (art. 2 LSSICE)?",
+      "a": "Cuando su **residencia o domicilio social** está en España y coincide con donde centraliza la **gestión y dirección** de sus negocios"
+    },
+    {
+      "id": "i6c15",
+      "n": "15",
+      "e": "🔓",
+      "t": true,
+      "q": "¿Necesita autorización previa prestar servicios de la sociedad de la información?",
+      "a": "**No** (art. **6** LSSICE); rige la **libre prestación de servicios** (art. **7**)"
+    },
+    {
+      "id": "i6c16",
+      "n": "16",
+      "e": "✂️",
+      "t": false,
+      "q": "¿Cuándo se puede interrumpir un servicio o retirar contenidos (art. 8)?",
+      "a": "Si atenta contra el **orden público**, la **salud pública**, la **dignidad**, la **protección de la infancia** o la **propiedad intelectual**"
+    },
+    {
+      "id": "i6c17",
+      "n": "17",
+      "e": "👨‍⚖️",
+      "t": false,
+      "q": "¿Quién puede ordenar el secuestro de páginas web que afecten a la libertad de expresión?",
+      "a": "Solo los **órganos jurisdiccionales** competentes (art. 20 CE)"
+    },
+    {
+      "id": "i6c18",
+      "n": "18",
+      "e": "🪪",
+      "t": false,
+      "q": "¿Qué información general debe ofrecer un prestador (art. 10)?",
+      "a": "Nombre, domicilio, email, datos registrales, **NIF**, precios claros y códigos de conducta, de forma **permanente, fácil, directa y gratuita**"
+    },
+    {
+      "id": "i6c19",
+      "n": "19",
+      "e": "📢",
+      "t": false,
+      "q": "¿Cómo deben ser las comunicaciones comerciales electrónicas (art. 20)?",
+      "a": "**Claramente identificables** como tales, igual que quien las envía"
+    },
+    {
+      "id": "i6c20",
+      "n": "20",
+      "e": "📧",
+      "t": true,
+      "q": "¿Se puede enviar publicidad por email sin consentimiento?",
+      "a": "**No**, salvo **relación contractual previa** y productos **similares** de la propia empresa (art. **21**)",
+      "h": "Siempre con forma sencilla y gratuita de oponerse"
+    },
+    {
+      "id": "i6c21",
+      "n": "21",
+      "e": "🍪",
+      "t": false,
+      "q": "¿Qué hace falta para usar cookies (art. 22)?",
+      "a": "El **consentimiento** del usuario tras darle **información clara y completa**"
+    },
+    {
+      "id": "i6c22",
+      "n": "22",
+      "e": "🤝",
+      "t": false,
+      "q": "¿Son válidos los contratos electrónicos (art. 23)?",
+      "a": "**Sí**, si hay **consentimiento** y demás requisitos; **no** hace falta acuerdo previo para usar medios electrónicos"
+    },
+    {
+      "id": "i6c23",
+      "n": "23",
+      "e": "👪",
+      "t": false,
+      "q": "¿A qué contratos NO se aplica el título de contratación electrónica?",
+      "a": "A los de **Derecho de familia y sucesiones**"
+    },
+    {
+      "id": "i6c24",
+      "n": "24",
+      "e": "🧾",
+      "t": false,
+      "q": "¿Cómo se prueba un contrato electrónico (art. 24)?",
+      "a": "Por las reglas generales; el **soporte electrónico** es admisible en juicio como **prueba documental**"
+    },
+    {
+      "id": "i6c25",
+      "n": "25",
+      "e": "📋",
+      "t": false,
+      "q": "¿Qué debe informar el prestador antes de contratar (art. 27)?",
+      "a": "**Trámites**, si **archivará** el contrato, medios para **corregir errores** y **lenguas** disponibles"
+    },
+    {
+      "id": "i6c26",
+      "n": "26",
+      "e": "⏰",
+      "t": true,
+      "q": "¿En qué plazo se confirma la aceptación por acuse de recibo (art. 28)?",
+      "a": "En las **24 horas** siguientes a la recepción de la aceptación"
+    },
+    {
+      "id": "i6c27",
+      "n": "27",
+      "e": "📍",
+      "t": false,
+      "q": "¿Dónde se entiende celebrado un contrato electrónico (art. 29)?",
+      "a": "Con **consumidor**: donde este tenga su **residencia habitual**. Entre empresarios (sin pacto): donde esté **establecido el prestador**"
+    },
+    {
+      "id": "i6c28",
+      "n": "28",
+      "e": "✍️",
+      "t": true,
+      "q": "¿Qué norma europea regula la firma electrónica?",
+      "a": "El **Reglamento (UE) 910/2014** (**eIDAS**), de **23 de julio de 2014**",
+      "h": "Derogó la Directiva 1999/93/CE"
+    },
+    {
+      "id": "i6c29",
+      "n": "29",
+      "e": "🇪🇸",
+      "t": false,
+      "q": "¿Qué ley española complementa el eIDAS?",
+      "a": "La **Ley 6/2020, de 11 de noviembre**, de servicios electrónicos de confianza, que derogó la **Ley 59/2003** de firma electrónica"
+    },
+    {
+      "id": "i6c30",
+      "n": "30",
+      "e": "🔐",
+      "t": true,
+      "q": "¿Cuáles son las 3 funciones básicas de la firma electrónica?",
+      "a": "**Identificar** al firmante, asegurar la **integridad** y garantizar el **no repudio**"
+    },
+    {
+      "id": "i6c31",
+      "n": "31",
+      "e": "🔑",
+      "t": false,
+      "q": "¿Cómo se firma electrónicamente un documento?",
+      "a": "Se hace un **resumen** del documento y se **cifra con la clave privada** del firmante",
+      "h": "El resumen cambia si cambia el documento"
+    },
+    {
+      "id": "i6c32",
+      "n": "32",
+      "e": "💻",
+      "t": false,
+      "q": "¿Qué aplicaciones públicas sirven para firmar?",
+      "a": "**AutoFirma** (en el PC, sin Internet) y **VALIDe** (en línea)"
+    },
+    {
+      "id": "i6c33",
+      "n": "33",
+      "e": "🅰️",
+      "t": true,
+      "q": "Requisitos de la firma electrónica avanzada (art. 26 eIDAS)",
+      "a": "Vinculada al firmante **de forma única**, permite **identificarlo**, creada con medios bajo su **exclusivo control** y **detecta cambios** posteriores"
+    },
+    {
+      "id": "i6c34",
+      "n": "34",
+      "e": "🏆",
+      "t": true,
+      "q": "¿Qué es la firma electrónica cualificada?",
+      "a": "Una firma **avanzada** creada con un **dispositivo cualificado** y basada en un **certificado cualificado**"
+    },
+    {
+      "id": "i6c35",
+      "n": "35",
+      "e": "📄",
+      "t": false,
+      "q": "¿Puede negarse valor a un documento solo por ser electrónico?",
+      "a": "**No** (art. **46** eIDAS): no se le niegan efectos jurídicos ni como prueba"
+    },
+    {
+      "id": "i6c36",
+      "n": "36",
+      "e": "🏭",
+      "t": false,
+      "q": "¿Qué sustituye al certificado de persona jurídica en el eIDAS?",
+      "a": "El **sello electrónico** de persona jurídica (o el certificado de representante)",
+      "h": "El firmante es una entidad, no una persona física"
+    },
+    {
+      "id": "i6c37",
+      "n": "37",
+      "e": "📆",
+      "t": true,
+      "q": "¿Cuál es la vigencia máxima de los certificados cualificados?",
+      "a": "**No superior a 5 años** (art. 4 Ley 6/2020)"
+    },
+    {
+      "id": "i6c38",
+      "n": "38",
+      "e": "❌",
+      "t": false,
+      "q": "¿Cómo se extinguen los certificados electrónicos?",
+      "a": "Por **caducidad** o por **revocación** (solicitud del firmante, resolución judicial, fallecimiento, datos falsos…)"
+    },
+    {
+      "id": "i6c39",
+      "n": "39",
+      "e": "🙋",
+      "t": false,
+      "q": "¿Cómo se identifica quien pide un certificado cualificado?",
+      "a": "Mediante **personación** ante quien lo verifica, con **DNI**, pasaporte u otro medio admitido"
+    },
+    {
+      "id": "i6c40",
+      "n": "40",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Quién supervisa a los prestadores de servicios de confianza?",
+      "a": "El **Ministerio de Asuntos Económicos y Transformación Digital**"
+    },
+    {
+      "id": "i6c41",
+      "n": "41",
+      "e": "💶",
+      "t": false,
+      "q": "¿Qué multa tienen las infracciones muy graves de la Ley 6/2020?",
+      "a": "De **150.001 a 300.000 euros**",
+      "h": "Graves: 50.001-150.000 · Leves: hasta 50.000"
+    },
+    {
+      "id": "i6c42",
+      "n": "42",
+      "e": "🗜️",
+      "t": true,
+      "q": "¿Qué formato de firma es binario y adecuado para ficheros grandes?",
+      "a": "**CAdES** (CMS avanzado)"
+    },
+    {
+      "id": "i6c43",
+      "n": "43",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Qué formato de firma genera un fichero XML?",
+      "a": "**XAdES** (XML avanzado)",
+      "h": "No adecuado para ficheros muy grandes"
+    },
+    {
+      "id": "i6c44",
+      "n": "44",
+      "e": "📕",
+      "t": true,
+      "q": "¿Qué formato de firma es el más adecuado para PDF?",
+      "a": "**PAdES** (PDF avanzado)"
+    },
+    {
+      "id": "i6c45",
+      "n": "45",
+      "e": "📝",
+      "t": false,
+      "q": "¿Qué formatos de firma usan los paquetes ofimáticos?",
+      "a": "**OOXML** (Microsoft Office) y **ODF** (OpenOffice)"
+    },
+    {
+      "id": "i6c46",
+      "n": "46",
+      "e": "📦",
+      "t": false,
+      "q": "Firma implícita vs. explícita (CAdES)",
+      "a": "**Implícita**: el documento **va dentro** de la firma. **Explícita**: el documento **no se incluye**"
+    },
+    {
+      "id": "i6c47",
+      "n": "47",
+      "e": "👥",
+      "t": true,
+      "q": "Co-firma vs. contra-firma",
+      "a": "**Co-firma**: todos al mismo nivel, **no importa el orden**. **Contra-firma** (cascada): cada firma **refrenda la anterior**"
+    },
+    {
+      "id": "i6c48",
+      "n": "48",
+      "e": "⌛",
+      "t": false,
+      "q": "¿Qué añade la firma AdES-T?",
+      "a": "Un **sello de tiempo** (T de TimeStamp)"
+    },
+    {
+      "id": "i6c49",
+      "n": "49",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Qué formato permite verificar la firma a muy largo plazo?",
+      "a": "**AdES-A** (Archivo), con sellos de tiempo periódicos",
+      "h": "Orden: BES → T → C → X → XL → A"
+    },
+    {
+      "id": "i6c50",
+      "n": "50",
+      "e": "☁️",
+      "t": false,
+      "q": "¿Qué es FIRe?",
+      "a": "Una **solución integral de firma electrónica** del **CTT**, con certificados locales y **en la nube**"
+    },
+    {
+      "id": "i6c51",
+      "n": "51",
+      "e": "🆔",
+      "t": true,
+      "q": "¿Dónde se regula el DNI electrónico?",
+      "a": "**Disposición adicional 3.ª de la Ley 6/2020**, art. **8 de la LO 4/2015** y el **RD 1553/2005, de 23 de diciembre**"
+    },
+    {
+      "id": "i6c52",
+      "n": "52",
+      "e": "🥇",
+      "t": false,
+      "q": "¿Qué valor tiene el DNI según la LO 4/2015?",
+      "a": "Es el **único documento** con valor suficiente **por sí solo** para acreditar la identidad del titular"
+    },
+    {
+      "id": "i6c53",
+      "n": "53",
+      "e": "🚫",
+      "t": false,
+      "q": "¿Qué datos no pueden figurar nunca en el DNI?",
+      "a": "Raza, etnia, religión, ideología, discapacidad, **orientación o identidad sexual** o afiliación política o sindical"
+    },
+    {
+      "id": "i6c54",
+      "n": "54",
+      "e": "🔏",
+      "t": false,
+      "q": "¿Qué dos certificados lleva el DNI electrónico?",
+      "a": "El de **autenticación** (identidad) y el de **firma** (sustituye a la firma manuscrita)"
+    },
+    {
+      "id": "i6c55",
+      "n": "55",
+      "e": "🔘",
+      "t": true,
+      "q": "¿Es obligatorio activar el certificado de firma del DNIe?",
+      "a": "**No**, su activación es **voluntaria** (art. 9.2 RD 1553/2005)"
+    },
+    {
+      "id": "i6c56",
+      "n": "56",
+      "e": "📑",
+      "t": false,
+      "q": "¿Qué documentos se piden para obtener el DNI?",
+      "a": "**Certificación literal de nacimiento**, **fotografía** reciente y **empadronamiento**"
+    },
+    {
+      "id": "i6c57",
+      "n": "57",
+      "e": "✉️",
+      "t": false,
+      "q": "¿Cómo se entrega y cambia el PIN del DNIe?",
+      "a": "Se entrega en **sobre ciego** y solo se cambia en los **Puntos de Actualización del DNI (PAD)**, **nunca por Internet**"
+    },
+    {
+      "id": "i6c58",
+      "n": "58",
+      "e": "📅",
+      "t": false,
+      "q": "¿Cuándo nacieron el DNIe y el DNI 3.0?",
+      "a": "DNIe en **2006**; DNI 3.0 en **2015**"
+    },
+    {
+      "id": "i6c59",
+      "n": "59",
+      "e": "📶",
+      "t": true,
+      "q": "¿Qué novedad trae el DNI 3.0?",
+      "a": "Chip **dual** con tecnología **NFC** (sin contacto, a menos de **1 cm**); ya no hace falta lector"
+    },
+    {
+      "id": "i6c60",
+      "n": "60",
+      "e": "🇪🇺",
+      "t": false,
+      "q": "¿Qué es el DNI 4.0?",
+      "a": "El DNI con formato europeo del **Reglamento (UE) 2019/1157**, obligatorio desde el **2 de agosto de 2021**, con la **bandera de la UE**"
+    },
+    {
+      "id": "i6c61",
+      "n": "61",
+      "e": "⏳",
+      "t": true,
+      "q": "¿Cuánto duran los certificados del DNI?",
+      "a": "**30 meses**, aunque la tarjeta puede valer hasta **10 años**"
+    },
+    {
+      "id": "i6c62",
+      "n": "62",
+      "e": "📃",
+      "t": false,
+      "q": "¿Qué es un certificado electrónico?",
+      "a": "Documento emitido por una **Autoridad de Certificación** que vincula la **identidad** de una persona con su **clave pública**"
+    },
+    {
+      "id": "i6c63",
+      "n": "63",
+      "e": "🪙",
+      "t": false,
+      "q": "¿Quién emite el certificado digital más habitual en software?",
+      "a": "La **Fábrica Nacional de Moneda y Timbre (FNMT)**"
+    },
+    {
+      "id": "i6c64",
+      "n": "64",
+      "e": "🗂️",
+      "t": false,
+      "q": "Tipos de certificados según la identidad",
+      "a": "De **persona física**, de **persona jurídica** y de **entidad sin personalidad jurídica**"
+    },
+    {
+      "id": "i6c65",
+      "n": "65",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué es la agenda España Digital?",
+      "a": "La **hoja de ruta para la transformación digital** del país",
+      "h": "España Digital 2025 se lanzó en julio de 2020"
+    },
+    {
+      "id": "i6c66",
+      "n": "66",
+      "e": "📆",
+      "t": false,
+      "q": "¿Cuándo se presentó España Digital 2026?",
+      "a": "El **8 de julio de 2022**"
+    },
+    {
+      "id": "i6c67",
+      "n": "67",
+      "e": "🧱",
+      "t": true,
+      "q": "¿Cuántos ejes tiene España Digital 2026?",
+      "a": "**12 ejes**: **10 estratégicos** y **2 transversales**, con cerca de **42 medidas**"
+    },
+    {
+      "id": "i6c68",
+      "n": "68",
+      "e": "🔺",
+      "t": false,
+      "q": "¿Cuáles son las 3 dimensiones de España Digital 2026?",
+      "a": "**Infraestructuras y tecnología**, **economía** y **personas**"
+    },
+    {
+      "id": "i6c69",
+      "n": "69",
+      "e": "➕",
+      "t": true,
+      "q": "¿Cuáles son los 2 ejes transversales?",
+      "a": "Los **PERTE** (proyectos estratégicos) y **RETECH** (redes territoriales de especialización tecnológica)"
+    },
+    {
+      "id": "i6c70",
+      "n": "70",
+      "e": "🚀",
+      "t": false,
+      "q": "¿Qué objetivos de conectividad y 5G fija la agenda?",
+      "a": "**100 %** de la población con **100 Mbps en 2025** y **100 %** del espectro preparado para **5G en 2026**"
+    },
+    {
+      "id": "i6c71",
+      "n": "71",
+      "e": "🤖",
+      "t": false,
+      "q": "¿Qué objetivo hay sobre IA y Big Data?",
+      "a": "Que **al menos el 25 %** de las empresas usen **IA y Big Data**"
+    },
+    {
+      "id": "i6c72",
+      "n": "72",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué documento guía los derechos digitales?",
+      "a": "La **Carta de Derechos Digitales**, aprobada en **julio de 2021**"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "tema": "I-6",
+  "ramas": [
+    {
+      "t": "Sociedad de la Información",
+      "e": "🌐",
+      "items": [
+        "Término de **Masuda** (1980) · Bell · Nora y Minc",
+        "TIC: informática, microelectrónica y telecomunicaciones",
+        "Información ≠ conocimiento",
+        "**Brecha digital**: acceso, formación y clima sociocultural",
+        "RDL **36/2020**: Plan de Recuperación"
+      ]
+    },
+    {
+      "t": "LSSICE (Ley 34/2002)",
+      "e": "📜",
+      "items": [
+        "**Ley 34/2002, de 11 de julio** · traspone Directiva **2000/31/CE**",
+        "Sin **autorización previa** (art. 6) · libre prestación (art. 7)",
+        "Secuestro de webs: solo **jueces**",
+        "Publicidad identificable; **spam prohibido** (arts. 20-21)",
+        "Cookies con **consentimiento informado** (art. 22)"
+      ]
+    },
+    {
+      "t": "Contratación electrónica",
+      "e": "🤝",
+      "items": [
+        "Válidos con **consentimiento** (art. 23)",
+        "Excluidos: **familia y sucesiones**",
+        "Acuse de recibo en **24 horas** (art. 28)",
+        "Consumidor: lugar de su **residencia habitual** (art. 29)"
+      ]
+    },
+    {
+      "t": "Firma electrónica",
+      "e": "✍️",
+      "items": [
+        "**eIDAS 910/2014** + **Ley 6/2020** (deroga Ley 59/2003)",
+        "Identidad · **integridad** · **no repudio**",
+        "Avanzada → **cualificada** (dispositivo + certificado cualificado)",
+        "**Sello electrónico** para personas jurídicas",
+        "Certificados cualificados: máx. **5 años**"
+      ]
+    },
+    {
+      "t": "Formatos de firma",
+      "e": "🗜️",
+      "items": [
+        "**CAdES** binario · **XAdES** XML · **PAdES** PDF",
+        "**Co-firma** (mismo nivel) · **contra-firma** (cascada)",
+        "Longevas: BES → **T** → C → X → XL → **A**",
+        "Herramientas: **AutoFirma**, VALIDe y FIRe"
+      ]
+    },
+    {
+      "t": "DNI electrónico",
+      "e": "🆔",
+      "items": [
+        "**RD 1553/2005** · art. 8 **LO 4/2015**",
+        "Certificados de **autenticación** y de **firma** (voluntaria)",
+        "DNIe **2006** · DNI 3.0 **2015** (NFC) · 4.0 **2021** (UE)",
+        "Certificados: **30 meses** · tarjeta hasta 10 años",
+        "PIN en sobre ciego; se cambia en el **PAD**"
+      ]
+    },
+    {
+      "t": "España Digital 2026",
+      "e": "🧭",
+      "items": [
+        "Presentada el **8 de julio de 2022**",
+        "**12 ejes**: 10 estratégicos + PERTE y RETECH",
+        "3 dimensiones: infraestructuras, economía y personas",
+        "100 Mbps al 100 % (2025) · 25 % empresas con IA",
+        "**Carta de Derechos Digitales** (julio 2021)"
+      ]
+    }
+  ]
+}

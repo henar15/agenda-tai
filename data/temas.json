@@ -71,10 +71,11 @@
   "orden": 6,
   "titulo": "Sociedad de la información, identidad y firma electrónica, DNI electrónico y Agenda Digital",
   "semana": "2026-12-14",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 94,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-7",

@@ -1,0 +1,317 @@
+{
+  "tema": "I-6",
+  "preguntas": [
+    {
+      "id": "i6-01",
+      "tipico": true,
+      "q": "La Ley de Servicios de la Sociedad de la Información y de Comercio Electrónico es la…",
+      "opts": [
+        "Ley 34/2002",
+        "Ley 59/2003",
+        "Ley 39/2015",
+        "Ley 6/2020"
+      ],
+      "c": 0,
+      "exp": "Ley 34/2002, de 11 de julio (LSSICE)."
+    },
+    {
+      "id": "i6-02",
+      "tipico": false,
+      "q": "La LSSICE traspone al Derecho español la…",
+      "opts": [
+        "Directiva (UE) 2018/1972",
+        "Directiva 1999/93/CE",
+        "Directiva 2002/58/CE",
+        "Directiva 2000/31/CE"
+      ],
+      "c": 3,
+      "exp": "La Directiva 2000/31/CE de comercio electrónico."
+    },
+    {
+      "id": "i6-03",
+      "tipico": true,
+      "q": "La prestación de servicios de la sociedad de la información…",
+      "opts": [
+        "Solo está permitida a empresas de la UE",
+        "Necesita autorización previa del Ministerio",
+        "No está sujeta a autorización previa",
+        "Necesita inscripción previa en el Registro Mercantil"
+      ],
+      "c": 2,
+      "exp": "Art. 6: sin autorización previa; art. 7: libre prestación."
+    },
+    {
+      "id": "i6-04",
+      "tipico": false,
+      "q": "El secuestro de páginas web que afecte a la libertad de expresión solo puede acordarlo…",
+      "opts": [
+        "La Agencia Española de Protección de Datos",
+        "Los órganos jurisdiccionales",
+        "El prestador de servicios",
+        "El Ministerio del Interior"
+      ],
+      "c": 1,
+      "exp": "Solo los órganos jurisdiccionales competentes."
+    },
+    {
+      "id": "i6-05",
+      "tipico": true,
+      "q": "Enviar publicidad por correo electrónico sin consentimiento está permitido…",
+      "opts": [
+        "Si hay relación contractual previa y son productos similares de la propia empresa",
+        "Si el envío es a menos de 100 destinatarios",
+        "Si se identifica al remitente",
+        "Nunca"
+      ],
+      "c": 0,
+      "exp": "Excepción del art. 21 LSSICE."
+    },
+    {
+      "id": "i6-06",
+      "tipico": false,
+      "q": "El título de contratación electrónica de la LSSICE NO se aplica a los contratos de…",
+      "opts": [
+        "Seguros",
+        "Compraventa",
+        "Prestación de servicios",
+        "Derecho de familia y sucesiones"
+      ],
+      "c": 3,
+      "exp": "Quedan fuera los de Derecho de familia y sucesiones."
+    },
+    {
+      "id": "i6-07",
+      "tipico": true,
+      "q": "El acuse de recibo de la aceptación debe enviarse en el plazo de…",
+      "opts": [
+        "72 horas",
+        "12 horas",
+        "24 horas",
+        "48 horas"
+      ],
+      "c": 2,
+      "exp": "24 horas siguientes (art. 28)."
+    },
+    {
+      "id": "i6-08",
+      "tipico": false,
+      "q": "Un contrato electrónico con un consumidor se presume celebrado…",
+      "opts": [
+        "Donde esté establecido el prestador",
+        "En la residencia habitual del consumidor",
+        "En Madrid",
+        "Donde esté el servidor"
+      ],
+      "c": 1,
+      "exp": "Art. 29: residencia habitual del consumidor."
+    },
+    {
+      "id": "i6-09",
+      "tipico": true,
+      "q": "El Reglamento europeo de identificación electrónica y servicios de confianza (eIDAS) es el…",
+      "opts": [
+        "Reglamento (UE) 910/2014",
+        "Reglamento (UE) 2019/1157",
+        "Reglamento (UE) 2022/2065",
+        "Reglamento (UE) 2016/679"
+      ],
+      "c": 0,
+      "exp": "Reglamento (UE) 910/2014, de 23 de julio."
+    },
+    {
+      "id": "i6-10",
+      "tipico": true,
+      "q": "La Ley 6/2020, de servicios electrónicos de confianza, derogó la…",
+      "opts": [
+        "LO 4/2015",
+        "Ley 34/2002",
+        "Ley 11/2007",
+        "Ley 59/2003"
+      ],
+      "c": 3,
+      "exp": "Derogó la Ley 59/2003 de firma electrónica."
+    },
+    {
+      "id": "i6-11",
+      "tipico": false,
+      "q": "¿Cuál NO es una función básica de la firma electrónica?",
+      "opts": [
+        "Asegurar la integridad",
+        "Garantizar el no repudio",
+        "Cifrar el documento para que nadie lo lea",
+        "Identificar al firmante"
+      ],
+      "c": 2,
+      "exp": "Firmar no es cifrar el contenido; sus funciones son identidad, integridad y no repudio."
+    },
+    {
+      "id": "i6-12",
+      "tipico": true,
+      "q": "La firma avanzada creada con dispositivo cualificado y basada en certificado cualificado es la firma…",
+      "opts": [
+        "Reconocida de persona jurídica",
+        "Cualificada",
+        "Longeva",
+        "Simple"
+      ],
+      "c": 1,
+      "exp": "Es la firma electrónica cualificada."
+    },
+    {
+      "id": "i6-13",
+      "tipico": false,
+      "q": "En el eIDAS, el certificado de persona jurídica se sustituye por…",
+      "opts": [
+        "El sello electrónico",
+        "El sello de tiempo",
+        "La firma cualificada",
+        "El certificado de servidor"
+      ],
+      "c": 0,
+      "exp": "Por el sello electrónico (o certificado de representante)."
+    },
+    {
+      "id": "i6-14",
+      "tipico": true,
+      "q": "La vigencia de los certificados cualificados no puede superar…",
+      "opts": [
+        "10 años",
+        "2 años",
+        "30 meses",
+        "5 años"
+      ],
+      "c": 3,
+      "exp": "5 años (art. 4 Ley 6/2020). 30 meses es el DNI."
+    },
+    {
+      "id": "i6-15",
+      "tipico": true,
+      "q": "El formato de firma más adecuado cuando el documento original es un PDF es…",
+      "opts": [
+        "CAdES",
+        "XAdES",
+        "PAdES",
+        "ODF"
+      ],
+      "c": 2,
+      "exp": "PAdES (PDF avanzado)."
+    },
+    {
+      "id": "i6-16",
+      "tipico": false,
+      "q": "La firma múltiple en la que cada firma refrenda la anterior se llama…",
+      "opts": [
+        "Co-firma",
+        "Contra-firma",
+        "Firma simple",
+        "Firma implícita"
+      ],
+      "c": 1,
+      "exp": "Contra-firma o firma en cascada."
+    },
+    {
+      "id": "i6-17",
+      "tipico": false,
+      "q": "El formato que añade un sello de tiempo a la firma básica es…",
+      "opts": [
+        "AdES-T",
+        "AdES-C",
+        "AdES-XL",
+        "AdES-A"
+      ],
+      "c": 0,
+      "exp": "T de TimeStamp."
+    },
+    {
+      "id": "i6-18",
+      "tipico": true,
+      "q": "El Real Decreto que regula la expedición del DNI y sus certificados es el…",
+      "opts": [
+        "RD 203/2021",
+        "RD 4/2010",
+        "RD 1671/2009",
+        "RD 1553/2005"
+      ],
+      "c": 3,
+      "exp": "RD 1553/2005, de 23 de diciembre."
+    },
+    {
+      "id": "i6-19",
+      "tipico": true,
+      "q": "La activación del certificado de firma del DNI electrónico es…",
+      "opts": [
+        "Obligatoria desde los 14 años",
+        "Obligatoria para mayores de edad",
+        "Voluntaria",
+        "Automática al expedirlo"
+      ],
+      "c": 2,
+      "exp": "Voluntaria (art. 9.2 RD 1553/2005)."
+    },
+    {
+      "id": "i6-20",
+      "tipico": false,
+      "q": "El PIN del DNI electrónico puede cambiarse…",
+      "opts": [
+        "Por Internet en la sede de la Policía",
+        "En los Puntos de Actualización del DNI",
+        "Llamando al 060",
+        "Desde la app MiDNI sin más requisitos"
+      ],
+      "c": 1,
+      "exp": "Solo en los PAD; nunca por Internet."
+    },
+    {
+      "id": "i6-21",
+      "tipico": true,
+      "q": "La tecnología que incorporó el DNI 3.0 para usarlo sin lector es…",
+      "opts": [
+        "NFC",
+        "Wi-Fi",
+        "Bluetooth",
+        "RFID de largo alcance"
+      ],
+      "c": 0,
+      "exp": "NFC, acercándolo a menos de 1 cm."
+    },
+    {
+      "id": "i6-22",
+      "tipico": true,
+      "q": "Los certificados incluidos en el DNI tienen una validez de…",
+      "opts": [
+        "5 años",
+        "10 años",
+        "12 meses",
+        "30 meses"
+      ],
+      "c": 3,
+      "exp": "30 meses, aunque la tarjeta puede valer hasta 10 años."
+    },
+    {
+      "id": "i6-23",
+      "tipico": false,
+      "q": "La agenda España Digital 2026 se estructura en…",
+      "opts": [
+        "42 ejes",
+        "10 ejes estratégicos",
+        "12 ejes: 10 estratégicos y 2 transversales",
+        "7 planes y 3 dimensiones"
+      ],
+      "c": 2,
+      "exp": "12 ejes (10 + PERTE y RETECH) y unas 42 medidas."
+    },
+    {
+      "id": "i6-24",
+      "tipico": false,
+      "q": "¿Cuál es un eje transversal de España Digital 2026?",
+      "opts": [
+        "Competencias digitales",
+        "RETECH",
+        "Impulso al 5G",
+        "Ciberseguridad"
+      ],
+      "c": 1,
+      "exp": "Los transversales son PERTE y RETECH."
+    }
+  ]
+}
