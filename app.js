@@ -402,12 +402,19 @@ function vPlan(){
   const wk=w=>{const isNow=w===cur,isPast=w.lunes<lun&&!isNow;const f=fases.find(x=>x.id===w.fase)||(w.fase==='rep'?{corto:'Repaso',color:'#64748b'}:{});const end=new Date(w.lunes+'T12:00:00');end.setDate(end.getDate()+6);
     return `<div class="week${isNow?' now':''}${isPast?' past':''}"><div class="d">${esc(fmtD(w.lunes))}<small>al ${esc(end.toLocaleDateString('es-ES',{day:'numeric',month:'short'}))}${isNow?' · esta semana':''}</small></div><div><h4>${esc(w.titulo)}${f.nombre?`<span class="ph" style="background:${f.color||'#64748b'}">${esc(f.corto||f.nombre)}</span>`:''}</h4><ul class="tasks">${(w.tareas||[]).map((t,i)=>{const k=w.lunes+'-'+i;return `<li><label><input type="checkbox" data-task="${esc(k)}"${done[k]?' checked':''}><span class="${done[k]?'ok':''}">${rich(t)}</span></label></li>`}).join('')}</ul></div></div>`};
   const byMonth={};sem.forEach(w=>{const m=new Date(w.lunes+'T12:00:00').toLocaleDateString('es-ES',{month:'long',year:'numeric'}).replace(' de ',' ');(byMonth[m]=byMonth[m]||[]).push(w)});
-  return `<h2>Planning</h2>${vHoyPlan(false)}${vHorario()}
-  <div class="phases">${fases.map(f=>`<div style="background:${f.color}">${esc(f.nombre)}<small>${esc(f.cuando)}</small></div>`).join('')}</div>
-  ${cur?`<h3>Esta semana</h3>${wk(cur)}`:''}
-  <h3 style="margin-top:24px">Cómo estudiar cada día</h3><div class="routine">${(P.rutina||[]).map(r=>`<div><b>${esc(r.t)}</b>${esc(r.d)}</div>`).join('')}</div>
-  <h3 style="margin-top:28px">Todas las semanas</h3><p class="sub">Toca un mes para verlo.</p>
-  ${Object.entries(byMonth).map(([m,ws])=>`<details class="mes"><summary>${esc(m)} <small>${ws.length} semanas</small></summary>${ws.map(wk).join('')}</details>`).join('')}`;
+  const PT=[['hoy','📌 Hoy'],['sem','📅 Semana'],['mes','🗓️ Mes'],['hor','⏰ Horario']];if(!ui.ptab)ui.ptab='hoy';
+  const tabs=`<div class="ptabs" role="tablist">${PT.map(([k,t])=>`<button role="tab" aria-selected="${ui.ptab===k}" class="${ui.ptab===k?'on':''}" data-ptab="${k}">${t}</button>`).join('')}</div>`;
+  let body='';
+  if(ui.ptab==='hoy')body=vHoyPlan(false);
+  else if(ui.ptab==='hor')body=vHorario();
+  else if(ui.ptab==='sem'){const ts=S.temas.filter(t=>t.semana===lun);const prog=t=>{const ini=t.pagIni||1;const l=Math.max(0,((S.lectura||{})[t.id]||ini-1)-ini+1),tot=Math.max(1,t.pags-ini+1);const cp=cardPct(t.id);return `<div class="row"><span class="tag" style="background:${BL[t.bloque].c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b>${t.pags?`<div class="pbar"><span>📖 Lectura</span><div class="tr"><i style="width:${Math.min(100,l/tot*100)}%"></i></div><small>${Math.min(l,tot)}/${tot} págs.</small></div>`:''}${cp?`<div class="pbar"><span>🃏 Tarjetas</span><div class="tr"><i style="width:${cp.s/cp.n*100}%;background:#22c55e"></i></div><small>${cp.s}/${cp.n}</small></div>`:''}</div><button class="pill p-${esc(t.estado||'pendiente')}" data-act="estado" data-id="${esc(t.id)}">${ESTN[t.estado]||'Pendiente'}</button></div>`};
+    const dias=[0,1,2,3,4,5,6].map(k=>{const d=addD(new Date(lun+'T12:00:00'),k);const dk=dkey(d);const est=esDiaEstudio(d);const hechas=Object.keys(((S.diario||{})[dk])||{}).length;return `<div class="wd${dk===today()?' cur':''}${est?'':' rest'}"><b>${DIAS[k].slice(0,3)}</b><small>${d.getDate()}</small><span>${!est?'😴':dayOk(dk)?'✅':hechas?'◐':'·'}</span></div>`}).join('');
+    body=`<div class="card"><h3>Esta semana</h3><div class="wdays">${dias}</div><p class="fine">✅ meta cumplida · ◐ empezado · 😴 descanso</p></div>
+    <h3 class="hsec">Temas de la semana</h3>${ts.length?`<div class="list">${ts.map(prog).join('')}</div>`:'<p class="empty">Esta semana no hay temas nuevos: toca repasar.</p>'}
+    ${cur?`<details class="mes nocap" style="margin-top:16px"><summary>Tareas del plan de esta semana</summary>${wk(cur)}</details>`:''}`}
+  else{const mesAct=new Date().toLocaleDateString('es-ES',{month:'long',year:'numeric'}).replace(' de ',' ');
+    body=`<p class="sub">Qué temas tocan cada mes hasta el examen. Toca un mes para ver sus semanas.</p>${Object.entries(byMonth).map(([m,ws])=>{const cods=[...new Set(S.temas.filter(t=>ws.some(w=>w.lunes===t.semana)).map(t=>t.codigo))];const ph=[...new Set(ws.map(w=>(fases.find(x=>x.id===w.fase)||{}).corto||(w.fase==='rep'?'Repaso':'')).filter(Boolean))];return `<details class="mes"${m===mesAct?' open':''}><summary><span>${esc(m)}${m===mesAct?' · este mes':''}</span><small>${cods.length?cods.join(' · '):ph.join(' · ')}</small></summary>${ws.map(wk).join('')}</details>`}).join('')}`}
+  return `<h2>Planning</h2>${tabs}${body}`;
 }
 
 /* ---------- resultados ---------- */
@@ -536,6 +543,7 @@ document.addEventListener('click',e=>{const d=e.target.closest('#dflip,[data-dca
   const y=scrollY;render();scrollTo(0,y)});
 document.addEventListener('click',e=>{const o=e.target.closest('[data-xopt],[data-xgo],[data-xf]');if(!o||!ui.ex)return;const X=ui.ex;if(o.dataset.xopt!=null){if(X.modo==='momento'&&X.ans[X.i]!=null)return;X.ans[X.i]=+o.dataset.xopt;X.conf=false}else if(o.dataset.xgo!=null){X.i=+o.dataset.xgo;X.conf=false;scrollTo(0,0)}else X.filt=o.dataset.xf;render()});
 document.addEventListener('submit',e=>{const f=e.target.closest('[data-xcfg]');if(!f)return;e.preventDefault();const v=n=>{const el=f.querySelector(`[name="${n}"]:checked`)||f.querySelector(`[name="${n}"]`);return el?el.value:''};const c=Object.assign({},ui.xcfg,{sup:v('sup'),modo:v('modo'),tiempo:v('tiempo'),pistas:v('pistas'),bloque:v('bloque'),tema:v('tema'),n:+v('n')||20,fuente:v('fuente')});if(c.kind==='sim'&&c.tema)c.titulo='Simulacro · Tema '+temaName(c.tema);else if(c.kind==='sim'&&c.bloque)c.titulo='Simulacro · Bloque '+c.bloque;startExam(c)});
+document.addEventListener('click',e=>{const p=e.target.closest('[data-ptab]');if(p){ui.ptab=p.dataset.ptab;render()}});
 document.addEventListener('click',e=>{const t=e.target.closest('[data-xtab]');if(t){ui.xtab=t.dataset.xtab;ui.xcfg=null;render()}});
 document.addEventListener('click',e=>{const f=e.target.closest('[data-filtro]');if(f){ui.filtro=f.dataset.filtro;ui.idx=0;ui.flip=false;render()}});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
@@ -552,7 +560,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=12;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=13;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-v="12">
+<html lang="es" data-v="13">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -288,6 +288,11 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 .recs{display:grid;gap:12px}.recs h3 small{font-weight:700;color:var(--muted);font-size:14px}.rlist{display:grid;gap:6px}.rlist a{display:grid;gap:2px;padding:10px 12px;border-radius:12px;background:var(--bg);border:1px solid var(--line);color:var(--ink);text-decoration:none}.rlist a:hover{border-color:var(--acc)}.rlist small{color:var(--muted)}
 .hoyplan{margin-bottom:16px}.hoyplan h3{display:flex;align-items:center;gap:8px}.hoyplan h3 small{font-weight:800;color:var(--muted);font-size:14px}
 .dlist{list-style:none;margin:0;padding:0;display:grid;gap:8px}.dt{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:8px 10px}.dt label{flex:1;display:flex;gap:10px;align-items:flex-start;cursor:pointer}.dt input{width:22px;height:22px;margin-top:2px;accent-color:var(--acc);flex:none}.dt span{display:grid;gap:2px}.dt small{color:var(--muted)}.dt.ok b{text-decoration:line-through;opacity:.6}
+.ptabs{display:flex;gap:6px;margin:4px 0 16px;overflow-x:auto}.ptabs button{flex:1;min-width:max-content;border:2px solid var(--line);background:var(--panel);color:var(--ink);border-radius:12px;padding:10px 14px;font-weight:900;min-height:46px;cursor:pointer}.ptabs button.on{border-color:var(--acc);background:var(--accbg)}
+.wdays{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}.wd{display:grid;justify-items:center;gap:2px;background:var(--bg);border-radius:12px;padding:8px 2px;border:2px solid transparent}.wd.cur{border-color:var(--acc)}.wd.rest{opacity:.6}.wd small{color:var(--muted)}.wd span{font-size:18px}
+.pbar{display:grid;grid-template-columns:92px 1fr auto;gap:8px;align-items:center;margin-top:6px;font-size:13px}.pbar .tr{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.pbar .tr i{display:block;height:100%;background:var(--acc)}
+details.mes>summary small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:55%}
+details.mes.nocap>summary{text-transform:none}@media(max-width:700px){.ptabs button{min-width:0;padding:8px 4px;font-size:14px}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -308,7 +313,7 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=12"></script>
-<script src="app.js?v=12"></script>
+<script src="firebase-config.js?v=13"></script>
+<script src="app.js?v=13"></script>
 </body>
 </html>
