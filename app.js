@@ -5,8 +5,8 @@ const rich=v=>esc(v).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
 const plain=v=>String(v??'').replace(/\*\*/g,'');
 const BL={I:{c:'var(--b1)',hex:'#7c3aed',l:'#ede9fe',n:'Organización del Estado y Administración electrónica'},II:{c:'var(--b2)',hex:'#0d9488',l:'#ccfbf1',n:'Tecnología básica'},III:{c:'var(--b3)',hex:'#2563eb',l:'#dbeafe',n:'Desarrollo de sistemas'},IV:{c:'var(--b4)',hex:'#ea580c',l:'#ffedd5',n:'Sistemas y comunicaciones'}};
 const EST=['pendiente','en-curso','estudiado'],ESTN={'pendiente':'Pendiente','en-curso':'En curso','estudiado':'Estudiado'};
-const S={horario:{},act:{},pdfs:{},pedidos:{},plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
-const ui={hdia:null,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
+const S={horario:{dias:[]},act:{},pedidos:{},user:null,authReady:false,plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
+const ui={hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
 
 const fmtD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('es-ES',{day:'numeric',month:'short'})};
 const monday=()=>{const d=new Date();const w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toISOString().slice(0,10)};
@@ -14,16 +14,17 @@ const nota=r=>{const t=r.total||1;return Math.max(0,(r.aciertos-(r.fallos||0)/3)
 const n1=v=>v.toFixed(1).replace('.',',');
 const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
 const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;return 'q'+(h>>>0).toString(36)};
-const LS='agendaTAI:';
+let LS='agendaTAI:anon:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v}
+function kvVal(k){return {horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
-function flash(t){$('#sync').textContent=t}
+function flash(t){const e=$('#sync');if(e)e.textContent=t}
+function resetUser(){Object.assign(S,{horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
 const temaName=id=>{const t=S.temas.find(x=>x.id===id);return t?t.codigo+' '+t.titulo:id};
 const temaBl=id=>{const t=S.temas.find(x=>x.id===id);return BL[(t&&t.bloque)||'I']};
 
@@ -58,39 +59,54 @@ function logros(){let sabe=0;Object.entries(S.cards).forEach(([t,cs])=>{const p=
 const DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 const hoyIdx=()=>(new Date().getDay()+6)%7;
 const mins=h=>{const [a,b]=h.split(':').map(Number);return a*60+b};
-function bloquesDia(i){const d=(S.horario.dias||[])[i];return d?d.bloques:[]}
-function horasOpo(){let m=0;(S.horario.dias||[]).forEach(d=>d.bloques.forEach(b=>{if(b.tipo==='opo'){let x=mins(b.f)-mins(b.h);m+=x}}));return m/60}
-function blockRow(b,now){const T=(S.horario.tipos||{})[b.tipo]||['', '#94a3b8'];const n=new Date();const cur=now&&mins(b.h)<=n.getHours()*60+n.getMinutes()&&n.getHours()*60+n.getMinutes()<mins(b.f==='00:00'?'23:59':b.f);
+const HT={estudio:['Estudio','#6d28d9'],repaso:['Repaso','#a78bfa'],curso:['Curso','#2563eb'],trabajo:['Trabajo','#64748b'],comida:['Comida','#f59e0b'],descanso:['Descanso','#10b981'],planes:['Planes','#e11d48'],libre:['Libre','#94a3b8']};
+function bloquesDia(i){const d=(S.horario.dias||[])[i];return d&&d.bloques?d.bloques:[]}
+const hayHorario=()=>(S.horario.dias||[]).some(d=>d&&d.bloques&&d.bloques.length);
+function setDia(i,bl){const dias=[0,1,2,3,4,5,6].map(k=>({bloques:bloquesDia(k).slice()}));dias[i].bloques=bl.slice().sort((a,b)=>a.h.localeCompare(b.h));S.horario=Object.assign({},S.horario,{dias});kvSet('horario')}
+function plantilla(){const L=[{h:'17:00',f:'19:00',t:'Tema nuevo',tipo:'estudio'},{h:'19:15',f:'20:00',t:'Repaso con tarjetas',tipo:'repaso'}];
+  const dias=[0,1,2,3,4,5,6].map(k=>({bloques:k<5?L.map(x=>Object.assign({},x)):k===5?[{h:'10:00',f:'12:00',t:'Repaso y test',tipo:'repaso'}]:[]}));S.horario={dias};kvSet('horario')}
+function horasOpo(){let m=0;(S.horario.dias||[]).forEach(d=>(d.bloques||[]).forEach(b=>{if((b.tipo==='estudio'||b.tipo==='repaso')&&b.f){let x=mins(b.f==='00:00'?'24:00':b.f)-mins(b.h);if(x>0)m+=x}}));return m/60}
+function blockRow(b,now){const T=HT[b.tipo]||HT.libre;const n=new Date();const cur=now&&mins(b.h)<=n.getHours()*60+n.getMinutes()&&n.getHours()*60+n.getMinutes()<mins(b.f==='00:00'?'23:59':b.f);
   return `<div class="blk-h${cur?' cur':''}" style="--bc:${T[1]}"><span class="hh">${esc(b.h)}${b.f&&b.f!=='23:59'?'–'+esc(b.f):''}</span><span class="bt"><b>${esc(b.t)}</b>${b.d?`<small>${esc(b.d)}</small>`:''}</span>${cur?'<span class="ahora">Ahora</span>':''}</div>`}
 function vHorario(){const i=ui.hdia==null?hoyIdx():ui.hdia;
-  return `<div class="card" style="margin-bottom:28px"><h3>Tu horario <small style="font-weight:700;color:var(--muted)">· ${n1(horasOpo())} h de oposición a la semana</small></h3>
-  <div class="dtabs">${DIAS.map((d,k)=>`<button class="${k===i?'on':''}" data-hdia="${k}">${d.slice(0,3)}</button>`).join('')}</div>
-  <div class="tline">${bloquesDia(i).map(b=>blockRow(b,i===hoyIdx())).join('')}</div>${S.horario.nota?`<p class="sub" style="margin:12px 0 0">${esc(S.horario.nota)}</p>`:''}</div>`}
+  const tabs=`<div class="dtabs">${DIAS.map((d,k)=>`<button class="${k===i?'on':''}" data-hdia="${k}">${d.slice(0,3)}</button>`).join('')}</div>`;
+  if(!hayHorario()&&!ui.hedit)return `<div class="card hcard"><h3>Tu horario semanal</h3><p class="sub">Apunta cuándo trabajas, comes y estudias. Así sabrás cada día qué te toca.</p><div class="acts"><button class="btn" data-act="hedit">Crear mi horario</button><button class="btn ghost" data-act="hplant">Usar una plantilla</button></div></div>`;
+  if(ui.hedit){const bl=bloquesDia(i);
+    return `<div class="card hcard"><h3>Editar horario <button class="btn" data-act="hedit" style="margin-left:auto">Listo</button></h3>${tabs}
+    <div class="tline">${bl.map((b,k)=>`<div class="blk-h" style="--bc:${(HT[b.tipo]||HT.libre)[1]}"><span class="hh">${esc(b.h)}${b.f?'–'+esc(b.f):''}</span><span class="bt"><b>${esc(b.t)}</b><small>${esc((HT[b.tipo]||HT.libre)[0])}</small></span><button class="x" data-act="hdel" data-i="${k}" aria-label="Borrar ${esc(b.t)}">✕</button></div>`).join('')||'<p class="empty">Este día está vacío.</p>'}</div>
+    <form class="hform" data-hform="${i}"><label>Desde<input type="time" name="h" required value="17:00"></label><label>Hasta<input type="time" name="f" value="19:00"></label><label class="w">Qué haces<input name="t" required maxlength="40" placeholder="Estudiar tema nuevo"></label><label>Tipo<select name="tipo">${Object.entries(HT).map(([k,v])=>`<option value="${k}">${v[0]}</option>`).join('')}</select></label><button class="btn">Añadir</button></form>
+    <div class="acts"><button class="mini" data-act="hcopy" data-i="${i}">Copiar el ${esc(DIAS[i].toLowerCase())} a lunes–viernes</button></div></div>`}
+  return `<div class="card hcard"><h3>Tu horario <small style="font-weight:700;color:var(--muted)">· ${n1(horasOpo())} h de estudio a la semana</small><button class="mini" data-act="hedit" style="margin-left:auto">Editar</button></h3>${tabs}
+  <div class="tline">${bloquesDia(i).map(b=>blockRow(b,i===hoyIdx())).join('')||'<p class="empty">Día libre</p>'}</div></div>`}
 
 /* ---------- inicio ---------- */
 function vInicio(){
+  const T=S.temas;
+  let nCards=0,sabe=0;Object.entries(S.cards).forEach(([t,cs])=>{const p=S.piles[t]||{};cs.forEach(c=>{nCards++;if(p[c.id]===3)sabe++})});
+  const media=S.res.length?(S.res.reduce((a,r)=>a+nota(r),0)/S.res.length):null;
+  const lun=monday();const sem=T.filter(t=>t.semana===lun);
+  const cfg=S.config;let warn='';
+  if(!cfg.inscrita){const lim=cfg.inscripcionHasta||'2026-12-29';const d=Math.ceil((new Date(lim+'T23:59:00')-new Date())/864e5);if(d>=0)warn=`<div class="warn"><span style="flex:1">Inscripción abierta: quedan <b>${d}</b> días.</span><button class="mini" data-act="inscrita">Ya me inscribí</button></div>`}
+  const ne=errList().length,r=racha();
+  const now=new Date().getHours()*60+new Date().getMinutes();
+  const hoy=bloquesDia(hoyIdx());const cur=hoy.find(b=>mins(b.h)<=now&&now<mins(!b.f||b.f==='00:00'?'23:59':b.f));const next=hoy.filter(b=>mins(b.h)>now).slice(0,2);
+  const nombre=(S.user&&S.user.displayName||'').split(' ')[0];
+  const hoyHtml=hayHorario()?`<div class="tline">${(cur?[cur]:[]).concat(next).map(b=>blockRow(b,true)).join('')||'<p class="empty">No te queda nada más hoy. ¡A descansar!</p>'}</div><a class="more" href="#planning">Ver el día completo</a>`:`<p class="sub" style="margin:0 0 8px">Crea tu horario y aquí verás qué te toca en cada momento.</p><a class="btn ghost" href="#planning">Crear mi horario</a>`;
+  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>
+  <div class="card"><h3>Ahora</h3>${hoyHtml}</div>
+  <div class="go"><a class="gob" href="#tarjetas"><span>🃏</span><b>Repasar tarjetas</b></a><a class="gob" href="#tests"><span>📝</span><b>Hacer un test</b></a>${ne?`<a class="gob" href="#tests"><span>🔁</span><b>Mis errores (${ne})</b></a>`:''}</div>
+  <div class="kpis"><div class="kpi"><b>🔥 ${r}</b><span>${r===1?'día':'días'} de racha</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media</span></div></div>
+  <div class="card"><h3>Temas de esta semana</h3>${sem.length?`<div class="list">${sem.map(rowTema).join('')}</div>`:'<p class="empty">Esta semana no hay temas nuevos: toca repasar.</p>'}</div>`;
+}
+function vProgreso(){
   const T=S.temas,tot=T.length||34,est=T.filter(t=>t.estado==='estudiado').length,pct=Math.round(est/tot*100);
   const R=2*Math.PI*104,off=R*(1-est/tot);
   const blq=['I','II','III','IV'].map(b=>{const ts=T.filter(t=>t.bloque===b);return{b,n:ts.length,e:ts.filter(t=>t.estado==='estudiado').length}});
-  let nCards=0,sabe=0;Object.entries(S.cards).forEach(([t,cs])=>{const p=S.piles[t]||{};cs.forEach(c=>{nCards++;if(p[c.id]===3)sabe++})});
-  const media=S.res.length?(S.res.reduce((a,r)=>a+nota(r),0)/S.res.length):null;
-  const last=S.res.slice().sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||''))[0];
-  const lun=monday();const sem=T.filter(t=>t.semana===lun);
-  const prox=T.filter(t=>t.semana&&t.semana>lun&&t.estado!=='estudiado').sort((a,b)=>a.semana.localeCompare(b.semana)).slice(0,3);
-  const cfg=S.config;let warn='';
-  if(!cfg.inscrita){const lim=cfg.inscripcionHasta||'2026-12-29';const d=Math.ceil((new Date(lim+'T23:59:00')-new Date())/864e5);if(d>=0)warn=`<div class="warn"><span style="flex:1">Inscripción en IPS abierta: te quedan <b>${d}</b> días (hasta el ${esc(fmtD(lim))}). Tasa: 15,57 €.</span><button class="btn" data-act="inscrita">Ya estoy inscrita</button></div>`}
-  let exam='Sin publicar';if(cfg.examen){const d=Math.ceil((new Date(cfg.examen+'T09:00:00')-new Date())/864e5);exam=d>0?d+' días':'¡Hoy!'}
-  const ne=errList().length;
-  return `${warn}<div class="hero"><div class="ring"><svg viewBox="0 0 240 240" role="img" aria-label="Temario estudiado ${pct}%"><circle cx="120" cy="120" r="104" fill="none" stroke="var(--line)" stroke-width="22"/><circle cx="120" cy="120" r="104" fill="none" stroke="var(--acc)" stroke-width="22" stroke-linecap="round" stroke-dasharray="${R}" stroke-dashoffset="${off}" transform="rotate(-90 120 120)"/></svg><div class="c"><b>${pct}%</b><span>${est} de ${tot} temas</span></div></div>
-  <div><h2>${est?'Vas sumando temas':'Tu oposición, en un solo sitio'}</h2><p class="sub">Un tema no se aprende en una semana: la primera vuelta es para entenderlo, y los repasos cortos con tarjetas lo fijan.</p><div class="bars">${blq.map(x=>`<div class="bar"><div class="lab"><span>Bloque ${x.b} · ${esc(BL[x.b].n)}</span><span>${x.e}/${x.n}</span></div><div class="tr"><i style="width:${x.n?x.e/x.n*100:0}%;background:${BL[x.b].c}"></i></div></div>`).join('')}</div></div></div>
-  <div class="kpis"><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas que te sabes (${sabe} de ${nCards})</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media de tus tests (sobre 10)</span></div><div class="kpi"><b>${ne}</b><span>preguntas en «Mis errores»</span></div><div class="kpi"><b>${esc(exam)}</b><span>hasta el examen</span></div></div>
-  ${vMotiva()}
-  <div class="grid"><div class="card"><h3>Esta semana <a href="#planning" style="font-size:14px;color:var(--acc)">ver planning</a></h3>${sem.length?`<div class="list">${sem.map(rowTema).join('')}</div>`:'<p class="empty">No hay temas asignados a esta semana.</p>'}</div><div class="card"><h3>Lo siguiente</h3>${prox.length?`<div class="list">${prox.map(rowTema).join('')}</div>`:'<p class="empty">Nada pendiente.</p>'}</div></div>`;
-}
-function vMotiva(){const r=racha(),L=logros(),got=L.filter(x=>x[2]).length,hoy=bloquesDia(hoyIdx()).filter(b=>b.tipo!=='vida');
-  return `<div class="grid" style="margin-bottom:16px"><div class="card"><h3>Hoy, ${esc(DIAS[hoyIdx()].toLowerCase())}</h3><div class="tline">${hoy.map(b=>blockRow(b,true)).join('')||'<p class="empty">Día libre</p>'}</div></div>
-  <div class="card"><div class="streak"><span class="fire">${r}</span><div><b>${r===1?'día':'días'} seguidos estudiando</b><small>${r?'¡No rompas la racha!':'Estudia hoy para empezar tu racha'}</small></div></div>${heat()}<p class="sub" style="margin:6px 0 14px">Últimas 12 semanas</p>
-  <h3>Logros · ${got}/${L.length}</h3><div class="badges">${L.map(x=>`<span class="${x[2]?'on':''}" title="${esc(x[1])}"><b>${esc(x[0])}</b><small>${esc(x[1])}</small></span>`).join('')}</div></div></div>`}
+  const r=racha(),L=logros(),got=L.filter(x=>x[2]).length;
+  return `<div class="hero"><div class="ring"><svg viewBox="0 0 240 240" role="img" aria-label="Temario estudiado ${pct}%"><circle cx="120" cy="120" r="104" fill="none" stroke="var(--line)" stroke-width="22"/><circle cx="120" cy="120" r="104" fill="none" stroke="var(--acc)" stroke-width="22" stroke-linecap="round" stroke-dasharray="${R}" stroke-dashoffset="${off}" transform="rotate(-90 120 120)"/></svg><div class="c"><b>${pct}%</b><span>${est} de ${tot} temas</span></div></div>
+  <div><h2>Tu progreso</h2><div class="bars">${blq.map(x=>`<div class="bar"><div class="lab"><span>Bloque ${x.b}</span><span>${x.e}/${x.n}</span></div><div class="tr"><i style="width:${x.n?x.e/x.n*100:0}%;background:${BL[x.b].c}"></i></div></div>`).join('')}</div></div></div>
+  <div class="grid" style="margin-bottom:16px"><div class="card"><div class="streak"><span class="fire">${r}</span><div><b>${r===1?'día':'días'} seguidos estudiando</b><small>${r?'¡No rompas la racha!':'Estudia hoy para empezar tu racha'}</small></div></div>${heat()}<p class="sub" style="margin:6px 0 0">Últimas 12 semanas</p></div>
+  <div class="card"><h3>Logros · ${got}/${L.length}</h3><div class="badges">${L.map(x=>`<span class="${x[2]?'on':''}" title="${esc(x[1])}"><b>${esc(x[0])}</b><small>${esc(x[1])}</small></span>`).join('')}</div></div></div>`}
 function bestTest(tid){const r=S.res.filter(x=>x.tema===tid);return r.length?Math.max(...r.map(nota)):null}
 function cardPct(tid){const cs=S.cards[tid]||[];const p=S.piles[tid]||{};const s=cs.filter(c=>p[c.id]===3).length;return cs.length?{n:cs.length,s}:null}
 function rowTema(t){const b=BL[t.bloque]||BL.I;const cp=cardPct(t.id),bt=bestTest(t.id),nq=bank(t.id).length;
@@ -183,18 +199,19 @@ function vPlan(){
   const wk=w=>{const isNow=w===cur,isPast=w.lunes<lun&&!isNow;const f=fases.find(x=>x.id===w.fase)||(w.fase==='rep'?{corto:'Repaso',color:'#64748b'}:{});const end=new Date(w.lunes+'T12:00:00');end.setDate(end.getDate()+6);
     return `<div class="week${isNow?' now':''}${isPast?' past':''}"><div class="d">${esc(fmtD(w.lunes))}<small>al ${esc(end.toLocaleDateString('es-ES',{day:'numeric',month:'short'}))}${isNow?' · esta semana':''}</small></div><div><h4>${esc(w.titulo)}${f.nombre?`<span class="ph" style="background:${f.color||'#64748b'}">${esc(f.corto||f.nombre)}</span>`:''}</h4><ul class="tasks">${(w.tareas||[]).map((t,i)=>{const k=w.lunes+'-'+i;return `<li><label><input type="checkbox" data-task="${esc(k)}"${done[k]?' checked':''}><span class="${done[k]?'ok':''}">${rich(t)}</span></label></li>`}).join('')}</ul></div></div>`};
   const byMonth={};sem.forEach(w=>{const m=new Date(w.lunes+'T12:00:00').toLocaleDateString('es-ES',{month:'long',year:'numeric'}).replace(' de ',' ');(byMonth[m]=byMonth[m]||[]).push(w)});
-  return `<h2>Planning</h2><p class="sub">Tu horario de cada día y el plan semana a semana hasta el examen.</p>${vHorario()}
+  return `<h2>Planning</h2>${vHorario()}
   <div class="phases">${fases.map(f=>`<div style="background:${f.color}">${esc(f.nombre)}<small>${esc(f.cuando)}</small></div>`).join('')}</div>
   ${cur?`<h3>Esta semana</h3>${wk(cur)}`:''}
-  <h3 style="margin-top:24px">Cada día (2 horas)</h3><div class="routine">${(P.rutina||[]).map(r=>`<div><b>${esc(r.t)}</b>${esc(r.d)}</div>`).join('')}</div>
-  ${Object.entries(byMonth).map(([m,ws])=>`<div class="month">${esc(m)}</div>${ws.map(wk).join('')}`).join('')}`;
+  <h3 style="margin-top:24px">Cómo estudiar cada día</h3><div class="routine">${(P.rutina||[]).map(r=>`<div><b>${esc(r.t)}</b>${esc(r.d)}</div>`).join('')}</div>
+  <h3 style="margin-top:28px">Todas las semanas</h3><p class="sub">Toca un mes para verlo.</p>
+  ${Object.entries(byMonth).map(([m,ws])=>`<details class="mes"><summary>${esc(m)} <small>${ws.length} semanas</small></summary>${ws.map(wk).join('')}</details>`).join('')}`;
 }
 
 /* ---------- resultados ---------- */
 function vResultados(){
-  if(!S.res.length)return '<p class="empty">Cuando hagas tests, tus notas aparecerán aquí.</p>';
+  if(!S.res.length)return vProgreso()+'<p class="empty">Cuando hagas tests, tus notas aparecerán aquí.</p>';
   const rs=S.res.slice().sort((a,b)=>(a.fecha||'').localeCompare(b.fecha||''));
-  return `<h2>Tus resultados</h2><p class="sub">Nota sobre 10 de cada test, con la penalización del examen.</p><div class="card"><div class="fig" id="chart"><svg id="chs"></svg></div></div>
+  return vProgreso()+`<h2>Tus notas</h2><p class="sub">Nota sobre 10 de cada test, con la penalización del examen.</p><div class="card"><div class="fig" id="chart"><svg id="chs"></svg></div></div>
   <div class="scroll" style="margin-top:20px"><table class="stack"><thead><tr><th>Fecha</th><th>Test</th><th class="n">Aciertos</th><th class="n">Fallos</th><th class="n">Blanco</th><th class="n">Nota</th></tr></thead><tbody>${rs.slice().reverse().map(r=>`<tr><td>${esc(fmtD((r.fecha||'').slice(0,10)))}</td><td>${esc(r.titulo)}</td><td class="n">${r.aciertos}</td><td class="n">${r.fallos}</td><td class="n">${r.blanco||0}</td><td class="n"><b>${n1(nota(r))}</b></td></tr>`).join('')}</tbody></table></div>`}
 function drawChart(){const s=$('#chs');if(!s)return;const W=s.clientWidth,H=s.clientHeight;const rs=S.res.slice().sort((a,b)=>(a.fecha||'').localeCompare(b.fecha||''));if(!W||!rs.length)return;
   const L=40,R=34,T=24,B=34,iw=W-L-R,ih=H-T-B;const x=i=>L+(rs.length===1?iw/2:i*iw/(rs.length-1)),y=v=>T+ih-(v/10)*ih;
@@ -208,8 +225,13 @@ const chartRO=new ResizeObserver(drawChart);
 /* ---------- render ---------- */
 const V={inicio:vInicio,planning:vPlan,temario:vTemario,tarjetas:vTarjetas,tests:vTests,juegos:vJuegos,resultados:vResultados};
 function view(){const h=location.hash.slice(1);return V[h]?h:'inicio'}
+function vLogin(){return `<div class="login"><div class="lg-ico">📚</div><h2>Tu agenda para la oposición TAI</h2><p class="sub">Tarjetas para memorizar, tests con trampa, tu horario y tu progreso. Todo en un sitio, en el móvil y en el ordenador.</p>
+  <button class="btn big" data-act="login"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar con Google</button>
+  <p class="fine">Cada persona tiene su propio progreso y su horario. Solo tú puedes verlos.</p></div>`}
 function busy(){return (ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
 function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estados||{})[t.id]||'pendiente'}));const v=view();acct();document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+  const gate=!!window.FIREBASE_CONFIG&&!S.user;document.body.classList.toggle('out',gate);
+  if(gate){$('#app').innerHTML=S.authReady?vLogin():'<p class="empty">Cargando…</p>';return}
   if(!S.ready){$('#app').innerHTML='<p class="empty">Cargando tu agenda…</p>';return}
   $('#app').innerHTML=V[v]();const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
 addEventListener('hashchange',()=>{scrollTo(0,0);render()});
@@ -246,7 +268,11 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='goTest'){ui.scope=el.dataset.id;const qs=shuffle(bank(ui.scope));const t=S.temas.find(x=>x.id===ui.scope);startRun('Práctica · Tema '+(t?t.codigo:''),ui.scope,qs.slice(0,10),'practica-'+ui.scope)}
   else if(a==='pedir'){const id=el.dataset.id;if(!fs||!uid){flash('Entra con Google (arriba a la derecha) para pedir tarjetas');return}
     el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
-  else if(a==='logout'){auth&&auth.signOut()}
+  else if(a==='logout'){auth&&auth.signOut().then(()=>location.reload())}
+  else if(a==='hedit'){ui.hedit=!ui.hedit;render()}
+  else if(a==='hplant'){plantilla();render()}
+  else if(a==='hdel'){const i=ui.hdia==null?hoyIdx():ui.hdia;const bl=bloquesDia(i).slice();bl.splice(+el.dataset.i,1);setDia(i,bl);render()}
+  else if(a==='hcopy'){const src=bloquesDia(+el.dataset.i);for(let k=0;k<5;k++)if(k!==+el.dataset.i)setDia(k,src.map(b=>Object.assign({},b)));flash('Copiado a lunes–viernes');render()}
   else if(a==='tstart'){const t=S.tests.find(x=>x.id===el.dataset.id);if(t&&(t.preguntas||[]).length){ui.test={t:Object.assign({},t,{preguntas:t.preguntas.map(q=>Object.assign({tema:t.tema},q))}),i:0,ans:{},shown:{}};render();scrollTo(0,0)}}
   else if(a==='merr'){startRun('Mis errores','',shuffle(errList()),'errores')}
   else if(a==='mtip'){startRun('Típicas de examen','',shuffle(bank().filter(q=>q.tipico)).slice(0,30),'tipicas')}
@@ -265,29 +291,31 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     if(right){G.ok++;G.fb='<b>¡Bien!</b>'}else{G.ko++;G.end-=5000;G.miss.push(c.q);G.fb='<b>No.</b> La buena es: '+rich(c.q.opts[c.q.c])}
     const fb=G.fb;vfNext();G.fb=fb;render()}
 });
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-hform]');if(!f)return;e.preventDefault();const i=+f.dataset.hform;const b={h:f.h.value,f:f.f.value,t:f.t.value.trim().slice(0,40),tipo:HT[f.tipo.value]?f.tipo.value:'libre'};if(!b.h||!b.t)return;setDia(i,bloquesDia(i).concat([b]));render()});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
 document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.task){const k=e.target.dataset.task;const h=Object.assign({},(S.planHecho||{}).h||{});if(e.target.checked){h[k]=true;logAct(1)}else delete h[k];S.planHecho={h};kvSet('planHecho');render();return}const id=e.target.id;if(id==='mazo'){ui.mazo=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='filtro'){ui.filtro=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='scope'){ui.scope=e.target.value;render()}});
 
 /* ---------- datos ---------- */
 const getJ=u=>fetch(u,{cache:'no-cache'}).then(r=>r.ok?r.json():null).catch(()=>null);
-function acct(){const el=$('#acct');if(!el)return;if(!window.FIREBASE_CONFIG){el.innerHTML='';return}el.innerHTML=uid?`<button class="btn ghost" data-act="logout" style="min-height:36px;padding:6px 12px">Salir</button>`:`<button class="btn" data-act="login" style="min-height:36px;padding:6px 12px">Entrar con Google</button>`}
+function acct(){const el=$('#acct');if(!el)return;el.innerHTML=S.user?`${S.user.photoURL?`<img class="av" src="${esc(S.user.photoURL)}" alt="" referrerpolicy="no-referrer">`:''}<button class="mini ghost" data-act="logout">Salir</button>`:''}
 async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvider();try{await auth.signInWithPopup(p)}catch(e){try{await auth.signInWithRedirect(p)}catch(e2){flash('No se pudo iniciar sesión')}}}
-async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){KEYS.forEach(k=>kvSet(k));flash('Progreso subido a la nube');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
+async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
   render();
-  const [idx,plan,tests,seed,hor]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json'),getJ('data/progreso-inicial.json'),getJ('data/horario.json')]);S.horario=hor||{};
+  const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];
   await Promise.all(S.temasBase.map(async t=>{const [c,p]=await Promise.all([t.tarjetas?getJ(`data/temas/${t.id}.cards.json`):null,t.preguntas?getJ(`data/temas/${t.id}.preguntas.json`):null]);if(c&&c.cards)S.cards[t.id]=c.cards;if(p&&p.preguntas)S.preg[t.id]=p.preguntas}));
-  let any=false;KEYS.forEach(k=>{const v=lsGet(k);if(v!=null){any=true;applyKV(k,v)}});
-  if(!any&&seed){KEYS.forEach(k=>{if(seed[k]!=null){applyKV(k,seed[k]);lsSet(k,seed[k])}})}
-  S.ready=true;flash(window.FIREBASE_CONFIG?'Entra con Google para sincronizar':'Guardado en este dispositivo');render();
+  if(!window.FIREBASE_CONFIG){KEYS.forEach(k=>{const v=lsGet(k);if(v!=null)applyKV(k,v)})}
+  S.ready=true;render();
   if(window.FIREBASE_CONFIG){try{
     const V='10.12.2';await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-app-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-auth-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore-compat.js`);
     firebase.initializeApp(window.FIREBASE_CONFIG);auth=firebase.auth();fs=firebase.firestore();
     fs.collection('pedidos').get().then(q=>{const p={};q.forEach(d=>{const x=d.data();if(x&&x.t)p[d.id]=x.t});S.pedidos=p;if(!busy())render()}).catch(()=>{});
-    auth.onAuthStateChanged(async u=>{uid=u?u.uid:null;if(uid){try{await loadRemote()}catch(e){flash('No se pudo leer de la nube')}}else flash('Entra con Google para sincronizar');if(!busy())render();else acct()});
-  }catch(e){flash('No se pudo cargar Firebase')}}
+    auth.onAuthStateChanged(async u=>{S.authReady=true;uid=u?u.uid:null;S.user=u?{displayName:u.displayName,photoURL:u.photoURL}:null;resetUser();
+      if(uid){LS='agendaTAI:'+uid+':';KEYS.forEach(k=>{const v=lsGet(k);if(v!=null)applyKV(k,v)});render();try{await loadRemote()}catch(e){flash('No se pudo leer de la nube')}}
+      render()});
+  }catch(e){S.authReady=true;$('#app').innerHTML='<p class="empty">No se pudo conectar. Revisa tu conexión y recarga la página.</p>'}}
 })();
 }

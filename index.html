@@ -158,20 +158,55 @@ td.n,th.n{text-align:right;white-space:nowrap}
 .note{font-size:13px;color:var(--muted);margin-top:28px}
 @media(max-width:600px){table{font-size:13px}.stack thead{display:none}.stack tr{display:grid;padding-block:10px}.stack td{display:flow-root;border:0;padding:3px 0;padding-inline-start:8em;text-align:start}.stack td::before{content:attr(data-l);float:inline-start;width:7.5em;margin-inline-start:-8em;white-space:normal;color:var(--muted)}.stack td:empty{display:none}}
 @media(prefers-reduced-motion:reduce){.fc,.bar .tr i{transition:none}}
+
+nav a i{font-style:normal;margin-right:6px}
+body.out nav,body.out #sync{display:none}
+.login{max-width:440px;margin:8vh auto 0;text-align:center;padding:0 8px}.login .lg-ico{font-size:56px}.login h2{font-size:28px;margin:8px 0}.login .sub{font-size:17px}
+.btn.big{min-height:56px;padding:12px 26px;font-size:18px;display:inline-flex;gap:12px;align-items:center;margin:18px 0 10px;background:#fff;color:#1f1f1f;border:1px solid var(--line);box-shadow:0 2px 10px rgb(0 0 0 / .12)}
+.fine{font-size:14px;color:var(--muted)}
+.av{width:32px;height:32px;border-radius:50%;vertical-align:middle;margin-right:8px}
+.hola{font-size:26px;margin:4px 0 14px}
+.go{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
+.gob{display:flex;align-items:center;gap:12px;padding:16px;border-radius:16px;background:var(--acc);color:#fff;text-decoration:none;min-height:64px;font-size:17px}.gob span{font-size:26px}.gob:nth-child(2){background:#0d9488}.gob:nth-child(3){background:#ea580c}
+.more{display:inline-block;margin-top:10px;color:var(--acc);font-weight:800;text-decoration:none;padding:6px 0}
+.hcard{margin-bottom:24px}.hcard h3{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.blk-h .x{border:0;background:transparent;color:var(--muted);font-size:18px;min-width:40px;min-height:40px;border-radius:10px;cursor:pointer}.blk-h .x:hover{background:var(--line)}
+.hform{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:14px 0;align-items:end}.hform label{display:grid;gap:4px;font-size:13px;font-weight:800;color:var(--muted)}.hform .w{grid-column:1/-1}
+.hform input,.hform select{min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 10px;font:inherit;font-size:16px}
+details.mes{border:1px solid var(--line);border-radius:14px;margin:10px 0;background:var(--panel)}details.mes>summary{cursor:pointer;padding:14px 16px;font-weight:900;font-size:17px;text-transform:capitalize;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:52px}details.mes>summary::after{content:'▾';color:var(--muted)}details.mes[open]>summary::after{content:'▴'}details.mes>summary small{margin-left:auto;margin-right:10px;color:var(--muted);font-weight:700;text-transform:none}details.mes .week{margin:0 10px 10px}
+.blk-h .x{grid-column:3;grid-row:1}
+@media(max-width:700px){
+  .dtabs{flex-wrap:nowrap;gap:4px}.dtabs button{flex:1;padding:8px 0;font-size:14px}
+  .phases{display:none}
+  .row{flex-wrap:wrap}.row .t{min-width:0;flex:1 1 60%}.row .pill{order:3;margin-left:auto}
+  body{font-size:17px;padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+  .top{padding:10px 16px}.top h1{font-size:18px}.top .sync{display:none}#acct{margin-left:auto}
+  nav{position:fixed;bottom:0;left:0;right:0;z-index:20;background:var(--panel);border-top:1px solid var(--line);padding:4px 2px calc(4px + env(safe-area-inset-bottom));gap:0;justify-content:space-around;overflow:visible;box-shadow:0 -4px 16px rgb(0 0 0 / .06)}
+  nav a{flex:1;flex-direction:column;gap:2px;padding:6px 0;border-radius:10px;min-height:56px;justify-content:center;font-size:11px;font-weight:800}
+  nav a i{margin:0;font-size:21px;line-height:1}
+  nav a.on{box-shadow:none;background:color-mix(in srgb,var(--acc) 12%,transparent);color:var(--acc)}
+  main{padding-top:12px!important}
+  .card{padding:16px!important;border-radius:16px}
+  .kpis{grid-template-columns:repeat(3,1fr)!important;gap:8px!important}.kpi{padding:12px 8px!important;text-align:center}.kpi b{font-size:22px!important}.kpi span{font-size:13px!important}
+  .go{grid-template-columns:1fr}
+  .hero{grid-template-columns:1fr!important;justify-items:center}.ring{width:180px!important;height:180px!important}
+  h2{font-size:24px}
+  .row{padding:14px!important}.acts .mini{min-height:42px;padding:8px 14px;font-size:14px}
+}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
 <body>
 <header>
   <div class="top"><h1>Mi agenda TAI</h1><span class="sync" id="sync">Cargando…</span><span id="acct"></span></div>
-  <nav id="nav">
-    <a href="#inicio" data-v="inicio">Inicio</a>
-    <a href="#planning" data-v="planning">Planning</a>
-    <a href="#temario" data-v="temario">Temario</a>
-    <a href="#tarjetas" data-v="tarjetas">Tarjetas</a>
-    <a href="#tests" data-v="tests">Tests</a>
-    <a href="#juegos" data-v="juegos">Juegos</a>
-    <a href="#resultados" data-v="resultados">Resultados</a>
+  <nav id="nav" aria-label="Secciones">
+    <a href="#inicio" data-v="inicio"><i aria-hidden="true">🏠</i><span>Inicio</span></a>
+    <a href="#planning" data-v="planning"><i aria-hidden="true">🗓️</i><span>Plan</span></a>
+    <a href="#temario" data-v="temario"><i aria-hidden="true">📚</i><span>Temas</span></a>
+    <a href="#tarjetas" data-v="tarjetas"><i aria-hidden="true">🃏</i><span>Tarjetas</span></a>
+    <a href="#tests" data-v="tests"><i aria-hidden="true">📝</i><span>Tests</span></a>
+    <a href="#juegos" data-v="juegos"><i aria-hidden="true">🎮</i><span>Juegos</span></a>
+    <a href="#resultados" data-v="resultados"><i aria-hidden="true">📈</i><span>Progreso</span></a>
   </nav>
 </header>
 <main id="app"><p class="empty">Cargando tu agenda…</p></main>
