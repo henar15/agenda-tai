@@ -3263,3 +3263,61 @@ body.focus {
 .rit-keys .ko {
   background: color-mix(in srgb, var(--bad) 12%, transparent);
 }
+
+/* Botones secundarios visibles también dentro de tarjetas y en modo oscuro */
+.btn.ghost {
+  background: transparent;
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--ink) 28%, transparent);
+}
+.btn.ghost:hover {
+  box-shadow: inset 0 0 0 2px var(--acc);
+}
+
+/* A tu ritmo: portada */
+.rit-home {
+  margin-top: 12px;
+  display: grid;
+  gap: 16px;
+}
+.rit-home > * {
+  margin: 0;
+}
+.rit-home .kpis {
+  margin: 0;
+}
+.rit-home .acts {
+  flex-wrap: wrap;
+}
+.rit-home .fine,
+.rit-hero .fine {
+  margin: 0;
+}
+.rit-home details summary {
+  cursor: pointer;
+}
+.rit-home details ul {
+  margin: 12px 0 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+}
+.costo {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+  display: grid;
+  gap: 8px;
+}
+.costo li {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: var(--bg);
+}
+.costo small {
+  color: var(--muted);
+  white-space: nowrap;
+}

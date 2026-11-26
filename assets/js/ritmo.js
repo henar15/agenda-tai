@@ -358,25 +358,26 @@ function vRitmoInicio() {
     .slice(0, 5)
     .map(([id, it]) => {
       const c = memFind(id, it.k, it.t);
+      const t = S.temas.find((z) => z.id === it.t);
       return c
-        ? `<li>${esc(plain(c.q || '').slice(0, 90))} <small>· ${esc(temaName(it.t))}</small></li>`
+        ? `<li><span class="tag" style="background:${(BL[(t || {}).bloque] || BL.I).c}">${esc(t ? t.codigo : it.t)}</span><span>${esc(plain(c.q || '').slice(0, 110))}</span><small>${it.x + it.hc} ${it.x + it.hc === 1 ? 'fallo' : 'fallos'}</small></li>`
         : '';
     })
     .join('');
-  return `<p class="sub">Te pregunto lo que estás a punto de olvidar. En las tarjetas <b>escribes tu respuesta</b> y la corrijo yo: así no hay trampa. Lo que fallas vuelve hasta que lo aciertas y, de vez en cuando, te rescato algo que te costó.</p>
+  return `<div class="rit-home"><p class="sub">Te pregunto lo que estás a punto de olvidar. En las tarjetas <b>escribes tu respuesta</b> y la corrijo yo: así no hay trampa. Lo que fallas vuelve hasta que lo aciertas y, de vez en cuando, te rescato algo que te costó.</p>
   <div class="card rit-hero"><div class="rit-big"><b>${due}</b><span>${due === 1 ? 'concepto toca' : 'conceptos tocan'} hoy</span></div>
   <div class="acts"><button class="btn" data-act="ritgo" data-n="10">Sesión corta (10)</button><button class="btn" data-act="ritgo" data-n="20">Normal (20)</button><button class="btn ghost" data-act="ritgo" data-n="40">Larga (40)</button></div>
   <p class="fine">Si no hay suficientes repasos, añado tarjetas nuevas de los temas que estás estudiando.</p></div>
   <div class="kpis"><div class="kpi"><b>${lista.length}</b><span>conceptos en tu memoria</span></div><div class="kpi"><b>${firmes}</b><span>bien asentados (3+ semanas)</span></div><div class="kpi"><b>${peligro}</b><span>a punto de olvidarse</span></div></div>
   ${vCalib()}
-  ${dificiles ? `<div class="card"><h3>🧗 Lo que más te ha costado</h3><ul class="dlist2">${dificiles}</ul><p class="fine">Estos vuelven a salir de vez en cuando aunque ya los sepas.</p></div>` : ''}
+  ${dificiles ? `<div class="card"><h3>🧗 Lo que más te ha costado</h3><ul class="costo">${dificiles}</ul><p class="fine">Estos vuelven a salir de vez en cuando aunque ya los sepas.</p></div>` : ''}
   <details class="card"><summary><b>¿Cómo funciona?</b></summary><ul class="fine">
   <li><b>Repaso espaciado:</b> cada concepto vuelve justo antes de que lo olvides; cuanto mejor lo sabes, más tarda en volver.</li>
   <li><b>Corrección automática:</b> en las tarjetas escribes lo que crees. Compruebo si están las <b>ideas clave</b> (lo que va en negrita), aunque lo digas con otras palabras o con alguna falta. Los números y artículos tienen que estar exactos.</li>
   <li><b>Tu seguridad, sin preguntarte:</b> la mido por lo rápido que respondes comparado con lo normal en ti. Acertar rápido = lo sabes; acertar tras pensarlo mucho = vuelve antes.</li>
   <li><b>Errores «seguros»:</b> si fallas algo respondiendo rápido, es que creías saberlo. Te lo destaco y te lo vuelvo a poner mañana: está estudiado que esos errores se corrigen muy bien si se repasan.</li>
   <li><b>Hasta acertarlo:</b> lo que fallas (o aciertas a medias) vuelve a salir en la misma sesión.</li>
-  <li><b>Rescate:</b> lo que te costó aprender reaparece de vez en cuando.</li></ul></details>`;
+  <li><b>Rescate:</b> lo que te costó aprender reaparece de vez en cuando.</li></ul></details></div>`;
 }
 
 function vRitmoSesion() {
