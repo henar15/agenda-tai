@@ -17,14 +17,14 @@ const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;re
 let LS='agendaTAI:anon:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos','lectura','diario'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v}
+function kvVal(k){return {lectura:S.lectura,diario:S.diario,recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v;else if(k==='lectura')S.lectura=v;else if(k==='diario')S.diario=v}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
 function flash(t){const e=$('#sync');if(e)e.textContent=t}
-function resetUser(){Object.assign(S,{recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
+function resetUser(){Object.assign(S,{lectura:{},diario:{},recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
 const temaName=id=>{const t=S.temas.find(x=>x.id===id);return t?t.codigo+' '+t.titulo:id};
 const temaBl=id=>{const t=S.temas.find(x=>x.id===id);return BL[(t&&t.bloque)||'I']};
 
@@ -149,6 +149,35 @@ function celebrar(){if(!S.user||!S.ready||document.querySelector('.modal'))retur
   const close=()=>{m.remove();prev&&prev.focus&&prev.focus()};m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]'))close()});m.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Tab'){e.preventDefault();if(e.key==='Escape')close()}});
   document.body.appendChild(m);m.querySelector('button').focus()}
 
+/* ---------- plan diario ---------- */
+const addD=(d,n)=>{const x=new Date(d);x.setDate(x.getDate()+n);return x};
+function esDiaEstudio(d){const i=(d.getDay()+6)%7;if((((S.config||{}).descanso)||[]).includes(i))return false;if(hayHorario())return bloquesDia(i).some(b=>b.tipo==='estudio'||b.tipo==='repaso');return i<6}
+function diasEstudioHasta(desde,hasta){let n=0;for(let d=new Date(desde);dkey(d)<=dkey(hasta);d=addD(d,1))if(esDiaEstudio(d))n++;return n}
+function temasEnCurso(ref){const lun=(()=>{const d=new Date(ref);d.setDate(d.getDate()-((d.getDay()+6)%7));return dkey(d)})();return S.temas.filter(t=>t.semana&&t.semana<=lun&&t.estado!=='estudiado').sort((a,b)=>a.semana.localeCompare(b.semana)||ordT(a,b))}
+function planDia(ref,sim){ // sim: avances supuestos (para mañana)
+  sim=sim||{lect:{},cards:{}};const out=[];const day=new Date(ref);if(!esDiaEstudio(day))return {descanso:true,tareas:[]};
+  const fin=addD(day,6-((day.getDay()+6)%7));const dl=Math.max(1,diasEstudioHasta(day,fin));
+  const ts=temasEnCurso(day);
+  ts.forEach(t=>{const atras=t.semana<monday();const dias=atras?Math.max(1,Math.min(dl,2)):dl;
+    if(t.pags){const ini=t.pagIni||1;const leida=Math.max(ini-1,(sim.lect[t.id]!=null?sim.lect[t.id]:((S.lectura||{})[t.id]||ini-1)));const rest=t.pags-leida;if(rest>0){const n=Math.ceil(rest/dias);const a=leida+1,b=Math.min(t.pags,leida+n);out.push({k:'l-'+t.id+'-'+b,tipo:'lect',tema:t.id,a,b,txt:`📖 Lee y subraya las págs. ${a}–${b} del tema ${t.codigo}`,sub:`${b-a+1} páginas · te quedan ${rest} del tema`+(atras?' · atrasado':'')})}}
+    const cs=S.cards[t.id]||[];const p=S.piles[t.id]||{};const nuevas=cs.filter(c=>!p[c.id]).length-(sim.cards[t.id]||0);if(nuevas>0){const n=Math.min(40,Math.ceil(nuevas/dias));out.push({k:'c-'+t.id+'-'+dkey(day),tipo:'cards',tema:t.id,n,txt:`🃏 Aprende ${n} tarjetas nuevas del tema ${t.codigo}`,sub:`quedan ${nuevas} sin estudiar`,go:'cards'})}
+    else if(!cs.length&&!(S.pedidos||{})[t.id])out.push({k:'p-'+t.id,tipo:'pedir',tema:t.id,txt:`✨ Pide las tarjetas del tema ${t.codigo}`,sub:'Botón «Generar tarjetas» en Temas',go:'temas'})});
+  let dudas=0;Object.entries(S.piles).forEach(([tm,pp])=>Object.values(pp).forEach(v=>{if(v===1||v===2)dudas++}));
+  if(dudas)out.push({k:'r-'+dkey(day),tipo:'rep',n:Math.min(25,dudas),txt:`🔁 Repasa ${Math.min(25,dudas)} tarjetas de «Dudo» y «No me la sé»`,sub:`tienes ${dudas} en esos montones`,go:'repaso'});
+  const ne=errList().length;if(ne)out.push({k:'e-'+dkey(day),tipo:'err',txt:`❌ Haz «Mis errores» (${ne})`,sub:'hasta acertarlas dos veces seguidas',go:'errores'});
+  const ultimo=diasEstudioHasta(addD(day,1),fin)===0;const t0=ts[0];
+  if(ultimo&&t0)out.push({k:'t-'+dkey(day),tipo:'test',txt:`📝 Test de la semana: tema ${t0.codigo}`,sub:'10–20 preguntas para ver qué tal lo llevas',go:'test',tema:t0.id});
+  else if((day.getDay()+6)%7===5)out.push({k:'s-'+dkey(day),tipo:'sim',txt:'🎯 Simulacro corto de lo estudiado',sub:'20 preguntas de los temas que ya tienes',go:'sim'});
+  return {tareas:out,dl}}
+function ritmo(){const objetivo=new Date(((S.config||{}).examen)||'2027-05-15');const hoy=new Date();const dias=diasEstudioHasta(hoy,objetivo);let pag=0;S.temas.forEach(t=>{if(t.estado!=='estudiado'&&t.pags)pag+=t.pags-Math.max(0,((S.lectura||{})[t.id]||(t.pagIni||1)-1))});return {dias,pag,pd:dias?Math.ceil(pag/dias):pag}}
+function vHoyPlan(compact){const hoy=new Date(),man=addD(hoy,1);const H=planDia(hoy);const done=((S.diario||{})[today()])||{};
+  const sim={lect:{},cards:{}};(H.tareas||[]).forEach(t=>{if(t.tipo==='lect')sim.lect[t.tema]=t.b;if(t.tipo==='cards')sim.cards[t.tema]=(sim.cards[t.tema]||0)+t.n});const M=planDia(man,sim);
+  const li=(t,chk)=>`<li class="dt${chk&&done[t.k]?' ok':''}">${chk?`<label><input type="checkbox" data-dk="${esc(t.k)}"${done[t.k]?' checked':''}><span><b>${esc(t.txt)}</b><small>${esc(t.sub||'')}</small></span></label>${t.go?`<button class="mini" data-act="dgo" data-go="${t.go}" data-t="${esc(t.tema||'')}">Ir</button>`:''}`:`<span><b>${esc(t.txt)}</b><small>${esc(t.sub||'')}</small></span>`}</li>`;
+  const hech=(H.tareas||[]).filter(t=>done[t.k]).length,tot=(H.tareas||[]).length;const R2=ritmo();
+  return `<div class="card hoyplan"><h3>Hoy toca ${tot?`<small>${hech}/${tot} hechas</small>`:''}</h3>${H.descanso?'<p class="empty">Hoy es día de descanso 😴</p>':tot?`<ul class="dlist">${H.tareas.map(t=>li(t,true)).join('')}</ul>`:'<p class="empty">¡Nada pendiente! Si te apetece, repasa tarjetas o haz un test.</p>'}
+  ${compact?'':`<h3 style="margin-top:18px">Mañana</h3>${M.descanso?'<p class="fine">Mañana descansas 😴</p>':`<ul class="dlist">${(M.tareas||[]).map(t=>li(t,false)).join('')||'<li class="fine">Nada todavía</li>'}</ul>`}`}
+  <p class="fine" style="margin-top:12px">🎯 Para tenerlo todo leído para mayo: <b>${R2.pd} páginas al día</b> (${R2.pag} páginas en ${R2.dias} días de estudio). Lo que no hagas hoy se reparte en los próximos días.</p></div>`}
+
 /* ---------- horario ---------- */
 const DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 const hoyIdx=()=>(new Date().getDay()+6)%7;
@@ -186,7 +215,7 @@ function vInicio(){
   const hoy=bloquesDia(hoyIdx());const cur=hoy.find(b=>mins(b.h)<=now&&now<mins(!b.f||b.f==='00:00'?'23:59':b.f));const next=hoy.filter(b=>mins(b.h)>now).slice(0,2);
   const nombre=(S.user&&S.user.displayName||'').split(' ')[0];
   const hoyHtml=hayHorario()?`<div class="tline">${(cur?[cur]:[]).concat(next).map(b=>blockRow(b,true)).join('')||'<p class="empty">No te queda nada más hoy. ¡A descansar!</p>'}</div><a class="more" href="#planning">Ver el día completo</a>`:`<p class="sub" style="margin:0 0 8px">Crea tu horario y aquí verás qué te toca en cada momento.</p><a class="btn ghost" href="#planning">Crear mi horario</a>`;
-  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>${vMascota()}
+  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>${vMascota()}${vHoyPlan(true)}
   <div class="card"><h3>Ahora</h3>${hoyHtml}</div>
   <div class="go"><a class="gob" href="#tarjetas"><span>🃏</span><b>Repasar tarjetas</b></a><a class="gob" href="#tests"><span>📝</span><b>Hacer un test</b></a>${ne?`<a class="gob" href="#tests"><span>🔁</span><b>Mis errores (${ne})</b></a>`:''}</div>
   <div class="kpis"><div class="kpi"><b>🏅 ${logros().filter(x=>x.ok).length}</b><span>logros</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media</span></div></div>
@@ -373,7 +402,7 @@ function vPlan(){
   const wk=w=>{const isNow=w===cur,isPast=w.lunes<lun&&!isNow;const f=fases.find(x=>x.id===w.fase)||(w.fase==='rep'?{corto:'Repaso',color:'#64748b'}:{});const end=new Date(w.lunes+'T12:00:00');end.setDate(end.getDate()+6);
     return `<div class="week${isNow?' now':''}${isPast?' past':''}"><div class="d">${esc(fmtD(w.lunes))}<small>al ${esc(end.toLocaleDateString('es-ES',{day:'numeric',month:'short'}))}${isNow?' · esta semana':''}</small></div><div><h4>${esc(w.titulo)}${f.nombre?`<span class="ph" style="background:${f.color||'#64748b'}">${esc(f.corto||f.nombre)}</span>`:''}</h4><ul class="tasks">${(w.tareas||[]).map((t,i)=>{const k=w.lunes+'-'+i;return `<li><label><input type="checkbox" data-task="${esc(k)}"${done[k]?' checked':''}><span class="${done[k]?'ok':''}">${rich(t)}</span></label></li>`}).join('')}</ul></div></div>`};
   const byMonth={};sem.forEach(w=>{const m=new Date(w.lunes+'T12:00:00').toLocaleDateString('es-ES',{month:'long',year:'numeric'}).replace(' de ',' ');(byMonth[m]=byMonth[m]||[]).push(w)});
-  return `<h2>Planning</h2>${vHorario()}
+  return `<h2>Planning</h2>${vHoyPlan(false)}${vHorario()}
   <div class="phases">${fases.map(f=>`<div style="background:${f.color}">${esc(f.nombre)}<small>${esc(f.cuando)}</small></div>`).join('')}</div>
   ${cur?`<h3>Esta semana</h3>${wk(cur)}`:''}
   <h3 style="margin-top:24px">Cómo estudiar cada día</h3><div class="routine">${(P.rutina||[]).map(r=>`<div><b>${esc(r.t)}</b>${esc(r.d)}</div>`).join('')}</div>
@@ -465,6 +494,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
   else if(a==='logout'){auth&&auth.signOut().then(()=>location.reload())}
   else if(a==='xcfg'){const k=el.dataset.k;const e=S.exams[el.dataset.id];ui.xcfg={kind:k,id:el.dataset.id,titulo:k==='oficial'?e.titulo:k==='gen'?'Examen completo (simulacro)':'Simulacro a tu medida'};render();scrollTo(0,0)}
+  else if(a==='dgo'){const g=el.dataset.go,t=el.dataset.t;if(g==='cards'){ui.mazo=t;ui.idx=0;ui.filtro='nueva';location.hash='tarjetas'}else if(g==='repaso'){ui.filtro='2';ui.idx=0;location.hash='tarjetas'}else if(g==='errores'){const b=document.createElement('button');b.dataset.act='merr';location.hash='tests';setTimeout(()=>{const x=document.querySelector('[data-act="merr"]');if(x)x.click()},50)}else if(g==='test'){ui.scope=t;const qs=shuffle(bank(t));if(qs.length)startRun('Test de la semana · Tema '+temaName(t),t,qs.slice(0,15),'practica-'+t);else location.hash='tests'}else if(g==='sim'){ui.xtab='sim';location.hash='tests'}else if(g==='temas')location.hash='temario'}
   else if(a==='xcancel'){ui.xcfg=null;render()}
   else if(a==='xofi'){const t=el.dataset.t,b=el.dataset.b;startExam({kind:'sim',titulo:'Preguntas oficiales · '+(t?'Tema '+temaName(t):'Bloque '+b),tema:t||'',bloque:t?'':b,n:200,fuente:'ofi',modo:'momento',tiempo:'libre',pistas:'no'})}
   else if(a==='xnext'){ui.ex.i++;ui.ex.conf=false;render();scrollTo(0,0)}
@@ -512,6 +542,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if
 {let sx=null,sy=null;document.addEventListener('touchstart',e=>{if(e.target.closest('#flip')){sx=e.touches[0].clientX;sy=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){const b=document.querySelector(`[data-act="${dx<0?'next':'prev'}"]`);if(b){e.preventDefault();b.click()}}})}
 document.addEventListener('keydown',e=>{if(location.hash==='#tarjetas'&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){const k={ArrowRight:'[data-act="next"]',ArrowLeft:'[data-act="prev"]','1':'[data-pile="1"]','2':'[data-pile="2"]','3':'[data-pile="3"]'}[e.key];if(k){const b=document.querySelector(k);if(b){e.preventDefault();b.click();return}}}});
 document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip,#dflip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
+document.addEventListener('change',e=>{const dk=e.target.dataset&&e.target.dataset.dk;if(dk){const d=Object.assign({},S.diario||{});const t=Object.assign({},d[today()]||{});if(e.target.checked){t[dk]=1;logAct(2);const m=dk.match(/^l-(.+)-(\d+)$/);if(m){S.lectura=Object.assign({},S.lectura,{[m[1]]:+m[2]});kvSet('lectura')}}else delete t[dk];d[today()]=t;const ks=Object.keys(d).sort();while(ks.length>40)delete d[ks.shift()];S.diario=d;kvSet('diario');render();return}});
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.task){const k=e.target.dataset.task;const h=Object.assign({},(S.planHecho||{}).h||{});if(e.target.checked){h[k]=true;logAct(1)}else delete h[k];S.planHecho={h};kvSet('planHecho');render();return}const id=e.target.id;if(id==='mazo'){ui.mazo=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='filtro'){ui.filtro=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='scope'){ui.scope=e.target.value;render()}});
 
 /* ---------- datos ---------- */
@@ -521,7 +552,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=11;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=12;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];

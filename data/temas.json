@@ -7,7 +7,9 @@
   "titulo": "Constitución de 1978: derechos y deberes, garantías y Corona",
   "semana": "2026-11-23",
   "tarjetas": true,
-  "preguntas": true
+  "preguntas": true,
+  "pags": 44,
+  "pagIni": 3
  },
  {
   "id": "I-2",
@@ -17,7 +19,9 @@
   "titulo": "Cortes Generales, Tribunal Constitucional y Defensor del Pueblo",
   "semana": "2026-11-30",
   "tarjetas": true,
-  "preguntas": true
+  "preguntas": true,
+  "pags": 54,
+  "pagIni": 3
  },
  {
   "id": "I-3",
@@ -27,7 +31,9 @@
   "titulo": "Gobierno: composición, cese, funciones y relaciones con las Cortes",
   "semana": "2026-12-07",
   "tarjetas": true,
-  "preguntas": true
+  "preguntas": true,
+  "pags": 32,
+  "pagIni": 3
  },
  {
   "id": "I-4",
@@ -37,7 +43,9 @@
   "titulo": "Estatuto Básico del Empleado Público, Ley de transparencia y Agenda 2030",
   "semana": "2026-12-07",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 154,
+  "pagIni": 3
  },
  {
   "id": "I-5",
@@ -47,7 +55,9 @@
   "titulo": "Políticas de igualdad, violencia de género, LGTBI, discapacidad y dependencia",
   "semana": "2026-12-14",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 148,
+  "pagIni": 3
  },
  {
   "id": "I-6",
@@ -57,7 +67,9 @@
   "titulo": "Sociedad de la información, identidad y firma electrónica, DNI electrónico y Agenda Digital",
   "semana": "2026-12-14",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 94,
+  "pagIni": 3
  },
  {
   "id": "I-7",
@@ -67,7 +79,9 @@
   "titulo": "Protección de datos, derechos digitales y reglamento europeo de inteligencia artificial",
   "semana": "2026-12-28",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 96,
+  "pagIni": 3
  },
  {
   "id": "I-8",
@@ -77,7 +91,9 @@
   "titulo": "Acceso electrónico a los servicios públicos, gestión electrónica de procedimientos, ENS, ENI y guías CCN-STIC 800",
   "semana": "2027-01-04",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 96,
+  "pagIni": 3
  },
  {
   "id": "I-9",
@@ -87,7 +103,9 @@
   "titulo": "Sedes electrónicas, canales, identificación, autenticación e infraestructuras comunes",
   "semana": "2027-01-04",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 34,
+  "pagIni": 3
  },
  {
   "id": "II-1",
@@ -97,7 +115,9 @@
   "titulo": "Informática básica: representación de la información, arquitectura y componentes internos",
   "semana": "2027-01-11",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 92,
+  "pagIni": 3
  },
  {
   "id": "II-2",
@@ -107,7 +127,9 @@
   "titulo": "Periféricos: conectividad, impresión, almacenamiento, visualización y videoconferencia",
   "semana": "2027-01-11",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 128,
+  "pagIni": 3
  },
  {
   "id": "II-3",
@@ -117,7 +139,9 @@
   "titulo": "Tipos abstractos y estructuras de datos, organización de ficheros, algoritmos y formatos",
   "semana": "2027-01-18",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 102,
+  "pagIni": 3
  },
  {
   "id": "II-4",
@@ -127,7 +151,9 @@
   "titulo": "Sistemas operativos: Windows, Unix/Linux y sistemas móviles",
   "semana": "2027-01-25",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 120,
+  "pagIni": 3
  },
  {
   "id": "II-5",
@@ -137,7 +163,9 @@
   "titulo": "Bases de datos relacionales, orientadas a objetos y NoSQL",
   "semana": "2027-02-01",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 56,
+  "pagIni": 3
  },
  {
   "id": "II-6",
@@ -147,7 +175,9 @@
   "titulo": "Inteligencia artificial, inteligencia de negocio, OLTP y OLAP (tema nuevo)",
   "semana": "2027-02-08",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 0,
+  "pagIni": 0
  },
  {
   "id": "III-1",
@@ -157,7 +187,9 @@
   "titulo": "Modelado de datos, diseño lógico y físico, modelo relacional y normalización",
   "semana": "2027-01-18",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 100,
+  "pagIni": 3
  },
  {
   "id": "III-2",
@@ -167,7 +199,9 @@
   "titulo": "Lenguajes de programación: tipos de datos, operadores, estructuras y procedimientos",
   "semana": "2027-01-25",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 76,
+  "pagIni": 3
  },
  {
   "id": "III-3",
@@ -177,7 +211,9 @@
   "titulo": "SQL, procedimientos almacenados, eventos y disparadores",
   "semana": "2027-02-01",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 124,
+  "pagIni": 3
  },
  {
   "id": "III-4",
@@ -187,7 +223,9 @@
   "titulo": "Programación orientada a objetos, patrones de diseño y UML",
   "semana": "2027-02-08",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 72,
+  "pagIni": 3
  },
  {
   "id": "III-5",
@@ -197,7 +235,9 @@
   "titulo": "Arquitecturas Java EE/Jakarta EE y .NET",
   "semana": "2027-02-15",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 158,
+  "pagIni": 3
  },
  {
   "id": "III-6",
@@ -207,7 +247,9 @@
   "titulo": "Arquitectura cliente/servidor y multicapa, servicios web",
   "semana": "2027-02-15",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 88,
+  "pagIni": 3
  },
  {
   "id": "III-7",
@@ -217,7 +259,9 @@
   "titulo": "Aplicaciones web front-end y de servidor, HTML, XML y lenguajes de script",
   "semana": "2027-02-22",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 220,
+  "pagIni": 3
  },
  {
   "id": "III-8",
@@ -227,7 +271,9 @@
   "titulo": "Accesibilidad, diseño universal, usabilidad y seguridad en el desarrollo",
   "semana": "2027-02-22",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 118,
+  "pagIni": 3
  },
  {
   "id": "III-9",
@@ -237,7 +283,9 @@
   "titulo": "Repositorios, documentación, metodologías de desarrollo, integración continua y control de versiones",
   "semana": "2027-03-01",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 122,
+  "pagIni": 3
  },
  {
   "id": "IV-1",
@@ -247,7 +295,9 @@
   "titulo": "Administración del sistema operativo y del software de base",
   "semana": "2027-03-08",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 108,
+  "pagIni": 3
  },
  {
   "id": "IV-2",
@@ -257,7 +307,9 @@
   "titulo": "Administración de bases de datos, almacenamiento, backup y virtualización",
   "semana": "2027-03-08",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 86,
+  "pagIni": 3
  },
  {
   "id": "IV-3",
@@ -267,7 +319,9 @@
   "titulo": "Servidores de correo, contenedores, microservicios y cloud computing",
   "semana": "2027-03-15",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 120,
+  "pagIni": 3
  },
  {
   "id": "IV-4",
@@ -277,7 +331,9 @@
   "titulo": "Administración de redes de área local",
   "semana": "2027-03-15",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 100,
+  "pagIni": 3
  },
  {
   "id": "IV-5",
@@ -287,7 +343,9 @@
   "titulo": "Seguridad de los sistemas de información, criptografía, firma digital, CPD e incidencias",
   "semana": "2027-03-22",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 228,
+  "pagIni": 3
  },
  {
   "id": "IV-6",
@@ -297,7 +355,9 @@
   "titulo": "Comunicaciones: medios de transmisión, equipos y redes, incluidas móviles e inalámbricas",
   "semana": "2027-03-29",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 162,
+  "pagIni": 3
  },
  {
   "id": "IV-7",
@@ -307,7 +367,9 @@
   "titulo": "Modelos TCP/IP y OSI",
   "semana": "2027-03-29",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 88,
+  "pagIni": 3
  },
  {
   "id": "IV-8",
@@ -317,7 +379,9 @@
   "titulo": "Internet: arquitectura, servicios, HTTP, HTTPS y SSL/TLS",
   "semana": "2027-04-05",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 94,
+  "pagIni": 3
  },
  {
   "id": "IV-9",
@@ -327,7 +391,9 @@
   "titulo": "Seguridad en redes: perimetral, acceso remoto, VPN y puesto de usuario",
   "semana": "2027-04-05",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 96,
+  "pagIni": 3
  },
  {
   "id": "IV-10",
@@ -337,6 +403,8 @@
   "titulo": "Redes locales: tipología, técnicas de transmisión, métodos de acceso y dispositivos",
   "semana": "2027-04-12",
   "tarjetas": false,
-  "preguntas": false
+  "preguntas": false,
+  "pags": 78,
+  "pagIni": 3
  }
 ]
