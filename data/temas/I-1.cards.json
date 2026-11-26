@@ -1,0 +1,958 @@
+{
+"tema": "I-1",
+"cards": [
+{
+"id": "c1",
+"n": "1",
+"e": "📕",
+"q": "¿Qué es la Constitución?",
+"a": "La **ley más importante** de España",
+"h": "Ninguna otra ley puede ir en contra de ella"
+},
+{
+"id": "c2",
+"n": "2",
+"e": "🗓️",
+"q": "¿De qué año es la Constitución?",
+"a": "De **1978**"
+},
+{
+"id": "c3",
+"n": "3",
+"e": "✝️",
+"q": "¿Qué pasó el 20 de noviembre de 1975?",
+"a": "Murió **Franco**",
+"h": "2 días después, Juan Carlos I fue proclamado Rey"
+},
+{
+"id": "c4",
+"n": "4",
+"e": "🧑‍💼",
+"q": "¿Quién fue el Presidente del Gobierno de la Transición?",
+"a": "**Adolfo Suárez**",
+"h": "El Rey lo nombró en julio de 1976"
+},
+{
+"id": "c5",
+"n": "5",
+"e": "🌉",
+"q": "¿Qué ley hizo de «puente» hacia la democracia?",
+"a": "La **Ley para la Reforma Política**",
+"h": "Ley 1/1977. Referéndum el 15‑dic‑1976"
+},
+{
+"id": "c6",
+"n": "6",
+"e": "🗳️",
+"q": "¿Cuándo fueron las primeras elecciones libres?",
+"a": "El **15 de junio de 1977**",
+"h": "Ganó la UCD"
+},
+{
+"id": "c7",
+"n": "7",
+"e": "✍️",
+"q": "¿Cuántos diputados escribieron el borrador?",
+"a": "**7**",
+"h": "Se llamó «la Ponencia»"
+},
+{
+"id": "c8",
+"n": "8",
+"e": "🎃",
+"q": "¿Qué pasó el 31 de octubre de 1978?",
+"a": "El **Congreso y el Senado** aprueban la Constitución"
+},
+{
+"id": "c9",
+"n": "9",
+"e": "🗳️",
+"q": "¿Qué pasó el 6 de diciembre de 1978?",
+"a": "El **pueblo vota SÍ** en referéndum",
+"h": "87,78 % de síes. Hoy es el Día de la Constitución"
+},
+{
+"id": "c10",
+"n": "10",
+"e": "✍️",
+"q": "¿Qué pasó el 27 de diciembre de 1978?",
+"a": "El **Rey la firma**",
+"h": "Sanciona y promulga"
+},
+{
+"id": "c11",
+"n": "11",
+"e": "📰",
+"q": "¿Qué pasó el 29 de diciembre de 1978?",
+"a": "Se publica en el **BOE** y entra en vigor",
+"h": "Es la fecha que más cae",
+"t": true
+},
+{
+"id": "c12",
+"n": "12",
+"e": "✏️",
+"q": "¿Cuántas veces se ha reformado la Constitución?",
+"a": "**3 veces**",
+"h": "1992 · 2011 · 2024"
+},
+{
+"id": "c13",
+"n": "13",
+"e": "🗳️",
+"q": "Reforma de 1992: ¿qué artículo y para qué?",
+"a": "**Art. 13.2**: los europeos pueden presentarse en las elecciones municipales",
+"h": "Se añadió «y pasivo»"
+},
+{
+"id": "c14",
+"n": "14",
+"e": "💶",
+"q": "Reforma de 2011: ¿qué artículo y para qué?",
+"a": "**Art. 135**: estabilidad presupuestaria",
+"h": "= no gastar más de lo que se tiene"
+},
+{
+"id": "c15",
+"n": "15",
+"e": "♿",
+"q": "Reforma de 2024: ¿qué artículo y para qué?",
+"a": "**Art. 49**: personas con discapacidad",
+"h": "Se quitó la palabra «disminuidos»"
+},
+{
+"id": "c16",
+"n": "16",
+"e": "🔢",
+"q": "¿Cuántos artículos tiene la Constitución?",
+"a": "**169**",
+"h": "Truco: 13 × 13",
+"t": true
+},
+{
+"id": "c17",
+"n": "17",
+"e": "📚",
+"q": "¿Cuántos Títulos tiene?",
+"a": "**Título Preliminar + 10**",
+"h": "Del I al X"
+},
+{
+"id": "c18",
+"n": "18",
+"e": "📎",
+"q": "¿Cuántas disposiciones tiene al final?",
+"a": "**4** adicionales · **9** transitorias · **1** derogatoria · **1** final",
+"h": "4‑9‑1‑1, como un PIN",
+"t": true
+},
+{
+"id": "c19",
+"n": "19",
+"e": "📖",
+"q": "¿Qué es el Preámbulo? ¿Obliga?",
+"a": "La **introducción**. **No obliga** a nada",
+"h": "Es como el tráiler de una película"
+},
+{
+"id": "c20",
+"n": "20",
+"e": "🧠",
+"q": "¿Qué es la parte dogmática?",
+"a": "Las **ideas y derechos**",
+"h": "Título Preliminar + Título I"
+},
+{
+"id": "c21",
+"n": "21",
+"e": "🫀",
+"q": "¿Qué es la parte orgánica?",
+"a": "Las **instituciones** (Rey, Cortes, Gobierno…)",
+"h": "Títulos II a X"
+},
+{
+"id": "c22",
+"n": "22",
+"e": "🧱",
+"q": "¿Qué significa que la Constitución es «rígida»?",
+"a": "Que es **difícil de cambiar**",
+"h": "Otras características: escrita, extensa, consensuada…"
+},
+{
+"id": "c23",
+"n": "23",
+"e": "⚖️",
+"q": "¿Cuáles son los 3 poderes y quién los tiene?",
+"a": "Legislativo → **Cortes**\nEjecutivo → **Gobierno**\nJudicial → **Jueces**",
+"h": "El Rey no está en ninguno"
+},
+{
+"id": "c24",
+"n": "24",
+"e": "🧱",
+"q": "¿De qué trata el Título Preliminar?",
+"a": "De los **principios**",
+"h": "Arts. 1 a 9"
+},
+{
+"id": "c25",
+"n": "25",
+"e": "🧍",
+"q": "¿De qué trata el Título I?",
+"a": "De los **derechos y deberes**",
+"h": "Arts. 10 a 55"
+},
+{
+"id": "c26",
+"n": "26",
+"e": "👑",
+"q": "¿De qué trata el Título II?",
+"a": "De la **Corona** (el Rey)",
+"h": "Arts. 56 a 65"
+},
+{
+"id": "c27",
+"n": "27",
+"e": "🏛️",
+"q": "¿De qué trata el Título III?",
+"a": "De las **Cortes Generales**",
+"h": "Congreso + Senado"
+},
+{
+"id": "c28",
+"n": "28",
+"e": "🏢",
+"q": "¿De qué trata el Título IV?",
+"a": "Del **Gobierno** y la Administración"
+},
+{
+"id": "c29",
+"n": "29",
+"e": "🔁",
+"q": "¿De qué trata el Título V?",
+"a": "De las relaciones entre el **Gobierno y las Cortes**"
+},
+{
+"id": "c30",
+"n": "30",
+"e": "⚖️",
+"q": "¿De qué trata el Título VI?",
+"a": "Del **Poder Judicial** (los jueces)"
+},
+{
+"id": "c31",
+"n": "31",
+"e": "💶",
+"q": "¿De qué trata el Título VII?",
+"a": "De **Economía y Hacienda**"
+},
+{
+"id": "c32",
+"n": "32",
+"e": "🗺️",
+"q": "¿De qué trata el Título VIII?",
+"a": "De la **organización territorial**",
+"h": "Municipios, provincias y CCAA"
+},
+{
+"id": "c33",
+"n": "33",
+"e": "🛡️",
+"q": "¿De qué trata el Título IX?",
+"a": "Del **Tribunal Constitucional**"
+},
+{
+"id": "c34",
+"n": "34",
+"e": "🔑",
+"q": "¿De qué trata el Título X?",
+"a": "De la **reforma** de la Constitución",
+"h": "El último: arts. 166 a 169"
+},
+{
+"id": "c35",
+"n": "35",
+"e": "🇪🇸",
+"q": "¿Qué tipo de Estado es España? (art. 1.1)",
+"a": "Un Estado **social y democrático de Derecho**"
+},
+{
+"id": "c36",
+"n": "36",
+"e": "🦒",
+"q": "¿Cuáles son los 4 valores superiores? (art. 1.1)",
+"a": "**Libertad, Justicia, Igualdad y Pluralismo político**",
+"h": "«La Jirafa Imita al Pingüino»",
+"t": true
+},
+{
+"id": "c37",
+"n": "37",
+"e": "👥",
+"q": "¿De quién es la soberanía? (art. 1.2)",
+"a": "Del **pueblo español**",
+"h": "De él salen todos los poderes",
+"t": true
+},
+{
+"id": "c38",
+"n": "38",
+"e": "👑",
+"q": "¿Cuál es la forma política de España? (art. 1.3)",
+"a": "**Monarquía parlamentaria**",
+"h": "El Rey reina, pero no gobierna",
+"t": true
+},
+{
+"id": "c39",
+"n": "39",
+"e": "🧩",
+"q": "¿Qué dice el art. 2?",
+"a": "**Unidad** de España + **autonomía** de las regiones",
+"h": "Y solidaridad entre ellas"
+},
+{
+"id": "c40",
+"n": "40",
+"e": "🗣️",
+"q": "¿Qué dice el art. 3?",
+"a": "El **castellano** es la lengua oficial",
+"h": "Las otras lenguas, oficiales en sus CCAA"
+},
+{
+"id": "c41",
+"n": "41",
+"e": "🇪🇸",
+"q": "¿Qué dice el art. 4?",
+"a": "La **bandera**: roja, amarilla y roja",
+"h": "La amarilla mide el doble"
+},
+{
+"id": "c42",
+"n": "42",
+"e": "🏙️",
+"q": "¿Qué dice el art. 5?",
+"a": "La capital es **Madrid**",
+"h": "Truco: 3‑4‑5 = hablo, veo, vivo"
+},
+{
+"id": "c43",
+"n": "43",
+"e": "🗳️",
+"q": "¿Qué dice el art. 6?",
+"a": "Los **partidos políticos**",
+"h": "Deben ser democráticos"
+},
+{
+"id": "c44",
+"n": "44",
+"e": "👷",
+"q": "¿Qué dice el art. 7?",
+"a": "Los **sindicatos** y las asociaciones de **empresarios**",
+"h": "También deben ser democráticos"
+},
+{
+"id": "c45",
+"n": "45",
+"e": "🪖",
+"q": "¿Qué dice el art. 8?",
+"a": "Las **Fuerzas Armadas**: Tierra, Armada y Aire",
+"h": "Defienden la soberanía y la integridad de España"
+},
+{
+"id": "c46",
+"n": "46",
+"e": "🇯🇵",
+"q": "¿Qué 7 principios garantiza el art. 9.3?",
+"a": "Legalidad · Jerarquía · Publicidad · Irretroactividad · Seguridad jurídica · Responsabilidad · Interdicción de la arbitrariedad",
+"h": "«Lejos, Japón Paga Impuestos Sin Rechistar, Increíble»",
+"t": true
+},
+{
+"id": "c47",
+"n": "47",
+"e": "💎",
+"q": "¿Qué es la base de todos los derechos? (art. 10)",
+"a": "La **dignidad de la persona**"
+},
+{
+"id": "c48",
+"n": "48",
+"e": "⭐",
+"q": "¿Qué artículos son los derechos fundamentales?",
+"a": "Del **14 al 29**",
+"h": "Los «VIP», los más protegidos",
+"t": true
+},
+{
+"id": "c49",
+"n": "49",
+"e": "⚖️",
+"q": "¿Qué dice el art. 14?",
+"a": "**Igualdad** ante la ley",
+"h": "Sin discriminación por raza, sexo, religión…"
+},
+{
+"id": "c50",
+"n": "50",
+"e": "❤️",
+"q": "¿Qué dice el art. 15?",
+"a": "Derecho a la **vida**",
+"h": "La pena de muerte está abolida"
+},
+{
+"id": "c51",
+"n": "51",
+"e": "🙏",
+"q": "¿Qué dice el art. 16?",
+"a": "Libertad **ideológica y religiosa**",
+"h": "Ninguna religión es la oficial del Estado"
+},
+{
+"id": "c52",
+"n": "52",
+"e": "🕊️",
+"q": "¿Qué dice el art. 17?",
+"a": "Derecho a la **libertad**"
+},
+{
+"id": "c53",
+"n": "53",
+"e": "⏱️",
+"q": "¿Cuánto tiempo puede durar como máximo una detención?",
+"a": "**72 horas**",
+"h": "Después, libre o ante el juez",
+"t": true
+},
+{
+"id": "c54",
+"n": "54",
+"e": "🏃",
+"q": "¿Qué es el Habeas Corpus?",
+"a": "Si te detienen ilegalmente, te llevan **de inmediato ante un juez**"
+},
+{
+"id": "c55",
+"n": "55",
+"e": "🪞",
+"q": "¿Qué dice el art. 18.1?",
+"a": "Derecho al **honor, la intimidad y la propia imagen**"
+},
+{
+"id": "c56",
+"n": "56",
+"e": "🚪",
+"q": "¿Cuándo se puede entrar en tu casa? (art. 18.2)",
+"a": "Con tu **permiso**, con **orden del juez** o en **flagrante delito**",
+"t": true
+},
+{
+"id": "c57",
+"n": "57",
+"e": "✉️",
+"q": "¿Qué dice el art. 18.3?",
+"a": "**Secreto de las comunicaciones**",
+"h": "Salvo orden del juez"
+},
+{
+"id": "c58",
+"n": "58",
+"e": "🧳",
+"q": "¿Qué dice el art. 19?",
+"a": "Libertad para **vivir y moverte** donde quieras",
+"h": "Y para entrar y salir de España"
+},
+{
+"id": "c59",
+"n": "59",
+"e": "📣",
+"q": "¿Qué dice el art. 20?",
+"a": "Libertad de **expresión**",
+"h": "Sin censura previa"
+},
+{
+"id": "c60",
+"n": "60",
+"e": "👥",
+"q": "¿Qué dice el art. 21?",
+"a": "Derecho de **reunión**: pacífica y sin armas",
+"h": "No hace falta pedir permiso"
+},
+{
+"id": "c61",
+"n": "61",
+"e": "🔢",
+"q": "¿Cuántas personas tiene que haber para que sea una «reunión»?",
+"a": "**Más de 20**",
+"t": true
+},
+{
+"id": "c62",
+"n": "62",
+"e": "📋",
+"q": "¿Qué dice el art. 22?",
+"a": "Derecho de **asociación**",
+"h": "Prohibidas las asociaciones secretas y paramilitares"
+},
+{
+"id": "c63",
+"n": "63",
+"e": "🗳️",
+"q": "¿Qué dice el art. 23?",
+"a": "Derecho a **votar** y a **acceder a cargos públicos**",
+"h": "En principio, solo los españoles"
+},
+{
+"id": "c64",
+"n": "64",
+"e": "👩‍⚖️",
+"q": "¿Qué dice el art. 24?",
+"a": "Derecho a un **juicio justo**",
+"h": "Se llama tutela judicial efectiva"
+},
+{
+"id": "c65",
+"n": "65",
+"e": "🎒",
+"q": "¿Qué dice el art. 27?",
+"a": "Derecho a la **educación**",
+"h": "La básica es obligatoria y gratuita"
+},
+{
+"id": "c66",
+"n": "66",
+"e": "✊",
+"q": "¿Qué dice el art. 28?",
+"a": "28.1 **sindicarse** · 28.2 **huelga**",
+"h": "Nadie está obligado a afiliarse"
+},
+{
+"id": "c67",
+"n": "67",
+"e": "✍️",
+"q": "¿Qué dice el art. 29?",
+"a": "Derecho de **petición**, por escrito",
+"h": "Los militares, solo individualmente"
+},
+{
+"id": "c68",
+"n": "68",
+"e": "💍",
+"q": "¿Qué dice el art. 32?",
+"a": "Derecho al **matrimonio**",
+"h": "Con plena igualdad"
+},
+{
+"id": "c69",
+"n": "69",
+"e": "💼",
+"q": "¿Qué dice el art. 35?",
+"a": "Derecho (y deber) al **trabajo**"
+},
+{
+"id": "c70",
+"n": "70",
+"e": "🩺",
+"q": "¿Qué son los artículos 39 a 52?",
+"a": "Los **principios rectores**: familia, salud, pensiones…",
+"h": "NO son derechos fundamentales"
+},
+{
+"id": "c71",
+"n": "71",
+"e": "💭",
+"q": "¿Cuáles son los deberes «morales»?",
+"a": "**Trabajar** y **conocer el castellano**"
+},
+{
+"id": "c72",
+"n": "72",
+"e": "🪖",
+"q": "¿Qué deber recoge el art. 30?",
+"a": "**Defender España**",
+"h": "La mili está suspendida desde el 31‑dic‑2001"
+},
+{
+"id": "c73",
+"n": "73",
+"e": "💶",
+"q": "¿Qué deber recoge el art. 31?",
+"a": "**Pagar impuestos** según lo que ganas",
+"h": "Quien más gana, paga en mayor proporción"
+},
+{
+"id": "c74",
+"n": "74",
+"e": "🌳",
+"q": "¿Qué deberes recogen los arts. 45 y 46?",
+"a": "Cuidar el **medio ambiente** y el **patrimonio**"
+},
+{
+"id": "c75",
+"n": "75",
+"e": "☂️",
+"q": "¿Qué es el recurso de amparo?",
+"a": "Pedir ayuda al **Tribunal Constitucional** si te violan un derecho fundamental",
+"h": "Vale para los arts. 14‑29 y la objeción de conciencia",
+"t": true
+},
+{
+"id": "c76",
+"n": "76",
+"e": "📕",
+"q": "¿Con qué tipo de ley se regulan los derechos fundamentales?",
+"a": "Con **ley orgánica**",
+"h": "Necesita mayoría absoluta del Congreso",
+"t": true
+},
+{
+"id": "c77",
+"n": "77",
+"e": "🛡️",
+"q": "¿Cuáles son las 4 garantías de los derechos? (art. 53)",
+"a": "Aplicación **D**irecta · **L**egislativas · **J**udiciales · **E**xtrajudiciales",
+"h": "«Dame La Jarra Entera»",
+"t": true
+},
+{
+"id": "c78",
+"n": "78",
+"e": "🙋",
+"q": "¿Quién es el Defensor del Pueblo? (art. 54)",
+"a": "Quien defiende **tus derechos** frente a la Administración",
+"h": "Lo eligen las Cortes Generales",
+"t": true
+},
+{
+"id": "c79",
+"n": "79",
+"e": "🟢",
+"q": "Estado de ALARMA: ¿quién lo declara y por cuánto?",
+"a": "El **Gobierno**, **15 días**",
+"h": "No quita derechos. Ej.: pandemia",
+"t": true
+},
+{
+"id": "c80",
+"n": "80",
+"e": "🟡",
+"q": "Estado de EXCEPCIÓN: ¿quién lo declara y por cuánto?",
+"a": "El **Gobierno con permiso del Congreso**, **30 + 30 días**",
+"h": "Sí quita algunos derechos",
+"t": true
+},
+{
+"id": "c81",
+"n": "81",
+"e": "🔴",
+"q": "Estado de SITIO: ¿quién lo declara?",
+"a": "El **Congreso**, por mayoría absoluta",
+"h": "Para un golpe de Estado",
+"t": true
+},
+{
+"id": "c82",
+"n": "82",
+"e": "🎯",
+"q": "¿Cuándo se suspenden derechos a personas concretas? (art. 55.2)",
+"a": "En casos de **terrorismo**",
+"h": "Con control del juez y de las Cortes"
+},
+{
+"id": "c83",
+"n": "83",
+"e": "👑",
+"q": "¿Qué es el Rey según la Constitución? (art. 56)",
+"a": "El **Jefe del Estado**",
+"h": "Símbolo de la unidad de España"
+},
+{
+"id": "c84",
+"n": "84",
+"e": "⚽",
+"q": "¿Qué papel tiene el Rey en las instituciones?",
+"a": "**Arbitra y modera**",
+"h": "Como un árbitro: no juega, modera"
+},
+{
+"id": "c85",
+"n": "85",
+"e": "🛡️",
+"q": "¿Se puede juzgar al Rey?",
+"a": "**No**: es inviolable",
+"h": "No tiene responsabilidad",
+"t": true
+},
+{
+"id": "c86",
+"n": "86",
+"e": "🖊️",
+"q": "¿Qué es el refrendo?",
+"a": "**Otra persona firma con el Rey** y se hace responsable",
+"h": "Si no hay refrendo, el acto no vale",
+"t": true
+},
+{
+"id": "c87",
+"n": "87",
+"e": "🧑‍💼",
+"q": "¿Quién refrenda normalmente los actos del Rey?",
+"a": "El **Presidente del Gobierno** o los ministros"
+},
+{
+"id": "c88",
+"n": "88",
+"e": "🏛️",
+"q": "¿Quién refrenda el nombramiento del Presidente del Gobierno?",
+"a": "El **Presidente del Congreso**",
+"t": true
+},
+{
+"id": "c89",
+"n": "89",
+"e": "🆓",
+"q": "¿Qué puede hacer el Rey sin refrendo? (art. 65)",
+"a": "Repartir el **dinero de su Casa** y nombrar a su **personal**"
+},
+{
+"id": "c90",
+"n": "90",
+"e": "📜",
+"q": "¿Cuántos días tiene el Rey para sancionar una ley?",
+"a": "**15 días**",
+"h": "Art. 91",
+"t": true
+},
+{
+"id": "c91",
+"n": "91",
+"e": "🗳️",
+"q": "¿A quién convoca el Rey?",
+"a": "A las **Cortes**, a **elecciones** y a **referéndum**"
+},
+{
+"id": "c92",
+"n": "92",
+"e": "🪖",
+"q": "¿Quién tiene el mando supremo de las Fuerzas Armadas?",
+"a": "El **Rey**"
+},
+{
+"id": "c93",
+"n": "93",
+"e": "🕊️",
+"q": "¿Puede el Rey dar indultos generales?",
+"a": "**No**",
+"h": "Solo ejerce el derecho de gracia según la ley",
+"t": true
+},
+{
+"id": "c94",
+"n": "94",
+"e": "🌳",
+"q": "¿Cómo se pasa la Corona? (art. 57)",
+"a": "Por **herencia**",
+"h": "A los sucesores de Juan Carlos I"
+},
+{
+"id": "c95",
+"n": "95",
+"e": "🐔",
+"q": "¿Qué orden se sigue en la sucesión?",
+"a": "**Línea → Grado → Sexo → Edad**",
+"h": "«Las Gallinas Se Escapan»",
+"t": true
+},
+{
+"id": "c96",
+"n": "96",
+"e": "🏰",
+"q": "¿Qué título tiene el heredero?",
+"a": "**Príncipe o Princesa de Asturias**"
+},
+{
+"id": "c97",
+"n": "97",
+"e": "🪑",
+"q": "¿Qué es la Regencia? (art. 59)",
+"a": "Alguien hace el **trabajo del Rey** porque es menor o no puede",
+"h": "Si la nombran las Cortes: 1, 3 o 5 personas",
+"t": true
+},
+{
+"id": "c98",
+"n": "98",
+"e": "🧸",
+"q": "¿Qué es la Tutela? (art. 60)",
+"a": "Alguien **cuida del Rey niño**",
+"h": "Primero, quien diga el testamento del Rey fallecido"
+},
+{
+"id": "e1",
+"n": "E1",
+"e": "🦒",
+"q": "Art. 1.1: ¿en qué ORDEN van los valores superiores?",
+"a": "**Libertad → Justicia → Igualdad → Pluralismo político**",
+"h": "Es «político», no «social». «La Jirafa Imita al Pingüino»"
+},
+{
+"id": "e2",
+"n": "E2",
+"e": "🧩",
+"q": "Art. 2: ¿de quién reconoce el derecho a la autonomía?",
+"a": "De las **nacionalidades y regiones**",
+"h": "No dice «Comunidades Autónomas» ni «pueblos»",
+"t": true
+},
+{
+"id": "e3",
+"n": "E3",
+"e": "🗣️",
+"q": "Art. 3: el castellano, ¿deber o derecho?",
+"a": "**DEBER** de conocerlo y **DERECHO** a usarlo",
+"h": "Te obligan a saberlo; usarlo es tu elección",
+"t": true
+},
+{
+"id": "e4",
+"n": "E4",
+"e": "🏙️",
+"q": "Art. 5: ¿cómo llama exactamente a Madrid?",
+"a": "«La **villa** de Madrid»",
+"h": "No «ciudad»",
+"t": true
+},
+{
+"id": "e5",
+"n": "E5",
+"e": "🪖",
+"q": "Art. 8: ¿qué GARANTIZAN y qué DEFIENDEN las FFAA?",
+"a": "**Garantizan** la soberanía e independencia\n**Defienden** la integridad territorial y el ordenamiento constitucional",
+"h": "G antes que D, como en el abecedario"
+},
+{
+"id": "e6",
+"n": "E6",
+"e": "🟰",
+"q": "¿Qué dice el art. 9.2?",
+"a": "Los poderes públicos hacen que la libertad y la igualdad sean **reales y efectivas**",
+"h": "9.2 = igualdad REAL · 14 = igualdad ANTE LA LEY",
+"t": true
+},
+{
+"id": "e7",
+"n": "E7",
+"e": "⏪",
+"q": "Art. 9.3: ¿qué normas NO pueden ser retroactivas?",
+"a": "Las **sancionadoras no favorables** o restrictivas de derechos individuales",
+"h": "Lo que te perjudica no se aplica hacia atrás"
+},
+{
+"id": "e8",
+"n": "E8",
+"e": "🌍",
+"q": "Art. 10.2: ¿conforme a qué se interpretan los derechos?",
+"a": "La **Declaración Universal de Derechos Humanos** y los tratados ratificados por España"
+},
+{
+"id": "e9",
+"n": "E9",
+"e": "🛂",
+"q": "Art. 11.2: ¿quién NO puede ser privado de la nacionalidad?",
+"a": "**Ningún español de origen**",
+"h": "Quien la consiguió después sí puede perderla",
+"t": true
+},
+{
+"id": "e10",
+"n": "E10",
+"e": "🎂",
+"q": "Art. 12: ¿a qué edad se es mayor de edad?",
+"a": "A los **18 años**",
+"h": "Reloj: art. 12 → las 18:00"
+},
+{
+"id": "e11",
+"n": "E11",
+"e": "🗳️",
+"q": "Art. 13.2: ¿en qué elecciones pueden votar y presentarse los extranjeros?",
+"a": "Solo en las **municipales**, por reciprocidad",
+"h": "«Y pasivo» se añadió en 1992",
+"t": true
+},
+{
+"id": "e12",
+"n": "E12",
+"e": "✈️",
+"q": "Art. 13.3: ¿qué delitos impiden la extradición?",
+"a": "Los **delitos políticos**",
+"h": "Pero el terrorismo NO cuenta como delito político"
+},
+{
+"id": "e13",
+"n": "E13",
+"e": "📋",
+"q": "Art. 14: ¿qué motivos de discriminación nombra?",
+"a": "**Nacimiento, raza, sexo, religión, opinión**… o cualquier otra circunstancia",
+"h": "La edad NO sale expresamente"
+},
+{
+"id": "e14",
+"n": "E14",
+"e": "❤️",
+"q": "Art. 15: ¿qué excepción a la pena de muerte recoge el texto?",
+"a": "Lo que digan las **leyes penales militares en tiempo de guerra**",
+"h": "Hoy ya está abolida del todo (LO 11/1995)"
+},
+{
+"id": "e15",
+"n": "E15",
+"e": "⛪",
+"q": "Art. 16.3: ¿con quién coopera el Estado?",
+"a": "Con la **Iglesia Católica y las demás confesiones**",
+"h": "Pero ninguna confesión es estatal"
+},
+{
+"id": "e16",
+"n": "E16",
+"e": "👩‍⚖️",
+"q": "Art. 17.2: pasadas 72 h, ¿a disposición de quién va el detenido?",
+"a": "De la **autoridad judicial**",
+"h": "No «gubernativa»: siempre un juez"
+},
+{
+"id": "e17",
+"n": "E17",
+"e": "💻",
+"q": "¿Qué dice el art. 18.4?",
+"a": "La ley **limitará el uso de la informática** para proteger el honor y la intimidad",
+"h": "¡Cae mucho en TAI! Es la base de la protección de datos",
+"t": true
+},
+{
+"id": "e18",
+"n": "E18",
+"e": "✉️",
+"q": "Art. 18.3: ¿qué comunicaciones nombra?",
+"a": "**Postales, telegráficas y telefónicas**",
+"h": "Es de 1978: no hay internet",
+"t": true
+},
+{
+"id": "e19",
+"n": "E19",
+"e": "📰",
+"q": "Art. 20.5: ¿quién puede ordenar el secuestro de una publicación?",
+"a": "Solo un **juez** (resolución judicial)",
+"h": "La censura previa está prohibida (20.2)"
+},
+{
+"id": "e20",
+"n": "E20",
+"e": "🚧",
+"q": "Art. 21.2: ¿cuándo se puede prohibir una manifestación?",
+"a": "Solo si hay **alteración del orden público con peligro** para personas o bienes",
+"h": "Se comunica antes; no se pide permiso"
+}
+]
+}

@@ -1,0 +1,342 @@
+[
+ {
+  "id": "I-1",
+  "bloque": "I",
+  "codigo": "I.1",
+  "orden": 1,
+  "titulo": "Constitución de 1978: derechos y deberes, garantías y Corona",
+  "semana": "2026-11-23",
+  "tarjetas": true,
+  "preguntas": true
+ },
+ {
+  "id": "I-2",
+  "bloque": "I",
+  "codigo": "I.2",
+  "orden": 2,
+  "titulo": "Cortes Generales, Tribunal Constitucional y Defensor del Pueblo",
+  "semana": "2026-11-30",
+  "tarjetas": true,
+  "preguntas": true
+ },
+ {
+  "id": "I-3",
+  "bloque": "I",
+  "codigo": "I.3",
+  "orden": 3,
+  "titulo": "Gobierno: composición, cese, funciones y relaciones con las Cortes",
+  "semana": "2026-12-07",
+  "tarjetas": true,
+  "preguntas": true
+ },
+ {
+  "id": "I-4",
+  "bloque": "I",
+  "codigo": "I.4",
+  "orden": 4,
+  "titulo": "Estatuto Básico del Empleado Público, Ley de transparencia y Agenda 2030",
+  "semana": "2026-12-07",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "I-5",
+  "bloque": "I",
+  "codigo": "I.5",
+  "orden": 5,
+  "titulo": "Políticas de igualdad, violencia de género, LGTBI, discapacidad y dependencia",
+  "semana": "2026-12-14",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "I-6",
+  "bloque": "I",
+  "codigo": "I.6",
+  "orden": 6,
+  "titulo": "Sociedad de la información, identidad y firma electrónica, DNI electrónico y Agenda Digital",
+  "semana": "2026-12-14",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "I-7",
+  "bloque": "I",
+  "codigo": "I.7",
+  "orden": 7,
+  "titulo": "Protección de datos, derechos digitales y reglamento europeo de inteligencia artificial",
+  "semana": "2026-12-28",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "I-8",
+  "bloque": "I",
+  "codigo": "I.8",
+  "orden": 8,
+  "titulo": "Acceso electrónico a los servicios públicos, gestión electrónica de procedimientos, ENS, ENI y guías CCN-STIC 800",
+  "semana": "2027-01-04",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "I-9",
+  "bloque": "I",
+  "codigo": "I.9",
+  "orden": 9,
+  "titulo": "Sedes electrónicas, canales, identificación, autenticación e infraestructuras comunes",
+  "semana": "2027-01-04",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-1",
+  "bloque": "II",
+  "codigo": "II.1",
+  "orden": 1,
+  "titulo": "Informática básica: representación de la información, arquitectura y componentes internos",
+  "semana": "2027-01-11",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-2",
+  "bloque": "II",
+  "codigo": "II.2",
+  "orden": 2,
+  "titulo": "Periféricos: conectividad, impresión, almacenamiento, visualización y videoconferencia",
+  "semana": "2027-01-11",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-3",
+  "bloque": "II",
+  "codigo": "II.3",
+  "orden": 3,
+  "titulo": "Tipos abstractos y estructuras de datos, organización de ficheros, algoritmos y formatos",
+  "semana": "2027-01-18",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-4",
+  "bloque": "II",
+  "codigo": "II.4",
+  "orden": 4,
+  "titulo": "Sistemas operativos: Windows, Unix/Linux y sistemas móviles",
+  "semana": "2027-01-25",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-5",
+  "bloque": "II",
+  "codigo": "II.5",
+  "orden": 5,
+  "titulo": "Bases de datos relacionales, orientadas a objetos y NoSQL",
+  "semana": "2027-02-01",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "II-6",
+  "bloque": "II",
+  "codigo": "II.6",
+  "orden": 6,
+  "titulo": "Inteligencia artificial, inteligencia de negocio, OLTP y OLAP (tema nuevo)",
+  "semana": "2027-02-08",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-1",
+  "bloque": "III",
+  "codigo": "III.1",
+  "orden": 1,
+  "titulo": "Modelado de datos, diseño lógico y físico, modelo relacional y normalización",
+  "semana": "2027-01-18",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-2",
+  "bloque": "III",
+  "codigo": "III.2",
+  "orden": 2,
+  "titulo": "Lenguajes de programación: tipos de datos, operadores, estructuras y procedimientos",
+  "semana": "2027-01-25",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-3",
+  "bloque": "III",
+  "codigo": "III.3",
+  "orden": 3,
+  "titulo": "SQL, procedimientos almacenados, eventos y disparadores",
+  "semana": "2027-02-01",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-4",
+  "bloque": "III",
+  "codigo": "III.4",
+  "orden": 4,
+  "titulo": "Programación orientada a objetos, patrones de diseño y UML",
+  "semana": "2027-02-08",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-5",
+  "bloque": "III",
+  "codigo": "III.5",
+  "orden": 5,
+  "titulo": "Arquitecturas Java EE/Jakarta EE y .NET",
+  "semana": "2027-02-15",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-6",
+  "bloque": "III",
+  "codigo": "III.6",
+  "orden": 6,
+  "titulo": "Arquitectura cliente/servidor y multicapa, servicios web",
+  "semana": "2027-02-15",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-7",
+  "bloque": "III",
+  "codigo": "III.7",
+  "orden": 7,
+  "titulo": "Aplicaciones web front-end y de servidor, HTML, XML y lenguajes de script",
+  "semana": "2027-02-22",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-8",
+  "bloque": "III",
+  "codigo": "III.8",
+  "orden": 8,
+  "titulo": "Accesibilidad, diseño universal, usabilidad y seguridad en el desarrollo",
+  "semana": "2027-02-22",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "III-9",
+  "bloque": "III",
+  "codigo": "III.9",
+  "orden": 9,
+  "titulo": "Repositorios, documentación, metodologías de desarrollo, integración continua y control de versiones",
+  "semana": "2027-03-01",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-1",
+  "bloque": "IV",
+  "codigo": "IV.1",
+  "orden": 1,
+  "titulo": "Administración del sistema operativo y del software de base",
+  "semana": "2027-03-08",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-2",
+  "bloque": "IV",
+  "codigo": "IV.2",
+  "orden": 2,
+  "titulo": "Administración de bases de datos, almacenamiento, backup y virtualización",
+  "semana": "2027-03-08",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-3",
+  "bloque": "IV",
+  "codigo": "IV.3",
+  "orden": 3,
+  "titulo": "Servidores de correo, contenedores, microservicios y cloud computing",
+  "semana": "2027-03-15",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-4",
+  "bloque": "IV",
+  "codigo": "IV.4",
+  "orden": 4,
+  "titulo": "Administración de redes de área local",
+  "semana": "2027-03-15",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-5",
+  "bloque": "IV",
+  "codigo": "IV.5",
+  "orden": 5,
+  "titulo": "Seguridad de los sistemas de información, criptografía, firma digital, CPD e incidencias",
+  "semana": "2027-03-22",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-6",
+  "bloque": "IV",
+  "codigo": "IV.6",
+  "orden": 6,
+  "titulo": "Comunicaciones: medios de transmisión, equipos y redes, incluidas móviles e inalámbricas",
+  "semana": "2027-03-29",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-7",
+  "bloque": "IV",
+  "codigo": "IV.7",
+  "orden": 7,
+  "titulo": "Modelos TCP/IP y OSI",
+  "semana": "2027-03-29",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-8",
+  "bloque": "IV",
+  "codigo": "IV.8",
+  "orden": 8,
+  "titulo": "Internet: arquitectura, servicios, HTTP, HTTPS y SSL/TLS",
+  "semana": "2027-04-05",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-9",
+  "bloque": "IV",
+  "codigo": "IV.9",
+  "orden": 9,
+  "titulo": "Seguridad en redes: perimetral, acceso remoto, VPN y puesto de usuario",
+  "semana": "2027-04-05",
+  "tarjetas": false,
+  "preguntas": false
+ },
+ {
+  "id": "IV-10",
+  "bloque": "IV",
+  "codigo": "IV.10",
+  "orden": 10,
+  "titulo": "Redes locales: tipología, técnicas de transmisión, métodos de acceso y dispositivos",
+  "semana": "2027-04-12",
+  "tarjetas": false,
+  "preguntas": false
+ }
+]
