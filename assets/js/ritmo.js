@@ -399,7 +399,7 @@ function vRitmoInicio() {
   <details class="card"><summary><b>¿Cómo funciona?</b></summary><ul class="fine">
   <li><b>Repaso espaciado:</b> cada concepto vuelve justo antes de que lo olvides; cuanto mejor lo sabes, más tarda en volver.</li>
   <li><b>Corrección automática:</b> en las tarjetas escribes lo que crees. Compruebo si están las <b>ideas clave</b> (lo que va en negrita), aunque lo digas con otras palabras o con alguna falta. Los números y artículos tienen que estar exactos.</li>
-  <li><b>Tu seguridad, sin preguntarte:</b> la mido por lo rápido que respondes comparado con lo normal en ti. Acertar rápido = lo sabes; acertar tras pensarlo mucho = vuelve antes.</li>
+  <li><b>Tu seguridad, sin preguntarte:</b> la mido por lo que tardas en <b>empezar a escribir</b> (lo que tardas en recordar, no en teclear), comparado con lo normal en ti. Acertar rápido = lo sabes; acertar tras pensarlo mucho = vuelve antes.</li>
   <li><b>Errores «seguros»:</b> si fallas algo respondiendo rápido, es que creías saberlo. Te lo destaco y te lo vuelvo a poner mañana: está estudiado que esos errores se corrigen muy bien si se repasan.</li>
   <li><b>Hasta acertarlo:</b> lo que fallas (o aciertas a medias) vuelve a salir en la misma sesión.</li>
   <li><b>Rescate:</b> lo que te costó aprender reaparece de vez en cuando.</li></ul></details></div>`;

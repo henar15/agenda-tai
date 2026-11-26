@@ -522,6 +522,7 @@ document.addEventListener('click', (e) => {
     const R = ui.rit;
     ritCommit();
     R.t0 = 0;
+    R.t1 = 0;
     R.i++;
     R.paso = 'q';
     R.sel = null;
@@ -689,6 +690,10 @@ document.addEventListener('click', (e) => {
     render();
   }
 });
+// momento en que empiezas a escribir: mide lo que tardas en recordar, no en teclear
+document.addEventListener('input', (e) => {
+  if (e.target.id === 'ritin' && ui.rit && !ui.rit.t1) ui.rit.t1 = Date.now();
+});
 document.addEventListener('submit', (e) => {
   const f = e.target.closest('[data-ritform]');
   if (!f || !ui.rit) return;
@@ -705,7 +710,7 @@ document.addEventListener('submit', (e) => {
   ritEvaluar(
     x,
     res.score >= 0.75 ? 'ok' : res.score >= 0.4 ? 'casi' : 'mal',
-    Date.now() - (R.t0 || Date.now()),
+    (R.t1 || Date.now()) - (R.t0 || Date.now()),
     {
       txt,
       claves: res.claves,
