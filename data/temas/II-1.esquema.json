@@ -1,0 +1,82 @@
+{
+  "tema": "II-1",
+  "ramas": [
+    {
+      "t": "Información y medidas",
+      "e": "🔢",
+      "items": [
+        "Dato → información → **conocimiento**",
+        "**Bit** = 0/1 · **nibble** = 4 bits · **byte** = 8 bits",
+        "Kilo = **1000** · Kibi = **1024** (IEC 60027-2, 1998)",
+        "Bases: binaria, octal, decimal y **hexadecimal**",
+        "Decimal → base: dividir y leer **restos al revés**"
+      ]
+    },
+    {
+      "t": "Representación",
+      "e": "🔤",
+      "items": [
+        "**ASCII 7 bits** · EBCDIC 8 · **UNICODE 16**",
+        "m símbolos → n bits con **2ⁿ ≥ m** (95 → 7)",
+        "Enteros: signo y magnitud, **C1**, **C2**, sesgada",
+        "Coma flotante: **simple 32** / **doble 64** bits",
+        "Errores: **paridad**, **CRC** y LRC"
+      ]
+    },
+    {
+      "t": "Sistemas de información",
+      "e": "🗂️",
+      "items": [
+        "Entrada · proceso · salida · **retroalimentación**",
+        "HW + SW + **humanware**",
+        "Info útil: exacta, completa, relevante, segura…",
+        "Tipos: transaccionales, **DSS** y estratégicos",
+        "Centralizados vs **distribuidos**"
+      ]
+    },
+    {
+      "t": "Arquitecturas",
+      "e": "🏛️",
+      "items": [
+        "**Von Neumann** (1945): una memoria y un bus",
+        "Problema: **cuello de botella** Von Neumann",
+        "**Harvard**: memorias de datos e instrucciones separadas",
+        "Generaciones: válvulas → **transistor** → CI → **microprocesador**",
+        "Buses: **datos**, **direcciones** y **control**"
+      ]
+    },
+    {
+      "t": "Placa base",
+      "e": "🟫",
+      "items": [
+        "**BIOS** en Flash ROM → **POST** → CMOS → bootloader",
+        "**CMOS** alimentada por la **pila** (CR2032)",
+        "**UEFI**: sucesor de la BIOS, discos > 2 TB, Secure Boot",
+        "Northbridge (RAM) · Southbridge (periféricos)",
+        "**TPM 2.0**: guarda claves, lo pide Windows 11"
+      ]
+    },
+    {
+      "t": "CPU",
+      "e": "🧠",
+      "items": [
+        "**ALU** (cálculo) + **unidad de control** + reloj (GHz)",
+        "Ciclo: **fetch → decodificar → ejecutar** → PC+1",
+        "**CISC** complejo (Intel) vs **RISC** simple (ARM)",
+        "Núcleo lógico: **Hyper-Threading** / SMT",
+        "Flynn: **SISD**, SIMD, MISD, MIMD"
+      ]
+    },
+    {
+      "t": "Memoria",
+      "e": "💾",
+      "items": [
+        "Volátil (**RAM**) vs no volátil (**ROM**, discos)",
+        "ROM → PROM → EPROM → **EEPROM**",
+        "**DRAM** con refresco · **SRAM** = caché rápida",
+        "**DDR**: dos datos por ciclo (DDR5, 2020)",
+        "**Swap** en disco · **thrashing** = demasiada paginación"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,746 @@
+{
+  "tema": "II-1",
+  "cards": [
+    {
+      "id": "ii1c1",
+      "n": "1",
+      "e": "💻",
+      "t": false,
+      "q": "¿De dónde viene la palabra «informática»?",
+      "a": "Del francés: **INFORmation** + **autoMATIQUE**. Es el **tratamiento automatizado de la información**"
+    },
+    {
+      "id": "ii1c2",
+      "n": "2",
+      "e": "🖥️",
+      "t": false,
+      "q": "Rasgos clave de un ordenador (definición de Prieto)",
+      "a": "Máquina que recibe **datos de entrada**, hace operaciones **lógicas y aritméticas** y da la **salida**, **sin operador humano** y bajo el control de un **programa almacenado**"
+    },
+    {
+      "id": "ii1c3",
+      "n": "3",
+      "e": "🧑‍💻",
+      "t": true,
+      "q": "Las 3 partes de un sistema informático",
+      "a": "**Hardware** (físico), **software** (lógico) y **humanware** (componente humano)",
+      "h": "El humanware se añadió en los últimos años"
+    },
+    {
+      "id": "ii1c4",
+      "n": "4",
+      "e": "📊",
+      "t": true,
+      "q": "Dato vs información vs conocimiento",
+      "a": "**Dato**: sin significado por sí mismo · **Información**: datos **procesados** con significado · **Conocimiento**: deriva de la información y es **útil para la acción**"
+    },
+    {
+      "id": "ii1c5",
+      "n": "5",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Cómo pasa un dato a información? (Davenport y Prusak)",
+      "a": "Las 5 C: **Contextualización, Categorización, Cálculo, Corrección y Condensación**"
+    },
+    {
+      "id": "ii1c6",
+      "n": "6",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Cómo pasa la información a conocimiento?",
+      "a": "**Comparación, Consecuencias, Conexiones, Conversación** y **Predicción**"
+    },
+    {
+      "id": "ii1c7",
+      "n": "7",
+      "e": "⚡",
+      "t": false,
+      "q": "¿Qué es un bit?",
+      "a": "La **unidad mínima** de información: solo vale **0** (sin corriente) o **1** (con corriente). Viene de **BInary digiT**"
+    },
+    {
+      "id": "ii1c8",
+      "n": "8",
+      "e": "📦",
+      "t": true,
+      "q": "¿Qué es un byte?",
+      "a": "Un conjunto de **8 bits**. Es la unidad con la que se mide el **almacenamiento**"
+    },
+    {
+      "id": "ii1c9",
+      "n": "9",
+      "e": "🍪",
+      "t": false,
+      "q": "¿Qué es un nibble?",
+      "a": "**4 bits** (medio byte, cuarteto). Cada cifra **hexadecimal** cabe en un nibble (2⁴ = 16)"
+    },
+    {
+      "id": "ii1c10",
+      "n": "10",
+      "e": "📏",
+      "t": false,
+      "q": "Orden de los múltiplos del byte",
+      "a": "**K-M-G-T-P-E-Z-Y** (kilo, mega, giga, tera, peta, exa, zetta, yotta)…",
+      "h": "Truco: KM · GT · PEZ Y…"
+    },
+    {
+      "id": "ii1c11",
+      "n": "11",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Kilobyte o kibibyte?",
+      "a": "Desde **1998** (norma **IEC 60027-2**): **kilo = 1000** bytes y **kibi (KiB) = 1024** bytes",
+      "h": "Microsoft sigue llamando KB a 1024"
+    },
+    {
+      "id": "ii1c12",
+      "n": "12",
+      "e": "🔟",
+      "t": false,
+      "q": "¿Qué es el BCD?",
+      "a": "**Decimal codificado en binario**: cada dígito decimal se codifica con **4 bits**",
+      "h": "59237 en BCD ≠ 59237 en binario puro"
+    },
+    {
+      "id": "ii1c13",
+      "n": "13",
+      "e": "🔣",
+      "t": false,
+      "q": "Los 4 sistemas de numeración del tema",
+      "a": "**Binario** (base 2), **octal** (8), **decimal** (10) y **hexadecimal** (16)",
+      "h": "Octal y hexa son potencias de 2: paso directo a binario"
+    },
+    {
+      "id": "ii1c14",
+      "n": "14",
+      "e": "➗",
+      "t": false,
+      "q": "¿Cómo se pasa de decimal a otra base?",
+      "a": "**Dividiendo** entre la base, guardando los **restos** y leyéndolos en **orden inverso**"
+    },
+    {
+      "id": "ii1c15",
+      "n": "15",
+      "e": "✖️",
+      "t": false,
+      "q": "¿Cómo se pasa de cualquier base a decimal?",
+      "a": "Multiplicando cada cifra por la **base elevada a su posición** (empezando en **0** por la derecha) y sumando"
+    },
+    {
+      "id": "ii1c16",
+      "n": "16",
+      "e": "🗂️",
+      "t": false,
+      "q": "Los 4 tipos básicos de información",
+      "a": "**Texto, números, sonidos e imágenes**"
+    },
+    {
+      "id": "ii1c17",
+      "n": "17",
+      "e": "🧾",
+      "t": true,
+      "q": "¿Cuántos bits necesito para m símbolos?",
+      "a": "El menor n con **2ⁿ ≥ m**. Ej.: **95 caracteres → 7 bits** (2⁷ = 128); 255 → **8 bits**",
+      "h": "n ≈ 3,32 · log₁₀(m), redondeando hacia arriba"
+    },
+    {
+      "id": "ii1c18",
+      "n": "18",
+      "e": "🅰️",
+      "t": true,
+      "q": "¿Cuántos bits usa cada código de caracteres?",
+      "a": "**ASCII: 7 bits** (ampliado: 8) · **EBCDIC: 8 bits** · **UNICODE: 16 bits**"
+    },
+    {
+      "id": "ii1c19",
+      "n": "19",
+      "e": "🌍",
+      "t": false,
+      "q": "Las 3 «U» de UNICODE",
+      "a": "**Universalidad** (casi todos los idiomas), **Unicidad** (un código por carácter) y **Uniformidad** (16 bits)",
+      "h": "Estándar ISO/IEC 10646. No codifica caracteres de control"
+    },
+    {
+      "id": "ii1c20",
+      "n": "20",
+      "e": "🖼️",
+      "t": false,
+      "q": "2 formas principales de representar imágenes",
+      "a": "**Mapa de bits** e **imagen vectorial**"
+    },
+    {
+      "id": "ii1c21",
+      "n": "21",
+      "e": "➖",
+      "t": false,
+      "q": "Enteros: signo y magnitud",
+      "a": "El **bit más a la izquierda** es el signo (**0 positivo, 1 negativo**) y el resto, el valor"
+    },
+    {
+      "id": "ii1c22",
+      "n": "22",
+      "e": "🔃",
+      "t": false,
+      "q": "¿Cómo se calcula el complemento a 1?",
+      "a": "**Cambiando ceros por unos** y unos por ceros. Ej.: 1001 → **0110**"
+    },
+    {
+      "id": "ii1c23",
+      "n": "23",
+      "e": "➕",
+      "t": true,
+      "q": "¿Cómo se calcula el complemento a 2?",
+      "a": "**Complemento a 1 + 1**. Ej.: 1001 → 0110 + 1 = **0111**"
+    },
+    {
+      "id": "ii1c24",
+      "n": "24",
+      "e": "⚖️",
+      "t": false,
+      "q": "¿Qué es la representación sesgada (en exceso)?",
+      "a": "Se suma un **sesgo** (normalmente 2ⁿ⁻¹) para que el número sea siempre positivo: **no hace falta bit de signo**"
+    },
+    {
+      "id": "ii1c25",
+      "n": "25",
+      "e": "🌊",
+      "t": true,
+      "q": "Coma flotante: precisión simple y doble",
+      "a": "**Simple = 32 bits** (float) · **Doble = 64 bits** (double). Estándar **IEEE 754**"
+    },
+    {
+      "id": "ii1c26",
+      "n": "26",
+      "e": "🎯",
+      "t": false,
+      "q": "Coma flotante en 32 bits: reparto",
+      "a": "**1 bit de signo**, **8 bits de exponente** (sesgo **127**) y **23 bits de mantisa**",
+      "h": "6,75 = 1,1011 × 2² → exponente 2+127 = 129"
+    },
+    {
+      "id": "ii1c27",
+      "n": "27",
+      "e": "🧪",
+      "t": true,
+      "q": "¿Qué es el bit de paridad?",
+      "a": "Un bit extra para **detectar errores**. **Par**: el total de unos debe ser par · **Impar**: debe ser impar"
+    },
+    {
+      "id": "ii1c28",
+      "n": "28",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué es el CRC?",
+      "a": "**Verificación de redundancia cíclica**: detecta errores con el resto de una **división de polinomios**. Muy usado en **redes y almacenamiento**",
+      "h": "No sirve contra cambios deliberados"
+    },
+    {
+      "id": "ii1c29",
+      "n": "29",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué es el LRC?",
+      "a": "**Verificación de redundancia longitudinal** (u horizontal): comprueba la paridad de un **grupo de caracteres** con un campo de **1 byte**"
+    },
+    {
+      "id": "ii1c30",
+      "n": "30",
+      "e": "⚙️",
+      "t": true,
+      "q": "Los 4 componentes de un sistema",
+      "a": "**Entrada, procesamiento, salida y retroalimentación**",
+      "h": "El almacenamiento es opcional"
+    },
+    {
+      "id": "ii1c31",
+      "n": "31",
+      "e": "🔙",
+      "t": false,
+      "q": "¿Qué es la retroalimentación?",
+      "a": "Salida que se usa para **cambiar la entrada o el proceso** y mejorar la **eficacia** del sistema"
+    },
+    {
+      "id": "ii1c32",
+      "n": "32",
+      "e": "🏗️",
+      "t": false,
+      "q": "Elementos de un sistema de información basado en ordenador",
+      "a": "**Hardware, software, bases de datos, telecomunicaciones, personas y procedimientos**"
+    },
+    {
+      "id": "ii1c33",
+      "n": "33",
+      "e": "📋",
+      "t": false,
+      "q": "Las 8 funciones de un SI (fundación OSDE)",
+      "a": "**Recolección, clasificación, compresión, almacenamiento, recuperación, procesamiento, transmisión y exhibición**"
+    },
+    {
+      "id": "ii1c34",
+      "n": "34",
+      "e": "✅",
+      "t": false,
+      "q": "Características de la información útil",
+      "a": "**Accesible, exacta, completa, económica, flexible, relevante, confiable, segura y simple**",
+      "h": "Económica: cuesta menos de lo que aporta"
+    },
+    {
+      "id": "ii1c35",
+      "n": "35",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Cuál es el elemento más importante de un sistema de información?",
+      "a": "La **base de datos**, que debe protegerse para garantizar su **integridad**"
+    },
+    {
+      "id": "ii1c36",
+      "n": "36",
+      "e": "🎯",
+      "t": false,
+      "q": "Clasificación de SI según su propósito",
+      "a": "**Transaccionales** (procesos operativos), **DSS** (apoyo a la **toma de decisiones**) y **estratégicos** (ventaja competitiva)"
+    },
+    {
+      "id": "ii1c37",
+      "n": "37",
+      "e": "🌐",
+      "t": false,
+      "q": "Sistemas centralizados vs distribuidos",
+      "a": "**Centralizado**: todo en un lugar central con terminales · **Distribuido**: equipos separados en red que el usuario ve como **un solo sistema**"
+    },
+    {
+      "id": "ii1c38",
+      "n": "38",
+      "e": "🏛️",
+      "t": true,
+      "q": "¿Qué es la arquitectura Von Neumann?",
+      "a": "Modelo de **1945** (informe del **EDVAC**), también llamado **Princeton**: **una sola memoria** para instrucciones y datos"
+    },
+    {
+      "id": "ii1c39",
+      "n": "39",
+      "e": "🧱",
+      "t": false,
+      "q": "Partes de la arquitectura Von Neumann",
+      "a": "**Unidad de procesamiento** (ALU y registros), **unidad de control**, **memoria** y **entrada/salida**"
+    },
+    {
+      "id": "ii1c40",
+      "n": "40",
+      "e": "🍾",
+      "t": false,
+      "q": "¿Qué es el cuello de botella de Von Neumann?",
+      "a": "Al compartir **un solo bus**, no se puede buscar una instrucción y operar con datos **a la vez**"
+    },
+    {
+      "id": "ii1c41",
+      "n": "41",
+      "e": "🏫",
+      "t": true,
+      "q": "¿Qué es la arquitectura Harvard?",
+      "a": "**Dos memorias separadas** (instrucciones y datos) con conexiones propias: acceso **simultáneo**. Se usa en **microcontroladores y DSP**"
+    },
+    {
+      "id": "ii1c42",
+      "n": "42",
+      "e": "1️⃣",
+      "t": false,
+      "q": "1ª generación de ordenadores",
+      "a": "**Válvulas de vacío** y relés, tarjetas perforadas. Lentos y enormes. **EDVAC** (1945), EDSAC"
+    },
+    {
+      "id": "ii1c43",
+      "n": "43",
+      "e": "2️⃣",
+      "t": false,
+      "q": "2ª generación de ordenadores",
+      "a": "El **transistor** sustituye a las válvulas. **TRADIC** (1954). Anillos magnéticos"
+    },
+    {
+      "id": "ii1c44",
+      "n": "44",
+      "e": "3️⃣",
+      "t": true,
+      "q": "3ª generación de ordenadores",
+      "a": "**Circuitos integrados** (chips de silicio). Ej.: **IBM 360**"
+    },
+    {
+      "id": "ii1c45",
+      "n": "45",
+      "e": "4️⃣",
+      "t": false,
+      "q": "4ª generación de ordenadores",
+      "a": "Integración **LSI y VLSI**: nace el **microprocesador** y los **ordenadores personales**"
+    },
+    {
+      "id": "ii1c46",
+      "n": "46",
+      "e": "5️⃣",
+      "t": false,
+      "q": "Líneas de la 5ª generación",
+      "a": "**Semiconductores, paralelismo masivo, lógica difusa, facilidad de uso, sistemas distribuidos e inteligencia artificial**"
+    },
+    {
+      "id": "ii1c47",
+      "n": "47",
+      "e": "🔲",
+      "t": false,
+      "q": "Microprocesador vs microcontrolador",
+      "a": "**Microprocesador**: chip que actúa como **CPU** · **Microcontrolador**: chip con **CPU + memoria + E/S**"
+    },
+    {
+      "id": "ii1c48",
+      "n": "48",
+      "e": "🚌",
+      "t": true,
+      "q": "Los 3 tipos de buses",
+      "a": "**Datos** (intercambio de datos), **direcciones** (posiciones de memoria o E/S) y **control** (señales de la UC)"
+    },
+    {
+      "id": "ii1c49",
+      "n": "49",
+      "e": "📶",
+      "t": false,
+      "q": "¿Qué es el ancho de palabra?",
+      "a": "Los **bits que maneja en paralelo** el ordenador. Hoy, **32 o 64 bits**"
+    },
+    {
+      "id": "ii1c50",
+      "n": "50",
+      "e": "🚀",
+      "t": false,
+      "q": "¿Qué hace la BIOS?",
+      "a": "Firmware que **inicia y verifica el hardware** al encender. Está en **ROM** (hoy **Flash ROM**)",
+      "h": "Basic Input/Output System"
+    },
+    {
+      "id": "ii1c51",
+      "n": "51",
+      "e": "🩺",
+      "t": true,
+      "q": "¿Qué es el POST?",
+      "a": "**Power-On Self-Test**: primera tarea de la BIOS, comprueba **RAM, CPU, gráfica, discos**…"
+    },
+    {
+      "id": "ii1c52",
+      "n": "52",
+      "e": "🔋",
+      "t": false,
+      "q": "¿Qué es la CMOS y quién la alimenta?",
+      "a": "Memoria **RAM de 64 a 256 bytes** con la **configuración** de la BIOS. La alimenta la **pila** de la placa (normalmente **CR2032**)",
+      "h": "Si la fecha se pierde al apagar, falla la pila"
+    },
+    {
+      "id": "ii1c53",
+      "n": "53",
+      "e": "🥾",
+      "t": false,
+      "q": "¿Qué hace el bootloader?",
+      "a": "Carga el **núcleo del sistema operativo** en la RAM. Está en el sector de arranque (**MBR o GPT**). Ej.: **GRUB** en Linux"
+    },
+    {
+      "id": "ii1c54",
+      "n": "54",
+      "e": "🆕",
+      "t": true,
+      "q": "¿Qué es UEFI?",
+      "a": "El **sucesor de la BIOS**, escrito en **C**: interfaz gráfica con ratón, discos de **más de 2 TB** y **arranque seguro**"
+    },
+    {
+      "id": "ii1c55",
+      "n": "55",
+      "e": "🔌",
+      "t": false,
+      "q": "Zócalos PGA y LGA",
+      "a": "**PGA**: los pines están en el **procesador** (ZIF con palanca) · **LGA**: los pines están en la **placa**"
+    },
+    {
+      "id": "ii1c56",
+      "n": "56",
+      "e": "🌉",
+      "t": true,
+      "q": "Northbridge vs Southbridge",
+      "a": "**Norte**: CPU con **RAM y gráfica** (por el **FSB**) · **Sur**: **USB, audio, discos y periféricos**",
+      "h": "Hoy se integran en el procesador"
+    },
+    {
+      "id": "ii1c57",
+      "n": "57",
+      "e": "🎴",
+      "t": false,
+      "q": "Ranuras de expansión actuales",
+      "a": "**PCIe x16** para gráficas (sustituye a **AGP**); **PCIe x1/x4** para otras tarjetas. **ISA** está obsoleta",
+      "h": "Los SSD rápidos también usan PCIe"
+    },
+    {
+      "id": "ii1c58",
+      "n": "58",
+      "e": "🔐",
+      "t": true,
+      "q": "¿Qué es el chip TPM?",
+      "a": "**Módulo de plataforma de confianza**: criptoprocesador seguro que guarda **claves de cifrado**. Versión **2.0**, exigida por **Windows 11**",
+      "h": "Norma ISO/IEC 11889"
+    },
+    {
+      "id": "ii1c59",
+      "n": "59",
+      "e": "🛡️",
+      "t": false,
+      "q": "Qué aporta el TPM",
+      "a": "**Generador de números aleatorios**, generación de claves, **RSA y hash**, mediciones de **integridad** y **sellado de datos**",
+      "h": "Solo se comunica con la CPU"
+    },
+    {
+      "id": "ii1c60",
+      "n": "60",
+      "e": "⏱️",
+      "t": false,
+      "q": "¿De qué depende la velocidad de la CPU?",
+      "a": "Sobre todo de la **frecuencia del reloj** (en **GHz** = 10⁹ ciclos/s), además de los núcleos y el juego de instrucciones",
+      "h": "Rendimiento: FLOPS y MIPS"
+    },
+    {
+      "id": "ii1c61",
+      "n": "61",
+      "e": "➕",
+      "t": false,
+      "q": "Los 3 tipos de operaciones de la ALU",
+      "a": "**Aritméticas, lógicas y de desplazamiento**"
+    },
+    {
+      "id": "ii1c62",
+      "n": "62",
+      "e": "🔀",
+      "t": false,
+      "q": "Puertas AND, OR y XOR",
+      "a": "**AND**: 1 si **las dos** son 1 · **OR**: 1 si **alguna** es 1 · **XOR**: 1 si **solo una** es 1"
+    },
+    {
+      "id": "ii1c63",
+      "n": "63",
+      "e": "🚫",
+      "t": false,
+      "q": "Puertas NAND y NOR",
+      "a": "**NAND** = AND negado (**barra de Sheffer**) · **NOR** = OR negado (**barra de Pierce**)"
+    },
+    {
+      "id": "ii1c64",
+      "n": "64",
+      "e": "🟰",
+      "t": false,
+      "q": "¿Cuándo da 1 la puerta XNOR (2 entradas)?",
+      "a": "Cuando las **dos entradas son iguales** (0-0 o 1-1)"
+    },
+    {
+      "id": "ii1c65",
+      "n": "65",
+      "e": "↔️",
+      "t": false,
+      "q": "¿Qué equivale a desplazar bits?",
+      "a": "A **multiplicar o dividir por 2**"
+    },
+    {
+      "id": "ii1c66",
+      "n": "66",
+      "e": "🎛️",
+      "t": true,
+      "q": "Pasos para ejecutar una instrucción",
+      "a": "**Fetch** (traer) → **decodificar** → **execute** (ejecutar) → **incrementar el contador de programa**"
+    },
+    {
+      "id": "ii1c67",
+      "n": "67",
+      "e": "📍",
+      "t": false,
+      "q": "¿Qué es el contador de programa (PC)?",
+      "a": "Registro con la **dirección de la siguiente instrucción**. También *instruction pointer*"
+    },
+    {
+      "id": "ii1c68",
+      "n": "68",
+      "e": "🧷",
+      "t": false,
+      "q": "UC cableada vs microprogramada",
+      "a": "**Cableada**: más sencilla pero **difícil de modificar** · **Microprogramada**: más compleja pero **fácil de modificar**"
+    },
+    {
+      "id": "ii1c69",
+      "n": "69",
+      "e": "🏋️",
+      "t": true,
+      "q": "CISC vs RISC",
+      "a": "**CISC**: muchas instrucciones **complejas**, varios ciclos (Intel) · **RISC**: pocas y **simples**, **un ciclo**, **pipeline** y muchos registros"
+    },
+    {
+      "id": "ii1c70",
+      "n": "70",
+      "e": "📱",
+      "t": false,
+      "q": "¿Qué es ARM?",
+      "a": "**Advanced RISC Machine**: arquitectura **RISC** de bajo consumo. **ARM Holdings** no fabrica: **licencia** el diseño",
+      "h": "64 bits desde ARMv8-A"
+    },
+    {
+      "id": "ii1c71",
+      "n": "71",
+      "e": "🧵",
+      "t": false,
+      "q": "Núcleo físico vs lógico",
+      "a": "**Físico**: circuito real del chip · **Lógico**: comparte la unidad del físico; **solo lo ve el SO**. Intel: **Hyper-Threading**; AMD: **SMT**"
+    },
+    {
+      "id": "ii1c72",
+      "n": "72",
+      "e": "🔁",
+      "t": false,
+      "q": "Programa, proceso e hilo",
+      "a": "**Programa**: conjunto de instrucciones · **Proceso**: programa **en ejecución** (con PID) · **Hilo**: unidad básica de ejecución dentro de un proceso"
+    },
+    {
+      "id": "ii1c73",
+      "n": "73",
+      "e": "💧",
+      "t": false,
+      "q": "Memoria volátil vs no volátil",
+      "a": "**Volátil**: se borra al apagar (**RAM**) · **No volátil**: se conserva (**ROM, discos, USB**)"
+    },
+    {
+      "id": "ii1c74",
+      "n": "74",
+      "e": "💡",
+      "t": false,
+      "q": "¿Qué es la memoria Flash NAND?",
+      "a": "Memoria no volátil que guarda datos **más de 10 años** sin corriente: **USB, SD, SSD, BIOS**"
+    },
+    {
+      "id": "ii1c75",
+      "n": "75",
+      "e": "👯",
+      "t": false,
+      "q": "¿Qué es el dual channel?",
+      "a": "Acceso **simultáneo a dos módulos de RAM** idénticos para ganar rendimiento"
+    },
+    {
+      "id": "ii1c76",
+      "n": "76",
+      "e": "📖",
+      "t": true,
+      "q": "Tipos de ROM",
+      "a": "**ROM, PROM** (programable), **EPROM** (borrable) y **EEPROM** (borrable **eléctricamente**)",
+      "h": "La EEPROM es la base de la memoria flash"
+    },
+    {
+      "id": "ii1c77",
+      "n": "77",
+      "e": "🎲",
+      "t": false,
+      "q": "¿Por qué la RAM es de «acceso aleatorio»?",
+      "a": "Porque se tarda **lo mismo** en leer o escribir **cualquier posición**. Es **volátil**"
+    },
+    {
+      "id": "ii1c78",
+      "n": "78",
+      "e": "♻️",
+      "t": false,
+      "q": "¿Por qué la DRAM es más lenta?",
+      "a": "Usa **condensadores** que necesitan **refresco** constante"
+    },
+    {
+      "id": "ii1c79",
+      "n": "79",
+      "e": "⏩",
+      "t": false,
+      "q": "¿Qué es la DDR SDRAM?",
+      "a": "**Double Data Rate**: transmite datos **dos veces por ciclo** de reloj. DDR1 (**2000**), DDR2 (2003), DDR3 (2007), DDR4 (2014), DDR5 (**2020**)"
+    },
+    {
+      "id": "ii1c80",
+      "n": "80",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es la caché?",
+      "a": "**SRAM**: muy rápida y cara, con **transistores**, **sin refresco**. Hoy va **dentro del procesador**",
+      "h": "L1 es el nivel más rápido"
+    },
+    {
+      "id": "ii1c81",
+      "n": "81",
+      "e": "💾",
+      "t": false,
+      "q": "HDD vs SSD",
+      "a": "**HDD** magnético: partes móviles, más barato · **SSD**: sin partes móviles, **más rápido**, silencioso y consume menos"
+    },
+    {
+      "id": "ii1c82",
+      "n": "82",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es la swap (memoria virtual)?",
+      "a": "Simular **RAM en el disco duro** para no quedarse sin memoria, aunque **ralentiza** el equipo"
+    },
+    {
+      "id": "ii1c83",
+      "n": "83",
+      "e": "🔺",
+      "t": false,
+      "q": "¿Cómo es la pirámide de la memoria?",
+      "a": "Arriba: **más rápida, cara y pequeña** (registros, caché). Abajo: **más capacidad**, más lenta y barata"
+    },
+    {
+      "id": "ii1c84",
+      "n": "84",
+      "e": "🌀",
+      "t": true,
+      "q": "¿Qué es el thrashing (hiperpaginación)?",
+      "a": "El SO pasa **más tiempo paginando que ejecutando**. Mejor solución: **más RAM**"
+    },
+    {
+      "id": "ii1c85",
+      "n": "85",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Para qué sirven los modos de direccionamiento?",
+      "a": "Para manejar **estructuras complejas** (vectores, matrices) y **reducir bits** en las instrucciones"
+    },
+    {
+      "id": "ii1c86",
+      "n": "86",
+      "e": "📌",
+      "t": false,
+      "q": "Direccionamiento inmediato vs directo vs indirecto",
+      "a": "**Inmediato**: el operando va **en la instrucción** · **Directo**: la instrucción trae la **dirección real** · **Indirecto**: trae la dirección de **dónde está la dirección**"
+    },
+    {
+      "id": "ii1c87",
+      "n": "87",
+      "e": "📎",
+      "t": false,
+      "q": "Base y desplazamiento vs indexado",
+      "a": "**Base**: registro base + desplazamiento · **Indexado**: **registro índice** + campo de operando"
+    },
+    {
+      "id": "ii1c88",
+      "n": "88",
+      "e": "📥",
+      "t": false,
+      "q": "Instrucciones RISC para usar la memoria",
+      "a": "Solo dos: **Load** (cargar en registro) y **Store** (guardar en memoria)"
+    },
+    {
+      "id": "ii1c89",
+      "n": "89",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es un procesador multinúcleo?",
+      "a": "Dos o más procesadores **independientes en un solo paquete** que comparten caché (L2/L3)"
+    },
+    {
+      "id": "ii1c90",
+      "n": "90",
+      "e": "🧮",
+      "t": true,
+      "q": "Clasificación de Flynn",
+      "a": "**SISD** (Von Neumann clásico), **SIMD** (misma instrucción, muchos datos), **MISD** (casi no se usa) y **MIMD** (varias instrucciones y datos)"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+{
+  "tema": "II-1",
+  "preguntas": [
+    {
+      "id": "ii1-01",
+      "tipico": true,
+      "q": "¿Cuántos bits tiene un nibble?",
+      "opts": [
+        "4",
+        "2",
+        "16",
+        "8"
+      ],
+      "c": 0,
+      "exp": "Un nibble es medio byte: 4 bits."
+    },
+    {
+      "id": "ii1-02",
+      "tipico": true,
+      "q": "Según la norma IEC 60027-2, un kibibyte (KiB) equivale a…",
+      "opts": [
+        "1024 bytes",
+        "1000 bits",
+        "1000 bytes",
+        "1024 bits"
+      ],
+      "c": 0,
+      "exp": "Kibi = 1024; kilo = 1000."
+    },
+    {
+      "id": "ii1-03",
+      "tipico": true,
+      "q": "¿Cuántos bits se necesitan como mínimo para codificar 95 caracteres?",
+      "opts": [
+        "7",
+        "8",
+        "6",
+        "95"
+      ],
+      "c": 0,
+      "exp": "2⁶ = 64 se queda corto; 2⁷ = 128 basta."
+    },
+    {
+      "id": "ii1-04",
+      "tipico": true,
+      "q": "¿Cuántos bits usa el código ASCII estándar?",
+      "opts": [
+        "8",
+        "7",
+        "16",
+        "6"
+      ],
+      "c": 1,
+      "exp": "ASCII usa 7 bits; las versiones ampliadas, 8."
+    },
+    {
+      "id": "ii1-05",
+      "tipico": false,
+      "q": "¿Qué NO es una característica de UNICODE según el tema?",
+      "opts": [
+        "Universalidad",
+        "Codifica caracteres de control",
+        "Unicidad",
+        "Uniformidad"
+      ],
+      "c": 1,
+      "exp": "UNICODE no codifica caracteres de control."
+    },
+    {
+      "id": "ii1-06",
+      "tipico": true,
+      "q": "El complemento a 2 de 1001 es…",
+      "opts": [
+        "1010",
+        "1110",
+        "0111",
+        "0110"
+      ],
+      "c": 2,
+      "exp": "Complemento a 1 (0110) + 1 = 0111."
+    },
+    {
+      "id": "ii1-07",
+      "tipico": true,
+      "q": "La precisión doble en coma flotante (IEEE 754) usa…",
+      "opts": [
+        "32 bits",
+        "16 bits",
+        "64 bits",
+        "128 bits"
+      ],
+      "c": 2,
+      "exp": "Simple = 32 bits; doble = 64 bits."
+    },
+    {
+      "id": "ii1-08",
+      "tipico": true,
+      "q": "¿Qué técnica de detección de errores se basa en el resto de una división de polinomios?",
+      "opts": [
+        "Bit de paridad",
+        "LRC",
+        "BCD",
+        "CRC"
+      ],
+      "c": 3,
+      "exp": "La verificación de redundancia cíclica (CRC)."
+    },
+    {
+      "id": "ii1-09",
+      "tipico": true,
+      "q": "Los 4 componentes de un sistema son entrada, procesamiento, salida y…",
+      "opts": [
+        "Control",
+        "Transmisión",
+        "Retroalimentación",
+        "Almacenamiento"
+      ],
+      "c": 2,
+      "exp": "El almacenamiento es opcional; la retroalimentación es componente."
+    },
+    {
+      "id": "ii1-10",
+      "tipico": true,
+      "q": "La arquitectura con una única memoria para datos e instrucciones es la…",
+      "opts": [
+        "ARM",
+        "Von Neumann",
+        "Harvard",
+        "Flynn"
+      ],
+      "c": 1,
+      "exp": "Von Neumann (o Princeton), 1945."
+    },
+    {
+      "id": "ii1-11",
+      "tipico": true,
+      "q": "La arquitectura Harvard se caracteriza por…",
+      "opts": [
+        "Usar solo instrucciones complejas",
+        "Carecer de unidad de control",
+        "Un solo bus compartido",
+        "Memorias separadas para instrucciones y datos"
+      ],
+      "c": 3,
+      "exp": "Permite acceder a las dos memorias a la vez. Se usa en microcontroladores y DSP."
+    },
+    {
+      "id": "ii1-12",
+      "tipico": true,
+      "q": "¿Qué tecnología define la 2ª generación de ordenadores?",
+      "opts": [
+        "Transistores",
+        "Circuitos integrados",
+        "Microprocesador",
+        "Válvulas de vacío"
+      ],
+      "c": 0,
+      "exp": "El transistor sustituye a las válvulas (TRADIC, 1954)."
+    },
+    {
+      "id": "ii1-13",
+      "tipico": false,
+      "q": "El microprocesador y los ordenadores personales aparecen en la…",
+      "opts": [
+        "5ª generación",
+        "3ª generación",
+        "4ª generación",
+        "2ª generación"
+      ],
+      "c": 2,
+      "exp": "4ª generación, con integración LSI y VLSI."
+    },
+    {
+      "id": "ii1-14",
+      "tipico": true,
+      "q": "¿Qué bus transporta las posiciones de memoria a las que se quiere acceder?",
+      "opts": [
+        "FSB",
+        "Bus de direcciones",
+        "Bus de datos",
+        "Bus de control"
+      ],
+      "c": 1,
+      "exp": "El bus de direcciones lleva las direcciones de memoria o de E/S."
+    },
+    {
+      "id": "ii1-15",
+      "tipico": true,
+      "q": "La primera tarea que realiza la BIOS al encender el equipo es…",
+      "opts": [
+        "Consultar el MBR",
+        "Cargar el bootloader",
+        "Ejecutar el POST",
+        "Cargar el kernel"
+      ],
+      "c": 2,
+      "exp": "Primero el POST; luego consulta la CMOS y al final carga el bootloader."
+    },
+    {
+      "id": "ii1-16",
+      "tipico": true,
+      "q": "¿Cuál es una ventaja de UEFI frente a la BIOS?",
+      "opts": [
+        "Está escrita en ensamblador",
+        "No permite usar el ratón",
+        "Solo admite discos de hasta 2 TB",
+        "Admite discos de más de 2 TB y arranque seguro"
+      ],
+      "c": 3,
+      "exp": "UEFI, escrita en C, admite discos >2 TB, ratón y Secure Boot."
+    },
+    {
+      "id": "ii1-17",
+      "tipico": true,
+      "q": "La versión del chip TPM que exige Windows 11 es la…",
+      "opts": [
+        "2.0",
+        "1.2",
+        "3.0",
+        "1.0"
+      ],
+      "c": 0,
+      "exp": "TPM 2.0."
+    },
+    {
+      "id": "ii1-18",
+      "tipico": false,
+      "q": "La puerta lógica NAND también se conoce como…",
+      "opts": [
+        "Barra de Pierce",
+        "Puerta buffer",
+        "Barra de Sheffer",
+        "Función par"
+      ],
+      "c": 2,
+      "exp": "NAND = barra de Sheffer; NOR = barra de Pierce."
+    },
+    {
+      "id": "ii1-19",
+      "tipico": true,
+      "q": "La puerta XOR da 1 cuando…",
+      "opts": [
+        "Solo una de las entradas es 1",
+        "Las dos entradas son iguales",
+        "Alguna entrada es 1",
+        "Las dos entradas son 1"
+      ],
+      "c": 0,
+      "exp": "XOR: una sí y la otra no."
+    },
+    {
+      "id": "ii1-20",
+      "tipico": true,
+      "q": "El registro que guarda la dirección de la siguiente instrucción es el…",
+      "opts": [
+        "Registro de instrucción",
+        "Contador de programa",
+        "Acumulador",
+        "Registro índice"
+      ],
+      "c": 1,
+      "exp": "El contador de programa (PC o instruction pointer)."
+    },
+    {
+      "id": "ii1-21",
+      "tipico": true,
+      "q": "¿Qué afirmación sobre RISC es correcta?",
+      "opts": [
+        "Instrucciones complejas de varios ciclos",
+        "Pocas instrucciones simples, normalmente de un ciclo",
+        "El hardware Intel está basado en RISC",
+        "Pocos registros de uso general"
+      ],
+      "c": 1,
+      "exp": "RISC: repertorio simple, un ciclo, pipeline y muchos registros. Intel es CISC."
+    },
+    {
+      "id": "ii1-22",
+      "tipico": true,
+      "q": "¿Qué memoria es volátil?",
+      "opts": [
+        "ROM",
+        "RAM",
+        "Flash",
+        "EEPROM"
+      ],
+      "c": 1,
+      "exp": "La RAM pierde su contenido al apagar."
+    },
+    {
+      "id": "ii1-23",
+      "tipico": false,
+      "q": "La memoria caché se construye con…",
+      "opts": [
+        "SRAM",
+        "Flash NAND",
+        "DRAM",
+        "EPROM"
+      ],
+      "c": 0,
+      "exp": "SRAM: transistores, muy rápida, sin refresco."
+    },
+    {
+      "id": "ii1-24",
+      "tipico": true,
+      "q": "Cuando el sistema pasa más tiempo paginando que ejecutando procesos se produce…",
+      "opts": [
+        "Thrashing",
+        "Pipelining",
+        "Dual channel",
+        "Swapping"
+      ],
+      "c": 0,
+      "exp": "Thrashing o hiperpaginación. Mejor solución: más RAM."
+    },
+    {
+      "id": "ii1-25",
+      "tipico": true,
+      "q": "En la clasificación de Flynn, el ordenador clásico Von Neumann es…",
+      "opts": [
+        "MIMD",
+        "SIMD",
+        "MISD",
+        "SISD"
+      ],
+      "c": 3,
+      "exp": "SISD: una instrucción y un dato por ciclo."
+    }
+  ]
+}

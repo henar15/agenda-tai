@@ -123,8 +123,9 @@
   "orden": 1,
   "titulo": "Informática básica: representación de la información, arquitectura y componentes internos",
   "semana": "2027-01-11",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 92,
   "pagIni": 3
  },
