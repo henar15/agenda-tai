@@ -40,7 +40,17 @@ function planDia(ref, sim) {
   ts.forEach((t) => {
     const atras = t.semana < monday();
     const dias = atras ? Math.max(1, Math.min(dl, 2)) : dl;
-    if (t.pags) {
+    const dom = dominado(t.id);
+    if (dom)
+      out.push({
+        k: 'q-' + t.id,
+        tipo: 'quick',
+        tema: t.id,
+        txt: `👀 Repaso rápido del tema ${t.codigo}: esquema y test`,
+        sub: 'ya lo dominas, no hace falta leerlo entero',
+        go: 'temas',
+      });
+    if (t.pags && !dom) {
       const ini = t.pagIni || 1;
       const leida = Math.max(
         ini - 1,
@@ -64,7 +74,7 @@ function planDia(ref, sim) {
     }
     const cs = S.cards[t.id] || [];
     const p = S.piles[t.id] || {};
-    const nuevas = cs.filter((c) => !p[c.id]).length - (sim.cards[t.id] || 0);
+    const nuevas = cs.filter((c) => !p[c.id] && (!dom || c.t)).length - (sim.cards[t.id] || 0);
     if (nuevas > 0) {
       const n = Math.min(40, Math.ceil(nuevas / dias));
       out.push({
@@ -116,13 +126,13 @@ function planDia(ref, sim) {
       go: 'test',
       tema: t0.id,
     });
-  else if ((day.getDay() + 6) % 7 === 5)
+  else if ((day.getDay() + 6) % 7 === 5 && !semanalHecho())
     out.push({
       k: 's-' + dkey(day),
       tipo: 'sim',
-      txt: '🎯 Simulacro corto de lo estudiado',
-      sub: '20 preguntas de los temas que ya tienes',
-      go: 'sim',
+      txt: '🎯 Simulacro semanal (80 + supuesto)',
+      sub: '2 horas, como el examen real · ¿pasarías el corte?',
+      go: 'semanal',
     });
   return { tareas: out, dl };
 }
@@ -132,7 +142,7 @@ function ritmo() {
   const dias = diasEstudioHasta(hoy, objetivo);
   let pag = 0;
   S.temas.forEach((t) => {
-    if (t.estado !== 'estudiado' && t.pags)
+    if (t.estado !== 'estudiado' && t.pags && !dominado(t.id))
       pag += t.pags - Math.max(0, (S.lectura || {})[t.id] || (t.pagIni || 1) - 1);
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };

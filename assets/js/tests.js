@@ -43,10 +43,11 @@ function vTests() {
     ['pre', '🗂️ Preguntas oficiales', 'por tema'],
     ['sup', '📋 Supuestos', '2.ª parte'],
     ...(S.grupo ? [['gru', '👥 Tests del grupo', 'solo para ti']] : []),
-    ['sim', '🎯 Simulacros', 'mezclados'],
+    ['sim', '🎯 Simulacros', 'y el semanal'],
+    ['niv', '🧭 Lo que ya sé', 'test de nivel'],
   ];
   const tabs = `<div class="xtabs" role="tablist">${TB.map(([k, t, d]) => `<button role="tab" aria-selected="${ui.xtab === k}" class="${ui.xtab === k ? 'on' : ''}" data-xtab="${k}"><b>${t}</b><small>${d}</small></button>`).join('')}</div>`;
-  const head = `<h2>Exámenes y tests</h2><p class="sub">Cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>${tabs}${ui.xcfg ? vExCfg() : ''}`;
+  const head = `<h2>Exámenes y tests</h2><p class="sub">Cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p><p class="supsel">Tu supuesto: <b>${esc(supTxt(supDe()))}</b> <button class="mini ghost" data-act="supcfg">Cambiar a ${esc(supTxt(supDe() === 'III' ? 'IV' : 'III'))}</button></p>${tabs}${ui.xcfg ? vExCfg() : ''}`;
   if (ui.xtab !== 'web') return head + vExamenesHub(ui.xtab);
   return (
     head +

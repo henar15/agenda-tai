@@ -22,7 +22,7 @@ function rowTema(t) {
       ? 'Generando… listas en 1 h aprox.'
       : 'En cola: se generan cuando tu ordenador esté encendido'
     : '';
-  const acts = `<div class="acts">${cp ? `<button class="mini" data-act="goCards" data-id="${esc(t.id)}">Tarjetas (${cp.n})</button>` : ped ? `<span class="mini done">⏳ ${esc(pedTxt)}</span>` : `<button class="mini hi" data-act="pedir" data-id="${esc(t.id)}">Generar tarjetas</button>`}${nq ? `<button class="mini" data-act="goTest" data-id="${esc(t.id)}">Test</button>` : ''}${S.esq[t.id] ? `<button class="mini" data-act="esq" data-id="${esc(t.id)}">🗺️ Esquema</button>` : ''}</div>`;
+  const acts = `<div class="acts">${cp ? `<button class="mini" data-act="goCards" data-id="${esc(t.id)}">Tarjetas (${cp.n})</button>` : ped ? `<span class="mini done">⏳ ${esc(pedTxt)}</span>` : `<button class="mini hi" data-act="pedir" data-id="${esc(t.id)}">Generar tarjetas</button>`}${nq ? `<button class="mini" data-act="goTest" data-id="${esc(t.id)}">Test</button>` : ''}${S.esq[t.id] ? `<button class="mini" data-act="esq" data-id="${esc(t.id)}">🗺️ Esquema</button>` : ''}${dominado(t.id) ? '<span class="lvl ok">✅ Lo dominas</span>' : ''}</div>`;
   return `<div class="row trow"><span class="tag" style="background:${b.c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b><small>${t.semana ? 'Semana del ' + esc(fmtD(t.semana)) : ''}${cp ? ' · ' + cp.s + '/' + cp.n + ' tarjetas sabidas' : ''}${nq ? ' · ' + nq + ' preguntas' : ''}${bt !== null ? ' · mejor nota ' + n1(bt) : ''}</small>${acts}</div><button class="pill p-${esc(t.estado || 'pendiente')}" data-act="estado" data-id="${esc(t.id)}" aria-label="Cambiar estado">${ESTN[t.estado] || 'Pendiente'}</button></div>`;
 }
 function vTemario() {
@@ -33,7 +33,7 @@ function vTemario() {
       ? `<section class="blk recs"><h3>📎 Recursos extra <small>· solo los ves tú</small></h3>${S.recursos.map((g) => `<div class="card"><b>${esc(g.g)}</b>${g.d ? `<p class="fine" style="margin:4px 0 8px">${esc(g.d)}</p>` : ''}<div class="rlist">${(g.items || []).map((it) => (/^https:\/\//.test(it.u) ? `<a href="${esc(it.u)}" target="_blank" rel="noopener"><b>${esc(it.t)}</b>${it.d ? `<small>${esc(it.d)}</small>` : ''}</a>` : '')).join('')}</div></div>`).join('')}</section>`
       : '';
   return (
-    `<h2>Temario: 34 temas</h2><p class="sub">Tarjetas y test de cada tema. Si un tema no tiene, pulsa «Generar tarjetas» y en un rato aparecen solas.</p>${ped.length ? `<div class="warn"><span style="flex:1">Generando tarjetas de: <b>${ped.map((k) => esc(k.replace('-', '.'))).join(', ')}</b>. Tardan alrededor de 1 hora; vuelve a abrir la web para verlas.</span></div>` : ''}` +
+    `<h2>Temario: 34 temas</h2><p class="sub">Tarjetas y test de cada tema. Si un tema no tiene, pulsa «Generar tarjetas» y en un rato aparecen solas.</p>${Object.keys(S.esq).length ? `<p><button class="btn ghost" data-act="esqprintall">🖨️ Imprimir todos los esquemas (${Object.keys(S.esq).length})</button></p>` : ''}${ped.length ? `<div class="warn"><span style="flex:1">Generando tarjetas de: <b>${ped.map((k) => esc(k.replace('-', '.'))).join(', ')}</b>. Tardan alrededor de 1 hora; vuelve a abrir la web para verlas.</span></div>` : ''}` +
     ['I', 'II', 'III', 'IV']
       .map((b) => {
         const ts = S.temas.filter((t) => t.bloque === b).sort(ordT);
@@ -56,11 +56,46 @@ async function loadEsq() {
       }),
   );
 }
-function vEsquema(id) {
+const ESQ_COLS = ['#7c3aed', '#0d9488', '#2563eb', '#ea580c', '#db2777', '#65a30d', '#0891b2'];
+function esqCuerpo(id) {
   const e = S.esq[id],
     t = S.temas.find((x) => x.id === id);
   if (!e || !t) return '';
-  const cols = ['#7c3aed', '#0d9488', '#2563eb', '#ea580c', '#db2777', '#65a30d', '#0891b2'];
-  return `<div class="esq-wrap" role="dialog" aria-modal="true" aria-labelledby="esqt"><div class="esq"><div class="esq-top"><h2 id="esqt">🗺️ ${esc(t.codigo)} · ${esc(t.titulo)}</h2><button class="mini ghost" data-act="esqclose" aria-label="Cerrar esquema">✕</button></div>
-  <div class="esq-center" style="--c:${BL[t.bloque].hex}">${esc(t.titulo)}</div><div class="esq-ramas">${e.ramas.map((r, i) => `<section class="rama" style="--c:${cols[i % cols.length]}"><h3><span aria-hidden="true">${esc(r.e || '•')}</span> ${esc(r.t)}</h3><ul>${r.items.map((x) => `<li>${rich(x)}</li>`).join('')}</ul></section>`).join('')}</div></div></div>`;
+  return `<div class="esq-center" style="--c:${BL[t.bloque].hex}">${esc(t.titulo)}</div><div class="esq-ramas">${e.ramas.map((r, i) => `<section class="rama" style="--c:${ESQ_COLS[i % ESQ_COLS.length]}"><h3><span aria-hidden="true">${esc(r.e || '•')}</span> ${esc(r.t)}</h3><ul>${r.items.map((x) => `<li>${rich(x)}</li>`).join('')}</ul></section>`).join('')}</div>`;
+}
+function vEsquema(id) {
+  const t = S.temas.find((x) => x.id === id);
+  if (!S.esq[id] || !t) return '';
+  return `<div class="esq-wrap" role="dialog" aria-modal="true" aria-labelledby="esqt"><div class="esq"><div class="esq-top"><h2 id="esqt">🗺️ ${esc(t.codigo)} · ${esc(t.titulo)}</h2><div class="acts"><button class="mini" data-act="esqprint" data-id="${esc(id)}">🖨️ Imprimir</button><button class="mini ghost" data-act="esqclose" aria-label="Cerrar esquema">✕</button></div></div>${esqCuerpo(id)}</div></div>`;
+}
+// Imprime (o guarda en PDF) uno o varios esquemas, uno por hoja A4 apaisada
+function imprimirEsquemas(ids) {
+  ids = ids
+    .filter((id) => S.esq[id])
+    .sort((a, b) =>
+      ordT(
+        S.temas.find((t) => t.id === a),
+        S.temas.find((t) => t.id === b),
+      ),
+    );
+  if (!ids.length) return;
+  const old = document.getElementById('print');
+  if (old) old.remove();
+  const div = document.createElement('div');
+  div.id = 'print';
+  div.innerHTML = ids
+    .map((id) => {
+      const t = S.temas.find((x) => x.id === id);
+      return `<section class="esq esq-hoja"><h2>${esc(t.codigo)} · ${esc(t.titulo)}</h2>${esqCuerpo(id)}<p class="fine">Mi agenda TAI · Bloque ${esc(t.bloque)}</p></section>`;
+    })
+    .join('');
+  document.body.appendChild(div);
+  document.documentElement.classList.add('printing');
+  const fin = () => {
+    document.documentElement.classList.remove('printing');
+    div.remove();
+    removeEventListener('afterprint', fin);
+  };
+  addEventListener('afterprint', fin);
+  setTimeout(() => print(), 50);
 }

@@ -78,7 +78,11 @@ function pista(q) {
 function startExam(cfg) {
   const secs = [];
   let mins = null;
-  if (cfg.kind === 'oficial') {
+  if (cfg.secs) {
+    cfg.secs.forEach((s) => secs.push(s));
+  } else if (cfg.qs) {
+    secs.push({ titulo: cfg.titulo, qs: cfg.qs });
+  } else if (cfg.kind === 'oficial') {
     const e = S.exams[cfg.id];
     if (!e) return;
     const p1 = e.partes[0];
@@ -164,6 +168,7 @@ function startExam(cfg) {
   ui.ex = {
     titulo: cfg.titulo,
     kind: cfg.kind,
+    sem: cfg.sem,
     secs,
     items,
     i: 0,
@@ -263,7 +268,10 @@ function finishExam() {
     total: a + f + b,
     testId: 'ex-' + X.kind,
     pistas: Object.keys(X.pis).length,
+    netas: X.secsR.map(netas),
   };
+  if (X.sem) r.sem = X.sem;
+  if (X.kind === 'nivel') guardarNivel(X);
   S.res = S.res.concat([r]);
   kvSet('resultados');
   logAct(a + f);
@@ -345,7 +353,7 @@ function vExamEnd() {
     const g = D.reduce((a, d, i) => a + d.nota - R[i].nota, 0);
     tip = `<p class="tipbox">${g > 0.05 ? `💡 Si hubieras dejado en blanco las ${nd} preguntas dudosas, habrías sacado <b>más nota</b>. Cuando dudes de verdad, mejor en blanco.` : g < -0.05 ? `💪 Arriesgar en tus dudosas te salió bien: acertaste la mayoría.` : `Arriesgar o no en tus dudosas te habría dado lo mismo.`}</p>`;
   }
-  return `<div class="study wide"><h2>${esc(X.titulo)}</h2><p class="sub">Nota sobre 10 en cada parte, con la penalización del examen (cada fallo resta un tercio).${Object.keys(X.pis).length ? ` Usaste ${Object.keys(X.pis).length} pistas.` : ''}</p><div class="kpis">${cards}</div>${tip}
+  return `<div class="study wide"><h2>${esc(X.titulo)}</h2><p class="sub">Nota sobre 10 en cada parte, con la penalización del examen (cada fallo resta un tercio).${Object.keys(X.pis).length ? ` Usaste ${Object.keys(X.pis).length} pistas.` : ''}</p><div class="kpis">${cards}</div>${vCorte(X)}${vNivelResultado(X)}${tip}
   <div class="chips" role="group" aria-label="Qué preguntas ver">${f('fallos', 'Fallos', cnt.fallos)}${f('dudosas', '★ Dudosas', cnt.dudosas)}${f('blanco', 'En blanco', cnt.blanco)}${f('todas', 'Todas', cnt.todas)}</div>
   <div class="list">${
     L.map((x) => {
@@ -387,7 +395,7 @@ function vExCfg() {
             ['IV', 'Supuesto de sistemas', 'Bloque IV (II+IV en 2026)'],
             ['no', 'Sin supuesto', 'solo 1.ª parte'],
           ],
-          c.sup || 'III',
+          c.sup || supDe(),
         )}</div>`
       : ''
   }
@@ -448,11 +456,15 @@ function vSupuestos() {
   const ex = idxOrder()
     .map((m) => S.exams[m.id])
     .filter(Boolean);
-  return `<p class="sub">Practica solo la segunda parte, con su enunciado y 24 minutos. <b>En la convocatoria 2026 eliges entre un supuesto de los Bloques II+III o de II+IV</b>; los de años anteriores eran del Bloque III o del IV, pero te sirven igual para entrenar.</p><div class="xlist">${ex.flatMap((e) => e.partes.filter((p) => p.id !== 'p1').map((p) => `<div class="card xe"><b>${esc(p.titulo)} · Bloque ${esc((p.bloques || [])[0] || '')}</b><small>${esc(e.titulo)}</small><p class="fine" style="margin:4px 0">${esc((p.enunciado || '').slice(0, 140))}…</p><div class="acts"><button class="btn" data-act="xsup" data-id="${esc(e.id)}" data-p="${p.id}">Hacer supuesto</button></div></div>`)).join('')}</div>`;
+  const mio = supDe();
+  const partes = ex.flatMap((e) => e.partes.filter((p) => p.id !== 'p1').map((p) => ({ e, p })));
+  partes.sort((a, b) => ((b.p.bloques || [])[0] === mio) - ((a.p.bloques || [])[0] === mio));
+  return `<p class="sub">Practica solo la segunda parte, con su enunciado y 24 minutos. Tu supuesto es el de los <b>${esc(supTxt(mio))}</b>: salen primero los del Bloque ${mio} de años anteriores (antes el supuesto era solo del III o del IV, pero te sirven igual para entrenar).</p><div class="xlist">${partes.map(({ e, p }) => `<div class="card xe"><b>${esc(p.titulo)} · Bloque ${esc((p.bloques || [])[0] || '')}</b><small>${esc(e.titulo)}</small><p class="fine" style="margin:4px 0">${esc((p.enunciado || '').slice(0, 140))}…</p><div class="acts"><button class="btn${(p.bloques || [])[0] === mio ? '' : ' ghost'}" data-act="xsup" data-id="${esc(e.id)}" data-p="${p.id}">Hacer supuesto</button></div></div>`).join('')}</div>`;
 }
 function vExamenesHub(tab) {
   if (tab === 'gru') return vGrupo();
   if (tab === 'sup') return vSupuestos();
+  if (tab === 'niv') return vNivel();
   const ofi = ofiQs(true);
   const per = {};
   ofi.forEach((q) => {
@@ -474,7 +486,7 @@ function vExamenesHub(tab) {
   }</div>
 `;
   if (tab === 'sim')
-    return `<p class="sub">Mezclan preguntas de exámenes oficiales y de la web.</p><div class="modes">
+    return `${vSemanal()}<p class="sub">Mezclan preguntas de exámenes oficiales y de la web.</p><div class="modes">
    <button class="mode" data-act="xcfg" data-k="gen"><b>Examen completo</b><span>80 preguntas repartidas por bloques, como el real, más un supuesto práctico. Se mezclan preguntas oficiales y de la web.</span></button>
    <button class="mode" data-act="xcfg" data-k="sim"><b>A tu medida</b><span>Eliges bloque o tema, cuántas preguntas, tiempo, pistas y cuándo corregir.</span></button></div>`;
   return `<p class="sub">${ofi.length} preguntas de la primera parte de ${exs.length} exámenes, clasificadas por tema de forma automática (puede haber alguna mal colocada). Toca uno para practicarlo.</p>

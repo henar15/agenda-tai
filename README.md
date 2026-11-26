@@ -17,9 +17,11 @@ Organiza el estudio, te pone a prueba con exámenes oficiales y te mantiene moti
 |---|---|
 | 🏠 **Inicio** | Pipo y tu racha, lo que toca hoy, cuenta atrás al examen, nota estimada, retos de la semana y resumen del día. |
 | 🗓️ **Plan** | *Hoy* (páginas que subrayar y tarjetas, se ajusta solo si te retrasas), *Semana*, *Mes* y tu *Horario* editable. |
-| 📚 **Temas** | Los 34 temas por bloque, con tarjetas, test y **esquema visual** de cada tema. |
+| 📚 **Temas** | Los 34 temas por bloque, con tarjetas, test y **esquema visual** de cada tema, que se puede **imprimir** o guardar en PDF (uno por hoja A4). |
 | 🃏 **Tarjetas** | Tarjetas cortas y visuales con **repaso espaciado** (1, 3, 7, 14 y 30 días). |
-| 📝 **Exámenes** | Exámenes oficiales completos (2019–2025), preguntas oficiales por tema y bloque, tests de la web, **supuestos** (2.ª parte) y simulacros a medida. Con pistas, corrección al momento o al final, dudosas y penalización de −1/3. |
+| 📝 **Exámenes** | Exámenes oficiales completos (2019–2025), preguntas oficiales por tema y bloque, tests de la web, **supuestos** (2.ª parte, primero los de tu supuesto: II+III o II+IV) y simulacros a medida. Con pistas, corrección al momento o al final, dudosas y penalización de −1/3. |
+| 🎯 **Simulacro semanal** | Un examen completo como el real (80 preguntas + tu supuesto, 120 min) que cambia cada lunes y te dice si habrías pasado la **nota de corte** de convocatorias anteriores. |
+| 🧭 **Lo que ya sé** | Indicas tus estudios previos (DAM, DAW, ASIR, SMR, grado) y haces un **test de nivel** general o por tema. Los temas que dominas pasan a repaso rápido en el plan. |
 | 🎮 **Juegos** | Verdadero/falso, Empareja, Completa la frase, **¿Qué artículo es?**, **Ordena la línea temporal**, **Supervivencia** y **Duelo con Pipo**. |
 | 📈 **Progreso** | **Puntos débiles** por tema, **historial** de racha y estadísticas, evolución de notas y logros. |
 | 🍅 **Pomodoro** | Modo concentración a pantalla completa (– para minimizar, ✕ para parar). |
@@ -61,6 +63,8 @@ agenda-tai/
 │       ├── tests.js             Tests por tema
 │       ├── examenes.js          Exámenes oficiales, simulacros y supuestos
 │       ├── juegos.js            Juegos
+│       ├── nivel.js             Test de nivel «Lo que ya sé»
+│       ├── semanal.js           Simulacro semanal y notas de corte
 │       ├── render.js            Navegación y pintado de vistas
 │       ├── acciones.js          Clics y teclado
 │       └── main.js              Arranque de la app

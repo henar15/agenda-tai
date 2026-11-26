@@ -2979,3 +2979,125 @@ body.focus {
 .gscope .sub {
   margin: 0;
 }
+
+/* Nivel: lo que ya sé */
+.lvl {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 3px 9px;
+  border-radius: 99px;
+  white-space: nowrap;
+}
+.lvl.ok {
+  background: color-mix(in srgb, var(--ok) 16%, transparent);
+  color: var(--ok);
+}
+.lvl.mid {
+  background: color-mix(in srgb, #d97706 16%, transparent);
+  color: #b45309;
+}
+.lvl.ko {
+  background: color-mix(in srgb, var(--bad) 12%, transparent);
+  color: var(--bad);
+}
+.nivrow {
+  flex-wrap: wrap;
+}
+.nivres,
+.corte {
+  margin: 16px 0;
+}
+.supsel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: -4px 0 12px;
+}
+
+/* Simulacro semanal */
+.semanal {
+  margin-bottom: 16px;
+}
+.semhist {
+  list-style: none;
+  padding: 0;
+  margin: 6px 0 0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.semhist li {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 6px 10px;
+  font-size: 13px;
+  display: grid;
+}
+.semhist span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+/* Impresión de esquemas: una hoja A4 apaisada por tema */
+#print {
+  display: none;
+}
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 10mm;
+  }
+  html.printing body > *:not(#print) {
+    display: none !important;
+  }
+  html.printing #print {
+    display: block;
+  }
+  #print {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: #1d1a26;
+    background: #fff;
+  }
+  .esq-hoja {
+    break-after: page;
+    padding: 0;
+    background: #fff;
+    box-shadow: none;
+  }
+  .esq-hoja:last-child {
+    break-after: auto;
+  }
+  .esq-hoja h2 {
+    margin: 0 0 6px;
+    font-size: 22px;
+  }
+  .esq-hoja .esq-center {
+    margin: 6px auto 10px;
+    padding: 10px 16px;
+    font-size: 18px;
+    box-shadow: none;
+  }
+  .esq-hoja .esq-ramas {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .esq-hoja .rama {
+    padding: 10px 12px;
+    border-width: 2px;
+    break-inside: avoid;
+    font-size: 14px;
+    background: #fff;
+  }
+  .esq-hoja .rama h3 {
+    font-size: 16px;
+    margin-bottom: 6px;
+  }
+  .esq-hoja .fine {
+    margin: 6px 0 0;
+    font-size: 10px;
+    color: #666;
+  }
+}

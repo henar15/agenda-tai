@@ -310,6 +310,8 @@ document.addEventListener('click', (e) => {
     } else if (g === 'sim') {
       ui.xtab = 'sim';
       location.hash = 'tests';
+    } else if (g === 'semanal') {
+      startSemanal();
     } else if (g === 'temas') location.hash = 'temario';
   } else if (a === 'xcancel') {
     ui.xcfg = null;
@@ -477,6 +479,36 @@ document.addEventListener('click', (e) => {
     startVF(G.scope);
   } else if (a === 'gemp') {
     startEmp(ui.gscope);
+  } else if (a === 'semanal') {
+    startSemanal();
+  } else if (a === 'supcfg') {
+    S.config = Object.assign({}, S.config, { supuesto: supDe() === 'III' ? 'IV' : 'III' });
+    kvSet('config');
+    render();
+  } else if (a === 'estud') {
+    const v = el.dataset.v,
+      est = ((S.config || {}).estudios || []).slice();
+    const i = est.indexOf(v);
+    if (i >= 0) est.splice(i, 1);
+    else est.push(v);
+    S.config = Object.assign({}, S.config, { estudios: est });
+    kvSet('config');
+    render();
+  } else if (a === 'nivgen') {
+    startNivel();
+  } else if (a === 'nivtema') {
+    startNivel(el.dataset.id);
+  } else if (a === 'nivdom') {
+    const id = el.dataset.id,
+      temas = Object.assign({}, (S.nivel || {}).temas);
+    temas[id] = Object.assign({ p: null, n: 0, f: today() }, temas[id], { dom: !dominado(id), manual: true });
+    S.nivel = Object.assign({}, S.nivel, { temas });
+    kvSet('nivel');
+    render();
+  } else if (a === 'esqprint') {
+    imprimirEsquemas([el.dataset.id]);
+  } else if (a === 'esqprintall') {
+    imprimirEsquemas(Object.keys(S.esq));
   } else if (a === 'gscope') {
     setGScope(el.dataset.v);
   } else if (a === 'gnew' || a === 'gagain') {
