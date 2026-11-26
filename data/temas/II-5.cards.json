@@ -1,0 +1,665 @@
+{
+  "tema": "II-5",
+  "cards": [
+    {
+      "id": "ii5c1",
+      "n": "1",
+      "e": "🧱",
+      "t": true,
+      "q": "Componentes de un sistema de bases de datos",
+      "a": "**Base de datos**, **SGBD**, **diccionario de datos**, **administrador (DBA)** y **usuarios**"
+    },
+    {
+      "id": "ii5c2",
+      "n": "2",
+      "e": "📖",
+      "t": false,
+      "q": "¿Qué contiene el diccionario de datos?",
+      "a": "Listado de **campos y variables** con su descripción, longitud y valores posibles; también representación física, índices y formas de acceso"
+    },
+    {
+      "id": "ii5c3",
+      "n": "3",
+      "e": "🧑‍🔧",
+      "t": false,
+      "q": "¿Qué es el DBA?",
+      "a": "Persona o grupo que **crea, gestiona y mantiene** la base de datos"
+    },
+    {
+      "id": "ii5c4",
+      "n": "4",
+      "e": "📚",
+      "t": false,
+      "q": "Definición de base de datos de Flory (1982)",
+      "a": "Conjunto **exhaustivo, no redundante** de datos estructurados, independiente de su uso y de la máquina, accesible en **tiempo real** y por **usuarios concurrentes**",
+      "h": "Flory, 1982"
+    },
+    {
+      "id": "ii5c5",
+      "n": "5",
+      "e": "✅",
+      "t": false,
+      "q": "Características de una BD",
+      "a": "Datos **estructurados** y **relacionados**, **sin redundancia**, **independientes** de la máquina y con **acceso concurrente**"
+    },
+    {
+      "id": "ii5c6",
+      "n": "6",
+      "e": "🔽",
+      "t": true,
+      "q": "Nivel interno de abstracción",
+      "a": "Describe la **estructura física** de almacenamiento y los caminos de acceso. El más cercano al **almacenamiento**"
+    },
+    {
+      "id": "ii5c7",
+      "n": "7",
+      "e": "👀",
+      "t": false,
+      "q": "Nivel externo (de vistas)",
+      "a": "Lo que ve cada **grupo de usuarios**; oculta el resto. El más cercano al **usuario**"
+    },
+    {
+      "id": "ii5c8",
+      "n": "8",
+      "e": "🧠",
+      "t": true,
+      "q": "Nivel conceptual",
+      "a": "Describe la **estructura** de la BD (entidades, vínculos, restricciones) ocultando lo físico. **Media** entre interno y externo"
+    },
+    {
+      "id": "ii5c9",
+      "n": "9",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es un SGBD?",
+      "a": "Conjunto de **programas, procedimientos y lenguajes** para **describir, manipular y utilizar** los datos manteniendo integridad, confidencialidad y seguridad"
+    },
+    {
+      "id": "ii5c10",
+      "n": "10",
+      "e": "🎯",
+      "t": false,
+      "q": "Objetivos de un SGBD",
+      "a": "Visión **abstracta**, **independencia** datos-aplicaciones, evitar **redundancia** e **inconsistencia**, **integridad**, **atomicidad**, **seguridad** y **acceso concurrente**"
+    },
+    {
+      "id": "ii5c11",
+      "n": "11",
+      "e": "⚠️",
+      "t": false,
+      "q": "¿Cuándo hay inconsistencia de datos?",
+      "a": "Cuando hay **varias copias** de un mismo dato y **no tienen el mismo valor**",
+      "h": "Sin redundancia no puede haber inconsistencia"
+    },
+    {
+      "id": "ii5c12",
+      "n": "12",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué es una transacción?",
+      "a": "Conjunto de procesos que se aplican **uno tras otro** y que debe hacerse **de una sola vez**"
+    },
+    {
+      "id": "ii5c13",
+      "n": "13",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Qué significa ACID?",
+      "a": "**Atomicidad**, **Consistencia**, **Aislamiento** (Isolation) y **Durabilidad**"
+    },
+    {
+      "id": "ii5c14",
+      "n": "14",
+      "e": "⚛️",
+      "t": true,
+      "q": "Atomicidad (ACID)",
+      "a": "Se ejecutan **todos los pasos o ninguno**"
+    },
+    {
+      "id": "ii5c15",
+      "n": "15",
+      "e": "🧷",
+      "t": false,
+      "q": "Consistencia (ACID)",
+      "a": "La transacción lleva la BD de un **estado válido a otro válido**; solo se empieza lo que se puede acabar"
+    },
+    {
+      "id": "ii5c16",
+      "n": "16",
+      "e": "🚧",
+      "t": false,
+      "q": "Aislamiento (ACID)",
+      "a": "Una operación **no afecta a otras** concurrentes; define cuándo se ven sus cambios. Tiene **niveles**"
+    },
+    {
+      "id": "ii5c17",
+      "n": "17",
+      "e": "💾",
+      "t": false,
+      "q": "Durabilidad (ACID)",
+      "a": "Una vez hecha, la operación **persiste** aunque falle el sistema"
+    },
+    {
+      "id": "ii5c18",
+      "n": "18",
+      "e": "🌳",
+      "t": true,
+      "q": "Base de datos jerárquica",
+      "a": "Estructura en **árbol**: un padre puede tener **varios hijos** (relación padre-hijo)"
+    },
+    {
+      "id": "ii5c19",
+      "n": "19",
+      "e": "🕸️",
+      "t": false,
+      "q": "Base de datos en red",
+      "a": "También llamada **plex**: un nodo puede tener **varios padres**. Resuelve relaciones **muchos a muchos**"
+    },
+    {
+      "id": "ii5c20",
+      "n": "20",
+      "e": "🏦",
+      "t": false,
+      "q": "Base de datos transaccional",
+      "a": "Datos que **cambian constantemente**, en **tiempo real**. Ejemplo típico: **transferencias bancarias**"
+    },
+    {
+      "id": "ii5c21",
+      "n": "21",
+      "e": "🧊",
+      "t": true,
+      "q": "Base de datos multidimensional",
+      "a": "Atributos como **dimensiones**; ideales para **análisis de negocio** y **cubos OLAP**. Inconveniente: no se puede modificar la estructura una vez diseñada"
+    },
+    {
+      "id": "ii5c22",
+      "n": "22",
+      "e": "🔎",
+      "t": false,
+      "q": "Base de datos deductiva (lógica)",
+      "a": "Hace **deducciones** a partir de hechos. Usa **Datalog** (subconjunto de **Prolog**). Mejora las consultas **recursivas**"
+    },
+    {
+      "id": "ii5c23",
+      "n": "23",
+      "e": "🗺️",
+      "t": false,
+      "q": "Base de datos geoespacial",
+      "a": "Guarda **datos geográficos** y sus relaciones espaciales; cada **geo-objeto** tiene atributos, comportamiento y geometría"
+    },
+    {
+      "id": "ii5c24",
+      "n": "24",
+      "e": "📐",
+      "t": false,
+      "q": "¿Quién y cuándo creó el modelo relacional?",
+      "a": "**Edgar F. Codd**, en **1970**"
+    },
+    {
+      "id": "ii5c25",
+      "n": "25",
+      "e": "📋",
+      "t": false,
+      "q": "¿Qué es una relación en el modelo relacional?",
+      "a": "Una **tabla** de **filas y columnas**. De ahí el nombre de modelo relacional"
+    },
+    {
+      "id": "ii5c26",
+      "n": "26",
+      "e": "🗣️",
+      "t": false,
+      "q": "¿Qué es SQL?",
+      "a": "**Structured Query Language**, la norma **ANSI** de los lenguajes relacionales"
+    },
+    {
+      "id": "ii5c27",
+      "n": "27",
+      "e": "🏅",
+      "t": true,
+      "q": "Definición más aceptada de SGBDR",
+      "a": "El SGBD que cumple las **12 reglas de Codd**"
+    },
+    {
+      "id": "ii5c28",
+      "n": "28",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué es una vista?",
+      "a": "Una **tabla virtual** resultado de una consulta (**SELECT**). Solo se guarda su **definición**, no los datos"
+    },
+    {
+      "id": "ii5c29",
+      "n": "29",
+      "e": "➖",
+      "t": true,
+      "q": "¿Qué es una tupla?",
+      "a": "Una **fila** de la tabla. También **instancia** o **registro**"
+    },
+    {
+      "id": "ii5c30",
+      "n": "30",
+      "e": "➗",
+      "t": false,
+      "q": "¿Qué es un atributo?",
+      "a": "Una **columna** de la tabla (un campo de la tupla)"
+    },
+    {
+      "id": "ii5c31",
+      "n": "31",
+      "e": "🔢",
+      "t": false,
+      "q": "¿Qué es el grado de una relación?",
+      "a": "El **número de atributos** (columnas). También **paridad**. No varía con el tiempo"
+    },
+    {
+      "id": "ii5c32",
+      "n": "32",
+      "e": "🎨",
+      "t": false,
+      "q": "¿Qué es un dominio?",
+      "a": "Conjunto de **valores posibles** de los que uno o más atributos toman sus valores"
+    },
+    {
+      "id": "ii5c33",
+      "n": "33",
+      "e": "🔑",
+      "t": true,
+      "q": "Propiedades de la clave candidata",
+      "a": "**Unicidad** (no hay dos tuplas iguales) y **minimalidad** (no se puede quitar ningún atributo)"
+    },
+    {
+      "id": "ii5c34",
+      "n": "34",
+      "e": "🥇",
+      "t": false,
+      "q": "Clave primaria y claves alternativas",
+      "a": "De las claves candidatas se elige **una como primaria**; las demás son **alternativas**"
+    },
+    {
+      "id": "ii5c35",
+      "n": "35",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué es una clave foránea (ajena)?",
+      "a": "Atributo de una tabla que es **clave primaria de otra**. Ambas sobre el **mismo dominio**"
+    },
+    {
+      "id": "ii5c36",
+      "n": "36",
+      "e": "🧍",
+      "t": true,
+      "q": "Regla de integridad de entidad",
+      "a": "Ningún atributo de la **clave primaria** puede ser **nulo**"
+    },
+    {
+      "id": "ii5c37",
+      "n": "37",
+      "e": "🔐",
+      "t": false,
+      "q": "Regla de integridad referencial",
+      "a": "Todo valor de **clave ajena** debe existir en la **clave primaria** de la tabla referenciada"
+    },
+    {
+      "id": "ii5c38",
+      "n": "38",
+      "e": "1️⃣",
+      "t": true,
+      "q": "¿Cuántas reglas de Codd hay?",
+      "a": "**12 + la Regla 0** (13 en total). La Regla 0 dice si un SGBD es relacional"
+    },
+    {
+      "id": "ii5c39",
+      "n": "39",
+      "e": "0️⃣",
+      "t": false,
+      "q": "Regla 0 de Codd",
+      "a": "El SGBD debe gestionar la BD usando **exclusivamente sus capacidades relacionales**"
+    },
+    {
+      "id": "ii5c40",
+      "n": "40",
+      "e": "📊",
+      "t": false,
+      "q": "Regla 1: información",
+      "a": "Toda la información se muestra **solo mediante tablas**, incluidos los metadatos"
+    },
+    {
+      "id": "ii5c41",
+      "n": "41",
+      "e": "🎯",
+      "t": true,
+      "q": "Regla 2: acceso garantizado",
+      "a": "Cada dato se alcanza con **tabla + clave primaria + columna**"
+    },
+    {
+      "id": "ii5c42",
+      "n": "42",
+      "e": "∅",
+      "t": false,
+      "q": "Regla 3: valores nulos",
+      "a": "Los **nulos** se tratan de forma sistemática. Nulo ≠ **cadena vacía** ni **0**: es dato **desconocido**"
+    },
+    {
+      "id": "ii5c43",
+      "n": "43",
+      "e": "🗂️",
+      "t": false,
+      "q": "Regla 4: catálogo dinámico",
+      "a": "Los **metadatos** se guardan y consultan con el **mismo modelo relacional**"
+    },
+    {
+      "id": "ii5c44",
+      "n": "44",
+      "e": "💬",
+      "t": false,
+      "q": "Regla 5: sublenguaje completo",
+      "a": "Al menos un lenguaje con definición de datos y vistas, manipulación, **integridad**, **autorización** y **transacciones**"
+    },
+    {
+      "id": "ii5c45",
+      "n": "45",
+      "e": "👁️",
+      "t": true,
+      "q": "Regla 6: actualización de vistas",
+      "a": "Las vistas **teóricamente actualizables** deben poder actualizarse. Es de las **más difíciles**"
+    },
+    {
+      "id": "ii5c46",
+      "n": "46",
+      "e": "📦",
+      "t": false,
+      "q": "Regla 7: alto nivel de inserción, actualización y borrado",
+      "a": "Las filas se tratan como **conjuntos**: se borran todas las que cumplan una condición con **una instrucción**"
+    },
+    {
+      "id": "ii5c47",
+      "n": "47",
+      "e": "🧱",
+      "t": false,
+      "q": "Regla 8: independencia física",
+      "a": "Cambiar el **almacenamiento** o los **métodos de acceso** no afecta a las aplicaciones"
+    },
+    {
+      "id": "ii5c48",
+      "n": "48",
+      "e": "🧩",
+      "t": true,
+      "q": "Regla 9: independencia lógica",
+      "a": "Cambiar las **tablas** no afecta a las aplicaciones"
+    },
+    {
+      "id": "ii5c49",
+      "n": "49",
+      "e": "🛡️",
+      "t": false,
+      "q": "Regla 10: independencia de la integridad",
+      "a": "Las restricciones de integridad se guardan **en la BD**, separadas de los programas"
+    },
+    {
+      "id": "ii5c50",
+      "n": "50",
+      "e": "🌐",
+      "t": false,
+      "q": "Regla 11: independencia de la distribución",
+      "a": "Se trabaja **igual** con una BD **centralizada** que con una **distribuida**"
+    },
+    {
+      "id": "ii5c51",
+      "n": "51",
+      "e": "🚫",
+      "t": false,
+      "q": "Regla 12: no subversión",
+      "a": "Un lenguaje de **bajo nivel** no puede **saltarse** las reglas de integridad"
+    },
+    {
+      "id": "ii5c52",
+      "n": "52",
+      "e": "🧮",
+      "t": true,
+      "q": "Diferencia álgebra / cálculo relacional",
+      "a": "Álgebra: **procedimental** (cómo). Cálculo: **declarativo** (qué)",
+      "h": "Álgebra de Codd, 1972"
+    },
+    {
+      "id": "ii5c53",
+      "n": "53",
+      "e": "➕",
+      "t": false,
+      "q": "Operaciones básicas del álgebra relacional",
+      "a": "**Selección**, **proyección**, **producto cartesiano**, **unión** y **diferencia**"
+    },
+    {
+      "id": "ii5c54",
+      "n": "54",
+      "e": "🧬",
+      "t": false,
+      "q": "Operaciones derivadas del álgebra relacional",
+      "a": "**Intersección**, **unión natural (join)**, **división** y **agrupación**"
+    },
+    {
+      "id": "ii5c55",
+      "n": "55",
+      "e": "🔍",
+      "t": true,
+      "q": "Selección vs proyección",
+      "a": "**Selección**: escoge **filas** que cumplen una condición. **Proyección**: escoge **columnas** y elimina duplicados"
+    },
+    {
+      "id": "ii5c56",
+      "n": "56",
+      "e": "✖️",
+      "t": false,
+      "q": "Producto cartesiano",
+      "a": "Combina **cada fila** de la primera relación con **todas** las de la segunda. No hace falta la misma cabecera"
+    },
+    {
+      "id": "ii5c57",
+      "n": "57",
+      "e": "🤝",
+      "t": false,
+      "q": "Unión, diferencia e intersección",
+      "a": "Necesitan relaciones con la **misma cabecera**. Unión: todas; diferencia: las de A que no están en B; intersección: las comunes"
+    },
+    {
+      "id": "ii5c58",
+      "n": "58",
+      "e": "🔀",
+      "t": false,
+      "q": "¿Qué es la unión natural (natural join)?",
+      "a": "Producto cartesiano + selección (**clave primaria = clave foránea**) + proyección. Si la condición es libre: **theta-join**; si es igualdad: **equijoin**"
+    },
+    {
+      "id": "ii5c59",
+      "n": "59",
+      "e": "🧠",
+      "t": false,
+      "q": "Variantes del cálculo relacional",
+      "a": "De **dominios** (DRC: variables = atributos) y de **tuplas** (TRC: variables = tuplas). Basado en **lógica de primer orden**"
+    },
+    {
+      "id": "ii5c60",
+      "n": "60",
+      "e": "🐬",
+      "t": false,
+      "q": "MySQL",
+      "a": "El SGBDR **de código abierto** más conocido, licencia **GNU GPL**, pertenece a **Oracle**, motor **InnoDB**"
+    },
+    {
+      "id": "ii5c61",
+      "n": "61",
+      "e": "🏛️",
+      "t": false,
+      "q": "Oracle",
+      "a": "El SGBDR más **robusto y completo** (y caro). Versión gratuita **XE**. Usa **tablespaces** (unidad lógica de almacenamiento)"
+    },
+    {
+      "id": "ii5c62",
+      "n": "62",
+      "e": "🪟",
+      "t": true,
+      "q": "Microsoft SQL Server",
+      "a": "Propietario de Microsoft, lenguaje **Transact-SQL**, versión **Express** gratuita"
+    },
+    {
+      "id": "ii5c63",
+      "n": "63",
+      "e": "🐘",
+      "t": false,
+      "q": "PostgreSQL",
+      "a": "Relacional **orientado a objetos** y **libre** (licencia tipo **BSD**). Comunidad **PGDG**"
+    },
+    {
+      "id": "ii5c64",
+      "n": "64",
+      "e": "🗃️",
+      "t": false,
+      "q": "Microsoft Access",
+      "a": "SGBDR para uso **personal o pequeñas organizaciones**. Usa **VBA**; no para BD grandes"
+    },
+    {
+      "id": "ii5c65",
+      "n": "65",
+      "e": "🚀",
+      "t": true,
+      "q": "¿Qué significa NoSQL?",
+      "a": "**Not Only SQL**. Surge con las redes sociales y el gran volumen de datos web. **No** usa el modelo relacional ni está estandarizado"
+    },
+    {
+      "id": "ii5c66",
+      "n": "66",
+      "e": "🗝️",
+      "t": false,
+      "q": "BD clave-valor",
+      "a": "Cada elemento tiene una **clave única**; lectura y escritura muy **rápidas**. Ej.: **Redis**, **DynamoDB** (Amazon), **Riak**",
+      "h": "El temario incluye aquí también Cassandra (lenguaje CQL)"
+    },
+    {
+      "id": "ii5c67",
+      "n": "67",
+      "e": "📄",
+      "t": true,
+      "q": "BD documentales",
+      "a": "Guardan **documentos** en **JSON o XML** con clave única; los documentos no necesitan los mismos atributos. Ej.: **MongoDB**, **CouchDB**"
+    },
+    {
+      "id": "ii5c68",
+      "n": "68",
+      "e": "🍃",
+      "t": false,
+      "q": "¿Qué formato usa MongoDB?",
+      "a": "**BSON** (**Binary JSON**). Escrita en **C++**"
+    },
+    {
+      "id": "ii5c69",
+      "n": "69",
+      "e": "🛋️",
+      "t": false,
+      "q": "CouchDB",
+      "a": "Documental de Apache: guarda en **JSON** y consulta con **JavaScript**. Destaca por la **replicación**"
+    },
+    {
+      "id": "ii5c70",
+      "n": "70",
+      "e": "🔵",
+      "t": true,
+      "q": "BD de grafos",
+      "a": "Datos como **nodos** y relaciones como **aristas**. Útiles con muchas relaciones (**redes sociales**). Ej.: **Neo4j** (lenguaje **Cypher**)"
+    },
+    {
+      "id": "ii5c71",
+      "n": "71",
+      "e": "🥑",
+      "t": false,
+      "q": "ArangoDB",
+      "a": "**Multimodelo**: clave-valor, documentos y grafos. Lenguaje **AQL**"
+    },
+    {
+      "id": "ii5c72",
+      "n": "72",
+      "e": "🧸",
+      "t": false,
+      "q": "¿Qué es un SGBDOO?",
+      "a": "Combina **orientación a objetos** con capacidades de **base de datos**; los datos son **objetos**"
+    },
+    {
+      "id": "ii5c73",
+      "n": "73",
+      "e": "💡",
+      "t": false,
+      "q": "¿Por qué surgen las BDOO?",
+      "a": "Por la falta de **capacidad semántica** del modelo relacional para **CAD/CAM, CASE, multimedia, SIG** o datos científicos"
+    },
+    {
+      "id": "ii5c74",
+      "n": "74",
+      "e": "📜",
+      "t": false,
+      "q": "Manifiesto de BDOO: categorías",
+      "a": "Características **obligatorias**, **optativas** y **abiertas**. Autores: Atkinson, Bancilhon, DeWitt, Maier y Zdonik"
+    },
+    {
+      "id": "ii5c75",
+      "n": "75",
+      "e": "✔️",
+      "t": true,
+      "q": "Obligatorias del manifiesto (parte OO)",
+      "a": "Objetos complejos, **identidad**, **encapsulamiento**, tipos y clases, **herencia**, sobrecarga, extensibilidad y completitud computacional"
+    },
+    {
+      "id": "ii5c76",
+      "n": "76",
+      "e": "➰",
+      "t": false,
+      "q": "Optativas del manifiesto",
+      "a": "**Herencia múltiple**, comprobación de tipos, **distribución**, transacciones de diseño y **versiones**"
+    },
+    {
+      "id": "ii5c77",
+      "n": "77",
+      "e": "☕",
+      "t": false,
+      "q": "Ejemplos de SGBDOO",
+      "a": "**InterSystems Caché**, **ObjectDB** (Java, JPA/JDO), **ZODB** (Python), **db4o** (Java y .NET), ObjectStore (C++)"
+    },
+    {
+      "id": "ii5c78",
+      "n": "78",
+      "e": "🆔",
+      "t": true,
+      "q": "¿Cómo se identifican los objetos en una BDOO?",
+      "a": "Con un **OID** (identificador único), **no visible** al usuario e independiente del contenido"
+    },
+    {
+      "id": "ii5c79",
+      "n": "79",
+      "e": "👍",
+      "t": false,
+      "q": "Ventajas de las BDOO",
+      "a": "Mayor **capacidad de modelado**, nuevos tipos de datos, **menos redundancia**, **reutilización** de clases"
+    },
+    {
+      "id": "ii5c80",
+      "n": "80",
+      "e": "👎",
+      "t": false,
+      "q": "Inconvenientes de las BDOO",
+      "a": "Falta un **modelo universal**, falta **experiencia** y **estándares**; la optimización de consultas choca con el **encapsulamiento**"
+    },
+    {
+      "id": "ii5c81",
+      "n": "81",
+      "e": "⚖️",
+      "t": false,
+      "q": "Diferencias NoSQL vs relacional",
+      "a": "Arquitectura **distribuida**, **sin tablas**, **sin SQL** (o solo de apoyo) y normalmente **sin JOIN**"
+    },
+    {
+      "id": "ii5c82",
+      "n": "82",
+      "e": "📈",
+      "t": false,
+      "q": "Ventajas de NoSQL",
+      "a": "Menos **recursos**, **escalabilidad horizontal** (añadir nodos), gran volumen de datos y **sin cuellos de botella**"
+    }
+  ]
+}

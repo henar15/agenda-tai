@@ -175,8 +175,9 @@
   "orden": 5,
   "titulo": "Bases de datos relacionales, orientadas a objetos y NoSQL",
   "semana": "2027-02-01",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 56,
   "pagIni": 3
  },

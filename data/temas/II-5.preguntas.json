@@ -1,0 +1,330 @@
+{
+  "tema": "II-5",
+  "preguntas": [
+    {
+      "id": "ii5-01",
+      "tipico": true,
+      "q": "¿Cuál de los siguientes es el nivel de abstracción más cercano al almacenamiento físico?",
+      "opts": [
+        "Interno",
+        "Externo",
+        "Conceptual",
+        "De vistas"
+      ],
+      "c": 0,
+      "exp": "El nivel interno describe la estructura física."
+    },
+    {
+      "id": "ii5-02",
+      "tipico": true,
+      "q": "En ACID, la 'I' corresponde a…",
+      "opts": [
+        "Integridad",
+        "Independencia",
+        "Aislamiento",
+        "Inmediatez"
+      ],
+      "c": 2,
+      "exp": "Isolation = Aislamiento."
+    },
+    {
+      "id": "ii5-03",
+      "tipico": true,
+      "q": "La propiedad que garantiza que una transacción se ejecuta entera o no se ejecuta es la…",
+      "opts": [
+        "Durabilidad",
+        "Consistencia",
+        "Concurrencia",
+        "Atomicidad"
+      ],
+      "c": 3,
+      "exp": "Atomicidad: todo o nada."
+    },
+    {
+      "id": "ii5-04",
+      "tipico": true,
+      "q": "¿Qué modelo permite que un nodo tenga varios padres?",
+      "opts": [
+        "Jerárquico",
+        "En red",
+        "Documental",
+        "Clave-valor"
+      ],
+      "c": 1,
+      "exp": "El modelo en red (plex) admite varios padres."
+    },
+    {
+      "id": "ii5-05",
+      "tipico": true,
+      "q": "El modelo relacional fue propuesto por Codd en…",
+      "opts": [
+        "1970",
+        "1965",
+        "1972",
+        "1982"
+      ],
+      "c": 0,
+      "exp": "1970. El álgebra relacional es de 1972."
+    },
+    {
+      "id": "ii5-06",
+      "tipico": true,
+      "q": "El grado de una relación es…",
+      "opts": [
+        "El número de tuplas",
+        "El número de claves",
+        "El número de atributos",
+        "El número de tablas relacionadas"
+      ],
+      "c": 2,
+      "exp": "Grado = número de columnas (atributos)."
+    },
+    {
+      "id": "ii5-07",
+      "tipico": false,
+      "q": "Una tupla es…",
+      "opts": [
+        "Una columna",
+        "Un dominio",
+        "Una vista",
+        "Una fila"
+      ],
+      "c": 3,
+      "exp": "Tupla = fila, instancia o registro."
+    },
+    {
+      "id": "ii5-08",
+      "tipico": true,
+      "q": "Las propiedades de una clave candidata son…",
+      "opts": [
+        "Unicidad y nulidad",
+        "Unicidad y minimalidad",
+        "Atomicidad y minimalidad",
+        "Integridad y unicidad"
+      ],
+      "c": 1,
+      "exp": "No hay dos tuplas iguales y no sobra ningún atributo."
+    },
+    {
+      "id": "ii5-09",
+      "tipico": true,
+      "q": "La regla de integridad de entidad dice que…",
+      "opts": [
+        "Ningún atributo de la clave primaria puede ser nulo",
+        "Toda clave ajena debe existir en otra tabla",
+        "Toda columna toma valores de su dominio",
+        "Las vistas deben poder actualizarse"
+      ],
+      "c": 0,
+      "exp": "La primera opción es la integridad referencial."
+    },
+    {
+      "id": "ii5-10",
+      "tipico": true,
+      "q": "¿Qué regla de Codd establece que cada dato es accesible con tabla, clave primaria y columna?",
+      "opts": [
+        "Regla 1",
+        "Regla 4",
+        "Regla 2",
+        "Regla 9"
+      ],
+      "c": 2,
+      "exp": "Regla 2: acceso garantizado."
+    },
+    {
+      "id": "ii5-11",
+      "tipico": true,
+      "q": "La regla de Codd sobre la independencia física de los datos es la…",
+      "opts": [
+        "Regla 6",
+        "Regla 7",
+        "Regla 9",
+        "Regla 8"
+      ],
+      "c": 3,
+      "exp": "Regla 8 física; regla 9 lógica."
+    },
+    {
+      "id": "ii5-12",
+      "tipico": true,
+      "q": "La 'Regla 0' de Codd indica que…",
+      "opts": [
+        "Los nulos se tratan de forma sistemática",
+        "El SGBD debe gestionar la BD solo con sus capacidades relacionales",
+        "Los metadatos se guardan en tablas",
+        "La distribución es invisible al usuario"
+      ],
+      "c": 1,
+      "exp": "La Regla 0 define cuándo un SGBD es relacional."
+    },
+    {
+      "id": "ii5-13",
+      "tipico": false,
+      "q": "Según la regla de la no subversión…",
+      "opts": [
+        "Un lenguaje de bajo nivel no puede saltarse las reglas de integridad",
+        "Las vistas actualizables deben actualizarse",
+        "El catálogo es dinámico",
+        "Se trabaja igual en BD distribuidas"
+      ],
+      "c": 0,
+      "exp": "Es la regla 12."
+    },
+    {
+      "id": "ii5-14",
+      "tipico": true,
+      "q": "¿Qué operación del álgebra relacional selecciona columnas y elimina duplicados?",
+      "opts": [
+        "Selección",
+        "Producto cartesiano",
+        "Proyección",
+        "División"
+      ],
+      "c": 2,
+      "exp": "La selección escoge filas; la proyección, columnas."
+    },
+    {
+      "id": "ii5-15",
+      "tipico": true,
+      "q": "¿Cuál NO es una operación básica del álgebra relacional?",
+      "opts": [
+        "Unión",
+        "Diferencia",
+        "Producto cartesiano",
+        "Intersección"
+      ],
+      "c": 3,
+      "exp": "La intersección es derivada."
+    },
+    {
+      "id": "ii5-16",
+      "tipico": false,
+      "q": "El cálculo relacional es de tipo…",
+      "opts": [
+        "Procedimental",
+        "Declarativo",
+        "Imperativo",
+        "Jerárquico"
+      ],
+      "c": 1,
+      "exp": "El álgebra es procedimental; el cálculo, declarativo."
+    },
+    {
+      "id": "ii5-17",
+      "tipico": false,
+      "q": "¿Qué SGBDR usa el lenguaje Transact-SQL?",
+      "opts": [
+        "Microsoft SQL Server",
+        "Oracle",
+        "MySQL",
+        "PostgreSQL"
+      ],
+      "c": 0,
+      "exp": "T-SQL es de SQL Server."
+    },
+    {
+      "id": "ii5-18",
+      "tipico": false,
+      "q": "El SGBDR libre y orientado a objetos cuya comunidad se llama PGDG es…",
+      "opts": [
+        "MySQL",
+        "Access",
+        "PostgreSQL",
+        "Oracle XE"
+      ],
+      "c": 2,
+      "exp": "PostgreSQL, licencia tipo BSD."
+    },
+    {
+      "id": "ii5-19",
+      "tipico": true,
+      "q": "NoSQL significa…",
+      "opts": [
+        "No SQL",
+        "New Object SQL",
+        "Non Standard Query Language",
+        "Not Only SQL"
+      ],
+      "c": 3,
+      "exp": "Not Only SQL: no solo SQL."
+    },
+    {
+      "id": "ii5-20",
+      "tipico": true,
+      "q": "MongoDB almacena la información en formato…",
+      "opts": [
+        "XML",
+        "BSON",
+        "CSV",
+        "YAML"
+      ],
+      "c": 1,
+      "exp": "BSON = Binary JSON."
+    },
+    {
+      "id": "ii5-21",
+      "tipico": true,
+      "q": "Neo4j es una base de datos…",
+      "opts": [
+        "De grafos",
+        "Clave-valor",
+        "Documental",
+        "Orientada a objetos"
+      ],
+      "c": 0,
+      "exp": "De grafos; su lenguaje es Cypher."
+    },
+    {
+      "id": "ii5-22",
+      "tipico": false,
+      "q": "¿Cuál de estas es una base de datos clave-valor?",
+      "opts": [
+        "Neo4j",
+        "CouchDB",
+        "Redis",
+        "ObjectDB"
+      ],
+      "c": 2,
+      "exp": "Redis es clave-valor; CouchDB documental; Neo4j grafos."
+    },
+    {
+      "id": "ii5-23",
+      "tipico": true,
+      "q": "En el Manifiesto de BDOO, la herencia múltiple es una característica…",
+      "opts": [
+        "Obligatoria",
+        "Abierta",
+        "Prohibida",
+        "Optativa"
+      ],
+      "c": 3,
+      "exp": "La herencia simple es obligatoria; la múltiple, optativa."
+    },
+    {
+      "id": "ii5-24",
+      "tipico": false,
+      "q": "En una BDOO, cada objeto se identifica mediante…",
+      "opts": [
+        "Una clave primaria visible",
+        "Un OID",
+        "Una clave foránea",
+        "Un índice"
+      ],
+      "c": 1,
+      "exp": "El OID es único y no visible para el usuario."
+    },
+    {
+      "id": "ii5-25",
+      "tipico": true,
+      "q": "¿Cuál es una ventaja típica de NoSQL frente a las relacionales?",
+      "opts": [
+        "Escalabilidad horizontal",
+        "Uso intensivo de JOIN",
+        "Lenguaje estándar SQL",
+        "Estructura rígida en tablas"
+      ],
+      "c": 0,
+      "exp": "Mejora añadiendo nodos."
+    }
+  ]
+}

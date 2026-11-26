@@ -1,0 +1,79 @@
+{
+  "tema": "II-5",
+  "ramas": [
+    {
+      "t": "Sistema de BD",
+      "e": "🧱",
+      "items": [
+        "BD + **SGBD** + diccionario + **DBA** + usuarios",
+        "Flory 1982: sin redundancia, tiempo real, concurrente",
+        "Niveles: **interno**, **conceptual** y **externo**",
+        "SGBD: describir, manipular y usar los datos"
+      ]
+    },
+    {
+      "t": "Transacciones ACID",
+      "e": "🧪",
+      "items": [
+        "**A**tomicidad: todo o nada",
+        "**C**onsistencia: de estado válido a válido",
+        "**I**: aislamiento entre operaciones",
+        "**D**urabilidad: persiste aunque falle"
+      ]
+    },
+    {
+      "t": "Modelos de BD",
+      "e": "🌳",
+      "items": [
+        "**Jerárquica**: árbol, un padre",
+        "**En red** (plex): varios padres",
+        "**Multidimensional**: cubos **OLAP**",
+        "**Deductiva**: Datalog (Prolog)",
+        "Transaccional y geoespacial"
+      ]
+    },
+    {
+      "t": "Modelo relacional",
+      "e": "📐",
+      "items": [
+        "**Codd, 1970**: datos en **tablas**",
+        "Tupla = fila · atributo = columna · grado = nº columnas",
+        "Clave candidata: **unicidad + minimalidad**",
+        "**Clave foránea** = primaria de otra tabla",
+        "Integridad de **entidad** y **referencial**"
+      ]
+    },
+    {
+      "t": "Reglas de Codd",
+      "e": "📜",
+      "items": [
+        "**12 + Regla 0** (solo capacidades relacionales)",
+        "R2 acceso: **tabla + clave + columna**",
+        "R3 **nulos** ≠ vacío ni 0",
+        "R8 indep. **física** · R9 indep. **lógica**",
+        "R12 **no subversión**"
+      ]
+    },
+    {
+      "t": "Álgebra y cálculo",
+      "e": "🧮",
+      "items": [
+        "Álgebra: **procedimental** · Cálculo: **declarativo**",
+        "Básicas: selección, proyección, producto, unión, diferencia",
+        "Derivadas: intersección, **join**, división, agrupación",
+        "SGBDR: MySQL, Oracle, SQL Server, PostgreSQL, Access"
+      ]
+    },
+    {
+      "t": "NoSQL y BDOO",
+      "e": "🚀",
+      "items": [
+        "NoSQL = **Not Only SQL**, escala en **horizontal**",
+        "Clave-valor: **Redis**, **DynamoDB**",
+        "Documental: **MongoDB** (BSON), CouchDB",
+        "Grafos: **Neo4j** (Cypher)",
+        "BDOO: objetos con **OID**; manifiesto con obligatorias/optativas/abiertas"
+      ]
+    }
+  ]
+}
