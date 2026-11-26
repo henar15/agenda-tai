@@ -3321,3 +3321,10 @@ body.focus {
   color: var(--muted);
   white-space: nowrap;
 }
+.rit-keys .extra {
+  font-weight: 600;
+}
+.rit-keys small {
+  font-weight: 600;
+  opacity: 0.85;
+}

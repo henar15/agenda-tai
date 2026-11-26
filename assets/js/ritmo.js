@@ -248,16 +248,36 @@ function ideasClave(a) {
 }
 function corregir(escrito, respuesta) {
   const tus = toks(escrito);
-  const claves = ideasClave(respuesta).map((k) => {
+  const evalua = (k, umbral) => {
     const ws = toks(k);
     const sig = ws.filter((w) => !STOP.has(w) || ws.length === 1);
     const nums = sig.filter((w) => /^\d/.test(w));
     const hits = sig.filter((w) => palabraEn(w, tus)).length;
-    const ok = sig.length > 0 && nums.every((n) => tus.includes(n)) && hits / sig.length >= 0.5;
-    return { k, ok };
-  });
-  const score = claves.length ? claves.filter((c) => c.ok).length / claves.length : 0;
-  return { score, claves };
+    return {
+      k,
+      ok: sig.length > 0 && nums.every((n) => tus.includes(n)) && hits / sig.length >= umbral,
+      nums,
+    };
+  };
+  const claves = ideasClave(respuesta).map((k) => Object.assign(evalua(k, 0.5), { w: 1 }));
+  // Además de lo que va en negrita, cuenta el resto de la explicación (el «para qué»)
+  const resto = plain(String(respuesta).replace(/\*\*(.+?)\*\*/g, ' '))
+    .replace(/\s+([,.;:])/g, '$1')
+    .replace(/\s{2,}/g, ' ')
+    .replace(/^[\s:,.;–-]+|[\s:,.;–-]+$/g, '')
+    .trim();
+  const restoSig = toks(resto).filter((w) => !STOP.has(w) && w.length >= 4);
+  if (/\*\*/.test(respuesta) && restoSig.length >= 2)
+    claves.push(Object.assign(evalua(resto, 0.5), { w: claves.length <= 1 ? 1 : 0.5, extra: true }));
+  // Si pusiste un número distinto, te lo enseño («pusiste 135»)
+  const tusNums = tus.filter((w) => /^\d/.test(w));
+  const todos = new Set(claves.flatMap((c) => c.nums));
+  const otros = tusNums.filter((n) => !todos.has(n));
+  const malNum = claves.find((c) => !c.ok && c.nums.length);
+  if (malNum && otros.length) malNum.tuyo = otros.join(', ');
+  const tot = claves.reduce((a, c) => a + c.w, 0);
+  const score = tot ? claves.filter((c) => c.ok).reduce((a, c) => a + c.w, 0) / tot : 0;
+  return { score, claves: claves.map(({ k, ok, tuyo, extra }) => ({ k, ok, tuyo, extra })) };
 }
 
 /* ---------- velocidad: lo usamos como medida de seguridad (no se puede fingir) ---------- */
@@ -410,7 +430,7 @@ function vRitmoSesion() {
       <div class="rit-conf"><button class="btn" type="submit">Comprobar</button><button class="btn ghost" type="button" data-act="ritnose">🤷 No lo sé</button></div></form></div>`;
     const L = R.last;
     const claves = L.claves
-      ? `<ul class="rit-keys">${L.claves.map((k) => `<li class="${k.ok ? 'ok' : 'ko'}">${k.ok ? '✅' : '❌'} ${esc(k.k)}</li>`).join('')}</ul>`
+      ? `<ul class="rit-keys">${L.claves.map((k) => `<li class="${k.ok ? 'ok' : 'ko'}${k.extra ? ' extra' : ''}">${k.ok ? '✅' : '❌'} ${esc(k.k)}${k.tuyo ? ` <small>(pusiste ${esc(k.tuyo)})</small>` : ''}</li>`).join('')}</ul>`
       : '';
     const tuya = L.txt ? `<div class="rit-tuya"><small>Tu respuesta</small><p>${esc(L.txt)}</p></div>` : '';
     const otra =
