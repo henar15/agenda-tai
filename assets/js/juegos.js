@@ -1,8 +1,49 @@
 /**
  * Juegos: V/F, Empareja, Completa la frase, ¿Qué artículo es?, Línea temporal, Supervivencia y Duelo.
  */
-/* ---------- juegos nuevos ---------- */
-const allCards = () => Object.keys(S.cards).flatMap((t) => temaCards(t));
+/* ---------- de qué se juega: todo, un bloque o un tema ---------- */
+// ui.gscope: '' = todo el temario · 'B:II' = un bloque · 'II-3' = un tema
+const temaBloque = (id) => (S.temas.find((t) => t.id === id) || {}).bloque || (id ? id.split('-')[0] : null);
+function enScope(tema, bloque) {
+  const sc = ui.gscope || '';
+  if (!sc) return true;
+  if (sc.startsWith('B:')) return (bloque || temaBloque(tema)) === sc.slice(2);
+  return tema === sc;
+}
+const allCards = () =>
+  Object.keys(S.cards)
+    .filter((t) => enScope(t))
+    .flatMap((t) => temaCards(t));
+function poolAll() {
+  return bank()
+    .concat(ofiQs(true))
+    .concat((S.grupo || []).map((q) => Object.assign({}, q, { id: 'grupo:' + q.id })))
+    .filter((q) => enScope(q.tema, q.bloque));
+}
+function scopeLabel() {
+  const sc = ui.gscope || '';
+  if (!sc) return 'todo el temario';
+  if (sc.startsWith('B:')) return 'el Bloque ' + sc.slice(2);
+  const t = S.temas.find((x) => x.id === sc);
+  return t ? 'el tema ' + t.codigo : sc;
+}
+const deScope = () => ('de ' + scopeLabel()).replace(/^de el /, 'del ');
+function vScope() {
+  const sc = ui.gscope || '';
+  const nc = allCards().length,
+    nq = poolAll().length;
+  const temas = S.temas.filter((t) => (S.cards[t.id] || []).length || bank(t.id).length).sort(ordT);
+  const chip = (v, l) =>
+    `<button class="chip2${sc === v ? ' on' : ''}" data-act="gscope" data-v="${esc(v)}" aria-pressed="${sc === v}">${l}</button>`;
+  return `<section class="card gscope" aria-label="De qué quieres jugar">
+    <h3>🎯 ¿De qué quieres jugar?</h3>
+    <div class="chips">${chip('', 'Todo')}${['I', 'II', 'III', 'IV'].map((b) => chip('B:' + b, 'Bloque ' + b)).join('')}</div>
+    <label class="picker"><select id="gscope-tema" aria-label="Un tema concreto">
+      <option value="">…o elige un tema</option>${temas.map((t) => `<option value="${esc(t.id)}"${sc === t.id ? ' selected' : ''}>${esc(t.codigo + ' · ' + t.titulo)}</option>`).join('')}
+    </select></label>
+    <p class="sub">Jugando con <b>${esc(scopeLabel())}</b>: ${nc} tarjetas y ${nq} preguntas.</p>
+  </section>`;
+}
 function buildArt() {
   const re =
     /\*\*\s*(?:art(?:ículo|\.|s\.)?)\s*(\d{1,3}(?:\.\d)?)\s*\*\*|\b(?:art(?:ículo|\.|s\.))\s*\*\*(\d{1,3})\*\*|\bart(?:ículo|\.)\s*(\d{1,3})\b/i;
@@ -51,11 +92,6 @@ function mcqItems(n, pool) {
   return shuffle(pool)
     .slice(0, n)
     .map((q) => ({ q: rich(q.q), opts: q.opts.map((o) => rich(o)), c: q.c, raw: q }));
-}
-function poolAll() {
-  return bank()
-    .concat(ofiQs(true))
-    .concat((S.grupo || []).map((q) => Object.assign({}, q, { id: 'grupo:' + q.id })));
 }
 function startGame(kind, mazo) {
   const r = R();
@@ -178,9 +214,7 @@ function vLin() {
 
 /* ---------- juegos ---------- */
 function cfBuild(mazo) {
-  const cs = (mazo ? temaCards(mazo) : Object.keys(S.cards).flatMap((t) => temaCards(t))).filter((c) =>
-    /\*\*(.+?)\*\*/.test(c.a),
-  );
+  const cs = allCards().filter((c) => /\*\*(.+?)\*\*/.test(c.a));
   const terms = [
     ...new Set(cs.flatMap((c) => [...c.a.matchAll(/\*\*(.+?)\*\*/g)].map((m) => m[1].trim()))),
   ].filter((t) => t.length < 40);
@@ -213,23 +247,33 @@ function vCF() {
 }
 function vJuegos() {
   const G = ui.game;
-  const ts = temasConBanco(),
-    ms = temasConCartas();
+  if (ui.gscope == null) ui.gscope = lsGet('gscope') || '';
   if (G && G.kind === 'vf') return vVF();
   if (G && G.kind === 'emp') return vEmp();
   if (G && G.kind === 'cf') return vCF();
   if (G && G.kind === 'mcq') return vMCQ();
   if (G && G.kind === 'lin') return vLin();
   const rec = S.rec || {};
+  const nc = allCards().length,
+    nq = poolAll().length,
+    nArt = buildArt().length,
+    nLin = buildLin().length;
+  const play = (act, ok, k, falta) =>
+    ok
+      ? `<button class="btn" data-act="${act}"${k ? ` data-k="${k}"` : ''}>Jugar</button>`
+      : `<button class="btn" disabled>Jugar</button><p class="sub">${falta}</p>`;
+  const sinT = 'Aún no hay tarjetas ' + esc(deScope()) + '.',
+    sinP = 'Aún no hay preguntas ' + esc(deScope()) + '.';
   return `<h2>Juegos</h2><p class="sub">Para repasar jugando, en ratos cortos.</p>
+  ${vScope()}
   <div class="grid">
-   <div class="card"><h3>⚡ Verdadero o falso exprés</h3><p>60 segundos. Te enseño una pregunta con una respuesta: ¿es la buena? Cada fallo te quita 5 segundos.</p><p class="sub">Récord: <b>${rec.vf || 0}</b> aciertos</p><div class="picker"><select id="gvf" aria-label="Tema del juego"><option value="">Todos los temas</option>${ts.map((t) => `<option value="${esc(t.id)}">${esc(t.codigo + ' · ' + t.titulo)}</option>`).join('')}</select><button class="btn" data-act="gvf"${bank().length ? '' : ' disabled'}>Jugar</button></div></div>
-   <div class="card"><h3>📜 ¿Qué artículo es?</h3><p>Te enseño lo que dice un artículo y eliges su número. Lo que más cae en el Bloque I.</p><p class="sub">Récord: <b>${rec.art || 0}</b>/10</p><button class="btn" data-act="gnew" data-k="art">Jugar</button></div>
-   <div class="card"><h3>⏳ Línea temporal</h3><p>Ordena leyes y hechos de más antiguo a más reciente.</p><button class="btn" data-act="gnew" data-k="lin">Jugar</button></div>
-   <div class="card"><h3>❤️ Supervivencia</h3><p>Preguntas seguidas de todo el temario hasta que falles 3. Primero las típicas; luego, más difíciles.</p><p class="sub">Récord: <b>${rec.sur || 0}</b> seguidas</p><button class="btn" data-act="gnew" data-k="sur">Jugar</button></div>
-   <div class="card"><h3>🥚 Duelo con ${esc(mascName())}</h3><p>10 preguntas: ${esc(mascName())} también responde. Cuanto más crece, mejor juega.</p><p class="sub">Victorias: <b>${rec.duelw || 0}</b></p><button class="btn" data-act="gnew" data-k="duel">Jugar</button></div>
-   <div class="card"><h3>✍️ Completa la frase</h3><p>Te enseño la respuesta de una tarjeta con un hueco en lo importante. Elige la palabra que falta. 10 frases por ronda.</p><p class="sub">Récord: <b>${rec.cf || 0}</b>/10</p><div class="picker"><select id="gcf" aria-label="Tema del juego"><option value="">Todos los temas</option>${ms.map((m) => `<option value="${esc(m.id)}">${esc(m.titulo)}</option>`).join('')}</select><button class="btn" data-act="gcf"${ms.length ? '' : ' disabled'}>Jugar</button></div></div>
-   <div class="card"><h3>🧩 Empareja</h3><p>Une cada pregunta con su respuesta. 6 parejas por ronda, lo más rápido que puedas.</p><p class="sub">Récord: <b>${rec.emp ? n1(rec.emp) + ' s' : '–'}</b></p><div class="picker"><select id="gemp" aria-label="Mazo del juego">${ms.map((m) => `<option value="${esc(m.id)}">${esc(m.titulo)}</option>`).join('')}</select><button class="btn" data-act="gemp"${ms.length ? '' : ' disabled'}>Jugar</button></div></div>
+   <div class="card"><h3>⚡ Verdadero o falso exprés</h3><p>60 segundos. Te enseño una pregunta con una respuesta: ¿es la buena? Cada fallo te quita 5 segundos.</p><p class="sub">Récord: <b>${rec.vf || 0}</b> aciertos</p>${play('gvf', nq, '', sinP)}</div>
+   <div class="card"><h3>📜 ¿Qué artículo es?</h3><p>Te enseño lo que dice un artículo y eliges su número. Lo que más cae en el Bloque I.</p><p class="sub">Récord: <b>${rec.art || 0}</b>/10</p>${play('gnew', nArt >= 3, 'art', 'Este juego necesita tarjetas con artículos (sobre todo del Bloque I).')}</div>
+   <div class="card"><h3>⏳ Línea temporal</h3><p>Ordena leyes y hechos de más antiguo a más reciente.</p>${play('gnew', nLin >= 4, 'lin', 'Este juego necesita tarjetas con fechas (sobre todo del Bloque I).')}</div>
+   <div class="card"><h3>❤️ Supervivencia</h3><p>Preguntas seguidas hasta que falles 3. Primero las típicas; luego, más difíciles.</p><p class="sub">Récord: <b>${rec.sur || 0}</b> seguidas</p>${play('gnew', nq, 'sur', sinP)}</div>
+   <div class="card"><h3>🥚 Duelo con ${esc(mascName())}</h3><p>10 preguntas: ${esc(mascName())} también responde. Cuanto más crece, mejor juega.</p><p class="sub">Victorias: <b>${rec.duelw || 0}</b></p>${play('gnew', nq, 'duel', sinP)}</div>
+   <div class="card"><h3>✍️ Completa la frase</h3><p>Te enseño la respuesta de una tarjeta con un hueco en lo importante. Elige la palabra que falta. 10 frases por ronda.</p><p class="sub">Récord: <b>${rec.cf || 0}</b>/10</p>${play('gcf', nc, '', sinT)}</div>
+   <div class="card"><h3>🧩 Empareja</h3><p>Une cada pregunta con su respuesta. 6 parejas por ronda, lo más rápido que puedas.</p><p class="sub">Récord: <b>${rec.emp ? n1(rec.emp) + ' s' : '–'}</b></p>${play('gemp', nc >= 6, '', sinT)}</div>
   </div>`;
 }
 function vfNext() {
@@ -254,7 +298,7 @@ function vVF() {
 }
 function empNew() {
   const G = ui.game;
-  const cs = shuffle(temaCards(G.mazo)).slice(0, 6);
+  const cs = shuffle(allCards()).slice(0, 6);
   G.cards = cs;
   G.left = shuffle(cs.map((c) => c.id));
   G.right = shuffle(cs.map((c) => c.id));

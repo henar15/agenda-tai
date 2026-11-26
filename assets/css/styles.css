@@ -2960,3 +2960,22 @@ body.focus {
   gap: 6px;
   justify-items: start;
 }
+
+/* Juegos: selector de qué se juega */
+.gscope {
+  margin-bottom: 16px;
+  display: grid;
+  gap: 10px;
+}
+.gscope h3 {
+  margin: 0;
+}
+.gscope .chips {
+  flex-wrap: wrap;
+}
+.gscope select {
+  max-width: 100%;
+}
+.gscope .sub {
+  margin: 0;
+}

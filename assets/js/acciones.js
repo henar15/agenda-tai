@@ -125,12 +125,17 @@ function vfTick() {
   }
 }
 function startVF(scope) {
-  const pool = bank(scope || '');
+  const pool = poolAll();
   if (!pool.length) return;
   ui.game = { kind: 'vf', scope, pool, ok: 0, ko: 0, miss: [], end: Date.now() + 60000 };
   vfNext();
   clearInterval(vfTimer);
   vfTimer = setInterval(vfTick, 250);
+  render();
+}
+function setGScope(v) {
+  ui.gscope = v || '';
+  lsSet('gscope', ui.gscope);
   render();
 }
 function startEmp(mazo) {
@@ -467,11 +472,13 @@ document.addEventListener('click', (e) => {
       scrollTo(0, 0);
     } else finishTest();
   } else if (a === 'gvf') {
-    startVF($('#gvf').value);
+    startVF(ui.gscope);
   } else if (a === 'gvfagain') {
     startVF(G.scope);
   } else if (a === 'gemp') {
-    startEmp($('#gemp').value);
+    startEmp(ui.gscope);
+  } else if (a === 'gscope') {
+    setGScope(el.dataset.v);
   } else if (a === 'gnew' || a === 'gagain') {
     startGame(el.dataset.k);
   } else if (a === 'gmqnext') {
@@ -546,7 +553,7 @@ document.addEventListener('click', (e) => {
       render();
     }
   } else if (a === 'gcf' || a === 'gcfagain') {
-    const mz = a === 'gcf' ? $('#gcf').value : ui.game.mazo;
+    const mz = ui.gscope;
     ui.game = { kind: 'cf', mazo: mz, items: cfBuild(mz), i: 0, ok: 0, a: null };
     render();
     scrollTo(0, 0);
@@ -860,5 +867,7 @@ document.addEventListener('change', (e) => {
   } else if (id === 'scope') {
     ui.scope = e.target.value;
     render();
+  } else if (id === 'gscope-tema') {
+    setGScope(e.target.value);
   }
 });

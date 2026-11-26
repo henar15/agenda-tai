@@ -186,6 +186,7 @@ function flash(t) {
   if (e) e.textContent = t;
 }
 function resetUser() {
+  ui.gscope = null;
   Object.assign(S, {
     stats: {},
     grupo: null,
