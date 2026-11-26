@@ -1,0 +1,304 @@
+{
+  "tema": "II-6",
+  "preguntas": [
+    {
+      "id": "ii6-01",
+      "tipico": true,
+      "q": "El término 'inteligencia artificial' surge en…",
+      "opts": [
+        "La conferencia de Dartmouth de 1956",
+        "El test de Turing de 1950",
+        "El Reglamento europeo de 2024",
+        "La creación de los transformers en 2017"
+      ],
+      "c": 0,
+      "exp": "Dartmouth, 1956, con John McCarthy."
+    },
+    {
+      "id": "ii6-02",
+      "tipico": false,
+      "q": "La IA que resuelve una sola tarea concreta se llama…",
+      "opts": [
+        "IA fuerte",
+        "IA general",
+        "IA débil o estrecha",
+        "IA simbólica"
+      ],
+      "c": 2,
+      "exp": "Es la IA que existe hoy."
+    },
+    {
+      "id": "ii6-03",
+      "tipico": true,
+      "q": "El aprendizaje con datos etiquetados es el aprendizaje…",
+      "opts": [
+        "No supervisado",
+        "Por refuerzo",
+        "Profundo",
+        "Supervisado"
+      ],
+      "c": 3,
+      "exp": "Supervisado: se conoce la respuesta correcta."
+    },
+    {
+      "id": "ii6-04",
+      "tipico": true,
+      "q": "El clustering es una técnica típica del aprendizaje…",
+      "opts": [
+        "Supervisado",
+        "No supervisado",
+        "Por refuerzo",
+        "Simbólico"
+      ],
+      "c": 1,
+      "exp": "Agrupa datos sin etiquetar."
+    },
+    {
+      "id": "ii6-05",
+      "tipico": true,
+      "q": "Un agente que aprende por prueba y error con recompensas usa aprendizaje…",
+      "opts": [
+        "Por refuerzo",
+        "Supervisado",
+        "No supervisado",
+        "Deductivo"
+      ],
+      "c": 0,
+      "exp": "Aprendizaje por refuerzo."
+    },
+    {
+      "id": "ii6-06",
+      "tipico": false,
+      "q": "Predecir el precio de una vivienda es un problema de…",
+      "opts": [
+        "Clasificación",
+        "Clustering",
+        "Regresión",
+        "Pivotado"
+      ],
+      "c": 2,
+      "exp": "La regresión predice un valor numérico."
+    },
+    {
+      "id": "ii6-07",
+      "tipico": true,
+      "q": "El deep learning se caracteriza por usar…",
+      "opts": [
+        "Reglas escritas por expertos",
+        "Bases de datos relacionales",
+        "Cubos OLAP",
+        "Redes neuronales con muchas capas ocultas"
+      ],
+      "c": 3,
+      "exp": "Deep learning ⊂ machine learning ⊂ IA."
+    },
+    {
+      "id": "ii6-08",
+      "tipico": true,
+      "q": "Los LLM como GPT se basan en la arquitectura…",
+      "opts": [
+        "Convolucional (CNN)",
+        "Transformer",
+        "Sistema experto",
+        "Árbol de decisión"
+      ],
+      "c": 1,
+      "exp": "Transformer, basada en atención."
+    },
+    {
+      "id": "ii6-09",
+      "tipico": false,
+      "q": "Cuando un modelo memoriza los datos de entrenamiento y generaliza mal se produce…",
+      "opts": [
+        "Sobreajuste",
+        "Sesgo",
+        "Alucinación",
+        "Drill-down"
+      ],
+      "c": 0,
+      "exp": "Overfitting o sobreajuste."
+    },
+    {
+      "id": "ii6-10",
+      "tipico": true,
+      "q": "El Reglamento europeo de Inteligencia Artificial es el…",
+      "opts": [
+        "Reglamento (UE) 2016/679",
+        "Reglamento (UE) 910/2014",
+        "Reglamento (UE) 2024/1689",
+        "Directiva (UE) 2022/2555"
+      ],
+      "c": 2,
+      "exp": "El 2016/679 es el RGPD y el 910/2014 el eIDAS."
+    },
+    {
+      "id": "ii6-11",
+      "tipico": true,
+      "q": "En el Reglamento de IA, la puntuación social de personas se considera de riesgo…",
+      "opts": [
+        "Mínimo",
+        "Limitado",
+        "Alto",
+        "Inaceptable"
+      ],
+      "c": 3,
+      "exp": "Está prohibida."
+    },
+    {
+      "id": "ii6-12",
+      "tipico": false,
+      "q": "La AESIA tiene su sede en…",
+      "opts": [
+        "Madrid",
+        "A Coruña",
+        "Barcelona",
+        "Sevilla"
+      ],
+      "c": 1,
+      "exp": "Agencia Española de Supervisión de la IA."
+    },
+    {
+      "id": "ii6-13",
+      "tipico": true,
+      "q": "¿Qué significan las siglas ETL?",
+      "opts": [
+        "Extracción, Transformación y Carga",
+        "Evaluación, Tratamiento y Lectura",
+        "Entrada, Transacción y Log",
+        "Extracción, Transferencia y Lectura"
+      ],
+      "c": 0,
+      "exp": "Extract, Transform, Load."
+    },
+    {
+      "id": "ii6-14",
+      "tipico": true,
+      "q": "¿Cuál NO es una característica del data warehouse según Inmon?",
+      "opts": [
+        "Orientado a temas",
+        "Integrado",
+        "Volátil",
+        "Variable en el tiempo"
+      ],
+      "c": 2,
+      "exp": "Es NO volátil."
+    },
+    {
+      "id": "ii6-15",
+      "tipico": true,
+      "q": "Un almacén de datos de un solo departamento es un…",
+      "opts": [
+        "Data lake",
+        "Cubo OLTP",
+        "Sistema experto",
+        "Data mart"
+      ],
+      "c": 3,
+      "exp": "Data mart."
+    },
+    {
+      "id": "ii6-16",
+      "tipico": false,
+      "q": "El enfoque bottom-up (primero los data marts) es propio de…",
+      "opts": [
+        "Inmon",
+        "Kimball",
+        "Codd",
+        "Turing"
+      ],
+      "c": 1,
+      "exp": "Inmon es top-down."
+    },
+    {
+      "id": "ii6-17",
+      "tipico": true,
+      "q": "Los sistemas operacionales del día a día con muchas transacciones cortas son…",
+      "opts": [
+        "OLTP",
+        "OLAP",
+        "MOLAP",
+        "Data warehouse"
+      ],
+      "c": 0,
+      "exp": "OLTP: OnLine Transaction Processing."
+    },
+    {
+      "id": "ii6-18",
+      "tipico": true,
+      "q": "Señala la característica propia de OLAP:",
+      "opts": [
+        "Datos actuales y normalizados",
+        "Muchas escrituras cortas",
+        "Datos históricos y análisis multidimensional",
+        "Usuarios operativos"
+      ],
+      "c": 2,
+      "exp": "El resto son rasgos de OLTP."
+    },
+    {
+      "id": "ii6-19",
+      "tipico": true,
+      "q": "En un modelo dimensional, las medidas numéricas (importe de ventas) están en…",
+      "opts": [
+        "Las tablas de dimensiones",
+        "El data lake",
+        "El diccionario de datos",
+        "La tabla de hechos"
+      ],
+      "c": 3,
+      "exp": "Las dimensiones dan el contexto."
+    },
+    {
+      "id": "ii6-20",
+      "tipico": true,
+      "q": "El esquema con dimensiones normalizadas en varias tablas es el esquema en…",
+      "opts": [
+        "Estrella",
+        "Copo de nieve",
+        "Constelación",
+        "Árbol"
+      ],
+      "c": 1,
+      "exp": "En estrella están desnormalizadas."
+    },
+    {
+      "id": "ii6-21",
+      "tipico": true,
+      "q": "Pasar de ver las ventas por meses a verlas por días es un…",
+      "opts": [
+        "Drill-down",
+        "Roll-up",
+        "Slice",
+        "Pivot"
+      ],
+      "c": 0,
+      "exp": "Drill-down: más detalle."
+    },
+    {
+      "id": "ii6-22",
+      "tipico": false,
+      "q": "Fijar un único valor de una dimensión para obtener un subcubo es…",
+      "opts": [
+        "Dice",
+        "Pivot",
+        "Slice",
+        "Roll-up"
+      ],
+      "c": 2,
+      "exp": "Dice fija varias dimensiones."
+    },
+    {
+      "id": "ii6-23",
+      "tipico": true,
+      "q": "OLAP implementado sobre una base de datos relacional se llama…",
+      "opts": [
+        "MOLAP",
+        "HOLAP",
+        "DOLAP",
+        "ROLAP"
+      ],
+      "c": 3,
+      "exp": "MOLAP usa BD multidimensional; HOLAP es híbrido."
+    }
+  ]
+}

@@ -188,10 +188,11 @@
   "orden": 6,
   "titulo": "Inteligencia artificial, inteligencia de negocio, OLTP y OLAP (tema nuevo)",
   "semana": "2027-02-08",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 0,
-  "pagIni": 0
+  "pagIni": 0,
+  "esquema": true
  },
  {
   "id": "III-1",

@@ -1,0 +1,487 @@
+{
+  "tema": "II-6",
+  "cards": [
+    {
+      "id": "ii6c1",
+      "n": "1",
+      "e": "🤖",
+      "t": true,
+      "q": "¿Qué es la inteligencia artificial (IA)?",
+      "a": "Rama de la informática que crea sistemas capaces de hacer tareas que requieren **inteligencia humana**: aprender, razonar, percibir o decidir"
+    },
+    {
+      "id": "ii6c2",
+      "n": "2",
+      "e": "🏫",
+      "t": false,
+      "q": "¿Dónde y cuándo nace el término IA?",
+      "a": "En la **conferencia de Dartmouth** de **1956**, con **John McCarthy**"
+    },
+    {
+      "id": "ii6c3",
+      "n": "3",
+      "e": "🧪",
+      "t": true,
+      "q": "¿Qué es el test de Turing?",
+      "a": "Prueba propuesta por **Alan Turing** en **1950**: una máquina es inteligente si un humano **no la distingue** de otro humano conversando"
+    },
+    {
+      "id": "ii6c4",
+      "n": "4",
+      "e": "🎯",
+      "t": false,
+      "q": "IA débil (estrecha)",
+      "a": "Resuelve **una tarea concreta** (traducir, reconocer caras). Es la que existe **hoy**"
+    },
+    {
+      "id": "ii6c5",
+      "n": "5",
+      "e": "🌍",
+      "t": false,
+      "q": "IA fuerte (general)",
+      "a": "Tendría una inteligencia **general** como la humana, capaz de cualquier tarea. Aún **no existe**"
+    },
+    {
+      "id": "ii6c6",
+      "n": "6",
+      "e": "📏",
+      "t": false,
+      "q": "IA simbólica",
+      "a": "Basada en **reglas y lógica** escritas por humanos. Ejemplo: **sistemas expertos**"
+    },
+    {
+      "id": "ii6c7",
+      "n": "7",
+      "e": "🧑‍⚕️",
+      "t": false,
+      "q": "¿Qué es un sistema experto?",
+      "a": "Programa que imita a un **experto humano** usando una **base de conocimiento** y un **motor de inferencia**"
+    },
+    {
+      "id": "ii6c8",
+      "n": "8",
+      "e": "📚",
+      "t": true,
+      "q": "¿Qué es el aprendizaje automático (machine learning)?",
+      "a": "Rama de la IA en la que el sistema **aprende de los datos** sin ser programado regla a regla"
+    },
+    {
+      "id": "ii6c9",
+      "n": "9",
+      "e": "🏷️",
+      "t": false,
+      "q": "Aprendizaje supervisado",
+      "a": "Aprende con datos **etiquetados** (se conoce la respuesta). Sirve para **clasificación** y **regresión**"
+    },
+    {
+      "id": "ii6c10",
+      "n": "10",
+      "e": "🫧",
+      "t": true,
+      "q": "Aprendizaje no supervisado",
+      "a": "Datos **sin etiquetar**; busca patrones. Ejemplo: **clustering** (agrupamiento)"
+    },
+    {
+      "id": "ii6c11",
+      "n": "11",
+      "e": "🏆",
+      "t": false,
+      "q": "Aprendizaje por refuerzo",
+      "a": "Un agente aprende por **prueba y error** recibiendo **recompensas** o castigos"
+    },
+    {
+      "id": "ii6c12",
+      "n": "12",
+      "e": "🔢",
+      "t": false,
+      "q": "Clasificación vs regresión",
+      "a": "**Clasificación**: predice una **categoría** (spam / no spam). **Regresión**: predice un **valor numérico** (precio)"
+    },
+    {
+      "id": "ii6c13",
+      "n": "13",
+      "e": "🧠",
+      "t": true,
+      "q": "¿Qué es una red neuronal artificial?",
+      "a": "Modelo inspirado en el cerebro: **neuronas** conectadas en **capas** (entrada, ocultas y salida) con **pesos**"
+    },
+    {
+      "id": "ii6c14",
+      "n": "14",
+      "e": "🕳️",
+      "t": false,
+      "q": "¿Qué es el aprendizaje profundo (deep learning)?",
+      "a": "Machine learning con redes neuronales de **muchas capas ocultas**"
+    },
+    {
+      "id": "ii6c15",
+      "n": "15",
+      "e": "🪆",
+      "t": false,
+      "q": "Relación IA, ML y deep learning",
+      "a": "**Deep learning** ⊂ **machine learning** ⊂ **IA**",
+      "h": "Como muñecas rusas"
+    },
+    {
+      "id": "ii6c16",
+      "n": "16",
+      "e": "🖼️",
+      "t": false,
+      "q": "Redes convolucionales (CNN)",
+      "a": "Redes neuronales especializadas en **imágenes** (visión artificial)"
+    },
+    {
+      "id": "ii6c17",
+      "n": "17",
+      "e": "🔄",
+      "t": false,
+      "q": "Redes recurrentes (RNN)",
+      "a": "Redes con memoria para **secuencias** (texto, voz, series temporales)"
+    },
+    {
+      "id": "ii6c18",
+      "n": "18",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es un transformer?",
+      "a": "Arquitectura de red basada en el mecanismo de **atención** (2017). Es la base de los **LLM** como GPT"
+    },
+    {
+      "id": "ii6c19",
+      "n": "19",
+      "e": "🗣️",
+      "t": false,
+      "q": "¿Qué es el PLN (NLP)?",
+      "a": "**Procesamiento del lenguaje natural**: que las máquinas entiendan y generen **lenguaje humano**"
+    },
+    {
+      "id": "ii6c20",
+      "n": "20",
+      "e": "👁️",
+      "t": false,
+      "q": "¿Qué es la visión artificial?",
+      "a": "IA que **interpreta imágenes y vídeo**: reconocer objetos, caras, matrículas…"
+    },
+    {
+      "id": "ii6c21",
+      "n": "21",
+      "e": "✨",
+      "t": true,
+      "q": "¿Qué es la IA generativa?",
+      "a": "IA que **crea contenido nuevo** (texto, imagen, audio, código) a partir de lo aprendido"
+    },
+    {
+      "id": "ii6c22",
+      "n": "22",
+      "e": "📖",
+      "t": false,
+      "q": "¿Qué es un LLM?",
+      "a": "**Large Language Model**: modelo de lenguaje enorme entrenado con grandes cantidades de texto. Ej.: GPT, Claude, Gemini"
+    },
+    {
+      "id": "ii6c23",
+      "n": "23",
+      "e": "🌀",
+      "t": false,
+      "q": "¿Qué es una alucinación en IA?",
+      "a": "Cuando el modelo genera una respuesta **falsa o inventada** con apariencia de correcta"
+    },
+    {
+      "id": "ii6c24",
+      "n": "24",
+      "e": "✍️",
+      "t": false,
+      "q": "¿Qué es un prompt?",
+      "a": "La **instrucción o texto de entrada** que se da a un modelo generativo"
+    },
+    {
+      "id": "ii6c25",
+      "n": "25",
+      "e": "📉",
+      "t": false,
+      "q": "¿Qué es el sobreajuste (overfitting)?",
+      "a": "El modelo **memoriza** los datos de entrenamiento y **generaliza mal** con datos nuevos"
+    },
+    {
+      "id": "ii6c26",
+      "n": "26",
+      "e": "⚖️",
+      "t": false,
+      "q": "¿Qué es el sesgo en IA?",
+      "a": "Resultados **injustos o desequilibrados** por datos de entrenamiento sesgados"
+    },
+    {
+      "id": "ii6c27",
+      "n": "27",
+      "e": "🇪🇺",
+      "t": true,
+      "q": "¿Cuál es la norma europea de IA?",
+      "a": "El **Reglamento (UE) 2024/1689**, de Inteligencia Artificial (**AI Act**)",
+      "h": "Primera ley integral de IA del mundo"
+    },
+    {
+      "id": "ii6c28",
+      "n": "28",
+      "e": "🚦",
+      "t": false,
+      "q": "Niveles de riesgo del Reglamento de IA",
+      "a": "**Inaceptable** (prohibido), **alto**, **limitado** (transparencia) y **mínimo**"
+    },
+    {
+      "id": "ii6c29",
+      "n": "29",
+      "e": "⛔",
+      "t": false,
+      "q": "Ejemplo de IA de riesgo inaceptable",
+      "a": "La **puntuación social** de personas (social scoring): está **prohibida**"
+    },
+    {
+      "id": "ii6c30",
+      "n": "30",
+      "e": "🏢",
+      "t": true,
+      "q": "¿Qué es la AESIA?",
+      "a": "**Agencia Española de Supervisión de la Inteligencia Artificial**, con sede en **A Coruña**"
+    },
+    {
+      "id": "ii6c31",
+      "n": "31",
+      "e": "💼",
+      "t": false,
+      "q": "¿Qué es la inteligencia de negocio (BI)?",
+      "a": "Conjunto de **técnicas y herramientas** que transforman datos en **información útil** para **tomar decisiones**"
+    },
+    {
+      "id": "ii6c32",
+      "n": "32",
+      "e": "🔄",
+      "t": true,
+      "q": "¿Qué es ETL?",
+      "a": "**Extracción**, **Transformación** y **Carga** (Load) de datos desde los sistemas origen al almacén de datos"
+    },
+    {
+      "id": "ii6c33",
+      "n": "33",
+      "e": "🏬",
+      "t": false,
+      "q": "¿Qué es un data warehouse (almacén de datos)?",
+      "a": "Repositorio **integrado** de datos históricos de toda la organización, pensado para **análisis**"
+    },
+    {
+      "id": "ii6c34",
+      "n": "34",
+      "e": "👨‍🏫",
+      "t": true,
+      "q": "4 características del data warehouse según Inmon",
+      "a": "**Orientado a temas**, **integrado**, **variable en el tiempo** (histórico) y **no volátil**"
+    },
+    {
+      "id": "ii6c35",
+      "n": "35",
+      "e": "🔒",
+      "t": false,
+      "q": "¿Qué significa que el data warehouse es no volátil?",
+      "a": "Los datos se **cargan y consultan**, pero **no se modifican ni borran** en el día a día"
+    },
+    {
+      "id": "ii6c36",
+      "n": "36",
+      "e": "🏪",
+      "t": false,
+      "q": "¿Qué es un data mart?",
+      "a": "Un almacén de datos **más pequeño**, de un **departamento o área** concreta"
+    },
+    {
+      "id": "ii6c37",
+      "n": "37",
+      "e": "⬇️",
+      "t": true,
+      "q": "Enfoque de Inmon vs Kimball",
+      "a": "**Inmon**: **top-down** (primero el data warehouse corporativo). **Kimball**: **bottom-up** (primero los data marts)"
+    },
+    {
+      "id": "ii6c38",
+      "n": "38",
+      "e": "🏞️",
+      "t": false,
+      "q": "¿Qué es un data lake?",
+      "a": "Repositorio que guarda **datos en bruto** de todo tipo (estructurados o no) en su formato original"
+    },
+    {
+      "id": "ii6c39",
+      "n": "39",
+      "e": "⛏️",
+      "t": false,
+      "q": "¿Qué es la minería de datos (data mining)?",
+      "a": "Descubrir **patrones ocultos** en grandes volúmenes de datos. Forma parte del proceso **KDD**"
+    },
+    {
+      "id": "ii6c40",
+      "n": "40",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué es un cuadro de mando (dashboard)?",
+      "a": "Panel visual con los **indicadores clave (KPI)** de la organización"
+    },
+    {
+      "id": "ii6c41",
+      "n": "41",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Qué es un KPI?",
+      "a": "**Key Performance Indicator**: indicador clave para medir si se cumplen los **objetivos**"
+    },
+    {
+      "id": "ii6c42",
+      "n": "42",
+      "e": "🌊",
+      "t": false,
+      "q": "Las 3 V clásicas del Big Data",
+      "a": "**Volumen**, **Velocidad** y **Variedad** (se suelen añadir **Veracidad** y **Valor**)"
+    },
+    {
+      "id": "ii6c43",
+      "n": "43",
+      "e": "🧾",
+      "t": true,
+      "q": "¿Qué es OLTP?",
+      "a": "**OnLine Transaction Processing**: sistemas **operacionales** del día a día con muchas transacciones cortas (altas, bajas, cambios)"
+    },
+    {
+      "id": "ii6c44",
+      "n": "44",
+      "e": "🧊",
+      "t": false,
+      "q": "¿Qué es OLAP?",
+      "a": "**OnLine Analytical Processing**: análisis **multidimensional** de grandes volúmenes de datos históricos para **decidir**"
+    },
+    {
+      "id": "ii6c45",
+      "n": "45",
+      "e": "🆚",
+      "t": true,
+      "q": "OLTP vs OLAP: datos",
+      "a": "OLTP: datos **actuales** y **normalizados**. OLAP: datos **históricos** y **desnormalizados**"
+    },
+    {
+      "id": "ii6c46",
+      "n": "46",
+      "e": "🆚",
+      "t": false,
+      "q": "OLTP vs OLAP: operaciones",
+      "a": "OLTP: muchas **escrituras** cortas (INSERT/UPDATE). OLAP: sobre todo **lecturas** y consultas complejas"
+    },
+    {
+      "id": "ii6c47",
+      "n": "47",
+      "e": "👥",
+      "t": false,
+      "q": "OLTP vs OLAP: usuarios",
+      "a": "OLTP: **empleados operativos** y clientes. OLAP: **directivos y analistas**"
+    },
+    {
+      "id": "ii6c48",
+      "n": "48",
+      "e": "🎲",
+      "t": true,
+      "q": "¿Qué es un cubo OLAP?",
+      "a": "Estructura **multidimensional** con **medidas** analizadas según varias **dimensiones** (tiempo, producto, zona…)"
+    },
+    {
+      "id": "ii6c49",
+      "n": "49",
+      "e": "📏",
+      "t": false,
+      "q": "Tabla de hechos vs tabla de dimensiones",
+      "a": "**Hechos**: las **medidas** numéricas (ventas, importe). **Dimensiones**: el contexto (**cuándo, dónde, qué**)"
+    },
+    {
+      "id": "ii6c50",
+      "n": "50",
+      "e": "⭐",
+      "t": true,
+      "q": "Esquema en estrella",
+      "a": "Una **tabla de hechos** central unida a tablas de **dimensiones desnormalizadas**"
+    },
+    {
+      "id": "ii6c51",
+      "n": "51",
+      "e": "❄️",
+      "t": false,
+      "q": "Esquema en copo de nieve",
+      "a": "Como la estrella, pero con las dimensiones **normalizadas** en varias tablas"
+    },
+    {
+      "id": "ii6c52",
+      "n": "52",
+      "e": "🌌",
+      "t": false,
+      "q": "Esquema en constelación",
+      "a": "**Varias tablas de hechos** que comparten dimensiones"
+    },
+    {
+      "id": "ii6c53",
+      "n": "53",
+      "e": "🔼",
+      "t": false,
+      "q": "Operación roll-up",
+      "a": "**Agregar**: subir de nivel de detalle (de día a mes, de mes a año)"
+    },
+    {
+      "id": "ii6c54",
+      "n": "54",
+      "e": "🔽",
+      "t": false,
+      "q": "Operación drill-down",
+      "a": "**Desagregar**: bajar a más detalle (de año a mes, de mes a día)"
+    },
+    {
+      "id": "ii6c55",
+      "n": "55",
+      "e": "🔪",
+      "t": false,
+      "q": "Operación slice",
+      "a": "**Corte**: fija **un valor de una dimensión** y obtiene un subcubo"
+    },
+    {
+      "id": "ii6c56",
+      "n": "56",
+      "e": "🎲",
+      "t": false,
+      "q": "Operación dice",
+      "a": "Fija valores de **varias dimensiones** y obtiene un subcubo más pequeño"
+    },
+    {
+      "id": "ii6c57",
+      "n": "57",
+      "e": "🔃",
+      "t": false,
+      "q": "Operación pivot (rotar)",
+      "a": "**Gira** el cubo para ver los datos desde otra perspectiva"
+    },
+    {
+      "id": "ii6c58",
+      "n": "58",
+      "e": "🗄️",
+      "t": false,
+      "q": "ROLAP",
+      "a": "OLAP sobre **base de datos relacional**"
+    },
+    {
+      "id": "ii6c59",
+      "n": "59",
+      "e": "📦",
+      "t": false,
+      "q": "MOLAP",
+      "a": "OLAP sobre **base de datos multidimensional** (cubos precalculados): consultas muy **rápidas**"
+    },
+    {
+      "id": "ii6c60",
+      "n": "60",
+      "e": "🔀",
+      "t": false,
+      "q": "HOLAP",
+      "a": "**Híbrido** de ROLAP y MOLAP"
+    }
+  ]
+}

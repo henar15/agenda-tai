@@ -1,0 +1,78 @@
+{
+  "tema": "II-6",
+  "ramas": [
+    {
+      "t": "Qué es la IA",
+      "e": "🤖",
+      "items": [
+        "Tareas que requieren **inteligencia humana**",
+        "**Turing 1950** · **Dartmouth 1956** (McCarthy)",
+        "IA **débil** (hoy) vs IA **fuerte** (general)",
+        "IA simbólica: **sistemas expertos**"
+      ]
+    },
+    {
+      "t": "Aprendizaje automático",
+      "e": "📚",
+      "items": [
+        "**Supervisado**: datos etiquetados",
+        "**No supervisado**: clustering",
+        "**Refuerzo**: recompensas",
+        "Clasificación (categoría) vs regresión (número)"
+      ]
+    },
+    {
+      "t": "Redes y IA generativa",
+      "e": "🧠",
+      "items": [
+        "**Deep learning**: muchas capas ocultas",
+        "CNN imágenes · RNN secuencias",
+        "**Transformer** (atención) → **LLM**",
+        "PLN, visión artificial, IA generativa",
+        "Riesgos: alucinación, sesgo, sobreajuste"
+      ]
+    },
+    {
+      "t": "Regulación",
+      "e": "🇪🇺",
+      "items": [
+        "**Reglamento (UE) 2024/1689** (AI Act)",
+        "Riesgo **inaceptable**, **alto**, **limitado**, **mínimo**",
+        "Social scoring: **prohibido**",
+        "**AESIA**, sede en **A Coruña**"
+      ]
+    },
+    {
+      "t": "Inteligencia de negocio",
+      "e": "💼",
+      "items": [
+        "Datos → información → **decisiones**",
+        "**ETL**: extraer, transformar, cargar",
+        "**Data warehouse** (Inmon): temas, integrado, histórico, no volátil",
+        "**Data mart** por departamento · data lake en bruto",
+        "Inmon **top-down** · Kimball **bottom-up**"
+      ]
+    },
+    {
+      "t": "OLTP vs OLAP",
+      "e": "🆚",
+      "items": [
+        "**OLTP**: operacional, transacciones cortas",
+        "**OLAP**: análisis multidimensional",
+        "OLTP actual y normalizado · OLAP histórico",
+        "**ROLAP**, **MOLAP**, **HOLAP**"
+      ]
+    },
+    {
+      "t": "Modelo dimensional",
+      "e": "🧊",
+      "items": [
+        "**Cubo**: medidas × dimensiones",
+        "Tabla de **hechos** + tablas de **dimensiones**",
+        "**Estrella**, **copo de nieve**, constelación",
+        "**Roll-up** agrega · **drill-down** detalla",
+        "**Slice**, **dice** y **pivot**"
+      ]
+    }
+  ]
+}
