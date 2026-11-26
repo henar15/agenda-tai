@@ -1,8 +1,12 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{uid}/kv/{key} {
+    // Ficha de cada usuario (nombre, correo, alta, último acceso) y su progreso en kv/
+    match /users/{uid} {
       allow read, write: if request.auth != null && request.auth.uid == uid;
+      match /kv/{key} {
+        allow read, write: if request.auth != null && request.auth.uid == uid;
+      }
     }
     // Pedidos de tarjetas: solo dice qué tema se ha pedido y cuándo
     match /pedidos/{tema} {
