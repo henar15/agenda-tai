@@ -281,13 +281,18 @@ function corregir(escrito, respuesta) {
 }
 
 /* ---------- velocidad: lo usamos como medida de seguridad (no se puede fingir) ---------- */
+// En tarjetas se mide cuánto tardas en EMPEZAR a escribir (lo que tardas en recordar), no lo que
+// tardas en teclear. Solo cuenta como «te ha costado» si tardas bastante más de lo normal en ti.
+const tKey = (kind) => (kind === 'c' ? 'cl' : 'q');
 function rapida(kind, ms) {
-  const med = ((S.mem || {}).tmed || {})[kind] || (kind === 'c' ? 25000 : 12000);
-  return ms < med * 0.75;
+  const med = ((S.mem || {}).tmed || {})[tKey(kind)];
+  const suelo = kind === 'c' ? 8000 : 12000;
+  return ms <= Math.max(suelo, med ? med * 1.6 : 0);
 }
 function memTiempo(kind, ms) {
   const t = Object.assign({}, (S.mem || {}).tmed);
-  t[kind] = t[kind] ? Math.round(t[kind] * 0.85 + Math.min(ms, 120000) * 0.15) : ms;
+  const k = tKey(kind);
+  t[k] = t[k] ? Math.round(t[k] * 0.85 + Math.min(ms, 60000) * 0.15) : Math.min(ms, 60000);
   S.mem = Object.assign({}, S.mem, { tmed: t });
 }
 
@@ -473,7 +478,7 @@ function vRitFb(cab, cuerpo) {
       : L.parcial
         ? '<div class="rit-fbk mid">🟡 Casi: te falta alguna idea clave. Volverá en un rato.</div>'
         : L.ok && L.conf === 'dudo'
-          ? '<div class="rit-fbk mid">👍 Bien, aunque te ha costado: volverá algo antes.</div>'
+          ? '<div class="rit-fbk ok">✅ ¡Bien! Has tardado un poco en recordarlo, así que volverá algo antes que si te saliera al momento.</div>'
           : L.ok
             ? '<div class="rit-fbk ok">💪 ¡Perfecto! Tardará más en volver.</div>'
             : '<div class="rit-fbk ko">📌 No pasa nada: vuelve a salir en esta misma sesión.</div>';
