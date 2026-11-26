@@ -44,19 +44,19 @@
  "rutina": [
   {
    "t": "10 min · Mis errores",
-   "d": "Empieza siempre por ahí: lo que fallaste otros días."
+   "d": "Al empezar la tarde (16:30): lo que fallaste otros días."
   },
   {
-   "t": "1 h 20 min · Tema nuevo",
-   "d": "Primero la explicación fácil, luego las tarjetas del tema."
+   "t": "1 h 40 min · Tema nuevo",
+   "d": "Explicación fácil y luego las tarjetas del tema (hasta las 18:30)."
   },
   {
-   "t": "20 min · Repaso",
-   "d": "Tarjetas en «No me la sé» y «Dudo» de los temas anteriores."
+   "t": "Martes y jueves 19:00 · Repaso",
+   "d": "Tarjetas «Dudo», típicas del examen y un juego."
   },
   {
-   "t": "10 min · Test o juego",
-   "d": "10 preguntas del tema o una partida de Verdadero o falso."
+   "t": "Viernes y sábado · Tests",
+   "d": "Test semanal el viernes; test largo o simulacro el sábado por la mañana."
   }
  ],
  "semanas": [
