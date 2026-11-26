@@ -3,7 +3,7 @@
  "titulo": "TAI ingreso libre · Convocatoria OEP 2025",
  "fecha": "2026-05-23",
  "modelo": "A",
- "plantilla": "provisional (actualizada 26-may-2026)",
+ "plantilla": "definitiva (29-oct-2026)",
  "fuente": "https://sede.inap.gob.es/sites/sede/files/public/2026-05/Cuestionario%20TAI-L-ModeloA.pdf",
  "partes": [
   {
@@ -21,7 +21,8 @@
       "En el mismo grado, la línea posterior a las anteriores."
      ],
      "c": 2,
-     "tema": "I-1"
+     "tema": "I-1",
+     "bloque": "I"
     },
     {
      "id": "p1-2",
@@ -34,7 +35,8 @@
       "La irretroactividad de disposiciones sancionadoras favorables o restrictivas de derechos colectivos."
      ],
      "c": 2,
-     "tema": "I-1"
+     "tema": "I-1",
+     "bloque": "I"
     },
     {
      "id": "p1-3",
@@ -47,7 +49,8 @@
       "La Diputación Permanente solo puede ejercer sus funciones durante los períodos entre sesiones ordinarias, quedando suspendidas en caso de disolución de las Cámaras."
      ],
      "c": 2,
-     "tema": "I-2"
+     "tema": "I-2",
+     "bloque": "I"
     },
     {
      "id": "p1-4",
@@ -60,7 +63,8 @@
       "Ejercer la potestad legislativa del Estado, nombrar al Defensor del Pueblo y elegir a los magistrados del Tribunal Supremo."
      ],
      "c": 0,
-     "tema": "I-2"
+     "tema": "I-2",
+     "bloque": "I"
     },
     {
      "id": "p1-5",
@@ -73,7 +77,8 @@
       "Limitar su gestión al despacho ordinario de los asuntos públicos."
      ],
      "c": 3,
-     "tema": "I-3"
+     "tema": "I-3",
+     "bloque": "I"
     },
     {
      "id": "p1-6",
@@ -86,7 +91,8 @@
       "Mayoría de dos tercios del Congreso de los Diputados."
      ],
      "c": 1,
-     "tema": "I-3"
+     "tema": "I-3",
+     "bloque": "I"
     },
     {
      "id": "p1-7",
@@ -99,7 +105,8 @@
       "Erradicación de la pobreza."
      ],
      "c": 3,
-     "tema": "I-4"
+     "tema": "I-4",
+     "bloque": "I"
     },
     {
      "id": "p1-8",
@@ -112,7 +119,8 @@
       "Publicidad."
      ],
      "c": 1,
-     "tema": "I-4"
+     "tema": "I-4",
+     "bloque": "I"
     },
     {
      "id": "p1-9",
@@ -125,7 +133,8 @@
       "Un representante de la Agencia Estatal de Administración Tributaria."
      ],
      "c": 0,
-     "tema": "I-4"
+     "tema": "I-4",
+     "bloque": "I"
     },
     {
      "id": "p1-10",
@@ -138,7 +147,8 @@
       "Las Universidades incluirán y fomentarán en todos los ámbitos académicos la formación, docencia e investigación en igualdad de género y no discriminación de forma transversal."
      ],
      "c": 3,
-     "tema": "I-5"
+     "tema": "I-5",
+     "bloque": "I"
     },
     {
      "id": "p1-11",
@@ -151,7 +161,8 @@
       "38 por ciento."
      ],
      "c": 1,
-     "tema": "I-5"
+     "tema": "I-5",
+     "bloque": "I"
     },
     {
      "id": "p1-12",
@@ -164,7 +175,8 @@
       "La imagen de la fotografía."
      ],
      "c": 3,
-     "tema": "I-6"
+     "tema": "I-6",
+     "bloque": "I"
     },
     {
      "id": "p1-13",
@@ -177,7 +189,8 @@
       "Para personas físicas: al menos el nombre de la persona a la que se expida el certificado, o un seudónimo; si se usara un seudónimo, se indicará claramente."
      ],
      "c": 1,
-     "tema": "I-6"
+     "tema": "I-6",
+     "bloque": "I"
     },
     {
      "id": "p1-14",
@@ -190,7 +203,8 @@
       "Solo los certificados de sello electrónico de persona jurídica admiten pseudónimo."
      ],
      "c": 2,
-     "tema": "I-6"
+     "tema": "I-6",
+     "bloque": "I"
     },
     {
      "id": "p1-15",
@@ -203,7 +217,8 @@
       "A la supresión automática y obligatoria de los datos personales del fallecido."
      ],
      "c": 1,
-     "tema": "I-7"
+     "tema": "I-7",
+     "bloque": "I"
     },
     {
      "id": "p1-16",
@@ -216,7 +231,8 @@
       "Se aplican en Internet solo si así lo establece un desarrollo reglamentario posterior."
      ],
      "c": 2,
-     "tema": "I-7"
+     "tema": "I-7",
+     "bloque": "I"
     },
     {
      "id": "p1-17",
@@ -229,7 +245,8 @@
       "Norma Técnica de Interoperabilidad de Sistema de Referencia de documentos y repositorios de confianza."
      ],
      "c": 1,
-     "tema": "I-8"
+     "tema": "I-8",
+     "bloque": "I"
     },
     {
      "id": "p1-18",
@@ -242,7 +259,8 @@
       "Categoría de seguridad de un sistema."
      ],
      "c": 2,
-     "tema": "I-8"
+     "tema": "I-8",
+     "bloque": "I"
     },
     {
      "id": "p1-19",
@@ -255,7 +273,8 @@
       "Al responsable de la seguridad."
      ],
      "c": 0,
-     "tema": "I-8"
+     "tema": "I-8",
+     "bloque": "I"
     },
     {
      "id": "p1-20",
@@ -268,7 +287,9 @@
       "En lo que respecta a registros telemáticos referentes a trámites cuya instrucción y resolución corresponda a órganos cuya competencia esté territorialmente delimitada a una comunidad autónoma, provincia o municipio, serán días inhábiles los así declarados en el ámbito territorial correspondiente."
      ],
      "c": 2,
-     "tema": "I-9"
+     "tema": "I-9",
+     "anulada": true,
+     "bloque": "I"
     },
     {
      "id": "p1-21",
@@ -281,7 +302,8 @@
       "Consulta de títulos no universitarios por documentación."
      ],
      "c": 2,
-     "tema": "I-9"
+     "tema": "I-9",
+     "bloque": "I"
     },
     {
      "id": "p1-22",
@@ -294,7 +316,8 @@
       "Verificar la identidad del usuario mediante múltiples factores de autenticación personalizados en función del riesgo del trámite."
      ],
      "c": 0,
-     "tema": "I-8"
+     "tema": "I-8",
+     "bloque": "I"
     },
     {
      "id": "p1-23",
@@ -307,7 +330,8 @@
       "Caché L4."
      ],
      "c": 0,
-     "tema": "II-1"
+     "tema": "II-1",
+     "bloque": "II"
     },
     {
      "id": "p1-24",
@@ -320,7 +344,8 @@
       "Transferir datos, direcciones y señales de control entre la CPU, la memoria y los periféricos."
      ],
      "c": 3,
-     "tema": "II-1"
+     "tema": "II-1",
+     "bloque": "II"
     },
     {
      "id": "p1-25",
@@ -333,7 +358,8 @@
       "Requiere cabezales de lectura mecánicos para acceder a los datos almacenados."
      ],
      "c": 2,
-     "tema": "II-2"
+     "tema": "II-2",
+     "bloque": "II"
     },
     {
      "id": "p1-26",
@@ -346,7 +372,8 @@
       "48 Gbps."
      ],
      "c": 3,
-     "tema": "II-2"
+     "tema": "II-2",
+     "bloque": "II"
     },
     {
      "id": "p1-27",
@@ -359,7 +386,8 @@
       "Tres fallos de dispositivo."
      ],
      "c": 1,
-     "tema": "II-2"
+     "tema": "II-2",
+     "bloque": "II"
     },
     {
      "id": "p1-28",
@@ -372,7 +400,8 @@
       "Un estándar de conexión física para impresoras mediante cable USB."
      ],
      "c": 0,
-     "tema": "II-2"
+     "tema": "II-2",
+     "bloque": "II"
     },
     {
      "id": "p1-29",
@@ -385,7 +414,8 @@
       "El tipo MIME registrado para CSV es “application/csv”."
      ],
      "c": 1,
-     "tema": "II-3"
+     "tema": "II-3",
+     "bloque": "II"
     },
     {
      "id": "p1-30",
@@ -398,7 +428,8 @@
       "object, array, number, string, boolean y NaN."
      ],
      "c": 2,
-     "tema": "II-3"
+     "tema": "II-3",
+     "bloque": "II"
     },
     {
      "id": "p1-31",
@@ -411,7 +442,8 @@
       "Microkernel L4."
      ],
      "c": 2,
-     "tema": "II-4"
+     "tema": "II-4",
+     "bloque": "II"
     },
     {
      "id": "p1-32",
@@ -424,7 +456,8 @@
       "Hypervisioning."
      ],
      "c": 0,
-     "tema": "II-4"
+     "tema": "II-4",
+     "bloque": "II"
     },
     {
      "id": "p1-33",
@@ -437,7 +470,8 @@
       "Neo4j."
      ],
      "c": 3,
-     "tema": "II-5"
+     "tema": "II-5",
+     "bloque": "II"
     },
     {
      "id": "p1-34",
@@ -450,7 +484,8 @@
       "Lista."
      ],
      "c": 0,
-     "tema": "II-5"
+     "tema": "II-5",
+     "bloque": "II"
     },
     {
      "id": "p1-35",
@@ -463,7 +498,8 @@
       "Está almacenado en el programa de aplicación que declara el objeto."
      ],
      "c": 2,
-     "tema": "II-5"
+     "tema": "II-5",
+     "bloque": "II"
     },
     {
      "id": "p1-36",
@@ -476,7 +512,8 @@
       "Grafos y metodológicas."
      ],
      "c": 2,
-     "tema": "II-5"
+     "tema": "II-5",
+     "bloque": "II"
     },
     {
      "id": "p1-37",
@@ -489,7 +526,8 @@
       "Una tabla de hechos enlazada en una tabla de dimensión."
      ],
      "c": 1,
-     "tema": "II-6"
+     "tema": "II-6",
+     "bloque": "II"
     },
     {
      "id": "p1-38",
@@ -502,7 +540,8 @@
       "El dominio es 4 y la cardinalidad 7."
      ],
      "c": 0,
-     "tema": "III-1"
+     "tema": "III-1",
+     "bloque": "III"
     },
     {
      "id": "p1-39",
@@ -515,7 +554,8 @@
       "Derivado."
      ],
      "c": 3,
-     "tema": "III-1"
+     "tema": "III-1",
+     "bloque": "III"
     },
     {
      "id": "p1-40",
@@ -528,7 +568,8 @@
       "9"
      ],
      "c": 0,
-     "tema": "III-2"
+     "tema": "III-2",
+     "bloque": "III"
     },
     {
      "id": "p1-41",
@@ -541,7 +582,8 @@
       "La raíz es un nodo negro."
      ],
      "c": 3,
-     "tema": "II-3"
+     "tema": "II-3",
+     "bloque": "II"
     },
     {
      "id": "p1-42",
@@ -554,7 +596,8 @@
       "TCL."
      ],
      "c": 0,
-     "tema": "III-3"
+     "tema": "III-3",
+     "bloque": "III"
     },
     {
      "id": "p1-43",
@@ -567,7 +610,8 @@
       "RETURNBACK"
      ],
      "c": 2,
-     "tema": "III-3"
+     "tema": "III-3",
+     "bloque": "III"
     },
     {
      "id": "p1-44",
@@ -580,7 +624,8 @@
       "CREATE TRIGGER Validar_cambio BEFORE UPDATE ON Departamento"
      ],
      "c": 3,
-     "tema": "III-3"
+     "tema": "III-3",
+     "bloque": "III"
     },
     {
      "id": "p1-45",
@@ -593,7 +638,8 @@
       "Factory Method."
      ],
      "c": 1,
-     "tema": "III-4"
+     "tema": "III-4",
+     "bloque": "III"
     },
     {
      "id": "p1-46",
@@ -606,7 +652,8 @@
       "Agregación (Aggregating)."
      ],
      "c": 2,
-     "tema": "III-4"
+     "tema": "III-4",
+     "bloque": "III"
     },
     {
      "id": "p1-47",
@@ -619,7 +666,8 @@
       "El SDK (Software Development Kit)."
      ],
      "c": 2,
-     "tema": "III-5"
+     "tema": "III-5",
+     "bloque": "III"
     },
     {
      "id": "p1-48",
@@ -632,7 +680,8 @@
       "NuGet."
      ],
      "c": 2,
-     "tema": "III-5"
+     "tema": "III-5",
+     "bloque": "III"
     },
     {
      "id": "p1-49",
@@ -645,7 +694,8 @@
       "Solo se cargan en memoria si son necesarios. Si no se usan, no se cargan."
      ],
      "c": 3,
-     "tema": "III-5"
+     "tema": "III-5",
+     "bloque": "III"
     },
     {
      "id": "p1-50",
@@ -658,7 +708,8 @@
       "Ser un protocolo de comunicación bidireccional con “handshake” y “framing” sobre TCP para tiempo real."
      ],
      "c": 0,
-     "tema": "III-6"
+     "tema": "III-6",
+     "bloque": "III"
     },
     {
      "id": "p1-51",
@@ -671,7 +722,8 @@
       "CONNECT"
      ],
      "c": 2,
-     "tema": "III-6"
+     "tema": "III-6",
+     "bloque": "III"
     },
     {
      "id": "p1-52",
@@ -684,7 +736,8 @@
       "Al inicio del elemento <body>, antes de cualquier contenido visible."
      ],
      "c": 0,
-     "tema": "III-7"
+     "tema": "III-7",
+     "bloque": "III"
     },
     {
      "id": "p1-53",
@@ -697,7 +750,8 @@
       "Solo uno: el elemento raíz, cuyas etiquetas de apertura y cierre no se encuentran dentro del contenido de ningún otro elemento."
      ],
      "c": 3,
-     "tema": "III-7"
+     "tema": "III-7",
+     "bloque": "III"
     },
     {
      "id": "p1-54",
@@ -710,7 +764,8 @@
       "La cumplimentación de procesos de identificación, autenticación, firma y pago no están incluidos, por gestionarse generalmente a través de sistemas de terceros."
      ],
      "c": 1,
-     "tema": "III-8"
+     "tema": "III-8",
+     "bloque": "III"
     },
     {
      "id": "p1-55",
@@ -723,7 +778,8 @@
       "Tarjeta de identificación + Reconocimiento facial."
      ],
      "c": 1,
-     "tema": "III-8"
+     "tema": "III-8",
+     "bloque": "III"
     },
     {
      "id": "p1-56",
@@ -736,7 +792,8 @@
       "OneTrust."
      ],
      "c": 3,
-     "tema": "III-9"
+     "tema": "III-9",
+     "bloque": "III"
     },
     {
      "id": "p1-57",
@@ -749,7 +806,8 @@
       "Un mecanismo para que un desarrollador solicite retirar (“pull”) la versión de código actualmente en producción y volver a la versión anterior estable."
      ],
      "c": 1,
-     "tema": "III-9"
+     "tema": "III-9",
+     "bloque": "III"
     },
     {
      "id": "p1-58",
@@ -762,7 +820,8 @@
       "Las pruebas circunstanciales examinan las interfaces entre grupos de componentes o subsistemas para asegurar que son llamados en las circunstancias adecuadas y que los datos o mensajes que se transmiten son los requeridos."
      ],
      "c": 0,
-     "tema": "III-9"
+     "tema": "III-9",
+     "bloque": "III"
     },
     {
      "id": "p1-59",
@@ -775,7 +834,8 @@
       "ReFS"
      ],
      "c": 0,
-     "tema": "IV-1"
+     "tema": "IV-1",
+     "bloque": "IV"
     },
     {
      "id": "p1-60",
@@ -788,7 +848,8 @@
       "tail -u"
      ],
      "c": 1,
-     "tema": "IV-1"
+     "tema": "IV-1",
+     "bloque": "IV"
     },
     {
      "id": "p1-61",
@@ -801,7 +862,8 @@
       "A las 00:05 del día 8 de noviembre."
      ],
      "c": 1,
-     "tema": "IV-1"
+     "tema": "IV-1",
+     "bloque": "IV"
     },
     {
      "id": "p1-62",
@@ -814,7 +876,8 @@
       "Limitar la ejecución a una única máquina virtual por host."
      ],
      "c": 1,
-     "tema": "IV-2"
+     "tema": "IV-2",
+     "bloque": "IV"
     },
     {
      "id": "p1-63",
@@ -827,7 +890,8 @@
       "Un snapshot es una captura del estado completo de un sistema o conjunto de datos en un momento específico, mientras que un backup consiste en crear una réplica exacta de los datos originales con el propósito de restaurarlos en caso de pérdida, daño o error."
      ],
      "c": 3,
-     "tema": "IV-2"
+     "tema": "IV-2",
+     "bloque": "IV"
     },
     {
      "id": "p1-64",
@@ -840,7 +904,8 @@
       "docker play"
      ],
      "c": 0,
-     "tema": "IV-3"
+     "tema": "IV-3",
+     "bloque": "IV"
     },
     {
      "id": "p1-65",
@@ -853,7 +918,8 @@
       "kube-controller-manager"
      ],
      "c": 2,
-     "tema": "IV-3"
+     "tema": "IV-3",
+     "bloque": "IV"
     },
     {
      "id": "p1-66",
@@ -866,7 +932,8 @@
       "Account Lockout Controller (ALC)."
      ],
      "c": 0,
-     "tema": "IV-4"
+     "tema": "IV-4",
+     "bloque": "IV"
     },
     {
      "id": "p1-67",
@@ -879,7 +946,8 @@
       "Es una dirección que permite al puerto del switch entrar en modo \"forwarding\" ignorando el protocolo Spanning Tree."
      ],
      "c": 0,
-     "tema": "IV-4"
+     "tema": "IV-4",
+     "bloque": "IV"
     },
     {
      "id": "p1-68",
@@ -892,7 +960,8 @@
       "SCAP."
      ],
      "c": 0,
-     "tema": "IV-5"
+     "tema": "IV-5",
+     "bloque": "IV"
     },
     {
      "id": "p1-69",
@@ -905,7 +974,8 @@
       "Apuntar la contraseña en un papel guardado en un bolso o cartera personal."
      ],
      "c": 2,
-     "tema": "IV-5"
+     "tema": "IV-5",
+     "bloque": "IV"
     },
     {
      "id": "p1-70",
@@ -918,7 +988,8 @@
       "IDA (Intermediate Distribution Area)."
      ],
      "c": 1,
-     "tema": "IV-5"
+     "tema": "IV-5",
+     "bloque": "IV"
     },
     {
      "id": "p1-71",
@@ -931,7 +1002,8 @@
       "Capa de transporte."
      ],
      "c": 1,
-     "tema": "IV-7"
+     "tema": "IV-7",
+     "bloque": "IV"
     },
     {
      "id": "p1-72",
@@ -944,7 +1016,8 @@
       "Los datos se almacenan en los nodos intermedios antes de ser reenviados."
      ],
      "c": 2,
-     "tema": "IV-6"
+     "tema": "IV-6",
+     "bloque": "IV"
     },
     {
      "id": "p1-73",
@@ -957,7 +1030,8 @@
       "/19"
      ],
      "c": 1,
-     "tema": "IV-7"
+     "tema": "IV-7",
+     "bloque": "IV"
     },
     {
      "id": "p1-74",
@@ -970,7 +1044,8 @@
       "Identificar el tipo de cabecera de extensión que sigue a la cabecera fija."
      ],
      "c": 1,
-     "tema": "IV-7"
+     "tema": "IV-7",
+     "bloque": "IV"
     },
     {
      "id": "p1-75",
@@ -983,7 +1058,8 @@
       "Permite completar el handshake en un solo viaje de ida y vuelta (1-RTT), reduciendo la latencia."
      ],
      "c": 3,
-     "tema": "IV-8"
+     "tema": "IV-8",
+     "bloque": "IV"
     },
     {
      "id": "p1-76",
@@ -996,7 +1072,8 @@
       "Códigos 5xx"
      ],
      "c": 2,
-     "tema": "IV-8"
+     "tema": "IV-8",
+     "bloque": "IV"
     },
     {
      "id": "p1-77",
@@ -1009,7 +1086,8 @@
       "En el uso de técnicas de ingeniería social telefónica con las que se suplanta la identidad de una empresa, organización o persona de confianza, con el fin de obtener información personal y sensible."
      ],
      "c": 0,
-     "tema": "IV-9"
+     "tema": "IV-9",
+     "bloque": "IV"
     },
     {
      "id": "p1-78",
@@ -1022,7 +1100,8 @@
       "La asignación de direcciones IP públicas directamente a los terminales de los usuarios internos."
      ],
      "c": 1,
-     "tema": "IV-9"
+     "tema": "IV-9",
+     "bloque": "IV"
     },
     {
      "id": "p1-79",
@@ -1035,7 +1114,8 @@
       "Cifrar el tráfico para que no sea interceptado."
      ],
      "c": 1,
-     "tema": "IV-10"
+     "tema": "IV-10",
+     "bloque": "IV"
     },
     {
      "id": "p1-80",
@@ -1048,7 +1128,8 @@
       "TPID (Tag Protocol Identifier)."
      ],
      "c": 2,
-     "tema": "IV-10"
+     "tema": "IV-10",
+     "bloque": "IV"
     }
    ],
    "reserva": [
@@ -1123,7 +1204,6 @@
    "id": "s1",
    "titulo": "Supuesto I",
    "bloques": [
-    "II",
     "III"
    ],
    "enunciado": "El Ministerio de Educación, Formación Profesional y Deportes ha puesto en marcha el proyecto EDUCA-DATA 2030, cuyo objetivo es diseñar, desarrollar e implantar un sistema integral para el seguimiento, análisis y toma de decisiones estratégicas sobre los diferentes programas educativos. El sistema permitirá la visualización de indicadores clave de rendimiento (KPI) relativos a centros educativos, programas formativos y alumnado, entre otros muchos. La solución se integrará con los sistemas corporativos existentes mediante servicios REST y procesamientos ETL, y almacenará la información en una base de datos Oracle Database 19c Enterprise Edition. El desarrollo se realizará utilizando Java SE Development Kit (JDK) 17, Spring Boot 3.2.2, Apache Maven 3.9.6, un servidor de aplicaciones Apache Tomcat 10.1.18 y un frontend basado en HTML5, CSS3 y JavaScript ECMAScript 2022. El control de versiones se realizará con Git 2.43 y la integración continua mediante Jenkins 2.426. Asimismo, el sistema incorporará funcionalidades de inteligencia artificial basadas en modelos de predicción implementados con Python 3.11 y TensorFlow 2.15 para anticipar riesgos de abandono escolar. Además, la aplicación se integrará con una aplicación desarrollada en C# 14 y .NET 10 para obtener otros indicadores relevantes para el sistema. Una propuesta de parte del modelo de datos de EDUCA-DATA 2030 es el siguiente: Usted forma parte del equipo técnico responsable del diseño, desarrollo, implantación y soporte de este proyecto y deberá responder a las cuestiones que se le plantean a continuación. Para responder a estas, suponga que tiene todos los permisos necesarios en las diferentes tecnologías empleadas y que, salvo que se especifique lo contrario, se utilizan las librerías nativas que ya han sido declaradas de cada lenguaje de programación utilizado.",
@@ -1414,7 +1494,8 @@
       "Definir en Tomcat una Valve personalizada en el elemento <Server> con el método de limpieza."
      ],
      "c": 2,
-     "tema": null
+     "tema": null,
+     "anulada": true
     },
     {
      "id": "s1r-3",
@@ -1461,7 +1542,6 @@
    "id": "s2",
    "titulo": "Supuesto II",
    "bloques": [
-    "II",
     "IV"
    ],
    "enunciado": "La Subdirección General de Tecnologías de la Información y Comunicaciones (en adelante SGTIC) del Ministerio al que usted se acaba de incorporar, mantiene un CPD principal que cuenta con la siguiente infraestructura física y lógica: - Servidores Windows Server 2019 para los servicios de Directorio Activo (AD), DNS y DHCP. - Servidores Linux Red Hat Enterprise Linux (RHEL) 8.8, basado en Systemd, para los servicios web, base de datos y correo electrónico. A nivel de comunicaciones la SGTIC cuenta con switches y routers Cisco IOS 15.x y firewalls de distintos fabricantes para realizar la segmentación de red. Se dispone de dos líneas redundadas para la conexión a Internet y otras dos líneas para la conexión a Red SARA. Los puestos de trabajo son Windows 11 Enterprise en versión 25H2. La SGTIC cuenta con dos grandes rangos de direccionamiento: - La red interna 10.30.16.0/20, que da servicio a usuarios y servidores internos. - La DMZ 172.19.50.0/27, que aloja, entre otros servicios, los servidores web01 (Nginx) y mail01 (Postfix). Entre otras, la SGTIC cuenta con una VLAN denominada VLAN 10 para usuarios y otra denominada VLAN 20 para servidores. El router de distribución integra DHCP relay hacia el servidor DHCP de la VLAN 20. Entre sus tareas como integrante del Servicio de Sistemas, Comunicaciones y Seguridad Informática de la SGTIC se encuentran el mantenimiento y operación de los distintos elementos que conforman la infraestructura tecnológica de la SGTIC, así como el diagnóstico y resolución de las incidencias que afecten a dichos elementos. Salvo indicación expresa, usted dispone de los permisos necesarios para realizar todas las operaciones requeridas y las siguientes preguntas están referidas a la infraestructura anteriormente especificada.",

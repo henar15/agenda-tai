@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-v="9">
+<html lang="es" data-v="10">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -264,6 +264,25 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
   .match{grid-template-columns:1fr;gap:18px}.match button{min-height:52px;font-size:15px;padding:10px 12px}
 }
 @media(prefers-reduced-motion:reduce){.tbar i{transition:none}}
+.hsec{margin:28px 0 6px;font-size:20px}
+.xlist{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr));gap:12px}.xe{display:grid;gap:6px}.xe small{color:var(--muted)}.xe .acts{margin-top:6px}
+.chips.wrap{flex-wrap:wrap;overflow:visible}.ofib{margin:10px 0}.ofib>b{display:block;margin-bottom:6px}
+.xcfg{display:grid;gap:14px;margin-bottom:20px;border:2px solid var(--acc)}.xcfg select{width:100%}
+.seg-s{grid-template-columns:repeat(auto-fit,minmax(110px,1fr))}.seg-s span b{font-size:15px}
+.days{display:flex;gap:6px}.days label{cursor:pointer}.days input{position:absolute;opacity:0}.days span{display:grid;place-items:center;width:40px;height:40px;border-radius:50%;border:2px solid var(--line);font-weight:900;background:var(--panel)}.days input:checked+span{background:var(--acc);border-color:var(--acc);color:light-dark(#fff,#170d30)}.days input:focus-visible+span{outline:3px solid var(--acc);outline-offset:2px}
+.exam{max-width:1200px;margin:0 auto}.xtop{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.xmeta{display:flex;gap:16px;font-weight:800;color:var(--muted)}#xt{color:var(--ink);font-variant-numeric:tabular-nums}
+.xbody{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:20px;align-items:start}.xq{display:grid;gap:10px}.xsec{margin:0;font-weight:900;color:var(--acc)}.qn{margin:0;font-weight:800;color:var(--muted)}.srcq{font-weight:700}
+.enun{background:var(--panel);border-radius:14px;padding:10px 14px}.enun summary{cursor:pointer;font-weight:800;min-height:36px;display:flex;align-items:center}.enun p{margin:8px 0 0;font-size:15px;line-height:1.5}
+.opt.off{opacity:.45}.xact{display:flex;gap:8px;flex-wrap:wrap}.xnav{display:flex;justify-content:space-between;gap:10px;margin-top:6px}
+.xside{position:sticky;top:110px;background:var(--panel);border-radius:16px;padding:14px;display:grid;gap:10px}.xside h3{margin:0}
+.xgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(38px,1fr));gap:5px;max-height:44vh;overflow:auto}.xgrid .g{min-height:38px;border-radius:9px;border:2px solid var(--line);background:var(--bg);color:var(--ink);font-weight:800;font-size:13px;cursor:pointer;position:relative}
+.xgrid .an{background:var(--accbg);border-color:var(--acc)}.xgrid .ok{background:color-mix(in srgb,var(--ok) 25%,var(--bg));border-color:var(--ok)}.xgrid .ko{background:color-mix(in srgb,var(--bad) 22%,var(--bg));border-color:var(--bad)}.xgrid .cur{outline:3px solid var(--ink);outline-offset:1px}.xgrid .du::after{content:'★';position:absolute;top:-6px;right:-3px;font-size:12px;color:#f59e0b}
+.tipbox{background:color-mix(in srgb,#f59e0b 14%,var(--panel));border-radius:14px;padding:12px 16px}.study.wide{max-width:1000px}
+@media(min-width:1000px){.study.tar{max-width:1150px;grid-template-columns:340px minmax(0,1fr);align-items:start;gap:28px}.tside{position:sticky;top:110px;display:grid;gap:14px}.tside .chips{flex-wrap:wrap;overflow:visible}.tmain{display:grid;gap:16px}.study.tar .fc{height:420px}
+  .grid2{grid-template-columns:1fr 1fr}}
+@media(max-width:900px){.xbody{grid-template-columns:1fr}.xside{position:static}.xgrid{display:flex;overflow-x:auto;max-height:none}.xgrid .g{flex:0 0 38px}}
+@media(max-width:700px){.study.tar .tside{display:grid;gap:10px}}
+.kpi small{display:block;margin-top:4px}.kpi span br{display:block}.xside .btn.ghost{border:2px solid var(--line)}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -277,14 +296,14 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
     <a href="#planning" data-v="planning"><i aria-hidden="true">🗓️</i><span>Plan</span></a>
     <a href="#temario" data-v="temario"><i aria-hidden="true">📚</i><span>Temas</span></a>
     <a href="#tarjetas" data-v="tarjetas"><i aria-hidden="true">🃏</i><span>Tarjetas</span></a>
-    <a href="#tests" data-v="tests"><i aria-hidden="true">📝</i><span>Tests</span></a>
+    <a href="#tests" data-v="tests"><i aria-hidden="true">📝</i><span>Exámenes</span></a>
     <a href="#juegos" data-v="juegos"><i aria-hidden="true">🎮</i><span>Juegos</span></a>
     <a href="#resultados" data-v="resultados"><i aria-hidden="true">📈</i><span>Progreso</span></a>
   </nav>
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=9"></script>
-<script src="app.js?v=9"></script>
+<script src="firebase-config.js?v=10"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>

@@ -5,8 +5,8 @@ const rich=v=>esc(v).replace(/\*\*(.+?)\*\*/g,'<b>$1</b>');
 const plain=v=>String(v??'').replace(/\*\*/g,'');
 const BL={I:{c:'var(--b1)',hex:'#7c3aed',l:'#ede9fe',n:'Organización del Estado y Administración electrónica'},II:{c:'var(--b2)',hex:'#0d9488',l:'#ccfbf1',n:'Tecnología básica'},III:{c:'var(--b3)',hex:'#2563eb',l:'#dbeafe',n:'Desarrollo de sistemas'},IV:{c:'var(--b4)',hex:'#ea580c',l:'#ffedd5',n:'Sistemas y comunicaciones'}};
 const EST=['pendiente','en-curso','estudiado'],ESTN={'pendiente':'Pendiente','en-curso':'En curso','estudiado':'Estudiado'};
-const S={horario:{dias:[]},act:{},pedidos:{},user:null,authReady:false,plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
-const ui={hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
+const S={exIdx:[],exams:{},horario:{dias:[]},act:{},pedidos:{},user:null,authReady:false,plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
+const ui={ex:null,xcfg:null,hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
 
 const fmtD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('es-ES',{day:'numeric',month:'short'})};
 const monday=()=>{const d=new Date();const w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toISOString().slice(0,10)};
@@ -33,6 +33,7 @@ function bank(scope){const out=[],seen=new Set();
   const add=(q,tema)=>{if(!q||!q.opts||q.c==null)return;const id=q.id||hash(q.q);if(seen.has(id))return;seen.add(id);out.push(Object.assign({},q,{id,tema}))};
   Object.entries(S.preg).forEach(([tema,arr])=>{if(!scope||tema===scope)arr.forEach(q=>add(q,tema))});
   S.tests.forEach(t=>{if(!scope||t.tema===scope)(t.preguntas||[]).forEach(q=>add(q,t.tema))});
+  ofiQs(true).forEach(q=>{if(q.tema&&(!scope||q.tema===scope))add(q,q.tema)});
   return out}
 const temasConBanco=()=>{const ids=new Set(bank().map(q=>q.tema));return S.temas.filter(t=>ids.has(t.id)).sort(ordT)};
 const temasConCartas=()=>{const ids=new Set(Object.keys(S.cards).filter(k=>S.cards[k].length));return S.temas.filter(t=>ids.has(t.id)).sort(ordT).map(t=>({id:t.id,titulo:'Tema '+t.codigo+' · '+t.titulo+' ('+temaCards(t.id).length+')'}))};
@@ -81,11 +82,12 @@ const metaDia=()=>{const m=+((S.config||{}).meta);return [10,20,40].includes(m)?
 const mascName=()=>((S.config||{}).masc||'Pipo').slice(0,16);
 const dayOk=d=>!!((S.rec||{}).ok||{})[d]||(((S.act||{})[d]||0)>=metaDia());
 function R(){const act=S.act||{},ok=(S.rec||{}).ok||{};const ks=Object.keys(act).concat(Object.keys(ok)).sort();const t=today();const pts=act[t]||0;
-  if(!ks.length)return {n:0,esc:0,hoy:false,pts,meta:metaDia(),salvados:0};
+  if(!ks.length)return {n:0,esc:0,hoy:false,pts,meta:metaDia(),salvados:0,descanso:false};
   let n=0,esc=0,salv=0;const d=new Date(ks[0]+'T12:00:00');
-  while(dkey(d)<t){if(dayOk(dkey(d))){n++;if(n%7===0)esc=Math.min(2,esc+1)}else if(n>0&&esc>0){esc--;salv++}else n=0;d.setDate(d.getDate()+1)}
+  const rest=new Set(((S.config||{}).descanso)||[]);const isRest=x=>rest.has((x.getDay()+6)%7);
+  while(dkey(d)<t){if(!dayOk(dkey(d))&&isRest(d)){d.setDate(d.getDate()+1);continue}if(dayOk(dkey(d))){n++;if(n%7===0)esc=Math.min(2,esc+1)}else if(n>0&&esc>0){esc--;salv++}else n=0;d.setDate(d.getDate()+1)}
   const hoy=dayOk(t);if(hoy){n++;if(n%7===0)esc=Math.min(2,esc+1)}
-  return {n,esc,hoy,pts,meta:metaDia(),salvados:salv}}
+  return {n,esc,hoy,pts,meta:metaDia(),salvados:salv,descanso:!hoy&&isRest(new Date())}}
 function racha(){return R().n}
 const etapa=n=>{let i=0;ETAPAS.forEach((e,k)=>{if(n>=e.d)i=k});return i};
 const accDe=m=>{let r=null;ACCS.forEach(x=>{if(m>=x.a)r=x});return r};
@@ -113,6 +115,7 @@ function mascSVG(st,acc,mood,size,label){
   if(acc&&acc.id==='corona')g+=`<path d="M72 ${top+8} L76 ${top-18} L90 ${top-2} L100 ${top-24} L110 ${top-2} L124 ${top-18} L128 ${top+8}Z" fill="#fbbf24" stroke="#d97706" stroke-width="2"/><circle cx="100" cy="${top-4}" r="4" fill="#ef4444"/>`;
   return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="${esc(label)}">${g}</svg>`}
 function frase(r){const h=[...today()].reduce((a,c)=>a+c.charCodeAt(0),0);const pick=a=>a[h%a.length].replace('{meta}',r.meta).replace('{pts}',r.pts).replace('{left}',Math.max(0,r.meta-r.pts));
+  if(r.descanso&&!r.pts)return pick(['Hoy es tu día de descanso 😴 La racha no se rompe.','Descansar también es estudiar. ¡Mañana seguimos!']);
   if(r.hoy)return pick(['¡Llena! Hoy ya has cumplido 💜','Racha a salvo. Ahora, si quieres, descansa un poco','¡Qué orgullosa estoy de ti! Mañana más','Hoy me has cuidado genial. ¡Gracias!']);
   if(r.pts>0)return pick(['¡Ñam! Llevamos {pts} de {meta}. ¡Un poquito más!','Ya casi… me quedan {left} bocados','Me estoy poniendo fuerte, ¡sigue así!']);
   if(!r.n)return pick(['Zzz… despiértame con unas tarjetitas','Empezamos de cero, ¡pero juntas!','Un poquito hoy y me pongo a crecer 🥚']);
@@ -123,10 +126,11 @@ function vMascota(){const r=R(),st=etapa(r.n),ac=accDe((S.rec||{}).acMax||0),moo
   <div class="mtx"><div class="mhead"><b>${esc(nm)}</b><span class="mst">${esc(ETAPAS[st].n)}</span><button class="mini ghost" data-act="mascCfg" aria-expanded="${ui.mcfg?'true':'false'}">Ajustes</button></div>
   <p class="bubble">${esc(frase(r))}</p>
   <div class="meta"><div class="mbar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="${r.meta}" aria-valuenow="${Math.min(r.pts,r.meta)}"><i style="width:${pct}%"></i></div><span>${Math.min(r.pts,r.meta)} / ${r.meta} puntos hoy${r.hoy?' ✓':''}</span></div>
-  <div class="mstats"><span title="Días seguidos cumpliendo la meta">🔥 <b>${r.n}</b> ${r.n===1?'día':'días'}</span><span title="Cada escudo salva un día que no estudies">🛡️ <b>${r.esc}</b>/2 escudos</span></div>
+  <div class="mstats"><span title="Días seguidos cumpliendo la meta">🔥 <b>${r.n}</b> ${r.n===1?'día':'días'}</span><span title="Cada escudo salva un día que no estudies">🛡️ <b>${r.esc}</b>/2 escudos</span>${r.descanso?'<span>😴 Hoy descansas</span>':''}</div>
   ${sig?`<p class="fine">${sig.d-r.n===1?'Mañana':`En ${sig.d-r.n} días`} se convierte en <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Ha llegado a su forma final!</p>'}
   ${ui.mcfg?`<form class="mcfg" data-mcfg="1"><div class="fld"><label for="mname">Nombre de tu mascota</label><input id="mname" name="n" maxlength="16" value="${esc(nm)}" autocomplete="off"></div>
   <div class="fld" role="radiogroup" aria-labelledby="mmeta"><span id="mmeta" class="lbl">Meta diaria (puntos al día)</span><div class="seg">${[[10,'Suave','≈10 min'],[20,'Normal','≈20 min'],[40,'Intensa','≈40 min']].map(([m,t,d])=>`<label><input type="radio" name="m" value="${m}"${m===r.meta?' checked':''}><span><b>${m}</b><small>${t}</small><small>${d}</small></span></label>`).join('')}</div></div>
+  <div class="fld" role="group" aria-labelledby="mdesc"><span id="mdesc" class="lbl">Días de descanso (no rompen la racha)</span><div class="days">${['L','M','X','J','V','S','D'].map((d,k)=>`<label><input type="checkbox" name="dd" value="${k}"${(((S.config||{}).descanso)||[]).includes(k)?' checked':''}><span aria-label="${DIAS[k]}">${d}</span></label>`).join('')}</div></div>
   <p class="fine">Cada tarjeta que clasificas o pregunta que respondes es 1 punto. Cada 7 días de racha ganas un escudo 🛡️ (máximo 2) que te salva un día que no puedas estudiar.</p>
   <div class="acts"><button class="btn">Guardar</button><button type="button" class="btn ghost" data-act="mascCfg">Cancelar</button></div></form>`:''}
   </div></div>`}
@@ -220,29 +224,30 @@ function vTarjetas(){
   const cs=temaCards(ui.mazo);
   const cnt=[0,0,0,0];cs.forEach(c=>cnt[c.pile]++);const tot=cs.length||1;const nt=cs.filter(c=>c.t).length;
   const list=deckCards();if(ui.idx>=list.length)ui.idx=0;const c=list[ui.idx];const b=temaBl(ui.mazo);
-  return `<div class="study"><div><h2>Tarjetas</h2><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p></div>
+  return `<div class="study tar"><div class="tside"><h2>Tarjetas</h2><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p>
   <div class="picker"><select id="mazo" aria-label="Tema">${temasConCartas().map(x=>`<option value="${esc(x.id)}"${x.id===ui.mazo?' selected':''}>${esc(x.titulo)}</option>`).join('')}</select>
   </div><div class="chips" role="group" aria-label="Qué tarjetas ver">${[['todas','Todas',cs.length,''],...(nt?[['tipica','⭐ Típicas',nt,'']]:[]),['nueva','Nuevas',cnt[0],''],['1','No me la sé',cnt[1],'c1'],['2','Dudo',cnt[2],'c2'],['3','Me la sé',cnt[3],'c3']].map(([v,t,n,c])=>`<button class="chip2 ${c}${ui.filtro===v?' on':''}" data-filtro="${v}" aria-pressed="${ui.filtro===v}">${t} <b>${n}</b></button>`).join('')}</div>
-  <div><div class="stack3"><i style="width:${cnt[3]/tot*100}%;background:#22c55e"></i><i style="width:${cnt[2]/tot*100}%;background:#f59e0b"></i><i style="width:${cnt[1]/tot*100}%;background:#ef4444"></i></div></div>
-  ${c?`<div class="flip${ui.flip?' on':''}" id="flip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f">${c.t?'<span class="tp">Típica de examen</span>':''}<span class="n">${esc(c.n||'')}</span><div class="em">${esc(c.e||'')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b"><span class="n">${esc(c.n||'')}</span><div class="a">${rich(c.a)}</div>${c.h?`<div class="h">${rich(c.h)}</div>`:''}</div></div></div>
+  <div class="tbarw"><div class="stack3"><i style="width:${cnt[3]/tot*100}%;background:#22c55e"></i><i style="width:${cnt[2]/tot*100}%;background:#f59e0b"></i><i style="width:${cnt[1]/tot*100}%;background:#ef4444"></i></div></div>
+  </div><div class="tmain">${c?`<div class="flip${ui.flip?' on':''}" id="flip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f" aria-hidden="${!!ui.flip}">${c.t?'<span class="tp">Típica de examen</span>':''}<span class="n" aria-hidden="true">${esc(c.n||'')}</span><div class="em" aria-hidden="true">${esc(c.e||'')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b" aria-hidden="${!ui.flip}"><span class="n" aria-hidden="true">${esc(c.n||'')}</span><div class="a">${rich(c.a)}</div>${c.h?`<div class="h">${rich(c.h)}</div>`:''}</div></div></div>
   <div class="cnav"><button class="nb" data-act="prev" aria-label="Tarjeta anterior">‹</button><span>${ui.idx+1} / ${list.length}</span><button class="nb" data-act="next" aria-label="Tarjeta siguiente">›</button></div>
-  <div class="piles"><button class="pl1" data-pile="1"><i aria-hidden="true">✗</i>No me la sé</button><button class="pl2" data-pile="2"><i aria-hidden="true">?</i>Dudo</button><button class="pl3" data-pile="3"><i aria-hidden="true">✓</i>Me la sé</button></div>`:'<p class="empty">No hay tarjetas en este montón.</p>'}</div>`;
+  <div class="piles"><button class="pl1" data-pile="1"><i aria-hidden="true">✗</i>No me la sé</button><button class="pl2" data-pile="2"><i aria-hidden="true">?</i>Dudo</button><button class="pl3" data-pile="3"><i aria-hidden="true">✓</i>Me la sé</button></div>`:'<p class="empty">No hay tarjetas en este montón.</p>'}</div></div>`;
 }
 
 /* ---------- tests ---------- */
 function startRun(titulo,tema,preguntas,kind){if(!preguntas.length)return;ui.test={t:{id:kind,titulo,tema,preguntas},kind,i:0,ans:{},shown:{},t0:Date.now()};location.hash='tests';render();scrollTo(0,0)}
 function vTests(){
+  if(ui.ex)return vExam();
   const T=ui.test;
   if(T&&T.done)return vTestEnd();
   if(T){const q=T.t.preguntas[T.i];const ans=T.ans[T.i];const shown=T.shown[T.i];
     return `<div class="study"><div class="qhead"><span>${esc(T.t.titulo)}</span><span>${T.i+1} / ${T.t.preguntas.length}</span></div>${q.tema&&!T.t.tema?`<div class="qhead"><span>${esc(temaName(q.tema))}</span></div>`:''}<p class="qtext">${rich(q.q)}${q.tipico?'<span class="tip">Típica</span>':''}</p>
-    ${q.opts.map((o,k)=>{let cl='opt';if(shown){if(k===q.c)cl+=' ok';else if(k===ans)cl+=' ko'}else if(k===ans)cl+=' sel';return `<button class="${cl}" data-opt="${k}"${shown?' disabled':''}>${'abcd'[k]}) ${rich(o)}</button>`}).join('')}
-    ${shown?`<div class="exp">${ans===q.c?'<b>¡Correcto!</b> ':ans==null?'<b>En blanco.</b> ':'<b>No era esa.</b> '}${rich(q.exp||'')}</div>`:''}
+    <div role="radiogroup" aria-label="Opciones">${q.opts.map((o,k)=>{let cl='opt';if(shown){if(k===q.c)cl+=' ok';else if(k===ans)cl+=' ko'}else if(k===ans)cl+=' sel';return `<button class="${cl}" role="radio" aria-checked="${k===ans}" data-opt="${k}"${shown?' disabled':''}>${'abcd'[k]}) ${rich(o)}</button>`}).join('')}</div>
+    <div aria-live="polite">${shown?`<div class="exp">${ans===q.c?'<b>¡Correcto!</b> ':ans==null?'<b>En blanco.</b> ':'<b>No era esa.</b> '}${rich(q.exp||'')}</div>`:''}</div>
     <div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn ghost" data-act="tquit">Salir</button><span style="flex:1"></span>${shown?`<button class="btn" data-act="tnext">${T.i+1<T.t.preguntas.length?'Siguiente':'Ver nota'}</button>`:`<button class="btn ghost" data-act="tblank">Dejar en blanco</button><button class="btn" data-act="tcheck"${ans===undefined?' disabled':''}>Comprobar</button>`}</div></div>`}
   const all=bank(),tip=all.filter(q=>q.tipico),errs=errList(),ts=temasConBanco();
   if(!ui.scope||!ts.find(t=>t.id===ui.scope))ui.scope=ts.length?ts[0].id:'';
   const nScope=ui.scope?bank(ui.scope).length:0;
-  return `<h2>Tests</h2><p class="sub">Como en el examen: cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>
+  return `<h2>Exámenes y tests</h2><p class="sub">Como en el examen: cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>${vExamenesHub()}<h3 class="hsec">✏️ Practicar</h3>
   <div class="modes">
    <button class="mode red" data-act="merr"${errs.length?'':' disabled'}><b>Mis errores</b><span>Como en la autoescuela: salen de aquí cuando las aciertas 2 veces seguidas.</span><span class="cnt">${errs.length}</span></button>
    <button class="mode" data-act="mtip"${tip.length?'':' disabled'}><b>Típicas de examen</b><span>Las preguntas que más caen, de todos los temas.</span><span class="cnt">${tip.length}</span></button>
@@ -256,6 +261,79 @@ function vTestEnd(){const T=ui.test,r=T.r;const n=nota(r);
   return `<div class="study"><h2>${esc(T.t.titulo)}</h2><div class="card" style="text-align:center"><div class="big" style="color:${n>=5?'var(--ok)':'var(--bad)'}">${n1(n)}</div><p style="margin:6px 0 0;font-weight:800">${r.aciertos} aciertos · ${r.fallos} fallos · ${r.blanco} en blanco</p><p class="sub" style="margin:4px 0 0">${T.saved?'Guardado en tus resultados':'Guardando…'}${fall.length?' · los fallos están en «Mis errores»':''}</p></div>
   ${fall.length?`<h3>Para repasar</h3><div class="list">${fall.map(x=>`<div class="row"><div class="t"><b>${rich(x.q.q)}</b><small>Correcta: ${rich(x.q.opts[x.q.c])}${x.q.exp?' — '+rich(x.q.exp):''}</small></div></div>`).join('')}</div>`:'<p class="empty">¡Sin fallos!</p>'}
   <div style="display:flex;gap:10px"><button class="btn ghost" data-act="tquit">Volver a los tests</button></div></div>`}
+
+/* ---------- exámenes ---------- */
+const yearOf=e=>(e.titulo.match(/OEP ([\d-]+)/)||[])[1]||e.fecha;
+async function loadExams(){const idx=await getJ('data/examenes/index.json');if(!idx)return;S.exIdx=idx;await Promise.all(idx.map(async m=>{const e=await getJ(`data/examenes/${m.id}.json`);if(e)S.exams[m.id]=e}));if(!busy())render()}
+function ofiQs(onlyP1){const out=[];idxOrder().forEach(m=>{const e=S.exams[m.id];if(!e)return;e.partes.forEach(p=>{if(onlyP1&&p.id!=='p1')return;p.preguntas.forEach(q=>{if(q.anulada||q.c<0)return;out.push(Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo,anio:yearOf(e),bloque:q.bloque||(q.tema?q.tema.split('-')[0]:(p.bloques||[])[0]||null),tema:q.tema||null,sup:p.id!=='p1'?p.titulo:null,enun:p.id!=='p1'?p.enunciado:null,oficial:true}))})})});return out}
+const idxOrder=()=>(S.exIdx||[]).slice();
+const bOfT=t=>t?t.split('-')[0]:null;
+function ownQs(){const o=[];Object.entries(S.preg).forEach(([t,a])=>a.forEach(q=>o.push(Object.assign({},q,{tema:t,bloque:bOfT(t)}))));return o}
+function pista(q){const w=q.opts.map((_,i)=>i).filter(i=>i!==q.c);return w[[...String(q.id)].reduce((a,c)=>a+c.charCodeAt(0),0)%w.length]}
+function startExam(cfg){const secs=[];let mins=null;
+  if(cfg.kind==='oficial'){const e=S.exams[cfg.id];if(!e)return;const p1=e.partes[0];secs.push({titulo:'Primera parte',qs:p1.preguntas.filter(q=>!q.anulada&&q.c>=0).map(q=>Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo}))});
+    if(cfg.sup!=='no'){const s=e.partes.find(p=>(p.bloques||[])[0]===cfg.sup);if(s)secs.push({titulo:'Segunda parte · '+s.titulo+' (Bloque '+cfg.sup+')',enun:s.enunciado,qs:s.preguntas.filter(q=>!q.anulada&&q.c>=0).map(q=>Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo}))})}}
+  else if(cfg.kind==='gen'){const pool=shuffle(ofiQs(true).concat(ownQs()));const want={I:22,II:15,III:21,IV:22},seen=new Set(),qs=[];['I','II','III','IV'].forEach(b=>{pool.filter(q=>q.bloque===b).forEach(q=>{const k=plain(q.q).slice(0,60);if(want[b]>0&&!seen.has(k)){seen.add(k);qs.push(q);want[b]--}})});secs.push({titulo:'Primera parte',qs});
+    if(cfg.sup!=='no'){const sups=[];Object.values(S.exams).forEach(e=>e.partes.forEach(p=>{if((p.bloques||[])[0]===cfg.sup)sups.push({e,p})}));if(sups.length){const {e,p}=sups[Math.floor(Math.random()*sups.length)];secs.push({titulo:'Segunda parte · Supuesto del Bloque '+cfg.sup+' ('+yearOf(e)+')',enun:p.enunciado,qs:p.preguntas.filter(q=>!q.anulada&&q.c>=0).map(q=>Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo}))})}}}
+  else{let pool=(cfg.fuente==='ofi'?[]:ownQs()).concat(ofiQs(true));if(cfg.tema)pool=pool.filter(q=>q.tema===cfg.tema);else if(cfg.bloque)pool=pool.filter(q=>q.bloque===cfg.bloque);const seen=new Set();pool=shuffle(pool).filter(q=>{const k=plain(q.q).slice(0,60);if(seen.has(k))return false;seen.add(k);return true}).slice(0,cfg.n||20);if(!pool.length){flash('No hay preguntas para esa selección');return}secs.push({titulo:cfg.titulo||'Simulacro',qs:pool})}
+  const items=[];secs.forEach((s,si)=>s.qs.forEach(q=>items.push({q,s:si})));if(!items.length)return;
+  if(cfg.tiempo==='oficial')mins=Math.round(items.length*1.2);
+  ui.ex={titulo:cfg.titulo,kind:cfg.kind,secs,items,i:0,ans:{},dud:{},pis:{},shown:{},modo:cfg.modo||'final',pistas:cfg.pistas==='si',end:mins?Date.now()+mins*60000:null,mins,t0:Date.now(),done:false,conf:false,filt:'fallos'};ui.xcfg=null;
+  clearInterval(exTimer);if(mins)exTimer=setInterval(exTick,1000);location.hash='tests';render();scrollTo(0,0)}
+let exTimer=null;
+function exTick(){const X=ui.ex;if(!X||X.done||!X.end){clearInterval(exTimer);return}const l=X.end-Date.now();if(l<=0){finishExam();return}const el=$('#xt');if(el)el.textContent=fmtT(l)}
+const fmtT=ms=>{const s=Math.max(0,Math.round(ms/1000));const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=s%60;return (h?h+':'+String(m).padStart(2,'0'):m)+':'+String(x).padStart(2,'0')};
+function secScore(X,si,skipDud){let a=0,f=0,b=0;X.items.forEach((it,i)=>{if(it.s!==si)return;const v=X.ans[i];if(v==null||(skipDud&&X.dud[i]))b++;else if(v===it.q.c)a++;else f++});const n=a+f+b;return {a,f,b,n,nota:n?Math.max(0,a-f/3)/n*10:0}}
+function finishExam(){const X=ui.ex;if(!X||X.done)return;clearInterval(exTimer);X.done=true;X.secsR=X.secs.map((_,si)=>secScore(X,si,false));X.secsD=X.secs.map((_,si)=>secScore(X,si,true));
+  let a=0,f=0,b=0;X.secsR.forEach(r=>{a+=r.a;f+=r.f;b+=r.b});
+  let sg=(S.rec||{}).acSeg||0,mx=(S.rec||{}).acMax||0;X.items.forEach((it,i)=>{const v=X.ans[i];if(v!=null){recordErr(it.q,v===it.q.c)}if(v===it.q.c){sg++;mx=Math.max(mx,sg)}else sg=0});S.rec=Object.assign({},S.rec,{acSeg:sg,acMax:mx});kvSet('records');kvSet('errores');
+  const r={titulo:X.titulo,fecha:new Date().toISOString(),aciertos:a,fallos:f,blanco:b,total:a+f+b,testId:'ex-'+X.kind,pistas:Object.keys(X.pis).length};S.res=S.res.concat([r]);kvSet('resultados');logAct(a+f);render();scrollTo(0,0)}
+function vExam(){const X=ui.ex;if(X.done)return vExamEnd();const it=X.items[X.i],q=it.q,sec=X.secs[it.s],ans=X.ans[X.i],shown=X.modo==='momento'&&ans!=null,hid=X.pis[X.i];
+  const first=X.items.findIndex(x=>x.s===it.s)===X.i;
+  const grid=X.items.map((x,i)=>{let c='';if(X.modo==='momento'&&X.ans[i]!=null)c=X.ans[i]===x.q.c?'ok':'ko';else if(X.ans[i]!=null)c='an';return `<button class="g ${c}${X.dud[i]?' du':''}${i===X.i?' cur':''}" data-xgo="${i}" aria-label="Pregunta ${i+1}${X.ans[i]!=null?', respondida':''}${X.dud[i]?', dudosa':''}">${i+1}</button>`}).join('');
+  const nAns=Object.keys(X.ans).length;
+  return `<div class="exam"><div class="xtop"><b>${esc(X.titulo)}</b><span class="xmeta">${X.end?`<span aria-label="Tiempo restante">⏱ <span id="xt">${fmtT(X.end-Date.now())}</span></span>`:''}<span>${nAns}/${X.items.length} respondidas</span></span></div>
+  <div class="xbody"><section class="xq">
+  ${X.secs.length>1?`<p class="xsec">${esc(sec.titulo)}</p>`:''}${sec.enun?`<details class="enun"${first?' open':''}><summary>Enunciado del supuesto</summary><p>${esc(sec.enun)}</p></details>`:''}
+  <p class="qn">Pregunta ${X.i+1}${X.kind!=='oficial'?` · <span class="srcq">${q.oficial?'Examen oficial OEP '+esc(q.anio):'Pregunta de la web'}</span>`:''}</p>
+  ${q.sup&&!sec.enun?`<details class="enun"><summary>Enunciado: ${esc(q.sup)}</summary><p>${esc(q.enun||'')}</p></details>`:''}
+  <p class="qtext" id="xqt">${rich(q.q)}</p>
+  <div role="radiogroup" aria-labelledby="xqt">${q.opts.map((o,k)=>{if(hid===k&&!shown)return `<button class="opt off" disabled aria-label="${'abcd'[k]}) descartada por la pista">${'abcd'[k]}) <s>${rich(o)}</s></button>`;let cl='opt';if(shown){if(k===q.c)cl+=' ok';else if(k===ans)cl+=' ko'}else if(k===ans)cl+=' sel';return `<button class="${cl}" role="radio" aria-checked="${k===ans}" data-xopt="${k}"${shown?' disabled':''}>${'abcd'[k]}) ${rich(o)}</button>`}).join('')}</div>
+  <div aria-live="polite">${shown?`<div class="exp">${ans===q.c?'<b>¡Correcto!</b> ':'<b>No era esa.</b> La buena es la '+'abcd'[q.c]+'). '}${rich(q.exp||'')}</div>`:''}</div>
+  <div class="xact"><button class="mini${X.dud[X.i]?' hi':''}" data-act="xdud" aria-pressed="${!!X.dud[X.i]}">${X.dud[X.i]?'★ Dudosa':'☆ Marcar dudosa'}</button>${X.pistas&&!shown&&hid==null?`<button class="mini" data-act="xpis">💡 Pista</button>`:''}${ans!=null&&!shown?`<button class="mini ghost" data-act="xclr">Dejar en blanco</button>`:''}</div>
+  <div class="xnav"><button class="btn ghost" data-act="xprev"${X.i?'':' disabled'}>‹ Anterior</button>${X.i+1<X.items.length?`<button class="btn" data-act="xnext">Siguiente ›</button>`:`<button class="btn" data-act="xfin">Entregar</button>`}</div>
+  </section><aside class="xside"><h3>Preguntas</h3><div class="xgrid">${grid}</div><p class="fine">Morado: respondida · ★: dudosa</p><button class="btn ${X.conf?'':'ghost'}" data-act="xfin">${X.conf?'¿Seguro? Pulsa otra vez para entregar':'Entregar examen'}</button> <button class="mini ghost" data-act="xquit">Salir sin guardar</button></aside></div></div>`}
+function vExamEnd(){const X=ui.ex;const R=X.secsR,D=X.secsD;const nd=Object.keys(X.dud).length;
+  const cards=X.secs.map((s,si)=>`<div class="kpi"><b style="color:${R[si].nota>=5?'var(--ok)':'var(--bad)'}">${n1(R[si].nota)}</b><span>${esc(s.titulo)}<br>${R[si].a} bien · ${R[si].f} mal · ${R[si].b} en blanco</span>${nd?`<small class="fine">Sin contestar las dudosas: ${n1(D[si].nota)}</small>`:''}</div>`).join('');
+  const L=X.items.map((it,i)=>({it,i,v:X.ans[i]})).filter(x=>X.filt==='todas'||(X.filt==='fallos'&&x.v!=null&&x.v!==x.it.q.c)||(X.filt==='dudosas'&&X.dud[x.i])||(X.filt==='blanco'&&x.v==null));
+  const f=(k,t,n)=>`<button class="chip2${X.filt===k?' on':''}" data-xf="${k}" aria-pressed="${X.filt===k}">${t} <b>${n}</b></button>`;
+  const cnt={fallos:X.items.filter((it,i)=>X.ans[i]!=null&&X.ans[i]!==it.q.c).length,dudosas:nd,blanco:X.items.filter((it,i)=>X.ans[i]==null).length,todas:X.items.length};
+  let tip='';if(nd){const g=D.reduce((a,d,i)=>a+d.nota-R[i].nota,0);tip=`<p class="tipbox">${g>0.05?`💡 Si hubieras dejado en blanco las ${nd} preguntas dudosas, habrías sacado <b>más nota</b>. Cuando dudes de verdad, mejor en blanco.`:g<-0.05?`💪 Arriesgar en tus dudosas te salió bien: acertaste la mayoría.`:`Arriesgar o no en tus dudosas te habría dado lo mismo.`}</p>`}
+  return `<div class="study wide"><h2>${esc(X.titulo)}</h2><p class="sub">Nota sobre 10 en cada parte, con la penalización del examen (cada fallo resta un tercio).${Object.keys(X.pis).length?` Usaste ${Object.keys(X.pis).length} pistas.`:''}</p><div class="kpis">${cards}</div>${tip}
+  <div class="chips" role="group" aria-label="Qué preguntas ver">${f('fallos','Fallos',cnt.fallos)}${f('dudosas','★ Dudosas',cnt.dudosas)}${f('blanco','En blanco',cnt.blanco)}${f('todas','Todas',cnt.todas)}</div>
+  <div class="list">${L.map(x=>{const q=x.it.q;return `<div class="row"><div class="t"><b>${x.i+1}. ${rich(q.q)}</b><small>${x.v!=null?`Tu respuesta: ${'abcd'[x.v]}) ${rich(q.opts[x.v])} ${x.v===q.c?'✓':'✗'}<br>`:'En blanco<br>'}Correcta: ${'abcd'[q.c]}) ${rich(q.opts[q.c])}${q.exp?' — '+rich(q.exp):''}</small></div></div>`}).join('')||'<p class="empty">Nada en esta lista.</p>'}</div>
+  <p class="fine">Los fallos se han guardado en «Mis errores».</p><button class="btn" data-act="xquit">Volver a exámenes</button></div>`}
+function vExCfg(){const c=ui.xcfg;const seg=(name,opts,val)=>`<div class="seg seg-s">${opts.map(([v,t,d])=>`<label><input type="radio" name="${name}" value="${v}"${v===val?' checked':''}><span><b>${t}</b>${d?`<small>${d}</small>`:''}</span></label>`).join('')}</div>`;
+  const ts=S.temas.slice().sort(ordT);
+  return `<form class="card xcfg" data-xcfg="1"><h3>${esc(c.titulo)}</h3>
+  ${c.kind==='sim'?`<div class="fld"><label for="xb">Bloque</label><select id="xb" name="bloque"><option value="">Todos los bloques</option>${['I','II','III','IV'].map(b=>`<option value="${b}"${c.bloque===b?' selected':''}>Bloque ${b} · ${esc(BL[b].n)}</option>`).join('')}</select></div>
+  <div class="fld"><label for="xtm">Tema (opcional)</label><select id="xtm" name="tema"><option value="">Todos los temas del bloque</option>${ts.map(t=>`<option value="${t.id}"${c.tema===t.id?' selected':''}>${esc(t.codigo+' · '+t.titulo)}</option>`).join('')}</select></div>
+  <div class="fld"><span class="lbl">Número de preguntas</span>${seg('n',[[10,'10'],[20,'20'],[40,'40'],[80,'80']],c.n||20)}</div>
+  <div class="fld"><span class="lbl">Preguntas</span>${seg('fuente',[['todas','Todas','oficiales y de la web'],['ofi','Solo de exámenes','oficiales']],c.fuente||'todas')}</div>`:''}
+  ${c.kind!=='sim'?`<div class="fld"><span class="lbl">Segunda parte (supuesto práctico)</span>${seg('sup',[['III','Bloque III','Desarrollo'],['IV','Bloque IV','Sistemas'],['no','Sin supuesto','solo 1.ª parte']],c.sup||'III')}</div>`:''}
+  <div class="fld"><span class="lbl">Corrección</span>${seg('modo',[['final','Al final','como el examen'],['momento','Según respondo','ves si aciertas']],c.modo||'final')}</div>
+  <div class="fld"><span class="lbl">Tiempo</span>${seg('tiempo',[['oficial','Con reloj','1,2 min por pregunta'],['libre','Sin límite','']],c.tiempo||'oficial')}</div>
+  <div class="fld"><span class="lbl">Pistas</span>${seg('pistas',[['no','Sin pistas',''],['si','Con pistas','descarta una opción mala']],c.pistas||'no')}</div>
+  <div class="acts"><button class="btn">Empezar</button><button type="button" class="btn ghost" data-act="xcancel">Cancelar</button></div></form>`}
+function vExamenesHub(){const ofi=ofiQs(true);const per={};ofi.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});
+  const exs=idxOrder().filter(m=>S.exams[m.id]);
+  return `${ui.xcfg?vExCfg():''}<h3 class="hsec">📄 Exámenes oficiales</h3><p class="sub">Tal cual salieron, con la plantilla oficial de respuestas.</p>
+  <div class="xlist">${exs.map(m=>{const e=S.exams[m.id];const r=S.res.filter(x=>x.titulo===e.titulo);const best=r.length?Math.max(...r.map(nota)):null;return `<div class="card xe"><b>${esc(e.titulo)}</b><small>${e.partes[0].preguntas.length} + 20 preguntas · plantilla ${esc(e.plantilla.split(' ')[0])}${best!=null?' · mejor nota '+n1(best):''}</small><div class="acts"><button class="btn" data-act="xcfg" data-k="oficial" data-id="${esc(e.id)}">Hacer examen</button><a class="mini ghost" href="${esc(e.fuente)}" target="_blank" rel="noopener">PDF oficial</a></div></div>`}).join('')||'<p class="empty">Cargando exámenes…</p>'}</div>
+  <h3 class="hsec">🎯 Simulacros</h3><div class="modes">
+   <button class="mode" data-act="xcfg" data-k="gen"><b>Examen completo</b><span>80 preguntas repartidas por bloques, como el real, más un supuesto práctico. Se mezclan preguntas oficiales y de la web.</span></button>
+   <button class="mode" data-act="xcfg" data-k="sim"><b>A tu medida</b><span>Eliges bloque o tema, cuántas preguntas, tiempo, pistas y cuándo corregir.</span></button></div>
+  <h3 class="hsec">🗂️ Preguntas de exámenes oficiales por tema</h3><p class="sub">${ofi.length} preguntas de la primera parte de ${exs.length} exámenes, clasificadas por tema de forma automática (puede haber alguna mal colocada). Toca uno para practicarlo.</p>
+  ${['I','II','III','IV'].map(b=>`<div class="ofib"><b>Bloque ${b}</b><div class="chips wrap">${S.temas.filter(t=>t.bloque===b).sort(ordT).map(t=>per[t.id]?`<button class="chip2" data-act="xofi" data-t="${t.id}">${esc(t.codigo)} <b>${per[t.id]}</b></button>`:'').join('')}<button class="chip2" data-act="xofi" data-b="${b}">Todo el bloque <b>${ofi.filter(q=>q.bloque===b).length}</b></button></div></div>`).join('')}`}
 
 /* ---------- juegos ---------- */
 function vJuegos(){
@@ -324,7 +402,7 @@ function vPortada(){
   <div class="pt-nums"><div><b>34</b><span>temas del programa</span></div><div><b>${nC||'+200'}</b><span>tarjetas ya hechas</span></div><div><b>${temasC}</b><span>temas con tarjetas (y subiendo)</span></div></div></section>
   <h3 class="pt-h">Qué tienes dentro</h3><div class="pt-feat">${F.map(f=>`<div class="card"><span class="pt-ic" aria-hidden="true">${f[0]}</span><b>${esc(f[1])}</b><p>${esc(f[2])}</p></div>`).join('')}</div>
   <h3 class="pt-h">Cómo funciona</h3><ol class="pt-steps"><li><b>Entra con tu cuenta de Google.</b> No hay contraseñas nuevas que recordar.</li><li><b>Crea tu horario</b> o usa la plantilla, y mira qué te toca cada día.</li><li><b>Estudia con tarjetas y haz tests.</b> La web guarda lo que sabes y lo que fallas.</li></ol>
-  <h3 class="pt-h">El examen, en resumen</h3><div class="card pt-exam"><ul><li><b>Primera parte:</b> 80 preguntas tipo test.</li><li><b>Segunda parte:</b> un supuesto práctico de 20 preguntas.</li><li><b>Tiempo:</b> 120 minutos en total.</li><li><b>Penalización:</b> cada respuesta mal resta un tercio de una bien.</li></ul><p class="fine">Datos orientativos: consulta siempre la convocatoria oficial en el BOE.</p></div>
+  <h3 class="pt-h">El examen, en resumen</h3><div class="card pt-exam"><ul><li><b>Primera parte:</b> 80 preguntas tipo test.</li><li><b>Segunda parte:</b> un supuesto práctico de 20 preguntas, a elegir entre uno del Bloque III y otro del Bloque IV.</li><li><b>Tiempo:</b> 120 minutos en total.</li><li><b>Penalización:</b> cada respuesta mal resta un tercio de una bien.</li></ul><p class="fine">Datos orientativos: consulta siempre la convocatoria oficial en el BOE.</p></div>
   <h3 class="pt-h">Preguntas frecuentes</h3><div class="pt-faq"><details><summary>¿Cuesta dinero?</summary><p>No, es gratis.</p></details><details><summary>¿Quién ve mis datos?</summary><p>Tu progreso y tu horario solo los ves tú. Para identificar tu cuenta se guardan tu nombre y tu correo de Google y la fecha de tu último acceso; no se comparten con nadie.</p></details><details><summary>¿Sustituye a la academia?</summary><p>No: es una ayuda para repasar y organizarte. El temario completo lo tienes en tus apuntes.</p></details><details><summary>¿Es una web oficial?</summary><p>No. No tiene relación con el INAP ni con ninguna administración.</p></details></div>
   <div class="pt-final card"><b>¿Empezamos?</b><a class="btn big2" href="#entrar">Entrar con Google</a></div>`}
 function vProbar(){const cs=(S.cards['I-1']||[]).filter(c=>c.t).slice(0,5),qs=(S.preg['I-1']||[]).filter(q=>q.tipico).slice(0,5);
@@ -333,19 +411,19 @@ function vProbar(){const cs=(S.cards['I-1']||[]).filter(c=>c.t).slice(0,5),qs=(S
   let test;if(D.q<qs.length){const q=qs[D.q],a=D.ans[D.q];test=`<p class="fine">Pregunta ${D.q+1} de ${qs.length}</p><p class="dq">${rich(q.q)}</p>${q.opts.map((o,k)=>`<button class="opt${a!=null?(k===q.c?' ok':k===a?' ko':''):''}" data-dopt="${k}"${a!=null?' disabled':''}>${rich(o)}</button>`).join('')}${a!=null?`<p class="sub">${rich(q.exp||'')}</p><button class="btn" data-dnext="1">${D.q+1<qs.length?'Siguiente':'Ver resultado'}</button>`:''}`}
   else{const ok=D.ans.filter((a,k)=>a===qs[k].c).length;test=`<div class="dres"><b>${ok} de ${qs.length}</b><p>${ok>=4?'¡Muy bien!':'Con las tarjetas lo vas a fijar.'} Entra para guardar tu progreso y hacer tests completos.</p><a class="btn" href="#entrar">Empezar gratis</a> <button class="btn ghost" data-dreset="1">Repetir</button></div>`}
   return `<h2>Pruébalo sin cuenta</h2><p class="sub">5 tarjetas y 5 preguntas del tema 1 (Constitución). Aquí no se guarda nada.</p>
-  <div class="grid"><div class="card"><h3>Tarjetas</h3><div class="flip${D.flip?' on':''}" id="dflip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f"><span class="tp">Típica de examen</span><div class="em">${esc(c.e||'')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b"><div class="a">${rich(c.a)}</div>${c.h?`<div class="h">${rich(c.h)}</div>`:''}</div></div></div>
+  <div class="grid"><div class="card"><h3>Tarjetas</h3><div class="flip${D.flip?' on':''}" id="dflip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f" aria-hidden="${!!D.flip}"><span class="tp">Típica de examen</span><div class="em" aria-hidden="true">${esc(c.e||'')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b" aria-hidden="${!D.flip}"><div class="a">${rich(c.a)}</div>${c.h?`<div class="h">${rich(c.h)}</div>`:''}</div></div></div>
   <div style="display:flex;justify-content:space-between;align-items:center;margin-top:12px"><button class="btn ghost" data-dcard="-1">Anterior</button><span class="fine">${D.i%cs.length+1} de ${cs.length}</span><button class="btn ghost" data-dcard="1">Siguiente</button></div></div>
   <div class="card"><h3>Mini test</h3>${test}</div></div>
   <div class="pt-final card"><b>¿Te gusta? Hay muchas más tarjetas y tests.</b><a class="btn big2" href="#entrar">Empezar gratis</a></div>`}
 function vLogin(){return `<div class="login"><div class="lg-ico">📚</div><h2>Tu agenda para la oposición TAI</h2><p class="sub">Tarjetas para memorizar, tests con trampa, tu horario y tu progreso. Todo en un sitio, en el móvil y en el ordenador.</p>
   <button class="btn big" data-act="login"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar con Google</button>
   <p class="fine">Cada persona tiene su propio progreso y su horario. Solo tú puedes verlos.</p><p><a href="#inicio" class="more">← Volver a la portada</a></p></div>`}
-function busy(){return (ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
+function busy(){return (ui.ex&&!ui.ex.done)||(ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
 function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estados||{})[t.id]||'pendiente'}));const v=view();acct();document.querySelectorAll('#nav a').forEach(a=>{const on=a.dataset.v===v;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   const gate=!!window.FIREBASE_CONFIG&&!S.user;document.body.classList.toggle('out',gate);
   if(gate){const h=location.hash.slice(1);$('#app').innerHTML=h==='entrar'?(S.authReady?vLogin():'<p class="empty">Cargando…</p>'):h==='probar'?vProbar():vPortada();scrollTo(0,0);return}
   if(!S.ready){$('#app').innerHTML='<p class="empty">Cargando tu agenda…</p>';return}
-  $('#app').innerHTML=V[v]();setTimeout(()=>{checkLogros();celebrar()},0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
+  $('#app').innerHTML=V[v]();{const g=document.querySelector('.xgrid'),c=g&&g.querySelector('.cur');if(c){if(g.scrollWidth>g.clientWidth)g.scrollLeft=c.offsetLeft-g.clientWidth/2;else g.scrollTop=c.offsetTop-g.clientHeight/2}}setTimeout(()=>{checkLogros();celebrar()},0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
 addEventListener('hashchange',()=>{scrollTo(0,0);render()});
 
 /* ---------- acciones ---------- */
@@ -365,7 +443,7 @@ function vfTick(){const G=ui.game;if(!G||G.kind!=='vf'||G.over){clearInterval(vf
 function startVF(scope){const pool=bank(scope||'');if(!pool.length)return;ui.game={kind:'vf',scope,pool,ok:0,ko:0,miss:[],end:Date.now()+60000};vfNext();clearInterval(vfTimer);vfTimer=setInterval(vfTick,250);render()}
 function startEmp(mazo){ui.game={kind:'emp',mazo};empNew();render()}
 document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[data-pile],[data-opt],#flip,[data-ml],[data-mr]');if(!el)return;
-  if(el.id==='flip'){ui.flip=!ui.flip;el.classList.toggle('on',ui.flip);return}
+  if(el.id==='flip'){ui.flip=!ui.flip;el.classList.toggle('on',ui.flip);el.querySelector('.face.f').setAttribute('aria-hidden',ui.flip);el.querySelector('.face.b').setAttribute('aria-hidden',!ui.flip);el.setAttribute('aria-label',ui.flip?'Respuesta. Pulsa para volver a la pregunta':'Pregunta. Pulsa para ver la respuesta');return}
   if(el.dataset.pile){markPile(+el.dataset.pile);return}
   if(el.dataset.opt!==undefined){const T=ui.test;if(T.shown[T.i])return;T.ans[T.i]=+el.dataset.opt;render();return}
   if(el.dataset.ml!==undefined){const G=ui.game;G.sel=el.dataset.ml;G.bad=null;render();return}
@@ -381,6 +459,16 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='pedir'){const id=el.dataset.id;if(!fs||!uid){flash('Entra con Google (arriba a la derecha) para pedir tarjetas');return}
     el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
   else if(a==='logout'){auth&&auth.signOut().then(()=>location.reload())}
+  else if(a==='xcfg'){const k=el.dataset.k;const e=S.exams[el.dataset.id];ui.xcfg={kind:k,id:el.dataset.id,titulo:k==='oficial'?e.titulo:k==='gen'?'Examen completo (simulacro)':'Simulacro a tu medida'};render();scrollTo(0,0)}
+  else if(a==='xcancel'){ui.xcfg=null;render()}
+  else if(a==='xofi'){const t=el.dataset.t,b=el.dataset.b;startExam({kind:'sim',titulo:'Preguntas oficiales · '+(t?'Tema '+temaName(t):'Bloque '+b),tema:t||'',bloque:t?'':b,n:200,fuente:'ofi',modo:'momento',tiempo:'libre',pistas:'no'})}
+  else if(a==='xnext'){ui.ex.i++;ui.ex.conf=false;render();scrollTo(0,0)}
+  else if(a==='xprev'){ui.ex.i--;ui.ex.conf=false;render();scrollTo(0,0)}
+  else if(a==='xdud'){const X=ui.ex;if(X.dud[X.i])delete X.dud[X.i];else X.dud[X.i]=1;render()}
+  else if(a==='xpis'){const X=ui.ex;X.pis[X.i]=pista(X.items[X.i].q);if(X.ans[X.i]===X.pis[X.i])delete X.ans[X.i];render()}
+  else if(a==='xclr'){delete ui.ex.ans[ui.ex.i];render()}
+  else if(a==='xfin'){const X=ui.ex;if(!X.conf&&Object.keys(X.ans).length<X.items.length){X.conf=true;render();return}finishExam()}
+  else if(a==='xquit'){clearInterval(exTimer);ui.ex=null;render();scrollTo(0,0)}
   else if(a==='mascCfg'){ui.mcfg=!ui.mcfg;render()}
   else if(a==='fsz'){const on=!document.documentElement.classList.contains('big');document.documentElement.classList.toggle('big',on);try{localStorage.setItem('agendaTAI:big',on?'1':'')}catch(e){};el.setAttribute('aria-pressed',on)}
   else if(a==='hedit'){ui.hedit=!ui.hedit;render()}
@@ -405,12 +493,14 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     if(right){G.ok++;G.fb='<b>¡Bien!</b>'}else{G.ko++;G.end-=5000;G.miss.push(c.q);G.fb='<b>No.</b> La buena es: '+rich(c.q.opts[c.q.c])}
     const fb=G.fb;vfNext();G.fb=fb;render()}
 });
-document.addEventListener('submit',e=>{const f=e.target.closest('[data-mcfg]');if(!f)return;e.preventDefault();const n=(f.n.value||'').trim().slice(0,16)||'Pipo';const m=+((f.querySelector('input[name=m]:checked')||{}).value||20);S.config=Object.assign({},S.config,{masc:n,meta:m});kvSet('config');ui.mcfg=false;render()});
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-mcfg]');if(!f)return;e.preventDefault();const n=(f.n.value||'').trim().slice(0,16)||'Pipo';const m=+((f.querySelector('input[name=m]:checked')||{}).value||20);S.config=Object.assign({},S.config,{masc:n,meta:m,descanso:[...f.querySelectorAll('input[name=dd]:checked')].map(x=>+x.value)});kvSet('config');ui.mcfg=false;render()});
 document.addEventListener('submit',e=>{const f=e.target.closest('[data-hform]');if(!f)return;e.preventDefault();const i=+f.dataset.hform;const b={h:f.h.value,f:f.f.value,t:f.t.value.trim().slice(0,40),tipo:HT[f.tipo.value]?f.tipo.value:'libre'};if(!b.h||!b.t)return;setDia(i,bloquesDia(i).concat([b]));render()});
 document.addEventListener('click',e=>{const d=e.target.closest('#dflip,[data-dcard],[data-dopt],[data-dnext],[data-dreset]');if(!d||!ui.demo)return;const D=ui.demo;
-  if(d.id==='dflip'){D.flip=!D.flip;d.classList.toggle('on',D.flip);return}
+  if(d.id==='dflip'){D.flip=!D.flip;d.classList.toggle('on',D.flip);d.querySelector('.face.f').setAttribute('aria-hidden',D.flip);d.querySelector('.face.b').setAttribute('aria-hidden',!D.flip);return}
   if(d.dataset.dcard){D.i=(D.i+ +d.dataset.dcard+5)%5;D.flip=false}else if(d.dataset.dopt!=null){D.ans[D.q]=+d.dataset.dopt}else if(d.dataset.dnext){D.q++}else if(d.dataset.dreset){D.q=0;D.ans=[]}
   const y=scrollY;render();scrollTo(0,y)});
+document.addEventListener('click',e=>{const o=e.target.closest('[data-xopt],[data-xgo],[data-xf]');if(!o||!ui.ex)return;const X=ui.ex;if(o.dataset.xopt!=null){if(X.modo==='momento'&&X.ans[X.i]!=null)return;X.ans[X.i]=+o.dataset.xopt;X.conf=false}else if(o.dataset.xgo!=null){X.i=+o.dataset.xgo;X.conf=false;scrollTo(0,0)}else X.filt=o.dataset.xf;render()});
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-xcfg]');if(!f)return;e.preventDefault();const v=n=>{const el=f.querySelector(`[name="${n}"]:checked`)||f.querySelector(`[name="${n}"]`);return el?el.value:''};const c=Object.assign({},ui.xcfg,{sup:v('sup'),modo:v('modo'),tiempo:v('tiempo'),pistas:v('pistas'),bloque:v('bloque'),tema:v('tema'),n:+v('n')||20,fuente:v('fuente')});if(c.kind==='sim'&&c.tema)c.titulo='Simulacro · Tema '+temaName(c.tema);else if(c.kind==='sim'&&c.bloque)c.titulo='Simulacro · Bloque '+c.bloque;startExam(c)});
 document.addEventListener('click',e=>{const f=e.target.closest('[data-filtro]');if(f){ui.filtro=f.dataset.filtro;ui.idx=0;ui.flip=false;render()}});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
 {let sx=null,sy=null;document.addEventListener('touchstart',e=>{if(e.target.closest('#flip')){sx=e.touches[0].clientX;sy=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){const b=document.querySelector(`[data-act="${dx<0?'next':'prev'}"]`);if(b){e.preventDefault();b.click()}}})}
@@ -425,13 +515,13 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=9;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=10;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];
   await Promise.all(S.temasBase.map(async t=>{const [c,p]=await Promise.all([t.tarjetas?getJ(`data/temas/${t.id}.cards.json`):null,t.preguntas?getJ(`data/temas/${t.id}.preguntas.json`):null]);if(c&&c.cards)S.cards[t.id]=c.cards;if(p&&p.preguntas)S.preg[t.id]=p.preguntas}));
   if(!window.FIREBASE_CONFIG){KEYS.forEach(k=>{const v=lsGet(k);if(v!=null)applyKV(k,v)})}
-  S.ready=true;render();
+  S.ready=true;render();loadExams();
   if(window.FIREBASE_CONFIG){try{
     const V='10.12.2';await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-app-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-auth-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore-compat.js`);
     firebase.initializeApp(window.FIREBASE_CONFIG);auth=firebase.auth();fs=firebase.firestore();
