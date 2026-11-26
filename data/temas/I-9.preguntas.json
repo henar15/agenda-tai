@@ -1,0 +1,330 @@
+{
+ "tema": "I-9",
+ "preguntas": [
+  {
+   "id": "i9-01",
+   "tipico": true,
+   "q": "Están obligadas a relacionarse electrónicamente con la Administración (art. 14.2 Ley 39/2015)…",
+   "opts": [
+    "Todas las personas físicas mayores de edad",
+    "Las personas jurídicas",
+    "Solo las empresas de más de 50 trabajadores",
+    "Solo los funcionarios de carrera"
+   ],
+   "c": 1,
+   "exp": "Personas jurídicas, entidades sin personalidad, colegiados obligatorios, representantes y empleados públicos."
+  },
+  {
+   "id": "i9-02",
+   "tipico": true,
+   "q": "La sede electrónica se define en el…",
+   "opts": [
+    "Art. 38 de la Ley 40/2015",
+    "Art. 38 de la Ley 39/2015",
+    "Art. 7 del RD 203/2021",
+    "Art. 43 de la Ley 39/2015"
+   ],
+   "c": 0,
+   "exp": "Art. 38 de la Ley 40/2015, de Régimen Jurídico del Sector Público."
+  },
+  {
+   "id": "i9-03",
+   "tipico": true,
+   "q": "El reglamento de actuación y funcionamiento del sector público por medios electrónicos es el…",
+   "opts": [
+    "RD 1671/2009",
+    "RD 311/2022",
+    "RD 4/2010",
+    "RD 203/2021"
+   ],
+   "c": 3,
+   "exp": "RD 203/2021, de 30 de marzo. Derogó el RD 1671/2009."
+  },
+  {
+   "id": "i9-04",
+   "tipico": false,
+   "q": "Una sede electrónica asociada…",
+   "opts": [
+    "No tiene efectos jurídicos",
+    "Solo puede crearla una entidad local",
+    "Tiene consideración de sede electrónica a todos los efectos",
+    "Depende siempre del Defensor del Pueblo"
+   ],
+   "c": 2,
+   "exp": "Art. 10 RD 203/2021."
+  },
+  {
+   "id": "i9-05",
+   "tipico": false,
+   "q": "La creación de una sede electrónica de una entidad local se publica en…",
+   "opts": [
+    "El BOE siempre",
+    "El boletín oficial de la provincia",
+    "El Diario Oficial de la UE",
+    "Solo en la propia web"
+   ],
+   "c": 1,
+   "exp": "Para las entidades locales, el boletín de la provincia."
+  },
+  {
+   "id": "i9-06",
+   "tipico": true,
+   "q": "¿Cuál de estos NO es un contenido mínimo de la sede electrónica?",
+   "opts": [
+    "El currículum de los empleados públicos",
+    "La fecha y hora oficial",
+    "El calendario de días inhábiles",
+    "Los sistemas de identificación y firma admitidos"
+   ],
+   "c": 0,
+   "exp": "El art. 11 RD 203/2021 no incluye datos del personal."
+  },
+  {
+   "id": "i9-07",
+   "tipico": false,
+   "q": "Los plazos señalados por horas…",
+   "opts": [
+    "Pueden durar hasta 72 horas",
+    "Se cuentan como naturales",
+    "Empiezan a contar al día siguiente",
+    "No pueden superar 24 horas"
+   ],
+   "c": 3,
+   "exp": "Si superan 24 horas se expresan en días."
+  },
+  {
+   "id": "i9-08",
+   "tipico": false,
+   "q": "Si un día es hábil en el municipio del interesado e inhábil en la sede del órgano, se considera…",
+   "opts": [
+    "Hábil",
+    "Lo decide el interesado",
+    "Inhábil en todo caso",
+    "Medio día hábil"
+   ],
+   "c": 2,
+   "exp": "Art. 30 Ley 39/2015."
+  },
+  {
+   "id": "i9-09",
+   "tipico": true,
+   "q": "La orden que regula el Punto de Acceso General de la AGE y crea su sede es la…",
+   "opts": [
+    "Orden HAP/548/2013",
+    "Orden HAP/1949/2014",
+    "Orden PRE/1010/2010",
+    "Orden HFP/633/2017"
+   ],
+   "c": 1,
+   "exp": "Orden HAP/1949/2014, de 13 de octubre."
+  },
+  {
+   "id": "i9-10",
+   "tipico": false,
+   "q": "El teléfono de atención del Punto de Acceso General del Estado es el…",
+   "opts": [
+    "060",
+    "012",
+    "091",
+    "112"
+   ],
+   "c": 0,
+   "exp": "Servicios de información en el 060 y oficinas 060."
+  },
+  {
+   "id": "i9-11",
+   "tipico": true,
+   "q": "En la sede del PAGe de la AGE está alojada…",
+   "opts": [
+    "La Plataforma de Contratación",
+    "El Registro Civil",
+    "El BOE",
+    "La Dirección Electrónica Habilitada única"
+   ],
+   "c": 3,
+   "exp": "La DEHú del art. 43 Ley 39/2015."
+  },
+  {
+   "id": "i9-12",
+   "tipico": true,
+   "q": "Según el art. 11 de la Ley 39/2015, NO es obligatoria la firma para…",
+   "opts": [
+    "Formular solicitudes",
+    "Interponer recursos",
+    "Consultar un expediente",
+    "Renunciar a derechos"
+   ],
+   "c": 2,
+   "exp": "Para consultar basta identificarse; la firma solo para solicitudes, declaraciones, recursos, desistir y renunciar."
+  },
+  {
+   "id": "i9-13",
+   "tipico": true,
+   "q": "La firma electrónica cualificada es una firma avanzada que además…",
+   "opts": [
+    "Solo usa usuario y contraseña",
+    "Se basa en un certificado cualificado y un dispositivo cualificado",
+    "No identifica al firmante",
+    "Solo pueden usarla las personas jurídicas"
+   ],
+   "c": 1,
+   "exp": "Avanzada + dispositivo cualificado + certificado cualificado."
+  },
+  {
+   "id": "i9-14",
+   "tipico": false,
+   "q": "La Ley 59/2003 de Firma Electrónica fue derogada por…",
+   "opts": [
+    "La Ley 6/2020",
+    "La Ley 11/2007",
+    "La Ley 40/2015",
+    "El Reglamento 2016/679"
+   ],
+   "c": 0,
+   "exp": "Ley 6/2020, de servicios electrónicos de confianza."
+  },
+  {
+   "id": "i9-15",
+   "tipico": true,
+   "q": "Según eIDAS, las personas jurídicas utilizan…",
+   "opts": [
+    "Firma electrónica cualificada propia",
+    "Cl@ve PIN",
+    "Solo firma manuscrita",
+    "Sello electrónico"
+   ],
+   "c": 3,
+   "exp": "A las personas jurídicas se les reserva el sello electrónico."
+  },
+  {
+   "id": "i9-16",
+   "tipico": false,
+   "q": "Los sistemas de identificación de la letra c) del art. 9 tienen eficacia jurídica…",
+   "opts": [
+    "Inmediatamente",
+    "A los 10 días",
+    "Tras dos meses desde la comunicación a la SGAD",
+    "Tras un año"
+   ],
+   "c": 2,
+   "exp": "Dos meses; el informe de la Secretaría de Estado de Seguridad se emite en 10 días."
+  },
+  {
+   "id": "i9-17",
+   "tipico": true,
+   "q": "La actuación administrativa automatizada se caracteriza por…",
+   "opts": [
+    "Realizarse en papel",
+    "No intervenir de forma directa un empleado público",
+    "Requerir siempre firma del ministro",
+    "Aplicarse solo a sanciones"
+   ],
+   "c": 1,
+   "exp": "Art. 41 Ley 40/2015."
+  },
+  {
+   "id": "i9-18",
+   "tipico": true,
+   "q": "Para la actuación automatizada, el art. 42 de la Ley 40/2015 admite…",
+   "opts": [
+    "Sello electrónico y Código Seguro de Verificación",
+    "Cl@ve PIN y SMS",
+    "Firma manuscrita escaneada",
+    "Solo DNI-e"
+   ],
+   "c": 0,
+   "exp": "Sello electrónico y CSV."
+  },
+  {
+   "id": "i9-19",
+   "tipico": true,
+   "q": "El sistema Cl@ve se aprobó por Acuerdo del Consejo de Ministros de…",
+   "opts": [
+    "1 de octubre de 2015",
+    "30 de marzo de 2021",
+    "2 de abril de 2021",
+    "19 de septiembre de 2014"
+   ],
+   "c": 3,
+   "exp": "19 de septiembre de 2014."
+  },
+  {
+   "id": "i9-20",
+   "tipico": true,
+   "q": "Cl@ve PIN se corresponde con el sistema…",
+   "opts": [
+    "DNI-e",
+    "Certificado FNMT",
+    "PIN24H de la AEAT",
+    "Cl@ve firma"
+   ],
+   "c": 2,
+   "exp": "Cl@ve PIN (ocasional) = PIN24H de la AEAT."
+  },
+  {
+   "id": "i9-21",
+   "tipico": false,
+   "q": "La Cl@ve permanente…",
+   "opts": [
+    "Tiene validez ilimitada",
+    "Es para usuarios habituales y puede reforzarse con OTP por SMS",
+    "Es para usos puntuales",
+    "No requiere registro previo"
+   ],
+   "c": 1,
+   "exp": "Validez duradera pero no ilimitada; registro previo obligatorio."
+  },
+  {
+   "id": "i9-22",
+   "tipico": true,
+   "q": "Los certificados de Cl@ve firma los emite y custodia…",
+   "opts": [
+    "La Dirección General de la Policía",
+    "La FNMT",
+    "La AEAT",
+    "El Banco de España"
+   ],
+   "c": 0,
+   "exp": "La DGP; la GISS guarda la copia de seguridad."
+  },
+  {
+   "id": "i9-23",
+   "tipico": false,
+   "q": "En la federación de identidades de Cl@ve, el IdP es…",
+   "opts": [
+    "El proveedor de servicios de administración electrónica",
+    "La pasarela",
+    "El ciudadano",
+    "El proveedor de identificación y autenticación"
+   ],
+   "c": 3,
+   "exp": "IdP = proveedor de identidad; SP = proveedor de servicios."
+  },
+  {
+   "id": "i9-24",
+   "tipico": false,
+   "q": "La SGAD tiene rango de…",
+   "opts": [
+    "Ministerio",
+    "Secretaría de Estado",
+    "Subsecretaría",
+    "Dirección General"
+   ],
+   "c": 2,
+   "exp": "Rango de subsecretaría."
+  },
+  {
+   "id": "i9-25",
+   "tipico": false,
+   "q": "Si un interesado sin medios electrónicos necesita firmar, puede hacerlo por él…",
+   "opts": [
+    "Cualquier familiar",
+    "Un funcionario habilitado con su consentimiento expreso",
+    "El Defensor del Pueblo",
+    "Nadie"
+   ],
+   "c": 1,
+   "exp": "Art. 12 Ley 39/2015."
+  }
+ ]
+}

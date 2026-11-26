@@ -1,0 +1,726 @@
+{
+ "tema": "I-4",
+ "cards": [
+  {
+   "id": "i4c1",
+   "n": "1",
+   "e": "📘",
+   "t": true,
+   "q": "¿Qué norma aprueba el texto refundido del Estatuto Básico del Empleado Público (TREBEP)?",
+   "a": "El **Real Decreto Legislativo 5/2015**, de **30 de octubre**"
+  },
+  {
+   "id": "i4c2",
+   "n": "2",
+   "e": "🎯",
+   "t": false,
+   "q": "¿Cuál es el objeto del TREBEP?",
+   "a": "Establecer las **bases del régimen estatutario de los funcionarios** y fijar las normas aplicables al **personal laboral** de las AAPP"
+  },
+  {
+   "id": "i4c3",
+   "n": "3",
+   "e": "📗",
+   "t": false,
+   "q": "¿Dónde regula el TREBEP los derechos y deberes de los empleados públicos?",
+   "a": "En el **Título III**, que incluye un **código de conducta**"
+  },
+  {
+   "id": "i4c4",
+   "n": "4",
+   "e": "👤",
+   "t": false,
+   "q": "¿Qué artículo recoge los derechos individuales?",
+   "a": "El **artículo 14** del TREBEP",
+   "h": "Ej.: inamovilidad, carrera, retribuciones, formación, desconexión digital…"
+  },
+  {
+   "id": "i4c5",
+   "n": "5",
+   "e": "🏰",
+   "t": false,
+   "q": "¿Qué derecho individual es exclusivo del funcionario de carrera?",
+   "a": "La **inamovilidad** en la condición de funcionario de carrera"
+  },
+  {
+   "id": "i4c6",
+   "n": "6",
+   "e": "👥",
+   "t": true,
+   "q": "¿Qué artículo recoge los derechos individuales ejercidos colectivamente?",
+   "a": "El **artículo 15**: **libertad sindical**, **negociación colectiva**, **huelga** (con servicios esenciales), **conflictos colectivos** y **reunión**"
+  },
+  {
+   "id": "i4c7",
+   "n": "7",
+   "e": "🗣️",
+   "t": false,
+   "q": "¿Quién puede convocar una reunión según el art. 46 TREBEP?",
+   "a": "Sindicatos, **delegados de personal**, **juntas de personal**, **comités de empresa** y empleados en número no inferior al **40 %** del colectivo"
+  },
+  {
+   "id": "i4c8",
+   "n": "8",
+   "e": "🤝",
+   "t": false,
+   "q": "¿Qué es la negociación colectiva? (art. 31.2)",
+   "a": "El derecho a negociar la determinación de las **condiciones de trabajo** de los empleados públicos"
+  },
+  {
+   "id": "i4c9",
+   "n": "9",
+   "e": "⚖️",
+   "t": false,
+   "q": "Principios de la negociación colectiva de funcionarios (art. 33)",
+   "a": "**Legalidad**, **cobertura presupuestaria**, **obligatoriedad**, **buena fe negocial**, **publicidad** y **transparencia**"
+  },
+  {
+   "id": "i4c10",
+   "n": "10",
+   "e": "🪑",
+   "t": false,
+   "q": "¿Qué sindicatos están en las Mesas de negociación?",
+   "a": "Los **más representativos** a nivel estatal y de CA y los que obtengan el **10 %** o más de representantes"
+  },
+  {
+   "id": "i4c11",
+   "n": "11",
+   "e": "📋",
+   "t": false,
+   "q": "¿Qué artículo enumera las materias objeto de negociación?",
+   "a": "El **artículo 37** (retribuciones complementarias, oferta de empleo, calendario, jornadas, permisos, formación…)"
+  },
+  {
+   "id": "i4c12",
+   "n": "12",
+   "e": "🚫",
+   "t": false,
+   "q": "Materias excluidas de la obligatoriedad de negociar (art. 37.2)",
+   "a": "**Potestades de organización**, derechos de ciudadanos y procedimiento, condiciones del **personal directivo**, **poderes de dirección y control** y sistemas concretos de **acceso** y promoción"
+  },
+  {
+   "id": "i4c13",
+   "n": "13",
+   "e": "🧑‍💼",
+   "t": false,
+   "q": "Órganos de representación de los funcionarios (art. 39)",
+   "a": "Los **delegados de personal** y las **juntas de personal**"
+  },
+  {
+   "id": "i4c14",
+   "n": "14",
+   "e": "🔢",
+   "t": true,
+   "q": "¿Cuándo hay delegados de personal y cuántos?",
+   "a": "Unidades de **6 a 49** funcionarios: **1 delegado** hasta 30 y **3** de 31 a 49"
+  },
+  {
+   "id": "i4c15",
+   "n": "15",
+   "e": "🏛️",
+   "t": false,
+   "q": "¿Desde cuántos funcionarios se constituye una junta de personal?",
+   "a": "Con un censo mínimo de **50 funcionarios**"
+  },
+  {
+   "id": "i4c16",
+   "n": "16",
+   "e": "⏳",
+   "t": false,
+   "q": "¿Cuánto dura el mandato de juntas y delegados de personal? (art. 42)",
+   "a": "**Cuatro años**, con posibilidad de **reelección**"
+  },
+  {
+   "id": "i4c17",
+   "n": "17",
+   "e": "🏖️",
+   "t": true,
+   "q": "¿Cuántos días de vacaciones tienen los funcionarios?",
+   "a": "**22 días hábiles** por año natural (los **sábados no** son hábiles)"
+  },
+  {
+   "id": "i4c18",
+   "n": "18",
+   "e": "💶",
+   "t": false,
+   "q": "¿Pueden cambiarse las vacaciones por dinero?",
+   "a": "**No**, salvo fin de la relación de servicios por causas **ajenas a su voluntad** (jubilación por incapacidad, fallecimiento…)"
+  },
+  {
+   "id": "i4c19",
+   "n": "19",
+   "e": "📑",
+   "t": false,
+   "q": "¿Qué artículo regula los permisos de los funcionarios?",
+   "a": "El **artículo 48** del TREBEP"
+  },
+  {
+   "id": "i4c20",
+   "n": "20",
+   "e": "🏥",
+   "t": true,
+   "q": "Permiso por accidente o enfermedad grave de un familiar de 1er grado o cónyuge",
+   "a": "**5 días hábiles** (2º grado: **4 días hábiles**)"
+  },
+  {
+   "id": "i4c21",
+   "n": "21",
+   "e": "🕯️",
+   "t": false,
+   "q": "Permiso por fallecimiento de cónyuge o familiar de 1er grado",
+   "a": "**3 días hábiles** misma localidad / **5** en distinta localidad"
+  },
+  {
+   "id": "i4c22",
+   "n": "22",
+   "e": "🕯️",
+   "t": false,
+   "q": "Permiso por fallecimiento de familiar de 2º grado",
+   "a": "**2 días hábiles** misma localidad / **4** en distinta localidad"
+  },
+  {
+   "id": "i4c23",
+   "n": "23",
+   "e": "🍼",
+   "t": false,
+   "q": "Permiso por lactancia de un hijo menor de 12 meses",
+   "a": "**Una hora diaria**, divisible en **2 fracciones**; derecho individual **intransferible**; puede acumularse en jornadas completas"
+  },
+  {
+   "id": "i4c24",
+   "n": "24",
+   "e": "🎟️",
+   "t": false,
+   "q": "¿Cuántos días de asuntos particulares hay?",
+   "a": "**Seis días** al año (más días adicionales por trienios según DA 13ª)"
+  },
+  {
+   "id": "i4c25",
+   "n": "25",
+   "e": "💍",
+   "t": true,
+   "q": "Permiso por matrimonio o pareja de hecho",
+   "a": "**Quince días** (se entienden **naturales**)"
+  },
+  {
+   "id": "i4c26",
+   "n": "26",
+   "e": "📕",
+   "t": false,
+   "q": "¿Qué artículo regula los permisos de conciliación, violencia de género y víctimas del terrorismo?",
+   "a": "El **artículo 49** del TREBEP"
+  },
+  {
+   "id": "i4c27",
+   "n": "27",
+   "e": "🤱",
+   "t": true,
+   "q": "Permiso por nacimiento para la madre biológica",
+   "a": "**16 semanas**; las **6 semanas** posteriores al parto son de descanso **obligatorio e ininterrumpido**"
+  },
+  {
+   "id": "i4c28",
+   "n": "28",
+   "e": "✈️",
+   "t": false,
+   "q": "Adopción internacional con desplazamiento al país de origen",
+   "a": "Permiso adicional de hasta **2 meses** cobrando solo **retribuciones básicas**"
+  },
+  {
+   "id": "i4c29",
+   "n": "29",
+   "e": "👨‍🍼",
+   "t": false,
+   "q": "Permiso del progenitor diferente de la madre biológica",
+   "a": "**16 semanas**, de las que las **6 primeras** son de descanso obligatorio (aplicación gradual: 8 sem. en 2019, 12 en 2020, 16 desde **2021**)"
+  },
+  {
+   "id": "i4c30",
+   "n": "30",
+   "e": "🎗️",
+   "t": false,
+   "q": "Permiso por cuidado de hijo con cáncer u otra enfermedad grave",
+   "a": "Reducción de al menos la **mitad** de la jornada con **retribuciones íntegras**, hasta los **23 años** (o **26** con discapacidad ≥ **65 %**)"
+  },
+  {
+   "id": "i4c31",
+   "n": "31",
+   "e": "🧸",
+   "t": false,
+   "q": "Permiso parental para cuidado de hijo menor de 8 años",
+   "a": "Máximo **8 semanas**, continuas o discontinuas; derecho **individual e intransferible**; preaviso de **15 días**"
+  },
+  {
+   "id": "i4c32",
+   "n": "32",
+   "e": "📏",
+   "t": false,
+   "q": "¿Qué artículo establece los deberes de los empleados públicos y sus principios?",
+   "a": "El **artículo 52** (objetividad, integridad, neutralidad, imparcialidad, confidencialidad, ejemplaridad, austeridad, honradez…)"
+  },
+  {
+   "id": "i4c33",
+   "n": "33",
+   "e": "🧠",
+   "t": true,
+   "q": "Principios éticos y principios de conducta: ¿qué artículos?",
+   "a": "Éticos: **art. 53**; de conducta: **art. 54**"
+  },
+  {
+   "id": "i4c34",
+   "n": "34",
+   "e": "🎁",
+   "t": false,
+   "q": "¿Qué hacen los empleados ante regalos? (art. 54)",
+   "a": "**Rechazan** cualquier regalo o favor que vaya más allá de los **usos habituales, sociales y de cortesía**"
+  },
+  {
+   "id": "i4c35",
+   "n": "35",
+   "e": "📌",
+   "t": true,
+   "q": "Procedimientos de provisión de puestos de los funcionarios",
+   "a": "**Concurso** y **libre designación** con convocatoria pública"
+  },
+  {
+   "id": "i4c36",
+   "n": "36",
+   "e": "🏆",
+   "t": false,
+   "q": "¿Qué es el concurso?",
+   "a": "El procedimiento **normal**: valoración de **méritos y capacidades** por órganos colegiados técnicos (con **paridad**)"
+  },
+  {
+   "id": "i4c37",
+   "n": "37",
+   "e": "🎩",
+   "t": false,
+   "q": "¿Qué es la libre designación?",
+   "a": "Apreciación **discrecional** de la idoneidad del candidato; el titular puede ser **cesado discrecionalmente**"
+  },
+  {
+   "id": "i4c38",
+   "n": "38",
+   "e": "🔀",
+   "t": false,
+   "q": "Si un funcionario cesa en libre designación en otra Administración, ¿qué plazo tiene la de destino para adscribirle?",
+   "a": "**Un mes**; después, el funcionario tiene **un mes** para pedir el reingreso en su Administración de origen"
+  },
+  {
+   "id": "i4c39",
+   "n": "39",
+   "e": "🪜",
+   "t": false,
+   "q": "Modalidades de carrera profesional",
+   "a": "**Carrera horizontal** (sin cambiar de puesto), **carrera vertical** (ascenso de puesto), **promoción interna vertical** (a subgrupo superior) y **horizontal** (mismo subgrupo)"
+  },
+  {
+   "id": "i4c40",
+   "n": "40",
+   "e": "📆",
+   "t": true,
+   "q": "Antigüedad exigida para la promoción interna",
+   "a": "Al menos **dos años** de servicio activo en el subgrupo inferior"
+  },
+  {
+   "id": "i4c41",
+   "n": "41",
+   "e": "📊",
+   "t": false,
+   "q": "¿Qué es la evaluación del desempeño?",
+   "a": "Procedimiento que **mide y valora la conducta profesional y el rendimiento**; afecta a carrera horizontal, formación, provisión y retribuciones complementarias"
+  },
+  {
+   "id": "i4c42",
+   "n": "42",
+   "e": "🗂️",
+   "t": false,
+   "q": "Situaciones administrativas de los funcionarios de carrera",
+   "a": "**Servicio activo**, **servicios especiales**, **servicio en otras AAPP**, **excedencia** y **suspensión de funciones**"
+  },
+  {
+   "id": "i4c43",
+   "n": "43",
+   "e": "⭐",
+   "t": true,
+   "q": "Cita casos de servicios especiales",
+   "a": "Ser **miembro del Gobierno**, **Diputado o Senador**, alto cargo, misión internacional de **más de 6 meses**, adscrito al **TC** o **Defensor del Pueblo**, reservista voluntario…"
+  },
+  {
+   "id": "i4c44",
+   "n": "44",
+   "e": "🌍",
+   "t": false,
+   "q": "¿Cuándo se está en servicio en otras Administraciones Públicas?",
+   "a": "Al obtener destino en otra Administración por **transferencias** o **provisión de puestos**"
+  },
+  {
+   "id": "i4c45",
+   "n": "45",
+   "e": "🧳",
+   "t": false,
+   "q": "Tipos de excedencia",
+   "a": "Voluntaria por **interés particular**, por **agrupación familiar**, por **cuidado de familiares**, por **violencia de género o sexual** y por **violencia terrorista**"
+  },
+  {
+   "id": "i4c46",
+   "n": "46",
+   "e": "5️⃣",
+   "t": true,
+   "q": "¿Qué requisito tiene la excedencia voluntaria por interés particular?",
+   "a": "Haber prestado **5 años** de servicios efectivos inmediatamente anteriores; **no cobra** ni computa el tiempo"
+  },
+  {
+   "id": "i4c47",
+   "n": "47",
+   "e": "👨‍👩‍👧",
+   "t": false,
+   "q": "Excedencia por cuidado de hijos o familiares",
+   "a": "Máximo **3 años** por cada sujeto; computa a efectos de trienios; reserva del puesto **2 años**"
+  },
+  {
+   "id": "i4c48",
+   "n": "48",
+   "e": "🛟",
+   "t": false,
+   "q": "Excedencia por violencia de género: reserva y retribución",
+   "a": "Sin tiempo mínimo de servicios; reserva del puesto **6 meses** (prorrogable hasta **18**) y retribuciones íntegras los **2 primeros meses**"
+  },
+  {
+   "id": "i4c49",
+   "n": "49",
+   "e": "⛔",
+   "t": true,
+   "q": "Suspensión de funciones: límites",
+   "a": "Pierde el puesto si excede de **6 meses**; la suspensión firme por sanción disciplinaria no puede exceder de **6 años**"
+  },
+  {
+   "id": "i4c50",
+   "n": "50",
+   "e": "📕",
+   "t": true,
+   "q": "¿Qué ley regula las incompatibilidades del personal de las AAPP?",
+   "a": "La **Ley 53/1984**, de 26 de diciembre"
+  },
+  {
+   "id": "i4c51",
+   "n": "51",
+   "e": "2️⃣",
+   "t": false,
+   "q": "¿Puede un empleado público tener un segundo puesto en el sector público?",
+   "a": "Solo en casos tasados (**docente, sanitario**, interés público…) y con **autorización previa y expresa** de compatibilidad"
+  },
+  {
+   "id": "i4c52",
+   "n": "52",
+   "e": "🧮",
+   "t": false,
+   "q": "¿Cuándo puede reconocerse compatibilidad privada a quien cobra complemento específico?",
+   "a": "Si su cuantía **no supera el 30 %** de la retribución básica (sin antigüedad)"
+  },
+  {
+   "id": "i4c53",
+   "n": "53",
+   "e": "⚠️",
+   "t": false,
+   "q": "Tipos de responsabilidad en que puede incurrir un funcionario",
+   "a": "**Disciplinaria**, **penal** y **civil**"
+  },
+  {
+   "id": "i4c54",
+   "n": "54",
+   "e": "📙",
+   "t": false,
+   "q": "¿Qué reglamento disciplinario sigue aplicándose en la AGE?",
+   "a": "El **Real Decreto 33/1986**, de 10 de enero"
+  },
+  {
+   "id": "i4c55",
+   "n": "55",
+   "e": "⚖️",
+   "t": false,
+   "q": "Principios de la potestad disciplinaria (art. 94)",
+   "a": "**Legalidad y tipicidad**, **irretroactividad** de lo desfavorable, **proporcionalidad**, **culpabilidad** y **presunción de inocencia**"
+  },
+  {
+   "id": "i4c56",
+   "n": "56",
+   "e": "🚓",
+   "t": false,
+   "q": "¿Qué ocurre si en un expediente disciplinario aparecen indicios de delito?",
+   "a": "Se **suspende** la tramitación y se comunica al **Ministerio Fiscal**"
+  },
+  {
+   "id": "i4c57",
+   "n": "57",
+   "e": "🟢",
+   "t": false,
+   "q": "Ejemplos de faltas leves (art. 8 RD 33/1986)",
+   "a": "Incumplir el horario sin ser grave, **faltar un día** sin justificar, **incorrección** con el público o compañeros, **descuido o negligencia**"
+  },
+  {
+   "id": "i4c58",
+   "n": "58",
+   "e": "🟠",
+   "t": true,
+   "q": "Ejemplos de faltas graves",
+   "a": "**Abuso de autoridad**, falta de obediencia, incumplir la jornada **10 horas al mes**, la **3ª falta** injustificada en **3 meses**…"
+  },
+  {
+   "id": "i4c59",
+   "n": "59",
+   "e": "🔴",
+   "t": false,
+   "q": "¿Qué artículo del TREBEP enumera las faltas muy graves?",
+   "a": "El **artículo 95.2** (ej.: **abandono del servicio**, discriminación, acoso laboral, desobediencia abierta…)"
+  },
+  {
+   "id": "i4c60",
+   "n": "60",
+   "e": "🔨",
+   "t": true,
+   "q": "Sanciones del art. 96 TREBEP",
+   "a": "**Separación del servicio**, **despido disciplinario**, **suspensión firme** (máx. **6 años**), **traslado forzoso**, **demérito** y **apercibimiento**"
+  },
+  {
+   "id": "i4c61",
+   "n": "61",
+   "e": "🚪",
+   "t": false,
+   "q": "¿Qué faltas pueden sancionarse con separación del servicio?",
+   "a": "Solo las **muy graves** (en interinos supone la **revocación** del nombramiento)"
+  },
+  {
+   "id": "i4c62",
+   "n": "62",
+   "e": "🔍",
+   "t": true,
+   "q": "¿Qué ley regula la transparencia, el acceso a la información y el buen gobierno?",
+   "a": "La **Ley 19/2013**, de **9 de diciembre**"
+  },
+  {
+   "id": "i4c63",
+   "n": "63",
+   "e": "🧱",
+   "t": false,
+   "q": "Estructura de la Ley 19/2013",
+   "a": "Título preliminar, **Título I** (transparencia), **Título II** (buen gobierno) y **Título III** (Consejo de Transparencia y Buen Gobierno)"
+  },
+  {
+   "id": "i4c64",
+   "n": "64",
+   "e": "🏢",
+   "t": false,
+   "q": "¿Qué entidades privadas deben cumplir la publicidad activa? (art. 3)",
+   "a": "Partidos, sindicatos, organizaciones empresariales y entidades con más de **100.000 €** de ayudas al año o **40 %** de ingresos públicos (mínimo **5.000 €**)"
+  },
+  {
+   "id": "i4c65",
+   "n": "65",
+   "e": "📢",
+   "t": false,
+   "q": "¿Qué es la publicidad activa?",
+   "a": "Publicar **de forma periódica y actualizada** la información relevante sin que nadie la pida (cap. II del Título I)"
+  },
+  {
+   "id": "i4c66",
+   "n": "66",
+   "e": "💼",
+   "t": false,
+   "q": "Cita información económica que hay que publicar (art. 8)",
+   "a": "**Contratos**, **convenios**, **subvenciones**, **presupuestos**, cuentas, **retribuciones de altos cargos** y resoluciones de compatibilidad"
+  },
+  {
+   "id": "i4c67",
+   "n": "67",
+   "e": "🌐",
+   "t": false,
+   "q": "¿Qué portal desarrolla la AGE para la transparencia? (art. 10)",
+   "a": "El **Portal de la Transparencia**, dependiente del **Ministerio de la Presidencia**"
+  },
+  {
+   "id": "i4c68",
+   "n": "68",
+   "e": "🧩",
+   "t": false,
+   "q": "Principios técnicos del Portal de la Transparencia (art. 11)",
+   "a": "**Accesibilidad**, **interoperabilidad** y **reutilización**"
+  },
+  {
+   "id": "i4c69",
+   "n": "69",
+   "e": "🔑",
+   "t": false,
+   "q": "¿Qué artículo de la CE desarrolla el derecho de acceso a la información pública?",
+   "a": "El **artículo 105.b)** de la Constitución"
+  },
+  {
+   "id": "i4c70",
+   "n": "70",
+   "e": "🛑",
+   "t": false,
+   "q": "Cita límites al derecho de acceso (art. 14)",
+   "a": "**Seguridad nacional**, **defensa**, relaciones exteriores, seguridad pública, intereses económicos, secreto profesional, **medio ambiente**… (**12 límites**)"
+  },
+  {
+   "id": "i4c71",
+   "n": "71",
+   "e": "🙅",
+   "t": false,
+   "q": "¿Hay que motivar la solicitud de acceso a la información?",
+   "a": "**No**; la falta de motivación no es por sí sola causa de rechazo"
+  },
+  {
+   "id": "i4c72",
+   "n": "72",
+   "e": "❌",
+   "t": false,
+   "q": "Causas de inadmisión de una solicitud (art. 18)",
+   "a": "Información **en elaboración**, **auxiliar** (notas, borradores), que exige **reelaboración**, órgano que no la tiene, o solicitudes **repetitivas o abusivas**"
+  },
+  {
+   "id": "i4c73",
+   "n": "73",
+   "e": "📬",
+   "t": true,
+   "q": "Plazo para resolver una solicitud de acceso (art. 20)",
+   "a": "**Un mes**, ampliable **otro mes**; si no se resuelve, se entiende **desestimada**"
+  },
+  {
+   "id": "i4c74",
+   "n": "74",
+   "e": "⏲️",
+   "t": false,
+   "q": "Plazos de tramitación del art. 19",
+   "a": "Concretar la solicitud: **10 días**; alegaciones de terceros afectados: **15 días**"
+  },
+  {
+   "id": "i4c75",
+   "n": "75",
+   "e": "🆓",
+   "t": false,
+   "q": "¿Cuesta dinero acceder a la información pública?",
+   "a": "Es **gratuito**, salvo expedición de **copias** o cambio de formato"
+  },
+  {
+   "id": "i4c76",
+   "n": "76",
+   "e": "📨",
+   "t": true,
+   "q": "Reclamación ante el Consejo de Transparencia y Buen Gobierno (art. 24)",
+   "a": "**Potestativa**, en el plazo de **un mes**; el Consejo resuelve en **tres meses** (si no, **desestimada**)"
+  },
+  {
+   "id": "i4c77",
+   "n": "77",
+   "e": "🎩",
+   "t": false,
+   "q": "¿A quién se aplica el Título II (buen gobierno) en la AGE?",
+   "a": "A **miembros del Gobierno**, **Secretarios de Estado** y demás **altos cargos**"
+  },
+  {
+   "id": "i4c78",
+   "n": "78",
+   "e": "📢",
+   "t": false,
+   "q": "Sanciones a altos cargos por infracciones leves y graves (art. 30)",
+   "a": "Leves: **amonestación**; graves: **declaración del incumplimiento** publicada en el BOE y pérdida de la indemnización por cese"
+  },
+  {
+   "id": "i4c79",
+   "n": "79",
+   "e": "🚷",
+   "t": false,
+   "q": "Sanción por infracción muy grave de un alto cargo",
+   "a": "**Destitución** e imposibilidad de ser alto cargo entre **5 y 10 años**"
+  },
+  {
+   "id": "i4c80",
+   "n": "80",
+   "e": "⌛",
+   "t": true,
+   "q": "Prescripción de infracciones en el Título II (art. 32)",
+   "a": "Muy graves: **5 años**; graves: **3 años**; leves: **1 año**"
+  },
+  {
+   "id": "i4c81",
+   "n": "81",
+   "e": "🏛️",
+   "t": false,
+   "q": "Órganos del Consejo de Transparencia y Buen Gobierno (art. 35)",
+   "a": "La **Comisión de Transparencia y Buen Gobierno** y el **Presidente** (que también preside la Comisión)"
+  },
+  {
+   "id": "i4c82",
+   "n": "82",
+   "e": "👔",
+   "t": true,
+   "q": "¿Cómo se nombra al Presidente del Consejo de Transparencia?",
+   "a": "Por **Real Decreto**, para **5 años no renovables**, con refrendo del Congreso por **mayoría absoluta**"
+  },
+  {
+   "id": "i4c83",
+   "n": "83",
+   "e": "📚",
+   "t": false,
+   "q": "¿Qué presenta anualmente el Consejo a las Cortes Generales? (art. 40)",
+   "a": "Una **memoria** de actividades y del grado de cumplimiento de la ley"
+  },
+  {
+   "id": "i4c84",
+   "n": "84",
+   "e": "🚀",
+   "t": false,
+   "q": "Entrada en vigor de la Ley 19/2013",
+   "a": "Título II: **al día siguiente** de su publicación; Títulos preliminar, I y III: **al año**; CCAA y EELL: **2 años** para adaptarse"
+  },
+  {
+   "id": "i4c85",
+   "n": "85",
+   "e": "🌱",
+   "t": false,
+   "q": "¿Cuándo se aprobó la Agenda 2030?",
+   "a": "En la Asamblea General de la ONU el **25 de septiembre de 2015**; rige desde el **1 de enero de 2016**"
+  },
+  {
+   "id": "i4c86",
+   "n": "86",
+   "e": "🎯",
+   "t": true,
+   "q": "¿Cuántos objetivos y metas tiene la Agenda 2030?",
+   "a": "**17 Objetivos de Desarrollo Sostenible** y **169 metas**"
+  },
+  {
+   "id": "i4c87",
+   "n": "87",
+   "e": "🌎",
+   "t": false,
+   "q": "Esferas (las 5 P) de la Agenda 2030",
+   "a": "**Personas**, **planeta**, **prosperidad**, **paz** y **alianzas**"
+  },
+  {
+   "id": "i4c88",
+   "n": "88",
+   "e": "🌿",
+   "t": false,
+   "q": "¿Cómo se define el desarrollo sostenible?",
+   "a": "Satisfacer las necesidades del **presente** sin comprometer las de las **generaciones futuras**"
+  },
+  {
+   "id": "i4c89",
+   "n": "89",
+   "e": "1️⃣",
+   "t": false,
+   "q": "ODS 1, 5 y 13",
+   "a": "ODS 1: **fin de la pobreza**; ODS 5: **igualdad de género**; ODS 13: **acción por el clima**"
+  },
+  {
+   "id": "i4c90",
+   "n": "90",
+   "e": "🕊️",
+   "t": false,
+   "q": "ODS 16 y 17",
+   "a": "ODS 16: **paz, justicia e instituciones sólidas**; ODS 17: **alianzas** para lograr los objetivos"
+  }
+ ]
+}

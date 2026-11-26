@@ -1,0 +1,609 @@
+{
+ "tema": "I-9",
+ "cards": [
+  {
+   "id": "i9c1",
+   "n": "1",
+   "e": "📲",
+   "t": false,
+   "q": "¿Quién puede elegir si se relaciona con la Administración por medios electrónicos o no?",
+   "a": "Las **personas físicas** (art. **14.1 Ley 39/2015**), y pueden cambiar de medio en cualquier momento",
+   "h": "Salvo que estén obligadas"
+  },
+  {
+   "id": "i9c2",
+   "n": "2",
+   "e": "🏢",
+   "t": true,
+   "q": "¿Quiénes están obligados a relacionarse electrónicamente con la Administración? (art. 14.2)",
+   "a": "**Personas jurídicas**, **entidades sin personalidad jurídica**, profesionales con **colegiación obligatoria**, **representantes** de obligados y **empleados públicos** (por su condición)",
+   "h": "5 colectivos"
+  },
+  {
+   "id": "i9c3",
+   "n": "3",
+   "e": "⚖️",
+   "t": false,
+   "q": "¿Qué profesionales colegiados se citan expresamente como obligados?",
+   "a": "Los **notarios** y los **registradores** de la propiedad y mercantiles"
+  },
+  {
+   "id": "i9c4",
+   "n": "4",
+   "e": "📑",
+   "t": false,
+   "q": "¿Puede un reglamento obligar a ciertas personas físicas a usar medios electrónicos?",
+   "a": "**Sí** (art. 14.3), para colectivos que por **capacidad económica, técnica o dedicación profesional** tengan acceso a esos medios"
+  },
+  {
+   "id": "i9c5",
+   "n": "5",
+   "e": "📅",
+   "t": false,
+   "q": "¿Desde cuándo producen efectos el registro electrónico, el PAG y el archivo único electrónico?",
+   "a": "Desde el **2 de abril de 2021** (disposición final 7ª Ley 39/2015)"
+  },
+  {
+   "id": "i9c6",
+   "n": "6",
+   "e": "📄",
+   "t": false,
+   "q": "¿Cómo emite la Administración sus documentos? (art. 26 Ley 39/2015)",
+   "a": "Por **escrito**, a través de **medios electrónicos**, salvo que su naturaleza exija otra forma"
+  },
+  {
+   "id": "i9c7",
+   "n": "7",
+   "e": "🧾",
+   "t": false,
+   "q": "Requisitos de un documento electrónico administrativo válido",
+   "a": "Información en soporte electrónico con **formato**, **datos de identificación**, **referencia temporal**, **metadatos mínimos** y **firmas** que correspondan"
+  },
+  {
+   "id": "i9c8",
+   "n": "8",
+   "e": "✍️",
+   "t": false,
+   "q": "¿Qué documentos electrónicos de la Administración NO necesitan firma?",
+   "a": "Los meramente **informativos** y los que **no forman parte de un expediente** (pero hay que identificar su **origen**)"
+  },
+  {
+   "id": "i9c9",
+   "n": "9",
+   "e": "🌐",
+   "t": true,
+   "q": "¿Dónde se define la sede electrónica?",
+   "a": "En el **art. 38 de la Ley 40/2015**, de Régimen Jurídico del Sector Público"
+  },
+  {
+   "id": "i9c10",
+   "n": "10",
+   "e": "🏛️",
+   "t": false,
+   "q": "¿Qué es la sede electrónica?",
+   "a": "Una **dirección electrónica** disponible para los ciudadanos cuya **titularidad** corresponde a una **Administración Pública** u organismo público"
+  },
+  {
+   "id": "i9c11",
+   "n": "11",
+   "e": "🛡️",
+   "t": false,
+   "q": "¿De qué es responsable el titular de una sede electrónica?",
+   "a": "De la **integridad**, **veracidad** y **actualización** de la información y servicios"
+  },
+  {
+   "id": "i9c12",
+   "n": "12",
+   "e": "🧭",
+   "t": false,
+   "q": "Principios para crear sedes electrónicas (art. 38.3)",
+   "a": "**Transparencia, publicidad, responsabilidad, calidad, seguridad, disponibilidad, accesibilidad, neutralidad e interoperabilidad**"
+  },
+  {
+   "id": "i9c13",
+   "n": "13",
+   "e": "🔐",
+   "t": false,
+   "q": "¿Con qué se identifican las sedes electrónicas para garantizar una comunicación segura?",
+   "a": "Con **certificados reconocidos o cualificados de autenticación de sitio web** o medio equivalente"
+  },
+  {
+   "id": "i9c14",
+   "n": "14",
+   "e": "📘",
+   "t": true,
+   "q": "¿Qué reglamento desarrolla las Leyes 39 y 40/2015 en la actuación electrónica del sector público?",
+   "a": "El **Real Decreto 203/2021**, de **30 de marzo**"
+  },
+  {
+   "id": "i9c15",
+   "n": "15",
+   "e": "🗑️",
+   "t": false,
+   "q": "¿Qué norma derogó el RD 203/2021?",
+   "a": "El **RD 1671/2009**, que desarrollaba la **Ley 11/2007** de acceso electrónico"
+  },
+  {
+   "id": "i9c16",
+   "n": "16",
+   "e": "🔗",
+   "t": false,
+   "q": "¿Qué es una sede electrónica asociada?",
+   "a": "Una sede creada vinculada a otra por razones **técnicas y organizativas**; tiene consideración de **sede electrónica a todos los efectos** (art. **10 RD 203/2021**)"
+  },
+  {
+   "id": "i9c17",
+   "n": "17",
+   "e": "📰",
+   "t": false,
+   "q": "¿Dónde se publica la creación de una sede electrónica?",
+   "a": "En el **boletín oficial** que corresponda (entidades locales: el de la **provincia**) y en el directorio del **PAGe**"
+  },
+  {
+   "id": "i9c18",
+   "n": "18",
+   "e": "✒️",
+   "t": false,
+   "q": "En el Estado, ¿cómo se crea una sede asociada al PAGe o de un organismo público?",
+   "a": "Por **orden** del titular del Departamento o **resolución** del Presidente/Director del organismo, con informe previo favorable de los ministerios competentes"
+  },
+  {
+   "id": "i9c19",
+   "n": "19",
+   "e": "📋",
+   "t": false,
+   "q": "¿Qué artículo del RD 203/2021 fija el contenido mínimo y servicios de la sede?",
+   "a": "El **artículo 11**"
+  },
+  {
+   "id": "i9c20",
+   "n": "20",
+   "e": "🕒",
+   "t": false,
+   "q": "Cita contenidos mínimos de una sede electrónica",
+   "a": "Identificación del titular, acto de creación, sistemas de **identificación y firma** admitidos, normativa del **Registro**, **fecha y hora oficial** y **calendario de días inhábiles**, incidencias técnicas…"
+  },
+  {
+   "id": "i9c21",
+   "n": "21",
+   "e": "🤖",
+   "t": false,
+   "q": "¿Qué debe publicar la sede sobre las actuaciones automatizadas?",
+   "a": "Una **relación actualizada**, con su diseño y funcionamiento, rendición de cuentas y **datos usados en su configuración y aprendizaje**"
+  },
+  {
+   "id": "i9c22",
+   "n": "22",
+   "e": "✅",
+   "t": false,
+   "q": "Cita servicios mínimos de una sede electrónica",
+   "a": "Acceso a trámites (con **plazos máximos**), **quejas y sugerencias**, verificación de **certificados** y **sellos**, comprobación de documentos con **CSV**, directorio de **oficinas de registro**…"
+  },
+  {
+   "id": "i9c23",
+   "n": "23",
+   "e": "🔢",
+   "t": false,
+   "q": "¿Qué listado debe mantener cada Administración en su sede (art. 66.1 Ley 39/2015)?",
+   "a": "Los **códigos de identificación** vigentes de sus órganos, centros o unidades"
+  },
+  {
+   "id": "i9c24",
+   "n": "24",
+   "e": "👤",
+   "t": false,
+   "q": "Si una sede enlaza a otra sede, ¿quién responde del contenido de la segunda?",
+   "a": "El **titular de la sede enlazada** (art. **12 RD 203/2021**)"
+  },
+  {
+   "id": "i9c25",
+   "n": "25",
+   "e": "⏰",
+   "t": false,
+   "q": "Plazos por horas en la Ley 39/2015 (art. 30)",
+   "a": "Son horas **hábiles**, se cuentan de hora en hora y minuto en minuto y no pueden superar **24 horas** (si no, se expresan en días)"
+  },
+  {
+   "id": "i9c26",
+   "n": "26",
+   "e": "📆",
+   "t": false,
+   "q": "Plazos por días: ¿qué días se excluyen?",
+   "a": "Los **sábados**, **domingos** y **festivos** (los días son hábiles salvo que se diga otra cosa)"
+  },
+  {
+   "id": "i9c27",
+   "n": "27",
+   "e": "🗓️",
+   "t": false,
+   "q": "¿Qué pasa si el último día del plazo es inhábil?",
+   "a": "Se **prorroga al primer día hábil siguiente**"
+  },
+  {
+   "id": "i9c28",
+   "n": "28",
+   "e": "🏙️",
+   "t": false,
+   "q": "Día hábil en el municipio del interesado pero inhábil en la sede del órgano (o al revés)",
+   "a": "Se considera **inhábil en todo caso**"
+  },
+  {
+   "id": "i9c29",
+   "n": "29",
+   "e": "🖥️",
+   "t": false,
+   "q": "¿Dónde se define el portal de Internet?",
+   "a": "En el **art. 39 de la Ley 40/2015**: punto de acceso electrónico de una Administración para acceder a la información publicada y, en su caso, a la sede"
+  },
+  {
+   "id": "i9c30",
+   "n": "30",
+   "e": "🚪",
+   "t": false,
+   "q": "Artículos de la Ley 39/2015 que mencionan el punto de acceso general",
+   "a": "Art. **13** (derecho a comunicarse por él), art. **43** (acceso a notificaciones) y art. **53** (consultar estado del procedimiento)"
+  },
+  {
+   "id": "i9c31",
+   "n": "31",
+   "e": "🗂️",
+   "t": false,
+   "q": "Funciones del punto de acceso general según el catálogo de la SGAD (2018)",
+   "a": "Orientar al ciudadano, ayudar a **crear empresas**, dar acceso al **catálogo de procedimientos**, fomentar la tramitación electrónica y la **participación**"
+  },
+  {
+   "id": "i9c32",
+   "n": "32",
+   "e": "🏠",
+   "t": false,
+   "q": "¿Qué artículo del RD 203/2021 regula el Punto de Acceso General electrónico (PAGe)?",
+   "a": "El **artículo 7**"
+  },
+  {
+   "id": "i9c33",
+   "n": "33",
+   "e": "👥",
+   "t": false,
+   "q": "¿Qué es el área personalizada de la sede del PAGe?",
+   "a": "Un espacio donde cada interesado accede a su **información**, al **seguimiento de sus trámites** y a sus **notificaciones**"
+  },
+  {
+   "id": "i9c34",
+   "n": "34",
+   "e": "📬",
+   "t": true,
+   "q": "¿Qué está alojado en la sede electrónica del PAGe de la AGE?",
+   "a": "La **Dirección Electrónica Habilitada única (DEHú)** del art. **43 Ley 39/2015**"
+  },
+  {
+   "id": "i9c35",
+   "n": "35",
+   "e": "📜",
+   "t": true,
+   "q": "¿Qué orden regula el PAG de la AGE y crea su sede electrónica?",
+   "a": "La **Orden HAP/1949/2014**, de **13 de octubre**"
+  },
+  {
+   "id": "i9c36",
+   "n": "36",
+   "e": "🔤",
+   "t": false,
+   "q": "Dominios del PAG",
+   "a": "**administracion.es** y **administracion.gob.es**"
+  },
+  {
+   "id": "i9c37",
+   "n": "37",
+   "e": "☎️",
+   "t": false,
+   "q": "Canales de acceso al PAG del Estado",
+   "a": "**Internet**, atención **presencial** en oficinas 060 (María Molina, 50, Madrid) y atención **telefónica** en el **060**"
+  },
+  {
+   "id": "i9c38",
+   "n": "38",
+   "e": "🆔",
+   "t": true,
+   "q": "Diferencia entre identificación y firma",
+   "a": "La **identificación** solo acredita **quién eres**; la **firma** declara que **conoces y aceptas** el contenido de un documento (y ya implica identificación)"
+  },
+  {
+   "id": "i9c39",
+   "n": "39",
+   "e": "📚",
+   "t": false,
+   "q": "¿Qué artículos de la Ley 39/2015 regulan identificación y firma de los interesados?",
+   "a": "Arts. **9 a 12** (capítulo II del título I)"
+  },
+  {
+   "id": "i9c40",
+   "n": "40",
+   "e": "🔎",
+   "t": true,
+   "q": "Sistemas de identificación electrónica de los interesados (art. 9)",
+   "a": "a) **certificados cualificados de firma**, b) **certificados cualificados de sello** (de prestadores de la **Lista de confianza**) y c) otros sistemas con **registro previo** de usuario"
+  },
+  {
+   "id": "i9c41",
+   "n": "41",
+   "e": "⏳",
+   "t": false,
+   "q": "Sistemas de la letra c) del art. 9: ¿cuánto tiempo hay que esperar tras comunicarlos a la SGAD?",
+   "a": "**Dos meses** antes de su eficacia jurídica (el informe de la Secretaría de Estado de Seguridad, en **10 días**)",
+   "h": "Modificado por la Ley 11/2022"
+  },
+  {
+   "id": "i9c42",
+   "n": "42",
+   "e": "🇪🇺",
+   "t": false,
+   "q": "¿Dónde deben estar los recursos técnicos de los sistemas de la letra c)?",
+   "a": "En territorio de la **Unión Europea** (y en **España** si son categorías especiales de datos)"
+  },
+  {
+   "id": "i9c43",
+   "n": "43",
+   "e": "🔁",
+   "t": false,
+   "q": "¿Qué efecto tiene que la AGE acepte un sistema de identificación?",
+   "a": "Sirve para acreditar la identificación frente a **todas las Administraciones**, salvo prueba en contrario"
+  },
+  {
+   "id": "i9c44",
+   "n": "44",
+   "e": "📕",
+   "t": true,
+   "q": "¿Qué norma derogó la Ley 59/2003 de Firma Electrónica?",
+   "a": "La **Ley 6/2020**, de 11 de noviembre, de servicios electrónicos de confianza"
+  },
+  {
+   "id": "i9c45",
+   "n": "45",
+   "e": "🇪🇺",
+   "t": true,
+   "q": "¿Qué reglamento europeo regula la identificación electrónica y los servicios de confianza (eIDAS)?",
+   "a": "El **Reglamento (UE) 910/2014**, de 23 de julio, aplicable desde el **1 de julio de 2016**"
+  },
+  {
+   "id": "i9c46",
+   "n": "46",
+   "e": "🖋️",
+   "t": false,
+   "q": "Requisitos de la firma electrónica avanzada",
+   "a": "Vinculada al firmante de forma **única**, permite **identificarlo**, creada bajo su **control exclusivo** y detecta cualquier **modificación** posterior"
+  },
+  {
+   "id": "i9c47",
+   "n": "47",
+   "e": "🏅",
+   "t": true,
+   "q": "¿Qué es la firma electrónica cualificada?",
+   "a": "Una firma **avanzada** creada con un **dispositivo cualificado** de creación de firma y basada en un **certificado cualificado**"
+  },
+  {
+   "id": "i9c48",
+   "n": "48",
+   "e": "💳",
+   "t": false,
+   "q": "Ejemplos de firma electrónica, avanzada y reconocida",
+   "a": "Simple: **claves de acceso**; avanzada: el **hash**; reconocida: el **DNI-e**"
+  },
+  {
+   "id": "i9c49",
+   "n": "49",
+   "e": "📇",
+   "t": false,
+   "q": "¿Qué es un certificado electrónico?",
+   "a": "Documento firmado por un **prestador de servicios de certificación** que vincula datos de verificación de firma a un firmante y confirma su **identidad**"
+  },
+  {
+   "id": "i9c50",
+   "n": "50",
+   "e": "🏷️",
+   "t": true,
+   "q": "¿Qué usan las personas jurídicas según eIDAS en lugar de firma?",
+   "a": "El **sello electrónico** (acredita **origen** e **integridad**); eIDAS no les reconoce firma propiamente"
+  },
+  {
+   "id": "i9c51",
+   "n": "51",
+   "e": "✍️",
+   "t": false,
+   "q": "¿Qué artículo de la Ley 39/2015 regula los sistemas de firma admitidos?",
+   "a": "El **artículo 10**"
+  },
+  {
+   "id": "i9c52",
+   "n": "52",
+   "e": "🪪",
+   "t": false,
+   "q": "Si el interesado usa un sistema de firma, ¿hace falta acreditar además su identidad?",
+   "a": "**No**: la identidad se entiende acreditada con el **propio acto de la firma**"
+  },
+  {
+   "id": "i9c53",
+   "n": "53",
+   "e": "🖊️",
+   "t": true,
+   "q": "¿Para qué exige la Administración la firma obligatoriamente? (art. 11)",
+   "a": "Para **formular solicitudes**, presentar **declaraciones responsables** o comunicaciones, **interponer recursos**, **desistir** de acciones y **renunciar** a derechos",
+   "h": "Fuera de esto basta identificarse"
+  },
+  {
+   "id": "i9c54",
+   "n": "54",
+   "e": "🤝",
+   "t": false,
+   "q": "Si un interesado no tiene medios electrónicos, ¿quién puede firmar por él? (art. 12)",
+   "a": "Un **funcionario público habilitado**, con identificación y **consentimiento expreso** del interesado"
+  },
+  {
+   "id": "i9c55",
+   "n": "55",
+   "e": "📒",
+   "t": false,
+   "q": "¿Qué registro deben mantener las Administraciones según el art. 12?",
+   "a": "Un registro de **funcionarios habilitados** para identificación o firma (al menos los de las **oficinas de asistencia en registros**)"
+  },
+  {
+   "id": "i9c56",
+   "n": "56",
+   "e": "🏛️",
+   "t": false,
+   "q": "¿Cómo se identifican las Administraciones? (art. 40 Ley 40/2015)",
+   "a": "Con un **sello electrónico** basado en certificado cualificado (incluye **NIF** y denominación); y se entienden identificadas en lo que publican en su **portal**"
+  },
+  {
+   "id": "i9c57",
+   "n": "57",
+   "e": "⚙️",
+   "t": true,
+   "q": "¿Qué es la actuación administrativa automatizada? (art. 41 Ley 40/2015)",
+   "a": "Acto realizado **íntegramente por medios electrónicos** sin intervención **directa de un empleado público**"
+  },
+  {
+   "id": "i9c58",
+   "n": "58",
+   "e": "🔏",
+   "t": true,
+   "q": "Sistemas de firma para la actuación automatizada (art. 42 Ley 40/2015)",
+   "a": "**Sello electrónico** de la Administración y **Código Seguro de Verificación (CSV)**"
+  },
+  {
+   "id": "i9c59",
+   "n": "59",
+   "e": "🔣",
+   "t": false,
+   "q": "¿Qué es el Código Seguro de Verificación (CSV)?",
+   "a": "Un **código alfanumérico irrepetible** que permite cotejar una copia con el original en la **sede electrónica**"
+  },
+  {
+   "id": "i9c60",
+   "n": "60",
+   "e": "👩‍💼",
+   "t": false,
+   "q": "Firma del personal de las AAPP (art. 43 Ley 40/2015)",
+   "a": "La fija cada Administración; por **seguridad pública** puede referirse solo al **número de identificación profesional**"
+  },
+  {
+   "id": "i9c61",
+   "n": "61",
+   "e": "🔒",
+   "t": false,
+   "q": "Entornos cerrados de comunicación (art. 44): ¿cómo se fijan las garantías entre distintas Administraciones?",
+   "a": "Mediante **convenio**"
+  },
+  {
+   "id": "i9c62",
+   "n": "62",
+   "e": "🧷",
+   "t": false,
+   "q": "¿Qué puede superponer una Administración para favorecer la interoperabilidad de la firma? (art. 45)",
+   "a": "Un **sello electrónico** basado en certificado cualificado"
+  },
+  {
+   "id": "i9c63",
+   "n": "63",
+   "e": "🔑",
+   "t": true,
+   "q": "¿Cuándo se aprobó el sistema Cl@ve?",
+   "a": "Por **Acuerdo del Consejo de Ministros** de **19 de septiembre de 2014**"
+  },
+  {
+   "id": "i9c64",
+   "n": "64",
+   "e": "🧩",
+   "t": false,
+   "q": "¿Qué es Cl@ve?",
+   "a": "Plataforma **común e interoperable** de **identificación, autenticación y firma**; complementa al **DNI-e** y al certificado"
+  },
+  {
+   "id": "i9c65",
+   "n": "65",
+   "e": "🛡️",
+   "t": false,
+   "q": "¿En qué se basa Cl@ve para fijar el nivel de aseguramiento?",
+   "a": "En el **Esquema Nacional de Seguridad** (**RD 311/2022**)"
+  },
+  {
+   "id": "i9c66",
+   "n": "66",
+   "e": "📱",
+   "t": true,
+   "q": "¿Qué es Cl@ve PIN (ocasional)?",
+   "a": "Para **usos puntuales**: un PIN de **validez muy limitada** enviado por la **app** o por **SMS**; equivale al **PIN24H de la AEAT**"
+  },
+  {
+   "id": "i9c67",
+   "n": "67",
+   "e": "♾️",
+   "t": true,
+   "q": "¿Qué es Cl@ve permanente?",
+   "a": "Para **usuarios habituales**: **usuario y contraseña** de validez duradera (no ilimitada), reforzado con **OTP por SMS** si se exige más seguridad"
+  },
+  {
+   "id": "i9c68",
+   "n": "68",
+   "e": "🕸️",
+   "t": false,
+   "q": "Elementos de la federación de identidades de Cl@ve",
+   "a": "**Proveedores de servicios (SP)**, **proveedores de identidad (IdP)** y la **pasarela / gestor de identificación**"
+  },
+  {
+   "id": "i9c69",
+   "n": "69",
+   "e": "☁️",
+   "t": false,
+   "q": "¿Qué es Cl@ve firma?",
+   "a": "Firma con **certificados centralizados en la nube**, custodiados por la Administración; basta con **conexión a Internet**"
+  },
+  {
+   "id": "i9c70",
+   "n": "70",
+   "e": "🪜",
+   "t": false,
+   "q": "Pasos previos para usar Cl@ve firma",
+   "a": "**Registro de nivel avanzado**, **activación de Cl@ve permanente** y **generación del certificado**"
+  },
+  {
+   "id": "i9c71",
+   "n": "71",
+   "e": "👮",
+   "t": true,
+   "q": "¿Quién emite y custodia los certificados de Cl@ve firma?",
+   "a": "La **Dirección General de la Policía (DGP)**; la **GISS** guarda una copia de seguridad"
+  },
+  {
+   "id": "i9c72",
+   "n": "72",
+   "e": "📲",
+   "t": false,
+   "q": "¿Qué modalidad de Cl@ve se usa para firmar?",
+   "a": "La **Cl@ve permanente reforzada**: usuario, contraseña y **OTP por SMS**"
+  },
+  {
+   "id": "i9c73",
+   "n": "73",
+   "e": "🔄",
+   "t": false,
+   "q": "¿Hacer un duplicado del DNI revoca los certificados de Cl@ve firma?",
+   "a": "**No necesariamente**; pueden mantenerse los ya emitidos"
+  },
+  {
+   "id": "i9c74",
+   "n": "74",
+   "e": "🏗️",
+   "t": false,
+   "q": "¿Qué órgano impulsa la racionalización TIC y los servicios comunes en la AGE?",
+   "a": "La **Secretaría General de Administración Digital (SGAD)**, con rango de **subsecretaría**"
+  },
+  {
+   "id": "i9c75",
+   "n": "75",
+   "e": "🗃️",
+   "t": false,
+   "q": "Categorías del Catálogo de Servicios de Administración Digital",
+   "a": "**Administración digital y servicios al ciudadano**, **gestión interna**, **infraestructuras** y **regulación, guías e informes**"
+  }
+ ]
+}

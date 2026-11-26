@@ -45,10 +45,11 @@
   "orden": 4,
   "titulo": "Estatuto Básico del Empleado Público, Ley de transparencia y Agenda 2030",
   "semana": "2026-12-07",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 154,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-5",
@@ -105,10 +106,11 @@
   "orden": 9,
   "titulo": "Sedes electrónicas, canales, identificación, autenticación e infraestructuras comunes",
   "semana": "2027-01-04",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 34,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "II-1",

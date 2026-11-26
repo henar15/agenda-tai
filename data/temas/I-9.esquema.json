@@ -1,0 +1,80 @@
+{
+ "tema": "I-9",
+ "ramas": [
+  {
+   "t": "Derecho y deber electrónico",
+   "e": "📲",
+   "items": [
+    "Personas físicas: **eligen** el medio (art. 14.1)",
+    "Obligados: **personas jurídicas**, colegiados, empleados…",
+    "Documentos por **escrito electrónico** (art. 26)",
+    "Efectos de registro y PAG: **2 de abril de 2021**"
+   ]
+  },
+  {
+   "t": "Sede electrónica",
+   "e": "🌐",
+   "items": [
+    "Definición: **art. 38 Ley 40/2015**",
+    "Desarrollo: **RD 203/2021** (arts. 10-12)",
+    "Sede asociada = sede **a todos los efectos**",
+    "Titular responde de **integridad y veracidad**",
+    "Muestra **fecha y hora oficial** y días inhábiles"
+   ]
+  },
+  {
+   "t": "Portal y PAG",
+   "e": "🚪",
+   "items": [
+    "Portal de Internet: **art. 39 Ley 40/2015**",
+    "PAGe: **art. 7 RD 203/2021**",
+    "Orden **HAP/1949/2014** crea la sede del PAG",
+    "Aloja la **DEHú** (art. 43 Ley 39/2015)",
+    "Canales: Internet, oficinas **060** y teléfono **060**"
+   ]
+  },
+  {
+   "t": "Identificación y firma",
+   "e": "🆔",
+   "items": [
+    "Identificar = **quién eres**; firmar = **aceptas**",
+    "Arts. **9 a 12 Ley 39/2015**",
+    "Certificados de **Lista de confianza** + otros sistemas",
+    "Firma obligatoria: solicitudes, recursos, desistir, renunciar",
+    "Sin medios: firma un **funcionario habilitado**"
+   ]
+  },
+  {
+   "t": "Firma electrónica",
+   "e": "🖋️",
+   "items": [
+    "**eIDAS**: Reglamento (UE) **910/2014**",
+    "**Ley 6/2020** derogó la Ley 59/2003",
+    "Avanzada: única, identifica, control exclusivo",
+    "Cualificada: avanzada + **certificado cualificado**",
+    "Personas jurídicas: **sello electrónico**"
+   ]
+  },
+  {
+   "t": "Firma de las AAPP",
+   "e": "🏛️",
+   "items": [
+    "Se identifican con **sello electrónico** (art. 40)",
+    "Automatizada: **sin empleado público** (art. 41)",
+    "Firma automatizada: **sello** o **CSV** (art. 42)",
+    "CSV: código **alfanumérico irrepetible**"
+   ]
+  },
+  {
+   "t": "Cl@ve y SGAD",
+   "e": "🔑",
+   "items": [
+    "Aprobado el **19 de septiembre de 2014**",
+    "**PIN**: puntual, SMS o app (= PIN24H)",
+    "**Permanente**: usuario + contraseña + OTP",
+    "**Cl@ve firma**: certificados en la nube (DGP)",
+    "**SGAD**: catálogo de servicios comunes"
+   ]
+  }
+ ]
+}

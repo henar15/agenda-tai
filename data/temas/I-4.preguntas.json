@@ -1,0 +1,330 @@
+{
+ "tema": "I-4",
+ "preguntas": [
+  {
+   "id": "i4-01",
+   "tipico": true,
+   "q": "El texto refundido del EBEP se aprobó por…",
+   "opts": [
+    "Ley 7/2007",
+    "Real Decreto Legislativo 5/2015",
+    "Ley 53/1984",
+    "Real Decreto 33/1986"
+   ],
+   "c": 1,
+   "exp": "RDLeg 5/2015, de 30 de octubre."
+  },
+  {
+   "id": "i4-02",
+   "tipico": true,
+   "q": "Los derechos individuales ejercidos colectivamente se recogen en el art.…",
+   "opts": [
+    "15",
+    "14",
+    "46",
+    "52"
+   ],
+   "c": 0,
+   "exp": "Art. 15: libertad sindical, negociación, huelga, conflictos y reunión."
+  },
+  {
+   "id": "i4-03",
+   "tipico": false,
+   "q": "Pueden convocar una reunión los empleados públicos en número no inferior al…",
+   "opts": [
+    "10 %",
+    "25 %",
+    "50 %",
+    "40 %"
+   ],
+   "c": 3,
+   "exp": "Art. 46 TREBEP: al menos el 40 % del colectivo."
+  },
+  {
+   "id": "i4-04",
+   "tipico": true,
+   "q": "Una unidad electoral con 35 funcionarios elige…",
+   "opts": [
+    "Un delegado de personal",
+    "Una junta de personal",
+    "Tres delegados de personal",
+    "Un comité de empresa"
+   ],
+   "c": 2,
+   "exp": "De 31 a 49, tres delegados; la junta exige 50."
+  },
+  {
+   "id": "i4-05",
+   "tipico": true,
+   "q": "NO es materia excluida de la obligatoriedad de negociar…",
+   "opts": [
+    "Las potestades de organización",
+    "El calendario laboral",
+    "Las condiciones del personal directivo",
+    "Los poderes de dirección y control"
+   ],
+   "c": 1,
+   "exp": "El calendario sí es materia negociable (art. 37.1)."
+  },
+  {
+   "id": "i4-06",
+   "tipico": true,
+   "q": "Las vacaciones anuales de los funcionarios son…",
+   "opts": [
+    "22 días hábiles",
+    "22 días naturales",
+    "30 días hábiles",
+    "1 mes natural"
+   ],
+   "c": 0,
+   "exp": "22 días hábiles; los sábados no cuentan como hábiles."
+  },
+  {
+   "id": "i4-07",
+   "tipico": true,
+   "q": "El permiso por matrimonio es de…",
+   "opts": [
+    "5 días hábiles",
+    "10 días",
+    "20 días",
+    "15 días"
+   ],
+   "c": 3,
+   "exp": "Quince días (naturales)."
+  },
+  {
+   "id": "i4-08",
+   "tipico": false,
+   "q": "Por fallecimiento de un familiar de 2º grado en distinta localidad corresponden…",
+   "opts": [
+    "2 días hábiles",
+    "3 días hábiles",
+    "4 días hábiles",
+    "5 días hábiles"
+   ],
+   "c": 2,
+   "exp": "2º grado: 2 días misma localidad, 4 distinta."
+  },
+  {
+   "id": "i4-09",
+   "tipico": true,
+   "q": "El permiso por nacimiento de la madre biológica dura…",
+   "opts": [
+    "12 semanas",
+    "16 semanas",
+    "18 semanas",
+    "20 semanas"
+   ],
+   "c": 1,
+   "exp": "16 semanas, 6 de descanso obligatorio."
+  },
+  {
+   "id": "i4-10",
+   "tipico": false,
+   "q": "El permiso parental para cuidado de hijo menor de 8 años tiene una duración máxima de…",
+   "opts": [
+    "8 semanas",
+    "4 semanas",
+    "12 semanas",
+    "16 semanas"
+   ],
+   "c": 0,
+   "exp": "Máximo 8 semanas, intransferible."
+  },
+  {
+   "id": "i4-11",
+   "tipico": true,
+   "q": "Los principios éticos de los empleados públicos se regulan en el art.…",
+   "opts": [
+    "52",
+    "54",
+    "95",
+    "53"
+   ],
+   "c": 3,
+   "exp": "Ética art. 53; conducta art. 54."
+  },
+  {
+   "id": "i4-12",
+   "tipico": true,
+   "q": "El procedimiento normal de provisión de puestos es…",
+   "opts": [
+    "La libre designación",
+    "La comisión de servicios",
+    "El concurso",
+    "La permuta"
+   ],
+   "c": 2,
+   "exp": "El concurso; la libre designación es discrecional."
+  },
+  {
+   "id": "i4-13",
+   "tipico": false,
+   "q": "Para la promoción interna se exige una antigüedad mínima en el subgrupo inferior de…",
+   "opts": [
+    "Un año",
+    "Dos años",
+    "Tres años",
+    "Cinco años"
+   ],
+   "c": 1,
+   "exp": "Al menos dos años de servicio activo."
+  },
+  {
+   "id": "i4-14",
+   "tipico": true,
+   "q": "Un funcionario nombrado Diputado de las Cortes Generales pasa a…",
+   "opts": [
+    "Servicios especiales",
+    "Excedencia voluntaria",
+    "Servicio en otras AAPP",
+    "Suspensión de funciones"
+   ],
+   "c": 0,
+   "exp": "Servicios especiales."
+  },
+  {
+   "id": "i4-15",
+   "tipico": true,
+   "q": "La excedencia voluntaria por interés particular exige haber prestado servicios durante…",
+   "opts": [
+    "1 año",
+    "3 años",
+    "10 años",
+    "5 años"
+   ],
+   "c": 3,
+   "exp": "Cinco años inmediatamente anteriores."
+  },
+  {
+   "id": "i4-16",
+   "tipico": false,
+   "q": "La suspensión de funciones supone la pérdida del puesto cuando excede de…",
+   "opts": [
+    "3 meses",
+    "1 año",
+    "6 meses",
+    "6 años"
+   ],
+   "c": 2,
+   "exp": "Más de 6 meses; la firme por sanción no supera 6 años."
+  },
+  {
+   "id": "i4-17",
+   "tipico": true,
+   "q": "Es incompatible la participación en empresas contratistas del sector público superior al…",
+   "opts": [
+    "5 %",
+    "10 %",
+    "25 %",
+    "50 %"
+   ],
+   "c": 1,
+   "exp": "Art. 12.1.d) Ley 53/1984."
+  },
+  {
+   "id": "i4-18",
+   "tipico": true,
+   "q": "Faltar al trabajo un día sin justificación es falta…",
+   "opts": [
+    "Leve",
+    "Grave",
+    "Muy grave",
+    "No es falta"
+   ],
+   "c": 0,
+   "exp": "Falta leve (art. 8 RD 33/1986)."
+  },
+  {
+   "id": "i4-19",
+   "tipico": false,
+   "q": "El abuso de autoridad en el ejercicio del cargo es falta…",
+   "opts": [
+    "Leve",
+    "Muy grave",
+    "Solo penal",
+    "Grave"
+   ],
+   "c": 3,
+   "exp": "Falta grave."
+  },
+  {
+   "id": "i4-20",
+   "tipico": true,
+   "q": "La suspensión firme de funciones tiene una duración máxima de…",
+   "opts": [
+    "2 años",
+    "3 años",
+    "6 años",
+    "10 años"
+   ],
+   "c": 2,
+   "exp": "Art. 96 TREBEP: máximo seis años."
+  },
+  {
+   "id": "i4-21",
+   "tipico": true,
+   "q": "El plazo para resolver una solicitud de acceso a la información pública es…",
+   "opts": [
+    "10 días",
+    "Un mes, ampliable otro",
+    "Tres meses",
+    "Seis meses"
+   ],
+   "c": 1,
+   "exp": "Art. 20 Ley 19/2013; el silencio es desestimatorio."
+  },
+  {
+   "id": "i4-22",
+   "tipico": false,
+   "q": "La reclamación ante el Consejo de Transparencia y Buen Gobierno…",
+   "opts": [
+    "Es potestativa y se presenta en un mes",
+    "Es obligatoria antes del contencioso",
+    "Se presenta en tres meses",
+    "Solo la pueden presentar empresas"
+   ],
+   "c": 0,
+   "exp": "Potestativa, plazo de un mes; el Consejo resuelve en tres meses."
+  },
+  {
+   "id": "i4-23",
+   "tipico": true,
+   "q": "El Presidente del Consejo de Transparencia y Buen Gobierno es nombrado por…",
+   "opts": [
+    "4 años renovables",
+    "6 años no renovables",
+    "Tiempo indefinido",
+    "5 años no renovables"
+   ],
+   "c": 3,
+   "exp": "Real Decreto, 5 años no renovables, refrendo del Congreso por mayoría absoluta."
+  },
+  {
+   "id": "i4-24",
+   "tipico": false,
+   "q": "Las infracciones muy graves del Título II de la Ley 19/2013 prescriben a los…",
+   "opts": [
+    "1 año",
+    "3 años",
+    "5 años",
+    "10 años"
+   ],
+   "c": 2,
+   "exp": "Muy graves 5, graves 3, leves 1."
+  },
+  {
+   "id": "i4-25",
+   "tipico": true,
+   "q": "La Agenda 2030 contiene…",
+   "opts": [
+    "8 objetivos y 21 metas",
+    "17 objetivos y 169 metas",
+    "15 objetivos y 100 metas",
+    "17 objetivos y 230 metas"
+   ],
+   "c": 1,
+   "exp": "17 ODS y 169 metas."
+  }
+ ]
+}
