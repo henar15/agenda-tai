@@ -201,10 +201,11 @@
   "orden": 1,
   "titulo": "Modelado de datos, diseño lógico y físico, modelo relacional y normalización",
   "semana": "2027-01-18",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 100,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-2",
@@ -213,10 +214,11 @@
   "orden": 2,
   "titulo": "Lenguajes de programación: tipos de datos, operadores, estructuras y procedimientos",
   "semana": "2027-01-25",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 76,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-3",

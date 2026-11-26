@@ -1,0 +1,330 @@
+{
+  "tema": "III-1",
+  "preguntas": [
+    {
+      "id": "iii1-01",
+      "tipico": true,
+      "q": "El modelo Entidad-Relación fue propuesto por…",
+      "opts": [
+        "Edgar F. Codd en 1970",
+        "Peter Chen en 1976",
+        "Niklaus Wirth en 1970",
+        "Thomas H. Grayson en 1976"
+      ],
+      "c": 1,
+      "exp": "Peter Chen, 1976. Codd definió el modelo relacional y las formas normales."
+    },
+    {
+      "id": "iii1-02",
+      "tipico": true,
+      "q": "¿Cuál es el orden correcto de las fases del diseño de una base de datos?",
+      "opts": [
+        "Conceptual, lógico, físico",
+        "Conceptual, físico, lógico",
+        "Lógico, conceptual, físico",
+        "Físico, lógico, conceptual"
+      ],
+      "c": 0,
+      "exp": "Conceptual → lógico → físico."
+    },
+    {
+      "id": "iii1-03",
+      "tipico": true,
+      "q": "El esquema conceptual…",
+      "opts": [
+        "Depende del SGBD concreto",
+        "Depende del tipo de SGBD pero no del producto",
+        "Se escribe con sentencias CREATE TABLE",
+        "Es independiente del SGBD"
+      ],
+      "c": 3,
+      "exp": "Es independiente del SGBD; el lógico depende del tipo y el físico del SGBD concreto."
+    },
+    {
+      "id": "iii1-04",
+      "tipico": true,
+      "q": "En el diagrama E/R, una relación se representa con…",
+      "opts": [
+        "Un rectángulo",
+        "Un círculo",
+        "Un rombo",
+        "Un rectángulo doble"
+      ],
+      "c": 2,
+      "exp": "Rombo para relaciones, rectángulo para entidades, círculo para atributos."
+    },
+    {
+      "id": "iii1-05",
+      "tipico": true,
+      "q": "Una entidad débil…",
+      "opts": [
+        "Siempre tiene una relación N:M",
+        "Necesita la existencia de una entidad fuerte",
+        "No puede tener atributos",
+        "Se representa con un rombo doble"
+      ],
+      "c": 1,
+      "exp": "Depende de la fuerte; se dibuja con un rectángulo dentro de otro."
+    },
+    {
+      "id": "iii1-06",
+      "tipico": false,
+      "q": "Una relación reflexiva o recursiva tiene grado…",
+      "opts": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "c": 0,
+      "exp": "Binaria = 2, ternaria = 3, reflexiva = 1."
+    },
+    {
+      "id": "iii1-07",
+      "tipico": true,
+      "q": "La clave foránea de una tabla…",
+      "opts": [
+        "Nunca puede ser nula",
+        "Es sinónimo de superclave",
+        "Es siempre la clave primaria de su propia tabla",
+        "Contiene la clave primaria de otra tabla"
+      ],
+      "c": 3,
+      "exp": "Referencia la clave primaria de otra tabla para la integridad referencial."
+    },
+    {
+      "id": "iii1-08",
+      "tipico": false,
+      "q": "El conjunto de todos los valores posibles de un atributo es su…",
+      "opts": [
+        "Grado",
+        "Cardinalidad",
+        "Dominio",
+        "Superclave"
+      ],
+      "c": 2,
+      "exp": "Dominio. Grado = nº de atributos; cardinalidad = nº de tuplas."
+    },
+    {
+      "id": "iii1-09",
+      "tipico": true,
+      "q": "En el modelo relacional, el número de atributos de una tabla se llama…",
+      "opts": [
+        "Cardinalidad",
+        "Grado",
+        "Dominio",
+        "Aridad de tuplas"
+      ],
+      "c": 1,
+      "exp": "Grado = nº de atributos (columnas); cardinalidad = nº de tuplas (filas)."
+    },
+    {
+      "id": "iii1-10",
+      "tipico": true,
+      "q": "Al pasar una relación N:M al modelo relacional…",
+      "opts": [
+        "Se crea una entidad intermedia con dos relaciones 1:N",
+        "Se añade la clave de una entidad en la otra",
+        "Se elimina",
+        "Se fusionan las dos entidades"
+      ],
+      "c": 0,
+      "exp": "Nueva entidad intermedia (débil) y dos relaciones 1:N."
+    },
+    {
+      "id": "iii1-11",
+      "tipico": false,
+      "q": "En una relación 1:N, la clave primaria del lado 1 (padre)…",
+      "opts": [
+        "Se convierte en atributo multivaluado",
+        "Pasa como clave primaria del hijo",
+        "Desaparece",
+        "Pasa como clave foránea a la tabla del hijo"
+      ],
+      "c": 3,
+      "exp": "Se propaga como foránea al lado N."
+    },
+    {
+      "id": "iii1-12",
+      "tipico": true,
+      "q": "La regla de integridad de entidad establece que…",
+      "opts": [
+        "La clave foránea no admite nulos",
+        "Todos los atributos deben tener valor",
+        "La clave primaria no admite nulos",
+        "Los valores deben estar en su dominio"
+      ],
+      "c": 2,
+      "exp": "Los atributos de la clave primaria no pueden ser nulos."
+    },
+    {
+      "id": "iii1-13",
+      "tipico": false,
+      "q": "Si se borra un padre y sus hijos se borran automáticamente, se aplica…",
+      "opts": [
+        "Restricción",
+        "Propagación en cascada",
+        "Anulación",
+        "Valor por defecto"
+      ],
+      "c": 1,
+      "exp": "Propagar (cascada): el borrado se extiende a las tuplas que lo referencian."
+    },
+    {
+      "id": "iii1-14",
+      "tipico": true,
+      "q": "Una tabla está en 2FN si está en 1FN y…",
+      "opts": [
+        "Cada atributo no clave depende de toda la clave primaria",
+        "No hay dependencias multivaluadas",
+        "Todo determinante es clave candidata",
+        "Ningún atributo no clave depende de otro no clave"
+      ],
+      "c": 0,
+      "exp": "2FN: dependencia completa de la clave. La última opción es la 3FN."
+    },
+    {
+      "id": "iii1-15",
+      "tipico": true,
+      "q": "Una tabla con clave primaria simple (un solo atributo) en 1FN…",
+      "opts": [
+        "Está siempre en FNBC",
+        "Está siempre en 3FN",
+        "Nunca está en 2FN",
+        "Está siempre en 2FN"
+      ],
+      "c": 3,
+      "exp": "Con clave simple no puede haber dependencias parciales."
+    },
+    {
+      "id": "iii1-16",
+      "tipico": true,
+      "q": "La forma normal en la que todo determinante es clave candidata es…",
+      "opts": [
+        "3FN",
+        "4FN",
+        "FNBC",
+        "5FN"
+      ],
+      "c": 2,
+      "exp": "Boyce-Codd, una versión más restrictiva de la 3FN."
+    },
+    {
+      "id": "iii1-17",
+      "tipico": false,
+      "q": "La 4FN elimina…",
+      "opts": [
+        "Las dependencias parciales",
+        "Las dependencias multivaluadas no triviales",
+        "Las dependencias transitivas",
+        "Los valores no atómicos"
+      ],
+      "c": 1,
+      "exp": "4FN: sin dependencias multivaluadas."
+    },
+    {
+      "id": "iii1-18",
+      "tipico": false,
+      "q": "La forma normal de proyección-unión (PJ/NF) es la…",
+      "opts": [
+        "5FN",
+        "FNBC",
+        "4FN",
+        "3FN"
+      ],
+      "c": 0,
+      "exp": "5FN = PJ/NF, basada en dependencias de unión."
+    },
+    {
+      "id": "iii1-19",
+      "tipico": true,
+      "q": "Fundir varias tablas en una para evitar JOIN frecuentes es…",
+      "opts": [
+        "Normalización",
+        "Generalización",
+        "Partición vertical",
+        "Desnormalización"
+      ],
+      "c": 3,
+      "exp": "Desnormalizar introduce redundancia controlada para ganar rendimiento."
+    },
+    {
+      "id": "iii1-20",
+      "tipico": true,
+      "q": "En un DFD, ¿qué conexión NO está permitida?",
+      "opts": [
+        "Entidad externa – proceso",
+        "Proceso – proceso",
+        "Entidad externa – almacén",
+        "Proceso – almacén"
+      ],
+      "c": 2,
+      "exp": "Entidad y almacén solo se relacionan a través de un proceso."
+    },
+    {
+      "id": "iii1-21",
+      "tipico": false,
+      "q": "El DFD de nivel 0 se llama…",
+      "opts": [
+        "Proceso primitivo",
+        "Diagrama de contexto",
+        "Diagrama de subsistemas",
+        "Flujograma lineal"
+      ],
+      "c": 1,
+      "exp": "Diagrama de contexto, con un único proceso que es el sistema."
+    },
+    {
+      "id": "iii1-22",
+      "tipico": false,
+      "q": "¿Cuál de estas NO es una notación habitual de DFD?",
+      "opts": [
+        "Boyce & Codd",
+        "Gane & Sarson",
+        "Yourdon & DeMarco",
+        "Yourdon & Coad"
+      ],
+      "c": 0,
+      "exp": "Boyce-Codd es una forma normal, no una notación de DFD."
+    },
+    {
+      "id": "iii1-23",
+      "tipico": true,
+      "q": "«Qué se guarda» frente a «cómo se guarda» diferencia, respectivamente, al…",
+      "opts": [
+        "Diseño conceptual y lógico",
+        "Esquema y modelo conceptual",
+        "Diseño físico y lógico",
+        "Diseño lógico y físico"
+      ],
+      "c": 3,
+      "exp": "Lógico = qué; físico = cómo (estructuras de almacenamiento)."
+    },
+    {
+      "id": "iii1-24",
+      "tipico": false,
+      "q": "¿Cuál NO es una fase del diseño físico?",
+      "opts": [
+        "Traducir el esquema lógico al SGBD",
+        "Diseño de los mecanismos de seguridad",
+        "Identificar las entidades débiles",
+        "Monitorización y optimización"
+      ],
+      "c": 2,
+      "exp": "Identificar entidades débiles es un paso del diseño conceptual."
+    },
+    {
+      "id": "iii1-25",
+      "tipico": false,
+      "q": "MongoDB almacena los documentos en formato…",
+      "opts": [
+        "XML",
+        "BSON",
+        "CSV",
+        "YAML"
+      ],
+      "c": 1,
+      "exp": "BSON (Binary JSON)."
+    }
+  ]
+}

@@ -1,0 +1,707 @@
+{
+  "tema": "III-1",
+  "cards": [
+    {
+      "id": "iii1c1",
+      "n": "1",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Qué es una base de datos?",
+      "a": "Un **conjunto organizado de datos**, no redundante, accesible en tiempo real y compartido por **usuarios concurrentes**"
+    },
+    {
+      "id": "iii1c2",
+      "n": "2",
+      "e": "⚙️",
+      "t": true,
+      "q": "¿Qué es un SGBD?",
+      "a": "El **Sistema Gestor de Base de Datos**: software que define y controla la estructura, el almacenamiento, el acceso y la manipulación de los datos, manteniendo su **integridad, confidencialidad y seguridad**"
+    },
+    {
+      "id": "iii1c3",
+      "n": "3",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es un procedimiento (subrutina)?",
+      "a": "Un **fragmento de programa** con nombre que hace una tarea concreta y se puede **llamar** desde otra parte del programa; puede recibir **argumentos**"
+    },
+    {
+      "id": "iii1c4",
+      "n": "4",
+      "e": "📊",
+      "t": false,
+      "q": "Ejemplos de SGBD relacionales",
+      "a": "**MySQL, MariaDB, SQL Server y Oracle**",
+      "h": "Mejor cuando los datos son consistentes y planificados"
+    },
+    {
+      "id": "iii1c5",
+      "n": "5",
+      "e": "🍃",
+      "t": false,
+      "q": "Rasgos de las bases de datos NoSQL",
+      "a": "**No usan SQL** como lenguaje principal, no exigen tablas fijas, no suelen admitir **JOIN**, no garantizan del todo **ACID** y escalan **horizontalmente**",
+      "h": "NoSQL = Not Only SQL"
+    },
+    {
+      "id": "iii1c6",
+      "n": "6",
+      "e": "📄",
+      "t": true,
+      "q": "Base de datos NoSQL orientada a documentos y su formato",
+      "a": "**MongoDB**, que guarda documentos en **BSON** (Binary JSON)"
+    },
+    {
+      "id": "iii1c7",
+      "n": "7",
+      "e": "🔑",
+      "t": false,
+      "q": "Bases de datos en memoria clave-valor",
+      "a": "**Redis** y **Memcached**: pares **clave-valor** guardados en **RAM** para acceso muy rápido"
+    },
+    {
+      "id": "iii1c8",
+      "n": "8",
+      "e": "💳",
+      "t": false,
+      "q": "¿Qué garantizan las bases de datos transaccionales?",
+      "a": "Las propiedades **ACID**: **Atomicidad, Consistencia, Aislamiento y Durabilidad**",
+      "h": "Ej.: transferencias entre cuentas"
+    },
+    {
+      "id": "iii1c9",
+      "n": "9",
+      "e": "🌳",
+      "t": true,
+      "q": "Modelo jerárquico vs modelo en red",
+      "a": "Jerárquico: árbol, cada registro tiene **un único padre**. En red: permite **más de una relación padre-hijo**"
+    },
+    {
+      "id": "iii1c10",
+      "n": "10",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es el modelo multidimensional?",
+      "a": "Organiza los datos en **varias dimensiones** para el análisis; se usa en **OLAP**"
+    },
+    {
+      "id": "iii1c11",
+      "n": "11",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Para qué son útiles las bases de datos basadas en grafos?",
+      "a": "Para **relaciones complejas**, como las **redes sociales**"
+    },
+    {
+      "id": "iii1c12",
+      "n": "12",
+      "e": "⚠️",
+      "t": false,
+      "q": "Problemas que debe evitar un buen diseño",
+      "a": "**Redundancia**, **inconsistencia**, dificultad de acceso, **acceso concurrente no controlado**, problemas de **seguridad** y de **integridad**"
+    },
+    {
+      "id": "iii1c13",
+      "n": "13",
+      "e": "📐",
+      "t": false,
+      "q": "Cualidades de un buen diseño según Thomas H. Grayson",
+      "a": "Reflejar el **mundo real**, representar todos los datos con el tiempo, **evitar redundancia**, acceso eficaz, mantener la **integridad** y ser claro"
+    },
+    {
+      "id": "iii1c14",
+      "n": "14",
+      "e": "📝",
+      "t": false,
+      "q": "Requisitos vs diseño",
+      "a": "Los requisitos definen **qué** debe hacer el sistema (el problema); el diseño define **cómo** hacerlo (la solución)"
+    },
+    {
+      "id": "iii1c15",
+      "n": "15",
+      "e": "🪜",
+      "t": true,
+      "q": "Las 3 fases del diseño de una base de datos",
+      "a": "**1. Diseño conceptual**, **2. Diseño lógico**, **3. Diseño físico**",
+      "h": "Se parte de la especificación de requisitos"
+    },
+    {
+      "id": "iii1c16",
+      "n": "16",
+      "e": "💭",
+      "t": false,
+      "q": "¿Qué produce el diseño conceptual?",
+      "a": "Un **esquema conceptual** a partir de los requisitos, usando normalmente el modelo **Entidad/Relación**"
+    },
+    {
+      "id": "iii1c17",
+      "n": "17",
+      "e": "🧠",
+      "t": false,
+      "q": "¿El esquema conceptual depende del SGBD?",
+      "a": "**No**: es **independiente del SGBD** y de los detalles de implementación"
+    },
+    {
+      "id": "iii1c18",
+      "n": "18",
+      "e": "🗣️",
+      "t": false,
+      "q": "Modelo conceptual vs esquema conceptual",
+      "a": "El **modelo** es el **lenguaje** (herramientas) que usamos; el **esquema** es la **descripción** de la estructura de los datos"
+    },
+    {
+      "id": "iii1c19",
+      "n": "19",
+      "e": "✨",
+      "t": false,
+      "q": "Propiedades que debe tener el modelo conceptual",
+      "a": "**Expresividad, simplicidad, minimalidad y formalidad**"
+    },
+    {
+      "id": "iii1c20",
+      "n": "20",
+      "e": "👨‍🔬",
+      "t": true,
+      "q": "¿Quién creó el modelo Entidad-Relación y cuándo?",
+      "a": "**Peter Chen** en **1976**"
+    },
+    {
+      "id": "iii1c21",
+      "n": "21",
+      "e": "🧱",
+      "t": false,
+      "q": "Los 3 conceptos del modelo E/R original",
+      "a": "**Entidad**, **relación** y **atributo**. Después se añadió la **cardinalidad**"
+    },
+    {
+      "id": "iii1c22",
+      "n": "22",
+      "e": "➕",
+      "t": false,
+      "q": "¿Qué añade el modelo E/R extendido?",
+      "a": "**Dominios** de atributos, **identificadores**, **atributos compuestos** y **jerarquías de generalización/especialización**"
+    },
+    {
+      "id": "iii1c23",
+      "n": "23",
+      "e": "🚗",
+      "t": false,
+      "q": "¿Qué es una entidad?",
+      "a": "Un objeto del mundo real (real o abstracto) con **existencia independiente** del que se guarda información. Su nombre aparece **una sola vez** en el esquema",
+      "h": "Métrica v3 (examen 2022)"
+    },
+    {
+      "id": "iii1c24",
+      "n": "24",
+      "e": "💪",
+      "t": true,
+      "q": "Entidad fuerte vs débil",
+      "a": "Fuerte: existe por sí misma (**rectángulo**). Débil: **necesita a la fuerte** para existir; su clave combina un atributo propio con la clave de la fuerte (**rectángulo doble**)",
+      "h": "Ej.: libros (fuerte) y copias (débil)"
+    },
+    {
+      "id": "iii1c25",
+      "n": "25",
+      "e": "🔷",
+      "t": false,
+      "q": "¿Cómo se representa una relación en el diagrama E/R?",
+      "a": "Con un **rombo** con el nombre dentro (un verbo, p. ej. \"ha_comprado\")"
+    },
+    {
+      "id": "iii1c26",
+      "n": "26",
+      "e": "📘",
+      "t": false,
+      "q": "¿Qué es Métrica v3?",
+      "a": "Una **metodología de planificación, desarrollo y mantenimiento** de sistemas de información del **Ministerio de Administraciones Públicas**; uso libre citando la fuente"
+    },
+    {
+      "id": "iii1c27",
+      "n": "27",
+      "e": "🔢",
+      "t": true,
+      "q": "Grado de una relación",
+      "a": "Nº de entidades que participan: **binaria (grado 2)**, la más frecuente; **ternaria (3)**; **reflexiva o recursiva (1)**"
+    },
+    {
+      "id": "iii1c28",
+      "n": "28",
+      "e": "✅",
+      "t": false,
+      "q": "Participación total vs parcial",
+      "a": "**Total**: todas las ocurrencias participan al menos una vez. **Parcial**: alguna ocurrencia puede no participar"
+    },
+    {
+      "id": "iii1c29",
+      "n": "29",
+      "e": "⭕",
+      "t": false,
+      "q": "¿Qué es un atributo y cómo se dibuja?",
+      "a": "Una **característica o propiedad** de una entidad (o relación). Se dibuja como un **círculo** unido por una línea"
+    },
+    {
+      "id": "iii1c30",
+      "n": "30",
+      "e": "☎️",
+      "t": false,
+      "q": "Atributo univaluado vs multivaluado",
+      "a": "Univaluado: **un solo valor** (fecha de nacimiento). Multivaluado: **varios valores** (varios teléfonos)"
+    },
+    {
+      "id": "iii1c31",
+      "n": "31",
+      "e": "🆔",
+      "t": false,
+      "q": "Dos condiciones del identificador de una entidad",
+      "a": "**No puede haber dos ocurrencias con el mismo valor** y **no puede ser nulo**"
+    },
+    {
+      "id": "iii1c32",
+      "n": "32",
+      "e": "🗝️",
+      "t": true,
+      "q": "Clave primaria vs clave candidata",
+      "a": "Ambas identifican el registro; la **primaria** es la elegida por el diseñador; las demás candidatas quedan como **alternativas**"
+    },
+    {
+      "id": "iii1c33",
+      "n": "33",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué es una clave externa (foránea o ajena)?",
+      "a": "Un campo que contiene la **clave primaria de otra tabla**; sirve para la **integridad referencial**"
+    },
+    {
+      "id": "iii1c34",
+      "n": "34",
+      "e": "🧮",
+      "t": false,
+      "q": "¿Qué es una superclave?",
+      "a": "**Cualquier conjunto de atributos** que identifica de forma única una tupla"
+    },
+    {
+      "id": "iii1c35",
+      "n": "35",
+      "e": "🧬",
+      "t": false,
+      "q": "Atributo compuesto vs atómico",
+      "a": "Compuesto: se divide en partes con significado (nombre → nombre + apellidos). Atómico: **no se puede dividir**"
+    },
+    {
+      "id": "iii1c36",
+      "n": "36",
+      "e": "🎯",
+      "t": true,
+      "q": "¿Qué es el dominio de un atributo?",
+      "a": "El **conjunto de todos los valores posibles** que puede tomar (su tipo). Sin valor → **nulo**",
+      "h": "Ej.: motor ∈ {gasolina, diésel, eléctrico, híbrido}"
+    },
+    {
+      "id": "iii1c37",
+      "n": "37",
+      "e": "🏷️",
+      "t": false,
+      "q": "Según Métrica v3, ¿qué define una relación del modelo E/R extendido?",
+      "a": "Su **nombre**, su **cardinalidad** y su **tipo de correspondencia**"
+    },
+    {
+      "id": "iii1c38",
+      "n": "38",
+      "e": "📏",
+      "t": false,
+      "q": "¿Qué es la cardinalidad?",
+      "a": "El número **mínimo y máximo** de ocurrencias de una entidad que se relacionan con una ocurrencia de otra; se escribe **(mín, máx)**"
+    },
+    {
+      "id": "iii1c39",
+      "n": "39",
+      "e": "↔️",
+      "t": true,
+      "q": "Tipos de correspondencia",
+      "a": "**1:1**, **1:N** (o N:1) y **N:M**. Coincide con la **cardinalidad máxima**",
+      "h": "Coche-plaza 1:1 · vendedor-coches 1:N · clientes prueban coches N:M"
+    },
+    {
+      "id": "iii1c40",
+      "n": "40",
+      "e": "🌲",
+      "t": false,
+      "q": "¿Qué es una generalización/especialización?",
+      "a": "La entidad genérica (empleados) agrupa subentidades (vendedores, mecánicos), que **heredan** todas sus propiedades"
+    },
+    {
+      "id": "iii1c41",
+      "n": "41",
+      "e": "🧷",
+      "t": false,
+      "q": "Jerarquía total/parcial y exclusiva/superpuesta",
+      "a": "**Total**: toda ocurrencia está en alguna subentidad. **Parcial**: alguna no. **Exclusiva**: como mucho en una. **Superpuesta**: en dos o más"
+    },
+    {
+      "id": "iii1c42",
+      "n": "42",
+      "e": "🔹",
+      "t": false,
+      "q": "¿Qué es un subconjunto en una jerarquía?",
+      "a": "Una generalización con **una sola subentidad**; siempre es **parcial y exclusiva**"
+    },
+    {
+      "id": "iii1c43",
+      "n": "43",
+      "e": "🧭",
+      "t": false,
+      "q": "Primeros pasos de la metodología del modelo conceptual",
+      "a": "1 Recopilar información, 2 identificar **entidades**, 3 **relaciones**, 4 **atributos**, 5 **dominios**, 6 **claves**...",
+      "h": "Son 12 pasos y acaba con la documentación"
+    },
+    {
+      "id": "iii1c44",
+      "n": "44",
+      "e": "📚",
+      "t": false,
+      "q": "¿Dónde queda definida toda la información recopilada en el diseño?",
+      "a": "En el **diccionario de datos**"
+    },
+    {
+      "id": "iii1c45",
+      "n": "45",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué se hace con dos entidades redundantes (huésped y cliente)?",
+      "a": "Se **funden en una**: la clave de una pasa a primaria y la de la otra a **alternativa**"
+    },
+    {
+      "id": "iii1c46",
+      "n": "46",
+      "e": "🌊",
+      "t": true,
+      "q": "¿Qué es un DFD?",
+      "a": "Un **Diagrama de Flujo de Datos**: muestra los **procesos** del sistema y el movimiento de datos; dice **qué** hacer, **no cómo**"
+    },
+    {
+      "id": "iii1c47",
+      "n": "47",
+      "e": "🔌",
+      "t": false,
+      "q": "Conexiones permitidas en un DFD",
+      "a": "**Entidad–proceso**, **proceso–proceso** y **proceso–almacén**",
+      "h": "Entidad y almacén nunca directamente"
+    },
+    {
+      "id": "iii1c48",
+      "n": "48",
+      "e": "🗃️",
+      "t": false,
+      "q": "Los 4 elementos básicos del DFD",
+      "a": "**Almacén de datos**, **entidad externa**, **proceso** y **flujo de datos**"
+    },
+    {
+      "id": "iii1c49",
+      "n": "49",
+      "e": "🔄",
+      "t": true,
+      "q": "Reglas de un proceso en un DFD",
+      "a": "**No es origen ni final** de los datos, tiene **al menos una entrada y una salida** y está siempre en ejecución"
+    },
+    {
+      "id": "iii1c50",
+      "n": "50",
+      "e": "📥",
+      "t": false,
+      "q": "Tipos de flujo entre proceso y almacén",
+      "a": "De **consulta**, de **actualización** y de **diálogo** (en ambos sentidos)"
+    },
+    {
+      "id": "iii1c51",
+      "n": "51",
+      "e": "✏️",
+      "t": false,
+      "q": "Notaciones más usadas para DFD",
+      "a": "**Yourdon & Coad** y **Gane & Sarson**"
+    },
+    {
+      "id": "iii1c52",
+      "n": "52",
+      "e": "⬇️",
+      "t": false,
+      "q": "¿Cómo se construyen los DFD por niveles?",
+      "a": "**Top-down**: nivel 0 = **diagrama de contexto** (un único proceso), nivel 1 = subsistemas, nivel 2... hasta los **procesos primitivos**"
+    },
+    {
+      "id": "iii1c53",
+      "n": "53",
+      "e": "⚖️",
+      "t": false,
+      "q": "Regla de consistencia al descomponer un DFD",
+      "a": "Las **entradas y salidas** de un proceso deben ser **iguales** a las del DFD en que se descompone"
+    },
+    {
+      "id": "iii1c54",
+      "n": "54",
+      "e": "🔀",
+      "t": false,
+      "q": "¿Qué es un flujograma?",
+      "a": "La representación gráfica de un **algoritmo o proceso** con símbolos y flechas. Tipos: **matricial** y **lineal**"
+    },
+    {
+      "id": "iii1c55",
+      "n": "55",
+      "e": "🔶",
+      "t": false,
+      "q": "Símbolo de decisión en un flujograma",
+      "a": "Su nombre debe ser **una pregunta** y según la respuesta sigue un camino u otro (sí/no)"
+    },
+    {
+      "id": "iii1c56",
+      "n": "56",
+      "e": "📋",
+      "t": false,
+      "q": "Reglas básicas de un flujograma",
+      "a": "Tener **inicio y fin**, líneas **rectas** y conectadas, construir **de arriba abajo y de izquierda a derecha**, sin depender del lenguaje"
+    },
+    {
+      "id": "iii1c57",
+      "n": "57",
+      "e": "🧱",
+      "t": true,
+      "q": "¿De qué depende el diseño lógico?",
+      "a": "Del **tipo de SGBD** (p. ej. relacional), **pero no** del producto concreto"
+    },
+    {
+      "id": "iii1c58",
+      "n": "58",
+      "e": "⏱️",
+      "t": false,
+      "q": "Criterios de rendimiento en el diseño lógico",
+      "a": "**Tiempo de respuesta**, **espacio de almacenamiento** y **uso de CPU**"
+    },
+    {
+      "id": "iii1c59",
+      "n": "59",
+      "e": "📑",
+      "t": false,
+      "q": "Tupla, atributo, cardinalidad y grado en el modelo relacional",
+      "a": "**Tupla** = fila; **atributo** = columna; **cardinalidad** = nº de tuplas; **grado** = nº de atributos"
+    },
+    {
+      "id": "iii1c60",
+      "n": "60",
+      "e": "👁️",
+      "t": false,
+      "q": "¿Qué es una vista?",
+      "a": "Una **tabla lógica** basada en datos de otras tablas (con una **SELECT**)"
+    },
+    {
+      "id": "iii1c61",
+      "n": "61",
+      "e": "🎚️",
+      "t": false,
+      "q": "Propiedades de una clave candidata",
+      "a": "**Unicidad** y **minimalidad**"
+    },
+    {
+      "id": "iii1c62",
+      "n": "62",
+      "e": "➡️",
+      "t": true,
+      "q": "¿Qué es una dependencia funcional A → B?",
+      "a": "B depende funcionalmente de A si **A determina el valor de B**",
+      "h": "Ej.: codigoPostal → población"
+    },
+    {
+      "id": "iii1c63",
+      "n": "63",
+      "e": "✂️",
+      "t": false,
+      "q": "¿Cómo se transforma una relación N:M al modelo relacional?",
+      "a": "En una **nueva entidad intermedia** (débil) con **dos relaciones 1:N**"
+    },
+    {
+      "id": "iii1c64",
+      "n": "64",
+      "e": "👪",
+      "t": true,
+      "q": "En una relación 1:N, ¿dónde va la clave foránea?",
+      "a": "La clave primaria del **padre** (el lado 1) pasa como **foránea a la tabla del hijo** (el lado N)"
+    },
+    {
+      "id": "iii1c65",
+      "n": "65",
+      "e": "🏗️",
+      "t": false,
+      "q": "Métodos para pasar una jerarquía a tablas",
+      "a": "**1**: una tabla por entidad (hijos heredan la clave del padre). **2**: todo en una tabla con atributo **discriminante**. **3**: solo hijos (solo jerarquías **totales exclusivas**)"
+    },
+    {
+      "id": "iii1c66",
+      "n": "66",
+      "e": "🚫",
+      "t": false,
+      "q": "Regla de integridad de entidad",
+      "a": "Los atributos de la **clave primaria no admiten nulos**"
+    },
+    {
+      "id": "iii1c67",
+      "n": "67",
+      "e": "🔗",
+      "t": true,
+      "q": "Regla de integridad referencial",
+      "a": "Una clave foránea debe tener un valor que **exista en la clave primaria referenciada** o ser **nula**"
+    },
+    {
+      "id": "iii1c68",
+      "n": "68",
+      "e": "❓",
+      "t": false,
+      "q": "¿Cuándo admite nulos una clave foránea?",
+      "a": "Si la participación del hijo es **parcial**; si es **total**, **no** admite nulos"
+    },
+    {
+      "id": "iii1c69",
+      "n": "69",
+      "e": "🗑️",
+      "t": false,
+      "q": "Opciones al borrar un padre con hijos",
+      "a": "**Restringir**, **propagar (cascada)**, **anular** (poner a nulo) o **valor por defecto**"
+    },
+    {
+      "id": "iii1c70",
+      "n": "70",
+      "e": "🎯",
+      "t": false,
+      "q": "Regla de integridad de dominio",
+      "a": "Todo valor no nulo debe **pertenecer al dominio** del atributo y los operadores dependen del dominio"
+    },
+    {
+      "id": "iii1c71",
+      "n": "71",
+      "e": "🧹",
+      "t": true,
+      "q": "¿Qué es la normalización?",
+      "a": "Aplicar reglas (**formas normales**) a las tablas para **minimizar la redundancia** e inconsistencias"
+    },
+    {
+      "id": "iii1c72",
+      "n": "72",
+      "e": "3️⃣",
+      "t": false,
+      "q": "¿Cuándo se considera normalizada una base de datos?",
+      "a": "Cuando cumple las **tres primeras formas normales** (definidas por **Codd**)"
+    },
+    {
+      "id": "iii1c73",
+      "n": "73",
+      "e": "1️⃣",
+      "t": true,
+      "q": "1FN",
+      "a": "Todos los valores son **atómicos** (únicos e indivisibles); sin grupos repetidos"
+    },
+    {
+      "id": "iii1c74",
+      "n": "74",
+      "e": "2️⃣",
+      "t": false,
+      "q": "2FN",
+      "a": "Está en **1FN** y cada atributo no clave depende de **toda la clave primaria**, no de una parte",
+      "h": "Con clave simple, siempre cumple 2FN"
+    },
+    {
+      "id": "iii1c75",
+      "n": "75",
+      "e": "🔺",
+      "t": true,
+      "q": "3FN",
+      "a": "Está en **2FN** y ningún atributo no clave depende de **otro atributo no clave** (sin dependencias transitivas)"
+    },
+    {
+      "id": "iii1c76",
+      "n": "76",
+      "e": "🅱️",
+      "t": false,
+      "q": "FNBC (Boyce-Codd)",
+      "a": "Está en **3FN** y **todo determinante es una clave candidata**",
+      "h": "Versión más restrictiva de la 3FN"
+    },
+    {
+      "id": "iii1c77",
+      "n": "77",
+      "e": "4️⃣",
+      "t": true,
+      "q": "4FN",
+      "a": "Está en 3FN/FNBC y **no tiene dependencias multivaluadas** no triviales"
+    },
+    {
+      "id": "iii1c78",
+      "n": "78",
+      "e": "5️⃣",
+      "t": false,
+      "q": "5FN",
+      "a": "Está en 4FN y cada **dependencia de unión (join)** está implicada por las claves candidatas. También llamada **forma normal de proyección-unión (PJ/NF)**"
+    },
+    {
+      "id": "iii1c79",
+      "n": "79",
+      "e": "🔙",
+      "t": false,
+      "q": "¿Qué es la desnormalización?",
+      "a": "**Fundir varias tablas en una** (como un JOIN) para evitar consultas frecuentes; introduce **redundancia controlada**"
+    },
+    {
+      "id": "iii1c80",
+      "n": "80",
+      "e": "🪓",
+      "t": false,
+      "q": "Partición horizontal vs vertical",
+      "a": "Horizontal: reparte **filas (casos)**. Vertical: reparte **columnas (atributos)**"
+    },
+    {
+      "id": "iii1c81",
+      "n": "81",
+      "e": "💽",
+      "t": true,
+      "q": "¿Qué define el diseño físico?",
+      "a": "Las **estructuras de almacenamiento** y los **métodos de acceso** en memoria secundaria; depende del **SGBD concreto**",
+      "h": "Lógico = qué se guarda · Físico = cómo"
+    },
+    {
+      "id": "iii1c82",
+      "n": "82",
+      "e": "🛠️",
+      "t": false,
+      "q": "Instrucciones SQL de definición de datos (DDL) del diseño físico",
+      "a": "**CREATE DATABASE, CREATE TABLE, CREATE SCHEMA, CREATE VIEW, CREATE INDEX**"
+    },
+    {
+      "id": "iii1c83",
+      "n": "83",
+      "e": "4️⃣",
+      "t": false,
+      "q": "Las 4 fases del diseño físico",
+      "a": "1 **Traducir el esquema lógico** al SGBD, 2 **representación física**, 3 **mecanismos de seguridad**, 4 **monitorización y optimización**"
+    },
+    {
+      "id": "iii1c84",
+      "n": "84",
+      "e": "⚡",
+      "t": false,
+      "q": "Tres formas de implementar las reglas de negocio",
+      "a": "Con mecanismos del **SGBD**, con **disparadores (triggers)** o con **programas de aplicación**"
+    },
+    {
+      "id": "iii1c85",
+      "n": "85",
+      "e": "📇",
+      "t": false,
+      "q": "Pasos de la representación física",
+      "a": "Analizar **transacciones**, elegir **organización de ficheros**, elegir **índices secundarios**, valorar **redundancias controladas** y estimar **espacio en disco**"
+    },
+    {
+      "id": "iii1c86",
+      "n": "86",
+      "e": "🔐",
+      "t": false,
+      "q": "Pasos del diseño de la seguridad",
+      "a": "Diseñar las **vistas de usuario** y las **reglas de acceso** (usuario con contraseña y permisos)"
+    }
+  ]
+}

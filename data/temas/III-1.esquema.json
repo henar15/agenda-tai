@@ -1,0 +1,81 @@
+{
+  "tema": "III-1",
+  "ramas": [
+    {
+      "t": "Fases del diseño",
+      "e": "🪜",
+      "items": [
+        "Requisitos = **qué** · diseño = **cómo**",
+        "**1 Conceptual** → esquema E/R, independiente del SGBD",
+        "**2 Lógico** → tablas, depende del **tipo** de SGBD",
+        "**3 Físico** → almacenamiento, depende del **SGBD concreto**"
+      ]
+    },
+    {
+      "t": "Modelo E/R (Chen 1976)",
+      "e": "🔷",
+      "items": [
+        "Entidad = **rectángulo** · débil = rectángulo doble",
+        "Relación = **rombo** · atributo = **círculo**",
+        "Grado: reflexiva 1 · **binaria 2** · ternaria 3",
+        "Correspondencia **1:1, 1:N, N:M** = cardinalidad máx.",
+        "Jerarquías: total/parcial y exclusiva/superpuesta"
+      ]
+    },
+    {
+      "t": "Claves y atributos",
+      "e": "🗝️",
+      "items": [
+        "Identificador: **único y no nulo**",
+        "Candidata → una es **primaria**, resto alternativas",
+        "**Foránea** = primaria de otra tabla",
+        "Dominio = **valores posibles** del atributo",
+        "Simple/compuesto · univaluado/multivaluado"
+      ]
+    },
+    {
+      "t": "Modelo relacional",
+      "e": "📑",
+      "items": [
+        "Tupla = **fila** · atributo = **columna**",
+        "**Cardinalidad** = nº tuplas · **grado** = nº atributos",
+        "N:M → **tabla intermedia** + dos 1:N",
+        "1:N → clave del padre va al **hijo**",
+        "Integridad: entidad, **referencial**, dominio, negocio"
+      ]
+    },
+    {
+      "t": "Normalización",
+      "e": "🧹",
+      "items": [
+        "**1FN**: valores atómicos",
+        "**2FN**: depende de **toda** la clave",
+        "**3FN**: sin dependencias **transitivas**",
+        "**FNBC**: todo determinante es clave candidata",
+        "**4FN** multivaluadas · **5FN** de unión (PJ/NF)",
+        "Normalizada = hasta **3FN** (Codd)"
+      ]
+    },
+    {
+      "t": "DFD y flujogramas",
+      "e": "🌊",
+      "items": [
+        "DFD: proceso, almacén, entidad externa, flujo",
+        "Entidad y almacén **nunca** conectados directamente",
+        "Nivel 0 = **diagrama de contexto**",
+        "Top-down hasta **procesos primitivos**",
+        "Notaciones: **Yourdon & Coad**, **Gane & Sarson**"
+      ]
+    },
+    {
+      "t": "Diseño físico",
+      "e": "💽",
+      "items": [
+        "DDL: CREATE TABLE, VIEW, INDEX…",
+        "Traducción · representación · seguridad · monitorización",
+        "Índices secundarios y **redundancia controlada**",
+        "Reglas de negocio: SGBD, **triggers** o programas"
+      ]
+    }
+  ]
+}

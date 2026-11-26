@@ -1,0 +1,669 @@
+{
+  "tema": "III-2",
+  "cards": [
+    {
+      "id": "iii2c1",
+      "n": "1",
+      "e": "🧾",
+      "t": true,
+      "q": "¿Qué es un algoritmo?",
+      "a": "Una **secuencia ordenada y precisa de instrucciones** que, a partir de unos datos de entrada, obtiene un resultado. Es **independiente del lenguaje**"
+    },
+    {
+      "id": "iii2c2",
+      "n": "2",
+      "e": "✔️",
+      "t": false,
+      "q": "Características de un algoritmo",
+      "a": "Debe ser **claro** (sin ambigüedad), **finito** e **independiente del lenguaje**"
+    },
+    {
+      "id": "iii2c3",
+      "n": "3",
+      "e": "💻",
+      "t": false,
+      "q": "¿Qué es un programa?",
+      "a": "La **traducción de un algoritmo a un lenguaje de programación**: un conjunto ordenado de instrucciones"
+    },
+    {
+      "id": "iii2c4",
+      "n": "4",
+      "e": "➕",
+      "t": false,
+      "q": "Fórmula de Niklaus Wirth",
+      "a": "**Programa = Algoritmos + Estructuras de datos**"
+    },
+    {
+      "id": "iii2c5",
+      "n": "5",
+      "e": "🗣️",
+      "t": false,
+      "q": "¿Qué es un lenguaje de programación?",
+      "a": "Un **conjunto de códigos** (alfabeto, vocabulario y reglas de **sintaxis y semántica**) que el ordenador interpreta para ejecutar órdenes"
+    },
+    {
+      "id": "iii2c6",
+      "n": "6",
+      "e": "🪜",
+      "t": false,
+      "q": "Fases para realizar un programa",
+      "a": "**Análisis** del problema, **diseño** del algoritmo, elegir lenguaje, **codificación**, **depuración** y verificación, **documentación** y **mantenimiento**",
+      "h": "La documentación se hace durante todas las fases"
+    },
+    {
+      "id": "iii2c7",
+      "n": "7",
+      "e": "0️⃣",
+      "t": true,
+      "q": "Rasgos del lenguaje máquina",
+      "a": "Fue el **primer lenguaje**: instrucciones en **binario (0 y 1)**, el único que entiende el ordenador; **depende del hardware**"
+    },
+    {
+      "id": "iii2c8",
+      "n": "8",
+      "e": "🔧",
+      "t": false,
+      "q": "¿Qué es el lenguaje ensamblador?",
+      "a": "Lenguaje de **bajo nivel** que sustituye el binario por **mnemotécnicos** (LOAD, ADD, STORE); **depende del procesador**",
+      "h": "Se usa para programar drivers"
+    },
+    {
+      "id": "iii2c9",
+      "n": "9",
+      "e": "⚖️",
+      "t": false,
+      "q": "Ventajas e inconvenientes del bajo nivel",
+      "a": "Ventajas: **ocupa poca memoria** y **tiempo mínimo de ejecución**. Inconvenientes: depende del procesador, muchas instrucciones, difícil de mantener"
+    },
+    {
+      "id": "iii2c10",
+      "n": "10",
+      "e": "🎚️",
+      "t": true,
+      "q": "¿Por qué C se considera de medio nivel?",
+      "a": "Porque, siendo de alto nivel, permite cosas de bajo nivel como **acceder directamente a la memoria**",
+      "h": "Muy indicado para sistemas operativos"
+    },
+    {
+      "id": "iii2c11",
+      "n": "11",
+      "e": "🧑‍🏫",
+      "t": false,
+      "q": "Rasgos de los lenguajes de alto nivel",
+      "a": "**Independientes del hardware**, cercanos al lenguaje humano; necesitan un **compilador o intérprete**"
+    },
+    {
+      "id": "iii2c12",
+      "n": "12",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué hace el linker (enlazador)?",
+      "a": "Pasa del **programa objeto** al **programa ejecutable**, enlazando el código objeto con sus **bibliotecas**"
+    },
+    {
+      "id": "iii2c13",
+      "n": "13",
+      "e": "🏭",
+      "t": true,
+      "q": "¿Qué hace un compilador?",
+      "a": "Traduce **todo** el programa fuente a lenguaje máquina generando un **programa objeto**"
+    },
+    {
+      "id": "iii2c14",
+      "n": "14",
+      "e": "📄",
+      "t": false,
+      "q": "Fuente, objeto y ejecutable",
+      "a": "**Fuente**: alto nivel. **Objeto**: ya en lenguaje máquina. **Ejecutable**: objeto + **librerías** enlazadas",
+      "h": "Sin librerías, objeto y ejecutable coinciden"
+    },
+    {
+      "id": "iii2c15",
+      "n": "15",
+      "e": "🐢",
+      "t": false,
+      "q": "¿Qué hace un intérprete?",
+      "a": "Traduce y **ejecuta instrucción a instrucción** sin generar programa objeto; es **más lento** que lo compilado"
+    },
+    {
+      "id": "iii2c16",
+      "n": "16",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Qué hace un preprocesador?",
+      "a": "Traduce de un lenguaje de alto nivel **a otro de alto nivel** antes de compilar (macros, incluir archivos...)"
+    },
+    {
+      "id": "iii2c17",
+      "n": "17",
+      "e": "🎭",
+      "t": false,
+      "q": "¿Qué es la abstracción en programación?",
+      "a": "**Ocultar los detalles de implementación**: sabemos qué hace algo, no cómo lo hace"
+    },
+    {
+      "id": "iii2c18",
+      "n": "18",
+      "e": "🧠",
+      "t": false,
+      "q": "Tipos de abstracción",
+      "a": "**Procedimental** (operaciones como una sola), **de datos (TDA)** y **de iteración** (recorrer colecciones)"
+    },
+    {
+      "id": "iii2c19",
+      "n": "19",
+      "e": "📜",
+      "t": true,
+      "q": "Paradigma imperativo",
+      "a": "Instrucciones que se ejecutan **una a una** y cambian el estado. Ej.: **COBOL, Pascal, C, Ada, FORTRAN**"
+    },
+    {
+      "id": "iii2c20",
+      "n": "20",
+      "e": "💡",
+      "t": false,
+      "q": "Paradigma declarativo",
+      "a": "Se **describe el problema**, no cómo resolverlo; basado en la lógica. Ej.: **Prolog, Haskell**. Incluye el **lógico** y el **funcional**"
+    },
+    {
+      "id": "iii2c21",
+      "n": "21",
+      "e": "📦",
+      "t": true,
+      "q": "Paradigma orientado a objetos",
+      "a": "Programas a partir de **objetos** con datos y métodos. Ej.: **Smalltalk, C++, Java, VB.NET**",
+      "h": "Herencia, abstracción, polimorfismo, encapsulamiento"
+    },
+    {
+      "id": "iii2c22",
+      "n": "22",
+      "e": "🖱️",
+      "t": false,
+      "q": "Programación dirigida por eventos",
+      "a": "El flujo lo marcan **sucesos externos** (p. ej. acciones del usuario). Hoy en **React, Angular o Vue.js**"
+    },
+    {
+      "id": "iii2c23",
+      "n": "23",
+      "e": "🧩",
+      "t": false,
+      "q": "Programación orientada a aspectos (POA/AOP)",
+      "a": "Mejor **modularización** y **separación de responsabilidades** en módulos independientes"
+    },
+    {
+      "id": "iii2c24",
+      "n": "24",
+      "e": "🐍",
+      "t": false,
+      "q": "¿Qué es un lenguaje multiparadigma? Ejemplo",
+      "a": "El que usa **más de un paradigma**. Ej.: **Python** (orientado a objetos, imperativo y funcional)"
+    },
+    {
+      "id": "iii2c25",
+      "n": "25",
+      "e": "🔤",
+      "t": false,
+      "q": "Elementos básicos de un programa",
+      "a": "**Palabras reservadas, identificadores, caracteres especiales, constantes, variables, expresiones e instrucciones**"
+    },
+    {
+      "id": "iii2c26",
+      "n": "26",
+      "e": "➡️",
+      "t": false,
+      "q": "Tipos básicos de instrucciones",
+      "a": "De **inicio/fin**, **asignación**, **lectura**, **escritura** y **bifurcación**"
+    },
+    {
+      "id": "iii2c27",
+      "n": "27",
+      "e": "↪️",
+      "t": false,
+      "q": "Bifurcación condicional vs incondicional",
+      "a": "**Incondicional**: se hace siempre. **Condicional**: depende de evaluar una condición"
+    },
+    {
+      "id": "iii2c28",
+      "n": "28",
+      "e": "🔢",
+      "t": true,
+      "q": "Tipos de datos simples (primitivos)",
+      "a": "**Numéricos** (entero y real), **lógicos** (booleanos) y **carácter**"
+    },
+    {
+      "id": "iii2c29",
+      "n": "29",
+      "e": "✅",
+      "t": false,
+      "q": "¿Qué es un dato lógico o booleano?",
+      "a": "El que solo toma **dos valores** (verdadero/falso); se usa en **condiciones**"
+    },
+    {
+      "id": "iii2c30",
+      "n": "30",
+      "e": "🧮",
+      "t": false,
+      "q": "Array vs registro",
+      "a": "**Array**: estructura **homogénea** (todos del mismo tipo, acceso por índice). **Registro**: **heterogénea** (cada campo de un tipo)"
+    },
+    {
+      "id": "iii2c31",
+      "n": "31",
+      "e": "📏",
+      "t": false,
+      "q": "Vector vs matriz",
+      "a": "**Vector**: array **unidimensional**. **Matriz**: array **multidimensional** (una de 2 dimensiones es un vector de vectores)"
+    },
+    {
+      "id": "iii2c32",
+      "n": "32",
+      "e": "🧊",
+      "t": false,
+      "q": "Estructuras estáticas vs dinámicas",
+      "a": "**Estáticas**: tamaño fijado **antes de ejecutar** y no cambia. **Dinámicas**: **sin restricción** de tamaño"
+    },
+    {
+      "id": "iii2c33",
+      "n": "33",
+      "e": "🔒",
+      "t": true,
+      "q": "Constante vs variable",
+      "a": "**Constante**: no cambia durante la ejecución. **Variable**: su valor **puede cambiar**",
+      "h": "Ej.: const doble PI = 3.141592"
+    },
+    {
+      "id": "iii2c34",
+      "n": "34",
+      "e": "🏷️",
+      "t": false,
+      "q": "Atributos que identifican una variable",
+      "a": "**Nombre** (identificador, mejor significativo y sin palabras reservadas) y **tipo**"
+    },
+    {
+      "id": "iii2c35",
+      "n": "35",
+      "e": "➗",
+      "t": false,
+      "q": "Operadores div y mod",
+      "a": "**div**: división **entera**. **mod**: **resto** (módulo)"
+    },
+    {
+      "id": "iii2c36",
+      "n": "36",
+      "e": "📐",
+      "t": true,
+      "q": "Orden de prioridad aritmética",
+      "a": "1 **Paréntesis**, 2 **unarios** (++, --, signo), 3 **exponenciación**, 4 **multiplicación, división y módulo**, 5 **suma y resta**. A igual prioridad, **de izquierda a derecha**"
+    },
+    {
+      "id": "iii2c37",
+      "n": "37",
+      "e": "🔀",
+      "t": false,
+      "q": "Operadores lógicos básicos",
+      "a": "**NOT** (negación), **AND** (verdadero si ambas lo son) y **OR** (verdadero si alguna lo es)"
+    },
+    {
+      "id": "iii2c38",
+      "n": "38",
+      "e": "🥇",
+      "t": true,
+      "q": "Prioridad de los operadores lógicos según el tema",
+      "a": "**NOT**, luego **AND**, luego **OR**; los **paréntesis** siempre primero"
+    },
+    {
+      "id": "iii2c39",
+      "n": "39",
+      "e": "🧱",
+      "t": false,
+      "q": "Partes de un algoritmo escrito",
+      "a": "**Cabecera** (\"algoritmo\" + nombre) y **bloque**: acciones de **declaración** y acciones **ejecutables**"
+    },
+    {
+      "id": "iii2c40",
+      "n": "40",
+      "e": "🚦",
+      "t": false,
+      "q": "Los 4 tipos de estructuras de control",
+      "a": "**Secuenciales**, **selectivas**, **repetitivas (iterativas)** y **de salto**"
+    },
+    {
+      "id": "iii2c41",
+      "n": "41",
+      "e": "❓",
+      "t": false,
+      "q": "Estructuras selectivas",
+      "a": "**Simple** (if-then), **doble** (if-then-else), **anidada** y **múltiple** (según-sea / case)"
+    },
+    {
+      "id": "iii2c42",
+      "n": "42",
+      "e": "🔁",
+      "t": true,
+      "q": "¿Qué es un bucle y una iteración?",
+      "a": "**Bucle**: repetir un trozo de código mientras se cumpla una condición. **Iteración**: cada repetición"
+    },
+    {
+      "id": "iii2c43",
+      "n": "43",
+      "e": "🔄",
+      "t": false,
+      "q": "While vs Do-While / Repeat-Until",
+      "a": "**While**: condición al principio, **puede no ejecutarse nunca**. **Do-While / Repeat-Until**: condición al final, se ejecuta **al menos una vez**"
+    },
+    {
+      "id": "iii2c44",
+      "n": "44",
+      "e": "🔂",
+      "t": true,
+      "q": "Bucle For",
+      "a": "Usa un **contador**: (inicialización; condición; incremento). Para (i=1; i<10; i=i+1) se repite **9 veces**"
+    },
+    {
+      "id": "iii2c45",
+      "n": "45",
+      "e": "🦘",
+      "t": false,
+      "q": "Salto efectivo vs no efectivo",
+      "a": "**Efectivo**: se ejecuta la instrucción de destino. **No efectivo**: sigue la **siguiente instrucción**"
+    },
+    {
+      "id": "iii2c46",
+      "n": "46",
+      "e": "✂️",
+      "t": false,
+      "q": "Técnica «divide y vencerás»",
+      "a": "**Dividir un problema complejo en subproblemas** más sencillos resueltos con **subprogramas** (procedimientos o funciones)"
+    },
+    {
+      "id": "iii2c47",
+      "n": "47",
+      "e": "📥",
+      "t": true,
+      "q": "Parámetro formal vs actual",
+      "a": "**Formal**: el de la **cabecera** del subprograma (solo variables). **Actual**: el de la **llamada** (constantes, variables, expresiones...)"
+    },
+    {
+      "id": "iii2c48",
+      "n": "48",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Cómo se emparejan parámetros formales y actuales?",
+      "a": "Por **posición**, uno a uno de izquierda a derecha, con el **mismo número** y tipos coherentes"
+    },
+    {
+      "id": "iii2c49",
+      "n": "49",
+      "e": "🔙",
+      "t": false,
+      "q": "¿Qué hace return en una función?",
+      "a": "**Devuelve el valor** y el **control** al punto de llamada"
+    },
+    {
+      "id": "iii2c50",
+      "n": "50",
+      "e": "📅",
+      "t": false,
+      "q": "¿Qué hace TO_CHAR()?",
+      "a": "Convierte un **número o fecha en cadena** (VARCHAR2), con máscara opcional, p. ej. **DD-MM-YYYY**"
+    },
+    {
+      "id": "iii2c51",
+      "n": "51",
+      "e": "📋",
+      "t": true,
+      "q": "Paso por valor",
+      "a": "El parámetro recibe una **copia**; es **solo de entrada** y no devuelve información"
+    },
+    {
+      "id": "iii2c52",
+      "n": "52",
+      "e": "📍",
+      "t": false,
+      "q": "Paso por referencia",
+      "a": "Se pasa la **dirección** de la variable; el subprograma **puede modificarla**: parámetro de **entrada/salida**"
+    },
+    {
+      "id": "iii2c53",
+      "n": "53",
+      "e": "⚔️",
+      "t": true,
+      "q": "Función vs procedimiento",
+      "a": "La **función devuelve un valor** (asociado a su nombre). El **procedimiento** devuelve **0, 1 o n valores** mediante parámetros y no se usa en expresiones"
+    },
+    {
+      "id": "iii2c54",
+      "n": "54",
+      "e": "♾️",
+      "t": false,
+      "q": "¿Qué es la recursividad?",
+      "a": "Que un subprograma **se llame a sí mismo**; necesita una **condición de terminación**"
+    },
+    {
+      "id": "iii2c55",
+      "n": "55",
+      "e": "📈",
+      "t": false,
+      "q": "¿Qué es el índice TIOBE?",
+      "a": "Una medida de **popularidad** de los lenguajes basada en buscadores (empresa de **Eindhoven**, Países Bajos)"
+    },
+    {
+      "id": "iii2c56",
+      "n": "56",
+      "e": "🛠️",
+      "t": false,
+      "q": "Lenguaje C",
+      "a": "**Estructurado**, de propósito general; se le llama lenguaje de **programación de sistemas** (compiladores y sistemas operativos)"
+    },
+    {
+      "id": "iii2c57",
+      "n": "57",
+      "e": "➕",
+      "t": false,
+      "q": "C++",
+      "a": "Basado en C con **objetos**: lenguaje **híbrido** y **multiparadigma**"
+    },
+    {
+      "id": "iii2c58",
+      "n": "58",
+      "e": "♯",
+      "t": true,
+      "q": "C#",
+      "a": "Lenguaje orientado a objetos de **Microsoft** para **.NET**; tiene **nullable types** (int?) y el operador **??**",
+      "h": "Records desde C# 9.0; async/await"
+    },
+    {
+      "id": "iii2c59",
+      "n": "59",
+      "e": "☕",
+      "t": false,
+      "q": "Java",
+      "a": "Orientado a objetos y concurrente: «**escribe una vez, ejecuta en cualquier sitio**» gracias a la **máquina virtual de Java (JVM)**"
+    },
+    {
+      "id": "iii2c60",
+      "n": "60",
+      "e": "🌐",
+      "t": true,
+      "q": "JavaScript",
+      "a": "**Interpretado**, dialecto de **ECMAScript**, basado en **prototipos**, **débilmente tipado**; se ejecuta en el **lado del cliente**",
+      "h": "No deriva de Java: se desarrolló aparte"
+    },
+    {
+      "id": "iii2c61",
+      "n": "61",
+      "e": "🐘",
+      "t": false,
+      "q": "PHP",
+      "a": "Código abierto para la **web del lado del servidor**, incrustado en HTML; creado por **Rasmus Lerdorf** en **1994**"
+    },
+    {
+      "id": "iii2c62",
+      "n": "62",
+      "e": "🐍",
+      "t": false,
+      "q": "Python: rasgos clave",
+      "a": "**Interpretado**, **tipado dinámico**, multiplataforma; delimita bloques con **sangrado (indentación)**"
+    },
+    {
+      "id": "iii2c63",
+      "n": "63",
+      "e": "💬",
+      "t": false,
+      "q": "Comentarios en Python",
+      "a": "Con **#** hasta fin de línea o entre **tres apóstrofos** '''...'''"
+    },
+    {
+      "id": "iii2c64",
+      "n": "64",
+      "e": "📚",
+      "t": true,
+      "q": "Lista vs tupla en Python",
+      "a": "**Lista** [ ]: **mutable**. **Tupla** ( ): **inmutable**. Índices desde **0**; los negativos cuentan desde el final"
+    },
+    {
+      "id": "iii2c65",
+      "n": "65",
+      "e": "🤖",
+      "t": false,
+      "q": "Librerías de Python para Machine Learning",
+      "a": "**TensorFlow** (Google), **Keras**, **PyTorch** (Facebook), **Scikit-learn**, Pandas, NumPy..."
+    },
+    {
+      "id": "iii2c66",
+      "n": "66",
+      "e": "📊",
+      "t": false,
+      "q": "Pandas, NumPy y Matplotlib",
+      "a": "**Pandas**: análisis de datos. **NumPy**: arrays multidimensionales y cálculo. **Matplotlib**: gráficos"
+    },
+    {
+      "id": "iii2c67",
+      "n": "67",
+      "e": "🍲",
+      "t": false,
+      "q": "¿Para qué sirve BeautifulSoup?",
+      "a": "Para extraer datos de **HTML y XML** (**web scraping**)"
+    },
+    {
+      "id": "iii2c68",
+      "n": "68",
+      "e": "🧪",
+      "t": false,
+      "q": "Machine Learning Services de SQL Server",
+      "a": "Permite ejecutar scripts de **Python y R** con datos relacionales **dentro de la base de datos**"
+    },
+    {
+      "id": "iii2c69",
+      "n": "69",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es ADOdb?",
+      "a": "Bibliotecas de bases de datos para **PHP y Python** que permiten **cambiar de base de datos** sin reescribir las llamadas"
+    },
+    {
+      "id": "iii2c70",
+      "n": "70",
+      "e": "🪟",
+      "t": false,
+      "q": "Visual Basic clásico",
+      "a": "Lenguaje **dirigido por eventos** de Microsoft; última versión la **6 (1998)**"
+    },
+    {
+      "id": "iii2c71",
+      "n": "71",
+      "e": "🗃️",
+      "t": false,
+      "q": "SQL",
+      "a": "**Structured Query Language**: lenguaje de **dominio específico** para gestionar bases de datos **relacionales**"
+    },
+    {
+      "id": "iii2c72",
+      "n": "72",
+      "e": "🏛️",
+      "t": true,
+      "q": "PL/SQL",
+      "a": "Extensión **procedimental** de SQL de **Oracle**: funciones, procedimientos, **triggers** y manejo de **excepciones**"
+    },
+    {
+      "id": "iii2c73",
+      "n": "73",
+      "e": "🐹",
+      "t": false,
+      "q": "Go",
+      "a": "Lenguaje **compilado y concurrente** de **Google**, inspirado en C, con **recolector de basura**"
+    },
+    {
+      "id": "iii2c74",
+      "n": "74",
+      "e": "📉",
+      "t": false,
+      "q": "R",
+      "a": "Lenguaje para **análisis estadístico**; parte del proyecto **GNU** (licencia GPL)"
+    },
+    {
+      "id": "iii2c75",
+      "n": "75",
+      "e": "🐱",
+      "t": false,
+      "q": "Scratch",
+      "a": "Lenguaje **visual** del **MIT Media Lab** para aprender a programar"
+    },
+    {
+      "id": "iii2c76",
+      "n": "76",
+      "e": "🎓",
+      "t": false,
+      "q": "Pascal",
+      "a": "Creado por **Niklaus Wirth** (publicado en **1970**) para enseñar programación estructurada; **fuertemente tipado**"
+    },
+    {
+      "id": "iii2c77",
+      "n": "77",
+      "e": "🍎",
+      "t": false,
+      "q": "Swift y Objective-C",
+      "a": "Lenguajes de **Apple** para iOS y macOS. **Swift** es de **código abierto** desde **2015**"
+    },
+    {
+      "id": "iii2c78",
+      "n": "78",
+      "e": "🎸",
+      "t": false,
+      "q": "Groovy",
+      "a": "Lenguaje orientado a objetos sobre la **plataforma Java (JVM)**, con sintaxis muy parecida a Java"
+    },
+    {
+      "id": "iii2c79",
+      "n": "79",
+      "e": "🧬",
+      "t": false,
+      "q": "1ª y 2ª generación de lenguajes",
+      "a": "**1GL**: lenguaje **máquina**. **2GL**: **ensambladores**"
+    },
+    {
+      "id": "iii2c80",
+      "n": "80",
+      "e": "🏗️",
+      "t": true,
+      "q": "3ª generación de lenguajes",
+      "a": "Primeros lenguajes de **alto nivel**: **Pascal, COBOL, BASIC, FORTRAN, C**"
+    },
+    {
+      "id": "iii2c81",
+      "n": "81",
+      "e": "⚡",
+      "t": false,
+      "q": "4ª generación (4GL)",
+      "a": "Lenguajes **orientados al usuario** o **RAD** (desarrollo rápido de aplicaciones), p. ej. para consultas a bases de datos"
+    },
+    {
+      "id": "iii2c82",
+      "n": "82",
+      "e": "🗨️",
+      "t": true,
+      "q": "5ª generación (5GL)",
+      "a": "**Lenguajes naturales** y orientados a la **inteligencia artificial**; p. ej. **LISP**"
+    }
+  ]
+}

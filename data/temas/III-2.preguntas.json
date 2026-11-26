@@ -1,0 +1,330 @@
+{
+  "tema": "III-2",
+  "preguntas": [
+    {
+      "id": "iii2-01",
+      "tipico": true,
+      "q": "Según Niklaus Wirth, un programa es…",
+      "opts": [
+        "Datos + instrucciones",
+        "Algoritmos + estructuras de datos",
+        "Código fuente + bibliotecas",
+        "Algoritmos + compilador"
+      ],
+      "c": 1,
+      "exp": "Programa = Algoritmos + Estructuras de datos."
+    },
+    {
+      "id": "iii2-02",
+      "tipico": true,
+      "q": "El lenguaje que sustituye el binario por códigos mnemotécnicos es el…",
+      "opts": [
+        "Ensamblador",
+        "Lenguaje de medio nivel",
+        "Lenguaje máquina",
+        "Lenguaje de cuarta generación"
+      ],
+      "c": 0,
+      "exp": "Ensamblador: LOAD, ADD, STORE… y depende del procesador."
+    },
+    {
+      "id": "iii2-03",
+      "tipico": true,
+      "q": "¿Qué programa convierte el programa objeto en ejecutable?",
+      "opts": [
+        "El intérprete",
+        "El preprocesador",
+        "El depurador",
+        "El enlazador (linker)"
+      ],
+      "c": 3,
+      "exp": "El linker enlaza el código objeto con las bibliotecas."
+    },
+    {
+      "id": "iii2-04",
+      "tipico": true,
+      "q": "Un intérprete…",
+      "opts": [
+        "Genera un programa objeto antes de ejecutar",
+        "Traduce de alto nivel a otro lenguaje de alto nivel",
+        "Traduce y ejecuta instrucción a instrucción",
+        "Solo traduce lenguaje Assembler"
+      ],
+      "c": 2,
+      "exp": "No genera programa objeto y es más lento que lo compilado."
+    },
+    {
+      "id": "iii2-05",
+      "tipico": false,
+      "q": "¿Qué traduce un programa de alto nivel a otro de alto nivel antes de compilar?",
+      "opts": [
+        "Enlazador",
+        "Preprocesador",
+        "Ensamblador",
+        "Intérprete"
+      ],
+      "c": 1,
+      "exp": "El preprocesador (macros, inclusión de archivos…)."
+    },
+    {
+      "id": "iii2-06",
+      "tipico": true,
+      "q": "Prolog y Haskell son ejemplos del paradigma…",
+      "opts": [
+        "Declarativo",
+        "Orientado a objetos",
+        "Imperativo",
+        "Dirigido por eventos"
+      ],
+      "c": 0,
+      "exp": "Declarativo (lógico y funcional)."
+    },
+    {
+      "id": "iii2-07",
+      "tipico": false,
+      "q": "¿Cuál de estos lenguajes es del paradigma imperativo?",
+      "opts": [
+        "Prolog",
+        "Haskell",
+        "Smalltalk",
+        "COBOL"
+      ],
+      "c": 3,
+      "exp": "COBOL, Pascal, C, Ada y FORTRAN son imperativos; Smalltalk es OO."
+    },
+    {
+      "id": "iii2-08",
+      "tipico": false,
+      "q": "¿Por qué C se considera también de medio nivel?",
+      "opts": [
+        "Porque es interpretado",
+        "Porque depende del procesador",
+        "Porque permite acceder directamente a la memoria",
+        "Porque usa mnemotécnicos"
+      ],
+      "c": 2,
+      "exp": "Es de alto nivel pero con propiedades de bajo nivel."
+    },
+    {
+      "id": "iii2-09",
+      "tipico": true,
+      "q": "Una estructura de datos homogénea con acceso por índice es un…",
+      "opts": [
+        "Registro",
+        "Array",
+        "Puntero",
+        "Fichero"
+      ],
+      "c": 1,
+      "exp": "El array es homogéneo; el registro es heterogéneo."
+    },
+    {
+      "id": "iii2-10",
+      "tipico": true,
+      "q": "Siguiendo la prioridad habitual, ¿cuánto vale 2 + 3 * 4?",
+      "opts": [
+        "14",
+        "20",
+        "24",
+        "9"
+      ],
+      "c": 0,
+      "exp": "Primero la multiplicación (12) y luego la suma: 14."
+    },
+    {
+      "id": "iii2-11",
+      "tipico": false,
+      "q": "Si A = 17, ¿cuánto vale A mod 5?",
+      "opts": [
+        "3",
+        "5",
+        "3,4",
+        "2"
+      ],
+      "c": 3,
+      "exp": "mod devuelve el resto: 17 = 5·3 + 2."
+    },
+    {
+      "id": "iii2-12",
+      "tipico": true,
+      "q": "Según el tema, el orden de prioridad de los operadores lógicos es…",
+      "opts": [
+        "OR, AND, NOT",
+        "AND, OR, NOT",
+        "NOT, AND, OR",
+        "NOT, OR, AND"
+      ],
+      "c": 2,
+      "exp": "NOT, después AND y después OR; los paréntesis siempre primero."
+    },
+    {
+      "id": "iii2-13",
+      "tipico": true,
+      "q": "¿Qué bucle puede no ejecutarse ninguna vez?",
+      "opts": [
+        "Do-While",
+        "While",
+        "Repeat…Until",
+        "Todos se ejecutan al menos una vez"
+      ],
+      "c": 1,
+      "exp": "While evalúa la condición al principio."
+    },
+    {
+      "id": "iii2-14",
+      "tipico": false,
+      "q": "¿Cuántas veces se repite Para (i=1; i<10; i=i+1)?",
+      "opts": [
+        "9",
+        "10",
+        "11",
+        "1"
+      ],
+      "c": 0,
+      "exp": "Para i de 1 a 9: 9 veces."
+    },
+    {
+      "id": "iii2-15",
+      "tipico": true,
+      "q": "Los parámetros que aparecen en la cabecera de un subprograma son…",
+      "opts": [
+        "Actuales",
+        "Reales",
+        "Globales",
+        "Formales"
+      ],
+      "c": 3,
+      "exp": "Formales (solo variables); los de la llamada son actuales."
+    },
+    {
+      "id": "iii2-16",
+      "tipico": true,
+      "q": "En el paso por referencia…",
+      "opts": [
+        "Se pasa una copia del valor",
+        "El parámetro es solo de entrada",
+        "Se pasa la dirección y el subprograma puede modificar la variable",
+        "No se puede pasar ninguna variable"
+      ],
+      "c": 2,
+      "exp": "Parámetros de entrada/salida."
+    },
+    {
+      "id": "iii2-17",
+      "tipico": true,
+      "q": "Señala la afirmación correcta:",
+      "opts": [
+        "Un procedimiento siempre devuelve exactamente un valor",
+        "Una función devuelve un valor asociado a su nombre",
+        "Un procedimiento puede usarse dentro de una expresión",
+        "Funciones y procedimientos no admiten parámetros"
+      ],
+      "c": 1,
+      "exp": "El procedimiento devuelve 0, 1 o n valores por parámetros y no va en expresiones."
+    },
+    {
+      "id": "iii2-18",
+      "tipico": false,
+      "q": "Para que la recursividad no sea infinita hace falta…",
+      "opts": [
+        "Una condición de terminación",
+        "Un bucle For",
+        "Paso por valor",
+        "Una variable global"
+      ],
+      "c": 0,
+      "exp": "Toda recursión necesita un caso de parada."
+    },
+    {
+      "id": "iii2-19",
+      "tipico": true,
+      "q": "El lenguaje que usa la máquina virtual para «escribir una vez y ejecutar en cualquier sitio» es…",
+      "opts": [
+        "C#",
+        "JavaScript",
+        "PHP",
+        "Java"
+      ],
+      "c": 3,
+      "exp": "Java, con la JVM."
+    },
+    {
+      "id": "iii2-20",
+      "tipico": false,
+      "q": "JavaScript es…",
+      "opts": [
+        "Compilado y fuertemente tipado",
+        "Una versión simplificada de Java",
+        "Interpretado, basado en prototipos y débilmente tipado",
+        "Un lenguaje solo de servidor"
+      ],
+      "c": 2,
+      "exp": "Dialecto de ECMAScript desarrollado de forma independiente a Java."
+    },
+    {
+      "id": "iii2-21",
+      "tipico": true,
+      "q": "En Python, la tupla se diferencia de la lista en que…",
+      "opts": [
+        "Se declara con corchetes",
+        "Es inmutable",
+        "Solo admite números",
+        "Sus índices empiezan en 1"
+      ],
+      "c": 1,
+      "exp": "Tupla ( ) inmutable; lista [ ] mutable."
+    },
+    {
+      "id": "iii2-22",
+      "tipico": false,
+      "q": "PHP fue creado en 1994 por…",
+      "opts": [
+        "Rasmus Lerdorf",
+        "Niklaus Wirth",
+        "Guido van Rossum",
+        "Dennis Ritchie"
+      ],
+      "c": 0,
+      "exp": "Rasmus Lerdorf, programador danés-canadiense."
+    },
+    {
+      "id": "iii2-23",
+      "tipico": false,
+      "q": "PL/SQL es la extensión procedimental de SQL propia de…",
+      "opts": [
+        "SQL Server",
+        "MySQL",
+        "PostgreSQL",
+        "Oracle"
+      ],
+      "c": 3,
+      "exp": "PL/SQL se usa en Oracle."
+    },
+    {
+      "id": "iii2-24",
+      "tipico": true,
+      "q": "Los lenguajes RAD u orientados al usuario pertenecen a la…",
+      "opts": [
+        "2ª generación",
+        "3ª generación",
+        "4ª generación",
+        "5ª generación"
+      ],
+      "c": 2,
+      "exp": "4GL: desarrollo rápido de aplicaciones."
+    },
+    {
+      "id": "iii2-25",
+      "tipico": false,
+      "q": "Los lenguajes naturales y orientados a la IA forman la…",
+      "opts": [
+        "3ª generación",
+        "5ª generación",
+        "4ª generación",
+        "1ª generación"
+      ],
+      "c": 1,
+      "exp": "5GL, por ejemplo LISP según el tema."
+    }
+  ]
+}

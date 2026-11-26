@@ -1,0 +1,84 @@
+{
+  "tema": "III-2",
+  "ramas": [
+    {
+      "t": "Conceptos y traductores",
+      "e": "🏭",
+      "items": [
+        "**Programa = algoritmos + estructuras de datos**",
+        "Algoritmo: claro, **finito**, independiente del lenguaje",
+        "**Compilador**: todo → programa objeto",
+        "**Intérprete**: línea a línea, más lento",
+        "**Linker**: objeto + bibliotecas → ejecutable"
+      ]
+    },
+    {
+      "t": "Niveles y generaciones",
+      "e": "🧬",
+      "items": [
+        "**1GL** máquina (binario) · **2GL** ensamblador",
+        "**3GL** alto nivel: Pascal, COBOL, C, FORTRAN",
+        "**4GL** RAD, orientados al usuario",
+        "**5GL** lenguaje natural e IA (LISP)",
+        "**C** = medio nivel (acceso a memoria)"
+      ]
+    },
+    {
+      "t": "Paradigmas",
+      "e": "🎭",
+      "items": [
+        "**Imperativo**: COBOL, Pascal, C, Ada",
+        "**Declarativo**: Prolog, Haskell (lógico/funcional)",
+        "**OO**: Smalltalk, C++, Java, VB.NET",
+        "**Eventos** (React, Vue) · **aspectos** (POA)",
+        "**Multiparadigma**: Python, C++"
+      ]
+    },
+    {
+      "t": "Datos y operadores",
+      "e": "🔢",
+      "items": [
+        "Simples: **entero, real, lógico, carácter**",
+        "**Array** homogéneo · **registro** heterogéneo",
+        "Constante fija · variable cambia",
+        "Prioridad: ( ) → unarios → potencia → × / % → + −",
+        "Lógicos: **NOT → AND → OR**",
+        "div = división entera · **mod = resto**"
+      ]
+    },
+    {
+      "t": "Control de flujo",
+      "e": "🚦",
+      "items": [
+        "Secuencial · **selectiva** · **repetitiva** · salto",
+        "If simple, doble, anidado y **case**",
+        "**While**: 0 o más veces",
+        "**Do-While/Repeat**: al menos 1 vez",
+        "**For**: contador (inicio; condición; incremento)"
+      ]
+    },
+    {
+      "t": "Subprogramas",
+      "e": "✂️",
+      "items": [
+        "**Divide y vencerás**: subproblemas",
+        "Parámetro **formal** (cabecera) · **actual** (llamada)",
+        "**Por valor**: copia, solo entrada",
+        "**Por referencia**: dirección, entrada/salida",
+        "**Función** devuelve 1 valor · procedimiento 0..n",
+        "**Recursividad**: se llama a sí misma + parada"
+      ]
+    },
+    {
+      "t": "Lenguajes destacados",
+      "e": "💻",
+      "items": [
+        "**Java**: JVM, escribe una vez · **C#**: .NET",
+        "**JavaScript**: interpretado, cliente, ECMAScript",
+        "**PHP**: servidor web (Lerdorf, 1994)",
+        "**Python**: sangrado, tipado dinámico, ML",
+        "**SQL** relacional · **PL/SQL** de Oracle"
+      ]
+    }
+  ]
+}
