@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-v="16">
+<html lang="es" data-v="17">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -307,8 +307,16 @@ body.focus{overflow:hidden}
 .ptsinfo{font-size:13px;color:var(--muted);margin:4px 0 6px}.ptsinfo b{color:var(--ink);font-weight:800}
 .hueco{display:inline-block;min-width:80px;border-bottom:3px solid var(--acc);color:var(--acc);font-weight:900;text-align:center}.cftxt{font-size:19px;line-height:1.5;margin:6px 0 0}.cfopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:500px){.cfopts{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){#pomo.full .pmasc svg{animation:none}}
+.deb{display:grid;gap:8px}.drow{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:center}.dbar .tr{height:10px;border-radius:99px;background:var(--line);overflow:hidden}.dbar .tr i{display:block;height:100%}.dbar small{color:var(--muted)}
+.hist{display:grid;grid-template-columns:repeat(8,1fr);gap:6px;align-items:end;height:160px;padding-top:18px}.hb{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}.hb i{display:block;width:70%;background:var(--acc);border-radius:6px 6px 0 0}.hb small{font-size:11px;color:var(--muted);margin-top:4px;white-space:nowrap}.hv{font-size:11px;font-weight:800;color:var(--muted)}
+.esq-wrap{position:fixed;inset:0;z-index:70;background:rgb(10 5 30 / .6);overflow:auto;padding:16px}.esq{max-width:1100px;margin:0 auto;background:var(--bg);border-radius:22px;padding:20px}.esq-top{display:flex;justify-content:space-between;gap:10px;align-items:start}.esq-top h2{margin:0;font-size:22px}
+.esq-center{margin:16px auto;max-width:520px;text-align:center;background:var(--c);color:#fff;font-weight:900;font-size:19px;padding:16px;border-radius:999px;box-shadow:0 8px 24px rgb(0 0 0 / .15)}
+.esq-ramas{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px}.rama{border:3px solid var(--c);border-radius:18px;padding:12px 14px;background:color-mix(in srgb,var(--c) 7%,var(--bg))}.rama h3{margin:0 0 8px;color:var(--c);font-size:17px}.rama ul{margin:0;padding-left:18px;display:grid;gap:4px}.rama li b{color:var(--c)}
+.duelbar{display:flex;align-items:center;gap:10px;background:var(--panel);border-radius:14px;padding:6px 12px;font-weight:800}.duelbar svg{animation:none}.duelres{display:flex;justify-content:center;gap:40px;align-items:end}.duelres b{display:block;font-size:44px}.duelres svg{animation:none;display:block;margin:auto}
+.linsel{display:grid;gap:6px;padding-left:22px;min-height:20px}.inst{margin-bottom:16px;display:grid;gap:6px;justify-items:start}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
+<link rel="apple-touch-icon" href="icon-192.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#6d28d9">
 </head>
 <body>
 <a class="skip" href="#app">Saltar al contenido</a>
@@ -327,7 +335,7 @@ body.focus{overflow:hidden}
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=16"></script>
-<script src="app.js?v=16"></script>
+<script src="firebase-config.js?v=17"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>
