@@ -213,12 +213,31 @@ body.out #acct{margin-left:auto}#acct a{text-decoration:none}
 .pt-feat{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
 details.lgd{border-top:1px solid var(--line)}details.lgd>summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;min-height:50px;font-weight:900;font-size:16px}details.lgd>summary::after{content:'▾';color:var(--muted);margin-left:10px}details.lgd[open]>summary::after{content:'▴'}details.lgd>summary small{margin-left:auto;color:var(--muted);font-weight:800}details.lgd .badges{margin-bottom:14px}
 @media(max-width:700px){.badges{grid-template-columns:1fr 1fr}.badges span{padding:8px}}
+.skip{position:absolute;left:-999px;top:8px;z-index:100;background:var(--acc);color:#fff;padding:10px 16px;border-radius:10px;font-weight:800}.skip:focus{left:8px}
+html.big{font-size:118%}html.big body{font-size:19px}html.big .fine,html.big small,html.big .kpi span{font-size:15px!important}
+.aa{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;min-width:44px;min-height:40px;font-weight:900;cursor:pointer}html.big .aa{background:var(--acc);color:#fff}
+body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
+.mascard{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center;margin-bottom:16px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 10%,var(--panel)),var(--panel))}
+.masc svg{display:block;animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-6px)}}
+.mhead{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.mhead b{font-size:22px}.mst{font-size:13px;font-weight:800;background:var(--bg);border-radius:99px;padding:3px 10px;color:var(--muted)}.mhead .mini{margin-left:auto}
+.bubble{position:relative;background:var(--bg);border-radius:14px;padding:10px 14px;margin:10px 0;font-weight:700;border:1px solid var(--line)}
+.meta{display:grid;gap:4px;margin:8px 0}.mbar{height:14px;border-radius:99px;background:var(--line);overflow:hidden}.mbar i{display:block;height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;transition:width .5s}.meta span{font-size:14px;font-weight:800;color:var(--muted)}
+.mstats{display:flex;gap:16px;flex-wrap:wrap;font-size:16px;margin:6px 0}
+.mcfg{display:grid;gap:10px;margin-top:12px;padding-top:12px;border-top:1px solid var(--line)}.mcfg label{display:grid;gap:4px;font-weight:800;font-size:14px}.mcfg input[name=n]{min-height:44px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink);padding:6px 10px;font:inherit}
+.mcfg fieldset{border:0;padding:0;margin:0;display:flex;gap:8px;flex-wrap:wrap}.mcfg legend{font-weight:800;font-size:14px;margin-bottom:6px}.chip{display:flex!important;align-items:center;gap:6px;border:1px solid var(--line);border-radius:99px;padding:8px 14px;min-height:44px;cursor:pointer;background:var(--bg)}
+.evo{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:10px;text-align:center}.evo div{background:var(--bg);border-radius:14px;padding:8px 4px}.evo div:not(.on) svg{filter:grayscale(1) brightness(.55);opacity:.45}.evo b{display:block;font-size:13px}.evo small{font-size:12px;color:var(--muted)}.evo svg{margin:auto;animation:none}.evo.acc{margin-top:12px}
+.modal{position:fixed;inset:0;z-index:60;background:rgb(10 5 30 / .55);display:grid;place-items:center;padding:16px}.mbox{background:var(--panel);border-radius:24px;padding:24px;text-align:center;max-width:360px;animation:pop .5s cubic-bezier(.2,1.4,.4,1)}.mbox svg{margin:auto;display:block}.mbox h2{margin:8px 0}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+@media(prefers-reduced-motion:reduce){.masc svg,.mbox,.toast{animation:none}.mbar i{transition:none}}
+@media(max-width:700px){.mascard{grid-template-columns:1fr;justify-items:center;text-align:left}.mascard .mtx{width:100%}.masc svg{width:130px;height:130px}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
 <body>
+<a class="skip" href="#app">Saltar al contenido</a>
+<script>try{if(localStorage.getItem("agendaTAI:big"))document.documentElement.classList.add("big")}catch(e){}</script>
 <header>
-  <div class="top"><h1>Mi agenda TAI</h1><span class="sync" id="sync">Cargando…</span><span id="acct"></span></div>
+  <div class="top"><h1>Mi agenda TAI</h1><span class="sync" id="sync" role="status" aria-live="polite">Cargando…</span><button class="aa" data-act="fsz" aria-label="Texto más grande" aria-pressed="false" title="Texto más grande">Aa</button><span id="acct"></span></div>
   <nav id="nav" aria-label="Secciones">
     <a href="#inicio" data-v="inicio"><i aria-hidden="true">🏠</i><span>Inicio</span></a>
     <a href="#planning" data-v="planning"><i aria-hidden="true">🗓️</i><span>Plan</span></a>
@@ -229,7 +248,7 @@ details.lgd{border-top:1px solid var(--line)}details.lgd>summary{cursor:pointer;
     <a href="#resultados" data-v="resultados"><i aria-hidden="true">📈</i><span>Progreso</span></a>
   </nav>
 </header>
-<main id="app"><p class="empty">Cargando tu agenda…</p></main>
+<main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
 <script src="firebase-config.js"></script>
 <script src="app.js"></script>

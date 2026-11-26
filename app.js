@@ -42,8 +42,8 @@ const errList=()=>Object.entries(S.err.items||{}).map(([k,v])=>Object.assign({id
 /* ---------- motivación ---------- */
 const today=()=>{const d=new Date();return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0')};
 const dkey=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
-function logAct(n){const k=today();S.act=Object.assign({},S.act,{[k]:((S.act||{})[k]||0)+(n||1)});kvSet('actividad')}
-function racha(){const a=S.act||{};let d=new Date(),n=0;if(!a[dkey(d)])d.setDate(d.getDate()-1);while(a[dkey(d)]){n++;d.setDate(d.getDate()-1)}return n}
+function logAct(n){const k=today();const v=((S.act||{})[k]||0)+(n||1);S.act=Object.assign({},S.act,{[k]:v});kvSet('actividad');const ok=(S.rec||{}).ok||{};if(v>=metaDia()&&!ok[k]){S.rec=Object.assign({},S.rec,{ok:Object.assign({},ok,{[k]:1})});kvSet('records');toast('🎯','¡Meta de hoy cumplida!',mascName()+' está feliz')}}
+function toast(ic,t,sub){const x=document.createElement('div');x.className='toast';x.setAttribute('role','status');x.innerHTML=`<span aria-hidden="true">${esc(ic)}</span><div><small>${esc(t)}</small><b>${esc(sub)}</b></div>`;document.body.appendChild(x);setTimeout(()=>x.remove(),4000)}
 function heat(){const a=S.act||{};const end=new Date();const start=new Date();start.setDate(start.getDate()-7*12+1-((start.getDay()+6)%7)+((end.getDay()+6)%7));
   let cols='',d=new Date(start);const mx=Math.max(5,...Object.values(a));
   while(d<=end){let col='';for(let i=0;i<7;i++){const k=dkey(d);const v=a[k]||0;const op=v?0.25+0.75*Math.min(1,v/mx):0;col+=`<i title="${esc(k)}: ${v}" style="background:${v?`color-mix(in srgb,var(--acc) ${Math.round(op*100)}%,var(--panel))`:'var(--line)'}${d>end?';visibility:hidden':''}"></i>`;d.setDate(d.getDate()+1)}cols+=`<div>${col}</div>`}
@@ -74,6 +74,73 @@ function checkLogros(){if(!S.user||!S.ready)return;const ok=logros().filter(x=>x
   const nuevos=ok.filter(id=>!vistos.includes(id));if(!nuevos.length)return;S.rec=Object.assign({},S.rec,{logros:vistos.concat(nuevos)});kvSet('records');
   const l=logros().find(x=>x.id===nuevos[0]);const t=document.createElement('div');t.className='toast';t.setAttribute('role','status');t.innerHTML=`<span>${esc(l.ic)}</span><div><small>¡Nuevo logro!</small><b>${esc(l.nom)}</b>${nuevos.length>1?`<small>y ${nuevos.length-1} más</small>`:''}</div>`;document.body.appendChild(t);setTimeout(()=>t.remove(),4500)}
 
+/* ---------- mascota, meta diaria y escudos ---------- */
+const ETAPAS=[{d:0,n:'Huevo nuevo'},{d:1,n:'Huevo'},{d:3,n:'Huevo con grietas'},{d:7,n:'Pollito'},{d:14,n:'Polluelo'},{d:30,n:'Pájaro'},{d:60,n:'Pájaro sabio'},{d:100,n:'Fénix'}];
+const ACCS=[{a:10,id:'gafas',n:'Gafas de empollona'},{a:25,id:'birrete',n:'Birrete'},{a:50,id:'corona',n:'Corona'}];
+const metaDia=()=>{const m=+((S.config||{}).meta);return [10,20,40].includes(m)?m:20};
+const mascName=()=>((S.config||{}).masc||'Pipo').slice(0,16);
+const dayOk=d=>!!((S.rec||{}).ok||{})[d]||(((S.act||{})[d]||0)>=metaDia());
+function R(){const act=S.act||{},ok=(S.rec||{}).ok||{};const ks=Object.keys(act).concat(Object.keys(ok)).sort();const t=today();const pts=act[t]||0;
+  if(!ks.length)return {n:0,esc:0,hoy:false,pts,meta:metaDia(),salvados:0};
+  let n=0,esc=0,salv=0;const d=new Date(ks[0]+'T12:00:00');
+  while(dkey(d)<t){if(dayOk(dkey(d))){n++;if(n%7===0)esc=Math.min(2,esc+1)}else if(n>0&&esc>0){esc--;salv++}else n=0;d.setDate(d.getDate()+1)}
+  const hoy=dayOk(t);if(hoy){n++;if(n%7===0)esc=Math.min(2,esc+1)}
+  return {n,esc,hoy,pts,meta:metaDia(),salvados:salv}}
+function racha(){return R().n}
+const etapa=n=>{let i=0;ETAPAS.forEach((e,k)=>{if(n>=e.d)i=k});return i};
+const accDe=m=>{let r=null;ACCS.forEach(x=>{if(m>=x.a)r=x});return r};
+function mascSVG(st,acc,mood,size,label){
+  const egg=st<=2,chick=st===3||st===4,bird=st>=5;
+  const C=['#fff4dc','#fff4dc','#fff4dc','#ffd43b','#ffcc29','#8b5cf6','#0d9488','#f97316'][st];
+  const ey=egg?112:chick?100:96,top=egg?44:chick?54:52;let g='';
+  if(st===7)g+=`<path d="M70 150 Q40 175 30 130 Q50 150 60 120 Q40 120 45 95 Q60 120 72 118Z" fill="#ef4444"/><path d="M130 150 Q160 175 170 130 Q150 150 140 120 Q160 120 155 95 Q140 120 128 118Z" fill="#ef4444"/><path d="M85 52 Q90 20 100 38 Q108 14 115 52Z" fill="#fbbf24"/>`;
+  if(egg){g+=`<ellipse cx="100" cy="112" rx="56" ry="70" fill="${C}" stroke="#e8d3a8" stroke-width="3"/><circle cx="72" cy="80" r="7" fill="#f6cf8f"/><circle cx="128" cy="150" r="9" fill="#f6cf8f"/><circle cx="135" cy="88" r="5" fill="#f6cf8f"/>`;
+    if(st===2)g+=`<path d="M58 125 L72 115 L82 128 L95 114 L106 127 L118 113 L130 126 L143 116" fill="none" stroke="#b08a4e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`}
+  if(chick){g+=`<ellipse cx="100" cy="${st===3?104:110}" rx="${st===3?52:58}" ry="${st===3?52:60}" fill="${C}"/><path d="M95 52 Q100 34 104 52 Q112 40 110 56" fill="none" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>`;
+    if(st===3)g+=`<path d="M42 130 L56 118 L68 132 L82 117 L96 131 L110 117 L124 132 L138 118 L152 130 L158 130 Q156 182 100 182 Q44 182 42 130Z" fill="#fff4dc" stroke="#e8d3a8" stroke-width="3"/>`;
+    else g+=`<ellipse cx="48" cy="118" rx="12" ry="22" fill="#f5b800" transform="rotate(20 48 118)"/><ellipse cx="152" cy="118" rx="12" ry="22" fill="#f5b800" transform="rotate(-20 152 118)"/><path d="M84 168 v12 M78 180 h12 M116 168 v12 M110 180 h12" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>`}
+  if(bird){const L=st===5?'#c4b5fd':st===6?'#99f6e4':'#fed7aa';
+    g+=`<path d="M100 150 Q70 190 60 175 Q78 168 84 150Z" fill="${C}"/><ellipse cx="100" cy="108" rx="56" ry="58" fill="${C}"/><ellipse cx="100" cy="128" rx="34" ry="32" fill="${L}"/><ellipse cx="46" cy="112" rx="13" ry="28" fill="${C}" stroke="rgb(0 0 0 / .12)" stroke-width="2" transform="rotate(18 46 112)"/><ellipse cx="154" cy="112" rx="13" ry="28" fill="${C}" stroke="rgb(0 0 0 / .12)" stroke-width="2" transform="rotate(-18 154 112)"/><path d="M84 166 v10 M116 166 v10" stroke="#f97316" stroke-width="4" stroke-linecap="round"/>`;
+    if(st===6)g+=`<path d="M92 52 Q86 30 98 40 Q100 24 106 42 Q116 30 110 54Z" fill="#0f766e"/>`}
+  if(mood==='sleep')g+=`<path d="M78 ${ey} q7 6 14 0 M108 ${ey} q7 6 14 0" fill="none" stroke="#1d1a26" stroke-width="3.5" stroke-linecap="round"/><text x="140" y="${top+6}" font-size="18" font-weight="900" fill="#8b5cf6">z</text><text x="152" y="${top-8}" font-size="13" font-weight="900" fill="#8b5cf6">z</text>`;
+  else g+=`<circle cx="85" cy="${ey}" r="7" fill="#1d1a26"/><circle cx="115" cy="${ey}" r="7" fill="#1d1a26"/><circle cx="87.5" cy="${ey-2.5}" r="2.4" fill="#fff"/><circle cx="117.5" cy="${ey-2.5}" r="2.4" fill="#fff"/>`;
+  if(!egg)g+=`<path d="M93 ${ey+9} L107 ${ey+9} L100 ${ey+19}Z" fill="#f97316"/>`;
+  else if(mood==='happy')g+=`<path d="M90 ${ey+14} q10 10 20 0" fill="none" stroke="#1d1a26" stroke-width="3.5" stroke-linecap="round"/>`;
+  else if(mood!=='sleep')g+=`<ellipse cx="100" cy="${ey+17}" rx="4" ry="5" fill="#1d1a26"/>`;
+  if(mood==='happy')g+=`<ellipse cx="72" cy="${ey+12}" rx="8" ry="5" fill="#fb7185" opacity=".55"/><ellipse cx="128" cy="${ey+12}" rx="8" ry="5" fill="#fb7185" opacity=".55"/><path d="M40 60 l4 9 9 4 -9 4 -4 9 -4 -9 -9 -4 9 -4Z" fill="#fbbf24"/><path d="M160 40 l3 7 7 3 -7 3 -3 7 -3 -7 -7 -3 7 -3Z" fill="#fbbf24"/>`;
+  if(acc&&mood!=='sleep'&&(acc.id==='gafas'||acc.id==='birrete'||acc.id==='corona'))g+=`<circle cx="85" cy="${ey}" r="12" fill="none" stroke="#1d1a26" stroke-width="3"/><circle cx="115" cy="${ey}" r="12" fill="none" stroke="#1d1a26" stroke-width="3"/><path d="M97 ${ey} h6" stroke="#1d1a26" stroke-width="3"/>`;
+  if(acc&&acc.id==='birrete')g+=`<path d="M60 ${top+2} L100 ${top-16} L140 ${top+2} L100 ${top+20}Z" fill="#1d1a26"/><rect x="82" y="${top+6}" width="36" height="12" fill="#1d1a26"/><path d="M134 ${top+3} v18" stroke="#fbbf24" stroke-width="3"/><circle cx="134" cy="${top+23}" r="4" fill="#fbbf24"/>`;
+  if(acc&&acc.id==='corona')g+=`<path d="M72 ${top+8} L76 ${top-18} L90 ${top-2} L100 ${top-24} L110 ${top-2} L124 ${top-18} L128 ${top+8}Z" fill="#fbbf24" stroke="#d97706" stroke-width="2"/><circle cx="100" cy="${top-4}" r="4" fill="#ef4444"/>`;
+  return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="${esc(label)}">${g}</svg>`}
+function frase(r){const h=[...today()].reduce((a,c)=>a+c.charCodeAt(0),0);const pick=a=>a[h%a.length].replace('{meta}',r.meta).replace('{pts}',r.pts).replace('{left}',Math.max(0,r.meta-r.pts));
+  if(r.hoy)return pick(['¡Llena! Hoy ya has cumplido 💜','Racha a salvo. Ahora, si quieres, descansa un poco','¡Qué orgullosa estoy de ti! Mañana más','Hoy me has cuidado genial. ¡Gracias!']);
+  if(r.pts>0)return pick(['¡Ñam! Llevamos {pts} de {meta}. ¡Un poquito más!','Ya casi… me quedan {left} bocados','Me estoy poniendo fuerte, ¡sigue así!']);
+  if(!r.n)return pick(['Zzz… despiértame con unas tarjetitas','Empezamos de cero, ¡pero juntas!','Un poquito hoy y me pongo a crecer 🥚']);
+  return pick(['¿Hoy me das de comer? Me apetecen {meta} tarjetitas 🃏','Psst… que estoy aquí. ¿Unas preguntas?','Tengo hambre de temario 😋','Si estudias un poquito hoy, sigo creciendo 🌱'])}
+function vMascota(){const r=R(),st=etapa(r.n),ac=accDe((S.rec||{}).acMax||0),mood=r.hoy?'happy':(!r.n&&!r.pts?'sleep':'wait');
+  const sig=ETAPAS[st+1],pct=Math.min(100,Math.round(r.pts/r.meta*100)),nm=mascName();
+  return `<div class="card mascard"><div class="masc">${mascSVG(st,ac,mood,150,nm+', tu mascota: '+ETAPAS[st].n+(ac?' con '+ac.n.toLowerCase():''))}</div>
+  <div class="mtx"><div class="mhead"><b>${esc(nm)}</b><span class="mst">${esc(ETAPAS[st].n)}</span><button class="mini ghost" data-act="mascCfg" aria-expanded="${ui.mcfg?'true':'false'}">Ajustes</button></div>
+  <p class="bubble">${esc(frase(r))}</p>
+  <div class="meta"><div class="mbar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="${r.meta}" aria-valuenow="${Math.min(r.pts,r.meta)}"><i style="width:${pct}%"></i></div><span>${Math.min(r.pts,r.meta)} / ${r.meta} puntos hoy${r.hoy?' ✓':''}</span></div>
+  <div class="mstats"><span title="Días seguidos cumpliendo la meta">🔥 <b>${r.n}</b> ${r.n===1?'día':'días'}</span><span title="Cada escudo salva un día que no estudies">🛡️ <b>${r.esc}</b>/2 escudos</span></div>
+  ${sig?`<p class="fine">${sig.d-r.n===1?'Mañana':`En ${sig.d-r.n} días`} se convierte en <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Ha llegado a su forma final!</p>'}
+  ${ui.mcfg?`<form class="mcfg" data-mcfg="1"><label>Nombre<input name="n" maxlength="16" value="${esc(nm)}"></label><fieldset><legend>Meta diaria</legend>${[10,20,40].map(m=>`<label class="chip"><input type="radio" name="m" value="${m}"${m===r.meta?' checked':''}> ${m} puntos</label>`).join('')}</fieldset><p class="fine">1 punto por cada tarjeta que clasificas o pregunta de test que respondes. Ganas un escudo cada 7 días de racha (máximo 2).</p><button class="btn">Guardar</button></form>`:''}
+  </div></div>`}
+function vEvolucion(){const r=R(),st=etapa(r.n),mx=Math.max(st,(S.rec||{}).stMax||0),am=(S.rec||{}).acMax||0;
+  return `<div class="card"><h3>Evolución de ${esc(mascName())}</h3><p class="sub" style="margin-bottom:10px">Crece con tu racha de días. Los accesorios se ganan con aciertos seguidos en los tests (récord: ${am}).</p>
+  <div class="evo">${ETAPAS.map((e,k)=>`<div class="${k<=mx?'on':''}">${k<=mx?mascSVG(k,null,'happy',72,e.n):mascSVG(k,null,'wait',72,e.n+' (bloqueado)')}<b>${esc(e.n)}</b><small>${e.d?e.d+(e.d===1?' día':' días'):'Inicio'}</small></div>`).join('')}</div>
+  <div class="evo acc">${ACCS.map(a=>`<div class="${am>=a.a?'on':''}">${mascSVG(4,a,'happy',72,a.n+(am>=a.a?'':' (bloqueado)'))}<b>${esc(a.n)}</b><small>${a.a} aciertos seguidos</small></div>`).join('')}</div></div>`}
+function celebrar(){if(!S.user||!S.ready||document.querySelector('.modal'))return;const r=R(),st=etapa(r.n),rec=S.rec||{};const am=rec.acMax||0,ac=accDe(am);
+  let msg=null;
+  if(rec.stMax==null){S.rec=Object.assign({},rec,{stMax:st,acSeen:ac?ac.id:null});kvSet('records');return}
+  if(st>rec.stMax){msg={t:st===7?'¡Renace como fénix!':st===3?'¡Ha eclosionado!':'¡'+mascName()+' ha crecido!',d:`Ahora es ${ETAPAS[st].n.toLowerCase()}. Llevas ${r.n} días seguidos.`,svg:mascSVG(st,ac,'happy',160,ETAPAS[st].n)};S.rec=Object.assign({},rec,{stMax:st})}
+  else if(ac&&ac.id!==rec.acSeen&&(!rec.acSeen||ACCS.findIndex(x=>x.id===ac.id)>ACCS.findIndex(x=>x.id===rec.acSeen))){msg={t:'¡Nuevo accesorio!',d:`${ac.n}: por ${ac.a} aciertos seguidos en los tests.`,svg:mascSVG(st,ac,'happy',160,ac.n)};S.rec=Object.assign({},rec,{acSeen:ac.id})}
+  if(!msg)return;kvSet('records');const prev=document.activeElement;
+  const m=document.createElement('div');m.className='modal';m.innerHTML=`<div class="mbox" role="dialog" aria-modal="true" aria-labelledby="mt">${msg.svg}<h2 id="mt">${esc(msg.t)}</h2><p>${esc(msg.d)}</p><button class="btn big2" data-close="1">¡Genial!</button></div>`;
+  const close=()=>{m.remove();prev&&prev.focus&&prev.focus()};m.addEventListener('click',e=>{if(e.target===m||e.target.closest('[data-close]'))close()});m.addEventListener('keydown',e=>{if(e.key==='Escape'||e.key==='Tab'){e.preventDefault();if(e.key==='Escape')close()}});
+  document.body.appendChild(m);m.querySelector('button').focus()}
+
 /* ---------- horario ---------- */
 const DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
 const hoyIdx=()=>(new Date().getDay()+6)%7;
@@ -88,7 +155,7 @@ function horasOpo(){let m=0;(S.horario.dias||[]).forEach(d=>(d.bloques||[]).forE
 function blockRow(b,now){const T=HT[b.tipo]||HT.libre;const n=new Date();const cur=now&&mins(b.h)<=n.getHours()*60+n.getMinutes()&&n.getHours()*60+n.getMinutes()<mins(b.f==='00:00'?'23:59':b.f);
   return `<div class="blk-h${cur?' cur':''}" style="--bc:${T[1]}"><span class="hh">${esc(b.h)}${b.f&&b.f!=='23:59'?'–'+esc(b.f):''}</span><span class="bt"><b>${esc(b.t)}</b>${b.d?`<small>${esc(b.d)}</small>`:''}</span>${cur?'<span class="ahora">Ahora</span>':''}</div>`}
 function vHorario(){const i=ui.hdia==null?hoyIdx():ui.hdia;
-  const tabs=`<div class="dtabs">${DIAS.map((d,k)=>`<button class="${k===i?'on':''}" data-hdia="${k}">${d.slice(0,3)}</button>`).join('')}</div>`;
+  const tabs=`<div class="dtabs">${DIAS.map((d,k)=>`<button class="${k===i?'on':''}" data-hdia="${k}" aria-pressed="${k===i}" aria-label="${d}">${d.slice(0,3)}</button>`).join('')}</div>`;
   if(!hayHorario()&&!ui.hedit)return `<div class="card hcard"><h3>Tu horario semanal</h3><p class="sub">Apunta cuándo trabajas, comes y estudias. Así sabrás cada día qué te toca.</p><div class="acts"><button class="btn" data-act="hedit">Crear mi horario</button><button class="btn ghost" data-act="hplant">Usar una plantilla</button></div></div>`;
   if(ui.hedit){const bl=bloquesDia(i);
     return `<div class="card hcard"><h3>Editar horario <button class="btn" data-act="hedit" style="margin-left:auto">Listo</button></h3>${tabs}
@@ -111,10 +178,10 @@ function vInicio(){
   const hoy=bloquesDia(hoyIdx());const cur=hoy.find(b=>mins(b.h)<=now&&now<mins(!b.f||b.f==='00:00'?'23:59':b.f));const next=hoy.filter(b=>mins(b.h)>now).slice(0,2);
   const nombre=(S.user&&S.user.displayName||'').split(' ')[0];
   const hoyHtml=hayHorario()?`<div class="tline">${(cur?[cur]:[]).concat(next).map(b=>blockRow(b,true)).join('')||'<p class="empty">No te queda nada más hoy. ¡A descansar!</p>'}</div><a class="more" href="#planning">Ver el día completo</a>`:`<p class="sub" style="margin:0 0 8px">Crea tu horario y aquí verás qué te toca en cada momento.</p><a class="btn ghost" href="#planning">Crear mi horario</a>`;
-  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>
+  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>${vMascota()}
   <div class="card"><h3>Ahora</h3>${hoyHtml}</div>
   <div class="go"><a class="gob" href="#tarjetas"><span>🃏</span><b>Repasar tarjetas</b></a><a class="gob" href="#tests"><span>📝</span><b>Hacer un test</b></a>${ne?`<a class="gob" href="#tests"><span>🔁</span><b>Mis errores (${ne})</b></a>`:''}</div>
-  <div class="kpis"><div class="kpi"><b>🔥 ${r}</b><span>${r===1?'día':'días'} de racha</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media</span></div></div>
+  <div class="kpis"><div class="kpi"><b>🏅 ${logros().filter(x=>x.ok).length}</b><span>logros</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media</span></div></div>
   <div class="card"><h3>Temas de esta semana</h3>${sem.length?`<div class="list">${sem.map(rowTema).join('')}</div>`:'<p class="empty">Esta semana no hay temas nuevos: toca repasar.</p>'}</div>`;
 }
 function vProgreso(){
@@ -124,8 +191,8 @@ function vProgreso(){
   const r=racha(),L=logros(),got=L.filter(x=>x.ok).length;
   return `<div class="hero"><div class="ring"><svg viewBox="0 0 240 240" role="img" aria-label="Temario estudiado ${pct}%"><circle cx="120" cy="120" r="104" fill="none" stroke="var(--line)" stroke-width="22"/><circle cx="120" cy="120" r="104" fill="none" stroke="var(--acc)" stroke-width="22" stroke-linecap="round" stroke-dasharray="${R}" stroke-dashoffset="${off}" transform="rotate(-90 120 120)"/></svg><div class="c"><b>${pct}%</b><span>${est} de ${tot} temas</span></div></div>
   <div><h2>Tu progreso</h2><div class="bars">${blq.map(x=>`<div class="bar"><div class="lab"><span>Bloque ${x.b}</span><span>${x.e}/${x.n}</span></div><div class="tr"><i style="width:${x.n?x.e/x.n*100:0}%;background:${BL[x.b].c}"></i></div></div>`).join('')}</div></div></div>
-  <div class="grid" style="margin-bottom:16px"><div class="card"><div class="streak"><span class="fire">${r}</span><div><b>${r===1?'día':'días'} seguidos estudiando</b><small>${r?'¡No rompas la racha!':'Estudia hoy para empezar tu racha'}</small></div></div>${heat()}<p class="sub" style="margin:6px 0 0">Últimas 12 semanas</p></div>
-  </div><div class="card"><h3>Logros · ${got} de ${L.length}</h3><div class="tr lgbar"><i style="width:${got/L.length*100}%"></i></div><p class="fine" style="margin:8px 0 4px">Toca un grupo para ver sus logros.</p>${[...new Set(L.map(x=>x.g))].map(g=>{const xs=L.filter(x=>x.g===g),k=xs.filter(x=>x.ok).length;return `<details class="lgd"><summary><span>${esc(g)}</span><small>${k} de ${xs.length}</small></summary><div class="badges">${xs.map(x=>`<span class="${x.ok?'on':''}"><em aria-hidden="true">${x.ok?esc(x.ic):'🔒'}</em><b>${esc(x.nom)}</b><small>${esc(x.des)}</small></span>`).join('')}</div></details>`}).join('')}</div>`}
+  <div class="grid" style="margin-bottom:16px"><div class="card"><div class="streak"><span class="fire">${r}</span><div><b>${r===1?'día':'días'} seguidos cumpliendo tu meta</b><small>${r?'Si un día fallas, un escudo te salva la racha':'Cumple la meta de hoy para empezar'}</small></div></div>${heat()}<p class="sub" style="margin:6px 0 0">Últimas 12 semanas</p></div>
+  </div>${vEvolucion()}<div class="card" style="margin-top:16px"><h3>Logros · ${got} de ${L.length}</h3><div class="tr lgbar"><i style="width:${got/L.length*100}%"></i></div><p class="fine" style="margin:8px 0 4px">Toca un grupo para ver sus logros.</p>${[...new Set(L.map(x=>x.g))].map(g=>{const xs=L.filter(x=>x.g===g),k=xs.filter(x=>x.ok).length;return `<details class="lgd"><summary><span>${esc(g)}</span><small>${k} de ${xs.length}</small></summary><div class="badges">${xs.map(x=>`<span class="${x.ok?'on':''}"><em aria-hidden="true">${x.ok?esc(x.ic):'🔒'}</em><b>${esc(x.nom)}</b><small>${esc(x.des)}</small></span>`).join('')}</div></details>`}).join('')}</div>`}
 function bestTest(tid){const r=S.res.filter(x=>x.tema===tid);return r.length?Math.max(...r.map(nota)):null}
 function cardPct(tid){const cs=S.cards[tid]||[];const p=S.piles[tid]||{};const s=cs.filter(c=>p[c.id]===3).length;return cs.length?{n:cs.length,s}:null}
 function rowTema(t){const b=BL[t.bloque]||BL.I;const cp=cardPct(t.id),bt=bestTest(t.id),nq=bank(t.id).length;
@@ -269,11 +336,11 @@ function vLogin(){return `<div class="login"><div class="lg-ico">📚</div><h2>T
   <button class="btn big" data-act="login"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar con Google</button>
   <p class="fine">Cada persona tiene su propio progreso y su horario. Solo tú puedes verlos.</p><p><a href="#inicio" class="more">← Volver a la portada</a></p></div>`}
 function busy(){return (ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
-function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estados||{})[t.id]||'pendiente'}));const v=view();acct();document.querySelectorAll('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.v===v));
+function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estados||{})[t.id]||'pendiente'}));const v=view();acct();document.querySelectorAll('#nav a').forEach(a=>{const on=a.dataset.v===v;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   const gate=!!window.FIREBASE_CONFIG&&!S.user;document.body.classList.toggle('out',gate);
   if(gate){const h=location.hash.slice(1);$('#app').innerHTML=h==='entrar'?(S.authReady?vLogin():'<p class="empty">Cargando…</p>'):h==='probar'?vProbar():vPortada();scrollTo(0,0);return}
   if(!S.ready){$('#app').innerHTML='<p class="empty">Cargando tu agenda…</p>';return}
-  $('#app').innerHTML=V[v]();setTimeout(checkLogros,0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
+  $('#app').innerHTML=V[v]();setTimeout(()=>{checkLogros();celebrar()},0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
 addEventListener('hashchange',()=>{scrollTo(0,0);render()});
 
 /* ---------- acciones ---------- */
@@ -284,12 +351,12 @@ function recordErr(q,right){const items=Object.assign({},S.err.items||{});const 
   if(right){if(!cur)return false;const racha=(cur.racha||0)+1;if(racha>=2)delete items[k];else items[k]=Object.assign({},cur,{racha})}
   else items[k]={q:q.q,opts:q.opts,c:q.c,exp:q.exp||'',tema:q.tema||'',tipico:!!q.tipico,fallos:((cur&&cur.fallos)||0)+1,racha:0};
   S.err={items};return true}
-async function finishTest(){const T=ui.test;let a=0,f=0,b=0,ch=false;T.t.preguntas.forEach((q,i)=>{const x=T.ans[i];if(x===undefined||x===null)b++;else if(x===q.c){a++;if(recordErr(q,true))ch=true}else{f++;recordErr(q,false);ch=true}});
+async function finishTest(){const T=ui.test;let a=0,f=0,b=0,ch=false;{let sg=(S.rec||{}).acSeg||0,mx=(S.rec||{}).acMax||0;T.t.preguntas.forEach((q,i)=>{if(T.ans[i]===q.c){sg++;mx=Math.max(mx,sg)}else sg=0});S.rec=Object.assign({},S.rec,{acSeg:sg,acMax:mx});kvSet('records')}T.t.preguntas.forEach((q,i)=>{const x=T.ans[i];if(x===undefined||x===null)b++;else if(x===q.c){a++;if(recordErr(q,true))ch=true}else{f++;recordErr(q,false);ch=true}});
   if(ch)kvSet('errores');
   T.r={testId:T.t.id,titulo:T.t.titulo,tema:T.t.tema||'',aciertos:a,fallos:f,blanco:b,total:T.t.preguntas.length,fecha:new Date().toISOString()};T.done=true;render();
   S.res=S.res.concat([T.r]);kvSet('resultados');logAct(T.t.preguntas.length);T.saved=true;render()}
 let vfTimer=null;
-function vfTick(){const G=ui.game;if(!G||G.kind!=='vf'||G.over){clearInterval(vfTimer);return}const left=Math.ceil((G.end-Date.now())/1000);if(left<=0){G.over=true;clearInterval(vfTimer);const rec=S.rec||{};if(G.ok>(rec.vf||0)){G.rec=true;S.rec=Object.assign({},rec,{vf:G.ok});kvSet('records')}render()}else{const el=$('#gt');if(el)el.textContent=left+' s'}}
+function vfTick(){const G=ui.game;if(!G||G.kind!=='vf'||G.over){clearInterval(vfTimer);return}const left=Math.ceil((G.end-Date.now())/1000);if(left<=0){G.over=true;clearInterval(vfTimer);if(G.ok)logAct(G.ok);const rec=S.rec||{};if(G.ok>(rec.vf||0)){G.rec=true;S.rec=Object.assign({},rec,{vf:G.ok});kvSet('records')}render()}else{const el=$('#gt');if(el)el.textContent=left+' s'}}
 function startVF(scope){const pool=bank(scope||'');if(!pool.length)return;ui.game={kind:'vf',scope,pool,ok:0,ko:0,miss:[],end:Date.now()+60000};vfNext();clearInterval(vfTimer);vfTimer=setInterval(vfTick,250);render()}
 function startEmp(mazo){ui.game={kind:'emp',mazo};empNew();render()}
 document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[data-pile],[data-opt],#flip,[data-ml],[data-mr]');if(!el)return;
@@ -297,7 +364,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   if(el.dataset.pile){markPile(+el.dataset.pile);return}
   if(el.dataset.opt!==undefined){const T=ui.test;if(T.shown[T.i])return;T.ans[T.i]=+el.dataset.opt;render();return}
   if(el.dataset.ml!==undefined){const G=ui.game;G.sel=el.dataset.ml;G.bad=null;render();return}
-  if(el.dataset.mr!==undefined){const G=ui.game;if(!G.sel)return;const r=el.dataset.mr;if(r===G.sel){G.done.add(r);G.sel=null;if(G.done.size===G.cards.length){G.over=true;G.secs=(Date.now()-G.t0)/1000+G.errs*3;const rec=S.rec||{};if(!rec.emp||G.secs<rec.emp){G.rec=true;S.rec=Object.assign({},rec,{emp:G.secs});kvSet('records')}}}else{G.errs++;G.bad='r'+r}render();return}
+  if(el.dataset.mr!==undefined){const G=ui.game;if(!G.sel)return;const r=el.dataset.mr;if(r===G.sel){G.done.add(r);G.sel=null;if(G.done.size===G.cards.length){G.over=true;logAct(G.cards.length);G.secs=(Date.now()-G.t0)/1000+G.errs*3;const rec=S.rec||{};if(!rec.emp||G.secs<rec.emp){G.rec=true;S.rec=Object.assign({},rec,{emp:G.secs});kvSet('records')}}}else{G.errs++;G.bad='r'+r}render();return}
   const a=el.dataset.act,T=ui.test,G=ui.game;
   if(a==='estado'){const t=S.temas.find(x=>x.id===el.dataset.id);if(!t)return;t.estado=EST[(EST.indexOf(t.estado||'pendiente')+1)%3];S.estados=Object.assign({},S.estados,{[t.id]:t.estado});kvSet('estados');render()}
   else if(a==='inscrita'){S.config=Object.assign({},S.config,{inscrita:true});kvSet('config');render()}
@@ -309,6 +376,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='pedir'){const id=el.dataset.id;if(!fs||!uid){flash('Entra con Google (arriba a la derecha) para pedir tarjetas');return}
     el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
   else if(a==='logout'){auth&&auth.signOut().then(()=>location.reload())}
+  else if(a==='mascCfg'){ui.mcfg=!ui.mcfg;render()}
+  else if(a==='fsz'){const on=!document.documentElement.classList.contains('big');document.documentElement.classList.toggle('big',on);try{localStorage.setItem('agendaTAI:big',on?'1':'')}catch(e){};el.setAttribute('aria-pressed',on)}
   else if(a==='hedit'){ui.hedit=!ui.hedit;render()}
   else if(a==='hplant'){plantilla();render()}
   else if(a==='hdel'){const i=ui.hdia==null?hoyIdx():ui.hdia;const bl=bloquesDia(i).slice();bl.splice(+el.dataset.i,1);setDia(i,bl);render()}
@@ -331,13 +400,14 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     if(right){G.ok++;G.fb='<b>¡Bien!</b>'}else{G.ko++;G.end-=5000;G.miss.push(c.q);G.fb='<b>No.</b> La buena es: '+rich(c.q.opts[c.q.c])}
     const fb=G.fb;vfNext();G.fb=fb;render()}
 });
+document.addEventListener('submit',e=>{const f=e.target.closest('[data-mcfg]');if(!f)return;e.preventDefault();const n=(f.n.value||'').trim().slice(0,16)||'Pipo';const m=+((f.querySelector('input[name=m]:checked')||{}).value||20);S.config=Object.assign({},S.config,{masc:n,meta:m});kvSet('config');ui.mcfg=false;render()});
 document.addEventListener('submit',e=>{const f=e.target.closest('[data-hform]');if(!f)return;e.preventDefault();const i=+f.dataset.hform;const b={h:f.h.value,f:f.f.value,t:f.t.value.trim().slice(0,40),tipo:HT[f.tipo.value]?f.tipo.value:'libre'};if(!b.h||!b.t)return;setDia(i,bloquesDia(i).concat([b]));render()});
 document.addEventListener('click',e=>{const d=e.target.closest('#dflip,[data-dcard],[data-dopt],[data-dnext],[data-dreset]');if(!d||!ui.demo)return;const D=ui.demo;
   if(d.id==='dflip'){D.flip=!D.flip;d.classList.toggle('on',D.flip);return}
   if(d.dataset.dcard){D.i=(D.i+ +d.dataset.dcard+5)%5;D.flip=false}else if(d.dataset.dopt!=null){D.ans[D.q]=+d.dataset.dopt}else if(d.dataset.dnext){D.q++}else if(d.dataset.dreset){D.q=0;D.ans=[]}
   const y=scrollY;render();scrollTo(0,y)});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
-document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
+document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip,#dflip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.task){const k=e.target.dataset.task;const h=Object.assign({},(S.planHecho||{}).h||{});if(e.target.checked){h[k]=true;logAct(1)}else delete h[k];S.planHecho={h};kvSet('planHecho');render();return}const id=e.target.id;if(id==='mazo'){ui.mazo=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='filtro'){ui.filtro=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='scope'){ui.scope=e.target.value;render()}});
 
 /* ---------- datos ---------- */
