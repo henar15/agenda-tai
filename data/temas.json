@@ -58,10 +58,11 @@
   "orden": 5,
   "titulo": "Políticas de igualdad, violencia de género, LGTBI, discapacidad y dependencia",
   "semana": "2026-12-14",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 148,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-6",

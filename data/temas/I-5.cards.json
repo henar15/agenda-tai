@@ -1,0 +1,677 @@
+{
+  "tema": "I-5",
+  "cards": [
+    {
+      "id": "i5c1",
+      "n": "1",
+      "e": "⚖️",
+      "t": true,
+      "q": "¿Qué ley regula la igualdad entre mujeres y hombres?",
+      "a": "**Ley Orgánica 3/2007, de 22 de marzo**, para la igualdad efectiva de mujeres y hombres",
+      "h": "La «ley de igualdad»"
+    },
+    {
+      "id": "i5c2",
+      "n": "2",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué artículos de la CE desarrolla la LO 3/2007?",
+      "a": "El **art. 14** (igualdad y no discriminación) y el **art. 9.2** (poderes públicos promueven igualdad real y efectiva)"
+    },
+    {
+      "id": "i5c3",
+      "n": "3",
+      "e": "🌍",
+      "t": false,
+      "q": "¿Qué convención de la ONU contra la discriminación de la mujer se cita?",
+      "a": "La **Convención sobre la eliminación de todas las formas de discriminación contra la mujer** (ONU, **1979**), ratificada por España en **1983**"
+    },
+    {
+      "id": "i5c4",
+      "n": "4",
+      "e": "🇪🇺",
+      "t": false,
+      "q": "¿Desde qué tratado la igualdad es objetivo transversal en la UE?",
+      "a": "Desde el **Tratado de Ámsterdam**, en vigor el **1 de mayo de 1999**"
+    },
+    {
+      "id": "i5c5",
+      "n": "5",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Cuál es el objeto de la LO 3/2007 (art. 1)?",
+      "a": "Hacer efectivo el derecho de **igualdad de trato y de oportunidades** entre mujeres y hombres, eliminando la **discriminación de la mujer**"
+    },
+    {
+      "id": "i5c6",
+      "n": "6",
+      "e": "🌐",
+      "t": false,
+      "q": "¿A quién se aplican las obligaciones de la LO 3/2007?",
+      "a": "A **toda persona física o jurídica** que se encuentre o actúe en **territorio español**, sea cual sea su nacionalidad"
+    },
+    {
+      "id": "i5c7",
+      "n": "7",
+      "e": "🟰",
+      "t": false,
+      "q": "¿Qué supone el principio de igualdad de trato?",
+      "a": "La **ausencia de toda discriminación, directa o indirecta**, por razón de sexo, sobre todo por **maternidad**, obligaciones familiares y estado civil"
+    },
+    {
+      "id": "i5c8",
+      "n": "8",
+      "e": "👉",
+      "t": false,
+      "q": "¿Qué es la discriminación directa por razón de sexo?",
+      "a": "Cuando una persona es tratada, por su sexo, de forma **menos favorable que otra en situación comparable**"
+    },
+    {
+      "id": "i5c9",
+      "n": "9",
+      "e": "🔍",
+      "t": true,
+      "q": "¿Qué es la discriminación indirecta por razón de sexo?",
+      "a": "Una norma o práctica **aparentemente neutra** que pone a un sexo en **desventaja particular**, salvo justificación objetiva",
+      "h": "Parece neutra, pero perjudica"
+    },
+    {
+      "id": "i5c10",
+      "n": "10",
+      "e": "🚫",
+      "t": false,
+      "q": "Acoso sexual vs. acoso por razón de sexo",
+      "a": "**Acoso sexual**: conducta de **naturaleza sexual** que atenta contra la dignidad. **Acoso por razón de sexo**: conducta hecha **en función del sexo** de la persona"
+    },
+    {
+      "id": "i5c11",
+      "n": "11",
+      "e": "🔀",
+      "t": false,
+      "q": "¿Qué significa la transversalidad de la igualdad?",
+      "a": "Que la igualdad **informa toda la actuación de los poderes públicos**: normas, presupuestos y políticas en todos los ámbitos"
+    },
+    {
+      "id": "i5c12",
+      "n": "12",
+      "e": "📋",
+      "t": false,
+      "q": "¿Qué plan aprueba el Gobierno periódicamente para la igualdad?",
+      "a": "El **Plan Estratégico de Igualdad de Oportunidades**"
+    },
+    {
+      "id": "i5c13",
+      "n": "13",
+      "e": "📝",
+      "t": false,
+      "q": "¿Qué deben llevar los proyectos normativos que van al Consejo de Ministros?",
+      "a": "Un **informe de impacto de género**",
+      "h": "También los planes de especial relevancia económica, social, cultural y artística"
+    },
+    {
+      "id": "i5c14",
+      "n": "14",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué deben hacer los poderes públicos en sus estadísticas?",
+      "a": "Incluir **sistemáticamente la variable de sexo** en estadísticas, encuestas y recogida de datos"
+    },
+    {
+      "id": "i5c15",
+      "n": "15",
+      "e": "🗣️",
+      "t": false,
+      "q": "¿Qué lenguaje debe implantarse en la Administración?",
+      "a": "Un **lenguaje no sexista**",
+      "h": "Es uno de los criterios generales de actuación"
+    },
+    {
+      "id": "i5c16",
+      "n": "16",
+      "e": "🏙️",
+      "t": false,
+      "q": "¿Quién puede aprobar Planes Municipales de organización del tiempo?",
+      "a": "Las **corporaciones locales**, para un reparto equitativo de los tiempos"
+    },
+    {
+      "id": "i5c17",
+      "n": "17",
+      "e": "🎓",
+      "t": false,
+      "q": "¿Qué medida educativa se prevé sobre la Historia?",
+      "a": "Medidas para el **reconocimiento y enseñanza del papel de las mujeres en la Historia**"
+    },
+    {
+      "id": "i5c18",
+      "n": "18",
+      "e": "🌾",
+      "t": false,
+      "q": "¿Qué figura jurídica se desarrolla en el sector agrario?",
+      "a": "La **titularidad compartida**, para reconocer los derechos de las mujeres en el sector agrario"
+    },
+    {
+      "id": "i5c19",
+      "n": "19",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿En qué título de la LO 3/2007 está la igualdad en el empleo público?",
+      "a": "En el **Título V**, con **5 capítulos** (incluye Fuerzas Armadas y Fuerzas y Cuerpos de Seguridad)"
+    },
+    {
+      "id": "i5c20",
+      "n": "20",
+      "e": "⚖️",
+      "t": true,
+      "q": "¿Qué es la composición equilibrada?",
+      "a": "Que las personas de cada sexo **no superen el 60 % ni sean menos del 40 %**",
+      "h": "Disposición adicional primera"
+    },
+    {
+      "id": "i5c21",
+      "n": "21",
+      "e": "👩‍⚖️",
+      "t": false,
+      "q": "¿Cómo deben ser los tribunales de selección de la AGE?",
+      "a": "Deben responder al principio de **presencia equilibrada** de mujeres y hombres, salvo razones fundadas y motivadas"
+    },
+    {
+      "id": "i5c22",
+      "n": "22",
+      "e": "📄",
+      "t": true,
+      "q": "¿Qué debe acompañar a las convocatorias de pruebas selectivas?",
+      "a": "Un **informe de impacto de género**, salvo en casos de **urgencia**"
+    },
+    {
+      "id": "i5c23",
+      "n": "23",
+      "e": "🏖️",
+      "t": false,
+      "q": "¿Qué pasa si las vacaciones coinciden con una IT por embarazo o con el permiso de maternidad?",
+      "a": "Se pueden disfrutar **en otra fecha**, aunque haya terminado el año natural"
+    },
+    {
+      "id": "i5c24",
+      "n": "24",
+      "e": "📚",
+      "t": true,
+      "q": "¿Qué plazas de formación se reservan a las empleadas públicas para acceder a puestos directivos?",
+      "a": "**Al menos el 40 %** de las plazas de los cursos de formación"
+    },
+    {
+      "id": "i5c25",
+      "n": "25",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Durante cuánto tiempo hay preferencia en cursos tras volver de un permiso de maternidad o paternidad?",
+      "a": "Durante **un año**"
+    },
+    {
+      "id": "i5c26",
+      "n": "26",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué debe negociarse frente al acoso sexual en las AAPP?",
+      "a": "Un **protocolo de actuación** frente al acoso sexual y por razón de sexo",
+      "h": "Incluye tratamiento reservado de las denuncias"
+    },
+    {
+      "id": "i5c27",
+      "n": "27",
+      "e": "📅",
+      "t": false,
+      "q": "¿Cuándo aprueba el Gobierno el Plan de Igualdad de la AGE?",
+      "a": "**Al inicio de cada legislatura**; su cumplimiento lo evalúa **anualmente el Consejo de Ministros**",
+      "h": "El vigente es el III Plan (Acuerdo de 9-12-2020)"
+    },
+    {
+      "id": "i5c28",
+      "n": "28",
+      "e": "🏢",
+      "t": true,
+      "q": "¿Qué empresas deben tener plan de igualdad?",
+      "a": "Las de **50 o más trabajadores** (y cuando lo diga el convenio o lo imponga la autoridad laboral)",
+      "h": "Para el resto es voluntario"
+    },
+    {
+      "id": "i5c29",
+      "n": "29",
+      "e": "🗂️",
+      "t": false,
+      "q": "¿Dónde se inscriben los planes de igualdad de las empresas?",
+      "a": "En el **Registro de Planes de Igualdad de las Empresas**"
+    },
+    {
+      "id": "i5c30",
+      "n": "30",
+      "e": "🏅",
+      "t": false,
+      "q": "¿Qué reconoce el distintivo de igualdad?",
+      "a": "A las empresas que **destacan en políticas de igualdad**; lo concede el Ministerio de Trabajo y puede **retirarse** si se incumple"
+    },
+    {
+      "id": "i5c31",
+      "n": "31",
+      "e": "🤝",
+      "t": false,
+      "q": "¿Qué órganos crea el Título VIII de la LO 3/2007?",
+      "a": "La **Comisión Interministerial de Igualdad**, las **Unidades de Igualdad** de cada Ministerio y el **Consejo de participación de la mujer**"
+    },
+    {
+      "id": "i5c32",
+      "n": "32",
+      "e": "💜",
+      "t": true,
+      "q": "¿Qué ley regula la protección contra la violencia de género?",
+      "a": "**Ley Orgánica 1/2004, de 28 de diciembre**, de Medidas de Protección Integral contra la Violencia de Género"
+    },
+    {
+      "id": "i5c33",
+      "n": "33",
+      "e": "🎯",
+      "t": true,
+      "q": "¿Contra qué violencia actúa la LO 1/2004?",
+      "a": "La ejercida sobre las mujeres por quienes sean o hayan sido sus **cónyuges** o estén o hayan estado ligados por **relación de afectividad**, **aun sin convivencia**"
+    },
+    {
+      "id": "i5c34",
+      "n": "34",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué actos comprende la violencia de género?",
+      "a": "Toda violencia **física y psicológica**, incluidas agresiones a la **libertad sexual**, **amenazas**, **coacciones** o **privación arbitraria de libertad**",
+      "h": "También la ejercida sobre familiares menores para dañar a la mujer (vicaria)"
+    },
+    {
+      "id": "i5c35",
+      "n": "35",
+      "e": "📣",
+      "t": false,
+      "q": "¿Qué plan se pone en marcha para prevenir la violencia de género?",
+      "a": "Un **Plan Estatal de Sensibilización y Prevención** de la Violencia de Género"
+    },
+    {
+      "id": "i5c36",
+      "n": "36",
+      "e": "📺",
+      "t": false,
+      "q": "¿Cómo considera la ley la publicidad que usa la imagen de la mujer de forma vejatoria?",
+      "a": "Como **publicidad ilícita** (Ley 34/1988, General de Publicidad)"
+    },
+    {
+      "id": "i5c37",
+      "n": "37",
+      "e": "ℹ️",
+      "t": false,
+      "q": "¿Qué derecho reconoce el art. 18 de la LO 1/2004?",
+      "a": "El **derecho a la información** y asesoramiento adecuado",
+      "h": "En formato accesible para mujeres con discapacidad"
+    },
+    {
+      "id": "i5c38",
+      "n": "38",
+      "e": "🧑‍🤝‍🧑",
+      "t": false,
+      "q": "¿Qué derecho reconoce el art. 19?",
+      "a": "El derecho a la **asistencia social integral**: atención, emergencia, apoyo, acogida y recuperación integral"
+    },
+    {
+      "id": "i5c39",
+      "n": "39",
+      "e": "⚖️",
+      "t": true,
+      "q": "¿Qué derecho reconoce el art. 20?",
+      "a": "La **asistencia jurídica gratuita**: asesoramiento previo a la denuncia y defensa y representación gratuitas"
+    },
+    {
+      "id": "i5c40",
+      "n": "40",
+      "e": "🏥",
+      "t": false,
+      "q": "¿Qué garantiza el art. 19 bis?",
+      "a": "La **atención sanitaria**, con especial atención **psicológica y psiquiátrica**, a la víctima y a sus hijos"
+    },
+    {
+      "id": "i5c41",
+      "n": "41",
+      "e": "💼",
+      "t": false,
+      "q": "Derechos laborales de la trabajadora víctima de violencia de género",
+      "a": "**Reducción o reordenación** del tiempo de trabajo, **movilidad geográfica**, cambio de centro, **suspensión con reserva de puesto** y **extinción** del contrato",
+      "h": "La suspensión y la extinción dan derecho a desempleo"
+    },
+    {
+      "id": "i5c42",
+      "n": "42",
+      "e": "💶",
+      "t": false,
+      "q": "¿Qué bonificación tiene la empresa que contrata una interina para sustituir a una víctima?",
+      "a": "Bonificación del **100 %** de las cuotas empresariales por contingencias comunes"
+    },
+    {
+      "id": "i5c43",
+      "n": "43",
+      "e": "🪪",
+      "t": false,
+      "q": "¿Cómo se acredita la situación de violencia de género?",
+      "a": "Con **sentencia condenatoria**, **orden de protección** u otra resolución judicial cautelar, **informe del Ministerio Fiscal** o informe de los **servicios sociales** o especializados"
+    },
+    {
+      "id": "i5c44",
+      "n": "44",
+      "e": "🏛️",
+      "t": false,
+      "q": "Derechos de la funcionaria víctima de violencia de género",
+      "a": "**Reducción o reordenación** del tiempo de trabajo, **movilidad geográfica** y **excedencia**"
+    },
+    {
+      "id": "i5c45",
+      "n": "45",
+      "e": "💰",
+      "t": true,
+      "q": "¿Qué ayuda de pago único puede recibir la víctima sin rentas?",
+      "a": "Si sus rentas no superan el **75 % del SMI**: ayuda equivalente a **6 meses** de subsidio por desempleo (**12 meses** con discapacidad ≥ **33 %**)",
+      "h": "Con responsabilidades familiares, hasta 18 o 24 meses"
+    },
+    {
+      "id": "i5c46",
+      "n": "46",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Qué prioridad tienen las víctimas en vivienda?",
+      "a": "Son **colectivos prioritarios** en el acceso a **viviendas protegidas** y **residencias públicas para mayores**"
+    },
+    {
+      "id": "i5c47",
+      "n": "47",
+      "e": "⏱️",
+      "t": true,
+      "q": "¿En qué plazo máximo debe celebrarse la audiencia de la orden de protección?",
+      "a": "En **72 horas** desde la presentación de la solicitud",
+      "h": "Art. 544 ter LECrim"
+    },
+    {
+      "id": "i5c48",
+      "n": "48",
+      "e": "📌",
+      "t": false,
+      "q": "¿Dónde se inscribe la orden de protección?",
+      "a": "En el **Registro Central para la Protección de las Víctimas de la Violencia Doméstica y de Género**"
+    },
+    {
+      "id": "i5c49",
+      "n": "49",
+      "e": "🚷",
+      "t": false,
+      "q": "¿Qué medida regula el art. 64 LO 1/2004?",
+      "a": "**Salida del domicilio**, **alejamiento** o **suspensión de las comunicaciones**"
+    },
+    {
+      "id": "i5c50",
+      "n": "50",
+      "e": "👶",
+      "t": false,
+      "q": "¿Qué regulan los arts. 65 y 66 LO 1/2004?",
+      "a": "Art. **65**: suspensión de la **patria potestad o custodia**. Art. **66**: suspensión del **régimen de visitas**"
+    },
+    {
+      "id": "i5c51",
+      "n": "51",
+      "e": "🔫",
+      "t": false,
+      "q": "¿Qué regula el art. 67 LO 1/2004?",
+      "a": "La suspensión del derecho a la **tenencia, porte y uso de armas**"
+    },
+    {
+      "id": "i5c52",
+      "n": "52",
+      "e": "🏳️‍🌈",
+      "t": true,
+      "q": "¿Qué ley protege los derechos de las personas trans y LGTBI?",
+      "a": "**Ley 4/2023, de 28 de febrero**, para la igualdad real y efectiva de las personas trans y para la garantía de los derechos de las personas LGTBI"
+    },
+    {
+      "id": "i5c53",
+      "n": "53",
+      "e": "🔤",
+      "t": false,
+      "q": "¿Qué significan las siglas LGTBI?",
+      "a": "Personas **lesbianas, gais, trans, bisexuales e intersexuales**"
+    },
+    {
+      "id": "i5c54",
+      "n": "54",
+      "e": "🔗",
+      "t": true,
+      "q": "Discriminación múltiple vs. interseccional",
+      "a": "**Múltiple**: por dos o más causas, a la vez o una tras otra. **Interseccional**: las causas **interactúan** y crean una forma específica de discriminación"
+    },
+    {
+      "id": "i5c55",
+      "n": "55",
+      "e": "🤝",
+      "t": false,
+      "q": "Discriminación por asociación vs. por error",
+      "a": "**Por asociación**: por la **relación con otra persona**. **Por error**: por una **apreciación incorrecta** de las características de la persona"
+    },
+    {
+      "id": "i5c56",
+      "n": "56",
+      "e": "🪞",
+      "t": false,
+      "q": "¿Qué es la identidad sexual?",
+      "a": "La **vivencia interna e individual del sexo** tal como cada persona la siente, pueda o no coincidir con el sexo asignado al nacer"
+    },
+    {
+      "id": "i5c57",
+      "n": "57",
+      "e": "🎭",
+      "t": false,
+      "q": "¿Qué es la expresión de género?",
+      "a": "La **manifestación** que cada persona hace de su identidad sexual"
+    },
+    {
+      "id": "i5c58",
+      "n": "58",
+      "e": "🧬",
+      "t": false,
+      "q": "¿Qué es la intersexualidad?",
+      "a": "La condición de personas nacidas con características biológicas que **no se corresponden** con las nociones socialmente establecidas de cuerpos masculinos o femeninos"
+    },
+    {
+      "id": "i5c59",
+      "n": "59",
+      "e": "🗺️",
+      "t": false,
+      "q": "¿Qué duración tiene la Estrategia estatal para la igualdad de las personas LGTBI?",
+      "a": "Es **cuatrienal**; la elabora el **Ministerio de Igualdad** y la aprueba el **Consejo de Ministros**"
+    },
+    {
+      "id": "i5c60",
+      "n": "60",
+      "e": "👥",
+      "t": false,
+      "q": "¿De quién depende el Consejo de Participación de las Personas LGTBI?",
+      "a": "Del **Ministerio de Igualdad**, a través de la Secretaría de Estado de Igualdad; presenta una memoria **semestral**"
+    },
+    {
+      "id": "i5c61",
+      "n": "61",
+      "e": "♿",
+      "t": true,
+      "q": "¿Qué norma regula los derechos de las personas con discapacidad?",
+      "a": "El **Real Decreto Legislativo 1/2013, de 29 de noviembre** (Texto Refundido de la Ley General de derechos de las personas con discapacidad y de su inclusión social)"
+    },
+    {
+      "id": "i5c62",
+      "n": "62",
+      "e": "📚",
+      "t": false,
+      "q": "¿Qué tres leyes refundió el RDL 1/2013?",
+      "a": "La **Ley 13/1982** (LISMI), la **Ley 51/2003** (igualdad de oportunidades y accesibilidad) y la **Ley 49/2007** (infracciones y sanciones)"
+    },
+    {
+      "id": "i5c63",
+      "n": "63",
+      "e": "🌍",
+      "t": false,
+      "q": "¿Cuándo aprobó la ONU la Convención sobre los derechos de las personas con discapacidad?",
+      "a": "El **13 de diciembre de 2006**; ratificada por España en **2007** y en vigor el **3 de mayo de 2008**"
+    },
+    {
+      "id": "i5c64",
+      "n": "64",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Cómo define la ley la discapacidad?",
+      "a": "Situación que resulta de la **interacción** entre personas con **deficiencias previsiblemente permanentes** y **barreras** que limitan su participación"
+    },
+    {
+      "id": "i5c65",
+      "n": "65",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Qué grado de discapacidad da la consideración de persona con discapacidad?",
+      "a": "Un grado **igual o superior al 33 %**",
+      "h": "También pensionistas de incapacidad permanente total, absoluta o gran invalidez"
+    },
+    {
+      "id": "i5c66",
+      "n": "66",
+      "e": "🚪",
+      "t": false,
+      "q": "¿Qué es la accesibilidad universal?",
+      "a": "Condición de entornos, bienes y servicios para ser **comprensibles, utilizables y practicables por todas las personas**, de forma segura y autónoma",
+      "h": "Incluye la accesibilidad cognitiva"
+    },
+    {
+      "id": "i5c67",
+      "n": "67",
+      "e": "✏️",
+      "t": false,
+      "q": "¿Qué es el diseño universal o diseño para todas las personas?",
+      "a": "Concebir **desde el origen** entornos y productos para que los use **todo el mundo** sin necesidad de adaptación"
+    },
+    {
+      "id": "i5c68",
+      "n": "68",
+      "e": "🔧",
+      "t": false,
+      "q": "¿Qué son los ajustes razonables?",
+      "a": "**Adaptaciones necesarias** del entorno a las necesidades de una persona con discapacidad que **no impongan una carga desproporcionada**"
+    },
+    {
+      "id": "i5c69",
+      "n": "69",
+      "e": "💼",
+      "t": true,
+      "q": "¿Qué cuota de trabajadores con discapacidad deben tener las empresas de 50 o más trabajadores?",
+      "a": "**Al menos el 2 %**"
+    },
+    {
+      "id": "i5c70",
+      "n": "70",
+      "e": "🏭",
+      "t": false,
+      "q": "Tipos de empleo de las personas con discapacidad",
+      "a": "**Ordinario** (incluido empleo con apoyo), **protegido** (centros especiales de empleo y enclaves) y **autónomo**"
+    },
+    {
+      "id": "i5c71",
+      "n": "71",
+      "e": "💸",
+      "t": false,
+      "q": "¿Hasta qué multa llegan las infracciones muy graves en discapacidad?",
+      "a": "Hasta **1.000.000 de euros** (grado máximo)",
+      "h": "Leves: desde 301 €"
+    },
+    {
+      "id": "i5c72",
+      "n": "72",
+      "e": "🧓",
+      "t": true,
+      "q": "¿Qué ley regula la dependencia?",
+      "a": "**Ley 39/2006, de 14 de diciembre**, de Promoción de la Autonomía Personal y Atención a las personas en situación de dependencia"
+    },
+    {
+      "id": "i5c73",
+      "n": "73",
+      "e": "🛠️",
+      "t": false,
+      "q": "¿Qué sistema crea la Ley 39/2006?",
+      "a": "El **Sistema para la Autonomía y Atención a la Dependencia** (SAAD)"
+    },
+    {
+      "id": "i5c74",
+      "n": "74",
+      "e": "🔒",
+      "t": false,
+      "q": "¿Qué es la dependencia según la ley?",
+      "a": "Estado de **carácter permanente** en que una persona, por edad, enfermedad o discapacidad, necesita ayuda para las **actividades básicas de la vida diaria**"
+    },
+    {
+      "id": "i5c75",
+      "n": "75",
+      "e": "🪥",
+      "t": false,
+      "q": "¿Qué son las ABVD?",
+      "a": "**Actividades Básicas de la Vida Diaria**: cuidado personal, tareas domésticas básicas, movilidad esencial, orientarse…"
+    },
+    {
+      "id": "i5c76",
+      "n": "76",
+      "e": "📏",
+      "t": true,
+      "q": "¿Cuáles son los grados de dependencia?",
+      "a": "**Grado I** moderada (1 vez al día) · **Grado II** severa (2-3 veces al día) · **Grado III** gran dependencia (varias veces al día, apoyo continuo)"
+    },
+    {
+      "id": "i5c77",
+      "n": "77",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Qué requisito de residencia se exige?",
+      "a": "Residir en España **5 años**, de los cuales **2** inmediatamente anteriores a la solicitud"
+    },
+    {
+      "id": "i5c78",
+      "n": "78",
+      "e": "🪜",
+      "t": true,
+      "q": "¿Cuáles son los 3 niveles de protección del Sistema?",
+      "a": "**Mínimo** (AGE), **acordado** (AGE y cada CA mediante convenio) y **adicional** (cada CA)"
+    },
+    {
+      "id": "i5c79",
+      "n": "79",
+      "e": "📟",
+      "t": false,
+      "q": "¿Qué servicios incluye el catálogo de la dependencia?",
+      "a": "Prevención y promoción de la autonomía, **teleasistencia**, **ayuda a domicilio**, **centro de día y de noche** y **atención residencial**"
+    },
+    {
+      "id": "i5c80",
+      "n": "80",
+      "e": "💳",
+      "t": false,
+      "q": "¿Qué prestaciones económicas existen en dependencia?",
+      "a": "**Vinculada al servicio**, para **cuidados en el entorno familiar** y de **asistencia personal**"
+    },
+    {
+      "id": "i5c81",
+      "n": "81",
+      "e": "🖊️",
+      "t": true,
+      "q": "¿Quién reconoce la situación de dependencia?",
+      "a": "La **Administración autonómica** de la residencia del solicitante, mediante resolución **válida en todo el Estado**"
+    },
+    {
+      "id": "i5c82",
+      "n": "82",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué composición tiene el Comité Consultivo del Sistema?",
+      "a": "**Tripartita**: Administraciones públicas, organizaciones empresariales y sindicales"
+    }
+  ]
+}

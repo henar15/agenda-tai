@@ -1,0 +1,304 @@
+{
+  "tema": "I-5",
+  "preguntas": [
+    {
+      "id": "i5-01",
+      "tipico": true,
+      "q": "La Ley Orgánica para la igualdad efectiva de mujeres y hombres es la…",
+      "opts": [
+        "LO 3/2007",
+        "Ley 4/2023",
+        "LO 3/2018",
+        "LO 1/2004"
+      ],
+      "c": 0,
+      "exp": "LO 3/2007, de 22 de marzo."
+    },
+    {
+      "id": "i5-02",
+      "tipico": true,
+      "q": "Según la LO 3/2007, hay composición equilibrada cuando cada sexo…",
+      "opts": [
+        "No supera el 55 % ni baja del 45 %",
+        "Es al menos el 50 %",
+        "No supera el 70 % ni baja del 30 %",
+        "No supera el 60 % ni baja del 40 %"
+      ],
+      "c": 3,
+      "exp": "Entre el 40 % y el 60 % (disposición adicional primera)."
+    },
+    {
+      "id": "i5-03",
+      "tipico": true,
+      "q": "Una práctica aparentemente neutra que pone a un sexo en desventaja particular es…",
+      "opts": [
+        "Acción positiva",
+        "Discriminación directa",
+        "Discriminación indirecta",
+        "Acoso por razón de sexo"
+      ],
+      "c": 2,
+      "exp": "Es la definición de discriminación indirecta."
+    },
+    {
+      "id": "i5-04",
+      "tipico": false,
+      "q": "¿Cuándo aprueba el Gobierno el Plan de Igualdad de la AGE?",
+      "opts": [
+        "Cada año",
+        "Al inicio de cada legislatura",
+        "Cada cuatro años, a mitad de legislatura",
+        "Cuando lo pida el Congreso"
+      ],
+      "c": 1,
+      "exp": "Al inicio de cada legislatura; el Consejo de Ministros lo evalúa anualmente."
+    },
+    {
+      "id": "i5-05",
+      "tipico": true,
+      "q": "Están obligadas a tener un plan de igualdad las empresas de…",
+      "opts": [
+        "50 o más trabajadores",
+        "100 o más trabajadores",
+        "250 o más trabajadores",
+        "25 o más trabajadores"
+      ],
+      "c": 0,
+      "exp": "50 o más trabajadores; para las demás es voluntario salvo convenio o sanción."
+    },
+    {
+      "id": "i5-06",
+      "tipico": false,
+      "q": "En los cursos de formación para acceder a puestos directivos de la AGE se reserva a las empleadas públicas…",
+      "opts": [
+        "El 50 % de las plazas",
+        "Al menos el 25 % de las plazas",
+        "Al menos el 33 % de las plazas",
+        "Al menos el 40 % de las plazas"
+      ],
+      "c": 3,
+      "exp": "Al menos el 40 %."
+    },
+    {
+      "id": "i5-07",
+      "tipico": false,
+      "q": "La convocatoria de pruebas selectivas debe ir acompañada de un informe de impacto de género…",
+      "opts": [
+        "Solo en procesos de promoción interna",
+        "Siempre, sin excepción",
+        "Salvo en casos de urgencia",
+        "Solo si lo pide la Comisión de Igualdad"
+      ],
+      "c": 2,
+      "exp": "Salvo en casos de urgencia."
+    },
+    {
+      "id": "i5-08",
+      "tipico": true,
+      "q": "La violencia de género de la LO 1/2004 es la ejercida sobre la mujer por quien sea o haya sido su pareja…",
+      "opts": [
+        "Solo si estaban casados",
+        "Aun sin convivencia",
+        "Solo si hay hijos en común",
+        "Solo si convivían"
+      ],
+      "c": 1,
+      "exp": "Cónyuges o relaciones similares de afectividad, aun sin convivencia."
+    },
+    {
+      "id": "i5-09",
+      "tipico": true,
+      "q": "El derecho a la asistencia jurídica gratuita de las víctimas está en el…",
+      "opts": [
+        "Art. 20 LO 1/2004",
+        "Art. 64 LO 1/2004",
+        "Art. 18 LO 1/2004",
+        "Art. 19 LO 1/2004"
+      ],
+      "c": 0,
+      "exp": "18 información, 19 asistencia social integral, 20 asistencia jurídica."
+    },
+    {
+      "id": "i5-10",
+      "tipico": true,
+      "q": "La audiencia para resolver una orden de protección debe celebrarse en un plazo máximo de…",
+      "opts": [
+        "5 días",
+        "24 horas",
+        "48 horas",
+        "72 horas"
+      ],
+      "c": 3,
+      "exp": "72 horas desde la solicitud (art. 544 ter LECrim)."
+    },
+    {
+      "id": "i5-11",
+      "tipico": false,
+      "q": "La salida del domicilio y el alejamiento del inculpado se regulan en el…",
+      "opts": [
+        "Art. 67",
+        "Art. 63",
+        "Art. 64",
+        "Art. 66"
+      ],
+      "c": 2,
+      "exp": "Art. 64. El 65 patria potestad, el 66 visitas y el 67 armas."
+    },
+    {
+      "id": "i5-12",
+      "tipico": false,
+      "q": "¿Cuál NO es un derecho laboral de la trabajadora víctima de violencia de género?",
+      "opts": [
+        "Reducción del tiempo de trabajo",
+        "Aumento del salario base",
+        "Movilidad geográfica",
+        "Suspensión con reserva de puesto"
+      ],
+      "c": 1,
+      "exp": "La ley no prevé un aumento salarial."
+    },
+    {
+      "id": "i5-13",
+      "tipico": false,
+      "q": "La ayuda de pago único para víctimas sin rentas, sin discapacidad ni cargas familiares, equivale a…",
+      "opts": [
+        "6 meses de subsidio",
+        "12 meses de subsidio",
+        "24 meses de subsidio",
+        "3 meses de subsidio"
+      ],
+      "c": 0,
+      "exp": "6 meses; 12 si hay discapacidad del 33 % o más."
+    },
+    {
+      "id": "i5-14",
+      "tipico": true,
+      "q": "La Ley 4/2023, sobre personas trans y LGTBI, es de…",
+      "opts": [
+        "22 de marzo",
+        "12 de julio",
+        "28 de diciembre",
+        "28 de febrero"
+      ],
+      "c": 3,
+      "exp": "Ley 4/2023, de 28 de febrero."
+    },
+    {
+      "id": "i5-15",
+      "tipico": false,
+      "q": "Cuando varias causas de discriminación interactúan y crean una forma específica de discriminación, hablamos de discriminación…",
+      "opts": [
+        "Múltiple",
+        "Por asociación",
+        "Interseccional",
+        "Por error"
+      ],
+      "c": 2,
+      "exp": "Es la interseccional; la múltiple es por dos o más causas, a la vez o seguidas."
+    },
+    {
+      "id": "i5-16",
+      "tipico": false,
+      "q": "La Estrategia estatal para la igualdad de las personas LGTBI tiene carácter…",
+      "opts": [
+        "Bienal",
+        "Cuatrienal",
+        "Indefinido",
+        "Anual"
+      ],
+      "c": 1,
+      "exp": "Cuatrienal, aprobada por el Consejo de Ministros."
+    },
+    {
+      "id": "i5-17",
+      "tipico": true,
+      "q": "Tienen la consideración de personas con discapacidad, a todos los efectos, quienes tengan reconocido un grado igual o superior al…",
+      "opts": [
+        "33 %",
+        "45 %",
+        "65 %",
+        "25 %"
+      ],
+      "c": 0,
+      "exp": "33 %."
+    },
+    {
+      "id": "i5-18",
+      "tipico": true,
+      "q": "Las empresas de 50 o más trabajadores deben reservar a trabajadores con discapacidad al menos el…",
+      "opts": [
+        "5 %",
+        "7 %",
+        "10 %",
+        "2 %"
+      ],
+      "c": 3,
+      "exp": "Al menos el 2 % de la plantilla."
+    },
+    {
+      "id": "i5-19",
+      "tipico": false,
+      "q": "Las adaptaciones del entorno a una persona concreta con discapacidad que no suponen carga desproporcionada son…",
+      "opts": [
+        "Medidas de acción positiva",
+        "Diseño universal",
+        "Ajustes razonables",
+        "Accesibilidad cognitiva"
+      ],
+      "c": 2,
+      "exp": "Son los ajustes razonables; el diseño universal se hace desde el origen para todos."
+    },
+    {
+      "id": "i5-20",
+      "tipico": true,
+      "q": "La Ley de dependencia es la…",
+      "opts": [
+        "Ley 51/2003",
+        "Ley 39/2006",
+        "Ley 39/2015",
+        "Ley 13/1982"
+      ],
+      "c": 1,
+      "exp": "Ley 39/2006, de 14 de diciembre."
+    },
+    {
+      "id": "i5-21",
+      "tipico": true,
+      "q": "La persona que necesita ayuda para varias ABVD dos o tres veces al día tiene…",
+      "opts": [
+        "Grado II, dependencia severa",
+        "Grado III, gran dependencia",
+        "Grado IV, dependencia total",
+        "Grado I, dependencia moderada"
+      ],
+      "c": 0,
+      "exp": "Grado II. Solo hay tres grados."
+    },
+    {
+      "id": "i5-22",
+      "tipico": false,
+      "q": "¿Quién reconoce la situación de dependencia?",
+      "opts": [
+        "El ayuntamiento",
+        "El IMSERSO",
+        "El Ministerio de Igualdad",
+        "La Administración autonómica de residencia"
+      ],
+      "c": 3,
+      "exp": "La CA de residencia; la resolución vale en todo el Estado."
+    },
+    {
+      "id": "i5-23",
+      "tipico": false,
+      "q": "¿Cuál NO es un nivel de protección del Sistema de dependencia?",
+      "opts": [
+        "Acordado entre AGE y cada CA",
+        "Adicional, de cada CA",
+        "Local, fijado por cada ayuntamiento",
+        "Mínimo, fijado por la AGE"
+      ],
+      "c": 2,
+      "exp": "Los niveles son mínimo, acordado y adicional."
+    }
+  ]
+}
