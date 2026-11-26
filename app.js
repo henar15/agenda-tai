@@ -6,7 +6,7 @@ const plain=v=>String(v??'').replace(/\*\*/g,'');
 const BL={I:{c:'var(--b1)',hex:'#7c3aed',l:'#ede9fe',n:'Organización del Estado y Administración electrónica'},II:{c:'var(--b2)',hex:'#0d9488',l:'#ccfbf1',n:'Tecnología básica'},III:{c:'var(--b3)',hex:'#2563eb',l:'#dbeafe',n:'Desarrollo de sistemas'},IV:{c:'var(--b4)',hex:'#ea580c',l:'#ffedd5',n:'Sistemas y comunicaciones'}};
 const EST=['pendiente','en-curso','estudiado'],ESTN={'pendiente':'Pendiente','en-curso':'En curso','estudiado':'Estudiado'};
 const S={exIdx:[],exams:{},horario:{dias:[]},act:{},pedidos:{},user:null,authReady:false,plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
-const ui={xtab:'web',ex:null,xcfg:null,hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
+const ui={pomo:null,xtab:'web',ex:null,xcfg:null,hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
 
 const fmtD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('es-ES',{day:'numeric',month:'short'})};
 const monday=()=>{const d=new Date();const w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toISOString().slice(0,10)};
@@ -17,14 +17,14 @@ const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;re
 let LS='agendaTAI:anon:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos','lectura','diario'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos','lectura','diario','srs'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {lectura:S.lectura,diario:S.diario,recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v;else if(k==='lectura')S.lectura=v;else if(k==='diario')S.diario=v}
+function kvVal(k){return {srs:S.srs,lectura:S.lectura,diario:S.diario,recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v;else if(k==='lectura')S.lectura=v;else if(k==='diario')S.diario=v;else if(k==='srs')S.srs=v}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
 function flash(t){const e=$('#sync');if(e)e.textContent=t}
-function resetUser(){Object.assign(S,{lectura:{},diario:{},recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
+function resetUser(){Object.assign(S,{srs:{},lectura:{},diario:{},recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
 const temaName=id=>{const t=S.temas.find(x=>x.id===id);return t?t.codigo+' '+t.titulo:id};
 const temaBl=id=>{const t=S.temas.find(x=>x.id===id);return BL[(t&&t.bloque)||'I']};
 
@@ -68,7 +68,7 @@ function logros(){let sabe=0;Object.entries(S.cards).forEach(([t,cs])=>{const p=
    L('e1','📗','Temario','Primer tema','Marca un tema como estudiado',est>=1),L('e5','📘','Temario','Cinco temas','5 temas estudiados',est>=5),L('e10','📙','Temario','Diez temas','10 temas estudiados',est>=10),L('e20','📕','Temario','Más de la mitad','20 temas estudiados',est>=20),L('e34','🎉','Temario','Temario completo','Los 34 temas estudiados',est>=34),
    L('bI','🏛️','Temario','Bloque I','Todo el Bloque I estudiado',blq('I')),L('bII','💻','Temario','Bloque II','Todo el Bloque II estudiado',blq('II')),L('bIII','🧩','Temario','Bloque III','Todo el Bloque III estudiado',blq('III')),L('bIV','🌐','Temario','Bloque IV','Todo el Bloque IV estudiado',blq('IV')),
    L('hor','🗓️','Organización','Organizada','Crea tu horario semanal',hayHorario()),L('pl10','☑️','Organización','Cumplidora','Marca 10 tareas del planning',tareas>=10),L('pl50','✔️','Organización','Plan en marcha','Marca 50 tareas del planning',tareas>=50),L('ins','🖊️','Organización','Inscrita','Marca que ya te has inscrito',(S.config||{}).inscrita),
-   L('vf15','⚡','Juegos','Velocista','15 aciertos en Verdadero o falso',(rec.vf||0)>=15),L('vf25','⚡','Juegos','Rayo','25 aciertos en Verdadero o falso',(rec.vf||0)>=25),L('emp','🧩','Juegos','Emparejadora','Completa Empareja en menos de 60 s',rec.emp&&rec.emp<60)]}
+   L('vf15','⚡','Juegos','Velocista','15 aciertos en Verdadero o falso',(rec.vf||0)>=15),L('vf25','⚡','Juegos','Rayo','25 aciertos en Verdadero o falso',(rec.vf||0)>=25),L('pm1','🍅','Constancia','Primer pomodoro','Termina un pomodoro',Object.values(S.diario||{}).some(d=>(d._s||{}).m>0)),L('st3','⭐','Constancia','Retadora','Consigue 3 estrellas',estrellas()>=3),L('emp','🧩','Juegos','Emparejadora','Completa Empareja en menos de 60 s',rec.emp&&rec.emp<60)]}
 function checkLogros(){if(!S.user||!S.ready)return;const ok=logros().filter(x=>x.ok).map(x=>x.id);const vistos=(S.rec||{}).logros;
   if(!Array.isArray(vistos)){S.rec=Object.assign({},S.rec,{logros:ok});kvSet('records');return}
   const nuevos=ok.filter(id=>!vistos.includes(id));if(!nuevos.length)return;S.rec=Object.assign({},S.rec,{logros:vistos.concat(nuevos)});kvSet('records');
@@ -90,7 +90,7 @@ function R(){const act=S.act||{},ok=(S.rec||{}).ok||{};const ks=Object.keys(act)
 function racha(){return R().n}
 const etapa=n=>{let i=0;ETAPAS.forEach((e,k)=>{if(n>=e.d)i=k});return i};
 const accDe=m=>{let r=null;ACCS.forEach(x=>{if(m>=x.a)r=x});return r};
-function mascSVG(st,acc,mood,size,label){
+function mascSVG(st,acc,mood,size,label,prem){prem=prem||(typeof premiosDe==='function'&&S.user?premiosDe():[]);
   const egg=st<=2,chick=st===3||st===4,bird=st>=5;
   const C=['#fff4dc','#fff4dc','#fff4dc','#ffd43b','#ffcc29','#8b5cf6','#0d9488','#f97316'][st];
   const ey=egg?112:chick?100:96,top=egg?44:chick?54:52;let g='';
@@ -112,7 +112,9 @@ function mascSVG(st,acc,mood,size,label){
   if(acc&&mood!=='sleep'&&(acc.id==='gafas'||acc.id==='birrete'||acc.id==='corona'))g+=`<circle cx="85" cy="${ey}" r="12" fill="none" stroke="#1d1a26" stroke-width="3"/><circle cx="115" cy="${ey}" r="12" fill="none" stroke="#1d1a26" stroke-width="3"/><path d="M97 ${ey} h6" stroke="#1d1a26" stroke-width="3"/>`;
   if(acc&&acc.id==='birrete')g+=`<path d="M60 ${top+2} L100 ${top-16} L140 ${top+2} L100 ${top+20}Z" fill="#1d1a26"/><rect x="82" y="${top+6}" width="36" height="12" fill="#1d1a26"/><path d="M134 ${top+3} v18" stroke="#fbbf24" stroke-width="3"/><circle cx="134" cy="${top+23}" r="4" fill="#fbbf24"/>`;
   if(acc&&acc.id==='corona')g+=`<path d="M72 ${top+8} L76 ${top-18} L90 ${top-2} L100 ${top-24} L110 ${top-2} L124 ${top-18} L128 ${top+8}Z" fill="#fbbf24" stroke="#d97706" stroke-width="2"/><circle cx="100" cy="${top-4}" r="4" fill="#ef4444"/>`;
-  return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="${esc(label)}">${g}</svg>`}
+  let pre='';if(prem.includes('aura'))pre+=`<circle cx="100" cy="108" r="88" fill="none" stroke="#fbbf24" stroke-width="6" opacity=".55"/><circle cx="100" cy="108" r="80" fill="#fde68a" opacity=".25"/>`;if(prem.includes('capa'))pre+=`<path d="M52 110 Q30 175 70 186 L130 186 Q170 175 148 110Z" fill="#7c3aed" opacity=".9"/>`;
+  if(prem.includes('bufanda'))g+=`<path d="M60 ${ey+28} Q100 ${ey+44} 140 ${ey+28} L140 ${ey+40} Q100 ${ey+56} 60 ${ey+40}Z" fill="#ef4444"/><path d="M118 ${ey+44} l8 30 l12 -4 l-6 -28Z" fill="#dc2626"/>`;
+  return `<svg viewBox="0 0 200 200" width="${size}" height="${size}" role="img" aria-label="${esc(label)}">${pre}${g}</svg>`}
 function frase(r){const h=[...today()].reduce((a,c)=>a+c.charCodeAt(0),0);const pick=a=>a[h%a.length].replace('{meta}',r.meta).replace('{pts}',r.pts).replace('{left}',Math.max(0,r.meta-r.pts));
   if(r.descanso&&!r.pts)return pick(['Hoy es tu día de descanso 😴 La racha no se rompe.','Descansar también es estudiar. ¡Mañana seguimos!']);
   if(r.hoy)return pick(['¡Llena! Hoy ya has cumplido 💜','Racha a salvo. Ahora, si quieres, descansa un poco','¡Qué orgullosa estoy de ti! Mañana más','Hoy me has cuidado genial. ¡Gracias!']);
@@ -138,6 +140,7 @@ function vEvolucion(){const r=R(),st=etapa(r.n),mx=Math.max(st,(S.rec||{}).stMax
   return `<div class="card evocard"><h3>Evolución de ${esc(mascName())}</h3><p class="sub">Crece con tu racha de días. Desliza para ver todas las formas →</p>
   <ul class="evo" aria-label="Formas de la mascota">${ETAPAS.map((e,k)=>it(mascSVG(k,null,k<=mx?'happy':'wait',76,e.n+(k<=mx?'':' (bloqueado)')),e.n,e.d?e.d+(e.d===1?' día':' días'):'Al empezar',k<=mx,k===st)).join('')}</ul>
   <h4 class="evo-h">Accesorios <small>· se ganan con aciertos seguidos en los tests (tu récord: ${am})</small></h4>
+  <h4 class="evo-h">Premios de los retos <small>· estrellas: ${estrellas()}</small></h4><ul class="evo" aria-label="Premios">${PREMIOS.map(p=>it(mascSVG(4,null,'happy',76,p.n,[p.id]),p.n,p.s+' estrellas',estrellas()>=p.s,false)).join('')}</ul>
   <ul class="evo" aria-label="Accesorios">${ACCS.map(a=>it(mascSVG(4,a,'happy',76,a.n+(am>=a.a?'':' (bloqueado)')),a.n,a.a+' aciertos seguidos',am>=a.a,false)).join('')}</ul></div>`}
 function celebrar(){if(!S.user||!S.ready||document.querySelector('.modal'))return;const r=R(),st=etapa(r.n),rec=S.rec||{};const am=rec.acMax||0,ac=accDe(am);
   let msg=null;
@@ -162,8 +165,8 @@ function planDia(ref,sim){ // sim: avances supuestos (para mañana)
     if(t.pags){const ini=t.pagIni||1;const leida=Math.max(ini-1,(sim.lect[t.id]!=null?sim.lect[t.id]:((S.lectura||{})[t.id]||ini-1)));const rest=t.pags-leida;if(rest>0){const n=Math.ceil(rest/dias);const a=leida+1,b=Math.min(t.pags,leida+n);out.push({k:'l-'+t.id+'-'+b,tipo:'lect',tema:t.id,a,b,txt:`📖 Lee y subraya las págs. ${a}–${b} del tema ${t.codigo}`,sub:`${b-a+1} páginas · te quedan ${rest} del tema`+(atras?' · atrasado':'')})}}
     const cs=S.cards[t.id]||[];const p=S.piles[t.id]||{};const nuevas=cs.filter(c=>!p[c.id]).length-(sim.cards[t.id]||0);if(nuevas>0){const n=Math.min(40,Math.ceil(nuevas/dias));out.push({k:'c-'+t.id+'-'+dkey(day),tipo:'cards',tema:t.id,n,txt:`🃏 Aprende ${n} tarjetas nuevas del tema ${t.codigo}`,sub:`quedan ${nuevas} sin estudiar`,go:'cards'})}
     else if(!cs.length&&!(S.pedidos||{})[t.id])out.push({k:'p-'+t.id,tipo:'pedir',tema:t.id,txt:`✨ Pide las tarjetas del tema ${t.codigo}`,sub:'Botón «Generar tarjetas» en Temas',go:'temas'})});
-  let dudas=0;Object.entries(S.piles).forEach(([tm,pp])=>Object.values(pp).forEach(v=>{if(v===1||v===2)dudas++}));
-  if(dudas)out.push({k:'r-'+dkey(day),tipo:'rep',n:Math.min(25,dudas),txt:`🔁 Repasa ${Math.min(25,dudas)} tarjetas de «Dudo» y «No me la sé»`,sub:`tienes ${dudas} en esos montones`,go:'repaso'});
+  const dudas=cardsDueHoy();
+  if(dudas)out.push({k:'r-'+dkey(day),tipo:'rep',n:Math.min(30,dudas),txt:`🔁 Repasa ${Math.min(30,dudas)} tarjetas que tocan hoy`,sub:`repaso espaciado: ${dudas} pendientes para hoy`,go:'repaso'});
   const ne=errList().length;if(ne)out.push({k:'e-'+dkey(day),tipo:'err',txt:`❌ Haz «Mis errores» (${ne})`,sub:'hasta acertarlas dos veces seguidas',go:'errores'});
   const ultimo=diasEstudioHasta(addD(day,1),fin)===0;const t0=ts[0];
   if(ultimo&&t0)out.push({k:'t-'+dkey(day),tipo:'test',txt:`📝 Test de la semana: tema ${t0.codigo}`,sub:'10–20 preguntas para ver qué tal lo llevas',go:'test',tema:t0.id});
@@ -174,9 +177,46 @@ function vHoyPlan(compact){const hoy=new Date(),man=addD(hoy,1);const H=planDia(
   const sim={lect:{},cards:{}};(H.tareas||[]).forEach(t=>{if(t.tipo==='lect')sim.lect[t.tema]=t.b;if(t.tipo==='cards')sim.cards[t.tema]=(sim.cards[t.tema]||0)+t.n});const M=planDia(man,sim);
   const li=(t,chk)=>`<li class="dt${chk&&done[t.k]?' ok':''}">${chk?`<label><input type="checkbox" data-dk="${esc(t.k)}"${done[t.k]?' checked':''}><span><b>${esc(t.txt)}</b><small>${esc(t.sub||'')}</small></span></label>${t.go?`<button class="mini" data-act="dgo" data-go="${t.go}" data-t="${esc(t.tema||'')}">Ir</button>`:''}`:`<span><b>${esc(t.txt)}</b><small>${esc(t.sub||'')}</small></span>`}</li>`;
   const hech=(H.tareas||[]).filter(t=>done[t.k]).length,tot=(H.tareas||[]).length;const R2=ritmo();
-  return `<div class="card hoyplan"><h3>Hoy toca ${tot?`<small>${hech}/${tot} hechas</small>`:''}</h3>${H.descanso?'<p class="empty">Hoy es día de descanso 😴</p>':tot?`<ul class="dlist">${H.tareas.map(t=>li(t,true)).join('')}</ul>`:'<p class="empty">¡Nada pendiente! Si te apetece, repasa tarjetas o haz un test.</p>'}
+  return `<div class="card hoyplan"><h3>Hoy toca ${tot?`<small>${hech}/${tot} hechas</small>`:''}${ui.pomo?'':'<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso?'<p class="empty">Hoy es día de descanso 😴</p>':tot?`<ul class="dlist">${H.tareas.map(t=>li(t,true)).join('')}</ul>`:'<p class="empty">¡Nada pendiente! Si te apetece, repasa tarjetas o haz un test.</p>'}
   ${compact?'':`<h3 style="margin-top:18px">Mañana</h3>${M.descanso?'<p class="fine">Mañana descansas 😴</p>':`<ul class="dlist">${(M.tareas||[]).map(t=>li(t,false)).join('')||'<li class="fine">Nada todavía</li>'}</ul>`}`}
   <p class="fine" style="margin-top:12px">🎯 Para tenerlo todo leído para mayo: <b>${R2.pd} páginas al día</b> (${R2.pag} páginas en ${R2.dias} días de estudio). Lo que no hagas hoy se reparte en los próximos días.</p></div>`}
+
+/* ---------- repaso espaciado ---------- */
+const SRS_INT=[1,3,7,14,30];
+function srsDue(tema,c){const s=((S.srs||{})[tema]||{})[c.id];const p=(S.piles[tema]||{})[c.id];if(s)return s.d;if(p===1||p===2)return today();return null}
+function cardsDueHoy(tema){const t=today();const ts=tema?[tema]:Object.keys(S.cards);let n=0;ts.forEach(tm=>(S.cards[tm]||[]).forEach(c=>{const d=srsDue(tm,c);if(d&&d<=t)n++}));return n}
+function srsMark(tema,id,pile){const all=Object.assign({},S.srs||{});const m=Object.assign({},all[tema]||{});const prev=m[id]||{b:0};let b=pile===3?Math.min(SRS_INT.length,prev.b+1):pile===2?Math.max(1,Math.min(prev.b,1)):0;const days=pile===1?1:pile===2?2:SRS_INT[b-1];m[id]={b,d:dkey(addD(new Date(),days))};all[tema]=m;S.srs=all;kvSet('srs')}
+/* ---------- stats del día ---------- */
+function statAdd(k,n){const d=Object.assign({},S.diario||{});const t=Object.assign({},d[today()]||{});const s=Object.assign({c:0,q:0,p:0,m:0},t._s||{});s[k]+=n;t._s=s;d[today()]=t;S.diario=d;kvSet('diario')}
+const hechasDe=o=>Object.keys(o||{}).filter(k=>k!=='_s');
+/* ---------- retos semanales ---------- */
+function semKey(d){const x=new Date(d||new Date());x.setDate(x.getDate()-((x.getDay()+6)%7));return dkey(x)}
+function retos(){const lun=semKey(),dias=[0,1,2,3,4,5,6].map(k=>dkey(addD(new Date(lun+'T12:00:00'),k)));
+  const st=dias.map(d=>((S.diario||{})[d]||{})._s||{});const sum=k=>st.reduce((a,s)=>a+(s[k]||0),0);
+  const tests=S.res.filter(r=>(r.fecha||'').slice(0,10)>=lun).length;const metas=dias.filter(d=>d<=today()&&dayOk(d)).length;
+  const R=[{id:'cards',t:'Clasifica 150 tarjetas',v:sum('c'),m:150,ic:'🃏'},{id:'tests',t:'Haz 3 tests o exámenes',v:tests,m:3,ic:'📝'},{id:'metas',t:'Cumple la meta 5 días',v:metas,m:5,ic:'🎯'},{id:'pomo',t:'Haz 8 pomodoros',v:sum('m'),m:8,ic:'🍅'}];
+  return {lun,R}}
+const PREMIOS=[{s:3,id:'bufanda',n:'Bufanda'},{s:8,id:'capa',n:'Capa de heroína'},{s:15,id:'aura',n:'Aura dorada'}];
+function estrellas(){const h=(S.rec||{}).retos||{};return Object.values(h).reduce((a,x)=>a+x.length,0)}
+function checkRetos(){if(!S.user||!S.ready)return;const {lun,R}=retos();const h=Object.assign({},(S.rec||{}).retos||{});const ya=h[lun]||[];const nuevos=R.filter(r=>r.v>=r.m&&!ya.includes(r.id));if(!nuevos.length)return;h[lun]=ya.concat(nuevos.map(r=>r.id));S.rec=Object.assign({},S.rec,{retos:h});kvSet('records');toast('⭐','¡Reto cumplido!',nuevos[0].t+' · +1 estrella')}
+function premiosDe(){const e=estrellas();return PREMIOS.filter(p=>e>=p.s).map(p=>p.id)}
+function vRetos(){const {R}=retos();const e=estrellas(),sig=PREMIOS.find(p=>e<p.s);
+  return `<div class="card retos"><h3>Retos de la semana <small>⭐ ${e} estrellas</small></h3><div class="rlist2">${R.map(r=>`<div class="reto${r.v>=r.m?' ok':''}"><span class="ri" aria-hidden="true">${r.v>=r.m?'⭐':r.ic}</span><div><b>${esc(r.t)}</b><div class="tr" role="progressbar" aria-label="${esc(r.t)}" aria-valuemin="0" aria-valuemax="${r.m}" aria-valuenow="${Math.min(r.v,r.m)}"><i style="width:${Math.min(100,r.v/r.m*100)}%"></i></div><small>${Math.min(r.v,r.m)} / ${r.m}</small></div></div>`).join('')}</div>${sig?`<p class="fine">Con ${sig.s} estrellas ${esc(mascName())} consigue: <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Tienes todos los premios!</p>'}</div>`}
+/* ---------- pomodoro ---------- */
+let pomoT=null;
+function pomoStart(){const P=ui.pomo={fase:'estudio',fin:Date.now()+25*60000,n:(ui.pomo&&ui.pomo.n)||0};clearInterval(pomoT);pomoT=setInterval(pomoTick,1000);pomoDraw()}
+function pomoStop(){clearInterval(pomoT);ui.pomo=null;pomoDraw()}
+function pomoTick(){const P=ui.pomo;if(!P)return;if(Date.now()>=P.fin){if(P.fase==='estudio'){P.n++;statAdd('m',1);logAct(5);try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}toast('🍅','¡Pomodoro terminado!','+5 puntos · 5 minutos de descanso');P.fase='descanso';P.fin=Date.now()+5*60000}else{toast('📚','Fin del descanso','¡Otro pomodoro!');P.fase='estudio';P.fin=Date.now()+25*60000}}pomoDraw()}
+function pomoDraw(){let w=document.getElementById('pomo');const P=ui.pomo;if(!P){if(w)w.remove();return}if(!w){w=document.createElement('div');w.id='pomo';w.setAttribute('role','timer');document.body.appendChild(w)}
+  const l=Math.max(0,P.fin-Date.now()),m=Math.floor(l/60000),s=Math.floor(l%60000/1000);const r=R();
+  w.className=P.fase;w.innerHTML=`<div class="pm">${mascSVG(etapa(r.n),accDe((S.rec||{}).acMax||0),P.fase==='estudio'?'wait':'happy',44,mascName(),premiosDe())}</div><div><small>${P.fase==='estudio'?'Estudiando con '+esc(mascName()):'Descanso'} · 🍅 ${P.n}</small><b aria-live="off">${m}:${String(s).padStart(2,'0')}</b></div><button class="mini ghost" data-act="pomostop" aria-label="Parar pomodoro">✕</button>`}
+/* ---------- resumen y nota estimada ---------- */
+function notaEstimada(){const rs=S.res.slice().sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||'')).filter(r=>r.total>=10).slice(0,5);if(!rs.length)return null;let w=0,s=0;rs.forEach((r,i)=>{const k=(5-i)*(r.total>=40?2:1);w+=k;s+=nota(r)*k});return s/w}
+function vResumenDia(){const t=today();const s=((S.diario||{})[t]||{})._s||{};const hoyRes=S.res.filter(r=>(r.fecha||'').slice(0,10)===t);const H=planDia(new Date());const done=hechasDe((S.diario||{})[t]);const tot=(H.tareas||[]).length;
+  const tarde=new Date().getHours()>=20;if(!tarde&&!(tot&&done.length>=tot))return '';
+  const nt=hoyRes.length?hoyRes.reduce((a,r)=>a+nota(r),0)/hoyRes.length:null;
+  const frase=done.length>=tot&&tot?'¡Día completo! Hoy has hecho todo lo que tocaba 💜':s.c||s.q?'Cada tarjeta cuenta. Mañana seguimos 💪':'Hoy no ha habido estudio… mañana empezamos con algo pequeño 🌱';
+  return `<div class="card resumen"><h3>Resumen de hoy</h3><div class="rsum"><div><b>${s.c||0}</b><small>tarjetas</small></div><div><b>${s.q||0}</b><small>preguntas</small></div><div><b>${s.p||0}</b><small>páginas</small></div><div><b>${s.m||0}</b><small>pomodoros</small></div>${nt!=null?`<div><b>${n1(nt)}</b><small>nota de hoy</small></div>`:''}</div><p class="bubble" style="margin-bottom:0">${esc(mascName())}: ${esc(frase)}</p></div>`}
 
 /* ---------- horario ---------- */
 const DIAS=['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo'];
@@ -215,11 +255,11 @@ function vInicio(){
   const hoy=bloquesDia(hoyIdx());const cur=hoy.find(b=>mins(b.h)<=now&&now<mins(!b.f||b.f==='00:00'?'23:59':b.f));const next=hoy.filter(b=>mins(b.h)>now).slice(0,2);
   const nombre=(S.user&&S.user.displayName||'').split(' ')[0];
   const hoyHtml=hayHorario()?`<div class="tline">${(cur?[cur]:[]).concat(next).map(b=>blockRow(b,true)).join('')||'<p class="empty">No te queda nada más hoy. ¡A descansar!</p>'}</div><a class="more" href="#planning">Ver el día completo</a>`:`<p class="sub" style="margin:0 0 8px">Crea tu horario y aquí verás qué te toca en cada momento.</p><a class="btn ghost" href="#planning">Crear mi horario</a>`;
-  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>${vMascota()}${vHoyPlan(true)}
+  return `${warn}<h2 class="hola">Hola${nombre?', '+esc(nombre):''} 👋</h2>${vMascota()}${vResumenDia()}${vHoyPlan(true)}
   <div class="card"><h3>Ahora</h3>${hoyHtml}</div>
-  <div class="go"><a class="gob" href="#tarjetas"><span>🃏</span><b>Repasar tarjetas</b></a><a class="gob" href="#tests"><span>📝</span><b>Hacer un test</b></a>${ne?`<a class="gob" href="#tests"><span>🔁</span><b>Mis errores (${ne})</b></a>`:''}</div>
-  <div class="kpis"><div class="kpi"><b>🏅 ${logros().filter(x=>x.ok).length}</b><span>logros</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${media===null?'–':n1(media)}</b><span>nota media</span></div></div>
-  <div class="card"><h3>Temas de esta semana</h3>${sem.length?`<div class="list">${sem.map(rowTema).join('')}</div>`:'<p class="empty">Esta semana no hay temas nuevos: toca repasar.</p>'}</div>`;
+  <div class="go"><a class="gob" href="#tarjetas" data-act="dgo" data-go="repaso"><span>🃏</span><b>Repasar tarjetas${cardsDueHoy()?` (${cardsDueHoy()} hoy)`:''}</b></a><a class="gob" href="#tests"><span>📝</span><b>Hacer un test</b></a>${ne?`<a class="gob" href="#tests"><span>🔁</span><b>Mis errores (${ne})</b></a>`:''}</div>
+  <div class="kpis"><div class="kpi"><b>⏳ ${Math.max(0,Math.ceil((new Date((cfg.examen||'2027-05-15')+'T09:00:00')-new Date())/864e5))}</b><span>días ${cfg.examen?'para el examen':'hasta mayo (fecha sin publicar)'}</span></div><div class="kpi"><b>${nCards?Math.round(sabe/nCards*100)+'%':'–'}</b><span>tarjetas sabidas</span></div><div class="kpi"><b>${notaEstimada()==null?'–':n1(notaEstimada())}</b><span>nota estimada</span></div></div>${vRetos()}
+`;
 }
 function vProgreso(){
   const T=S.temas,tot=T.length||34,est=T.filter(t=>t.estado==='estudiado').length,pct=Math.round(est/tot*100);
@@ -246,7 +286,7 @@ function vTemario(){
 
 /* ---------- tarjetas ---------- */
 function temaCards(tema){const p=S.piles[tema]||{};return (S.cards[tema]||[]).map(c=>Object.assign({},c,{mz:tema,pile:p[c.id]||0,t:!!c.t}))}
-function deckCards(){return temaCards(ui.mazo).filter(c=>ui.filtro==='todas'||(ui.filtro==='nueva'&&!c.pile)||(ui.filtro==='tipica'&&c.t)||String(c.pile)===ui.filtro)}
+function deckCards(){const t=today();return temaCards(ui.mazo).filter(c=>ui.filtro==='todas'||(ui.filtro==='hoy'&&(srsDue(ui.mazo,c)||'9')<=t)||(ui.filtro==='nueva'&&!c.pile)||(ui.filtro==='tipica'&&c.t)||String(c.pile)===ui.filtro)}
 function vTarjetas(){
   if(!Object.keys(S.cards).length)return '<p class="empty">Aún no hay tarjetas.</p>';
   {const tc=temasConCartas();if(!tc.length)return '<p class="empty">Aún no hay tarjetas.</p>';if(!tc.find(t=>t.id===ui.mazo))ui.mazo=tc[0].id}
@@ -255,7 +295,7 @@ function vTarjetas(){
   const list=deckCards();if(ui.idx>=list.length)ui.idx=0;const c=list[ui.idx];const b=temaBl(ui.mazo);
   return `<div class="study tar"><div class="tside"><h2>Tarjetas</h2><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p>
   <div class="picker"><select id="mazo" aria-label="Tema">${temasConCartas().map(x=>`<option value="${esc(x.id)}"${x.id===ui.mazo?' selected':''}>${esc(x.titulo)}</option>`).join('')}</select>
-  </div><div class="chips" role="group" aria-label="Qué tarjetas ver">${[['todas','Todas',cs.length,''],...(nt?[['tipica','⭐ Típicas',nt,'']]:[]),['nueva','Nuevas',cnt[0],''],['1','No me la sé',cnt[1],'c1'],['2','Dudo',cnt[2],'c2'],['3','Me la sé',cnt[3],'c3']].map(([v,t,n,c])=>`<button class="chip2 ${c}${ui.filtro===v?' on':''}" data-filtro="${v}" aria-pressed="${ui.filtro===v}">${t} <b>${n}</b></button>`).join('')}</div>
+  </div><div class="chips" role="group" aria-label="Qué tarjetas ver">${[['hoy','📅 Toca hoy',cardsDueHoy(ui.mazo),''],['todas','Todas',cs.length,''],...(nt?[['tipica','⭐ Típicas',nt,'']]:[]),['nueva','Nuevas',cnt[0],''],['1','No me la sé',cnt[1],'c1'],['2','Dudo',cnt[2],'c2'],['3','Me la sé',cnt[3],'c3']].map(([v,t,n,c])=>`<button class="chip2 ${c}${ui.filtro===v?' on':''}" data-filtro="${v}" aria-pressed="${ui.filtro===v}">${t} <b>${n}</b></button>`).join('')}</div>
   <div class="tbarw"><div class="stack3"><i style="width:${cnt[3]/tot*100}%;background:#22c55e"></i><i style="width:${cnt[2]/tot*100}%;background:#f59e0b"></i><i style="width:${cnt[1]/tot*100}%;background:#ef4444"></i></div></div>
   </div><div class="tmain">${c?`<div class="flip${ui.flip?' on':''}" id="flip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f" aria-hidden="${!!ui.flip}">${c.t?'<span class="tp">Típica de examen</span>':''}<span class="n" aria-hidden="true">${esc(c.n||'')}</span><div class="em" aria-hidden="true">${esc(c.e||'')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b" aria-hidden="${!ui.flip}"><span class="n" aria-hidden="true">${esc(c.n||'')}</span><div class="a">${rich(c.a)}</div>${c.h?`<div class="h">${rich(c.h)}</div>`:''}</div></div></div>
   <div class="cnav"><button class="nb" data-act="prev" aria-label="Tarjeta anterior">‹</button><span>${ui.idx+1} / ${list.length}</span><button class="nb" data-act="next" aria-label="Tarjeta siguiente">›</button></div>
@@ -320,7 +360,7 @@ function secScore(X,si,skipDud){let a=0,f=0,b=0;X.items.forEach((it,i)=>{if(it.s
 function finishExam(){const X=ui.ex;if(!X||X.done)return;clearInterval(exTimer);X.done=true;X.secsR=X.secs.map((_,si)=>secScore(X,si,false));X.secsD=X.secs.map((_,si)=>secScore(X,si,true));
   let a=0,f=0,b=0;X.secsR.forEach(r=>{a+=r.a;f+=r.f;b+=r.b});
   let sg=(S.rec||{}).acSeg||0,mx=(S.rec||{}).acMax||0;X.items.forEach((it,i)=>{const v=X.ans[i];if(v!=null){recordErr(it.q,v===it.q.c)}if(v===it.q.c){sg++;mx=Math.max(mx,sg)}else sg=0});S.rec=Object.assign({},S.rec,{acSeg:sg,acMax:mx});kvSet('records');kvSet('errores');
-  const r={titulo:X.titulo,fecha:new Date().toISOString(),aciertos:a,fallos:f,blanco:b,total:a+f+b,testId:'ex-'+X.kind,pistas:Object.keys(X.pis).length};S.res=S.res.concat([r]);kvSet('resultados');logAct(a+f);render();scrollTo(0,0)}
+  statAdd('q',a+f);const r={titulo:X.titulo,fecha:new Date().toISOString(),aciertos:a,fallos:f,blanco:b,total:a+f+b,testId:'ex-'+X.kind,pistas:Object.keys(X.pis).length};S.res=S.res.concat([r]);kvSet('resultados');logAct(a+f);render();scrollTo(0,0)}
 function vExam(){const X=ui.ex;if(X.done)return vExamEnd();const it=X.items[X.i],q=it.q,sec=X.secs[it.s],ans=X.ans[X.i],shown=X.modo==='momento'&&ans!=null,hid=X.pis[X.i];
   const first=X.items.findIndex(x=>x.s===it.s)===X.i;
   const grid=X.items.map((x,i)=>{let c='';if(X.modo==='momento'&&X.ans[i]!=null)c=X.ans[i]===x.q.c?'ok':'ko';else if(X.ans[i]!=null)c='an';return `<button class="g ${c}${X.dud[i]?' du':''}${i===X.i?' cur':''}" data-xgo="${i}" aria-label="Pregunta ${i+1}${X.ans[i]!=null?', respondida':''}${X.dud[i]?', dudosa':''}">${i+1}</button>`}).join('');
@@ -408,7 +448,7 @@ function vPlan(){
   if(ui.ptab==='hoy')body=vHoyPlan(false);
   else if(ui.ptab==='hor')body=vHorario();
   else if(ui.ptab==='sem'){const ts=S.temas.filter(t=>t.semana===lun);const prog=t=>{const ini=t.pagIni||1;const l=Math.max(0,((S.lectura||{})[t.id]||ini-1)-ini+1),tot=Math.max(1,t.pags-ini+1);const cp=cardPct(t.id);return `<div class="row"><span class="tag" style="background:${BL[t.bloque].c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b>${t.pags?`<div class="pbar"><span>📖 Lectura</span><div class="tr"><i style="width:${Math.min(100,l/tot*100)}%"></i></div><small>${Math.min(l,tot)}/${tot} págs.</small></div>`:''}${cp?`<div class="pbar"><span>🃏 Tarjetas</span><div class="tr"><i style="width:${cp.s/cp.n*100}%;background:#22c55e"></i></div><small>${cp.s}/${cp.n}</small></div>`:''}</div><button class="pill p-${esc(t.estado||'pendiente')}" data-act="estado" data-id="${esc(t.id)}">${ESTN[t.estado]||'Pendiente'}</button></div>`};
-    const dias=[0,1,2,3,4,5,6].map(k=>{const d=addD(new Date(lun+'T12:00:00'),k);const dk=dkey(d);const est=esDiaEstudio(d);const hechas=Object.keys(((S.diario||{})[dk])||{}).length;return `<div class="wd${dk===today()?' cur':''}${est?'':' rest'}"><b>${DIAS[k].slice(0,3)}</b><small>${d.getDate()}</small><span>${!est?'😴':dayOk(dk)?'✅':hechas?'◐':'·'}</span></div>`}).join('');
+    const dias=[0,1,2,3,4,5,6].map(k=>{const d=addD(new Date(lun+'T12:00:00'),k);const dk=dkey(d);const est=esDiaEstudio(d);const hechas=hechasDe((S.diario||{})[dk]).length;return `<div class="wd${dk===today()?' cur':''}${est?'':' rest'}"><b>${DIAS[k].slice(0,3)}</b><small>${d.getDate()}</small><span>${!est?'😴':dayOk(dk)?'✅':hechas?'◐':'·'}</span></div>`}).join('');
     body=`<div class="card"><h3>Esta semana</h3><div class="wdays">${dias}</div><p class="fine">✅ meta cumplida · ◐ empezado · 😴 descanso</p></div>
     <h3 class="hsec">Temas de la semana</h3>${ts.length?`<div class="list">${ts.map(prog).join('')}</div>`:'<p class="empty">Esta semana no hay temas nuevos: toca repasar.</p>'}
     ${cur?`<details class="mes nocap" style="margin-top:16px"><summary>Tareas del plan de esta semana</summary>${wk(cur)}</details>`:''}`}
@@ -464,12 +504,12 @@ function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estad
   const gate=!!window.FIREBASE_CONFIG&&!S.user;document.body.classList.toggle('out',gate);
   if(gate){const h=location.hash.slice(1);$('#app').innerHTML=h==='entrar'?(S.authReady?vLogin():'<p class="empty">Cargando…</p>'):h==='probar'?vProbar():vPortada();scrollTo(0,0);return}
   if(!S.ready){$('#app').innerHTML='<p class="empty">Cargando tu agenda…</p>';return}
-  $('#app').innerHTML=V[v]();{const g=document.querySelector('.xgrid'),c=g&&g.querySelector('.cur');if(c){if(g.scrollWidth>g.clientWidth)g.scrollLeft=c.offsetLeft-g.clientWidth/2;else g.scrollTop=c.offsetTop-g.clientHeight/2}}setTimeout(()=>{checkLogros();celebrar()},0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
+  $('#app').innerHTML=V[v]();{const g=document.querySelector('.xgrid'),c=g&&g.querySelector('.cur');if(c){if(g.scrollWidth>g.clientWidth)g.scrollLeft=c.offsetLeft-g.clientWidth/2;else g.scrollTop=c.offsetTop-g.clientHeight/2}}setTimeout(()=>{checkLogros();checkRetos();celebrar();pomoDraw()},0);const c=$('#chart');if(c){chartRO.disconnect();chartRO.observe(c);drawChart()}}
 addEventListener('hashchange',()=>{scrollTo(0,0);render()});
 
 /* ---------- acciones ---------- */
-function markPile(n){const list=deckCards();const c=list[ui.idx];if(!c)return;const id=c.mz;const piles=Object.assign({},S.piles[id]||{});piles[c.id]=n;S.piles=Object.assign({},S.piles,{[id]:piles});ui.flip=false;
-  if(ui.filtro==='todas'||ui.filtro==='tipica'||String(n)===ui.filtro)ui.idx++;
+function markPile(n){const list=deckCards();const c=list[ui.idx];if(!c)return;const id=c.mz;const piles=Object.assign({},S.piles[id]||{});piles[c.id]=n;S.piles=Object.assign({},S.piles,{[id]:piles});ui.flip=false;srsMark(id,c.id,n);statAdd('c',1);
+  if(ui.filtro==='todas'||ui.filtro==='tipica'||ui.filtro==='hoy'&&n===3||String(n)===ui.filtro)ui.idx++;
   kvSet('piles');logAct(1);render()}
 function recordErr(q,right){const items=Object.assign({},S.err.items||{});const k=q.id||hash(q.q);const cur=items[k];
   if(right){if(!cur)return false;const racha=(cur.racha||0)+1;if(racha>=2)delete items[k];else items[k]=Object.assign({},cur,{racha})}
@@ -478,7 +518,7 @@ function recordErr(q,right){const items=Object.assign({},S.err.items||{});const 
 async function finishTest(){const T=ui.test;let a=0,f=0,b=0,ch=false;{let sg=(S.rec||{}).acSeg||0,mx=(S.rec||{}).acMax||0;T.t.preguntas.forEach((q,i)=>{if(T.ans[i]===q.c){sg++;mx=Math.max(mx,sg)}else sg=0});S.rec=Object.assign({},S.rec,{acSeg:sg,acMax:mx});kvSet('records')}T.t.preguntas.forEach((q,i)=>{const x=T.ans[i];if(x===undefined||x===null)b++;else if(x===q.c){a++;if(recordErr(q,true))ch=true}else{f++;recordErr(q,false);ch=true}});
   if(ch)kvSet('errores');
   T.r={testId:T.t.id,titulo:T.t.titulo,tema:T.t.tema||'',aciertos:a,fallos:f,blanco:b,total:T.t.preguntas.length,fecha:new Date().toISOString()};T.done=true;render();
-  S.res=S.res.concat([T.r]);kvSet('resultados');logAct(T.t.preguntas.length);T.saved=true;render()}
+  S.res=S.res.concat([T.r]);kvSet('resultados');statAdd('q',T.t.preguntas.length);logAct(T.t.preguntas.length);T.saved=true;render()}
 let vfTimer=null;
 function vfTick(){const G=ui.game;if(!G||G.kind!=='vf'||G.over){clearInterval(vfTimer);return}const left=Math.ceil((G.end-Date.now())/1000);if(left<=0){G.over=true;clearInterval(vfTimer);if(G.ok)logAct(G.ok);const rec=S.rec||{};if(G.ok>(rec.vf||0)){G.rec=true;S.rec=Object.assign({},rec,{vf:G.ok});kvSet('records')}render()}else{const el=$('#gt');if(el)el.textContent=left+' s';const tb=document.querySelector('.tbar i');if(tb)tb.style.width=Math.max(0,(G.end-Date.now())/600)+'%'}}
 function startVF(scope){const pool=bank(scope||'');if(!pool.length)return;ui.game={kind:'vf',scope,pool,ok:0,ko:0,miss:[],end:Date.now()+60000};vfNext();clearInterval(vfTimer);vfTimer=setInterval(vfTick,250);render()}
@@ -501,7 +541,9 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
   else if(a==='logout'){auth&&auth.signOut().then(()=>location.reload())}
   else if(a==='xcfg'){const k=el.dataset.k;const e=S.exams[el.dataset.id];ui.xcfg={kind:k,id:el.dataset.id,titulo:k==='oficial'?e.titulo:k==='gen'?'Examen completo (simulacro)':'Simulacro a tu medida'};render();scrollTo(0,0)}
-  else if(a==='dgo'){const g=el.dataset.go,t=el.dataset.t;if(g==='cards'){ui.mazo=t;ui.idx=0;ui.filtro='nueva';location.hash='tarjetas'}else if(g==='repaso'){ui.filtro='2';ui.idx=0;location.hash='tarjetas'}else if(g==='errores'){const b=document.createElement('button');b.dataset.act='merr';location.hash='tests';setTimeout(()=>{const x=document.querySelector('[data-act="merr"]');if(x)x.click()},50)}else if(g==='test'){ui.scope=t;const qs=shuffle(bank(t));if(qs.length)startRun('Test de la semana · Tema '+temaName(t),t,qs.slice(0,15),'practica-'+t);else location.hash='tests'}else if(g==='sim'){ui.xtab='sim';location.hash='tests'}else if(g==='temas')location.hash='temario'}
+  else if(a==='pomo'){pomoStart();render()}
+  else if(a==='pomostop'){pomoStop();render()}
+  else if(a==='dgo'){const g=el.dataset.go,t=el.dataset.t;if(g==='cards'){ui.mazo=t;ui.idx=0;ui.filtro='nueva';location.hash='tarjetas'}else if(g==='repaso'){ui.filtro='hoy';ui.idx=0;location.hash='tarjetas'}else if(g==='errores'){const b=document.createElement('button');b.dataset.act='merr';location.hash='tests';setTimeout(()=>{const x=document.querySelector('[data-act="merr"]');if(x)x.click()},50)}else if(g==='test'){ui.scope=t;const qs=shuffle(bank(t));if(qs.length)startRun('Test de la semana · Tema '+temaName(t),t,qs.slice(0,15),'practica-'+t);else location.hash='tests'}else if(g==='sim'){ui.xtab='sim';location.hash='tests'}else if(g==='temas')location.hash='temario'}
   else if(a==='xcancel'){ui.xcfg=null;render()}
   else if(a==='xofi'){const t=el.dataset.t,b=el.dataset.b;startExam({kind:'sim',titulo:'Preguntas oficiales · '+(t?'Tema '+temaName(t):'Bloque '+b),tema:t||'',bloque:t?'':b,n:200,fuente:'ofi',modo:'momento',tiempo:'libre',pistas:'no'})}
   else if(a==='xnext'){ui.ex.i++;ui.ex.conf=false;render();scrollTo(0,0)}
@@ -550,7 +592,7 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if
 {let sx=null,sy=null;document.addEventListener('touchstart',e=>{if(e.target.closest('#flip')){sx=e.touches[0].clientX;sy=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){const b=document.querySelector(`[data-act="${dx<0?'next':'prev'}"]`);if(b){e.preventDefault();b.click()}}})}
 document.addEventListener('keydown',e=>{if(location.hash==='#tarjetas'&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){const k={ArrowRight:'[data-act="next"]',ArrowLeft:'[data-act="prev"]','1':'[data-pile="1"]','2':'[data-pile="2"]','3':'[data-pile="3"]'}[e.key];if(k){const b=document.querySelector(k);if(b){e.preventDefault();b.click();return}}}});
 document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip,#dflip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
-document.addEventListener('change',e=>{const dk=e.target.dataset&&e.target.dataset.dk;if(dk){const d=Object.assign({},S.diario||{});const t=Object.assign({},d[today()]||{});if(e.target.checked){t[dk]=1;logAct(2);const m=dk.match(/^l-(.+)-(\d+)$/);if(m){S.lectura=Object.assign({},S.lectura,{[m[1]]:+m[2]});kvSet('lectura')}}else delete t[dk];d[today()]=t;const ks=Object.keys(d).sort();while(ks.length>40)delete d[ks.shift()];S.diario=d;kvSet('diario');render();return}});
+document.addEventListener('change',e=>{const dk=e.target.dataset&&e.target.dataset.dk;if(dk){const d=Object.assign({},S.diario||{});const t=Object.assign({},d[today()]||{});if(e.target.checked){t[dk]=1;logAct(2);const m=dk.match(/^l-(.+)-(\d+)$/);if(m){const tt=S.temas.find(x=>x.id===m[1]);const prevp=(S.lectura||{})[m[1]]||((tt&&tt.pagIni)||1)-1;statAdd('p',Math.max(0,+m[2]-prevp));S.lectura=Object.assign({},S.lectura,{[m[1]]:+m[2]});kvSet('lectura')}}else delete t[dk];d[today()]=t;const ks=Object.keys(d).sort();while(ks.length>40)delete d[ks.shift()];S.diario=d;kvSet('diario');render();return}});
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.task){const k=e.target.dataset.task;const h=Object.assign({},(S.planHecho||{}).h||{});if(e.target.checked){h[k]=true;logAct(1)}else delete h[k];S.planHecho={h};kvSet('planHecho');render();return}const id=e.target.id;if(id==='mazo'){ui.mazo=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='filtro'){ui.filtro=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='scope'){ui.scope=e.target.value;render()}});
 
 /* ---------- datos ---------- */
@@ -560,7 +602,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=13;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=14;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];
