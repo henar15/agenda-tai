@@ -6,7 +6,7 @@ const plain=v=>String(v??'').replace(/\*\*/g,'');
 const BL={I:{c:'var(--b1)',hex:'#7c3aed',l:'#ede9fe',n:'Organización del Estado y Administración electrónica'},II:{c:'var(--b2)',hex:'#0d9488',l:'#ccfbf1',n:'Tecnología básica'},III:{c:'var(--b3)',hex:'#2563eb',l:'#dbeafe',n:'Desarrollo de sistemas'},IV:{c:'var(--b4)',hex:'#ea580c',l:'#ffedd5',n:'Sistemas y comunicaciones'}};
 const EST=['pendiente','en-curso','estudiado'],ESTN={'pendiente':'Pendiente','en-curso':'En curso','estudiado':'Estudiado'};
 const S={exIdx:[],exams:{},horario:{dias:[]},act:{},pedidos:{},user:null,authReady:false,plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
-const ui={ex:null,xcfg:null,hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
+const ui={xtab:'web',ex:null,xcfg:null,hdia:null,hedit:false,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
 
 const fmtD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('es-ES',{day:'numeric',month:'short'})};
 const monday=()=>{const d=new Date();const w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toISOString().slice(0,10)};
@@ -17,14 +17,14 @@ const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;re
 let LS='agendaTAI:anon:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v}
+function kvVal(k){return {recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
 function flash(t){const e=$('#sync');if(e)e.textContent=t}
-function resetUser(){Object.assign(S,{horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
+function resetUser(){Object.assign(S,{recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
 const temaName=id=>{const t=S.temas.find(x=>x.id===id);return t?t.codigo+' '+t.titulo:id};
 const temaBl=id=>{const t=S.temas.find(x=>x.id===id);return BL[(t&&t.bloque)||'I']};
 
@@ -33,7 +33,6 @@ function bank(scope){const out=[],seen=new Set();
   const add=(q,tema)=>{if(!q||!q.opts||q.c==null)return;const id=q.id||hash(q.q);if(seen.has(id))return;seen.add(id);out.push(Object.assign({},q,{id,tema}))};
   Object.entries(S.preg).forEach(([tema,arr])=>{if(!scope||tema===scope)arr.forEach(q=>add(q,tema))});
   S.tests.forEach(t=>{if(!scope||t.tema===scope)(t.preguntas||[]).forEach(q=>add(q,t.tema))});
-  ofiQs(true).forEach(q=>{if(q.tema&&(!scope||q.tema===scope))add(q,q.tema)});
   return out}
 const temasConBanco=()=>{const ids=new Set(bank().map(q=>q.tema));return S.temas.filter(t=>ids.has(t.id)).sort(ordT)};
 const temasConCartas=()=>{const ids=new Set(Object.keys(S.cards).filter(k=>S.cards[k].length));return S.temas.filter(t=>ids.has(t.id)).sort(ordT).map(t=>({id:t.id,titulo:'Tema '+t.codigo+' · '+t.titulo+' ('+temaCards(t.id).length+')'}))};
@@ -212,7 +211,8 @@ function rowTema(t){const b=BL[t.bloque]||BL.I;const cp=cardPct(t.id),bt=bestTes
 function vTemario(){
   if(!S.temas.length)return '<p class="empty">Todavía no hay temas cargados.</p>';
   const ped=Object.keys(S.pedidos||{}).filter(k=>S.pedidos[k]&&!(S.cards[k]||[]).length);
-  return `<h2>Temario: 34 temas</h2><p class="sub">Tarjetas y test de cada tema. Si un tema no tiene, pulsa «Generar tarjetas» y en un rato aparecen solas.</p>${ped.length?`<div class="warn"><span style="flex:1">Generando tarjetas de: <b>${ped.map(k=>esc(k.replace('-','.'))).join(', ')}</b>. Tardan alrededor de 1 hora; vuelve a abrir la web para verlas.</span></div>`:''}`+['I','II','III','IV'].map(b=>{const ts=S.temas.filter(t=>t.bloque===b).sort(ordT);return `<section class="blk"><h3><span class="tag" style="background:${BL[b].c}">Bloque ${b}</span>${esc(BL[b].n)}</h3><div class="list">${ts.map(rowTema).join('')}</div></section>`}).join('');
+  const rec=Array.isArray(S.recursos)&&S.recursos.length?`<section class="blk recs"><h3>📎 Recursos extra <small>· solo los ves tú</small></h3>${S.recursos.map(g=>`<div class="card"><b>${esc(g.g)}</b>${g.d?`<p class="fine" style="margin:4px 0 8px">${esc(g.d)}</p>`:''}<div class="rlist">${(g.items||[]).map(it=>/^https:\/\//.test(it.u)?`<a href="${esc(it.u)}" target="_blank" rel="noopener"><b>${esc(it.t)}</b>${it.d?`<small>${esc(it.d)}</small>`:''}</a>`:'').join('')}</div></div>`).join('')}</section>`:'';
+  return `<h2>Temario: 34 temas</h2><p class="sub">Tarjetas y test de cada tema. Si un tema no tiene, pulsa «Generar tarjetas» y en un rato aparecen solas.</p>${ped.length?`<div class="warn"><span style="flex:1">Generando tarjetas de: <b>${ped.map(k=>esc(k.replace('-','.'))).join(', ')}</b>. Tardan alrededor de 1 hora; vuelve a abrir la web para verlas.</span></div>`:''}`+['I','II','III','IV'].map(b=>{const ts=S.temas.filter(t=>t.bloque===b).sort(ordT);return `<section class="blk"><h3><span class="tag" style="background:${BL[b].c}">Bloque ${b}</span>${esc(BL[b].n)}</h3><div class="list">${ts.map(rowTema).join('')}</div></section>`}).join('')+rec;
 }
 
 /* ---------- tarjetas ---------- */
@@ -247,11 +247,15 @@ function vTests(){
   const all=bank(),tip=all.filter(q=>q.tipico),errs=errList(),ts=temasConBanco();
   if(!ui.scope||!ts.find(t=>t.id===ui.scope))ui.scope=ts.length?ts[0].id:'';
   const nScope=ui.scope?bank(ui.scope).length:0;
-  return `<h2>Exámenes y tests</h2><p class="sub">Como en el examen: cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>${vExamenesHub()}<h3 class="hsec">✏️ Practicar</h3>
+  const TB=[['web','✏️ Tests de la web','por tema'],['ofi','📄 Exámenes oficiales','completos'],['pre','🗂️ Preguntas oficiales','por tema'],['sim','🎯 Simulacros','mezclados']];
+  const tabs=`<div class="xtabs" role="tablist">${TB.map(([k,t,d])=>`<button role="tab" aria-selected="${ui.xtab===k}" class="${ui.xtab===k?'on':''}" data-xtab="${k}"><b>${t}</b><small>${d}</small></button>`).join('')}</div>`;
+  const head=`<h2>Exámenes y tests</h2><p class="sub">Cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>${tabs}${ui.xcfg?vExCfg():''}`;
+  if(ui.xtab!=='web')return head+vExamenesHub(ui.xtab);
+  return head+`<p class="sub">Preguntas hechas a partir de tus tarjetas, tema a tema. Cada pregunta se puede responder con lo que pone en las tarjetas.</p>
   <div class="modes">
    <button class="mode red" data-act="merr"${errs.length?'':' disabled'}><b>Mis errores</b><span>Como en la autoescuela: salen de aquí cuando las aciertas 2 veces seguidas.</span><span class="cnt">${errs.length}</span></button>
    <button class="mode" data-act="mtip"${tip.length?'':' disabled'}><b>Típicas de examen</b><span>Las preguntas que más caen, de todos los temas.</span><span class="cnt">${tip.length}</span></button>
-   <button class="mode" data-act="msim"${all.length?'':' disabled'}><b>Simulacro</b><span>${Math.min(40,all.length)} preguntas al azar de todos los temas que tienes.</span><span class="cnt">${all.length}</span></button>
+   <button class="mode" data-act="msim"${all.length?'':' disabled'}><b>Mezcla de la web</b><span>${Math.min(40,all.length)} preguntas al azar de todos los temas con tarjetas.</span><span class="cnt">${all.length}</span></button>
   </div>
   <div class="card" style="margin-bottom:28px"><h3>Practicar un tema</h3><div class="picker"><select id="scope" aria-label="Tema">${ts.map(t=>`<option value="${esc(t.id)}"${t.id===ui.scope?' selected':''}>${esc(t.codigo+' · '+t.titulo)}</option>`).join('')}</select><button class="btn" data-act="mtema"${nScope?'':' disabled'}>10 preguntas al azar</button><button class="btn ghost" data-act="mtemaall"${nScope?'':' disabled'}>Todas (${nScope})</button></div></div>
   ${S.tests.length?`<h3>Tests guardados</h3><div class="list">${S.tests.slice().sort((a,b)=>(a.orden||0)-(b.orden||0)).map(t=>{const r=S.res.filter(x=>x.testId===t.id);const best=r.length?Math.max(...r.map(nota)):null;return `<div class="row"><div class="t"><b>${esc(t.titulo)}</b><small>${(t.preguntas||[]).length} preguntas${r.length?' · hecho '+r.length+(r.length>1?' veces':' vez')+' · mejor nota '+n1(best):' · sin hacer'}</small></div><button class="btn" data-act="tstart" data-id="${esc(t.id)}">${r.length?'Repetir':'Empezar'}</button></div>`}).join('')}</div>`:''}`;
@@ -320,19 +324,20 @@ function vExCfg(){const c=ui.xcfg;const seg=(name,opts,val)=>`<div class="seg se
   <div class="fld"><label for="xtm">Tema (opcional)</label><select id="xtm" name="tema"><option value="">Todos los temas del bloque</option>${ts.map(t=>`<option value="${t.id}"${c.tema===t.id?' selected':''}>${esc(t.codigo+' · '+t.titulo)}</option>`).join('')}</select></div>
   <div class="fld"><span class="lbl">Número de preguntas</span>${seg('n',[[10,'10'],[20,'20'],[40,'40'],[80,'80']],c.n||20)}</div>
   <div class="fld"><span class="lbl">Preguntas</span>${seg('fuente',[['todas','Todas','oficiales y de la web'],['ofi','Solo de exámenes','oficiales']],c.fuente||'todas')}</div>`:''}
-  ${c.kind!=='sim'?`<div class="fld"><span class="lbl">Segunda parte (supuesto práctico)</span>${seg('sup',[['III','Bloque III','Desarrollo'],['IV','Bloque IV','Sistemas'],['no','Sin supuesto','solo 1.ª parte']],c.sup||'III')}</div>`:''}
+  ${c.kind!=='sim'?`<div class="fld"><span class="lbl">Segunda parte (supuesto práctico)</span>${seg('sup',[['III','Supuesto de desarrollo','Bloque III (II+III en 2026)'],['IV','Supuesto de sistemas','Bloque IV (II+IV en 2026)'],['no','Sin supuesto','solo 1.ª parte']],c.sup||'III')}</div>`:''}
   <div class="fld"><span class="lbl">Corrección</span>${seg('modo',[['final','Al final','como el examen'],['momento','Según respondo','ves si aciertas']],c.modo||'final')}</div>
   <div class="fld"><span class="lbl">Tiempo</span>${seg('tiempo',[['oficial','Con reloj','1,2 min por pregunta'],['libre','Sin límite','']],c.tiempo||'oficial')}</div>
   <div class="fld"><span class="lbl">Pistas</span>${seg('pistas',[['no','Sin pistas',''],['si','Con pistas','descarta una opción mala']],c.pistas||'no')}</div>
   <div class="acts"><button class="btn">Empezar</button><button type="button" class="btn ghost" data-act="xcancel">Cancelar</button></div></form>`}
-function vExamenesHub(){const ofi=ofiQs(true);const per={};ofi.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});
+function vExamenesHub(tab){const ofi=ofiQs(true);const per={};ofi.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});
   const exs=idxOrder().filter(m=>S.exams[m.id]);
-  return `${ui.xcfg?vExCfg():''}<h3 class="hsec">📄 Exámenes oficiales</h3><p class="sub">Tal cual salieron, con la plantilla oficial de respuestas.</p>
+  if(tab==='ofi')return `<p class="sub">Tal cual salieron, con la plantilla oficial de respuestas. Ojo: hasta 2025 el supuesto era del Bloque III o del IV; en 2026 es II+III o II+IV.</p>
   <div class="xlist">${exs.map(m=>{const e=S.exams[m.id];const r=S.res.filter(x=>x.titulo===e.titulo);const best=r.length?Math.max(...r.map(nota)):null;return `<div class="card xe"><b>${esc(e.titulo)}</b><small>${e.partes[0].preguntas.length} + 20 preguntas · plantilla ${esc(e.plantilla.split(' ')[0])}${best!=null?' · mejor nota '+n1(best):''}</small><div class="acts"><button class="btn" data-act="xcfg" data-k="oficial" data-id="${esc(e.id)}">Hacer examen</button><a class="mini ghost" href="${esc(e.fuente)}" target="_blank" rel="noopener">PDF oficial</a></div></div>`}).join('')||'<p class="empty">Cargando exámenes…</p>'}</div>
-  <h3 class="hsec">🎯 Simulacros</h3><div class="modes">
+`;
+  if(tab==='sim')return `<p class="sub">Mezclan preguntas de exámenes oficiales y de la web.</p><div class="modes">
    <button class="mode" data-act="xcfg" data-k="gen"><b>Examen completo</b><span>80 preguntas repartidas por bloques, como el real, más un supuesto práctico. Se mezclan preguntas oficiales y de la web.</span></button>
-   <button class="mode" data-act="xcfg" data-k="sim"><b>A tu medida</b><span>Eliges bloque o tema, cuántas preguntas, tiempo, pistas y cuándo corregir.</span></button></div>
-  <h3 class="hsec">🗂️ Preguntas de exámenes oficiales por tema</h3><p class="sub">${ofi.length} preguntas de la primera parte de ${exs.length} exámenes, clasificadas por tema de forma automática (puede haber alguna mal colocada). Toca uno para practicarlo.</p>
+   <button class="mode" data-act="xcfg" data-k="sim"><b>A tu medida</b><span>Eliges bloque o tema, cuántas preguntas, tiempo, pistas y cuándo corregir.</span></button></div>`;
+  return `<p class="sub">${ofi.length} preguntas de la primera parte de ${exs.length} exámenes, clasificadas por tema de forma automática (puede haber alguna mal colocada). Toca uno para practicarlo.</p>
   ${['I','II','III','IV'].map(b=>`<div class="ofib"><b>Bloque ${b}</b><div class="chips wrap">${S.temas.filter(t=>t.bloque===b).sort(ordT).map(t=>per[t.id]?`<button class="chip2" data-act="xofi" data-t="${t.id}">${esc(t.codigo)} <b>${per[t.id]}</b></button>`:'').join('')}<button class="chip2" data-act="xofi" data-b="${b}">Todo el bloque <b>${ofi.filter(q=>q.bloque===b).length}</b></button></div></div>`).join('')}`}
 
 /* ---------- juegos ---------- */
@@ -402,7 +407,7 @@ function vPortada(){
   <div class="pt-nums"><div><b>34</b><span>temas del programa</span></div><div><b>${nC||'+200'}</b><span>tarjetas ya hechas</span></div><div><b>${temasC}</b><span>temas con tarjetas (y subiendo)</span></div></div></section>
   <h3 class="pt-h">Qué tienes dentro</h3><div class="pt-feat">${F.map(f=>`<div class="card"><span class="pt-ic" aria-hidden="true">${f[0]}</span><b>${esc(f[1])}</b><p>${esc(f[2])}</p></div>`).join('')}</div>
   <h3 class="pt-h">Cómo funciona</h3><ol class="pt-steps"><li><b>Entra con tu cuenta de Google.</b> No hay contraseñas nuevas que recordar.</li><li><b>Crea tu horario</b> o usa la plantilla, y mira qué te toca cada día.</li><li><b>Estudia con tarjetas y haz tests.</b> La web guarda lo que sabes y lo que fallas.</li></ol>
-  <h3 class="pt-h">El examen, en resumen</h3><div class="card pt-exam"><ul><li><b>Primera parte:</b> 80 preguntas tipo test.</li><li><b>Segunda parte:</b> un supuesto práctico de 20 preguntas, a elegir entre uno del Bloque III y otro del Bloque IV.</li><li><b>Tiempo:</b> 120 minutos en total.</li><li><b>Penalización:</b> cada respuesta mal resta un tercio de una bien.</li></ul><p class="fine">Datos orientativos: consulta siempre la convocatoria oficial en el BOE.</p></div>
+  <h3 class="pt-h">El examen, en resumen</h3><div class="card pt-exam"><ul><li><b>Primera parte:</b> 80 preguntas tipo test.</li><li><b>Segunda parte:</b> un supuesto práctico de 20 preguntas. En la convocatoria 2026 eliges entre uno de los Bloques II y III o uno de los Bloques II y IV (antes era Bloque III o Bloque IV).</li><li><b>Tiempo:</b> 120 minutos en total.</li><li><b>Penalización:</b> cada respuesta mal resta un tercio de una bien.</li></ul><p class="fine">Datos orientativos: consulta siempre la convocatoria oficial en el BOE.</p></div>
   <h3 class="pt-h">Preguntas frecuentes</h3><div class="pt-faq"><details><summary>¿Cuesta dinero?</summary><p>No, es gratis.</p></details><details><summary>¿Quién ve mis datos?</summary><p>Tu progreso y tu horario solo los ves tú. Para identificar tu cuenta se guardan tu nombre y tu correo de Google y la fecha de tu último acceso; no se comparten con nadie.</p></details><details><summary>¿Sustituye a la academia?</summary><p>No: es una ayuda para repasar y organizarte. El temario completo lo tienes en tus apuntes.</p></details><details><summary>¿Es una web oficial?</summary><p>No. No tiene relación con el INAP ni con ninguna administración.</p></details></div>
   <div class="pt-final card"><b>¿Empezamos?</b><a class="btn big2" href="#entrar">Entrar con Google</a></div>`}
 function vProbar(){const cs=(S.cards['I-1']||[]).filter(c=>c.t).slice(0,5),qs=(S.preg['I-1']||[]).filter(q=>q.tipico).slice(0,5);
@@ -501,6 +506,7 @@ document.addEventListener('click',e=>{const d=e.target.closest('#dflip,[data-dca
   const y=scrollY;render();scrollTo(0,y)});
 document.addEventListener('click',e=>{const o=e.target.closest('[data-xopt],[data-xgo],[data-xf]');if(!o||!ui.ex)return;const X=ui.ex;if(o.dataset.xopt!=null){if(X.modo==='momento'&&X.ans[X.i]!=null)return;X.ans[X.i]=+o.dataset.xopt;X.conf=false}else if(o.dataset.xgo!=null){X.i=+o.dataset.xgo;X.conf=false;scrollTo(0,0)}else X.filt=o.dataset.xf;render()});
 document.addEventListener('submit',e=>{const f=e.target.closest('[data-xcfg]');if(!f)return;e.preventDefault();const v=n=>{const el=f.querySelector(`[name="${n}"]:checked`)||f.querySelector(`[name="${n}"]`);return el?el.value:''};const c=Object.assign({},ui.xcfg,{sup:v('sup'),modo:v('modo'),tiempo:v('tiempo'),pistas:v('pistas'),bloque:v('bloque'),tema:v('tema'),n:+v('n')||20,fuente:v('fuente')});if(c.kind==='sim'&&c.tema)c.titulo='Simulacro · Tema '+temaName(c.tema);else if(c.kind==='sim'&&c.bloque)c.titulo='Simulacro · Bloque '+c.bloque;startExam(c)});
+document.addEventListener('click',e=>{const t=e.target.closest('[data-xtab]');if(t){ui.xtab=t.dataset.xtab;ui.xcfg=null;render()}});
 document.addEventListener('click',e=>{const f=e.target.closest('[data-filtro]');if(f){ui.filtro=f.dataset.filtro;ui.idx=0;ui.flip=false;render()}});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
 {let sx=null,sy=null;document.addEventListener('touchstart',e=>{if(e.target.closest('#flip')){sx=e.touches[0].clientX;sy=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){const b=document.querySelector(`[data-act="${dx<0?'next':'prev'}"]`);if(b){e.preventDefault();b.click()}}})}
@@ -515,7 +521,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=10;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=11;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];

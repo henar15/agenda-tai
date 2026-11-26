@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-v="10">
+<html lang="es" data-v="11">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -283,6 +283,9 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 @media(max-width:900px){.xbody{grid-template-columns:1fr}.xside{position:static}.xgrid{display:flex;overflow-x:auto;max-height:none}.xgrid .g{flex:0 0 38px}}
 @media(max-width:700px){.study.tar .tside{display:grid;gap:10px}}
 .kpi small{display:block;margin-top:4px}.kpi span br{display:block}.xside .btn.ghost{border:2px solid var(--line)}
+.xtabs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:6px 0 18px}.xtabs button{border:2px solid var(--line);background:var(--panel);color:var(--ink);border-radius:14px;padding:10px 8px;min-height:60px;cursor:pointer;display:grid;gap:2px;text-align:center}.xtabs button small{color:var(--muted);font-size:12px}.xtabs button.on{border-color:var(--acc);background:var(--accbg)}
+@media(max-width:700px){.xtabs{grid-template-columns:1fr 1fr}}
+.recs{display:grid;gap:12px}.recs h3 small{font-weight:700;color:var(--muted);font-size:14px}.rlist{display:grid;gap:6px}.rlist a{display:grid;gap:2px;padding:10px 12px;border-radius:12px;background:var(--bg);border:1px solid var(--line);color:var(--ink);text-decoration:none}.rlist a:hover{border-color:var(--acc)}.rlist small{color:var(--muted)}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -303,7 +306,7 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=10"></script>
-<script src="app.js?v=10"></script>
+<script src="firebase-config.js?v=11"></script>
+<script src="app.js?v=11"></script>
 </body>
 </html>
