@@ -17,14 +17,14 @@ const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;re
 let LS='agendaTAI:anon:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos','lectura','diario','srs'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','horario','recursos','lectura','diario','srs','claves'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {srs:S.srs,lectura:S.lectura,diario:S.diario,recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v;else if(k==='lectura')S.lectura=v;else if(k==='diario')S.diario=v;else if(k==='srs')S.srs=v}
+function kvVal(k){return {claves:S.claves,srs:S.srs,lectura:S.lectura,diario:S.diario,recursos:S.recursos,horario:S.horario,actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='horario')S.horario=v;else if(k==='recursos')S.recursos=v;else if(k==='lectura')S.lectura=v;else if(k==='diario')S.diario=v;else if(k==='srs')S.srs=v;else if(k==='claves'){S.claves=v;loadGrupo()}}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
 function flash(t){const e=$('#sync');if(e)e.textContent=t}
-function resetUser(){Object.assign(S,{srs:{},lectura:{},diario:{},recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
+function resetUser(){Object.assign(S,{grupo:null,claves:null,srs:{},lectura:{},diario:{},recursos:null,horario:{dias:[]},act:{},estados:{},piles:{},res:[],err:{},config:{},rec:{},planHecho:{}})}
 const temaName=id=>{const t=S.temas.find(x=>x.id===id);return t?t.codigo+' '+t.titulo:id};
 const temaBl=id=>{const t=S.temas.find(x=>x.id===id);return BL[(t&&t.bloque)||'I']};
 
@@ -316,7 +316,7 @@ function vTests(){
   const all=bank(),tip=all.filter(q=>q.tipico),errs=errList(),ts=temasConBanco();
   if(!ui.scope||!ts.find(t=>t.id===ui.scope))ui.scope=ts.length?ts[0].id:'';
   const nScope=ui.scope?bank(ui.scope).length:0;
-  const TB=[['web','✏️ Tests de la web','por tema'],['ofi','📄 Exámenes oficiales','completos'],['pre','🗂️ Preguntas oficiales','por tema'],['sim','🎯 Simulacros','mezclados']];
+  const TB=[['web','✏️ Tests de la web','por tema'],['ofi','📄 Exámenes oficiales','completos'],['pre','🗂️ Preguntas oficiales','por tema'],...(S.grupo?[['gru','👥 Tests del grupo','solo para ti']]:[]),['sim','🎯 Simulacros','mezclados']];
   const tabs=`<div class="xtabs" role="tablist">${TB.map(([k,t,d])=>`<button role="tab" aria-selected="${ui.xtab===k}" class="${ui.xtab===k?'on':''}" data-xtab="${k}"><b>${t}</b><small>${d}</small></button>`).join('')}</div>`;
   const head=`<h2>Exámenes y tests</h2><p class="sub">Cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p>${tabs}${ui.xcfg?vExCfg():''}`;
   if(ui.xtab!=='web')return head+vExamenesHub(ui.xtab);
@@ -335,6 +335,8 @@ function vTestEnd(){const T=ui.test,r=T.r;const n=nota(r);
   ${fall.length?`<h3>Para repasar</h3><div class="list">${fall.map(x=>`<div class="row"><div class="t"><b>${rich(x.q.q)}</b><small>Correcta: ${rich(x.q.opts[x.q.c])}${x.q.exp?' — '+rich(x.q.exp):''}</small></div></div>`).join('')}</div>`:'<p class="empty">¡Sin fallos!</p>'}
   <div style="display:flex;gap:10px"><button class="btn ghost" data-act="tquit">Volver a los tests</button></div></div>`}
 
+/* ---------- tests del grupo (cifrados, solo para quien tiene la clave) ---------- */
+async function loadGrupo(){const k=(S.claves||{}).grupo;if(!k||S.grupo)return;try{const b64=await fetch('data/privado/grupo.enc?v=1').then(r=>r.text());const buf=Uint8Array.from(atob(b64.trim()),c=>c.charCodeAt(0));const key=await crypto.subtle.importKey('raw',Uint8Array.from(atob(k),c=>c.charCodeAt(0)),'AES-GCM',false,['decrypt']);const pt=await crypto.subtle.decrypt({name:'AES-GCM',iv:buf.slice(0,12)},key,buf.slice(12));S.grupo=JSON.parse(new TextDecoder().decode(pt));if(!busy())render()}catch(e){console.warn('grupo',e)}}
 /* ---------- exámenes ---------- */
 const yearOf=e=>(e.titulo.match(/OEP ([\d-]+)/)||[])[1]||e.fecha;
 async function loadExams(){const idx=await getJ('data/examenes/index.json');if(!idx)return;S.exIdx=idx;await Promise.all(idx.map(async m=>{const e=await getJ(`data/examenes/${m.id}.json`);if(e)S.exams[m.id]=e}));if(!busy())render()}
@@ -348,7 +350,7 @@ function startExam(cfg){const secs=[];let mins=null;
     if(cfg.sup!=='no'){const s=e.partes.find(p=>(p.bloques||[])[0]===cfg.sup);if(s)secs.push({titulo:'Segunda parte · '+s.titulo+' (Bloque '+cfg.sup+')',enun:s.enunciado,qs:s.preguntas.filter(q=>!q.anulada&&q.c>=0).map(q=>Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo}))})}}
   else if(cfg.kind==='gen'){const pool=shuffle(ofiQs(true).concat(ownQs()));const want={I:22,II:15,III:21,IV:22},seen=new Set(),qs=[];['I','II','III','IV'].forEach(b=>{pool.filter(q=>q.bloque===b).forEach(q=>{const k=plain(q.q).slice(0,60);if(want[b]>0&&!seen.has(k)){seen.add(k);qs.push(q);want[b]--}})});secs.push({titulo:'Primera parte',qs});
     if(cfg.sup!=='no'){const sups=[];Object.values(S.exams).forEach(e=>e.partes.forEach(p=>{if((p.bloques||[])[0]===cfg.sup)sups.push({e,p})}));if(sups.length){const {e,p}=sups[Math.floor(Math.random()*sups.length)];secs.push({titulo:'Segunda parte · Supuesto del Bloque '+cfg.sup+' ('+yearOf(e)+')',enun:p.enunciado,qs:p.preguntas.filter(q=>!q.anulada&&q.c>=0).map(q=>Object.assign({},q,{id:e.id+':'+q.id,src:e.titulo}))})}}}
-  else{let pool=(cfg.fuente==='ofi'?[]:ownQs()).concat(ofiQs(true));if(cfg.tema)pool=pool.filter(q=>q.tema===cfg.tema);else if(cfg.bloque)pool=pool.filter(q=>q.bloque===cfg.bloque);const seen=new Set();pool=shuffle(pool).filter(q=>{const k=plain(q.q).slice(0,60);if(seen.has(k))return false;seen.add(k);return true}).slice(0,cfg.n||20);if(!pool.length){flash('No hay preguntas para esa selección');return}secs.push({titulo:cfg.titulo||'Simulacro',qs:pool})}
+  else{let pool=cfg.fuente==='grupo'?(S.grupo||[]).map(q=>Object.assign({},q,{id:'grupo:'+q.id,grupo:true})):(cfg.fuente==='ofi'?[]:ownQs()).concat(ofiQs(true));if(cfg.tema)pool=pool.filter(q=>q.tema===cfg.tema);else if(cfg.bloque)pool=pool.filter(q=>q.bloque===cfg.bloque);const seen=new Set();pool=shuffle(pool).filter(q=>{const k=plain(q.q).slice(0,60);if(seen.has(k))return false;seen.add(k);return true}).slice(0,cfg.n||20);if(!pool.length){flash('No hay preguntas para esa selección');return}secs.push({titulo:cfg.titulo||'Simulacro',qs:pool})}
   const items=[];secs.forEach((s,si)=>s.qs.forEach(q=>items.push({q,s:si})));if(!items.length)return;
   if(cfg.tiempo==='oficial')mins=Math.round(items.length*1.2);
   ui.ex={titulo:cfg.titulo,kind:cfg.kind,secs,items,i:0,ans:{},dud:{},pis:{},shown:{},modo:cfg.modo||'final',pistas:cfg.pistas==='si',end:mins?Date.now()+mins*60000:null,mins,t0:Date.now(),done:false,conf:false,filt:'fallos'};ui.xcfg=null;
@@ -368,7 +370,7 @@ function vExam(){const X=ui.ex;if(X.done)return vExamEnd();const it=X.items[X.i]
   return `<div class="exam"><div class="xtop"><b>${esc(X.titulo)}</b><span class="xmeta">${X.end?`<span aria-label="Tiempo restante">⏱ <span id="xt">${fmtT(X.end-Date.now())}</span></span>`:''}<span>${nAns}/${X.items.length} respondidas</span></span></div>
   <div class="xbody"><section class="xq">
   ${X.secs.length>1?`<p class="xsec">${esc(sec.titulo)}</p>`:''}${sec.enun?`<details class="enun"${first?' open':''}><summary>Enunciado del supuesto</summary><p>${esc(sec.enun)}</p></details>`:''}
-  <p class="qn">Pregunta ${X.i+1}${X.kind!=='oficial'?` · <span class="srcq">${q.oficial?'Examen oficial OEP '+esc(q.anio):'Pregunta de la web'}</span>`:''}</p>
+  <p class="qn">Pregunta ${X.i+1}${X.kind!=='oficial'?` · <span class="srcq">${q.oficial?'Examen oficial OEP '+esc(q.anio):String(q.id).startsWith('grupo:')?'Tests del grupo'+(q.src?' · '+esc(q.src):''):'Pregunta de la web'}</span>`:''}</p>
   ${q.sup&&!sec.enun?`<details class="enun"><summary>Enunciado: ${esc(q.sup)}</summary><p>${esc(q.enun||'')}</p></details>`:''}
   <p class="qtext" id="xqt">${rich(q.q)}</p>
   <div role="radiogroup" aria-labelledby="xqt">${q.opts.map((o,k)=>{if(hid===k&&!shown)return `<button class="opt off" disabled aria-label="${'abcd'[k]}) descartada por la pista">${'abcd'[k]}) <s>${rich(o)}</s></button>`;let cl='opt';if(shown){if(k===q.c)cl+=' ok';else if(k===ans)cl+=' ko'}else if(k===ans)cl+=' sel';return `<button class="${cl}" role="radio" aria-checked="${k===ans}" data-xopt="${k}"${shown?' disabled':''}>${'abcd'[k]}) ${rich(o)}</button>`}).join('')}</div>
@@ -392,13 +394,17 @@ function vExCfg(){const c=ui.xcfg;const seg=(name,opts,val)=>`<div class="seg se
   ${c.kind==='sim'?`<div class="fld"><label for="xb">Bloque</label><select id="xb" name="bloque"><option value="">Todos los bloques</option>${['I','II','III','IV'].map(b=>`<option value="${b}"${c.bloque===b?' selected':''}>Bloque ${b} · ${esc(BL[b].n)}</option>`).join('')}</select></div>
   <div class="fld"><label for="xtm">Tema (opcional)</label><select id="xtm" name="tema"><option value="">Todos los temas del bloque</option>${ts.map(t=>`<option value="${t.id}"${c.tema===t.id?' selected':''}>${esc(t.codigo+' · '+t.titulo)}</option>`).join('')}</select></div>
   <div class="fld"><span class="lbl">Número de preguntas</span>${seg('n',[[10,'10'],[20,'20'],[40,'40'],[80,'80']],c.n||20)}</div>
-  <div class="fld"><span class="lbl">Preguntas</span>${seg('fuente',[['todas','Todas','oficiales y de la web'],['ofi','Solo de exámenes','oficiales']],c.fuente||'todas')}</div>`:''}
+  <div class="fld"><span class="lbl">Preguntas</span>${seg('fuente',[['todas','Web + oficiales',''],['ofi','Solo oficiales',''],...(S.grupo?[['grupo','Solo del grupo','Drive']]:[])],c.fuente||'todas')}</div>`:''}
   ${c.kind!=='sim'?`<div class="fld"><span class="lbl">Segunda parte (supuesto práctico)</span>${seg('sup',[['III','Supuesto de desarrollo','Bloque III (II+III en 2026)'],['IV','Supuesto de sistemas','Bloque IV (II+IV en 2026)'],['no','Sin supuesto','solo 1.ª parte']],c.sup||'III')}</div>`:''}
   <div class="fld"><span class="lbl">Corrección</span>${seg('modo',[['final','Al final','como el examen'],['momento','Según respondo','ves si aciertas']],c.modo||'final')}</div>
   <div class="fld"><span class="lbl">Tiempo</span>${seg('tiempo',[['oficial','Con reloj','1,2 min por pregunta'],['libre','Sin límite','']],c.tiempo||'oficial')}</div>
   <div class="fld"><span class="lbl">Pistas</span>${seg('pistas',[['no','Sin pistas',''],['si','Con pistas','descarta una opción mala']],c.pistas||'no')}</div>
   <div class="acts"><button class="btn">Empezar</button><button type="button" class="btn ghost" data-act="xcancel">Cancelar</button></div></form>`}
-function vExamenesHub(tab){const ofi=ofiQs(true);const per={};ofi.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});
+function vGrupo(){const G=S.grupo||[];const per={};G.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});const files=[...new Set(G.map(q=>q.file))];
+  return `<p class="sub">${G.length} preguntas de los tests del grupo PreparaTAI (Drive). Muchas son de exámenes de 2004–2017: puede haber leyes ya cambiadas, así que fíate más de las oficiales recientes. Solo las ves tú.</p>
+  ${['I','II','III','IV'].map(b=>`<div class="ofib"><b>Bloque ${b}</b><div class="chips wrap">${S.temas.filter(t=>t.bloque===b).sort(ordT).map(t=>per[t.id]?`<button class="chip2" data-act="xgru" data-t="${t.id}">${esc(t.codigo)} <b>${per[t.id]}</b></button>`:'').join('')}<button class="chip2" data-act="xgru" data-b="${b}">Todo el bloque <b>${G.filter(q=>q.bloque===b).length}</b></button></div></div>`).join('')}
+  <details class="mes nocap" style="margin-top:14px"><summary>Por archivo del Drive</summary><div class="chips wrap" style="padding:0 12px 12px">${files.map(f=>`<button class="chip2" data-act="xgru" data-f="${esc(f)}">${esc(f)} <b>${G.filter(q=>q.file===f).length}</b></button>`).join('')}</div></details>`}
+function vExamenesHub(tab){if(tab==='gru')return vGrupo();const ofi=ofiQs(true);const per={};ofi.forEach(q=>{const k=q.tema||q.bloque;per[k]=(per[k]||0)+1});
   const exs=idxOrder().filter(m=>S.exams[m.id]);
   if(tab==='ofi')return `<p class="sub">Tal cual salieron, con la plantilla oficial de respuestas. Ojo: hasta 2025 el supuesto era del Bloque III o del IV; en 2026 es II+III o II+IV.</p>
   <div class="xlist">${exs.map(m=>{const e=S.exams[m.id];const r=S.res.filter(x=>x.titulo===e.titulo);const best=r.length?Math.max(...r.map(nota)):null;return `<div class="card xe"><b>${esc(e.titulo)}</b><small>${e.partes[0].preguntas.length} + 20 preguntas · plantilla ${esc(e.plantilla.split(' ')[0])}${best!=null?' · mejor nota '+n1(best):''}</small><div class="acts"><button class="btn" data-act="xcfg" data-k="oficial" data-id="${esc(e.id)}">Hacer examen</button><a class="mini ghost" href="${esc(e.fuente)}" target="_blank" rel="noopener">PDF oficial</a></div></div>`}).join('')||'<p class="empty">Cargando exámenes…</p>'}</div>
@@ -545,6 +551,7 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='pomostop'){pomoStop();render()}
   else if(a==='dgo'){const g=el.dataset.go,t=el.dataset.t;if(g==='cards'){ui.mazo=t;ui.idx=0;ui.filtro='nueva';location.hash='tarjetas'}else if(g==='repaso'){ui.filtro='hoy';ui.idx=0;location.hash='tarjetas'}else if(g==='errores'){const b=document.createElement('button');b.dataset.act='merr';location.hash='tests';setTimeout(()=>{const x=document.querySelector('[data-act="merr"]');if(x)x.click()},50)}else if(g==='test'){ui.scope=t;const qs=shuffle(bank(t));if(qs.length)startRun('Test de la semana · Tema '+temaName(t),t,qs.slice(0,15),'practica-'+t);else location.hash='tests'}else if(g==='sim'){ui.xtab='sim';location.hash='tests'}else if(g==='temas')location.hash='temario'}
   else if(a==='xcancel'){ui.xcfg=null;render()}
+  else if(a==='xgru'){const t=el.dataset.t,b=el.dataset.b,f=el.dataset.f;let pool=(S.grupo||[]).filter(q=>t?q.tema===t:b?q.bloque===b:q.file===f).map(q=>Object.assign({},q,{id:'grupo:'+q.id}));pool=shuffle(pool).slice(0,40);ui.ex=null;if(pool.length){const secs=[{titulo:'Tests del grupo',qs:pool}];ui.ex={titulo:'Tests del grupo · '+(t?'Tema '+temaName(t):b?'Bloque '+b:f),kind:'grupo',secs,items:pool.map(q=>({q,s:0})),i:0,ans:{},dud:{},pis:{},shown:{},modo:'momento',pistas:false,end:null,t0:Date.now(),done:false,conf:false,filt:'fallos'};render();scrollTo(0,0)}}
   else if(a==='xofi'){const t=el.dataset.t,b=el.dataset.b;startExam({kind:'sim',titulo:'Preguntas oficiales · '+(t?'Tema '+temaName(t):'Bloque '+b),tema:t||'',bloque:t?'':b,n:200,fuente:'ofi',modo:'momento',tiempo:'libre',pistas:'no'})}
   else if(a==='xnext'){ui.ex.i++;ui.ex.conf=false;render();scrollTo(0,0)}
   else if(a==='xprev'){ui.ex.i--;ui.ex.conf=false;render();scrollTo(0,0)}
@@ -602,7 +609,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=14;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=15;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];
