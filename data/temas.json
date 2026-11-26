@@ -9,7 +9,8 @@
   "tarjetas": true,
   "preguntas": true,
   "pags": 44,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-2",
@@ -21,7 +22,8 @@
   "tarjetas": true,
   "preguntas": true,
   "pags": 54,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-3",
@@ -33,7 +35,8 @@
   "tarjetas": true,
   "preguntas": true,
   "pags": 32,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "I-4",

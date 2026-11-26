@@ -1,0 +1,62 @@
+{
+ "tema": "I-2",
+ "ramas": [
+  {
+   "e": "🏛️",
+   "t": "Cortes Generales (art. 66)",
+   "items": [
+    "**Congreso + Senado**: representan al pueblo español",
+    "Potestad **legislativa**, aprueban los **Presupuestos**",
+    "**Controlan** la acción del Gobierno",
+    "Son **inviolables**"
+   ]
+  },
+  {
+   "e": "🗳️",
+   "t": "Congreso",
+   "items": [
+    "Entre **300 y 400** diputados (hoy **350**)",
+    "Mandato de **4 años**",
+    "Circunscripción: la **provincia**",
+    "**Ceuta y Melilla**: 1 diputado cada una"
+   ]
+  },
+  {
+   "e": "🏰",
+   "t": "Senado",
+   "items": [
+    "Cámara de **representación territorial**",
+    "**4 senadores** por provincia",
+    "Más los **designados por las CCAA**"
+   ]
+  },
+  {
+   "e": "📋",
+   "t": "Funcionamiento",
+   "items": [
+    "Dos periodos: **septiembre-diciembre** y **febrero-junio**",
+    "**Diputación Permanente**: mínimo **21** miembros",
+    "Reglamentos de cada Cámara por **mayoría absoluta**"
+   ]
+  },
+  {
+   "e": "⚖️",
+   "t": "Tribunal Constitucional",
+   "items": [
+    "**12 magistrados**, mandato de **9 años**",
+    "Se renueva **por terceras partes** cada 3 años",
+    "4 Congreso · 4 Senado (**3/5**) · 2 Gobierno · 2 CGPJ"
+   ]
+  },
+  {
+   "e": "🧑‍⚖️",
+   "t": "Defensor del Pueblo",
+   "items": [
+    "Alto comisionado de las **Cortes Generales**",
+    "Mandato de **5 años**",
+    "Regulado por la **LO 3/1981**",
+    "Elegido por **3/5** de cada Cámara"
+   ]
+  }
+ ]
+}

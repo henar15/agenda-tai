@@ -1,0 +1,61 @@
+{
+ "tema": "I-3",
+ "ramas": [
+  {
+   "e": "👥",
+   "t": "Composición (art. 98)",
+   "items": [
+    "**Presidente**, Vicepresidentes y **Ministros**",
+    "Regulado en el **Título IV** (arts. 97-107)",
+    "**Ley 50/1997**, del Gobierno"
+   ]
+  },
+  {
+   "e": "🧭",
+   "t": "Funciones (art. 97)",
+   "items": [
+    "Dirige la política **interior y exterior**",
+    "Dirige la **Administración civil y militar** y la defensa",
+    "**Función ejecutiva** y **potestad reglamentaria**"
+   ]
+  },
+  {
+   "e": "🗳️",
+   "t": "Investidura (art. 99)",
+   "items": [
+    "El **Rey** propone candidato tras consultas",
+    "1.ª votación: **mayoría absoluta**",
+    "**48 horas** después: mayoría **simple**",
+    "Si en **2 meses** no hay investidura: **disolución**"
+   ]
+  },
+  {
+   "e": "🚪",
+   "t": "Cese (art. 101)",
+   "items": [
+    "Tras **elecciones generales**",
+    "Por **pérdida de confianza** parlamentaria",
+    "Por **dimisión o fallecimiento** del Presidente",
+    "Sigue **en funciones** hasta el nuevo Gobierno"
+   ]
+  },
+  {
+   "e": "🤝",
+   "t": "Relaciones con las Cortes (Título V)",
+   "items": [
+    "**Moción de censura** (art. 113): mayoría absoluta y candidato",
+    "**Cuestión de confianza** (art. 112): mayoría simple",
+    "**Preguntas e interpelaciones**"
+   ]
+  },
+  {
+   "e": "🏢",
+   "t": "Órganos de apoyo",
+   "items": [
+    "**Comisiones Delegadas** del Gobierno",
+    "**Comisión General** de Secretarios de Estado y Subsecretarios",
+    "**Secretariado del Gobierno** y Gabinetes"
+   ]
+  }
+ ]
+}
