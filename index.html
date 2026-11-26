@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" data-v="15">
+<html lang="es" data-v="16">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -293,11 +293,20 @@ body.out .aa{margin-left:auto}body.out #acct{margin-left:0}
 .pbar{display:grid;grid-template-columns:92px 1fr auto;gap:8px;align-items:center;margin-top:6px;font-size:13px}.pbar .tr{height:8px;border-radius:99px;background:var(--line);overflow:hidden}.pbar .tr i{display:block;height:100%;background:var(--acc)}
 details.mes>summary small{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:55%}
 details.mes.nocap>summary{text-transform:none}@media(max-width:700px){.ptabs button{min-width:0;padding:8px 4px;font-size:14px}}
-#pomo{position:fixed;right:16px;bottom:16px;z-index:40;display:flex;align-items:center;gap:10px;background:var(--panel);border:2px solid var(--acc);border-radius:18px;padding:6px 10px 6px 6px;box-shadow:0 10px 30px rgb(0 0 0 / .2)}#pomo.descanso{border-color:#10b981}#pomo b{display:block;font-size:22px;font-variant-numeric:tabular-nums}#pomo small{color:var(--muted);font-weight:700;font-size:12px}#pomo svg{animation:none;display:block}
-@media(max-width:700px){#pomo{bottom:calc(84px + env(safe-area-inset-bottom));right:10px}}
 .retos h3 small{font-weight:800;color:var(--muted);font-size:14px;margin-left:6px}.rlist2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:10px}.reto{display:flex;gap:10px;align-items:center;background:var(--bg);border-radius:12px;padding:10px}.reto .ri{font-size:24px}.reto>div{flex:1}.reto .tr{height:8px;border-radius:99px;background:var(--line);overflow:hidden;margin:4px 0}.reto .tr i{display:block;height:100%;background:#f59e0b}.reto.ok{outline:2px solid #f59e0b}.reto small{color:var(--muted)}
 .retos{margin-bottom:16px}.resumen{margin-bottom:16px;border:2px solid var(--acc)}.rsum{display:grid;grid-template-columns:repeat(auto-fit,minmax(70px,1fr));gap:8px;text-align:center}.rsum b{display:block;font-size:24px}.rsum small{color:var(--muted)}
 @media(max-width:700px){.rlist2{grid-template-columns:1fr 1fr}.reto{flex-direction:column;align-items:stretch;gap:4px}.reto .ri{font-size:20px}.reto b{font-size:14px}}
+#pomo.mini{position:fixed;right:16px;bottom:16px;z-index:40;display:flex;align-items:center;gap:6px;background:var(--panel);border:2px solid var(--acc);border-radius:18px;padding:4px 8px 4px 4px;box-shadow:0 10px 30px rgb(0 0 0 / .2)}#pomo.mini.descanso{border-color:#10b981}
+#pomo .pexp{display:flex;align-items:center;gap:8px;border:0;background:none;color:var(--ink);cursor:pointer;text-align:left;padding:2px}#pomo .pexp b{display:block;font-size:22px;font-variant-numeric:tabular-nums}#pomo .pexp small{color:var(--muted);font-weight:700;font-size:12px}#pomo svg{animation:none;display:block}
+@media(max-width:700px){#pomo.mini{bottom:calc(84px + env(safe-area-inset-bottom));right:10px}}
+#pomo.full{position:fixed;inset:0;z-index:100;background:radial-gradient(circle at 50% 35%,#3b2a7a,#140e2e);color:#c4b5fd;display:grid;place-items:center}#pomo.full.descanso{background:radial-gradient(circle at 50% 35%,#115e59,#062925);color:#6ee7b7}
+#pomo.full .pbtns{position:absolute;top:16px;right:16px;display:flex;gap:10px}#pomo.full .pbtns button{width:52px;height:52px;border-radius:50%;border:2px solid rgb(255 255 255 / .3);background:rgb(255 255 255 / .08);color:#fff;font-size:26px;font-weight:900;cursor:pointer}
+#pomo.full .pcenter{display:grid;justify-items:center;gap:6px;text-align:center;padding:20px}#pomo.full .pring{position:relative;width:min(78vw,320px);aspect-ratio:1}#pomo.full .pring svg{width:100%;height:100%}#pomo.full .pmasc{position:absolute;inset:0;display:grid;place-items:center}#pomo.full .pmasc svg{width:55%;height:55%;animation:bob 3s ease-in-out infinite}
+#pomo.full .ptime{font-size:clamp(56px,14vw,96px);color:#fff;font-variant-numeric:tabular-nums;line-height:1}#pomo.full .pfase{color:#ede9fe;font-weight:700;font-size:18px;margin:4px 0}#pomo.full .pcount{color:rgb(255 255 255 / .6);margin:0}
+body.focus{overflow:hidden}
+.ptsinfo{font-size:13px;color:var(--muted);margin:4px 0 6px}.ptsinfo b{color:var(--ink);font-weight:800}
+.hueco{display:inline-block;min-width:80px;border-bottom:3px solid var(--acc);color:var(--acc);font-weight:900;text-align:center}.cftxt{font-size:19px;line-height:1.5;margin:6px 0 0}.cfopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:500px){.cfopts{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){#pomo.full .pmasc svg{animation:none}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -318,7 +327,7 @@ details.mes.nocap>summary{text-transform:none}@media(max-width:700px){.ptabs but
 </header>
 <main id="app" tabindex="-1"><p class="empty">Cargando tu agenda…</p></main>
 
-<script src="firebase-config.js?v=15"></script>
-<script src="app.js?v=15"></script>
+<script src="firebase-config.js?v=16"></script>
+<script src="app.js?v=16"></script>
 </body>
 </html>

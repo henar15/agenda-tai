@@ -124,9 +124,10 @@ function frase(r){const h=[...today()].reduce((a,c)=>a+c.charCodeAt(0),0);const 
 function vMascota(){const r=R(),st=etapa(r.n),ac=accDe((S.rec||{}).acMax||0),mood=r.hoy?'happy':(!r.n&&!r.pts?'sleep':'wait');
   const sig=ETAPAS[st+1],pct=Math.min(100,Math.round(r.pts/r.meta*100)),nm=mascName();
   return `<div class="card mascard"><div class="masc">${mascSVG(st,ac,mood,150,nm+', tu mascota: '+ETAPAS[st].n+(ac?' con '+ac.n.toLowerCase():''))}</div>
-  <div class="mtx"><div class="mhead"><b>${esc(nm)}</b><span class="mst">${esc(ETAPAS[st].n)}</span><button class="mini ghost" data-act="mascCfg" aria-expanded="${ui.mcfg?'true':'false'}">Ajustes</button></div>
+  <div class="mtx"><div class="mhead"><b>${esc(nm)}</b><span class="mst">${esc(ETAPAS[st].n)}</span>${ui.pomo?'':'<button class="mini hi" data-act="pomo">🍅 Pomodoro</button>'}<button class="mini ghost" data-act="mascCfg" aria-expanded="${ui.mcfg?'true':'false'}">Ajustes</button></div>
   <p class="bubble">${esc(frase(r))}</p>
   <div class="meta"><div class="mbar" role="progressbar" aria-label="Meta de hoy" aria-valuemin="0" aria-valuemax="${r.meta}" aria-valuenow="${Math.min(r.pts,r.meta)}"><i style="width:${pct}%"></i></div><span>${Math.min(r.pts,r.meta)} / ${r.meta} puntos hoy${r.hoy?' ✓':''}</span></div>
+  <p class="ptsinfo">1 punto por cada <b>tarjeta clasificada</b> o <b>pregunta respondida</b> · 2 por cada <b>tarea de «Hoy toca»</b> · 5 por cada <b>pomodoro</b></p>
   <div class="mstats"><span title="Días seguidos cumpliendo la meta">🔥 <b>${r.n}</b> ${r.n===1?'día':'días'}</span><span title="Cada escudo salva un día que no estudies">🛡️ <b>${r.esc}</b>/2 escudos</span>${r.descanso?'<span>😴 Hoy descansas</span>':''}</div>
   ${sig?`<p class="fine">${sig.d-r.n===1?'Mañana':`En ${sig.d-r.n} días`} se convierte en <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Ha llegado a su forma final!</p>'}
   ${ui.mcfg?`<form class="mcfg" data-mcfg="1"><div class="fld"><label for="mname">Nombre de tu mascota</label><input id="mname" name="n" maxlength="16" value="${esc(nm)}" autocomplete="off"></div>
@@ -204,12 +205,18 @@ function vRetos(){const {R}=retos();const e=estrellas(),sig=PREMIOS.find(p=>e<p.
   return `<div class="card retos"><h3>Retos de la semana <small>⭐ ${e} estrellas</small></h3><div class="rlist2">${R.map(r=>`<div class="reto${r.v>=r.m?' ok':''}"><span class="ri" aria-hidden="true">${r.v>=r.m?'⭐':r.ic}</span><div><b>${esc(r.t)}</b><div class="tr" role="progressbar" aria-label="${esc(r.t)}" aria-valuemin="0" aria-valuemax="${r.m}" aria-valuenow="${Math.min(r.v,r.m)}"><i style="width:${Math.min(100,r.v/r.m*100)}%"></i></div><small>${Math.min(r.v,r.m)} / ${r.m}</small></div></div>`).join('')}</div>${sig?`<p class="fine">Con ${sig.s} estrellas ${esc(mascName())} consigue: <b>${esc(sig.n.toLowerCase())}</b>.</p>`:'<p class="fine">¡Tienes todos los premios!</p>'}</div>`}
 /* ---------- pomodoro ---------- */
 let pomoT=null;
-function pomoStart(){const P=ui.pomo={fase:'estudio',fin:Date.now()+25*60000,n:(ui.pomo&&ui.pomo.n)||0};clearInterval(pomoT);pomoT=setInterval(pomoTick,1000);pomoDraw()}
+function pomoStart(){const P=ui.pomo={fase:'estudio',fin:Date.now()+25*60000,n:(ui.pomo&&ui.pomo.n)||0,min:false};clearInterval(pomoT);pomoT=setInterval(pomoTick,1000);pomoDraw()}
 function pomoStop(){clearInterval(pomoT);ui.pomo=null;pomoDraw()}
 function pomoTick(){const P=ui.pomo;if(!P)return;if(Date.now()>=P.fin){if(P.fase==='estudio'){P.n++;statAdd('m',1);logAct(5);try{navigator.vibrate&&navigator.vibrate([200,100,200])}catch(e){}toast('🍅','¡Pomodoro terminado!','+5 puntos · 5 minutos de descanso');P.fase='descanso';P.fin=Date.now()+5*60000}else{toast('📚','Fin del descanso','¡Otro pomodoro!');P.fase='estudio';P.fin=Date.now()+25*60000}}pomoDraw()}
-function pomoDraw(){let w=document.getElementById('pomo');const P=ui.pomo;if(!P){if(w)w.remove();return}if(!w){w=document.createElement('div');w.id='pomo';w.setAttribute('role','timer');document.body.appendChild(w)}
-  const l=Math.max(0,P.fin-Date.now()),m=Math.floor(l/60000),s=Math.floor(l%60000/1000);const r=R();
-  w.className=P.fase;w.innerHTML=`<div class="pm">${mascSVG(etapa(r.n),accDe((S.rec||{}).acMax||0),P.fase==='estudio'?'wait':'happy',44,mascName(),premiosDe())}</div><div><small>${P.fase==='estudio'?'Estudiando con '+esc(mascName()):'Descanso'} · 🍅 ${P.n}</small><b aria-live="off">${m}:${String(s).padStart(2,'0')}</b></div><button class="mini ghost" data-act="pomostop" aria-label="Parar pomodoro">✕</button>`}
+function pomoDraw(){let w=document.getElementById('pomo');const P=ui.pomo;if(!P){if(w)w.remove();document.body.classList.remove('focus');return}if(!w){w=document.createElement('div');w.id='pomo';w.setAttribute('role','timer');document.body.appendChild(w)}
+  const l=Math.max(0,P.fin-Date.now()),m=Math.floor(l/60000),sg=Math.floor(l%60000/1000),tt=m+':'+String(sg).padStart(2,'0');const r=R();const tot=(P.fase==='estudio'?25:5)*60000;const pct=1-l/tot;
+  const svg=sz=>mascSVG(etapa(r.n),accDe((S.rec||{}).acMax||0),P.fase==='estudio'?'wait':'happy',sz,mascName());
+  document.body.classList.toggle('focus',!P.min);
+  if(P.min){w.className='mini '+P.fase;w.innerHTML=`<button class="pexp" data-act="pomomax" aria-label="Abrir pomodoro a pantalla completa"><span class="pm">${svg(44)}</span><span><small>${P.fase==='estudio'?'Estudiando':'Descanso'} · 🍅 ${P.n}</small><b>${tt}</b></span></button><button class="mini ghost" data-act="pomostop" aria-label="Parar pomodoro">✕</button>`;return}
+  const R0=140,C=2*Math.PI*R0;
+  w.className='full '+P.fase;w.innerHTML=`<div class="pbtns"><button data-act="pomomin" aria-label="Minimizar">–</button><button data-act="pomostop" aria-label="Parar pomodoro">✕</button></div>
+  <div class="pcenter"><div class="pring"><svg viewBox="0 0 300 300" aria-hidden="true"><circle cx="150" cy="150" r="${R0}" fill="none" stroke="rgb(255 255 255 / .15)" stroke-width="10"/><circle cx="150" cy="150" r="${R0}" fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-pct)}" transform="rotate(-90 150 150)"/></svg><div class="pmasc">${svg(170)}</div></div>
+  <b class="ptime" aria-live="off">${tt}</b><p class="pfase">${P.fase==='estudio'?`Concéntrate. ${esc(mascName())} te acompaña 🤫`:'Descanso: levántate, bebe agua y estira 🌿'}</p><p class="pcount">🍅 ${P.n} hoy en esta sesión</p></div>`}
 /* ---------- resumen y nota estimada ---------- */
 function notaEstimada(){const rs=S.res.slice().sort((a,b)=>(b.fecha||'').localeCompare(a.fecha||'')).filter(r=>r.total>=10).slice(0,5);if(!rs.length)return null;let w=0,s=0;rs.forEach((r,i)=>{const k=(5-i)*(r.total>=40?2:1);w+=k;s+=nota(r)*k});return s/w}
 function vResumenDia(){const t=today();const s=((S.diario||{})[t]||{})._s||{};const hoyRes=S.res.filter(r=>(r.fecha||'').slice(0,10)===t);const H=planDia(new Date());const done=hechasDe((S.diario||{})[t]);const tot=(H.tareas||[]).length;
@@ -416,15 +423,24 @@ function vExamenesHub(tab){if(tab==='gru')return vGrupo();const ofi=ofiQs(true);
   ${['I','II','III','IV'].map(b=>`<div class="ofib"><b>Bloque ${b}</b><div class="chips wrap">${S.temas.filter(t=>t.bloque===b).sort(ordT).map(t=>per[t.id]?`<button class="chip2" data-act="xofi" data-t="${t.id}">${esc(t.codigo)} <b>${per[t.id]}</b></button>`:'').join('')}<button class="chip2" data-act="xofi" data-b="${b}">Todo el bloque <b>${ofi.filter(q=>q.bloque===b).length}</b></button></div></div>`).join('')}`}
 
 /* ---------- juegos ---------- */
+function cfBuild(mazo){const cs=(mazo?temaCards(mazo):Object.keys(S.cards).flatMap(t=>temaCards(t))).filter(c=>/\*\*(.+?)\*\*/.test(c.a));const terms=[...new Set(cs.flatMap(c=>[...c.a.matchAll(/\*\*(.+?)\*\*/g)].map(m=>m[1].trim())))].filter(t=>t.length<40);
+  return shuffle(cs).slice(0,10).map(c=>{const bs=[...c.a.matchAll(/\*\*(.+?)\*\*/g)].map(m=>m[1].trim()).filter(t=>t.length<40);if(!bs.length)return null;const ans=bs[Math.floor(Math.random()*bs.length)];const sim=terms.filter(t=>t!==ans&&/\d/.test(t)===/\d/.test(ans));const opts=shuffle([ans,...shuffle(sim.length>=3?sim:terms.filter(t=>t!==ans)).slice(0,3)]);return {c,ans,opts,txt:c.a.replace('**'+ans+'**','<span class="hueco">_____</span>')}}).filter(Boolean)}
+function vCF(){const G=ui.game;if(G.i>=G.items.length){return `<div class="study game"><h2>¡Hecho!</h2><div class="card" style="text-align:center"><div class="big">${G.ok}/${G.items.length}</div><p style="font-weight:800">frases completadas${G.rec?' · ¡nuevo récord!':''}</p></div><div style="display:flex;gap:10px"><button class="btn ghost" data-act="gquit">Salir</button><button class="btn" data-act="gcfagain">Otra ronda</button></div></div>`}
+  const it=G.items[G.i];const ans=G.a;return `<div class="study game"><div class="gtop"><button class="mini ghost" data-act="gquit">✕ Salir</button><span class="gok">${G.i+1}/${G.items.length} · ✓ ${G.ok}</span></div>
+  <div class="stmt"><small class="fine">${esc(plain(it.c.q))}</small><p class="cftxt">${esc(plain(it.txt.replace('<span class="hueco">_____</span>','\u0000'))).replace('\u0000','<span class="hueco">'+(ans!=null?esc(it.ans):'_____')+'</span>')}</p></div>
+  <div class="cfopts" role="radiogroup" aria-label="Elige la palabra que falta">${it.opts.map((o,k)=>`<button class="opt${ans!=null?(o===it.ans?' ok':k===ans?' ko':''):''}" role="radio" aria-checked="${k===ans}" data-cf="${k}"${ans!=null?' disabled':''}>${esc(o)}</button>`).join('')}</div>
+  <div aria-live="polite">${ans!=null?`<p class="exp">${it.opts[ans]===it.ans?'<b>¡Bien!</b>':'<b>Era «'+esc(it.ans)+'».</b>'}</p><button class="btn" data-act="gcfnext">${G.i+1<G.items.length?'Siguiente':'Ver resultado'}</button>`:''}</div></div>`}
 function vJuegos(){
   const G=ui.game;
   const ts=temasConBanco(),ms=temasConCartas();
   if(G&&G.kind==='vf')return vVF();
   if(G&&G.kind==='emp')return vEmp();
+  if(G&&G.kind==='cf')return vCF();
   const rec=S.rec||{};
   return `<h2>Juegos</h2><p class="sub">Para repasar jugando, en ratos cortos.</p>
   <div class="grid">
    <div class="card"><h3>⚡ Verdadero o falso exprés</h3><p>60 segundos. Te enseño una pregunta con una respuesta: ¿es la buena? Cada fallo te quita 5 segundos.</p><p class="sub">Récord: <b>${rec.vf||0}</b> aciertos</p><div class="picker"><select id="gvf" aria-label="Tema del juego"><option value="">Todos los temas</option>${ts.map(t=>`<option value="${esc(t.id)}">${esc(t.codigo+' · '+t.titulo)}</option>`).join('')}</select><button class="btn" data-act="gvf"${bank().length?'':' disabled'}>Jugar</button></div></div>
+   <div class="card"><h3>✍️ Completa la frase</h3><p>Te enseño la respuesta de una tarjeta con un hueco en lo importante. Elige la palabra que falta. 10 frases por ronda.</p><p class="sub">Récord: <b>${rec.cf||0}</b>/10</p><div class="picker"><select id="gcf" aria-label="Tema del juego"><option value="">Todos los temas</option>${ms.map(m=>`<option value="${esc(m.id)}">${esc(m.titulo)}</option>`).join('')}</select><button class="btn" data-act="gcf"${ms.length?'':' disabled'}>Jugar</button></div></div>
    <div class="card"><h3>🧩 Empareja</h3><p>Une cada pregunta con su respuesta. 6 parejas por ronda, lo más rápido que puedas.</p><p class="sub">Récord: <b>${rec.emp?n1(rec.emp)+' s':'–'}</b></p><div class="picker"><select id="gemp" aria-label="Mazo del juego">${ms.map(m=>`<option value="${esc(m.id)}">${esc(m.titulo)}</option>`).join('')}</select><button class="btn" data-act="gemp"${ms.length?'':' disabled'}>Jugar</button></div></div>
   </div>`}
 function vfNext(){const G=ui.game;const q=G.pool[Math.floor(Math.random()*G.pool.length)];const truth=Math.random()<.5;let k=q.c;if(!truth){const o=q.opts.map((_,i)=>i).filter(i=>i!==q.c);k=o[Math.floor(Math.random()*o.length)]}G.cur={q,k,truth:k===q.c};G.fb=''}
@@ -505,7 +521,7 @@ function vProbar(){const cs=(S.cards['I-1']||[]).filter(c=>c.t).slice(0,5),qs=(S
 function vLogin(){return `<div class="login"><div class="lg-ico">📚</div><h2>Tu agenda para la oposición TAI</h2><p class="sub">Tarjetas para memorizar, tests con trampa, tu horario y tu progreso. Todo en un sitio, en el móvil y en el ordenador.</p>
   <button class="btn big" data-act="login"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-8l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Entrar con Google</button>
   <p class="fine">Cada persona tiene su propio progreso y su horario. Solo tú puedes verlos.</p><p><a href="#inicio" class="more">← Volver a la portada</a></p></div>`}
-function busy(){return (ui.ex&&!ui.ex.done)||(ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
+function busy(){return (ui.game&&ui.game.kind==='cf'&&!ui.game.over)||(ui.ex&&!ui.ex.done)||(ui.test&&!ui.test.done)||(ui.game&&!ui.game.over)}
 function render(){S.temas=S.temasBase.map(t=>Object.assign({},t,{estado:(S.estados||{})[t.id]||'pendiente'}));const v=view();acct();document.querySelectorAll('#nav a').forEach(a=>{const on=a.dataset.v===v;a.classList.toggle('on',on);if(on)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   const gate=!!window.FIREBASE_CONFIG&&!S.user;document.body.classList.toggle('out',gate);
   if(gate){const h=location.hash.slice(1);$('#app').innerHTML=h==='entrar'?(S.authReady?vLogin():'<p class="empty">Cargando…</p>'):h==='probar'?vProbar():vPortada();scrollTo(0,0);return}
@@ -549,6 +565,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='xcfg'){const k=el.dataset.k;const e=S.exams[el.dataset.id];ui.xcfg={kind:k,id:el.dataset.id,titulo:k==='oficial'?e.titulo:k==='gen'?'Examen completo (simulacro)':'Simulacro a tu medida'};render();scrollTo(0,0)}
   else if(a==='pomo'){pomoStart();render()}
   else if(a==='pomostop'){pomoStop();render()}
+  else if(a==='pomomin'){if(ui.pomo){ui.pomo.min=true;pomoDraw()}}
+  else if(a==='pomomax'){if(ui.pomo){ui.pomo.min=false;pomoDraw()}}
   else if(a==='dgo'){const g=el.dataset.go,t=el.dataset.t;if(g==='cards'){ui.mazo=t;ui.idx=0;ui.filtro='nueva';location.hash='tarjetas'}else if(g==='repaso'){ui.filtro='hoy';ui.idx=0;location.hash='tarjetas'}else if(g==='errores'){const b=document.createElement('button');b.dataset.act='merr';location.hash='tests';setTimeout(()=>{const x=document.querySelector('[data-act="merr"]');if(x)x.click()},50)}else if(g==='test'){ui.scope=t;const qs=shuffle(bank(t));if(qs.length)startRun('Test de la semana · Tema '+temaName(t),t,qs.slice(0,15),'practica-'+t);else location.hash='tests'}else if(g==='sim'){ui.xtab='sim';location.hash='tests'}else if(g==='temas')location.hash='temario'}
   else if(a==='xcancel'){ui.xcfg=null;render()}
   else if(a==='xgru'){const t=el.dataset.t,b=el.dataset.b,f=el.dataset.f;let pool=(S.grupo||[]).filter(q=>t?q.tema===t:b?q.bloque===b:q.file===f).map(q=>Object.assign({},q,{id:'grupo:'+q.id}));pool=shuffle(pool).slice(0,40);ui.ex=null;if(pool.length){const secs=[{titulo:'Tests del grupo',qs:pool}];ui.ex={titulo:'Tests del grupo · '+(t?'Tema '+temaName(t):b?'Bloque '+b:f),kind:'grupo',secs,items:pool.map(q=>({q,s:0})),i:0,ans:{},dud:{},pis:{},shown:{},modo:'momento',pistas:false,end:null,t0:Date.now(),done:false,conf:false,filt:'fallos'};render();scrollTo(0,0)}}
@@ -578,6 +596,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='gvf'){startVF($('#gvf').value)}
   else if(a==='gvfagain'){startVF(G.scope)}
   else if(a==='gemp'){startEmp($('#gemp').value)}
+  else if(a==='gcf'||a==='gcfagain'){const mz=a==='gcf'?$('#gcf').value:ui.game.mazo;ui.game={kind:'cf',mazo:mz,items:cfBuild(mz),i:0,ok:0,a:null};render();scrollTo(0,0)}
+  else if(a==='gcfnext'){const G=ui.game;G.i++;G.a=null;if(G.i>=G.items.length){G.over=true;logAct(G.ok);statAdd('q',G.items.length);const rec=S.rec||{};if(G.ok>(rec.cf||0)){G.rec=true;S.rec=Object.assign({},rec,{cf:G.ok});kvSet('records')}}render()}
   else if(a==='gempagain'){startEmp(G.mazo)}
   else if(a==='gquit'){clearInterval(vfTimer);ui.game=null;render()}
   else if(a==='vfv'||a==='vff'){const said=a==='vfv',c=G.cur;const right=said===c.truth;
@@ -592,11 +612,13 @@ document.addEventListener('click',e=>{const d=e.target.closest('#dflip,[data-dca
   const y=scrollY;render();scrollTo(0,y)});
 document.addEventListener('click',e=>{const o=e.target.closest('[data-xopt],[data-xgo],[data-xf]');if(!o||!ui.ex)return;const X=ui.ex;if(o.dataset.xopt!=null){if(X.modo==='momento'&&X.ans[X.i]!=null)return;X.ans[X.i]=+o.dataset.xopt;X.conf=false}else if(o.dataset.xgo!=null){X.i=+o.dataset.xgo;X.conf=false;scrollTo(0,0)}else X.filt=o.dataset.xf;render()});
 document.addEventListener('submit',e=>{const f=e.target.closest('[data-xcfg]');if(!f)return;e.preventDefault();const v=n=>{const el=f.querySelector(`[name="${n}"]:checked`)||f.querySelector(`[name="${n}"]`);return el?el.value:''};const c=Object.assign({},ui.xcfg,{sup:v('sup'),modo:v('modo'),tiempo:v('tiempo'),pistas:v('pistas'),bloque:v('bloque'),tema:v('tema'),n:+v('n')||20,fuente:v('fuente')});if(c.kind==='sim'&&c.tema)c.titulo='Simulacro · Tema '+temaName(c.tema);else if(c.kind==='sim'&&c.bloque)c.titulo='Simulacro · Bloque '+c.bloque;startExam(c)});
+document.addEventListener('click',e=>{const b=e.target.closest('[data-cf]');if(b&&ui.game&&ui.game.kind==='cf'&&ui.game.a==null){const G=ui.game;G.a=+b.dataset.cf;if(G.items[G.i].opts[G.a]===G.items[G.i].ans)G.ok++;render()}});
 document.addEventListener('click',e=>{const p=e.target.closest('[data-ptab]');if(p){ui.ptab=p.dataset.ptab;render()}});
 document.addEventListener('click',e=>{const t=e.target.closest('[data-xtab]');if(t){ui.xtab=t.dataset.xtab;ui.xcfg=null;render()}});
 document.addEventListener('click',e=>{const f=e.target.closest('[data-filtro]');if(f){ui.filtro=f.dataset.filtro;ui.idx=0;ui.flip=false;render()}});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
 {let sx=null,sy=null;document.addEventListener('touchstart',e=>{if(e.target.closest('#flip')){sx=e.touches[0].clientX;sy=e.touches[0].clientY}},{passive:true});document.addEventListener('touchend',e=>{if(sx==null)return;const dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;sx=null;if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)*1.5){const b=document.querySelector(`[data-act="${dx<0?'next':'prev'}"]`);if(b){e.preventDefault();b.click()}}})}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ui.pomo&&!ui.pomo.min){ui.pomo.min=true;pomoDraw()}});
 document.addEventListener('keydown',e=>{if(location.hash==='#tarjetas'&&!/INPUT|SELECT|TEXTAREA/.test(e.target.tagName)){const k={ArrowRight:'[data-act="next"]',ArrowLeft:'[data-act="prev"]','1':'[data-pile="1"]','2':'[data-pile="2"]','3':'[data-pile="3"]'}[e.key];if(k){const b=document.querySelector(k);if(b){e.preventDefault();b.click();return}}}});
 document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip,#dflip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
 document.addEventListener('change',e=>{const dk=e.target.dataset&&e.target.dataset.dk;if(dk){const d=Object.assign({},S.diario||{});const t=Object.assign({},d[today()]||{});if(e.target.checked){t[dk]=1;logAct(2);const m=dk.match(/^l-(.+)-(\d+)$/);if(m){const tt=S.temas.find(x=>x.id===m[1]);const prevp=(S.lectura||{})[m[1]]||((tt&&tt.pagIni)||1)-1;statAdd('p',Math.max(0,+m[2]-prevp));S.lectura=Object.assign({},S.lectura,{[m[1]]:+m[2]});kvSet('lectura')}}else delete t[dk];d[today()]=t;const ks=Object.keys(d).sort();while(ks.length>40)delete d[ks.shift()];S.diario=d;kvSet('diario');render();return}});
@@ -609,7 +631,7 @@ async function login(){if(!auth)return;const p=new firebase.auth.GoogleAuthProvi
 async function loadRemote(){const snap=await fs.collection('users').doc(uid).collection('kv').get();if(snap.empty){flash('¡Bienvenida! Empieza cuando quieras');return}snap.forEach(d=>{try{const v=JSON.parse(d.data().v);applyKV(d.id,v);lsSet(d.id,v)}catch(e){}});flash('Sincronizado')}
 function loadScript(src){return new Promise((ok,ko)=>{const x=document.createElement('script');x.src=src;x.onload=ok;x.onerror=ko;document.head.appendChild(x)})}
 (async()=>{
-  {const V=15;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
+  {const V=16;if(+document.documentElement.dataset.v!==V){try{if(!sessionStorage.getItem('agendaTAI:rl')){sessionStorage.setItem('agendaTAI:rl','1');await fetch('./',{cache:'reload'});await fetch('./?v='+V,{cache:'reload'});location.reload();return}}catch(e){}}else{try{sessionStorage.removeItem('agendaTAI:rl')}catch(e){}}}
   render();
   const [idx,plan,tests]=await Promise.all([getJ('data/temas.json'),getJ('data/plan.json'),getJ('data/tests.json')]);
   S.temasBase=idx||[];S.plan=plan||{};S.tests=tests||[];
