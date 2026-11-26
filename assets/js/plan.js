@@ -96,15 +96,15 @@ function planDia(ref, sim) {
         go: 'temas',
       });
   });
-  const dudas = cardsDueHoy();
+  const dudas = memDueCount();
   if (dudas)
     out.push({
       k: 'r-' + dkey(day),
       tipo: 'rep',
       n: Math.min(30, dudas),
-      txt: `🔁 Repasa ${Math.min(30, dudas)} tarjetas que tocan hoy`,
-      sub: `repaso espaciado: ${dudas} pendientes para hoy`,
-      go: 'repaso',
+      txt: `🧠 Sesión «A tu ritmo»: ${Math.min(30, dudas)} conceptos`,
+      sub: 'lo que estás a punto de olvidar y lo que fallaste',
+      go: 'ritmo',
     });
   const ne = errList().length;
   if (ne)
@@ -147,15 +147,37 @@ function ritmo() {
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };
 }
+// El plan de hoy se calcula una vez y se guarda: marcar algo no lo cambia ni trae lo de mañana
+function planHoy() {
+  const d = (S.diario || {})[today()] || {};
+  if (d._plan) return d._plan;
+  const H = planDia(new Date());
+  if (!S.temas.length || !Object.keys(S.cards).length || !uid) return H;
+  const snap = {
+    descanso: !!H.descanso,
+    tareas: (H.tareas || []).map((t) => {
+      const o = {};
+      ['k', 'tipo', 'tema', 'txt', 'sub', 'go', 'a', 'b', 'n'].forEach((f) => t[f] != null && (o[f] = t[f]));
+      return o;
+    }),
+  };
+  S.diario = Object.assign({}, S.diario, { [today()]: Object.assign({}, d, { _plan: snap }) });
+  kvSet('diario');
+  return snap;
+}
 function vHoyPlan(compact) {
   const hoy = new Date(),
     man = addD(hoy, 1);
-  const H = planDia(hoy);
+  const H = planHoy();
   const done = (S.diario || {})[today()] || {};
   const sim = { lect: {}, cards: {} };
   (H.tareas || []).forEach((t) => {
     if (t.tipo === 'lect') sim.lect[t.tema] = t.b;
     if (t.tipo === 'cards') sim.cards[t.tema] = (sim.cards[t.tema] || 0) + t.n;
+  });
+  // mañana parte de cómo quedará todo si haces lo de hoy
+  (H.tareas || []).forEach((t) => {
+    if (t.tipo === 'lect' && (S.lectura || {})[t.tema] >= t.b) delete sim.lect[t.tema];
   });
   const M = planDia(man, sim);
   const li = (t, chk) =>
@@ -163,7 +185,7 @@ function vHoyPlan(compact) {
   const hech = (H.tareas || []).filter((t) => done[t.k]).length,
     tot = (H.tareas || []).length;
   const R2 = ritmo();
-  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>` : '<p class="empty">¡Nada pendiente! Si te apetece, repasa tarjetas o haz un test.</p>'}
+  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>${hech === tot ? '<p class="hoyok">🎉 <b>¡Hoy ya está!</b> Lo de mañana, mañana. Si aún te apetece, una sesión corta «A tu ritmo» nunca sobra.</p>' : ''}` : '<p class="empty">¡Nada pendiente! Si te apetece, haz una sesión «A tu ritmo».</p>'}
   ${compact ? '' : `<h3 style="margin-top:18px">Mañana</h3>${M.descanso ? '<p class="fine">Mañana descansas 😴</p>' : `<ul class="dlist">${(M.tareas || []).map((t) => li(t, false)).join('') || '<li class="fine">Nada todavía</li>'}</ul>`}`}
   <p class="fine" style="margin-top:12px">🎯 Para tenerlo todo leído para mayo: <b>${R2.pd} páginas al día</b> (${R2.pag} páginas en ${R2.dias} días de estudio). Lo que no hagas hoy se reparte en los próximos días.</p></div>`;
 }

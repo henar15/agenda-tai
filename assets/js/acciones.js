@@ -12,6 +12,8 @@ function markPile(n) {
   S.piles = Object.assign({}, S.piles, { [id]: piles });
   ui.flip = false;
   srsMark(id, c.id, n);
+  memMark(c.id, id, 'c', n === 3 ? 3 : n === 2 ? 2 : 1);
+  kvSet('mem');
   statAdd('c', 1);
   if (
     ui.filtro === 'todas' ||
@@ -29,6 +31,10 @@ function recordErr(q, right) {
   const items = Object.assign({}, S.err.items || {});
   const k = q.id || hash(q.q);
   const cur = items[k];
+  if (!right && q.opts && !q._rit) {
+    memMark(k, q.tema, 'q', 1);
+    kvSet('mem');
+  }
   if (right) {
     if (!cur) return false;
     const racha = (cur.racha || 0) + 1;
@@ -290,9 +296,8 @@ document.addEventListener('click', (e) => {
       ui.idx = 0;
       ui.filtro = 'nueva';
       location.hash = 'tarjetas';
-    } else if (g === 'repaso') {
-      ui.filtro = 'hoy';
-      ui.idx = 0;
+    } else if (g === 'repaso' || g === 'ritmo') {
+      ui.ttab = 'ritmo';
       location.hash = 'tarjetas';
     } else if (g === 'errores') {
       const b = document.createElement('button');
@@ -479,6 +484,45 @@ document.addEventListener('click', (e) => {
     startVF(G.scope);
   } else if (a === 'gemp') {
     startEmp(ui.gscope);
+  } else if (a === 'ritgo') {
+    ui.ttab = 'ritmo';
+    startRitmo(+el.dataset.n);
+  } else if (a === 'ritconf') {
+    ui.rit.conf = el.dataset.conf;
+    ui.rit.paso = 'ver';
+    render();
+  } else if (a === 'ritcard') {
+    ritAnswer(el.dataset.ok === '1', ui.rit.conf);
+    render();
+  } else if (a === 'ritopt') {
+    ui.rit.sel = +el.dataset.i;
+    ui.rit.paso = 'conf';
+    render();
+  } else if (a === 'ritqconf') {
+    const R = ui.rit,
+      x = R.cola[R.i],
+      q = memFind(x.id, x.k, x.t);
+    const ok = R.sel === q.c;
+    if (!R.reint[x.id]) recordErr(Object.assign({}, q, { id: x.id, tema: x.t, _rit: 1 }), ok);
+    ritAnswer(ok, el.dataset.conf);
+    render();
+  } else if (a === 'ritnext') {
+    const R = ui.rit;
+    R.i++;
+    R.paso = 'q';
+    R.sel = null;
+    R.conf = null;
+    if (R.i % 5 === 0) ritSave();
+    render();
+    const b = document.querySelector('.rit button');
+    if (b) b.focus();
+  } else if (a === 'ritfin') {
+    if (ui.rit) ritSave();
+    ui.rit = null;
+    render();
+  } else if (a === 'ttab') {
+    ui.ttab = el.dataset.v;
+    render();
   } else if (a === 'semanal') {
     startSemanal();
   } else if (a === 'supcfg') {

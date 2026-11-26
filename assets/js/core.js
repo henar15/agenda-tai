@@ -24,6 +24,7 @@ const EST = ['pendiente', 'en-curso', 'estudiado'],
   ESTN = { pendiente: 'Pendiente', 'en-curso': 'En curso', estudiado: 'Estudiado' };
 const S = {
   nivel: {},
+  mem: {},
   esq: {},
   stats: {},
   exIdx: [],
@@ -123,6 +124,7 @@ const KEYS = [
   'claves',
   'stats',
   'nivel',
+  'mem',
 ];
 let fs = null,
   uid = null,
@@ -131,6 +133,7 @@ function kvVal(k) {
   return {
     stats: S.stats,
     nivel: S.nivel,
+    mem: S.mem,
     claves: S.claves,
     srs: S.srs,
     lectura: S.lectura,
@@ -167,6 +170,7 @@ function applyKV(k, v) {
     loadGrupo();
   } else if (k === 'stats') S.stats = v;
   else if (k === 'nivel') S.nivel = v;
+  else if (k === 'mem') S.mem = v;
 }
 const kvT = {};
 function kvSet(k) {
@@ -194,6 +198,7 @@ function resetUser() {
   Object.assign(S, {
     stats: {},
     nivel: {},
+    mem: {},
     grupo: null,
     claves: null,
     srs: {},

@@ -3101,3 +3101,119 @@ body.focus {
     color: #666;
   }
 }
+
+/* A tu ritmo */
+.rit-hero {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.rit-big {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.rit-big b {
+  font-size: 48px;
+  line-height: 1;
+  color: var(--acc);
+}
+.rit {
+  max-width: 720px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+.rit-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+.rit-top .pbar {
+  flex: 1;
+}
+.rit-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--muted);
+}
+.rit-q {
+  text-align: center;
+}
+.rit-q h2 {
+  font-size: 21px;
+  margin: 6px 0 0;
+}
+.rit-q .emo {
+  font-size: 40px;
+}
+.rit-a {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 14px 16px;
+  font-size: 18px;
+  text-align: center;
+}
+.rit-conf {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+}
+.rit-conf .btn {
+  justify-content: center;
+}
+.rit .opt.sel {
+  outline: 3px solid var(--acc);
+}
+.rit-hc {
+  background: color-mix(in srgb, #f59e0b 18%, var(--bg));
+  border: 2px solid #f59e0b;
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.rit-fbk {
+  border-radius: 14px;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+.rit-fbk.ok {
+  background: color-mix(in srgb, var(--ok) 14%, transparent);
+}
+.rit-fbk.mid {
+  background: color-mix(in srgb, #d97706 14%, transparent);
+}
+.rit-fbk.ko {
+  background: color-mix(in srgb, var(--bad) 10%, transparent);
+}
+.rit-fin {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+.calib,
+.dlist2 {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 6px;
+}
+.hoyok {
+  margin: 12px 0 0;
+  background: color-mix(in srgb, var(--ok) 12%, transparent);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.rit .btn.ok {
+  background: var(--ok);
+  border-color: var(--ok);
+  color: #fff;
+}
+.rit .btn.bad {
+  background: var(--bad);
+  border-color: var(--bad);
+  color: #fff;
+}

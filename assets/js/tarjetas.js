@@ -52,6 +52,23 @@ function deckCards() {
   );
 }
 function vTarjetas() {
+  memSeed();
+  const tab = ui.ttab || 'ritmo';
+  const n = memDueCount();
+  const tabs = ui.rit
+    ? ''
+    : `<h2>Repasar</h2><div class="ptabs" role="tablist">${[
+        ['ritmo', `🧠 A tu ritmo${n ? ` (${n})` : ''}`],
+        ['mazo', '🃏 Por tema'],
+      ]
+        .map(
+          ([k, l]) =>
+            `<button role="tab" aria-selected="${tab === k}" class="${tab === k ? 'on' : ''}" data-act="ttab" data-v="${k}">${l}</button>`,
+        )
+        .join('')}</div>`;
+  return tabs + (tab === 'ritmo' ? vRitmo() : vMazos());
+}
+function vMazos() {
   if (!Object.keys(S.cards).length) return '<p class="empty">Aún no hay tarjetas.</p>';
   {
     const tc = temasConCartas();
@@ -67,7 +84,7 @@ function vTarjetas() {
   if (ui.idx >= list.length) ui.idx = 0;
   const c = list[ui.idx];
   const b = temaBl(ui.mazo);
-  return `<div class="study tar"><div class="tside"><h2>Tarjetas</h2><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p>
+  return `<div class="study tar"><div class="tside"><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p>
   <div class="picker"><select id="mazo" aria-label="Tema">${temasConCartas()
     .map(
       (x) => `<option value="${esc(x.id)}"${x.id === ui.mazo ? ' selected' : ''}>${esc(x.titulo)}</option>`,
