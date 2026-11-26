@@ -1,0 +1,330 @@
+{
+  "tema": "II-3",
+  "preguntas": [
+    {
+      "id": "ii3-01",
+      "tipico": true,
+      "q": "Un array de dos dimensiones se llama…",
+      "opts": [
+        "Vector",
+        "Lista",
+        "Matriz",
+        "Puntero"
+      ],
+      "c": 2,
+      "exp": "1 dimensión = vector; 2 dimensiones = matriz."
+    },
+    {
+      "id": "ii3-02",
+      "tipico": true,
+      "q": "Una variable que almacena la dirección de memoria de otra variable es un…",
+      "opts": [
+        "Puntero",
+        "Array",
+        "Registro",
+        "Campo"
+      ],
+      "c": 0,
+      "exp": "Definición de puntero."
+    },
+    {
+      "id": "ii3-03",
+      "tipico": true,
+      "q": "Un TAD se puede resumir como…",
+      "opts": [
+        "Datos + memoria",
+        "Campos + registros",
+        "Punteros + índices",
+        "Valores + operaciones"
+      ],
+      "c": 3,
+      "exp": "TAD = valores + operaciones."
+    },
+    {
+      "id": "ii3-04",
+      "tipico": true,
+      "q": "La estructura LIFO es la…",
+      "opts": [
+        "Cola",
+        "Pila",
+        "Bicola",
+        "Lista circular"
+      ],
+      "c": 1,
+      "exp": "Last In, First Out: pila."
+    },
+    {
+      "id": "ii3-05",
+      "tipico": true,
+      "q": "En una cola (FIFO)…",
+      "opts": [
+        "Sale primero el último que entró",
+        "Se inserta por ambos extremos",
+        "Sale primero el primero que entró",
+        "No hay orden"
+      ],
+      "c": 2,
+      "exp": "First In, First Out."
+    },
+    {
+      "id": "ii3-06",
+      "tipico": false,
+      "q": "En una lista circular…",
+      "opts": [
+        "El siguiente del último apunta al primero",
+        "No hay punteros",
+        "Cada nodo tiene dos hijos",
+        "Los elementos están contiguos en memoria"
+      ],
+      "c": 0,
+      "exp": "Esa es su particularidad."
+    },
+    {
+      "id": "ii3-07",
+      "tipico": true,
+      "q": "El recorrido inorden de un árbol binario es…",
+      "opts": [
+        "Raíz, izquierdo, derecho",
+        "Izquierdo, derecho, raíz",
+        "Nivel a nivel",
+        "Izquierdo, raíz, derecho"
+      ],
+      "c": 3,
+      "exp": "Inorden: la raíz en medio."
+    },
+    {
+      "id": "ii3-08",
+      "tipico": false,
+      "q": "El nodo de un árbol que no tiene hijos es el nodo…",
+      "opts": [
+        "Raíz",
+        "Hoja",
+        "Rama",
+        "Padre"
+      ],
+      "c": 1,
+      "exp": "Las hojas están en los extremos."
+    },
+    {
+      "id": "ii3-09",
+      "tipico": true,
+      "q": "La diferencia entre grado y orden de un árbol es que…",
+      "opts": [
+        "Son sinónimos",
+        "El grado es el número total de nodos",
+        "El orden es el máximo de hijos que puede tener un nodo; el grado, los que tiene",
+        "El orden es la altura del árbol"
+      ],
+      "c": 2,
+      "exp": "El peso es el nº total de nodos."
+    },
+    {
+      "id": "ii3-10",
+      "tipico": false,
+      "q": "En Windows, el comando para cambiar atributos de un fichero es…",
+      "opts": [
+        "ATTRIB",
+        "CHMOD",
+        "CHATTR",
+        "SETATTR"
+      ],
+      "c": 0,
+      "exp": "chattr es de Linux; ATTRIB de Windows."
+    },
+    {
+      "id": "ii3-11",
+      "tipico": true,
+      "q": "¿Qué sistema distingue entre mayúsculas y minúsculas en los nombres de fichero?",
+      "opts": [
+        "Windows",
+        "Ninguno",
+        "Ambos",
+        "Unix/Linux"
+      ],
+      "c": 3,
+      "exp": "En Windows Ejemplo.txt = ejemplo.txt."
+    },
+    {
+      "id": "ii3-12",
+      "tipico": true,
+      "q": "Que dos claves distintas den la misma dirección con la función hash se llama…",
+      "opts": [
+        "Desborde",
+        "Colisión",
+        "Recursión",
+        "Fragmentación"
+      ],
+      "c": 1,
+      "exp": "El registro nuevo se llama sinónimo."
+    },
+    {
+      "id": "ii3-13",
+      "tipico": false,
+      "q": "Un índice primario es…",
+      "opts": [
+        "Denso, con una entrada por registro",
+        "Sobre un campo no clave",
+        "No denso, con una entrada por bloque",
+        "Siempre multinivel"
+      ],
+      "c": 2,
+      "exp": "Se construye sobre un fichero ordenado por la clave."
+    },
+    {
+      "id": "ii3-14",
+      "tipico": true,
+      "q": "En un árbol B+, los punteros a datos están…",
+      "opts": [
+        "Solo en los nodos hoja",
+        "En todos los nodos",
+        "Solo en la raíz",
+        "En ningún nodo"
+      ],
+      "c": 0,
+      "exp": "Es la diferencia con el árbol B."
+    },
+    {
+      "id": "ii3-15",
+      "tipico": false,
+      "q": "La entrada «..» de un directorio hace referencia al…",
+      "opts": [
+        "Directorio raíz",
+        "Propio directorio",
+        "Directorio home",
+        "Directorio padre"
+      ],
+      "c": 3,
+      "exp": "«.» es el propio directorio."
+    },
+    {
+      "id": "ii3-16",
+      "tipico": true,
+      "q": "¿Qué tipo de PDF está pensado para conservar documentos a largo plazo?",
+      "opts": [
+        "PDF/X",
+        "PDF/A",
+        "PDF/UA",
+        "PDF/E"
+      ],
+      "c": 1,
+      "exp": "PDF/A: archivo; sin audio, vídeo, JavaScript ni cifrado."
+    },
+    {
+      "id": "ii3-17",
+      "tipico": false,
+      "q": "El formato de Excel que permite guardar macros VBA es…",
+      "opts": [
+        "XLSX",
+        "XLTX",
+        "XLSM",
+        "ODS"
+      ],
+      "c": 2,
+      "exp": "La M es de macros."
+    },
+    {
+      "id": "ii3-18",
+      "tipico": true,
+      "q": "¿Cuál de estos formatos de audio es SIN pérdida?",
+      "opts": [
+        "FLAC",
+        "MP3",
+        "AAC",
+        "WMA"
+      ],
+      "c": 0,
+      "exp": "Free Lossless Audio Codec."
+    },
+    {
+      "id": "ii3-19",
+      "tipico": true,
+      "q": "¿Qué formato de imagen es vectorial?",
+      "opts": [
+        "PNG",
+        "JPEG",
+        "BMP",
+        "SVG"
+      ],
+      "c": 3,
+      "exp": "Scalable Vector Graphics, estándar del W3C."
+    },
+    {
+      "id": "ii3-20",
+      "tipico": false,
+      "q": "H.264 también se conoce como…",
+      "opts": [
+        "HEVC",
+        "MPEG-4 AVC",
+        "AV1",
+        "DivX"
+      ],
+      "c": 1,
+      "exp": "HEVC es H.265, su sucesor."
+    },
+    {
+      "id": "ii3-21",
+      "tipico": true,
+      "q": "La búsqueda binaria tiene una complejidad…",
+      "opts": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "c": 2,
+      "exp": "Descarta la mitad en cada paso."
+    },
+    {
+      "id": "ii3-22",
+      "tipico": true,
+      "q": "¿Cuál de estos algoritmos de ordenación es recursivo?",
+      "opts": [
+        "Quicksort",
+        "Burbuja",
+        "Selección",
+        "Shellsort"
+      ],
+      "c": 0,
+      "exp": "Quicksort (Hoare) usa divide y vencerás."
+    },
+    {
+      "id": "ii3-23",
+      "tipico": false,
+      "q": "Un algoritmo de ordenación estable…",
+      "opts": [
+        "Siempre es O(n log n)",
+        "No usa memoria extra",
+        "Es siempre recursivo",
+        "Mantiene el orden original de los elementos iguales"
+      ],
+      "c": 3,
+      "exp": "Ej.: {b, A, c, a} → {A, a, b, c}."
+    },
+    {
+      "id": "ii3-24",
+      "tipico": true,
+      "q": "El algoritmo de Dijkstra sirve para…",
+      "opts": [
+        "Ordenar un vector",
+        "Hallar el camino más corto en un grafo con pesos",
+        "Comprimir datos",
+        "Recorrer un árbol en amplitud"
+      ],
+      "c": 1,
+      "exp": "Es un algoritmo voraz."
+    },
+    {
+      "id": "ii3-25",
+      "tipico": false,
+      "q": "Los diagramas de Nassi-Shneiderman también se llaman diagramas de…",
+      "opts": [
+        "Gantt",
+        "Venn",
+        "Chapin",
+        "Pert"
+      ],
+      "c": 2,
+      "exp": "Son una forma de representar algoritmos."
+    }
+  ]
+}

@@ -1,0 +1,717 @@
+{
+  "tema": "II-3",
+  "cards": [
+    {
+      "id": "ii3c1",
+      "n": "1",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué es un dato?",
+      "a": "Conjunto de símbolos que representan un **hecho o un valor**, pero **sin significado por sí mismo**"
+    },
+    {
+      "id": "ii3c2",
+      "n": "2",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Qué define el tipo de dato de una variable?",
+      "a": "Los **valores** que puede tomar y las **operaciones** que se pueden hacer con ella",
+      "h": "Varía según el lenguaje"
+    },
+    {
+      "id": "ii3c3",
+      "n": "3",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es la abstracción?",
+      "a": "Aislar una parte del problema: quedarse con lo **relevante** e **ignorar lo irrelevante**. Usamos algo sabiendo **qué hace**, no **cómo**"
+    },
+    {
+      "id": "ii3c4",
+      "n": "4",
+      "e": "🔢",
+      "t": true,
+      "q": "Tipos básicos de datos",
+      "a": "**Enteros**, **reales** (float/double), **lógicos** (booleanos) y **carácter**"
+    },
+    {
+      "id": "ii3c5",
+      "n": "5",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es un array?",
+      "a": "Colección **ordenada** de elementos bajo **un mismo nombre**; cada uno se accede por su **índice**",
+      "h": "Examen sept. 2023: datos homogéneos, consecutivos en memoria"
+    },
+    {
+      "id": "ii3c6",
+      "n": "6",
+      "e": "📏",
+      "t": true,
+      "q": "Array de 1 dimensión y de 2 dimensiones",
+      "a": "1 dimensión = **vector** · 2 dimensiones = **matriz**"
+    },
+    {
+      "id": "ii3c7",
+      "n": "7",
+      "e": "👉",
+      "t": true,
+      "q": "¿Qué es un puntero?",
+      "a": "Una variable que guarda la **dirección de memoria** de otra variable",
+      "h": "En C: &p da la dirección y *p el valor"
+    },
+    {
+      "id": "ii3c8",
+      "n": "8",
+      "e": "🧪",
+      "t": true,
+      "q": "¿Qué es un TAD (tipo abstracto de datos)?",
+      "a": "Un modelo: **TAD = valores + operaciones**, definido sin depender de su representación interna"
+    },
+    {
+      "id": "ii3c9",
+      "n": "9",
+      "e": "🔺",
+      "t": false,
+      "q": "Las 3 partes de un TAD",
+      "a": "**Dominio** (elementos), **operaciones** y **semántica** (qué hace cada operación, no cómo)"
+    },
+    {
+      "id": "ii3c10",
+      "n": "10",
+      "e": "📐",
+      "t": false,
+      "q": "Estructura estática vs dinámica",
+      "a": "**Estática**: el nº de elementos se sabe **antes** y se reserva al declarar. **Dinámica**: crece o decrece **en ejecución** (listas, grafos)"
+    },
+    {
+      "id": "ii3c11",
+      "n": "11",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué es una lista enlazada?",
+      "a": "Conjunto ordenado y **dinámico**: cada elemento tiene su dato y un **puntero al siguiente**. Acceso **secuencial**"
+    },
+    {
+      "id": "ii3c12",
+      "n": "12",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Los elementos de una lista están contiguos en memoria?",
+      "a": "**No.** Se enlazan mediante **punteros** y la memoria se asigna en **ejecución**"
+    },
+    {
+      "id": "ii3c13",
+      "n": "13",
+      "e": "➡️",
+      "t": false,
+      "q": "Lista enlazada simple",
+      "a": "Cada nodo tiene un valor y un puntero **siguiente**; hay un puntero **inicio (head)** y, opcional, **fin (tail)**",
+      "h": "Lista vacía: inicio y fin apuntan a NULL"
+    },
+    {
+      "id": "ii3c14",
+      "n": "14",
+      "e": "↔️",
+      "t": false,
+      "q": "Lista doblemente enlazada",
+      "a": "Añade un puntero **anterior**: se puede recorrer en **los dos sentidos**"
+    },
+    {
+      "id": "ii3c15",
+      "n": "15",
+      "e": "🔄",
+      "t": false,
+      "q": "Lista circular",
+      "a": "El **siguiente del último** apunta al **primero**"
+    },
+    {
+      "id": "ii3c16",
+      "n": "16",
+      "e": "📚",
+      "t": true,
+      "q": "¿Qué es una pila?",
+      "a": "Lista **LIFO** (Last In, First Out): el **último en entrar es el primero en salir**",
+      "h": "Como una pila de libros. Su puntero se llama cima o tope"
+    },
+    {
+      "id": "ii3c17",
+      "n": "17",
+      "e": "🎬",
+      "t": true,
+      "q": "¿Qué es una cola?",
+      "a": "Lista **FIFO** (First In, First Out): el **primero en entrar es el primero en salir**",
+      "h": "Como la cola del cine"
+    },
+    {
+      "id": "ii3c18",
+      "n": "18",
+      "e": "🚇",
+      "t": false,
+      "q": "¿Qué es una bicola?",
+      "a": "Cola que permite **insertar y eliminar por los dos extremos**, con **coste constante**"
+    },
+    {
+      "id": "ii3c19",
+      "n": "19",
+      "e": "🌳",
+      "t": false,
+      "q": "¿Cómo es un árbol?",
+      "a": "Estructura **dinámica, no lineal y jerárquica**",
+      "h": "Las listas son lineales"
+    },
+    {
+      "id": "ii3c20",
+      "n": "20",
+      "e": "🌱",
+      "t": false,
+      "q": "Nodo raíz, hoja y rama",
+      "a": "**Raíz**: no tiene padre (solo una). **Hoja**: no tiene hijos. **Rama**: no es raíz y tiene al menos un hijo"
+    },
+    {
+      "id": "ii3c21",
+      "n": "21",
+      "e": "📶",
+      "t": false,
+      "q": "Nivel y altura de un árbol",
+      "a": "**Nivel**: generación (la raíz es nivel 1). **Altura**: el **mayor nivel** del árbol"
+    },
+    {
+      "id": "ii3c22",
+      "n": "22",
+      "e": "🔢",
+      "t": true,
+      "q": "Grado vs orden de un árbol",
+      "a": "**Grado**: hijos que **tiene** ahora como máximo. **Orden**: hijos que **puede tener** como máximo"
+    },
+    {
+      "id": "ii3c23",
+      "n": "23",
+      "e": "🥇",
+      "t": true,
+      "q": "Recorrido en preorden",
+      "a": "**Raíz** → subárbol izquierdo → subárbol derecho",
+      "h": "Pre = la raíz primero"
+    },
+    {
+      "id": "ii3c24",
+      "n": "24",
+      "e": "🥈",
+      "t": true,
+      "q": "Recorrido en inorden",
+      "a": "Subárbol izquierdo → **raíz** → subárbol derecho",
+      "h": "In = la raíz en medio"
+    },
+    {
+      "id": "ii3c25",
+      "n": "25",
+      "e": "🥉",
+      "t": true,
+      "q": "Recorrido en postorden",
+      "a": "Subárbol izquierdo → subárbol derecho → **raíz**",
+      "h": "Post = la raíz al final"
+    },
+    {
+      "id": "ii3c26",
+      "n": "26",
+      "e": "🌊",
+      "t": false,
+      "q": "Recorrido en amplitud",
+      "a": "Nivel a nivel, de izquierda a derecha. Es **iterativo** (los de profundidad son **recursivos**)"
+    },
+    {
+      "id": "ii3c27",
+      "n": "27",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Qué es un grafo?",
+      "a": "Conjunto de **nodos (vértices)** y **aristas (arcos)** con relaciones **no jerárquicas**; puede tener **ciclos** y ser dirigido o no"
+    },
+    {
+      "id": "ii3c28",
+      "n": "28",
+      "e": "📄",
+      "t": false,
+      "q": "¿De qué está formado un fichero?",
+      "a": "De **registros**, y cada registro de **campos**",
+      "h": "Los registros pueden ser de longitud fija o variable"
+    },
+    {
+      "id": "ii3c29",
+      "n": "29",
+      "e": "🔡",
+      "t": true,
+      "q": "¿Distingue mayúsculas en los nombres de fichero?",
+      "a": "**Windows no** (Ejemplo.txt = ejemplo.txt). **Unix/Linux sí**"
+    },
+    {
+      "id": "ii3c30",
+      "n": "30",
+      "e": "🛠️",
+      "t": false,
+      "q": "Comando de Windows para cambiar atributos",
+      "a": "**ATTRIB**: **R** solo lectura, **A** archivo, **S** sistema, **H** oculto",
+      "h": "+ activa, − desactiva"
+    },
+    {
+      "id": "ii3c31",
+      "n": "31",
+      "e": "🔒",
+      "t": false,
+      "q": "Atributo i en GNU/Linux",
+      "a": "El fichero queda **inmutable**: no se puede modificar, borrar ni renombrar. Solo lo cambia **root**"
+    },
+    {
+      "id": "ii3c32",
+      "n": "32",
+      "e": "📓",
+      "t": false,
+      "q": "¿Qué es el journaling?",
+      "a": "«Registro por diario»: el sistema guarda los **cambios pendientes** en un journal para **recuperarse rápido** tras un fallo"
+    },
+    {
+      "id": "ii3c33",
+      "n": "33",
+      "e": "🗂️",
+      "t": false,
+      "q": "4 tipos de organización de ficheros",
+      "a": "**Secuencial**, **indexada** (índice), **encadenada** (punteros) y **directa** (algoritmo sobre la llave)"
+    },
+    {
+      "id": "ii3c34",
+      "n": "34",
+      "e": "📥",
+      "t": false,
+      "q": "Ficheros no ordenados",
+      "a": "Se inserta **al final**, rápido; buscar exige **búsqueda lineal**"
+    },
+    {
+      "id": "ii3c35",
+      "n": "35",
+      "e": "📑",
+      "t": false,
+      "q": "Ficheros secuenciales ordenados",
+      "a": "Ordenados físicamente por un **campo de ordenación**; permiten **búsqueda binaria**, pero insertar y borrar es **costoso**"
+    },
+    {
+      "id": "ii3c36",
+      "n": "36",
+      "e": "⛓️",
+      "t": false,
+      "q": "Ficheros secuenciales encadenados",
+      "a": "Orden **lógico** mediante **punteros**, no físico: insertar y borrar es más **flexible**"
+    },
+    {
+      "id": "ii3c37",
+      "n": "37",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Qué es el acceso directo?",
+      "a": "El programa indica **directamente la posición** del registro (p. ej. leer la línea 200 y luego la 1)"
+    },
+    {
+      "id": "ii3c38",
+      "n": "38",
+      "e": "#️⃣",
+      "t": false,
+      "q": "¿Qué es el hashing o dispersión?",
+      "a": "Una **función h** aplicada a la clave **k** da la **dirección** del registro"
+    },
+    {
+      "id": "ii3c39",
+      "n": "39",
+      "e": "💥",
+      "t": true,
+      "q": "¿Qué es una colisión en hashing?",
+      "a": "Que dos claves distintas den la **misma dirección**; el nuevo registro se llama **sinónimo**"
+    },
+    {
+      "id": "ii3c40",
+      "n": "40",
+      "e": "🧯",
+      "t": false,
+      "q": "Técnicas de resolución de colisiones",
+      "a": "**Direccionamiento abierto** (siguientes posiciones, lento), **encadenamiento** (área de desbordamiento) y **dispersión múltiple**"
+    },
+    {
+      "id": "ii3c41",
+      "n": "41",
+      "e": "📇",
+      "t": true,
+      "q": "Índice denso vs no denso",
+      "a": "**Denso**: una entrada por **cada registro**. **No denso**: por ejemplo una por **cada bloque**"
+    },
+    {
+      "id": "ii3c42",
+      "n": "42",
+      "e": "🔑",
+      "t": false,
+      "q": "Índice primario",
+      "a": "**No denso**, sobre fichero ordenado por un campo **clave**: una entrada por **bloque**"
+    },
+    {
+      "id": "ii3c43",
+      "n": "43",
+      "e": "🪪",
+      "t": false,
+      "q": "Índice secundario",
+      "a": "Para campos **no clave primaria**; usa direccionamiento **simbólico** (punteros indirectos)"
+    },
+    {
+      "id": "ii3c44",
+      "n": "44",
+      "e": "👥",
+      "t": false,
+      "q": "Índice de agrupamiento",
+      "a": "**No denso**, sobre fichero ordenado por un campo **no clave**: una entrada por **cada valor distinto**"
+    },
+    {
+      "id": "ii3c45",
+      "n": "45",
+      "e": "🏢",
+      "t": false,
+      "q": "Índice multinivel",
+      "a": "Índice **sobre otro índice** hasta que el nivel superior cabe en **un bloque**"
+    },
+    {
+      "id": "ii3c46",
+      "n": "46",
+      "e": "🌲",
+      "t": true,
+      "q": "Árbol B vs árbol B+",
+      "a": "Sirven para índices **dinámicos multinivel**. En el **B+** los punteros a datos están **solo en las hojas**"
+    },
+    {
+      "id": "ii3c47",
+      "n": "47",
+      "e": "📁",
+      "t": false,
+      "q": "¿Qué es un directorio?",
+      "a": "Un **fichero especial** con los nombres y posiciones de otros ficheros y directorios"
+    },
+    {
+      "id": "ii3c48",
+      "n": "48",
+      "e": "⬆️",
+      "t": true,
+      "q": "Entradas «.» y «..» de un directorio",
+      "a": "**.** = el **propio** directorio · **..** = el directorio **padre**"
+    },
+    {
+      "id": "ii3c49",
+      "n": "49",
+      "e": "🗺️",
+      "t": false,
+      "q": "Ruta absoluta vs relativa",
+      "a": "**Absoluta**: desde el **directorio raíz**. **Relativa**: desde el **directorio activo**",
+      "h": "Separador: \\ en Windows y / en Linux"
+    },
+    {
+      "id": "ii3c50",
+      "n": "50",
+      "e": "📃",
+      "t": false,
+      "q": "Fichero de texto vs binario",
+      "a": "**Texto**: caracteres legibles (ASCII, Unicode…). **Binario**: datos como en memoria, ilegibles en un editor"
+    },
+    {
+      "id": "ii3c51",
+      "n": "51",
+      "e": "⏳",
+      "t": false,
+      "q": "Ficheros permanentes y temporales",
+      "a": "**Permanentes**: maestros, constantes, históricos. **Temporales**: intermedios, de maniobras, de resultados"
+    },
+    {
+      "id": "ii3c52",
+      "n": "52",
+      "e": "🔓",
+      "t": false,
+      "q": "Formatos abiertos vs cerrados",
+      "a": "**Abiertos**: estándares libres (**OpenDocument**). **Cerrados**: propietarios (.docx, .psd)"
+    },
+    {
+      "id": "ii3c53",
+      "n": "53",
+      "e": "📄",
+      "t": false,
+      "q": "¿Qué es .ODT?",
+      "a": "Documento de texto de **OpenDocument (ODF)**, estándar **ISO** para intercambio de texto"
+    },
+    {
+      "id": "ii3c54",
+      "n": "54",
+      "e": "📕",
+      "t": true,
+      "q": "Tipos de PDF y su uso",
+      "a": "**PDF/A** archivo a largo plazo · **PDF/UA** accesibilidad · **PDF/X** imprenta · **PDF/E** ingeniería · **PDF/VT** impresión variable"
+    },
+    {
+      "id": "ii3c55",
+      "n": "55",
+      "e": "🚫",
+      "t": false,
+      "q": "¿Qué NO puede incluir un PDF/A?",
+      "a": "**Audio, vídeo, JavaScript ni cifrado**",
+      "h": "Norma ISO 19005"
+    },
+    {
+      "id": "ii3c56",
+      "n": "56",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué formato de Excel admite macros?",
+      "a": "**.XLSM** (basado en XML). El **.XLSB** es binario y **.XLTX** es plantilla"
+    },
+    {
+      "id": "ii3c57",
+      "n": "57",
+      "e": "🗜️",
+      "t": false,
+      "q": "Compresores: ZIP, GZ, RAR, 7z",
+      "a": "Todos **sin pérdida**. **GZip** es el de UNIX/Linux y comprime pero **no archiva** (usa **tar**). **RAR** es propietario"
+    },
+    {
+      "id": "ii3c58",
+      "n": "58",
+      "e": "🖼️",
+      "t": true,
+      "q": "Mapa de bits vs gráfico vectorial",
+      "a": "**Mapa de bits**: píxeles, **pierde calidad** al ampliar. **Vectorial**: figuras geométricas, **no pierde calidad**"
+    },
+    {
+      "id": "ii3c59",
+      "n": "59",
+      "e": "📸",
+      "t": false,
+      "q": "JPEG",
+      "a": "Compresión **con pérdida** (pierde info de **color**); usa la **transformada del coseno discreta** y el parámetro **Q**"
+    },
+    {
+      "id": "ii3c60",
+      "n": "60",
+      "e": "🎞️",
+      "t": false,
+      "q": "GIF y PNG",
+      "a": "Los dos **sin pérdida**. **GIF** permite **animaciones**; **PNG** nació como alternativa a GIF con mejores colores"
+    },
+    {
+      "id": "ii3c61",
+      "n": "61",
+      "e": "✏️",
+      "t": false,
+      "q": "¿Qué es SVG?",
+      "a": "Formato **vectorial abierto** estándar del **W3C**"
+    },
+    {
+      "id": "ii3c62",
+      "n": "62",
+      "e": "🎵",
+      "t": true,
+      "q": "Audio sin comprimir, sin pérdida y con pérdida",
+      "a": "Sin comprimir: **WAV, AIFF**. Sin pérdida: **FLAC, ALAC**. Con pérdida: **MP3, WMA, AAC, OGG**"
+    },
+    {
+      "id": "ii3c63",
+      "n": "63",
+      "e": "🎛️",
+      "t": false,
+      "q": "¿Qué es un códec?",
+      "a": "Programa que **codifica y decodifica** (comprime y descomprime) audio o vídeo. **No es lo mismo que el formato**"
+    },
+    {
+      "id": "ii3c64",
+      "n": "64",
+      "e": "👂",
+      "t": false,
+      "q": "¿Qué eliminan los códecs de audio con pérdida?",
+      "a": "Las frecuencias que no oímos: **por debajo de 20 Hz y por encima de 20 kHz**"
+    },
+    {
+      "id": "ii3c65",
+      "n": "65",
+      "e": "📼",
+      "t": true,
+      "q": "H.264 y H.265",
+      "a": "**H.264** = **MPEG-4 AVC** (parte 10), el más popular. **H.265 (HEVC)** es su sucesor, con más compresión (4K/8K)"
+    },
+    {
+      "id": "ii3c66",
+      "n": "66",
+      "e": "🧮",
+      "t": false,
+      "q": "¿Qué es un algoritmo?",
+      "a": "Conjunto **ordenado y finito** de operaciones para resolver un problema",
+      "h": "Características: precisión, finitud, generalidad y eficiencia"
+    },
+    {
+      "id": "ii3c67",
+      "n": "67",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué es un algoritmo recursivo?",
+      "a": "El que **se llama a sí mismo**; termina en un **caso base** y usa una **pila**"
+    },
+    {
+      "id": "ii3c68",
+      "n": "68",
+      "e": "⏱️",
+      "t": false,
+      "q": "Complejidad espacial y temporal",
+      "a": "**Espacial**: memoria que usa. **Temporal**: tiempo de ejecución **T(n)**"
+    },
+    {
+      "id": "ii3c69",
+      "n": "69",
+      "e": "📉",
+      "t": false,
+      "q": "¿Qué caso se suele estudiar y por qué?",
+      "a": "El **caso peor**: da **garantías** y es más fácil de calcular que el promedio"
+    },
+    {
+      "id": "ii3c70",
+      "n": "70",
+      "e": "📈",
+      "t": true,
+      "q": "Órdenes de complejidad de mejor a peor",
+      "a": "**O(1)** < **O(log n)** < **O(n)** < **O(n log n)** < **O(n²)** < exponencial < **O(n!)**"
+    },
+    {
+      "id": "ii3c71",
+      "n": "71",
+      "e": "🔍",
+      "t": true,
+      "q": "¿Qué orden tienen la búsqueda binaria y la secuencial?",
+      "a": "Binaria: **O(log n)**. Secuencial: **O(n)**"
+    },
+    {
+      "id": "ii3c72",
+      "n": "72",
+      "e": "🧪",
+      "t": false,
+      "q": "Análisis a priori vs a posteriori",
+      "a": "**A priori**: función teórica, sin ejecutar. **A posteriori**: se mide el tiempo **real** en un ordenador"
+    },
+    {
+      "id": "ii3c73",
+      "n": "73",
+      "e": "🟰",
+      "t": false,
+      "q": "Algoritmo de ordenación estable",
+      "a": "Los elementos **iguales mantienen su orden** original"
+    },
+    {
+      "id": "ii3c74",
+      "n": "74",
+      "e": "🔂",
+      "t": false,
+      "q": "Ordenación iterativa y recursiva",
+      "a": "Iterativos: **selección, burbuja, inserción, Shellsort**. Recursivos: **Quicksort, Mergesort, Binsort, Radixsort**"
+    },
+    {
+      "id": "ii3c75",
+      "n": "75",
+      "e": "🫧",
+      "t": false,
+      "q": "Método de la burbuja",
+      "a": "Compara **elementos adyacentes** y los intercambia si no están en orden. Coste **O(n²)**"
+    },
+    {
+      "id": "ii3c76",
+      "n": "76",
+      "e": "👆",
+      "t": false,
+      "q": "Ordenación por selección",
+      "a": "Busca el **menor** y lo pone en la primera posición, y así sucesivamente. **O(n²)**"
+    },
+    {
+      "id": "ii3c77",
+      "n": "77",
+      "e": "🐚",
+      "t": false,
+      "q": "Shellsort",
+      "a": "Mejora de la **inserción directa**: compara elementos **separados** por un incremento que se reduce hasta **1**"
+    },
+    {
+      "id": "ii3c78",
+      "n": "78",
+      "e": "⚡",
+      "t": true,
+      "q": "Quicksort",
+      "a": "Algoritmo de **Hoare**: **divide y vencerás** con un **pivote** (menores a un lado, mayores al otro)"
+    },
+    {
+      "id": "ii3c79",
+      "n": "79",
+      "e": "🧬",
+      "t": false,
+      "q": "Mergesort",
+      "a": "**Divide y vencerás**: divide en mitades hasta un elemento y luego **mezcla (fusión)** ordenando"
+    },
+    {
+      "id": "ii3c80",
+      "n": "80",
+      "e": "🔄",
+      "t": false,
+      "q": "Round-Robin",
+      "a": "Planificación que da a cada proceso un **quantum** de CPU por turnos (cola FIFO)"
+    },
+    {
+      "id": "ii3c81",
+      "n": "81",
+      "e": "🎯",
+      "t": false,
+      "q": "Requisito de la búsqueda binaria",
+      "a": "La lista debe estar **ordenada**; en cada paso **descarta la mitad**"
+    },
+    {
+      "id": "ii3c82",
+      "n": "82",
+      "e": "🍽️",
+      "t": true,
+      "q": "¿Qué es un algoritmo voraz (greedy)?",
+      "a": "Elige la **mejor opción en cada paso**; no siempre da la solución óptima",
+      "h": "Ej.: Kruskal, Prim, Dijkstra, Huffman"
+    },
+    {
+      "id": "ii3c83",
+      "n": "83",
+      "e": "🛣️",
+      "t": false,
+      "q": "¿Para qué sirve el algoritmo de Dijkstra?",
+      "a": "Para el **camino más corto** desde un vértice a los demás en un grafo con pesos"
+    },
+    {
+      "id": "ii3c84",
+      "n": "84",
+      "e": "🌲",
+      "t": false,
+      "q": "¿Para qué sirven Kruskal y Prim?",
+      "a": "Para hallar el **árbol recubridor mínimo** de un grafo"
+    },
+    {
+      "id": "ii3c85",
+      "n": "85",
+      "e": "🗜️",
+      "t": false,
+      "q": "Codificación Huffman",
+      "a": "Compresión **sin pérdida**: los caracteres **más frecuentes** reciben códigos **más cortos**"
+    },
+    {
+      "id": "ii3c86",
+      "n": "86",
+      "e": "✍️",
+      "t": false,
+      "q": "Formas de representar algoritmos",
+      "a": "**Lenguaje natural**, **diagramas de Nassi-Shneiderman (Chapin)**, **pseudocódigo** y **diagrama de flujo**"
+    },
+    {
+      "id": "ii3c87",
+      "n": "87",
+      "e": "🔁",
+      "t": false,
+      "q": "WHILE vs REPEAT-UNTIL",
+      "a": "Con **REPEAT-UNTIL** el cuerpo se ejecuta **al menos una vez**; con WHILE puede no ejecutarse nunca"
+    }
+  ]
+}

@@ -149,8 +149,9 @@
   "orden": 3,
   "titulo": "Tipos abstractos y estructuras de datos, organización de ficheros, algoritmos y formatos",
   "semana": "2027-01-18",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 102,
   "pagIni": 3
  },

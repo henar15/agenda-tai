@@ -1,0 +1,69 @@
+{
+  "tema": "II-3",
+  "ramas": [
+    {
+      "t": "Tipos de datos",
+      "e": "🔢",
+      "items": [
+        "Básicos: **entero, real, lógico, carácter**",
+        "**Array**: vector (1D) o matriz (2D), por índice",
+        "**Puntero**: guarda una dirección de memoria",
+        "**TAD = valores + operaciones**"
+      ]
+    },
+    {
+      "t": "Estructuras dinámicas",
+      "e": "🔗",
+      "items": [
+        "**Lista**: nodos con puntero al siguiente",
+        "**Pila = LIFO** · **Cola = FIFO**",
+        "**Bicola**: entra y sale por los dos extremos",
+        "**Árbol**: jerárquico · **grafo**: nodos + aristas"
+      ]
+    },
+    {
+      "t": "Árboles",
+      "e": "🌳",
+      "items": [
+        "Raíz (sin padre) · hoja (sin hijos)",
+        "**Grado** = hijos que tiene · **orden** = que puede tener",
+        "**Pre**: raíz 1.º · **In**: en medio · **Post**: al final",
+        "**B+**: punteros a datos solo en las hojas"
+      ]
+    },
+    {
+      "t": "Ficheros",
+      "e": "🗂️",
+      "items": [
+        "Fichero → **registros** → **campos**",
+        "Organización: **secuencial, indexada, encadenada, directa**",
+        "**Hashing**: h(k) = dirección; **colisión** = sinónimo",
+        "Índice **denso** (por registro) o **no denso** (por bloque)",
+        "«.» propio directorio · «..» el padre"
+      ]
+    },
+    {
+      "t": "Formatos",
+      "e": "🖼️",
+      "items": [
+        "Abiertos: **ODT, ODS** · cerrados: **DOCX, PSD**",
+        "**PDF/A** archivo · **/UA** accesible · **/X** imprenta",
+        "Imagen: **JPEG** con pérdida · **PNG, GIF** sin pérdida",
+        "Vectorial: **SVG** · audio sin pérdida: **FLAC**",
+        "Códec ≠ formato · **H.264 = MPEG-4 AVC**"
+      ]
+    },
+    {
+      "t": "Algoritmos",
+      "e": "🧮",
+      "items": [
+        "Finito, preciso, general y eficiente",
+        "**O(1) < O(log n) < O(n) < O(n log n) < O(n²)**",
+        "Iterativos: burbuja, selección, inserción, Shell",
+        "Recursivos: **Quicksort**, Mergesort (divide y vencerás)",
+        "Búsqueda **binaria**: lista ordenada, O(log n)",
+        "**Voraces**: Dijkstra, Kruskal, Prim, Huffman"
+      ]
+    }
+  ]
+}
