@@ -3217,3 +3217,49 @@ body.focus {
   border-color: var(--bad);
   color: #fff;
 }
+.rit-form {
+  display: grid;
+  gap: 10px;
+}
+.rit-form textarea {
+  width: 100%;
+  font: inherit;
+  font-size: 17px;
+  padding: 12px 14px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: var(--bg);
+  color: var(--ink, inherit);
+  resize: vertical;
+}
+.rit-form textarea:focus {
+  outline: 3px solid var(--acc);
+  border-color: var(--acc);
+}
+.rit-tuya {
+  border-left: 4px solid var(--line);
+  padding: 4px 12px;
+}
+.rit-tuya p {
+  margin: 2px 0 0;
+}
+.rit-keys {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.rit-keys li {
+  border-radius: 99px;
+  padding: 4px 10px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.rit-keys .ok {
+  background: color-mix(in srgb, var(--ok) 14%, transparent);
+}
+.rit-keys .ko {
+  background: color-mix(in srgb, var(--bad) 12%, transparent);
+}

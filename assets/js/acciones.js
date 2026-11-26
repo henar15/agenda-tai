@@ -487,36 +487,51 @@ document.addEventListener('click', (e) => {
   } else if (a === 'ritgo') {
     ui.ttab = 'ritmo';
     startRitmo(+el.dataset.n);
-  } else if (a === 'ritconf') {
-    ui.rit.conf = el.dataset.conf;
-    ui.rit.paso = 'ver';
+  } else if (a === 'hoyreset') {
+    if (!ui.hoyReset) {
+      ui.hoyReset = 1;
+      render();
+      return;
+    }
+    ui.hoyReset = 0;
+    reiniciarHoy();
     render();
-  } else if (a === 'ritcard') {
-    ritAnswer(el.dataset.ok === '1', ui.rit.conf);
+  } else if (a === 'ritnose') {
+    const R = ui.rit;
+    ritEvaluar(R.cola[R.i], 'nose', Date.now() - (R.t0 || Date.now()));
     render();
   } else if (a === 'ritopt') {
-    ui.rit.sel = +el.dataset.i;
-    ui.rit.paso = 'conf';
-    render();
-  } else if (a === 'ritqconf') {
     const R = ui.rit,
       x = R.cola[R.i],
       q = memFind(x.id, x.k, x.t);
-    const ok = R.sel === q.c;
-    if (!R.reint[x.id]) recordErr(Object.assign({}, q, { id: x.id, tema: x.t, _rit: 1 }), ok);
-    ritAnswer(ok, el.dataset.conf);
+    R.sel = +el.dataset.i;
+    ritEvaluar(x, R.sel === q.c ? 'ok' : 'mal', Date.now() - (R.t0 || Date.now()));
+    render();
+  } else if (a === 'ritoverride') {
+    // «Lo había puesto bien con otras palabras»: cuenta como acierto a medias
+    Object.assign(ui.rit.pend, {
+      ok: true,
+      parcial: false,
+      nota: 2,
+      conf: 'dudo',
+      hc: false,
+      override: true,
+    });
     render();
   } else if (a === 'ritnext') {
     const R = ui.rit;
+    ritCommit();
+    R.t0 = 0;
     R.i++;
     R.paso = 'q';
     R.sel = null;
     R.conf = null;
     if (R.i % 5 === 0) ritSave();
     render();
-    const b = document.querySelector('.rit button');
+    const b = document.querySelector('#ritin') || document.querySelector('.rit .opt');
     if (b) b.focus();
   } else if (a === 'ritfin') {
+    if (ui.rit && ui.rit.pend) ritCommit();
     if (ui.rit) ritSave();
     ui.rit = null;
     render();
@@ -673,6 +688,32 @@ document.addEventListener('click', (e) => {
     G.fb = fb;
     render();
   }
+});
+document.addEventListener('submit', (e) => {
+  const f = e.target.closest('[data-ritform]');
+  if (!f || !ui.rit) return;
+  e.preventDefault();
+  const R = ui.rit,
+    x = R.cola[R.i],
+    c = memFind(x.id, x.k, x.t);
+  const txt = f.querySelector('textarea').value.trim();
+  if (!txt) {
+    f.querySelector('textarea').focus();
+    return;
+  }
+  const res = corregir(txt, c.a);
+  ritEvaluar(
+    x,
+    res.score >= 0.75 ? 'ok' : res.score >= 0.4 ? 'casi' : 'mal',
+    Date.now() - (R.t0 || Date.now()),
+    {
+      txt,
+      claves: res.claves,
+    },
+  );
+  render();
+  const b = document.querySelector('[data-act="ritnext"]');
+  if (b) b.focus();
 });
 document.addEventListener('submit', (e) => {
   const f = e.target.closest('[data-mcfg]');
@@ -903,10 +944,20 @@ document.addEventListener('change', (e) => {
         const tt = S.temas.find((x) => x.id === m[1]);
         const prevp = (S.lectura || {})[m[1]] || ((tt && tt.pagIni) || 1) - 1;
         statAdd('p', Math.max(0, +m[2] - prevp));
+        t['_prev:' + m[1]] = t['_prev:' + m[1]] != null ? t['_prev:' + m[1]] : prevp;
         S.lectura = Object.assign({}, S.lectura, { [m[1]]: +m[2] });
         kvSet('lectura');
       }
-    } else delete t[dk];
+    } else {
+      delete t[dk];
+      // desmarcar una lectura devuelve las páginas a como estaban
+      const m = dk.match(/^l-(.+)-(\d+)$/);
+      if (m && t['_prev:' + m[1]] != null) {
+        S.lectura = Object.assign({}, S.lectura, { [m[1]]: t['_prev:' + m[1]] });
+        delete t['_prev:' + m[1]];
+        kvSet('lectura');
+      }
+    }
     d[today()] = t;
     const ks = Object.keys(d).sort();
     while (ks.length > 40) delete d[ks.shift()];

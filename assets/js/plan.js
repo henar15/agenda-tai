@@ -165,6 +165,32 @@ function planHoy() {
   kvSet('diario');
   return snap;
 }
+// «Empezar el día de 0»: quita lo marcado hoy, devuelve las páginas leídas hoy y rehace el plan
+function reiniciarHoy() {
+  const d = Object.assign({}, S.diario || {});
+  const t = d[today()] || {};
+  const lect = Object.assign({}, S.lectura || {});
+  const porTema = {};
+  Object.keys(t).forEach((k) => {
+    const m = k.match(/^l-(.+)-(\d+)$/);
+    if (m) porTema[m[1]] = Math.max(porTema[m[1]] || 0, +m[2]);
+  });
+  const pagsHoy = (t._s || {}).p || 0;
+  Object.entries(porTema).forEach(([tema, b]) => {
+    const tt = S.temas.find((x) => x.id === tema) || {};
+    const ini = (tt.pagIni || 1) - 1;
+    let prev = t['_prev:' + tema];
+    if (prev == null) prev = Object.keys(porTema).length === 1 ? b - pagsHoy : ini;
+    lect[tema] = Math.max(ini, Math.min(lect[tema] || ini, prev));
+  });
+  S.lectura = lect;
+  const s = Object.assign({}, t._s || {});
+  s.p = 0;
+  d[today()] = { _s: s };
+  S.diario = d;
+  kvSet('lectura');
+  kvSet('diario');
+}
 function vHoyPlan(compact) {
   const hoy = new Date(),
     man = addD(hoy, 1);
@@ -185,7 +211,7 @@ function vHoyPlan(compact) {
   const hech = (H.tareas || []).filter((t) => done[t.k]).length,
     tot = (H.tareas || []).length;
   const R2 = ritmo();
-  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>${hech === tot ? '<p class="hoyok">🎉 <b>¡Hoy ya está!</b> Lo de mañana, mañana. Si aún te apetece, una sesión corta «A tu ritmo» nunca sobra.</p>' : ''}` : '<p class="empty">¡Nada pendiente! Si te apetece, haz una sesión «A tu ritmo».</p>'}
+  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${compact ? '' : `<button class="mini ghost" data-act="hoyreset" style="margin-left:8px">${ui.hoyReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de 0'}</button>`}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>${hech === tot ? '<p class="hoyok">🎉 <b>¡Hoy ya está!</b> Lo de mañana, mañana. Si aún te apetece, una sesión corta «A tu ritmo» nunca sobra.</p>' : ''}` : '<p class="empty">¡Nada pendiente! Si te apetece, haz una sesión «A tu ritmo».</p>'}
   ${compact ? '' : `<h3 style="margin-top:18px">Mañana</h3>${M.descanso ? '<p class="fine">Mañana descansas 😴</p>' : `<ul class="dlist">${(M.tareas || []).map((t) => li(t, false)).join('') || '<li class="fine">Nada todavía</li>'}</ul>`}`}
   <p class="fine" style="margin-top:12px">🎯 Para tenerlo todo leído para mayo: <b>${R2.pd} páginas al día</b> (${R2.pag} páginas en ${R2.dias} días de estudio). Lo que no hagas hoy se reparte en los próximos días.</p></div>`;
 }
