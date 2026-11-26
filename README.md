@@ -3,6 +3,8 @@
 Web gratuita para preparar la oposición de **Técnico Auxiliar de Informática de la Administración del Estado (TAI)**, convocatoria 2026.
 Organiza el estudio, te pone a prueba con exámenes oficiales y te mantiene motivada con Pipo, una mascota que crece con tu racha.
 
+<p align="center"><img src="docs/capturas-movil.png" alt="Capturas en el móvil: juegos, esquema de un tema y exámenes" width="100%"></p>
+
 👉 **https://henar15.github.io/agenda-tai**
 
 > Cada persona entra con su cuenta de Google y tiene su propio horario, progreso y racha. Sin cuenta solo se ve la portada y una demo.
@@ -36,30 +38,49 @@ Navegación con teclado y enlace «Saltar al contenido», etiquetas para lector 
 
 ---
 
-## 🗂️ Estructura
+## 🗂️ Estructura del proyecto
 
 ```
-index.html            Página y estilos
-app.js                Toda la lógica (vistas, juegos, exámenes, Pipo…)
-firebase-config.js    Configuración pública de Firebase
-sw.js                 Service worker (modo sin conexión)
-manifest.webmanifest  Datos para instalar como app
-firestore.rules       Reglas de seguridad de la base de datos
-data/
-  temas.json          Los 34 temas (bloque, páginas, semana del plan…)
-  plan.json           Plan de 26 semanas
-  temas/<id>.json     Tarjetas y preguntas de cada tema
-  temas/<id>.esquema.json  Esquema visual del tema
-  examenes/           Exámenes oficiales del INAP en JSON
-  privado/            Material cifrado (solo lo abre quien tiene la clave)
+agenda-tai/
+├── index.html              Página única de la app
+├── manifest.webmanifest    Datos para instalarla como app
+├── sw.js                   Service worker (modo sin conexión)
+├── assets/
+│   ├── css/styles.css      Estilos (tema claro/oscuro, móvil y escritorio)
+│   ├── icons/              Iconos de la app
+│   └── js/                 Código, un archivo por funcionalidad
+│       ├── firebase-config.js   Configuración pública de Firebase
+│       ├── core.js              Estado, utilidades y guardado (local + Firestore)
+│       ├── motivacion.js        Pipo, racha, logros y retos
+│       ├── plan.js              Plan diario, horario y vista Plan
+│       ├── tarjetas.js          Tarjetas y repaso espaciado
+│       ├── pomodoro.js          Pomodoro y modo concentración
+│       ├── progreso.js          Estadísticas, puntos débiles e historial
+│       ├── inicio.js            Pantalla de inicio
+│       ├── temario.js           Temario y esquemas visuales
+│       ├── tests.js             Tests por tema
+│       ├── examenes.js          Exámenes oficiales, simulacros y supuestos
+│       ├── juegos.js            Juegos
+│       ├── render.js            Navegación y pintado de vistas
+│       ├── acciones.js          Clics y teclado
+│       └── main.js              Arranque de la app
+├── data/                   Contenido en JSON (ver docs/DATOS.md)
+│   ├── temas.json          Los 34 temas
+│   ├── plan.json           Plan de 26 semanas
+│   ├── temas/              Tarjetas, preguntas y esquema de cada tema
+│   ├── examenes/           Exámenes oficiales del INAP
+│   └── privado/            Material cifrado
+├── firebase/
+│   └── firestore.rules     Reglas de seguridad de la base de datos
+└── docs/                   Documentación y capturas
 ```
 
-Es una web estática (GitHub Pages) sin servidor propio: HTML, CSS y JavaScript sin dependencias ni compilación.
+Es una web estática (GitHub Pages) **sin compilación ni dependencias**: HTML, CSS y JavaScript. Los scripts se cargan en orden desde `index.html` y comparten el estado global `S` (datos) y `ui` (estado de la pantalla).
 
 ## 🔐 Datos y privacidad
 
 - El inicio de sesión es **solo con Google** (Firebase Authentication).
-- El progreso se guarda en **Firestore**, en `users/{uid}` y `users/{uid}/kv/{clave}`. Las reglas (`firestore.rules`) solo permiten a cada persona leer y escribir **sus propios datos**.
+- El progreso se guarda en **Firestore**, en `users/{uid}` y `users/{uid}/kv/{clave}`. Las reglas (`firebase/firestore.rules`) solo permiten a cada persona leer y escribir **sus propios datos**.
 - También se guarda una copia en el navegador para que funcione sin conexión.
 - En este repositorio **no hay datos personales** ni material de academias. Los tests compartidos en grupos privados están **cifrados** (AES-GCM) y solo se descifran con una clave guardada en la cuenta de quien tiene acceso.
 
@@ -67,19 +88,15 @@ Es una web estática (GitHub Pages) sin servidor propio: HTML, CSS y JavaScript 
 
 1. Haz un fork y activa **GitHub Pages** (rama `main`, carpeta raíz).
 2. Crea un proyecto en [Firebase](https://console.firebase.google.com): activa **Authentication → Google** y **Firestore**.
-3. Copia la configuración web en `firebase-config.js` y añade tu dominio `*.github.io` en *Authentication → Dominios autorizados*.
-4. Pega `firestore.rules` en *Firestore → Reglas* y publica.
+3. Copia la configuración web en `assets/js/firebase-config.js` y añade tu dominio `*.github.io` en *Authentication → Dominios autorizados*.
+4. Pega `firebase/firestore.rules` en *Firestore → Reglas* y publica.
 5. Para probar en local: `python3 -m http.server` y abre `http://localhost:8000`.
 
-Al cambiar `app.js`, sube la versión (`data-v` y `?v=` en `index.html`, `const V` en `app.js` y `C` en `sw.js`) para que los navegadores no se queden con la versión antigua.
+Al publicar cambios, sube la versión (`data-v` y `?v=` en `index.html`, `const V` en `assets/js/main.js` y `VERSION` en `sw.js`) para que los navegadores no se queden con la versión antigua. El código se formatea con [Prettier](https://prettier.io) (`npx prettier --write .`).
 
 ## ➕ Añadir contenido
 
-- **Tarjetas y preguntas de un tema:** `data/temas/<id>.json` con `{"tarjetas":[{"f":"frente","b":"reverso"}], "preguntas":[{"q":"…","opts":["a","b","c","d"],"c":0}]}` y actualiza los contadores en `temas.json`.
-- **Esquema visual:** `data/temas/<id>.esquema.json` con `{"tema":"…","ramas":[{"e":"📜","t":"Título","items":["texto con **negrita**"]}]}` y `"esquema":true` en `temas.json`.
-- **Examen oficial:** un JSON en `data/examenes/` (partes `p1`, `s1`, `s2` con sus preguntas y `c` = índice de la correcta) y añádelo a `index.json`.
-
-Las tarjetas, preguntas y esquemas de los temas se generan poco a poco de forma automática a partir de los apuntes, sin subir los apuntes al repositorio.
+El formato de cada archivo de `data/` (tarjetas, preguntas, esquemas y exámenes) está explicado en [docs/DATOS.md](docs/DATOS.md).
 
 ---
 

@@ -1,0 +1,17 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Firebase CLI
+.firebase/
+firebase-debug.log
+
+# Nunca subir material privado ni claves
+*.pdf
+*.docx
+privado-local/
+.env
