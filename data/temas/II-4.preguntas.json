@@ -1,0 +1,330 @@
+{
+  "tema": "II-4",
+  "preguntas": [
+    {
+      "id": "ii4-01",
+      "tipico": true,
+      "q": "El núcleo del sistema operativo, que se carga al arrancar y permanece en memoria hasta apagar, es el…",
+      "opts": [
+        "Kernel",
+        "Shell",
+        "Driver",
+        "Scheduler"
+      ],
+      "c": 0,
+      "exp": "El kernel es el núcleo."
+    },
+    {
+      "id": "ii4-02",
+      "tipico": true,
+      "q": "¿Cuál de estas afirmaciones es correcta?",
+      "opts": [
+        "Un sistema operativo es una máquina virtual",
+        "El driver es el núcleo del SO",
+        "El kernel es un programa de usuario",
+        "Una máquina virtual se instala sobre un SO y carga otro SO"
+      ],
+      "c": 3,
+      "exp": "Un SO NO es una máquina virtual."
+    },
+    {
+      "id": "ii4-03",
+      "tipico": true,
+      "q": "El planificador a corto plazo también se llama…",
+      "opts": [
+        "Swapper",
+        "Dispatcher",
+        "Spooler",
+        "Daemon"
+      ],
+      "c": 1,
+      "exp": "Decide qué proceso entra en la CPU."
+    },
+    {
+      "id": "ii4-04",
+      "tipico": false,
+      "q": "El planificador encargado del swapping es el de…",
+      "opts": [
+        "Corto plazo",
+        "Largo plazo",
+        "Medio plazo",
+        "Tiempo real"
+      ],
+      "c": 2,
+      "exp": "Mueve procesos entre memoria y disco."
+    },
+    {
+      "id": "ii4-05",
+      "tipico": true,
+      "q": "En el multiproceso simétrico…",
+      "opts": [
+        "La carga se reparte por igual entre los procesadores",
+        "La carga se reparte según la prioridad",
+        "Solo trabaja un procesador",
+        "Cada procesador tiene un SO distinto"
+      ],
+      "c": 0,
+      "exp": "El asimétrico reparte por prioridad."
+    },
+    {
+      "id": "ii4-06",
+      "tipico": false,
+      "q": "Un sistema distribuido cuyos procesadores comparten memoria y reloj es…",
+      "opts": [
+        "Débilmente acoplado",
+        "Centralizado",
+        "En red",
+        "Fuertemente acoplado"
+      ],
+      "c": 3,
+      "exp": "En el débilmente acoplado cada uno tiene su memoria."
+    },
+    {
+      "id": "ii4-07",
+      "tipico": true,
+      "q": "La fragmentación que aparece al reservar más memoria de la que el proceso usa es la…",
+      "opts": [
+        "Externa",
+        "Interna",
+        "Lógica",
+        "Segmentada"
+      ],
+      "c": 1,
+      "exp": "Típica de la paginación."
+    },
+    {
+      "id": "ii4-08",
+      "tipico": true,
+      "q": "En la paginación, la memoria física se divide en…",
+      "opts": [
+        "Segmentos",
+        "Páginas lógicas",
+        "Marcos",
+        "Bloques variables"
+      ],
+      "c": 2,
+      "exp": "Los procesos se dividen en páginas y la RAM en marcos."
+    },
+    {
+      "id": "ii4-09",
+      "tipico": true,
+      "q": "El primer Windows basado en NT para usuarios domésticos fue…",
+      "opts": [
+        "Windows XP",
+        "Windows 2000",
+        "Windows Me",
+        "Windows 98"
+      ],
+      "c": 0,
+      "exp": "Windows XP (2001)."
+    },
+    {
+      "id": "ii4-10",
+      "tipico": false,
+      "q": "El sistema de ficheros FAT32 llegó con…",
+      "opts": [
+        "Windows 95",
+        "Windows NT",
+        "Windows XP",
+        "Windows 98"
+      ],
+      "c": 3,
+      "exp": "Windows 98 trajo FAT32, USB y ACPI."
+    },
+    {
+      "id": "ii4-11",
+      "tipico": true,
+      "q": "¿Cuál NO es un requisito mínimo de Windows 11?",
+      "opts": [
+        "TPM 2.0",
+        "Procesador de 32 bits",
+        "4 GB de RAM",
+        "UEFI con Secure Boot"
+      ],
+      "c": 1,
+      "exp": "Windows 11 solo tiene versión de 64 bits."
+    },
+    {
+      "id": "ii4-12",
+      "tipico": true,
+      "q": "Los comandos de PowerShell se llaman…",
+      "opts": [
+        "Scripts",
+        "Applets",
+        "Cmdlets",
+        "Batch"
+      ],
+      "c": 2,
+      "exp": "Cmdlet en singular."
+    },
+    {
+      "id": "ii4-13",
+      "tipico": false,
+      "q": "La herramienta de Windows para controlar qué usuarios pueden ejecutar qué aplicaciones es…",
+      "opts": [
+        "AppLocker",
+        "ActiveSync",
+        "BitLocker",
+        "msconfig"
+      ],
+      "c": 0,
+      "exp": "AppLocker."
+    },
+    {
+      "id": "ii4-14",
+      "tipico": true,
+      "q": "Linux se distribuye bajo la licencia…",
+      "opts": [
+        "BSD",
+        "Propietaria",
+        "Creative Commons",
+        "GPL"
+      ],
+      "c": 3,
+      "exp": "Licencia GPL: software libre."
+    },
+    {
+      "id": "ii4-15",
+      "tipico": true,
+      "q": "La estructura que guarda las características de un archivo en Linux (permisos, propietario, fechas…) es el…",
+      "opts": [
+        "Daemon",
+        "Inodo",
+        "Superbloque",
+        "Shell"
+      ],
+      "c": 1,
+      "exp": "Cada archivo tiene un único inodo."
+    },
+    {
+      "id": "ii4-16",
+      "tipico": true,
+      "q": "El comando chmod 720 da al grupo permiso de…",
+      "opts": [
+        "Lectura",
+        "Ejecución",
+        "Escritura",
+        "Ninguno"
+      ],
+      "c": 2,
+      "exp": "7 usuario (rwx), 2 grupo (w), 0 resto."
+    },
+    {
+      "id": "ii4-17",
+      "tipico": false,
+      "q": "En Linux, los archivos de configuración del sistema se guardan en…",
+      "opts": [
+        "/etc",
+        "/bin",
+        "/home",
+        "/var"
+      ],
+      "c": 0,
+      "exp": "/etc: configuración."
+    },
+    {
+      "id": "ii4-18",
+      "tipico": true,
+      "q": "El sticky bit en un directorio hace que…",
+      "opts": [
+        "Nadie pueda leer los archivos",
+        "Los archivos se compriman",
+        "El directorio se monte automáticamente",
+        "Solo el propietario o root puedan borrar o renombrar sus archivos"
+      ],
+      "c": 3,
+      "exp": "El resto puede leer y modificar, pero no borrar."
+    },
+    {
+      "id": "ii4-19",
+      "tipico": true,
+      "q": "Al ejecutar fork(), el proceso hijo recibe…",
+      "opts": [
+        "El PID del padre",
+        "0",
+        "El PID del hijo",
+        "-1"
+      ],
+      "c": 1,
+      "exp": "El padre recibe el PID del hijo; -1 si hay error."
+    },
+    {
+      "id": "ii4-20",
+      "tipico": false,
+      "q": "El rango de prioridades de nice va de…",
+      "opts": [
+        "0 a 100",
+        "+20 (máxima) a -19 (mínima)",
+        "-20 (máxima) a +19 (mínima)",
+        "1 a 10"
+      ],
+      "c": 2,
+      "exp": "Por defecto, 0."
+    },
+    {
+      "id": "ii4-21",
+      "tipico": true,
+      "q": "El comando que busca texto dentro de los archivos es…",
+      "opts": [
+        "grep",
+        "find",
+        "locate",
+        "which"
+      ],
+      "c": 0,
+      "exp": "find y locate buscan archivos."
+    },
+    {
+      "id": "ii4-22",
+      "tipico": true,
+      "q": "El operador que añade la salida de un comando al final de un archivo es…",
+      "opts": [
+        ">",
+        "|",
+        "<",
+        ">>"
+      ],
+      "c": 3,
+      "exp": "> sobrescribe."
+    },
+    {
+      "id": "ii4-23",
+      "tipico": false,
+      "q": "¿Qué hace el comando tar por sí solo?",
+      "opts": [
+        "Comprime con gzip",
+        "Agrupa archivos en uno sin comprimir",
+        "Cifra archivos",
+        "Borra archivos"
+      ],
+      "c": 1,
+      "exp": "Para comprimir se usa la opción z (gzip)."
+    },
+    {
+      "id": "ii4-24",
+      "tipico": true,
+      "q": "Las aplicaciones de Android usan la extensión…",
+      "opts": [
+        ".ipa",
+        ".exe",
+        ".apk",
+        ".app"
+      ],
+      "c": 2,
+      "exp": ".ipa es de iOS."
+    },
+    {
+      "id": "ii4-25",
+      "tipico": false,
+      "q": "Desde Android 4.4 (KitKat), la máquina virtual es…",
+      "opts": [
+        "ART (Android Runtime)",
+        "Dalvik",
+        "JVM",
+        "Darwin"
+      ],
+      "c": 0,
+      "exp": "Dalvik hasta la 4.3."
+    }
+  ]
+}

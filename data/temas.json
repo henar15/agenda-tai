@@ -162,8 +162,9 @@
   "orden": 4,
   "titulo": "Sistemas operativos: Windows, Unix/Linux y sistemas móviles",
   "semana": "2027-01-25",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 120,
   "pagIni": 3
  },

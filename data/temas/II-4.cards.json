@@ -1,0 +1,719 @@
+{
+  "tema": "II-4",
+  "cards": [
+    {
+      "id": "ii4c1",
+      "n": "1",
+      "e": "🖥️",
+      "t": true,
+      "q": "¿Qué es un sistema operativo?",
+      "a": "Software que **arranca el equipo** y **gestiona sus recursos**; es el **intermediario** entre el hardware y el usuario"
+    },
+    {
+      "id": "ii4c2",
+      "n": "2",
+      "e": "🎯",
+      "t": false,
+      "q": "Los 2 objetivos del sistema operativo",
+      "a": "Ser **interfaz** usuario-ordenador (comodidad) y **gestor de recursos** (eficiencia)"
+    },
+    {
+      "id": "ii4c3",
+      "n": "3",
+      "e": "🚫",
+      "t": true,
+      "q": "¿Un sistema operativo es una máquina virtual?",
+      "a": "**No.** Una máquina virtual es software **sobre** un SO que carga **otro SO** dentro como si fuera un PC real"
+    },
+    {
+      "id": "ii4c4",
+      "n": "4",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es un driver?",
+      "a": "Software (controlador) de un hardware concreto que permite al **SO saber usarlo** con todas sus funciones"
+    },
+    {
+      "id": "ii4c5",
+      "n": "5",
+      "e": "🧠",
+      "t": true,
+      "q": "¿Qué es el kernel?",
+      "a": "El **núcleo** del SO: se carga en memoria al arrancar y **se queda hasta apagar**",
+      "h": "Gestiona memoria, CPU, procesos, errores, periféricos e interrupciones"
+    },
+    {
+      "id": "ii4c6",
+      "n": "6",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es un proceso?",
+      "a": "Un **programa en ejecución**: ejecutable + datos + contexto"
+    },
+    {
+      "id": "ii4c7",
+      "n": "7",
+      "e": "📞",
+      "t": false,
+      "q": "¿Qué son las llamadas al sistema?",
+      "a": "La **interfaz** con la que usuarios y programas se comunican con el SO; tienen nombre y pueden llevar parámetros"
+    },
+    {
+      "id": "ii4c8",
+      "n": "8",
+      "e": "5️⃣",
+      "t": false,
+      "q": "Las 5 categorías de llamadas al sistema",
+      "a": "Control de **procesos**, manipulación de **archivos**, de **periféricos**, **mantenimiento de información** y **comunicaciones**"
+    },
+    {
+      "id": "ii4c9",
+      "n": "9",
+      "e": "⏲️",
+      "t": false,
+      "q": "¿Qué hace el scheduler (planificador)?",
+      "a": "Reparte el **tiempo del procesador** entre los procesos listos para ejecutarse"
+    },
+    {
+      "id": "ii4c10",
+      "n": "10",
+      "e": "🏁",
+      "t": true,
+      "q": "Los 3 planificadores",
+      "a": "**Corto plazo** (dispatcher): qué proceso entra a la CPU. **Medio plazo**: **swapping** memoria-disco. **Largo plazo**: admite y finaliza procesos"
+    },
+    {
+      "id": "ii4c11",
+      "n": "11",
+      "e": "👤",
+      "t": false,
+      "q": "Monousuario vs multiusuario",
+      "a": "**Monousuario**: un solo usuario a la vez. **Multiusuario**: varios usuarios a la vez"
+    },
+    {
+      "id": "ii4c12",
+      "n": "12",
+      "e": "📑",
+      "t": false,
+      "q": "Monotarea vs multitarea",
+      "a": "**Monotarea**: una tarea a la vez por usuario. **Multitarea**: varias tareas al mismo tiempo",
+      "h": "Puede haber sistemas multiusuario y monotarea"
+    },
+    {
+      "id": "ii4c13",
+      "n": "13",
+      "e": "🔀",
+      "t": true,
+      "q": "Multiproceso simétrico vs asimétrico",
+      "a": "**Simétrico**: reparte la carga **por igual** entre procesadores. **Asimétrico**: reparte según la **prioridad** de los procesos"
+    },
+    {
+      "id": "ii4c14",
+      "n": "14",
+      "e": "🏛️",
+      "t": false,
+      "q": "Sistemas centralizados",
+      "a": "Un **mainframe** hace todo el trabajo y los usuarios usan **terminales tontos** (sin memoria ni procesador)"
+    },
+    {
+      "id": "ii4c15",
+      "n": "15",
+      "e": "🌐",
+      "t": false,
+      "q": "Sistemas distribuidos",
+      "a": "Reparten el trabajo entre **varios procesadores** de forma **transparente** para el usuario"
+    },
+    {
+      "id": "ii4c16",
+      "n": "16",
+      "e": "🔗",
+      "t": false,
+      "q": "Fuertemente vs débilmente acoplado",
+      "a": "**Fuertemente**: comparten **memoria y reloj**. **Débilmente**: cada uno tiene su **propia memoria**"
+    },
+    {
+      "id": "ii4c17",
+      "n": "17",
+      "e": "⚖️",
+      "t": false,
+      "q": "Ventajas y desventajas de los sistemas distribuidos",
+      "a": "Ventajas: **escalabilidad**, **precio/rendimiento**, **confiabilidad**. Desventajas: **complejidad**, **seguridad**, **transparencia**"
+    },
+    {
+      "id": "ii4c18",
+      "n": "18",
+      "e": "🖧",
+      "t": false,
+      "q": "Sistemas en red",
+      "a": "Unen ordenadores para **compartir recursos**; cada uno tiene **su propio SO** y sistema de archivos",
+      "h": "Ej.: Linux/UNIX, Windows Server, Novell Netware"
+    },
+    {
+      "id": "ii4c19",
+      "n": "19",
+      "e": "💾",
+      "t": false,
+      "q": "¿Qué es la memoria virtual?",
+      "a": "Usar parte del **disco** como si fuera **RAM**; si se abusa, el sistema se **ralentiza**"
+    },
+    {
+      "id": "ii4c20",
+      "n": "20",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es el swapping?",
+      "a": "Intercambio memoria-disco en un espacio **reservado** del disco del SO; muy usado en **Unix y Linux**"
+    },
+    {
+      "id": "ii4c21",
+      "n": "21",
+      "e": "📄",
+      "t": true,
+      "q": "Paginación: páginas y marcos",
+      "a": "El proceso se divide en **páginas** (lógicas) y la RAM en **marcos** (físicos) del **mismo tamaño**; se relacionan en la **tabla de páginas**"
+    },
+    {
+      "id": "ii4c22",
+      "n": "22",
+      "e": "🧩",
+      "t": true,
+      "q": "Fragmentación interna vs externa",
+      "a": "**Interna**: se reserva **más memoria** de la que usa el proceso (paginación). **Externa**: **huecos** entre procesos; se arregla **compactando**"
+    },
+    {
+      "id": "ii4c23",
+      "n": "23",
+      "e": "📐",
+      "t": false,
+      "q": "¿En qué se diferencia la segmentación de la paginación?",
+      "a": "En la segmentación los trozos son de **tamaño variable** (con un máximo); en la paginación, **iguales**"
+    },
+    {
+      "id": "ii4c24",
+      "n": "24",
+      "e": "1️⃣",
+      "t": false,
+      "q": "¿Qué era Windows 1.0?",
+      "a": "No era un SO completo: un **programa sobre MS-DOS**. Presentado en **1983** y comercializado en **1985**"
+    },
+    {
+      "id": "ii4c25",
+      "n": "25",
+      "e": "🗂️",
+      "t": true,
+      "q": "¿Qué versión de Windows trajo el sistema de ficheros NTFS?",
+      "a": "**Windows NT** (1993), orientado a servidores y base de los futuros Windows"
+    },
+    {
+      "id": "ii4c26",
+      "n": "26",
+      "e": "🚀",
+      "t": false,
+      "q": "Novedades de Windows 95",
+      "a": "Botón de **Inicio** (para usuarios domésticos), **plug and play**, soporte **TCP/IP**, **DirectX**; sistema híbrido **16 y 32 bits**"
+    },
+    {
+      "id": "ii4c27",
+      "n": "27",
+      "e": "💽",
+      "t": false,
+      "q": "Novedades de Windows 98",
+      "a": "Sistema de ficheros **FAT32**, controladores **USB**, **ACPI** y la utilidad **msconfig**"
+    },
+    {
+      "id": "ii4c28",
+      "n": "28",
+      "e": "💙",
+      "t": true,
+      "q": "Windows XP (2001)",
+      "a": "**Primer Windows basado en NT para usuarios domésticos**; interfaz **Luna**; escritorio remoto. Soporte hasta **8 de abril de 2014**"
+    },
+    {
+      "id": "ii4c29",
+      "n": "29",
+      "e": "🪟",
+      "t": false,
+      "q": "Windows 7 (2009)",
+      "a": "Interfaz **Aero**, **bibliotecas**, **jump lists**, **modo XP** y soporte de discos duros virtuales"
+    },
+    {
+      "id": "ii4c30",
+      "n": "30",
+      "e": "🧱",
+      "t": false,
+      "q": "Windows 8 (2012)",
+      "a": "Interfaz **Metro** (luego Modern UI), modo táctil o escritorio; **quitó** el modo XP y el menú Inicio clásico"
+    },
+    {
+      "id": "ii4c31",
+      "n": "31",
+      "e": "🔟",
+      "t": false,
+      "q": "Novedades de Windows 10 (2015)",
+      "a": "Vuelve el **menú Inicio**, navegador **Edge**, **Windows Hello**, **Cortana**, escritorios virtuales e **Hyper-V**"
+    },
+    {
+      "id": "ii4c32",
+      "n": "32",
+      "e": "1️⃣1️⃣",
+      "t": true,
+      "q": "Requisitos mínimos de Windows 11",
+      "a": "**64 bits** con 2 núcleos a 1 GHz, **4 GB RAM**, **64 GB** de disco, **UEFI con Secure Boot** y **TPM 2.0**",
+      "h": "Se lanzó el 5 de octubre de 2021"
+    },
+    {
+      "id": "ii4c33",
+      "n": "33",
+      "e": "☁️",
+      "t": false,
+      "q": "¿Qué es Microsoft Azure?",
+      "a": "Servicio de **nube** de Microsoft. Antes **Windows Azure**; se renombró en **marzo de 2014**",
+      "h": "Su nombre en clave era «Project Red Dog»"
+    },
+    {
+      "id": "ii4c34",
+      "n": "34",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es ActiveSync?",
+      "a": "Programa de Microsoft para **sincronizar** datos entre el PC y un **dispositivo móvil**. Desde Vista lo sustituye el **Windows Mobile Device Center**"
+    },
+    {
+      "id": "ii4c35",
+      "n": "35",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué es AppLocker?",
+      "a": "Herramienta de Windows para decidir **qué usuarios o grupos pueden ejecutar qué aplicaciones**"
+    },
+    {
+      "id": "ii4c36",
+      "n": "36",
+      "e": "💬",
+      "t": false,
+      "q": "CLI, shell y emulador de terminal",
+      "a": "**CLI**: el método (línea de texto). **Shell**: programa que interpreta los comandos. **Emulador**: imita una terminal física"
+    },
+    {
+      "id": "ii4c37",
+      "n": "37",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué es Windows Script Host (WSH)?",
+      "a": "Entorno para ejecutar scripts **VBScript y JScript**, con **cscript** o **wscript**"
+    },
+    {
+      "id": "ii4c38",
+      "n": "38",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es PowerShell?",
+      "a": "Consola (CLI) de Windows para **automatizar tareas**; sus comandos se llaman **cmdlets**",
+      "h": "Apareció con Windows Vista"
+    },
+    {
+      "id": "ii4c39",
+      "n": "39",
+      "e": "🐧",
+      "t": true,
+      "q": "UNIX vs Linux",
+      "a": "**UNIX**: SO completo de **AT&T** (1969). **Linux**: solo el **kernel**, libre, creado por **Linus Torvalds**; con GNU se llama **GNU/Linux**"
+    },
+    {
+      "id": "ii4c40",
+      "n": "40",
+      "e": "📜",
+      "t": false,
+      "q": "¿Con qué licencia se distribuye Linux?",
+      "a": "**GPL**: es **software libre** y de código abierto"
+    },
+    {
+      "id": "ii4c41",
+      "n": "41",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Cómo es el kernel de Linux?",
+      "a": "**Monolítico**, pero con **módulos cargables** en ejecución (como los drivers)"
+    },
+    {
+      "id": "ii4c42",
+      "n": "42",
+      "e": "🆓",
+      "t": false,
+      "q": "Las 4 libertades del software libre",
+      "a": "**Ejecutar**, **estudiar** y adaptar (acceso al código), **redistribuir** copias y **mejorar** y publicar las mejoras"
+    },
+    {
+      "id": "ii4c43",
+      "n": "43",
+      "e": "🐚",
+      "t": false,
+      "q": "Shells más comunes de Linux",
+      "a": "**sh** (Bourne Shell), **bash** (Bourne Again Shell) y **csh** (C Shell)"
+    },
+    {
+      "id": "ii4c44",
+      "n": "44",
+      "e": "🆔",
+      "t": true,
+      "q": "¿Qué es un inodo?",
+      "a": "Estructura con las **características de un archivo** (permisos, propietario, tamaño, fechas…); cada archivo tiene **un único inodo**",
+      "h": "No guarda el nombre"
+    },
+    {
+      "id": "ii4c45",
+      "n": "45",
+      "e": "👻",
+      "t": false,
+      "q": "¿Qué es un daemon?",
+      "a": "Un proceso **no interactivo** que se ejecuta en **segundo plano**"
+    },
+    {
+      "id": "ii4c46",
+      "n": "46",
+      "e": "🥾",
+      "t": false,
+      "q": "¿Qué es un gestor de arranque?",
+      "a": "Programa pequeño en el **MBR o GUID** que permite elegir qué **SO arrancar**",
+      "h": "Ej.: **GRUB** (el más usado), LILO, BURG, Syslinux"
+    },
+    {
+      "id": "ii4c47",
+      "n": "47",
+      "e": "📀",
+      "t": false,
+      "q": "¿Qué es una distribución Linux?",
+      "a": "Recopilación del **núcleo Linux** + paquetes de software para un tipo de usuarios"
+    },
+    {
+      "id": "ii4c48",
+      "n": "48",
+      "e": "🟠",
+      "t": false,
+      "q": "Distribuciones basadas en Debian/Ubuntu",
+      "a": "**Ubuntu** se basa en **Debian**; **Mint**, Lubuntu y Xubuntu se basan en **Ubuntu**"
+    },
+    {
+      "id": "ii4c49",
+      "n": "49",
+      "e": "🎩",
+      "t": false,
+      "q": "Distribuciones de la familia Red Hat",
+      "a": "**Fedora** (comunidad, de Red Hat), **CentOS** y **Rocky Linux** (compatibles con **RHEL**)"
+    },
+    {
+      "id": "ii4c50",
+      "n": "50",
+      "e": "🦎",
+      "t": false,
+      "q": "openSUSE: ¿qué herramienta de administración trae?",
+      "a": "**YaST**",
+      "h": "También AppArmor para seguridad"
+    },
+    {
+      "id": "ii4c51",
+      "n": "51",
+      "e": "🖌️",
+      "t": false,
+      "q": "Entornos de escritorio de Linux",
+      "a": "**KDE Plasma**, **GNOME** (GTK+), **Cinnamon** (Linux Mint), **MATE**, **Xfce** (muy ligero)"
+    },
+    {
+      "id": "ii4c52",
+      "n": "52",
+      "e": "📁",
+      "t": false,
+      "q": "En Linux, ¿qué es un fichero?",
+      "a": "**Todo**: directorios, dispositivos, puertos y terminales son ficheros. La raíz es **/**"
+    },
+    {
+      "id": "ii4c53",
+      "n": "53",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué guardan /etc, /home y /dev?",
+      "a": "**/etc**: configuración · **/home**: carpetas de los usuarios · **/dev**: ficheros de dispositivo"
+    },
+    {
+      "id": "ii4c54",
+      "n": "54",
+      "e": "🗃️",
+      "t": false,
+      "q": "¿Qué guardan /var, /tmp, /proc y /root?",
+      "a": "**/var**: archivos variables (logs) · **/tmp**: temporales · **/proc**: estado y procesos · **/root**: home del superusuario"
+    },
+    {
+      "id": "ii4c55",
+      "n": "55",
+      "e": "💽",
+      "t": false,
+      "q": "/media vs /mnt",
+      "a": "**/media**: montaje **automático** (CD, USB…). **/mnt**: montaje **manual**"
+    },
+    {
+      "id": "ii4c56",
+      "n": "56",
+      "e": "🔐",
+      "t": true,
+      "q": "Las 3 capas y los 3 permisos en Linux",
+      "a": "Capas: **usuario**, **grupo** y **otros**. Permisos: **lectura (r)**, **escritura (w)** y **ejecución (x)**"
+    },
+    {
+      "id": "ii4c57",
+      "n": "57",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Qué significa chmod 720?",
+      "a": "**7** = rwx para el usuario · **2** = escritura para el grupo · **0** = nada para el resto",
+      "h": "r=4, w=2, x=1"
+    },
+    {
+      "id": "ii4c58",
+      "n": "58",
+      "e": "📌",
+      "t": true,
+      "q": "¿Qué es el sticky bit?",
+      "a": "En un directorio, sus archivos **solo los puede borrar o renombrar su propietario o root**"
+    },
+    {
+      "id": "ii4c59",
+      "n": "59",
+      "e": "📍",
+      "t": false,
+      "q": "¿Para qué sirve which?",
+      "a": "Para saber la **ruta** de un comando dentro del **PATH**"
+    },
+    {
+      "id": "ii4c60",
+      "n": "60",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Para qué sirve modprobe?",
+      "a": "Para **añadir o quitar módulos** del kernel"
+    },
+    {
+      "id": "ii4c61",
+      "n": "61",
+      "e": "🔧",
+      "t": false,
+      "q": "¿Para qué sirve fsck?",
+      "a": "Para **comprobar y reparar** sistemas de archivos",
+      "h": "e2fsck es la versión para ext2/ext3/ext4; solo en particiones desmontadas"
+    },
+    {
+      "id": "ii4c62",
+      "n": "62",
+      "e": "👥",
+      "t": false,
+      "q": "who, id y uname",
+      "a": "**who**: usuarios conectados · **id**: UID y GID · **uname**: información del sistema y del kernel"
+    },
+    {
+      "id": "ii4c63",
+      "n": "63",
+      "e": "📂",
+      "t": false,
+      "q": "pwd, touch y wc",
+      "a": "**pwd**: ruta actual · **touch**: crea un archivo vacío (o actualiza su fecha) · **wc**: cuenta líneas, palabras y bytes"
+    },
+    {
+      "id": "ii4c64",
+      "n": "64",
+      "e": "📖",
+      "t": false,
+      "q": "cat, tac, less y more",
+      "a": "**cat**: muestra/concatena · **tac**: al revés · **less**: interactivo con búsqueda · **more**: página a página, sin búsqueda"
+    },
+    {
+      "id": "ii4c65",
+      "n": "65",
+      "e": "📏",
+      "t": false,
+      "q": "du vs df",
+      "a": "**du**: espacio que **ocupa** un archivo o directorio · **df**: espacio **libre y ocupado** de las unidades"
+    },
+    {
+      "id": "ii4c66",
+      "n": "66",
+      "e": "✍️",
+      "t": false,
+      "q": "Modos del editor vi",
+      "a": "**Modo comandos** (empieza aquí) y **modo insertar**; se vuelve a comandos con **Esc**"
+    },
+    {
+      "id": "ii4c67",
+      "n": "67",
+      "e": "🗜️",
+      "t": true,
+      "q": "¿Qué hace tar?",
+      "a": "**Agrupa** archivos en uno (Tape Archive); **no comprime** por sí mismo. Opciones: **c** crear, **x** extraer, **t** listar, **z** gzip, **v**, **f**"
+    },
+    {
+      "id": "ii4c68",
+      "n": "68",
+      "e": "📋",
+      "t": false,
+      "q": "Comandos básicos de ficheros",
+      "a": "**ls** listar · **cp** copiar · **mv** mover · **rm** borrar · **ln** enlace (-s simbólico) · **mkdir/rmdir** directorios"
+    },
+    {
+      "id": "ii4c69",
+      "n": "69",
+      "e": "👑",
+      "t": false,
+      "q": "chown y chgrp",
+      "a": "**chown**: cambia el **dueño** · **chgrp**: cambia el **grupo**"
+    },
+    {
+      "id": "ii4c70",
+      "n": "70",
+      "e": "🍴",
+      "t": true,
+      "q": "¿Qué hace la llamada fork()?",
+      "a": "Crea un **proceso hijo** casi idéntico al padre. El padre recibe el **PID del hijo**; el hijo recibe **0**",
+      "h": "Devuelve -1 si hay error"
+    },
+    {
+      "id": "ii4c71",
+      "n": "71",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué columnas muestra ps sin opciones?",
+      "a": "**PID**, **TTY**, **TIME** y **CMD**",
+      "h": "ps -ef: todos los procesos del sistema"
+    },
+    {
+      "id": "ii4c72",
+      "n": "72",
+      "e": "🎚️",
+      "t": true,
+      "q": "Rango de prioridades con nice/renice",
+      "a": "De **-20** (máxima prioridad) a **+19** (mínima); por defecto **0**",
+      "h": "nice al lanzar · renice para uno ya en marcha"
+    },
+    {
+      "id": "ii4c73",
+      "n": "73",
+      "e": "🔪",
+      "t": false,
+      "q": "kill y killall",
+      "a": "**kill**: termina un proceso por su **PID** (-9 lo fuerza) · **killall**: por su **nombre**"
+    },
+    {
+      "id": "ii4c74",
+      "n": "74",
+      "e": "🔎",
+      "t": true,
+      "q": "locate, find y grep",
+      "a": "**locate**: busca en una **base de datos** (rápido; se actualiza con updatedb) · **find**: busca archivos en el disco · **grep**: busca **texto dentro** de archivos"
+    },
+    {
+      "id": "ii4c75",
+      "n": "75",
+      "e": "🌐",
+      "t": false,
+      "q": "Comandos de red en Linux",
+      "a": "**ping** (comprobar conexión), **ifconfig/ip** (interfaces), **netcat (nc)**, **route** (tabla de enrutamiento)"
+    },
+    {
+      "id": "ii4c76",
+      "n": "76",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué hace el comando su?",
+      "a": "**Cambia de usuario** sin cerrar la sesión (p. ej. a root)"
+    },
+    {
+      "id": "ii4c77",
+      "n": "77",
+      "e": "✳️",
+      "t": false,
+      "q": "Metacaracteres * y ?",
+      "a": "**\\*** = cualquier cadena (incluso vacía) · **?** = **un solo** carácter"
+    },
+    {
+      "id": "ii4c78",
+      "n": "78",
+      "e": "➡️",
+      "t": true,
+      "q": "Redirecciones > , >> y |",
+      "a": "**>** salida a archivo (sobrescribe) · **>>** añade al final · **2>** errores · **|** tubería: salida de uno a la entrada de otro"
+    },
+    {
+      "id": "ii4c79",
+      "n": "79",
+      "e": "🔀",
+      "t": false,
+      "q": "&& y || entre comandos",
+      "a": "**&&**: el 2.º solo si el 1.º **no falla** · **||**: el 2.º solo si el 1.º **falla**"
+    },
+    {
+      "id": "ii4c80",
+      "n": "80",
+      "e": "📡",
+      "t": false,
+      "q": "¿Qué son las señales en Linux?",
+      "a": "Comunicación mínima entre procesos mediante un **número** (SIGxxx); si el proceso no está preparado, **muere**"
+    },
+    {
+      "id": "ii4c81",
+      "n": "81",
+      "e": "👹",
+      "t": false,
+      "q": "¿Qué es FreeBSD?",
+      "a": "SO de **código abierto** descendiente de **BSD**; muy robusto como servidor (lo usa Netflix)"
+    },
+    {
+      "id": "ii4c82",
+      "n": "82",
+      "e": "🍎",
+      "t": false,
+      "q": "¿En qué se basa Mac OS X?",
+      "a": "En **Unix**. La primera versión fue **Mac OS X 10.0 Cheetah (2001)**"
+    },
+    {
+      "id": "ii4c83",
+      "n": "83",
+      "e": "🤖",
+      "t": true,
+      "q": "Características de Android",
+      "a": "**Código abierto**, kernel **Linux**, de **Google**; apps en **Java** con extensión **.apk**; usa **SQLite**",
+      "h": "IDE oficial: Android Studio"
+    },
+    {
+      "id": "ii4c84",
+      "n": "84",
+      "e": "🧪",
+      "t": false,
+      "q": "Máquinas virtuales de Android",
+      "a": "**Dalvik** hasta la 4.3 (Jelly Bean); **ART (Android Runtime)** desde la 4.4 (KitKat)"
+    },
+    {
+      "id": "ii4c85",
+      "n": "85",
+      "e": "🎨",
+      "t": false,
+      "q": "¿Qué es una capa de personalización?",
+      "a": "La interfaz que cada fabricante pone sobre Android",
+      "h": "Ej.: One UI (Samsung), MIUI (Xiaomi), EMUI (Huawei)"
+    },
+    {
+      "id": "ii4c86",
+      "n": "86",
+      "e": "📱",
+      "t": true,
+      "q": "Características de iOS",
+      "a": "SO **privado** de **Apple** (2007), basado en **Darwin BSD (Unix)**; apps **.ipa** de la App Store; IDE **Xcode**",
+      "h": "No soporta Flash ni Java"
+    },
+    {
+      "id": "ii4c87",
+      "n": "87",
+      "e": "🔔",
+      "t": false,
+      "q": "¿Qué son las notificaciones push?",
+      "a": "Mensajes al móvil que llegan **sin que la app esté abierta**, si tiene permisos",
+      "h": "Servicios: **FCM** (Android) y **APNs** (iOS)"
+    }
+  ]
+}

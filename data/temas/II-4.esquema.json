@@ -1,0 +1,81 @@
+{
+  "tema": "II-4",
+  "ramas": [
+    {
+      "t": "Qué es un SO",
+      "e": "🖥️",
+      "items": [
+        "Intermediario entre **hardware y usuario**",
+        "Objetivos: **interfaz** y **gestor de recursos**",
+        "**Kernel** = núcleo, en memoria hasta apagar",
+        "**Driver**: enseña al SO a usar un hardware",
+        "Un SO **no** es una máquina virtual"
+      ]
+    },
+    {
+      "t": "Procesos y CPU",
+      "e": "⚙️",
+      "items": [
+        "**Proceso** = programa en ejecución",
+        "**Llamadas al sistema**: interfaz con el SO",
+        "Corto plazo = **dispatcher** · medio = **swapping**",
+        "Mono/multi **usuario**, **tarea** y **proceso**",
+        "Simétrico (igual) · asimétrico (prioridad)"
+      ]
+    },
+    {
+      "t": "Memoria",
+      "e": "💾",
+      "items": [
+        "**Virtual**: disco usado como RAM",
+        "**Paginación**: páginas (lógicas) y marcos (físicos)",
+        "**Segmentación**: trozos de tamaño variable",
+        "Fragmentación **interna** (sobra) y **externa** (huecos)"
+      ]
+    },
+    {
+      "t": "Windows",
+      "e": "🪟",
+      "items": [
+        "**NT** (1993): NTFS · **95**: botón Inicio, plug and play",
+        "**98**: FAT32, USB · **XP**: 1.º NT doméstico",
+        "**10**: Edge, Hello, Cortana, Hyper-V",
+        "**11**: 64 bits, 4 GB, 64 GB, **TPM 2.0**, UEFI",
+        "**PowerShell** → cmdlets · **AppLocker**"
+      ]
+    },
+    {
+      "t": "Linux",
+      "e": "🐧",
+      "items": [
+        "Kernel de **Linus Torvalds**, licencia **GPL**",
+        "Kernel **monolítico** con módulos cargables",
+        "Shells: **sh, bash, csh** · **inodo** = datos del archivo",
+        "**/etc** config · **/home** usuarios · **/dev** dispositivos",
+        "Permisos **u-g-o** con **r=4 w=2 x=1** · sticky bit",
+        "**GRUB** gestor de arranque · daemon = 2.º plano"
+      ]
+    },
+    {
+      "t": "Comandos clave",
+      "e": "⌨️",
+      "items": [
+        "**fork()**: hijo recibe 0, padre el PID del hijo",
+        "**nice**: -20 (máx.) a +19 (mín.)",
+        "**grep** texto · **find/locate** archivos",
+        "**tar** agrupa (z = gzip) · **fsck** repara",
+        "**>** sobrescribe · **>>** añade · **|** tubería"
+      ]
+    },
+    {
+      "t": "Móviles",
+      "e": "📱",
+      "items": [
+        "**Android**: Google, Linux, Java, **.apk**",
+        "Dalvik → **ART** desde 4.4 KitKat",
+        "**iOS**: Apple 2007, Unix (Darwin), **.ipa**, Xcode",
+        "**Push**: llegan sin abrir la app (FCM / APNs)"
+      ]
+    }
+  ]
+}
