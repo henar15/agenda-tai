@@ -6,7 +6,7 @@ const plain=v=>String(v??'').replace(/\*\*/g,'');
 const BL={I:{c:'var(--b1)',hex:'#7c3aed',l:'#ede9fe',n:'Organización del Estado y Administración electrónica'},II:{c:'var(--b2)',hex:'#0d9488',l:'#ccfbf1',n:'Tecnología básica'},III:{c:'var(--b3)',hex:'#2563eb',l:'#dbeafe',n:'Desarrollo de sistemas'},IV:{c:'var(--b4)',hex:'#ea580c',l:'#ffedd5',n:'Sistemas y comunicaciones'}};
 const EST=['pendiente','en-curso','estudiado'],ESTN={'pendiente':'Pendiente','en-curso':'En curso','estudiado':'Estudiado'};
 const S={horario:{},act:{},pdfs:{},pedidos:{},plan:{},planHecho:{},temasBase:[],temas:[],cards:{},piles:{},estados:{},tests:[],preg:{},res:[],config:{},err:{},rec:{},ready:false};
-const ui={hdia:null,pdfEdit:null,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
+const ui={hdia:null,mazo:'',filtro:'todas',idx:0,flip:false,test:null,scope:'',game:null};
 
 const fmtD=d=>{if(!d)return'';const x=new Date(d+'T12:00:00');return x.toLocaleDateString('es-ES',{day:'numeric',month:'short'})};
 const monday=()=>{const d=new Date();const w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toISOString().slice(0,10)};
@@ -17,10 +17,10 @@ const hash=s=>{let h=0;for(const ch of String(s))h=(h*31+ch.codePointAt(0))|0;re
 const LS='agendaTAI:';
 const lsGet=k=>{try{return JSON.parse(localStorage.getItem(LS+k))}catch(e){return null}};
 const lsSet=(k,v)=>{try{localStorage.setItem(LS+k,JSON.stringify(v))}catch(e){}};
-const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad','pdfs','pedidos'];
+const KEYS=['estados','piles','resultados','errores','config','records','planHecho','actividad'];
 let fs=null,uid=null,auth=null;
-function kvVal(k){return {actividad:S.act,pdfs:S.pdfs,pedidos:S.pedidos,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
-function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v;else if(k==='pdfs')S.pdfs=v;else if(k==='pedidos')S.pedidos=v}
+function kvVal(k){return {actividad:S.act,estados:S.estados,piles:S.piles,resultados:{items:S.res},errores:S.err,config:S.config,records:S.rec,planHecho:S.planHecho}[k]}
+function applyKV(k,v){if(v==null)return;if(k==='estados')S.estados=v;else if(k==='piles')S.piles=v;else if(k==='resultados')S.res=v.items||[];else if(k==='errores')S.err=v;else if(k==='config')S.config=v;else if(k==='records')S.rec=v;else if(k==='planHecho')S.planHecho=v;else if(k==='actividad')S.act=v}
 const kvT={};
 function kvSet(k){const v=kvVal(k);lsSet(k,v);if(fs&&uid){clearTimeout(kvT[k]);kvT[k]=setTimeout(()=>{fs.collection('users').doc(uid).collection('kv').doc(k).set({v:JSON.stringify(v),t:Date.now()}).then(()=>flash('Guardado en la nube')).catch(()=>flash('No se pudo guardar en la nube'))},500)}else flash('Guardado en este dispositivo')}
 function flash(t){$('#sync').textContent=t}
@@ -94,13 +94,14 @@ function vMotiva(){const r=racha(),L=logros(),got=L.filter(x=>x[2]).length,hoy=b
 function bestTest(tid){const r=S.res.filter(x=>x.tema===tid);return r.length?Math.max(...r.map(nota)):null}
 function cardPct(tid){const cs=S.cards[tid]||[];const p=S.piles[tid]||{};const s=cs.filter(c=>p[c.id]===3).length;return cs.length?{n:cs.length,s}:null}
 function rowTema(t){const b=BL[t.bloque]||BL.I;const cp=cardPct(t.id),bt=bestTest(t.id),nq=bank(t.id).length;
-  const pdf=(S.pdfs||{})[t.id],ped=(S.pedidos||{})[t.id];
-  const acts=`<div class="acts">${cp?`<button class="mini" data-act="goCards" data-id="${esc(t.id)}">Tarjetas (${cp.n})</button>`:ped?`<span class="mini done">Tarjetas pedidas</span>`:`<button class="mini hi" data-act="pedir" data-id="${esc(t.id)}">Generar tarjetas</button>`}${nq?`<button class="mini" data-act="goTest" data-id="${esc(t.id)}">Test</button>`:''}${pdf&&/^https:\/\//.test(pdf)?`<a class="mini" href="${esc(pdf)}" target="_blank" rel="noopener">PDF</a>`:''}<button class="mini ghost" data-act="pdfEdit" data-id="${esc(t.id)}">${pdf?'Cambiar PDF':'Añadir PDF'}</button></div>${ui.pdfEdit===t.id?`<form class="pdff" data-pdf="${esc(t.id)}"><input type="url" name="u" placeholder="https://drive.google.com/…" value="${esc(pdf||'')}" aria-label="Enlace al PDF"><button class="mini hi">Guardar</button></form>`:''}`;
+  const ped=(S.pedidos||{})[t.id];
+  const pedTxt=ped?(Date.now()-ped<90*60000?'Generando… listas en 1 h aprox.':'En cola: se generan cuando tu ordenador esté encendido'):'';
+  const acts=`<div class="acts">${cp?`<button class="mini" data-act="goCards" data-id="${esc(t.id)}">Tarjetas (${cp.n})</button>`:ped?`<span class="mini done">⏳ ${esc(pedTxt)}</span>`:`<button class="mini hi" data-act="pedir" data-id="${esc(t.id)}">Generar tarjetas</button>`}${nq?`<button class="mini" data-act="goTest" data-id="${esc(t.id)}">Test</button>`:''}</div>`;
   return `<div class="row trow"><span class="tag" style="background:${b.c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b><small>${t.semana?'Semana del '+esc(fmtD(t.semana)):''}${cp?' · '+cp.s+'/'+cp.n+' tarjetas sabidas':''}${nq?' · '+nq+' preguntas':''}${bt!==null?' · mejor nota '+n1(bt):''}</small>${acts}</div><button class="pill p-${esc(t.estado||'pendiente')}" data-act="estado" data-id="${esc(t.id)}" aria-label="Cambiar estado">${ESTN[t.estado]||'Pendiente'}</button></div>`}
 function vTemario(){
   if(!S.temas.length)return '<p class="empty">Todavía no hay temas cargados.</p>';
   const ped=Object.keys(S.pedidos||{}).filter(k=>S.pedidos[k]&&!(S.cards[k]||[]).length);
-  return `<h2>Temario: 34 temas</h2><p class="sub">Todo lo de cada tema en un sitio: tarjetas, test y tu PDF. Pulsa el estado para cambiarlo.</p>${ped.length?`<div class="warn"><span style="flex:1">Has pedido tarjetas de: <b>${ped.map(k=>esc(k.replace('-','.'))).join(', ')}</b>. Escríbele a Claude «genera los temas pedidos» y las subirá a la web.</span></div>`:''}`+['I','II','III','IV'].map(b=>{const ts=S.temas.filter(t=>t.bloque===b).sort(ordT);return `<section class="blk"><h3><span class="tag" style="background:${BL[b].c}">Bloque ${b}</span>${esc(BL[b].n)}</h3><div class="list">${ts.map(rowTema).join('')}</div></section>`}).join('');
+  return `<h2>Temario: 34 temas</h2><p class="sub">Tarjetas y test de cada tema. Si un tema no tiene, pulsa «Generar tarjetas» y en un rato aparecen solas.</p>${ped.length?`<div class="warn"><span style="flex:1">Generando tarjetas de: <b>${ped.map(k=>esc(k.replace('-','.'))).join(', ')}</b>. Tardan alrededor de 1 hora; vuelve a abrir la web para verlas.</span></div>`:''}`+['I','II','III','IV'].map(b=>{const ts=S.temas.filter(t=>t.bloque===b).sort(ordT);return `<section class="blk"><h3><span class="tag" style="background:${BL[b].c}">Bloque ${b}</span>${esc(BL[b].n)}</h3><div class="list">${ts.map(rowTema).join('')}</div></section>`}).join('');
 }
 
 /* ---------- tarjetas ---------- */
@@ -243,8 +244,8 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
   else if(a==='login'){login()}
   else if(a==='goCards'){ui.mazo=el.dataset.id;ui.idx=0;ui.filtro='todas';location.hash='tarjetas'}
   else if(a==='goTest'){ui.scope=el.dataset.id;const qs=shuffle(bank(ui.scope));const t=S.temas.find(x=>x.id===ui.scope);startRun('Práctica · Tema '+(t?t.codigo:''),ui.scope,qs.slice(0,10),'practica-'+ui.scope)}
-  else if(a==='pedir'){S.pedidos=Object.assign({},S.pedidos,{[el.dataset.id]:new Date().toISOString()});kvSet('pedidos');render()}
-  else if(a==='pdfEdit'){ui.pdfEdit=ui.pdfEdit===el.dataset.id?null:el.dataset.id;render()}
+  else if(a==='pedir'){const id=el.dataset.id;if(!fs||!uid){flash('Entra con Google (arriba a la derecha) para pedir tarjetas');return}
+    el.disabled=true;fs.collection('pedidos').doc(id).set({t:Date.now()}).then(()=>{S.pedidos=Object.assign({},S.pedidos,{[id]:Date.now()});render();flash('¡Pedido! Las tarjetas estarán en 1 hora aprox.')}).catch(()=>{el.disabled=false;flash('No se pudo hacer el pedido')})}
   else if(a==='logout'){auth&&auth.signOut()}
   else if(a==='tstart'){const t=S.tests.find(x=>x.id===el.dataset.id);if(t&&(t.preguntas||[]).length){ui.test={t:Object.assign({},t,{preguntas:t.preguntas.map(q=>Object.assign({tema:t.tema},q))}),i:0,ans:{},shown:{}};render();scrollTo(0,0)}}
   else if(a==='merr'){startRun('Mis errores','',shuffle(errList()),'errores')}
@@ -264,7 +265,6 @@ document.addEventListener('click',e=>{const el=e.target.closest('[data-act],[dat
     if(right){G.ok++;G.fb='<b>¡Bien!</b>'}else{G.ko++;G.end-=5000;G.miss.push(c.q);G.fb='<b>No.</b> La buena es: '+rich(c.q.opts[c.q.c])}
     const fb=G.fb;vfNext();G.fb=fb;render()}
 });
-document.addEventListener('submit',e=>{const f=e.target.closest('[data-pdf]');if(!f)return;e.preventDefault();const u=(f.u.value||'').trim();if(u&&!/^https:\/\//.test(u)){flash('El enlace tiene que empezar por https://');return}S.pdfs=Object.assign({},S.pdfs,{[f.dataset.pdf]:u});kvSet('pdfs');ui.pdfEdit=null;render()});
 document.addEventListener('click',e=>{const b=e.target.closest('[data-hdia]');if(b){ui.hdia=+b.dataset.hdia;render()}});
 document.addEventListener('keydown',e=>{const f=e.target.closest&&e.target.closest('#flip');if(f&&(e.key==='Enter'||e.key===' ')){e.preventDefault();f.click()}});
 document.addEventListener('change',e=>{if(e.target.dataset&&e.target.dataset.task){const k=e.target.dataset.task;const h=Object.assign({},(S.planHecho||{}).h||{});if(e.target.checked){h[k]=true;logAct(1)}else delete h[k];S.planHecho={h};kvSet('planHecho');render();return}const id=e.target.id;if(id==='mazo'){ui.mazo=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='filtro'){ui.filtro=e.target.value;ui.idx=0;ui.flip=false;render()}else if(id==='scope'){ui.scope=e.target.value;render()}});
@@ -286,6 +286,7 @@ function loadScript(src){return new Promise((ok,ko)=>{const x=document.createEle
   if(window.FIREBASE_CONFIG){try{
     const V='10.12.2';await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-app-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-auth-compat.js`);await loadScript(`https://www.gstatic.com/firebasejs/${V}/firebase-firestore-compat.js`);
     firebase.initializeApp(window.FIREBASE_CONFIG);auth=firebase.auth();fs=firebase.firestore();
+    fs.collection('pedidos').get().then(q=>{const p={};q.forEach(d=>{const x=d.data();if(x&&x.t)p[d.id]=x.t});S.pedidos=p;if(!busy())render()}).catch(()=>{});
     auth.onAuthStateChanged(async u=>{uid=u?u.uid:null;if(uid){try{await loadRemote()}catch(e){flash('No se pudo leer de la nube')}}else flash('Entra con Google para sincronizar');if(!busy())render();else acct()});
   }catch(e){flash('No se pudo cargar Firebase')}}
 })();
