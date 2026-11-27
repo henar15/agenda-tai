@@ -292,10 +292,11 @@
   "orden": 8,
   "titulo": "Accesibilidad, diseño universal, usabilidad y seguridad en el desarrollo",
   "semana": "2027-02-22",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 118,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-9",
@@ -304,10 +305,11 @@
   "orden": 9,
   "titulo": "Repositorios, documentación, metodologías de desarrollo, integración continua y control de versiones",
   "semana": "2027-03-01",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 122,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-1",

@@ -1,0 +1,81 @@
+{
+  "tema": "III-9",
+  "ramas": [
+    {
+      "t": "Repositorios de datos",
+      "e": "🗃️",
+      "items": [
+        "**ETL**: extraer, transformar y cargar",
+        "Metadatos · **Data Mart** (un área) · **Data Warehouse** (global)",
+        "DW: **Inmon**, tema, integrado, variante, **no volátil**",
+        "**Data Lake**: datos en bruto, **schema-on-read**",
+        "DW: **schema-on-write**"
+      ]
+    },
+    {
+      "t": "OLAP",
+      "e": "🎲",
+      "items": [
+        "OLAP = análisis (SELECT) · **OLTP** = transacciones",
+        "Cubo/hipercubo (**Codd**): hechos y dimensiones",
+        "Drill-down, expand, roll-up, pivot, **slice** (1 dim), **dice**",
+        "**MOLAP** (multidim., 2 niveles) · **ROLAP** (relacional, 3)",
+        "**HOLAP** híbrido: recientes MOLAP, antiguos ROLAP"
+      ]
+    },
+    {
+      "t": "Esquemas",
+      "e": "⭐",
+      "items": [
+        "**Estrella**: tabla de hechos + dimensiones",
+        "Hechos medibles · dimensiones descriptivas",
+        "**Copo de nieve**: dimensiones normalizadas, más JOIN",
+        "Se prefiere estrella: simple y rápida"
+      ]
+    },
+    {
+      "t": "Herramientas CASE",
+      "e": "🛠️",
+      "items": [
+        "Componente clave: **repositorio** (diccionario de datos)",
+        "**U-CASE**: planificación (Project, Redmine)",
+        "**M-CASE**: análisis/diseño (Visio, EasyCASE)",
+        "**L-CASE**: código y pruebas (NetBeans)",
+        "**Workbench** = ciclo completo · Toolkit = algunas fases"
+      ]
+    },
+    {
+      "t": "Pruebas y calidad",
+      "e": "🧪",
+      "items": [
+        "Estático (**sin ejecutar**) vs dinámico",
+        "Caja negra (salidas) vs caja blanca (interno)",
+        "**Integración continua**: Jenkins, Bamboo, Maven",
+        "Regresión, UAT, beta · **TDD**: pruebas primero",
+        "SAST · **DAST** (ZAP, Burp) · SCA · ANS/SLA"
+      ]
+    },
+    {
+      "t": "Metodologías",
+      "e": "🌀",
+      "items": [
+        "**Cascada**: Royce **1970** · **Espiral**: Boehm **1986**",
+        "Ágil: Snowbird **2001** · Scrum: sprint **1-4 semanas**",
+        "Roles: **Product Owner**, Scrum Master, devs (3-9)",
+        "Daily **≤15 min** · tareas **≤16 h**",
+        "CMMI (Carnegie Mellon) · **Métrica v3** (PSI…MSI)"
+      ]
+    },
+    {
+      "t": "Control de versiones",
+      "e": "🌿",
+      "items": [
+        "Reversibilidad, concurrencia, anotación",
+        "Locales (RCS) · centralizados (**SVN**) · distribuidos",
+        "**Git**: Linus Torvalds, GPL v2",
+        "**pull = fetch + merge** · revert = commit inverso",
+        "GitHub (Microsoft **2018**), GitLab, Bitbucket"
+      ]
+    }
+  ]
+}

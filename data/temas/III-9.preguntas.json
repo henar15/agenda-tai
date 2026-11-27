@@ -1,0 +1,330 @@
+{
+  "tema": "III-9",
+  "preguntas": [
+    {
+      "id": "iii9-01",
+      "tipico": 1,
+      "q": "El proceso que extrae, transforma y carga datos en un Data Warehouse se llama…",
+      "opts": [
+        "ETL",
+        "OLTP",
+        "KDD",
+        "SCM"
+      ],
+      "c": 0,
+      "exp": "ETL: Extract, Transform and Load."
+    },
+    {
+      "id": "iii9-02",
+      "tipico": 1,
+      "q": "Un sistema OLTP está orientado a…",
+      "opts": [
+        "Análisis histórico con SELECT complejos",
+        "Minería de datos",
+        "Cubos multidimensionales",
+        "Transacciones diarias (INSERT, UPDATE, DELETE)"
+      ],
+      "c": 3,
+      "exp": "OLTP = transacciones del día a día; OLAP = análisis."
+    },
+    {
+      "id": "iii9-03",
+      "tipico": 0,
+      "q": "El término «cubo OLAP» lo acuñó…",
+      "opts": [
+        "Bill Inmon",
+        "Barry Boehm",
+        "Edgar F. Codd",
+        "Linus Torvalds"
+      ],
+      "c": 2,
+      "exp": "Codd, propulsor del modelo relacional."
+    },
+    {
+      "id": "iii9-04",
+      "tipico": 1,
+      "q": "¿Qué operación OLAP selecciona un subconjunto de UNA sola dimensión?",
+      "opts": [
+        "Dice",
+        "Roll-up",
+        "Swap",
+        "Slice"
+      ],
+      "c": 3,
+      "exp": "Slice: una dimensión. Dice: una o varias."
+    },
+    {
+      "id": "iii9-05",
+      "tipico": 0,
+      "q": "La operación que profundiza en el detalle SIN perder la vista inicial es…",
+      "opts": [
+        "Drill-down",
+        "Expand",
+        "Pivot",
+        "Collapse"
+      ],
+      "c": 1,
+      "exp": "Expand conserva la vista; drill-down la cambia."
+    },
+    {
+      "id": "iii9-06",
+      "tipico": 1,
+      "q": "ROLAP se construye sobre…",
+      "opts": [
+        "Una BD multidimensional propietaria",
+        "Un Data Lake",
+        "Una BD relacional",
+        "Ficheros planos"
+      ],
+      "c": 2,
+      "exp": "ROLAP: relacional, 3 niveles. MOLAP: multidimensional, 2 niveles."
+    },
+    {
+      "id": "iii9-07",
+      "tipico": 0,
+      "q": "En HOLAP con partición horizontal, los datos más recientes se guardan en…",
+      "opts": [
+        "MOLAP",
+        "ROLAP",
+        "Un Data Lake",
+        "El área de ensayo"
+      ],
+      "c": 0,
+      "exp": "Recientes en MOLAP (más rápido) y antiguos en ROLAP."
+    },
+    {
+      "id": "iii9-08",
+      "tipico": 1,
+      "q": "Según Inmon, un Data Warehouse es una colección de datos orientada a un tema, integrada, variante en el tiempo y…",
+      "opts": [
+        "Volátil",
+        "Desnormalizada",
+        "No estructurada",
+        "No volátil"
+      ],
+      "c": 3,
+      "exp": "«No volátil»."
+    },
+    {
+      "id": "iii9-09",
+      "tipico": 1,
+      "q": "Un Data Lake trabaja con…",
+      "opts": [
+        "schema-on-write",
+        "schema-on-read",
+        "Solo datos estructurados",
+        "Solo cubos OLAP"
+      ],
+      "c": 1,
+      "exp": "Data Lake: schema-on-read. Data Warehouse: schema-on-write."
+    },
+    {
+      "id": "iii9-10",
+      "tipico": 0,
+      "q": "En el esquema en estrella, la clave de la tabla de hechos es…",
+      "opts": [
+        "Compuesta por las claves de las dimensiones",
+        "Simple",
+        "Siempre de texto",
+        "Inexistente"
+      ],
+      "c": 0,
+      "exp": "Las dimensiones tienen clave simple; la de hechos es compuesta."
+    },
+    {
+      "id": "iii9-11",
+      "tipico": 0,
+      "q": "¿Qué esquema normaliza las dimensiones usando varias tablas?",
+      "opts": [
+        "Estrella",
+        "Copo de nieve",
+        "Constelación de hechos",
+        "Plano"
+      ],
+      "c": 1,
+      "exp": "Copo de nieve: menos redundancia, más JOIN."
+    },
+    {
+      "id": "iii9-12",
+      "tipico": 1,
+      "q": "El componente más importante de una herramienta CASE es…",
+      "opts": [
+        "El metamodelo",
+        "El generador de diagramas",
+        "El compilador",
+        "El depósito central (repositorio)"
+      ],
+      "c": 3,
+      "exp": "El repositorio, que también actúa como diccionario de datos."
+    },
+    {
+      "id": "iii9-13",
+      "tipico": 1,
+      "q": "Las herramientas CASE que cubren generación de código, depuración y pruebas son…",
+      "opts": [
+        "U-CASE",
+        "M-CASE",
+        "L-CASE",
+        "MetaCASE"
+      ],
+      "c": 2,
+      "exp": "Lower CASE (ej. NetBeans)."
+    },
+    {
+      "id": "iii9-14",
+      "tipico": 0,
+      "q": "Microsoft Project y Redmine son herramientas…",
+      "opts": [
+        "U-CASE",
+        "M-CASE",
+        "L-CASE",
+        "CAST"
+      ],
+      "c": 0,
+      "exp": "Upper CASE: planificación y gestión de proyectos."
+    },
+    {
+      "id": "iii9-15",
+      "tipico": 1,
+      "q": "El análisis de código que se hace sin ejecutar el programa es el…",
+      "opts": [
+        "Dinámico",
+        "De caja negra",
+        "Estático",
+        "De regresión"
+      ],
+      "c": 2,
+      "exp": "Estático (ej. SonarQube)."
+    },
+    {
+      "id": "iii9-16",
+      "tipico": 0,
+      "q": "OWASP ZAP y Burp Suite son herramientas de tipo…",
+      "opts": [
+        "SAST",
+        "SCA",
+        "DAST",
+        "CASE"
+      ],
+      "c": 2,
+      "exp": "DAST: análisis en tiempo de ejecución."
+    },
+    {
+      "id": "iii9-17",
+      "tipico": 1,
+      "q": "El modelo en espiral fue definido por…",
+      "opts": [
+        "Winston Royce en 1970",
+        "Barry Boehm en 1986",
+        "Ken Schwaber en 1995",
+        "Bill Inmon en 1988"
+      ],
+      "c": 1,
+      "exp": "Boehm, 1986. Royce propuso la cascada en 1970."
+    },
+    {
+      "id": "iii9-18",
+      "tipico": 1,
+      "q": "En Scrum, el Product Backlog solo puede modificarlo…",
+      "opts": [
+        "El Scrum Master",
+        "El equipo de desarrollo",
+        "Los stakeholders",
+        "El Product Owner"
+      ],
+      "c": 3,
+      "exp": "Solo el Product Owner."
+    },
+    {
+      "id": "iii9-19",
+      "tipico": 1,
+      "q": "La duración habitual de un sprint es…",
+      "opts": [
+        "1 a 4 semanas",
+        "1 a 3 días",
+        "3 a 6 meses",
+        "Exactamente 1 año"
+      ],
+      "c": 0,
+      "exp": "Entre 1 y 4 semanas."
+    },
+    {
+      "id": "iii9-20",
+      "tipico": 0,
+      "q": "¿Cuánto dura como máximo el Daily Scrum?",
+      "opts": [
+        "5 minutos",
+        "15 minutos",
+        "1 hora",
+        "4 horas"
+      ],
+      "c": 1,
+      "exp": "Entre 5 y 15 minutos, de pie."
+    },
+    {
+      "id": "iii9-21",
+      "tipico": 1,
+      "q": "¿Cuál NO es una interfaz de Métrica v3?",
+      "opts": [
+        "Gestión de Proyectos",
+        "Seguridad",
+        "Aseguramiento de la Calidad",
+        "Estudio de Viabilidad"
+      ],
+      "c": 3,
+      "exp": "El Estudio de Viabilidad (EVS) es un proceso principal, no una interfaz."
+    },
+    {
+      "id": "iii9-22",
+      "tipico": 0,
+      "q": "Una métrica que solo puede aumentar es un…",
+      "opts": [
+        "Calibrador",
+        "Histograma",
+        "Contador",
+        "Resumen"
+      ],
+      "c": 2,
+      "exp": "Contador; el calibrador sube y baja."
+    },
+    {
+      "id": "iii9-23",
+      "tipico": 1,
+      "q": "Git y Mercurial son sistemas de control de versiones…",
+      "opts": [
+        "Locales",
+        "Centralizados",
+        "Distribuidos",
+        "Por lotes"
+      ],
+      "c": 2,
+      "exp": "Distribuidos: cada usuario tiene su repositorio. Subversion es centralizado."
+    },
+    {
+      "id": "iii9-24",
+      "tipico": 1,
+      "q": "git pull equivale a…",
+      "opts": [
+        "git fetch + git merge",
+        "git add + git commit",
+        "git clone + git push",
+        "git revert + git reset"
+      ],
+      "c": 0,
+      "exp": "pull = fetch + merge."
+    },
+    {
+      "id": "iii9-25",
+      "tipico": 0,
+      "q": "¿Qué comando de Git crea un commit nuevo que deshace otro?",
+      "opts": [
+        "git reset --hard",
+        "git revert",
+        "git fetch",
+        "git rebase -i"
+      ],
+      "c": 1,
+      "exp": "git revert <hash>."
+    }
+  ]
+}

@@ -1,0 +1,657 @@
+{
+  "tema": "III-9",
+  "cards": [
+    {
+      "id": "iii9c1",
+      "n": "1",
+      "e": "🗃️",
+      "q": "¿Qué es un repositorio de datos?",
+      "a": "Una gran base de datos (o varias) donde se **almacenan y gestionan** muchos datos para obtener **informes** a partir de su análisis. También se llama biblioteca o archivo de datos"
+    },
+    {
+      "id": "iii9c2",
+      "n": "2",
+      "e": "🧊",
+      "q": "¿Qué es una base de datos multidimensional?",
+      "a": "La base de las aplicaciones **OLAP**: como una tabla con un campo por cada **dimensión** y otro por cada **métrica o hecho**"
+    },
+    {
+      "id": "iii9c3",
+      "n": "3",
+      "e": "🌊",
+      "q": "¿Qué es Big Data?",
+      "a": "Gran volumen de datos con enorme **variedad, complejidad y velocidad** de crecimiento, en su mayoría **no estructurados** (no relacionales)"
+    },
+    {
+      "id": "iii9c4",
+      "n": "4",
+      "e": "🧰",
+      "t": true,
+      "q": "¿Qué es ETL?",
+      "a": "**Extract, Transform and Load** (extraer, transformar y cargar): el proceso que **alimenta** el repositorio o Data Warehouse"
+    },
+    {
+      "id": "iii9c5",
+      "n": "5",
+      "e": "🗂️",
+      "q": "Tipos de repositorios del tema",
+      "a": "Repositorios de **metadatos**, **Data Mart**, **Data Warehouse** y **Data Lake**"
+    },
+    {
+      "id": "iii9c6",
+      "n": "6",
+      "e": "🏷️",
+      "q": "¿Qué guarda un repositorio de metadatos?",
+      "a": "Información sobre el **modelo de datos**: dónde está la fuente, cómo se recopilaron los datos y qué significan"
+    },
+    {
+      "id": "iii9c7",
+      "n": "7",
+      "e": "🏪",
+      "q": "¿Qué es un Data Mart?",
+      "a": "Una BD **departamental** especializada en **un tema o área** (ventas, marketing, RRHH). Más pequeña, rápida y económica"
+    },
+    {
+      "id": "iii9c8",
+      "n": "8",
+      "e": "📈",
+      "t": true,
+      "q": "¿Qué es OLAP?",
+      "a": "**On Line Analytical Processing**: BD para **análisis**; acceso casi siempre de **solo lectura**, historial largo (mínimo **2 a 5 años**) y respuesta muy rápida"
+    },
+    {
+      "id": "iii9c9",
+      "n": "9",
+      "e": "💳",
+      "t": true,
+      "q": "¿Qué es OLTP y en qué se diferencia de OLAP?",
+      "a": "**Procesamiento de transacciones en línea**: el trabajo diario, muchas transacciones cortas (**INSERT, UPDATE, DELETE**). OLAP es para análisis histórico (**SELECT** complejos)"
+    },
+    {
+      "id": "iii9c10",
+      "n": "10",
+      "e": "⛏️",
+      "q": "¿Qué relación hay entre Data Mining y KDD?",
+      "a": "El **Data Mining** es un paso del **KDD** (Knowledge Discovery in Databases): analiza muchos datos para hallar **relaciones insospechadas**"
+    },
+    {
+      "id": "iii9c11",
+      "n": "11",
+      "e": "🎲",
+      "q": "¿Qué es un cubo OLAP y quién acuñó el término?",
+      "a": "Un **hipercubo**: datos con múltiples dimensiones guardados en un vector multidimensional. Término de **Edgar F. Codd**"
+    },
+    {
+      "id": "iii9c12",
+      "n": "12",
+      "e": "⚠️",
+      "q": "¿Cuál es el gran inconveniente de los cubos OLAP?",
+      "a": "Las consultas son casi instantáneas, pero la estructura **no admite cambios** sin **rediseñar el cubo**"
+    },
+    {
+      "id": "iii9c13",
+      "n": "13",
+      "e": "⬇️",
+      "q": "¿Qué es drill-down / drill-up?",
+      "a": "**Profundizar** o **ascender** por los niveles de una jerarquía. **Cambia la vista** (se pierde la vista inicial)"
+    },
+    {
+      "id": "iii9c14",
+      "n": "14",
+      "e": "🪆",
+      "q": "¿Qué hacen expand y collapse?",
+      "a": "**Expand** añade detalle **sin perder la vista inicial**; **collapse** contrae una dimensión desplegada"
+    },
+    {
+      "id": "iii9c15",
+      "n": "15",
+      "e": "🔄",
+      "q": "Pivotar, rotar (swap) y roll-up",
+      "a": "**Pivotar**: cambiar la perspectiva · **Swap**: pasar filas a columnas y viceversa · **Roll-up**: agrupar niveles inferiores en uno superior (sumas, medias…)"
+    },
+    {
+      "id": "iii9c16",
+      "n": "16",
+      "e": "🔪",
+      "t": true,
+      "q": "¿Diferencia entre slice y dice?",
+      "a": "**Slice** (cortar): subconjunto de **una sola dimensión** · **Dice** (filtrar): subconjunto en **una o varias** dimensiones"
+    },
+    {
+      "id": "iii9c17",
+      "n": "17",
+      "e": "🧮",
+      "q": "¿Qué es MOLAP?",
+      "a": "OLAP sobre una **BD multidimensional propietaria**, arquitectura de **2 niveles**. Consultas muy rápidas, pero carga lenta y **redundancia**"
+    },
+    {
+      "id": "iii9c18",
+      "n": "18",
+      "e": "🗄️",
+      "q": "¿Qué es ROLAP?",
+      "a": "OLAP sobre una **BD relacional**, arquitectura de **3 niveles** (BD, aplicación y presentación). Ventaja: analiza **enormes cantidades** de datos"
+    },
+    {
+      "id": "iii9c19",
+      "n": "19",
+      "e": "🔀",
+      "q": "¿Qué es HOLAP?",
+      "a": "**Híbrido** de MOLAP y ROLAP. Partición vertical: agregados en MOLAP y detalle en ROLAP. Horizontal: datos **recientes en MOLAP** y antiguos en ROLAP"
+    },
+    {
+      "id": "iii9c20",
+      "n": "20",
+      "e": "🏭",
+      "t": true,
+      "q": "¿Qué es un Data Warehouse?",
+      "a": "Repositorio **unificado** de toda la organización con datos **estructurados** de diversas fuentes, para apoyar la **toma de decisiones**"
+    },
+    {
+      "id": "iii9c21",
+      "n": "21",
+      "e": "👴",
+      "t": true,
+      "q": "¿Quién es el padre del Data Warehouse y cómo lo definió?",
+      "a": "**William H. (Bill) Inmon**: colección de datos **orientada a un tema, integrada, variante en el tiempo y no volátil**"
+    },
+    {
+      "id": "iii9c22",
+      "n": "22",
+      "e": "🧪",
+      "q": "¿Dónde y cuándo nació el concepto de almacén de datos?",
+      "a": "En **1988**, con Barry Devlin y Paul Murphy (**IBM**)"
+    },
+    {
+      "id": "iii9c23",
+      "n": "23",
+      "e": "↔️",
+      "q": "¿En qué se diferencian Data Warehouse y Data Mart?",
+      "a": "Solo en el **alcance**: el DW es **global** de la empresa y el Data Mart un **subconjunto temático**"
+    },
+    {
+      "id": "iii9c24",
+      "n": "24",
+      "e": "🏗️",
+      "q": "Estructuras de un Data Warehouse",
+      "a": "**Básica**, básica con **área de ensayo** (donde se limpian los datos) y básica con área de ensayo y **Data Marts**"
+    },
+    {
+      "id": "iii9c25",
+      "n": "25",
+      "e": "🏞️",
+      "q": "¿Qué es un Data Lake?",
+      "a": "Repositorio centralizado de Big Data **sin procesar**: datos **estructurados, semiestructurados y no estructurados**. Almacenamiento más barato"
+    },
+    {
+      "id": "iii9c26",
+      "n": "26",
+      "e": "✍️",
+      "t": true,
+      "q": "schema-on-write vs schema-on-read",
+      "a": "**Data Warehouse**: schema-on-write (se modela **antes** de cargar) · **Data Lake**: schema-on-read (se da estructura **al usar** los datos)"
+    },
+    {
+      "id": "iii9c27",
+      "n": "27",
+      "e": "⭐",
+      "t": true,
+      "q": "¿Qué es el esquema en estrella?",
+      "a": "Una **tabla de hechos** central rodeada de **tablas de dimensiones**. Simple, rápido y con consultas sencillas"
+    },
+    {
+      "id": "iii9c28",
+      "n": "28",
+      "e": "🔑",
+      "q": "Claves en el esquema en estrella",
+      "a": "Las dimensiones tienen clave primaria **simple**; la tabla de hechos tiene una clave **compuesta** por las claves de las dimensiones"
+    },
+    {
+      "id": "iii9c29",
+      "n": "29",
+      "e": "📏",
+      "q": "¿Qué son hechos y dimensiones?",
+      "a": "**Hechos**: datos **medibles y cuantitativos** del negocio · **Dimensiones**: atributos que **describen** los hechos"
+    },
+    {
+      "id": "iii9c30",
+      "n": "30",
+      "e": "📸",
+      "q": "Tipos de tablas de hechos",
+      "a": "**Transaccionales** (eventos concretos), **snapshot** (un punto en el tiempo) y **snapshot acumulativas** (totales acumulados)"
+    },
+    {
+      "id": "iii9c31",
+      "n": "31",
+      "e": "❄️",
+      "t": true,
+      "q": "¿Qué es el esquema en copo de nieve?",
+      "a": "Alguna dimensión usa **más de una tabla** (normalizada): menos redundancia y espacio, pero **peor rendimiento** (más JOIN)"
+    },
+    {
+      "id": "iii9c32",
+      "n": "32",
+      "e": "🏆",
+      "q": "¿Qué esquema se prefiere en general?",
+      "a": "El de **estrella**, por su **simplicidad y rendimiento**. Copo de nieve nunca donde el tiempo de respuesta sea crítico"
+    },
+    {
+      "id": "iii9c33",
+      "n": "33",
+      "e": "🛠️",
+      "q": "¿Qué son las herramientas CASE?",
+      "a": "**Computer-Aided Software Engineering**: aplicaciones que **aumentan la productividad** del desarrollo y reducen su coste en tiempo y dinero"
+    },
+    {
+      "id": "iii9c34",
+      "n": "34",
+      "e": "📦",
+      "t": true,
+      "q": "¿Cuál es el componente más importante de una herramienta CASE?",
+      "a": "El **depósito central (repositorio)**, que también sirve de **diccionario de datos**"
+    },
+    {
+      "id": "iii9c35",
+      "n": "35",
+      "e": "🧱",
+      "q": "Otros componentes de una herramienta CASE",
+      "a": "**Metamodelo**, **gestión de datos**, **comprobación de errores** y herramientas para **diagramas**"
+    },
+    {
+      "id": "iii9c36",
+      "n": "36",
+      "e": "🔄",
+      "q": "Tipos de actualización del repositorio CASE",
+      "a": "**Tiempo real** (todos ven el cambio al momento) o **batch** (por lotes: no se ve hasta sincronizar)"
+    },
+    {
+      "id": "iii9c37",
+      "n": "37",
+      "e": "🧰",
+      "q": "¿Toolkit o Workbench?",
+      "a": "**Toolkit**: colección de herramientas para algunas fases · **Workbench**: cubre el **ciclo de vida completo** y entrega código ejecutable y documentación"
+    },
+    {
+      "id": "iii9c38",
+      "n": "38",
+      "e": "⬆️",
+      "t": true,
+      "q": "¿Qué es U-CASE? Ejemplos",
+      "a": "**Upper CASE**: fases iniciales (planificación, requisitos, gestión de proyectos). Ej.: **Microsoft Project**, **Redmine**"
+    },
+    {
+      "id": "iii9c39",
+      "n": "39",
+      "e": "↕️",
+      "q": "¿Qué es M-CASE? Ejemplos",
+      "a": "**Middle CASE**: análisis y **diseño/modelado** (UML, bases de datos). Ej.: **Visio**, **Lucidchart**, **EasyCASE**"
+    },
+    {
+      "id": "iii9c40",
+      "n": "40",
+      "e": "⬇️",
+      "q": "¿Qué es L-CASE? Ejemplo",
+      "a": "**Lower CASE**: semiautomatiza la **generación de código**, depuración, **pruebas** y documentación. Ej.: **NetBeans**"
+    },
+    {
+      "id": "iii9c41",
+      "n": "41",
+      "e": "🧩",
+      "q": "I-CASE, MetaCASE y CAST",
+      "a": "**I-CASE**: todo el proceso (≈ Workbench) · **MetaCASE**: definir tu **propia técnica de modelado** · **CAST**: soporte a las **pruebas**"
+    },
+    {
+      "id": "iii9c42",
+      "n": "42",
+      "e": "📏",
+      "q": "¿Qué es el análisis estático de código?",
+      "a": "Se hace **sin ejecutar** el programa; detecta errores pronto, pero puede dar **falsos positivos**"
+    },
+    {
+      "id": "iii9c43",
+      "n": "43",
+      "e": "🏃",
+      "q": "¿Qué es el análisis dinámico de código?",
+      "a": "Se hace **ejecutando** el programa con casos de prueba; encuentra errores ocultos pero es más lento (ej.: **fuzzers**)"
+    },
+    {
+      "id": "iii9c44",
+      "n": "44",
+      "e": "⬛",
+      "q": "Pruebas de caja negra vs caja blanca",
+      "a": "**Caja negra**: solo comprueba que las **salidas** son correctas · **Caja blanca**: se fija en el **procedimiento interno**"
+    },
+    {
+      "id": "iii9c45",
+      "n": "45",
+      "e": "📡",
+      "q": "¿Qué es SonarQube?",
+      "a": "Plataforma **libre** (LGPL, en Java) de análisis **estático** de calidad y seguridad del código"
+    },
+    {
+      "id": "iii9c46",
+      "n": "46",
+      "e": "🔁",
+      "t": true,
+      "q": "¿Qué es la integración continua?",
+      "a": "Integrar (compilar y probar) el proyecto **lo más a menudo posible** para detectar fallos pronto. Herramientas: **Jenkins**, Hudson, Bamboo, GoCD…"
+    },
+    {
+      "id": "iii9c47",
+      "n": "47",
+      "e": "🏗️",
+      "q": "Herramientas que compilan y prueban en la integración continua",
+      "a": "**Ant** o **Maven** (Java), **NAnt** o **MSBuild** (.NET)"
+    },
+    {
+      "id": "iii9c48",
+      "n": "48",
+      "e": "📄",
+      "q": "¿Qué es un artefacto de software?",
+      "a": "Un **producto tangible** del desarrollo: casos de uso, diagramas UML, planes, código compilado…"
+    },
+    {
+      "id": "iii9c49",
+      "n": "49",
+      "e": "✅",
+      "q": "¿Qué es UAT?",
+      "a": "**User Acceptance Testing**: pruebas de **aceptación** del usuario, antes de liberar la versión"
+    },
+    {
+      "id": "iii9c50",
+      "n": "50",
+      "e": "🅱️",
+      "q": "¿Qué son las pruebas beta?",
+      "a": "Pruebas en **entorno real** por **usuarios finales**, después de las pruebas **alfa**"
+    },
+    {
+      "id": "iii9c51",
+      "n": "51",
+      "e": "🔙",
+      "q": "¿Qué son las pruebas de regresión?",
+      "a": "Comprobar que lo que ya funcionaba **sigue funcionando** tras un cambio. Se repiten en cada nueva versión, a menudo **automatizadas**"
+    },
+    {
+      "id": "iii9c52",
+      "n": "52",
+      "e": "📃",
+      "q": "¿De dónde saca la información el generador de documentación?",
+      "a": "Del **repositorio**. Combina texto y gráficos y crea **referencias cruzadas**"
+    },
+    {
+      "id": "iii9c53",
+      "n": "53",
+      "e": "🤝",
+      "q": "¿Qué es un ANS (SLA)?",
+      "a": "**Acuerdo de Nivel de Servicio**: documento escrito entre **proveedor y cliente** que fija el **nivel de calidad** del servicio (tiempo de respuesta, disponibilidad…)"
+    },
+    {
+      "id": "iii9c54",
+      "n": "54",
+      "e": "⚙️",
+      "q": "¿Qué es Ansible?",
+      "a": "Plataforma **libre** para **configurar y administrar** ordenadores: aprovisionamiento, gestión de la configuración y **orquestación**"
+    },
+    {
+      "id": "iii9c55",
+      "n": "55",
+      "e": "🔐",
+      "q": "SAST, DAST y SCA",
+      "a": "**SAST**: código **sin ejecutar** (Fortify, Checkmarx) · **DAST**: **en ejecución** (OWASP ZAP, Burp Suite) · **SCA**: **componentes de terceros**"
+    },
+    {
+      "id": "iii9c56",
+      "n": "56",
+      "e": "💧",
+      "t": true,
+      "q": "¿Quién propuso el modelo en cascada y cuándo?",
+      "a": "**Winston W. Royce**, en **1970**. Etapas **estrictamente secuenciales** y hay que conocer todos los requisitos al inicio"
+    },
+    {
+      "id": "iii9c57",
+      "n": "57",
+      "e": "↩️",
+      "q": "¿Qué aporta la cascada con realimentación?",
+      "a": "Permite **volver atrás** a etapas anteriores para corregir. Ideal si hay **pocos cambios** y requisitos claros"
+    },
+    {
+      "id": "iii9c58",
+      "n": "58",
+      "e": "🌀",
+      "t": true,
+      "q": "¿Quién definió el modelo en espiral y cuándo?",
+      "a": "**Barry Boehm**, en **1986**. Ciclos iterativos centrados en el **análisis de riesgos**"
+    },
+    {
+      "id": "iii9c59",
+      "n": "59",
+      "e": "📐",
+      "q": "Dimensiones del modelo en espiral",
+      "a": "**Angular**: avance dentro de un ciclo · **Radial**: **aumento del coste** del proyecto"
+    },
+    {
+      "id": "iii9c60",
+      "n": "60",
+      "e": "🤝",
+      "q": "¿Qué es el modelo espiral Win-Win?",
+      "a": "Variante con **negociación** cliente-desarrollador («ganar-ganar») y 3 puntos de anclaje: **LCO, LCA e IOC**"
+    },
+    {
+      "id": "iii9c61",
+      "n": "61",
+      "e": "🏃",
+      "q": "¿Qué caracteriza al desarrollo ágil?",
+      "a": "Desarrollo **iterativo e incremental**, comunicación **cara a cara** y el **software que funciona** como medida del progreso. Nombre adoptado en **Snowbird (Utah), 2001**"
+    },
+    {
+      "id": "iii9c62",
+      "n": "62",
+      "e": "🏉",
+      "q": "Origen de Scrum",
+      "a": "**Nonaka y Takeuchi** (1986), por la **melé** del rugby. Ken **Schwaber** lo presentó para software en **OOPSLA 95**"
+    },
+    {
+      "id": "iii9c63",
+      "n": "63",
+      "e": "⏲️",
+      "t": true,
+      "q": "¿Qué es un sprint?",
+      "a": "Cada iteración de Scrum, de **1 a 4 semanas**, que entrega un **incremento** del producto que funciona"
+    },
+    {
+      "id": "iii9c64",
+      "n": "64",
+      "e": "👥",
+      "t": true,
+      "q": "Roles principales de Scrum",
+      "a": "**Product Owner** (representa a los interesados y prioriza el backlog), **Scrum Master** (facilitador) y **Desarrolladores** (equipo de **3 a 9**)"
+    },
+    {
+      "id": "iii9c65",
+      "n": "65",
+      "e": "🗣️",
+      "t": true,
+      "q": "¿Cómo es el Daily Scrum?",
+      "a": "Reunión **diaria** de **5 a 15 minutos**, **de pie**, siempre a la misma hora y lugar; si falta alguien no se pospone"
+    },
+    {
+      "id": "iii9c66",
+      "n": "66",
+      "e": "📚",
+      "q": "Artefactos de Scrum",
+      "a": "**Product Backlog** (solo lo modifica el **Product Owner**), **Sprint Backlog** (congelado durante el sprint) e **Incremento**"
+    },
+    {
+      "id": "iii9c67",
+      "n": "67",
+      "e": "⏳",
+      "q": "Duración máxima de una tarea del Sprint Backlog",
+      "a": "**16 horas**; si es mayor, se divide"
+    },
+    {
+      "id": "iii9c68",
+      "n": "68",
+      "e": "📉",
+      "q": "¿Qué es el burn down chart?",
+      "a": "Gráfica pública con los **requisitos pendientes** al inicio de cada sprint; lo normal es que **baje**"
+    },
+    {
+      "id": "iii9c69",
+      "n": "69",
+      "e": "🔍",
+      "q": "Eventos al final del sprint",
+      "a": "**Revisión del sprint** (se muestra lo hecho) y **retrospectiva** (mejora continua del proceso)"
+    },
+    {
+      "id": "iii9c70",
+      "n": "70",
+      "e": "🪜",
+      "q": "¿Qué es CMMI y cuáles son sus niveles de madurez?",
+      "a": "Modelo de mejora de procesos de la **Universidad Carnegie Mellon**. Niveles: **Inicial, Repetible, Definido, Gestionado y Optimizado**"
+    },
+    {
+      "id": "iii9c71",
+      "n": "71",
+      "e": "🏅",
+      "q": "¿Qué es SCAMPI?",
+      "a": "El método oficial de **evaluación CMMI**. Solo la evaluación de **clase A** da un nivel"
+    },
+    {
+      "id": "iii9c72",
+      "n": "72",
+      "e": "⚙️",
+      "q": "¿Qué es SCM?",
+      "a": "**Software Configuration Management**: controla el código de varios desarrolladores, las **versiones y cambios** y la integración en un producto"
+    },
+    {
+      "id": "iii9c73",
+      "n": "73",
+      "e": "🧪",
+      "t": true,
+      "q": "¿Qué es TDD?",
+      "a": "**Test-Driven Development**: se escriben **primero las pruebas** automatizadas y después el código"
+    },
+    {
+      "id": "iii9c74",
+      "n": "74",
+      "e": "📟",
+      "q": "Tipos de métricas por su comportamiento",
+      "a": "**Contador**: solo sube · **Calibrador**: sube y baja · **Histograma**: cuenta observaciones por tipos · **Resumen**: calcula **cuantiles**"
+    },
+    {
+      "id": "iii9c75",
+      "n": "75",
+      "e": "🇪🇸",
+      "t": true,
+      "q": "Procesos principales de Métrica v3",
+      "a": "**PSI** (planificación) y desarrollo: **EVS**, **ASI**, **DSI**, **CSI**, **IAS**, más **MSI** (mantenimiento)",
+      "h": "Viabilidad, análisis, diseño, construcción, implantación"
+    },
+    {
+      "id": "iii9c76",
+      "n": "76",
+      "e": "🧷",
+      "q": "Interfaces de Métrica v3",
+      "a": "**Gestión de Proyectos**, **Seguridad**, **Aseguramiento de la Calidad** y **Gestión de la Configuración**"
+    },
+    {
+      "id": "iii9c77",
+      "n": "77",
+      "e": "🌍",
+      "q": "Otras metodologías cercanas a Métrica",
+      "a": "**MERISE** (Francia, 1977) y **SSADM** (Gran Bretaña, obligatoria en su Administración desde 1983). Métrica se basa en la **ISO 12207**"
+    },
+    {
+      "id": "iii9c78",
+      "n": "78",
+      "e": "⏪",
+      "q": "3 capacidades de un sistema de control de versiones",
+      "a": "**Reversibilidad**, **concurrencia** y **anotación**"
+    },
+    {
+      "id": "iii9c79",
+      "n": "79",
+      "e": "🔤",
+      "q": "Conceptos básicos del control de versiones",
+      "a": "**Commit** (guardar un cambio), **checkout** (copia local), **branch** (rama aislada), **merge** (unir cambios), **conflicto**, **tag**, **línea base**"
+    },
+    {
+      "id": "iii9c80",
+      "n": "80",
+      "e": "🏠",
+      "t": true,
+      "q": "Tipos de control de versiones y ejemplos",
+      "a": "**Locales** (RCS), **centralizados** (Subversion) y **distribuidos** (Git, Mercurial: cada usuario tiene su repositorio)"
+    },
+    {
+      "id": "iii9c81",
+      "n": "81",
+      "e": "🪟",
+      "q": "¿Qué protocolo usa Visual SourceSafe y qué problema tiene?",
+      "a": "Usa **SMB** (archivos compartidos), que permite manipular el repositorio desde fuera y **corromper datos**"
+    },
+    {
+      "id": "iii9c82",
+      "n": "82",
+      "e": "🐧",
+      "q": "¿Quién creó Git y con qué licencia?",
+      "a": "**Linus Torvalds**; software libre con licencia **GPL v2**"
+    },
+    {
+      "id": "iii9c83",
+      "n": "83",
+      "e": "⬇️",
+      "t": true,
+      "q": "git fetch vs git pull",
+      "a": "**fetch**: descarga cambios del remoto **sin fusionar** · **pull** = **fetch + merge**"
+    },
+    {
+      "id": "iii9c84",
+      "n": "84",
+      "e": "↩️",
+      "q": "git revert vs git reset --hard HEAD",
+      "a": "**revert**: crea un **commit nuevo** que deshace otro · **reset --hard HEAD**: descarta todos los cambios locales"
+    },
+    {
+      "id": "iii9c85",
+      "n": "85",
+      "e": "🌿",
+      "q": "git merge vs git rebase",
+      "a": "Ambos integran ramas. **rebase** reaplica los commits encima de la rama objetivo; **rebase -i** permite **reescribir el historial**"
+    },
+    {
+      "id": "iii9c86",
+      "n": "86",
+      "e": "🙈",
+      "q": "¿Para qué sirve .gitignore?",
+      "a": "Indica a Git qué **archivos no rastrear** (copias de seguridad, temporales…)"
+    },
+    {
+      "id": "iii9c87",
+      "n": "87",
+      "e": "🐙",
+      "q": "¿Cuándo compró Microsoft GitHub?",
+      "a": "El **4 de junio de 2018**, por **7.500 millones de dólares**"
+    },
+    {
+      "id": "iii9c88",
+      "n": "88",
+      "e": "🦊",
+      "q": "GitLab, Bitbucket y SourceForge",
+      "a": "**GitLab**: instalable en tu servidor · **Bitbucket** (Atlassian): privados gratis hasta **5 personas** · **SourceForge**: Git, Mercurial y Subversion"
+    },
+    {
+      "id": "iii9c89",
+      "n": "89",
+      "e": "☸️",
+      "q": "¿Qué es Kubernetes?",
+      "a": "Plataforma **libre** para automatizar el despliegue y gestión de **contenedores**, liberada por **Google en 2014**"
+    },
+    {
+      "id": "iii9c90",
+      "n": "90",
+      "e": "📖",
+      "q": "Archivos de documentación habituales en un repositorio",
+      "a": "**README.md**, **LICENSE**, **CONTRIBUTING.md**, **CHANGELOG.md** (historial de cambios), SECURITY.md, CODEOWNERS…"
+    }
+  ]
+}

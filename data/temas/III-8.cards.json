@@ -1,0 +1,659 @@
+{
+  "tema": "III-8",
+  "cards": [
+    {
+      "id": "iii8c1",
+      "n": "1",
+      "e": "♿",
+      "q": "¿Qué es la accesibilidad?",
+      "a": "Grado en que **cualquier persona**, sea cual sea su condición física o cognitiva, puede usar un objeto, servicio o infraestructura. En la Web: **acceso universal** sin importar hardware, software, idioma o capacidades"
+    },
+    {
+      "id": "iii8c2",
+      "n": "2",
+      "e": "🧑‍🦽",
+      "q": "¿Quién fue el pionero del diseño accesible?",
+      "a": "El arquitecto **Ron L. Mace** (usuario de silla de ruedas), que participó en la ley **ADA** (Ley de Americanos con Discapacidad)"
+    },
+    {
+      "id": "iii8c3",
+      "n": "3",
+      "e": "🌍",
+      "t": true,
+      "q": "¿Quién creó el término «Diseño Universal» y cuándo?",
+      "a": "**Ron Mace**, en **1989**, a partir del concepto de «accesibilidad física»"
+    },
+    {
+      "id": "iii8c4",
+      "n": "4",
+      "e": "🎯",
+      "q": "¿Qué es el Diseño Universal?",
+      "a": "Crear productos y entornos **utilizables por todas las personas**, sea cual sea su edad, tamaño o discapacidad, **sin necesidad de adaptarlos** o rediseñarlos después"
+    },
+    {
+      "id": "iii8c5",
+      "n": "5",
+      "e": "7️⃣",
+      "t": true,
+      "q": "¿Cuáles son los 7 principios del diseño universal?",
+      "a": "1 **Uso equiparable**, 2 **uso flexible**, 3 **simple e intuitivo**, 4 **información perceptible**, 5 **tolerancia al error**, 6 **poco esfuerzo físico**, 7 **tamaño y espacio** para el acceso y uso",
+      "h": "Igual · Flexible · Simple · Se percibe · Perdona errores · Sin esfuerzo · Con espacio"
+    },
+    {
+      "id": "iii8c6",
+      "n": "6",
+      "e": "⚖️",
+      "q": "Principio 1: uso equiparable",
+      "a": "El diseño es útil para personas con **diversas capacidades**: mismas formas de uso para todos y **sin segregar ni estigmatizar** a nadie"
+    },
+    {
+      "id": "iii8c7",
+      "n": "7",
+      "e": "🤸",
+      "q": "Principio 2: uso flexible",
+      "a": "Se adapta a un **amplio rango de preferencias y habilidades**: elegir el método de uso, usar con mano **derecha o izquierda**, ir al **ritmo** del usuario"
+    },
+    {
+      "id": "iii8c8",
+      "n": "8",
+      "e": "💡",
+      "q": "Principio 3: simple e intuitivo",
+      "a": "**Fácil de entender** sea cual sea la experiencia, los conocimientos o el idioma; elimina la **complejidad innecesaria**"
+    },
+    {
+      "id": "iii8c9",
+      "n": "9",
+      "e": "👀",
+      "q": "Principio 4: información perceptible",
+      "a": "Comunica la información de forma eficaz según las **condiciones ambientales** o las **capacidades sensoriales** (de forma gráfica, verbal o táctil y con buen contraste)"
+    },
+    {
+      "id": "iii8c10",
+      "n": "10",
+      "e": "🛡️",
+      "q": "Principio 5: tolerancia al error",
+      "a": "**Minimiza los riesgos** y las consecuencias de acciones accidentales: advertencias de peligro y opciones seguras de interrupción"
+    },
+    {
+      "id": "iii8c11",
+      "n": "11",
+      "e": "💪",
+      "q": "Principio 6: poco esfuerzo físico",
+      "a": "Se usa de forma eficaz y cómoda con la **mínima fatiga**: postura neutra y pocas acciones repetitivas"
+    },
+    {
+      "id": "iii8c12",
+      "n": "12",
+      "e": "📏",
+      "q": "Principio 7: tamaño y espacio",
+      "a": "Tamaño y espacio **apropiados para el acceso, alcance y uso**, sea cual sea el cuerpo, la postura o la movilidad (sentado o de pie)"
+    },
+    {
+      "id": "iii8c13",
+      "n": "13",
+      "e": "🙂",
+      "q": "¿Qué es la usabilidad?",
+      "a": "La **facilidad** con la que un usuario usa un objeto o servicio para lograr un objetivo. Se diseña **por y para el usuario**"
+    },
+    {
+      "id": "iii8c14",
+      "n": "14",
+      "e": "📐",
+      "t": true,
+      "q": "¿Cómo define la usabilidad la ISO 9241-11?",
+      "a": "Grado en que un producto puede ser usado por usuarios específicos para lograr objetivos específicos con **efectividad, eficiencia y satisfacción** en un contexto de uso específico"
+    },
+    {
+      "id": "iii8c15",
+      "n": "15",
+      "e": "⏱️",
+      "q": "¿Qué se mide para valorar la usabilidad?",
+      "a": "Tiempo de aprendizaje, velocidad, número de errores, tiempo de espera y la **satisfacción subjetiva** (la más importante, pero difícil de medir)"
+    },
+    {
+      "id": "iii8c16",
+      "n": "16",
+      "e": "🧪",
+      "q": "¿En qué consiste una prueba de usabilidad?",
+      "a": "Un **grupo de usuarios reales** hace las tareas para las que se diseñó la aplicación mientras el equipo anota **errores y dificultades**. Puede hacerse sobre un **prototipo**"
+    },
+    {
+      "id": "iii8c17",
+      "n": "17",
+      "e": "🏛️",
+      "q": "¿Qué es el W3C y cuándo se fundó?",
+      "a": "El Consorcio de la World Wide Web, fundado en **octubre de 1994** y liderado por **Tim Berners-Lee**. Objetivo: **guiar la Web hacia su máximo potencial**"
+    },
+    {
+      "id": "iii8c18",
+      "n": "18",
+      "e": "🇪🇸",
+      "q": "¿Dónde está la oficina del W3C en España?",
+      "a": "En **Oviedo**, hospedada por la **FICYT** (Fundación para el Fomento de la Investigación Científica y la Tecnología)"
+    },
+    {
+      "id": "iii8c19",
+      "n": "19",
+      "e": "🚫",
+      "q": "¿El W3C asesora a organismos sobre diseño universal?",
+      "a": "**No**. El W3C **no ofrece asesoramiento** a organismos e instituciones sobre diseño universal"
+    },
+    {
+      "id": "iii8c20",
+      "n": "20",
+      "e": "🌐",
+      "t": true,
+      "q": "¿Qué es la WAI y cuándo se anunció?",
+      "a": "La **Web Accessibility Initiative**, rama del W3C anunciada el **7 de abril de 1997**. Define las **WCAG** para generar contenido accesible"
+    },
+    {
+      "id": "iii8c21",
+      "n": "21",
+      "e": "🧰",
+      "q": "Pautas de la WAI y para qué sirve cada una",
+      "a": "**WCAG**: contenido web · **ATAG**: herramientas de autor · **UAAG**: agentes de usuario (navegadores) · **XAG**: XML · **ARIA**: aplicaciones de Internet enriquecidas"
+    },
+    {
+      "id": "iii8c22",
+      "n": "22",
+      "e": "🧱",
+      "q": "¿Cuáles son las 4 capas de orientación de las WCAG?",
+      "a": "**Principios** → **pautas** → **criterios de conformidad** (verificables) → **técnicas** (suficientes y de asesoramiento)"
+    },
+    {
+      "id": "iii8c23",
+      "n": "23",
+      "e": "🔑",
+      "t": true,
+      "q": "¿Cuáles son los 4 principios de las WCAG?",
+      "a": "**Perceptible, Operable, Comprensible y Robusto**",
+      "h": "En inglés: POUR"
+    },
+    {
+      "id": "iii8c24",
+      "n": "24",
+      "e": "🤖",
+      "q": "¿Qué exige el principio «Robusto»?",
+      "a": "Que el contenido pueda ser interpretado por una gran variedad de **agentes de usuario**, incluidas las **tecnologías de asistencia**"
+    },
+    {
+      "id": "iii8c25",
+      "n": "25",
+      "e": "❓",
+      "q": "¿Las pautas WCAG son verificables?",
+      "a": "**No**. Lo verificable son los **criterios de conformidad** (dan resultado verdadero o falso)"
+    },
+    {
+      "id": "iii8c26",
+      "n": "26",
+      "e": "🥉",
+      "t": true,
+      "q": "¿Cuáles son los niveles de conformidad?",
+      "a": "**A** (el mínimo), **AA** (doble A) y **AAA** (triple A, el más exigente)"
+    },
+    {
+      "id": "iii8c27",
+      "n": "27",
+      "e": "🎚️",
+      "q": "¿Qué prioridades cubre cada nivel?",
+      "a": "**A** = prioridad 1 · **AA** = prioridades 1 y 2 · **AAA** = prioridades 1, 2 y 3"
+    },
+    {
+      "id": "iii8c28",
+      "n": "28",
+      "e": "⚠️",
+      "q": "¿Se recomienda exigir AAA a todo un sitio web?",
+      "a": "**No**, porque algunos contenidos **no pueden** cumplir todos los criterios AAA"
+    },
+    {
+      "id": "iii8c29",
+      "n": "29",
+      "e": "📄",
+      "q": "¿A qué se aplica la conformidad?",
+      "a": "A **páginas completas** (no vale excluir una parte) y, si hay un proceso (p. ej., una compra), **todas sus páginas** deben cumplir el nivel"
+    },
+    {
+      "id": "iii8c30",
+      "n": "30",
+      "e": "🔄",
+      "q": "¿Qué es una versión alternativa conforme?",
+      "a": "Una versión que cumple el nivel con **la misma funcionalidad e información**, en el **mismo idioma** y **actualizada** con la misma frecuencia"
+    },
+    {
+      "id": "iii8c31",
+      "n": "31",
+      "e": "🧯",
+      "q": "¿Qué criterios deben cumplirse en todo el contenido (sin interferencia)?",
+      "a": "**1.4.2** Control del audio, **2.1.2** Sin trampas para el foco, **2.3.1** Umbral de tres destellos y **2.2.2** Poner en pausa, detener, ocultar"
+    },
+    {
+      "id": "iii8c32",
+      "n": "32",
+      "e": "📅",
+      "t": true,
+      "q": "WCAG 1.0: fecha y estructura",
+      "a": "**5 de mayo de 1999**; **14 pautas** y **65 puntos de verificación** con prioridades"
+    },
+    {
+      "id": "iii8c33",
+      "n": "33",
+      "e": "📅",
+      "t": true,
+      "q": "WCAG 2.0: fecha y novedad",
+      "a": "**11 de diciembre de 2008**; **12 pautas** y afecta a **todo tipo de contenido web** (no solo HTML)"
+    },
+    {
+      "id": "iii8c34",
+      "n": "34",
+      "e": "🏷️",
+      "q": "¿Qué norma ISO recoge las WCAG 2.0?",
+      "a": "La **ISO/IEC 40500:2012**"
+    },
+    {
+      "id": "iii8c35",
+      "n": "35",
+      "e": "📅",
+      "t": true,
+      "q": "WCAG 2.1: fecha y novedades",
+      "a": "**5 de junio de 2018**; **13 pautas** (nueva pauta **2.5 Modalidades de entrada**) y **17 criterios nuevos**"
+    },
+    {
+      "id": "iii8c36",
+      "n": "36",
+      "e": "📅",
+      "t": true,
+      "q": "WCAG 2.2: fecha y qué elimina",
+      "a": "Publicada en **octubre de 2023**; **elimina** el criterio **4.1.1 Procesamiento (parsing)** y modifica el 2.4.7"
+    },
+    {
+      "id": "iii8c37",
+      "n": "37",
+      "e": "➕",
+      "q": "Algunos criterios nuevos de WCAG 2.2",
+      "a": "**2.5.7 Movimientos de arrastre** y **2.5.8 Tamaño del objetivo (mínimo)** (AA), además de ayuda consistente, entrada redundante y **autenticación accesible**"
+    },
+    {
+      "id": "iii8c38",
+      "n": "38",
+      "e": "🔁",
+      "q": "¿Un sitio que cumple WCAG 2.2 cumple las anteriores?",
+      "a": "**Sí**, también cumple **WCAG 2.0 y 2.1**"
+    },
+    {
+      "id": "iii8c39",
+      "n": "39",
+      "e": "🔮",
+      "q": "¿Qué se sabe de WCAG 3.0?",
+      "a": "Está en **borrador**; quiere pasar de reglas concretas a un enfoque **basado en resultados**"
+    },
+    {
+      "id": "iii8c40",
+      "n": "40",
+      "e": "📊",
+      "q": "¿Cuántos criterios tienen WCAG 2.0 y 2.1?",
+      "a": "WCAG 2.0: **61** (25 A, 13 AA, 23 AAA) · WCAG 2.1: **78** (30 A, 20 AA, 28 AAA)"
+    },
+    {
+      "id": "iii8c41",
+      "n": "41",
+      "e": "🖼️",
+      "q": "Criterio 1.1.1 Contenido no textual (A)",
+      "a": "Todo contenido no textual tiene una **alternativa textual** con el mismo propósito. Lo **decorativo** se implementa para que las ayudas técnicas lo ignoren"
+    },
+    {
+      "id": "iii8c42",
+      "n": "42",
+      "e": "🎬",
+      "q": "Subtítulos y lengua de señas: ¿qué nivel?",
+      "a": "Subtítulos grabados (**1.2.2**) = **A** · subtítulos en directo (**1.2.4**) = **AA** · lengua de señas grabado (**1.2.6**) = **AAA**"
+    },
+    {
+      "id": "iii8c43",
+      "n": "43",
+      "e": "🎨",
+      "q": "Criterio 1.4.1 Uso del color (A)",
+      "a": "El color **no** puede ser el **único medio** para transmitir información, indicar una acción o distinguir un elemento"
+    },
+    {
+      "id": "iii8c44",
+      "n": "44",
+      "e": "🔊",
+      "q": "Criterio 1.4.2 Control del audio (A)",
+      "a": "Si un audio suena solo más de **3 segundos**, debe poder **pausarse/detenerse** o controlarse su volumen"
+    },
+    {
+      "id": "iii8c45",
+      "n": "45",
+      "e": "🌓",
+      "t": true,
+      "q": "Criterio 1.4.3 Contraste mínimo (AA)",
+      "a": "Relación de contraste de al menos **4,5:1** (texto grande **3:1**). Los **logotipos** no tienen requisito"
+    },
+    {
+      "id": "iii8c46",
+      "n": "46",
+      "e": "🌗",
+      "q": "Criterio 1.4.6 Contraste mejorado (AAA)",
+      "a": "Al menos **7:1** (texto grande **4,5:1**)"
+    },
+    {
+      "id": "iii8c47",
+      "n": "47",
+      "e": "🔍",
+      "t": true,
+      "q": "Criterio 1.4.4 Cambio de tamaño del texto (AA)",
+      "a": "El texto puede ampliarse hasta un **200 %** sin ayudas técnicas y sin perder contenido ni funcionalidad"
+    },
+    {
+      "id": "iii8c48",
+      "n": "48",
+      "e": "📱",
+      "q": "Criterio 1.4.10 Reflujo (AA, WCAG 2.1)",
+      "a": "El contenido se ve sin desplazarse en dos dimensiones a un ancho equivalente a **320 píxeles CSS**"
+    },
+    {
+      "id": "iii8c49",
+      "n": "49",
+      "e": "⌨️",
+      "q": "¿Qué pide la pauta 2.1 Accesible por teclado?",
+      "a": "Toda la funcionalidad usable **con teclado** (2.1.1, A) y **sin trampas** para el foco (2.1.2, A)"
+    },
+    {
+      "id": "iii8c50",
+      "n": "50",
+      "e": "⏳",
+      "q": "Criterio 2.2.1 Tiempo ajustable (A)",
+      "a": "El usuario puede **ajustar los límites de tiempo**. Excepción: si el límite es **mayor de 20 horas**"
+    },
+    {
+      "id": "iii8c51",
+      "n": "51",
+      "e": "⚡",
+      "q": "¿Qué busca la pauta 2.3 Convulsiones?",
+      "a": "Evitar destellos que provoquen convulsiones: **2.3.1 Umbral de tres destellos o menos** (A)"
+    },
+    {
+      "id": "iii8c52",
+      "n": "52",
+      "e": "🧭",
+      "q": "Algunos criterios de la pauta 2.4 Navegable",
+      "a": "Evitar bloques (2.4.1), **titulado de páginas** (2.4.2), orden del foco (2.4.3), propósito de los enlaces (2.4.4) y **foco visible** (2.4.7)"
+    },
+    {
+      "id": "iii8c53",
+      "n": "53",
+      "e": "👆",
+      "q": "¿Qué es la pauta 2.5 Modalidades de entrada?",
+      "a": "Pauta **añadida en WCAG 2.1**: gestos y cancelación del puntero, etiqueta de nombre, accionamiento por movimiento, tamaño del objetivo…"
+    },
+    {
+      "id": "iii8c54",
+      "n": "54",
+      "e": "🗣️",
+      "q": "Criterios de idioma (pauta 3.1 Legible)",
+      "a": "**3.1.1 Idioma de la página** = **A** · **3.1.2 Idioma de las partes** = **AA**"
+    },
+    {
+      "id": "iii8c55",
+      "n": "55",
+      "e": "✍️",
+      "q": "¿Qué incluye la pauta 3.3 Entrada de datos asistida?",
+      "a": "Identificación de errores (A), etiquetas o instrucciones (A), sugerencias ante errores (AA) y prevención de errores legales y financieros (AA)"
+    },
+    {
+      "id": "iii8c56",
+      "n": "56",
+      "e": "📢",
+      "q": "Criterio 4.1.3 Mensajes de estado",
+      "a": "Nivel **AA**, añadido en **WCAG 2.1** dentro del principio **Robusto**"
+    },
+    {
+      "id": "iii8c57",
+      "n": "57",
+      "e": "🧩",
+      "q": "¿Qué es el diseño inclusivo?",
+      "a": "Crear entornos accesibles y usables por el **mayor número posible de usuarios**. Incluye especificaciones como las WCAG y **WAI-ARIA**"
+    },
+    {
+      "id": "iii8c58",
+      "n": "58",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué es WAI-ARIA?",
+      "a": "**Accessible Rich Internet Applications**: atributos que se añaden al HTML para que las **tecnologías de asistencia** entiendan los **elementos interactivos y dinámicos**"
+    },
+    {
+      "id": "iii8c59",
+      "n": "59",
+      "e": "🔔",
+      "t": true,
+      "q": "¿Para qué sirve aria-live y qué valores tiene?",
+      "a": "Marca un área que se **actualiza dinámicamente** y su prioridad de aviso: **off, polite, assertive**"
+    },
+    {
+      "id": "iii8c60",
+      "n": "60",
+      "e": "🔘",
+      "q": "¿Para qué sirve aria-label?",
+      "a": "Da un **nombre accesible** a un elemento sin texto visible (ej.: botón con lupa → aria-label=\"Buscar\")"
+    },
+    {
+      "id": "iii8c61",
+      "n": "61",
+      "e": "✅",
+      "q": "Otros atributos ARIA",
+      "a": "**aria-checked** (true, false, **mixed**), aria-expanded, aria-required, aria-invalid, aria-disabled, aria-modal, aria-valuenow/valuemin/valuemax"
+    },
+    {
+      "id": "iii8c62",
+      "n": "62",
+      "e": "🚫",
+      "q": "¿Cuándo NO hay que usar ARIA?",
+      "a": "Cuando el **elemento HTML estándar** ya cubre la accesibilidad"
+    },
+    {
+      "id": "iii8c63",
+      "n": "63",
+      "e": "🎨",
+      "q": "¿Qué es Material Design?",
+      "a": "Especificación de **Google** con principios de diseño de interfaces; no es de accesibilidad, pero ayuda a experiencias más inclusivas"
+    },
+    {
+      "id": "iii8c64",
+      "n": "64",
+      "e": "🕸️",
+      "q": "¿Qué es RDF?",
+      "a": "**Resource Description Framework** del W3C: modelo de metadatos basado en **triples sujeto-predicado-objeto**"
+    },
+    {
+      "id": "iii8c65",
+      "n": "65",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué regula el Real Decreto 1112/2018?",
+      "a": "De **7 de septiembre**: la accesibilidad de los **sitios web y aplicaciones para dispositivos móviles del sector público**"
+    },
+    {
+      "id": "iii8c66",
+      "n": "66",
+      "e": "📜",
+      "q": "¿Qué es la norma UNE 139803:2012?",
+      "a": "Los **requisitos de accesibilidad para contenidos en la Web**. Sustituye a la UNE 139803:2004 y **no** se aplica al software para acceder a la web"
+    },
+    {
+      "id": "iii8c67",
+      "n": "67",
+      "e": "📚",
+      "q": "Otras normas españolas de accesibilidad",
+      "a": "**Ley 51/2003** (igualdad de oportunidades y accesibilidad universal), **RD 1494/2007** (acceso a la sociedad de la información), **Ley 27/2007** (lenguas de signos), **RDL 1/2013** (Ley General de derechos de las personas con discapacidad)"
+    },
+    {
+      "id": "iii8c68",
+      "n": "68",
+      "e": "⚛️",
+      "t": true,
+      "q": "¿Qué significa ACID y dónde se describe?",
+      "a": "**Atomicidad, Consistencia, Aislamiento y Durabilidad**. Se describe en la **ISO/IEC 10026-1**"
+    },
+    {
+      "id": "iii8c69",
+      "n": "69",
+      "e": "💯",
+      "q": "ACID: atomicidad",
+      "a": "Se ejecutan **todos los pasos o ninguno**; la operación nunca queda a medias (ej.: transferencia bancaria)"
+    },
+    {
+      "id": "iii8c70",
+      "n": "70",
+      "e": "✔️",
+      "q": "ACID: consistencia (integridad)",
+      "a": "La transacción lleva la BD de un **estado válido a otro válido** sin romper sus reglas de integridad"
+    },
+    {
+      "id": "iii8c71",
+      "n": "71",
+      "e": "🧱",
+      "q": "ACID: aislamiento",
+      "a": "Una transacción **no afecta a otras** concurrentes. Se logra con **bloqueos** o **MVCC** (control de concurrencia multiversión)"
+    },
+    {
+      "id": "iii8c72",
+      "n": "72",
+      "e": "💾",
+      "q": "ACID: durabilidad (persistencia)",
+      "a": "Una vez realizada, la operación **persiste** aunque falle el sistema"
+    },
+    {
+      "id": "iii8c73",
+      "n": "73",
+      "e": "🪜",
+      "t": true,
+      "q": "Niveles de aislamiento ANSI/ISO SQL (de más a menos)",
+      "a": "**Serializable** → lecturas repetibles → lecturas comprometidas → **lecturas no comprometidas** (permite lecturas sucias)"
+    },
+    {
+      "id": "iii8c74",
+      "n": "74",
+      "e": "👻",
+      "t": true,
+      "q": "Efectos de lectura del SQL-92",
+      "a": "**Lectura sucia**: leer un cambio no confirmado · **no repetible**: la misma fila da otro valor · **fantasma**: la misma consulta devuelve filas nuevas (por un **INSERT**)"
+    },
+    {
+      "id": "iii8c75",
+      "n": "75",
+      "e": "📝",
+      "q": "Dos técnicas para poner ACID en práctica",
+      "a": "**Escribir en un registro (log)** antes de continuar y la **paginación en sombra** (se trabaja sobre una copia)"
+    },
+    {
+      "id": "iii8c76",
+      "n": "76",
+      "e": "🗣️",
+      "t": true,
+      "q": "¿Qué es NVDA?",
+      "a": "**Non Visual Desktop Access**: lector de pantalla **libre y gratuito** para Windows; hoy el **más popular**. Puede leer con voz o pasar a braille"
+    },
+    {
+      "id": "iii8c77",
+      "n": "77",
+      "e": "🔈",
+      "q": "¿Qué es JAWS?",
+      "a": "**Job Access With Speech**: lector de pantalla para personas ciegas; era el más popular hasta que lo desplazó NVDA"
+    },
+    {
+      "id": "iii8c78",
+      "n": "78",
+      "e": "🦄",
+      "q": "¿Qué es un licornio?",
+      "a": "Un **casco con una varilla** para manejar elementos (como teclear) **con la cabeza**"
+    },
+    {
+      "id": "iii8c79",
+      "n": "79",
+      "e": "📲",
+      "q": "Algunas apps de ayuda a la accesibilidad",
+      "a": "**Be My Eyes** (voluntarios por videollamada), **Lazzus** (asistente auditivo para desplazarse), **Tur4all** (turismo sin barreras), **TintVision** (dislexia)"
+    },
+    {
+      "id": "iii8c80",
+      "n": "80",
+      "e": "🥇",
+      "t": true,
+      "q": "Las 8 reglas de oro de Shneiderman",
+      "a": "Consistencia, usabilidad universal, realimentación informativa, guiar la tarea, **prevención de errores**, **deshacer acciones**, **locus de control interno** y **reducir la carga de memoria a corto plazo**"
+    },
+    {
+      "id": "iii8c81",
+      "n": "81",
+      "e": "🎮",
+      "q": "¿Qué es el locus de control interno en interfaces?",
+      "a": "Que el usuario sienta que **manda sobre la interfaz** y no al revés"
+    },
+    {
+      "id": "iii8c82",
+      "n": "82",
+      "e": "🔎",
+      "q": "Herramientas de evaluación automática de accesibilidad",
+      "a": "**AChecker**, **SortSite** (comercial), **WAVE** (extensión de navegador), **eXaminator** (nota de **1 a 10**), **Axe**, **Lighthouse** (Google), Tenon, QualWeb, TAW"
+    },
+    {
+      "id": "iii8c83",
+      "n": "83",
+      "e": "🔐",
+      "t": true,
+      "q": "Los 3 pilares de la seguridad de la información",
+      "a": "**Confidencialidad**, **Integridad** y **Disponibilidad**"
+    },
+    {
+      "id": "iii8c84",
+      "n": "84",
+      "e": "📘",
+      "q": "¿Qué es la ISO/IEC 27002?",
+      "a": "Estándar de controles de seguridad de la información (antes **ISO 17799**). Su versión española UNE-ISO/IEC 17799 **no es certificable**"
+    },
+    {
+      "id": "iii8c85",
+      "n": "85",
+      "e": "🤫",
+      "q": "¿Qué es el principio need-to-know?",
+      "a": "La información solo debe conocerla quien esté **autorizado** y la **necesite** de verdad"
+    },
+    {
+      "id": "iii8c86",
+      "n": "86",
+      "e": "🗄️",
+      "q": "Niveles de clasificación de la información",
+      "a": "**Confidencial** (cifrar si sale de la empresa), **Interna** (solo empleados) y **Pública**"
+    },
+    {
+      "id": "iii8c87",
+      "n": "87",
+      "e": "🧹",
+      "q": "¿Qué hacer si sospechas de un virus en tu equipo?",
+      "a": "**Apagarlo**, **desconectarlo de la red** y avisar al departamento de seguridad. **Nunca** intentar eliminarlo por tu cuenta"
+    },
+    {
+      "id": "iii8c88",
+      "n": "88",
+      "e": "🧑‍💼",
+      "q": "Tipos de controles de seguridad",
+      "a": "**Técnicos** (antivirus, cortafuegos), **organizativos** (formación, altas y bajas), **físicos** (cerraduras, sala de servidores) y **legales**"
+    },
+    {
+      "id": "iii8c89",
+      "n": "89",
+      "e": "🔑",
+      "q": "¿Qué es el principio del mínimo privilegio?",
+      "a": "Cada usuario solo accede a la información **estrictamente necesaria** para su trabajo"
+    },
+    {
+      "id": "iii8c90",
+      "n": "90",
+      "e": "🗑️",
+      "t": true,
+      "q": "¿Cómo se elimina la información de un soporte?",
+      "a": "Para reutilizarlo: **borrado seguro** (formatear **no basta**). Para desecharlo: **destrucción física**"
+    }
+  ]
+}

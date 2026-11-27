@@ -1,0 +1,304 @@
+{
+  "tema": "III-8",
+  "preguntas": [
+    {
+      "id": "iii8-01",
+      "tipico": 1,
+      "q": "¿Quién acuñó el término «Diseño Universal» en 1989?",
+      "opts": [
+        "Tim Berners-Lee",
+        "Ron Mace",
+        "Ben Shneiderman",
+        "Edgar F. Codd"
+      ],
+      "c": 1,
+      "exp": "Ron Mace, arquitecto pionero del diseño accesible."
+    },
+    {
+      "id": "iii8-02",
+      "tipico": 0,
+      "q": "¿Cuántos principios tiene el diseño universal?",
+      "opts": [
+        "4",
+        "5",
+        "7",
+        "8"
+      ],
+      "c": 2,
+      "exp": "Son 7; 4 son los principios de las WCAG y 8 las reglas de oro de Shneiderman."
+    },
+    {
+      "id": "iii8-03",
+      "tipico": 0,
+      "q": "¿Cuál NO es un principio del diseño universal?",
+      "opts": [
+        "Uso flexible",
+        "Tolerancia al error",
+        "Poco esfuerzo físico",
+        "Robustez"
+      ],
+      "c": 3,
+      "exp": "Robusto es un principio de las WCAG, no del diseño universal."
+    },
+    {
+      "id": "iii8-04",
+      "tipico": 1,
+      "q": "La ISO 9241-11 define la usabilidad en términos de…",
+      "opts": [
+        "Efectividad, eficiencia y satisfacción",
+        "Disponibilidad, integridad y confidencialidad",
+        "Perceptibilidad y robustez",
+        "Coste, plazo y calidad"
+      ],
+      "c": 0,
+      "exp": "Efectividad, eficiencia y satisfacción en un contexto de uso."
+    },
+    {
+      "id": "iii8-05",
+      "tipico": 0,
+      "q": "El W3C se fundó en…",
+      "opts": [
+        "1989",
+        "1994",
+        "1997",
+        "1999"
+      ],
+      "c": 1,
+      "exp": "Octubre de 1994. 1997 es la WAI y 1999 las WCAG 1.0."
+    },
+    {
+      "id": "iii8-06",
+      "tipico": 1,
+      "q": "Las pautas de accesibilidad para las herramientas de autor son…",
+      "opts": [
+        "WCAG",
+        "UAAG",
+        "ATAG",
+        "XAG"
+      ],
+      "c": 2,
+      "exp": "ATAG: herramientas de autor; UAAG: agentes de usuario; XAG: XML."
+    },
+    {
+      "id": "iii8-07",
+      "tipico": 1,
+      "q": "¿Cuál NO es un principio de las WCAG?",
+      "opts": [
+        "Perceptible",
+        "Operable",
+        "Comprensible",
+        "Interoperable"
+      ],
+      "c": 3,
+      "exp": "Son Perceptible, Operable, Comprensible y Robusto."
+    },
+    {
+      "id": "iii8-08",
+      "tipico": 1,
+      "q": "¿Qué es verificable en las WCAG?",
+      "opts": [
+        "Los principios",
+        "Las pautas",
+        "Los criterios de conformidad",
+        "Ninguno de ellos"
+      ],
+      "c": 2,
+      "exp": "Las pautas no son verificables; los criterios de conformidad sí."
+    },
+    {
+      "id": "iii8-09",
+      "tipico": 1,
+      "q": "Para el nivel AA, el contraste mínimo del texto normal es…",
+      "opts": [
+        "3:1",
+        "4,5:1",
+        "7:1",
+        "10:1"
+      ],
+      "c": 1,
+      "exp": "4,5:1 (3:1 en texto grande). 7:1 es el contraste mejorado AAA."
+    },
+    {
+      "id": "iii8-10",
+      "tipico": 0,
+      "q": "Según el criterio 1.4.4, el texto debe poder ampliarse hasta…",
+      "opts": [
+        "150 %",
+        "200 %",
+        "300 %",
+        "400 %"
+      ],
+      "c": 1,
+      "exp": "Hasta un 200 % sin ayudas técnicas."
+    },
+    {
+      "id": "iii8-11",
+      "tipico": 1,
+      "q": "Las WCAG 2.0 se corresponden con la norma…",
+      "opts": [
+        "ISO/IEC 40500:2012",
+        "ISO 9241-11",
+        "ISO/IEC 27002",
+        "ISO/IEC 10026-1"
+      ],
+      "c": 0,
+      "exp": "ISO/IEC 40500:2012."
+    },
+    {
+      "id": "iii8-12",
+      "tipico": 1,
+      "q": "¿Qué pauta añadió WCAG 2.1?",
+      "opts": [
+        "1.4 Distinguible",
+        "2.5 Modalidades de entrada",
+        "3.3 Entrada de datos asistida",
+        "4.1 Compatible"
+      ],
+      "c": 1,
+      "exp": "WCAG 2.1 pasó de 12 a 13 pautas con la 2.5."
+    },
+    {
+      "id": "iii8-13",
+      "tipico": 0,
+      "q": "¿Qué criterio elimina WCAG 2.2?",
+      "opts": [
+        "1.1.1 Contenido no textual",
+        "2.4.7 Foco visible",
+        "4.1.3 Mensajes de estado",
+        "4.1.1 Procesamiento (parsing)"
+      ],
+      "c": 3,
+      "exp": "Elimina el 4.1.1; el 2.4.7 se modifica."
+    },
+    {
+      "id": "iii8-14",
+      "tipico": 0,
+      "q": "Si un audio suena automáticamente, ¿a partir de cuántos segundos debe poder pararse?",
+      "opts": [
+        "Más de 3",
+        "Más de 5",
+        "Más de 10",
+        "Más de 20"
+      ],
+      "c": 0,
+      "exp": "Criterio 1.4.2 Control del audio: más de 3 segundos."
+    },
+    {
+      "id": "iii8-15",
+      "tipico": 1,
+      "q": "¿Qué valores puede tomar aria-live?",
+      "opts": [
+        "true, false, mixed",
+        "off, polite, assertive",
+        "none, inline, list",
+        "on, off, auto"
+      ],
+      "c": 1,
+      "exp": "off, polite, assertive. true/false/mixed es aria-checked; none/inline/list es aria-autocomplete."
+    },
+    {
+      "id": "iii8-16",
+      "tipico": 1,
+      "q": "El Real Decreto 1112/2018 regula la accesibilidad de…",
+      "opts": [
+        "Los sitios web y apps móviles del sector público",
+        "Los edificios públicos",
+        "Las lenguas de signos",
+        "Las telecomunicaciones privadas"
+      ],
+      "c": 0,
+      "exp": "Sitios web y aplicaciones para dispositivos móviles del sector público."
+    },
+    {
+      "id": "iii8-17",
+      "tipico": 1,
+      "q": "En ACID, la propiedad que impide que una transacción afecte a otras concurrentes es la…",
+      "opts": [
+        "Atomicidad",
+        "Consistencia",
+        "Aislamiento",
+        "Durabilidad"
+      ],
+      "c": 2,
+      "exp": "Aislamiento (Isolation). La atomicidad es «todo o nada»."
+    },
+    {
+      "id": "iii8-18",
+      "tipico": 0,
+      "q": "¿Cuál es el nivel de aislamiento más alto en ANSI/ISO SQL?",
+      "opts": [
+        "Read uncommitted",
+        "Read committed",
+        "Repeatable reads",
+        "Serializable"
+      ],
+      "c": 3,
+      "exp": "Serializable: como si las transacciones fueran una tras otra."
+    },
+    {
+      "id": "iii8-19",
+      "tipico": 1,
+      "q": "Una lectura fantasma ocurre cuando entre dos consultas iguales otra transacción hace un…",
+      "opts": [
+        "SELECT",
+        "INSERT de filas nuevas",
+        "COMMIT vacío",
+        "ROLLBACK"
+      ],
+      "c": 1,
+      "exp": "Las filas nuevas (INSERT) entran en el WHERE de la consulta repetida."
+    },
+    {
+      "id": "iii8-20",
+      "tipico": 0,
+      "q": "NVDA es…",
+      "opts": [
+        "Un lector de pantalla libre para Windows",
+        "Una herramienta de evaluación de accesibilidad",
+        "Un casco con varilla",
+        "Una norma UNE"
+      ],
+      "c": 0,
+      "exp": "Non Visual Desktop Access, lector de pantalla gratuito."
+    },
+    {
+      "id": "iii8-21",
+      "tipico": 0,
+      "q": "Las «ocho reglas de oro» del diseño de interfaces son de…",
+      "opts": [
+        "Ron Mace",
+        "Tim Berners-Lee",
+        "Shneiderman y Plaisant",
+        "Nonaka y Takeuchi"
+      ],
+      "c": 2,
+      "exp": "Shneiderman y Plaisant."
+    },
+    {
+      "id": "iii8-22",
+      "tipico": 0,
+      "q": "¿Qué herramienta de evaluación de accesibilidad puntúa la página de 1 a 10?",
+      "opts": [
+        "WAVE",
+        "Lighthouse",
+        "AChecker",
+        "eXaminator"
+      ],
+      "c": 3,
+      "exp": "eXaminator da una nota entre 1 y 10."
+    },
+    {
+      "id": "iii8-23",
+      "tipico": 1,
+      "q": "¿Qué debe hacerse con un soporte que se va a desechar?",
+      "opts": [
+        "Destruirlo físicamente",
+        "Formatearlo",
+        "Cifrarlo",
+        "Etiquetarlo como público"
+      ],
+      "c": 0,
+      "exp": "Desechar → destrucción física. Para reutilizar, borrado seguro (formatear no basta)."
+    }
+  ]
+}
