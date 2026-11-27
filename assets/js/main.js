@@ -82,7 +82,7 @@ function loadScript(src) {
 }
 (async () => {
   {
-    const V = 28;
+    const V = 29;
     if (+document.documentElement.dataset.v !== V) {
       try {
         if (!sessionStorage.getItem('agendaTAI:rl')) {

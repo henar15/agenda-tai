@@ -3502,3 +3502,8 @@ body.focus {
 .xside .btn + .btn {
   margin-top: 8px;
 }
+.ses-reset {
+  justify-self: center;
+  display: block;
+  margin: -6px auto 16px;
+}

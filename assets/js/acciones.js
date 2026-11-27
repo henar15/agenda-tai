@@ -536,6 +536,17 @@ document.addEventListener('click', (e) => {
   } else if (a === 'ckpista') {
     ui.rit.pista = 1;
     render();
+  } else if (a === 'sesreset') {
+    if (!ui.sesReset) {
+      ui.sesReset = 1;
+      render();
+      return;
+    }
+    ui.sesReset = 0;
+    reiniciarSesion();
+    if (location.hash !== '#sesion') location.hash = 'sesion';
+    else render();
+    scrollTo(0, 0);
   } else if (a === 'sesgo') {
     if (!sesHoy()) crearSesion();
     if (location.hash !== '#sesion') location.hash = 'sesion';

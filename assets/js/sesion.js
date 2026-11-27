@@ -268,15 +268,25 @@ function vSesion() {
     const st = ((S.diario || {})[today()] || {})._s || {};
     cuerpo = `<h2>🎉 ¡Sesión terminada!</h2><div class="kpis"><div class="kpi"><b>${st.c || 0}</b><span>tarjetas</span></div><div class="kpi"><b>${st.q || 0}</b><span>preguntas</span></div><div class="kpi"><b>${st.p || 0}</b><span>páginas</span></div></div><p>${esc(mascName())} está orgulloso. Mañana te espera lo siguiente; si te apetece más, tienes los exámenes y los juegos libres.</p><div class="acts"><a class="btn" href="#inicio">Volver al inicio</a></div>`;
   }
-  return `<div class="ses">${vSesStepper(s)}<div class="card ses-card">${cuerpo}</div></div>`;
+  const reset = `<button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
+  return `<div class="ses">${vSesStepper(s)}<div class="card ses-card">${cuerpo}</div>${reset}</div>`;
 }
 function vSesBoton() {
   const s = sesHoy();
   if (s && s.pasos[s.i].tipo === 'fin' && s.hechos[s.i - 1])
-    return `<a class="ses-cta done" href="#sesion"><b>✅ Sesión de hoy hecha</b><span>Ver resumen</span></a>`;
+    return `<a class="ses-cta done" href="#sesion"><b>✅ Sesión de hoy hecha</b><span>Ver resumen</span></a><button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
   if (s) {
     const p = s.pasos[s.i];
-    return `<a class="ses-cta" href="#sesion"><b>▶ Seguir con mi sesión</b><span>Paso ${s.i + 1} de ${s.pasos.length}: ${esc(PASO[p.tipo].t)}</span></a>`;
+    return `<a class="ses-cta" href="#sesion"><b>▶ Seguir con mi sesión</b><span>Paso ${s.i + 1} de ${s.pasos.length}: ${esc(PASO[p.tipo].t)}</span></a><button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
   }
   return `<a class="ses-cta" href="#sesion" data-act="sesgo"><b>▶ Empezar mi sesión de hoy</b><span>Te llevo paso a paso · 1–2 horas</span></a>`;
+}
+
+// «Empezar el día de hoy de 0»: quita lo marcado hoy y rehace la sesión desde el primer paso
+function reiniciarSesion() {
+  reiniciarHoy();
+  ui.rit = null;
+  ui.ses = null;
+  lsSet('ses', null);
+  crearSesion();
 }
