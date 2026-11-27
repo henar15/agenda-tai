@@ -1,0 +1,330 @@
+{
+  "tema": "IV-1",
+  "preguntas": [
+    {
+      "id": "iv1-01",
+      "tipico": true,
+      "q": "El firmware sucesor de la BIOS es…",
+      "opts": [
+        "UEFI",
+        "EFI-ROM",
+        "GRUB",
+        "CMOS"
+      ],
+      "c": 0,
+      "exp": "UEFI, escrito en C, con arranque seguro."
+    },
+    {
+      "id": "iv1-02",
+      "tipico": false,
+      "q": "Un sistema operativo de estructura monolítica, como MS-DOS…",
+      "opts": [
+        "Separa el núcleo en capas protegidas",
+        "Solo funciona en red",
+        "Ejecuta todo al mismo nivel y un fallo afecta a todo el sistema",
+        "Usa microkernel"
+      ],
+      "c": 2,
+      "exp": "Todo está al mismo nivel del kernel; no es fiable."
+    },
+    {
+      "id": "iv1-03",
+      "tipico": true,
+      "q": "El protocolo LDAP es una versión ligera de…",
+      "opts": [
+        "X.400",
+        "X.509",
+        "X.25",
+        "X.500"
+      ],
+      "c": 3,
+      "exp": "LDAP es «X.500-lite»."
+    },
+    {
+      "id": "iv1-04",
+      "tipico": true,
+      "q": "El puerto por defecto de LDAPS (LDAP sobre SSL) es…",
+      "opts": [
+        "389",
+        "636",
+        "443",
+        "3268"
+      ],
+      "c": 1,
+      "exp": "389 es LDAP; 636 es LDAPS."
+    },
+    {
+      "id": "iv1-05",
+      "tipico": true,
+      "q": "La versión actual de LDAP se define en la…",
+      "opts": [
+        "RFC 4511",
+        "RFC 4510",
+        "RFC 2251",
+        "RFC 1777"
+      ],
+      "c": 0,
+      "exp": "LDAPv3 en la RFC 4511; la 4510 es la hoja de ruta."
+    },
+    {
+      "id": "iv1-06",
+      "tipico": false,
+      "q": "La especificación más difundida de la serie X.500 es…",
+      "opts": [
+        "X.400, de correo",
+        "DAP",
+        "X.509, de certificados de clave pública",
+        "DSP"
+      ],
+      "c": 2,
+      "exp": "X.509 trata de certificados, no de directorio."
+    },
+    {
+      "id": "iv1-07",
+      "tipico": true,
+      "q": "¿Qué operación LDAP sirve para autenticarse?",
+      "opts": [
+        "Search",
+        "Compare",
+        "Abandon",
+        "Bind"
+      ],
+      "c": 3,
+      "exp": "Bind autentica y fija la versión del protocolo."
+    },
+    {
+      "id": "iv1-08",
+      "tipico": false,
+      "q": "eDirectory es el servicio de directorio de…",
+      "opts": [
+        "Microsoft",
+        "Novell (NetIQ)",
+        "IBM",
+        "Oracle"
+      ],
+      "c": 1,
+      "exp": "Antes se llamaba NDS."
+    },
+    {
+      "id": "iv1-09",
+      "tipico": true,
+      "q": "¿Cuál NO es uno de los protocolos principales de Active Directory?",
+      "opts": [
+        "SNMP",
+        "LDAP",
+        "Kerberos",
+        "DNS"
+      ],
+      "c": 0,
+      "exp": "AD usa sobre todo LDAP, DNS, DHCP y Kerberos."
+    },
+    {
+      "id": "iv1-10",
+      "tipico": true,
+      "q": "El orden jerárquico correcto en Active Directory, de mayor a menor, es…",
+      "opts": [
+        "Dominio, árbol, bosque, OU",
+        "Árbol, bosque, dominio, OU",
+        "Bosque, árbol, dominio, OU",
+        "Bosque, dominio, árbol, OU"
+      ],
+      "c": 2,
+      "exp": "Bosque → árbol → dominio → unidad organizativa."
+    },
+    {
+      "id": "iv1-11",
+      "tipico": false,
+      "q": "Para crear un dominio de Active Directory, el servidor debe tener…",
+      "opts": [
+        "IP asignada por DHCP",
+        "Windows 10 Pro",
+        "Disco FAT32",
+        "IP fija y un servidor DNS"
+      ],
+      "c": 3,
+      "exp": "IP fija (no DHCP), DNS y NTFS."
+    },
+    {
+      "id": "iv1-12",
+      "tipico": true,
+      "q": "Desde Windows Server 2008, Active Directory se denomina…",
+      "opts": [
+        "AD LDS",
+        "AD DS",
+        "ADFS",
+        "ADSI"
+      ],
+      "c": 1,
+      "exp": "Active Directory Domain Services."
+    },
+    {
+      "id": "iv1-13",
+      "tipico": false,
+      "q": "En un DN de Active Directory, «DC» significa…",
+      "opts": [
+        "Componente/clase de dominio",
+        "Domain Controller",
+        "Directory Container",
+        "Distinguished Class"
+      ],
+      "c": 0,
+      "exp": "CN nombre común, OU unidad organizativa, DC dominio."
+    },
+    {
+      "id": "iv1-14",
+      "tipico": true,
+      "q": "El protocolo de autenticación principal de Active Directory es…",
+      "opts": [
+        "NTLM",
+        "RADIUS",
+        "Kerberos V5",
+        "TACACS+"
+      ],
+      "c": 2,
+      "exp": "Kerberos V5; también admite NTLM."
+    },
+    {
+      "id": "iv1-15",
+      "tipico": false,
+      "q": "Una confianza externa en Active Directory es…",
+      "opts": [
+        "Transitiva",
+        "Siempre de dos vías y transitiva",
+        "Automática entre todos los bosques",
+        "No transitiva"
+      ],
+      "c": 3,
+      "exp": "La externa es no transitiva."
+    },
+    {
+      "id": "iv1-16",
+      "tipico": true,
+      "q": "El servicio de Windows Server para distribuir actualizaciones de Microsoft a los equipos es…",
+      "opts": [
+        "SCCM Update",
+        "WSUS",
+        "WDS",
+        "RSAT"
+      ],
+      "c": 1,
+      "exp": "Windows Server Update Services."
+    },
+    {
+      "id": "iv1-17",
+      "tipico": false,
+      "q": "En Ubuntu, el comando que instala las actualizaciones de la lista de paquetes es…",
+      "opts": [
+        "apt-get upgrade",
+        "apt-get update",
+        "apt-get install",
+        "apt-get clean"
+      ],
+      "c": 0,
+      "exp": "update obtiene la lista; upgrade instala."
+    },
+    {
+      "id": "iv1-18",
+      "tipico": true,
+      "q": "El comando de Windows que muestra el conjunto resultante de directivas (RSoP) es…",
+      "opts": [
+        "gpupdate",
+        "netsh",
+        "gpresult",
+        "nbtstat"
+      ],
+      "c": 2,
+      "exp": "gpresult muestra las directivas aplicadas."
+    },
+    {
+      "id": "iv1-19",
+      "tipico": true,
+      "q": "tracert, por defecto, busca el destino con un máximo de…",
+      "opts": [
+        "15 saltos",
+        "64 saltos",
+        "255 saltos",
+        "30 saltos"
+      ],
+      "c": 3,
+      "exp": "/h permite cambiarlo; por defecto 30."
+    },
+    {
+      "id": "iv1-20",
+      "tipico": true,
+      "q": "La herramienta conocida como «navaja suiza» de los hackers es…",
+      "opts": [
+        "Netsh",
+        "Netcat",
+        "Nmap",
+        "PuTTY"
+      ],
+      "c": 1,
+      "exp": "Netcat (nc), de Hobbit, 1996."
+    },
+    {
+      "id": "iv1-21",
+      "tipico": true,
+      "q": "La política de ejecución de PowerShell que viene por defecto es…",
+      "opts": [
+        "Restricted",
+        "Unrestricted",
+        "RemoteSigned",
+        "AllSigned"
+      ],
+      "c": 0,
+      "exp": "Restricted: no ejecuta scripts."
+    },
+    {
+      "id": "iv1-22",
+      "tipico": false,
+      "q": "La principal diferencia de PowerShell con otros intérpretes es que…",
+      "opts": [
+        "Solo funciona en Windows",
+        "No admite alias",
+        "Su salida son objetos",
+        "No puede ejecutar comandos de Windows"
+      ],
+      "c": 2,
+      "exp": "Devuelve objetos .NET que se pueden canalizar."
+    },
+    {
+      "id": "iv1-23",
+      "tipico": false,
+      "q": "El comando que repara archivos de sistema dañados en Windows es…",
+      "opts": [
+        "chkdsk /f",
+        "diskpart",
+        "msconfig",
+        "sfc /scannow"
+      ],
+      "c": 3,
+      "exp": "System File Checker."
+    },
+    {
+      "id": "iv1-24",
+      "tipico": false,
+      "q": "Puppet es una herramienta de…",
+      "opts": [
+        "Virtualización",
+        "Gestión declarativa de la configuración",
+        "Copias de seguridad",
+        "Monitorización de red"
+      ],
+      "c": 1,
+      "exp": "Usa manifiestos y Facter."
+    },
+    {
+      "id": "iv1-25",
+      "tipico": true,
+      "q": "El software para asegurar y administrar móviles de forma remota se llama…",
+      "opts": [
+        "MDM",
+        "BYOD",
+        "DEP",
+        "NAS"
+      ],
+      "c": 0,
+      "exp": "Mobile Device Management; BYOD es la política de traer tu dispositivo."
+    }
+  ]
+}

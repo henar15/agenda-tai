@@ -1,0 +1,330 @@
+{
+  "tema": "IV-2",
+  "preguntas": [
+    {
+      "id": "iv2-01",
+      "tipico": true,
+      "q": "Las reglas de Codd para el modelo relacional se numeran…",
+      "opts": [
+        "Del 0 al 12",
+        "Del 1 al 12",
+        "Del 1 al 10",
+        "Del 0 al 10"
+      ],
+      "c": 0,
+      "exp": "Son 13 reglas (0 a 12), las «12 reglas de Codd»."
+    },
+    {
+      "id": "iv2-02",
+      "tipico": true,
+      "q": "La regla de Codd que exige localizar cada dato por tabla, columna y clave primaria es la de…",
+      "opts": [
+        "Información",
+        "No subversión",
+        "Acceso garantizado",
+        "Independencia física"
+      ],
+      "c": 2,
+      "exp": "Regla 2, acceso garantizado."
+    },
+    {
+      "id": "iv2-03",
+      "tipico": false,
+      "q": "Según Codd, ¿qué independencia es más difícil de lograr?",
+      "opts": [
+        "Física",
+        "De la distribución",
+        "De la integridad",
+        "Lógica"
+      ],
+      "c": 3,
+      "exp": "La independencia lógica es más difícil que la física."
+    },
+    {
+      "id": "iv2-04",
+      "tipico": true,
+      "q": "Los tres niveles de la arquitectura ANSI/X3/SPARC son…",
+      "opts": [
+        "Conceptual, lógico y físico",
+        "Externo, conceptual e interno",
+        "Usuario, aplicación y datos",
+        "Externo, lógico y físico"
+      ],
+      "c": 1,
+      "exp": "Externo (vistas), conceptual e interno."
+    },
+    {
+      "id": "iv2-05",
+      "tipico": false,
+      "q": "Quien decide qué datos se almacenan y con qué políticas, con alcance en toda la organización, es…",
+      "opts": [
+        "El administrador de datos",
+        "El DBA",
+        "El administrador de sistemas",
+        "El analista"
+      ],
+      "c": 0,
+      "exp": "Es un gerente; el DBA ejecuta sus decisiones."
+    },
+    {
+      "id": "iv2-06",
+      "tipico": false,
+      "q": "El lenguaje para el control de transacciones se denomina…",
+      "opts": [
+        "DCL",
+        "DDL",
+        "TCL",
+        "DML"
+      ],
+      "c": 2,
+      "exp": "TCL; DCL es control de acceso/permisos."
+    },
+    {
+      "id": "iv2-07",
+      "tipico": true,
+      "q": "El tiempo máximo permitido para recuperar los sistemas tras un incidente es el…",
+      "opts": [
+        "RPO",
+        "MTBF",
+        "SLA",
+        "RTO"
+      ],
+      "c": 3,
+      "exp": "RTO; el RPO es el punto hasta el que se acepta perder datos."
+    },
+    {
+      "id": "iv2-08",
+      "tipico": true,
+      "q": "La copia que guarda lo modificado desde la última completa SIN borrar el archive bit es la…",
+      "opts": [
+        "Completa",
+        "Diferencial",
+        "Incremental",
+        "Espejo"
+      ],
+      "c": 1,
+      "exp": "La diferencial deja intacto el archive bit."
+    },
+    {
+      "id": "iv2-09",
+      "tipico": true,
+      "q": "En la secuencia GFS, si se usan copias incrementales y el sistema falla el jueves, se necesita…",
+      "opts": [
+        "La completa y todas las incrementales desde entonces",
+        "Solo la completa",
+        "La completa y la última incremental",
+        "Solo la incremental del miércoles"
+      ],
+      "c": 0,
+      "exp": "Con incrementales hacen falta todas; con diferenciales, solo la última."
+    },
+    {
+      "id": "iv2-10",
+      "tipico": false,
+      "q": "En el esquema de copias de 20 soportes, el reparto es…",
+      "opts": [
+        "5 + 12 + 3",
+        "7 + 10 + 3",
+        "7 + 12 + 1",
+        "4 + 12 + 4"
+      ],
+      "c": 2,
+      "exp": "7 diarios, 12 mensuales y 1 anual."
+    },
+    {
+      "id": "iv2-11",
+      "tipico": true,
+      "q": "La red especializada de alta velocidad de discos y switches que el servidor ve como almacenamiento local es…",
+      "opts": [
+        "DAS",
+        "NAS",
+        "RAID",
+        "SAN"
+      ],
+      "c": 3,
+      "exp": "SAN; el NAS comparte archivos por la LAN."
+    },
+    {
+      "id": "iv2-12",
+      "tipico": false,
+      "q": "La replicación entre CPDs que ofrece el RPO más bajo es la…",
+      "opts": [
+        "Asíncrona",
+        "Síncrona",
+        "Por snapshots",
+        "Diferida"
+      ],
+      "c": 1,
+      "exp": "Síncrona: copia casi instantánea, pero penaliza el rendimiento."
+    },
+    {
+      "id": "iv2-13",
+      "tipico": true,
+      "q": "La tecnología de VMware que migra una VM en ejecución sin parada es…",
+      "opts": [
+        "vMotion",
+        "DRS",
+        "DPM",
+        "VMHA"
+      ],
+      "c": 0,
+      "exp": "vMotion; DRS la usa para equilibrar recursos."
+    },
+    {
+      "id": "iv2-14",
+      "tipico": true,
+      "q": "Un hipervisor que se ejecuta directamente sobre el hardware es de…",
+      "opts": [
+        "Tipo 2 (hosted)",
+        "Tipo contenedor",
+        "Tipo 1 (bare metal)",
+        "Tipo paravirtual"
+      ],
+      "c": 2,
+      "exp": "Tipo 1 = nativo o bare metal."
+    },
+    {
+      "id": "iv2-15",
+      "tipico": false,
+      "q": "En la arquitectura x86, el modo kernel corresponde al…",
+      "opts": [
+        "Ring 3",
+        "Ring 1",
+        "Ring 2",
+        "Ring 0"
+      ],
+      "c": 3,
+      "exp": "Ring 0 máximo privilegio; ring 3 modo usuario."
+    },
+    {
+      "id": "iv2-16",
+      "tipico": true,
+      "q": "En la paravirtualización…",
+      "opts": [
+        "El SO invitado no se modifica",
+        "El SO invitado se modifica y usa hypercalls",
+        "Todo lo gestiona el kernel del anfitrión",
+        "Se necesita Intel VT-x obligatoriamente"
+      ],
+      "c": 1,
+      "exp": "Así se evita emular las operaciones privilegiadas."
+    },
+    {
+      "id": "iv2-17",
+      "tipico": true,
+      "q": "En la virtualización basada en contenedores…",
+      "opts": [
+        "Los contenedores comparten el kernel del anfitrión",
+        "Cada contenedor tiene su propio kernel",
+        "Se emula todo el hardware",
+        "Solo funciona en Windows"
+      ],
+      "c": 0,
+      "exp": "Por eso son más ligeros que las VM."
+    },
+    {
+      "id": "iv2-18",
+      "tipico": true,
+      "q": "El disco virtual que solo ocupa lo que necesita y crece con la demanda usa…",
+      "opts": [
+        "Thick lazy zeroed",
+        "Thick eager zeroed",
+        "Thin provisioning",
+        "Zoning"
+      ],
+      "c": 2,
+      "exp": "Thin ahorra espacio pero es más lento."
+    },
+    {
+      "id": "iv2-19",
+      "tipico": false,
+      "q": "El disco thick que se pone a cero al crearse y es más seguro es el…",
+      "opts": [
+        "Lazy zeroed",
+        "Thin",
+        "Dinámico",
+        "Eager zeroed"
+      ],
+      "c": 3,
+      "exp": "Eager zeroed tarda más en crearse."
+    },
+    {
+      "id": "iv2-20",
+      "tipico": true,
+      "q": "La diferencia entre VDI y SDI es que…",
+      "opts": [
+        "VDI virtualiza solo aplicaciones",
+        "VDI virtualiza el escritorio completo y SDI solo las aplicaciones",
+        "SDI virtualiza todo el escritorio",
+        "Son lo mismo"
+      ],
+      "c": 1,
+      "exp": "SDI virtualiza la capa de aplicación."
+    },
+    {
+      "id": "iv2-21",
+      "tipico": false,
+      "q": "Un escritorio VDI que vuelve a su estado original al cerrar sesión es…",
+      "opts": [
+        "No persistente",
+        "Persistente",
+        "Híbrido",
+        "Dedicado"
+      ],
+      "c": 0,
+      "exp": "El persistente guarda la imagen de cada usuario."
+    },
+    {
+      "id": "iv2-22",
+      "tipico": true,
+      "q": "¿Cuál NO es una característica esencial del cloud según el NIST?",
+      "opts": [
+        "Servicio bajo demanda",
+        "Elasticidad rápida",
+        "Licencia perpetua",
+        "Servicio medido"
+      ],
+      "c": 2,
+      "exp": "Las otras dos son acceso amplio a la red y agrupación de recursos."
+    },
+    {
+      "id": "iv2-23",
+      "tipico": true,
+      "q": "Google App Engine y Microsoft Azure son ejemplos de…",
+      "opts": [
+        "SaaS",
+        "IaaS",
+        "FaaS",
+        "PaaS"
+      ],
+      "c": 3,
+      "exp": "Plataforma para desarrollar y ejecutar aplicaciones."
+    },
+    {
+      "id": "iv2-24",
+      "tipico": true,
+      "q": "Amazon EC2 y S3 son ejemplos de…",
+      "opts": [
+        "SaaS",
+        "IaaS",
+        "PaaS",
+        "IDaaS"
+      ],
+      "c": 1,
+      "exp": "Cómputo y almacenamiento como servicio."
+    },
+    {
+      "id": "iv2-25",
+      "tipico": false,
+      "q": "Señala la afirmación correcta sobre multicloud:",
+      "opts": [
+        "Toda nube híbrida es multicloud",
+        "Toda multicloud es híbrida",
+        "Multicloud usa un único proveedor",
+        "Intercloud y multicloud son lo mismo"
+      ],
+      "c": 0,
+      "exp": "No todas las multicloud son híbridas."
+    }
+  ]
+}

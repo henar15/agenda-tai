@@ -1,0 +1,78 @@
+{
+  "tema": "IV-1",
+  "ramas": [
+    {
+      "t": "Software de base",
+      "e": "💽",
+      "items": [
+        "**Firmware**: BIOS → **UEFI** (arranque seguro)",
+        "**SO**: gestiona recursos, intermediario hw-usuario",
+        "Monolítico (MS-DOS): un fallo tumba todo",
+        "**Kernel** = núcleo; **proceso** = programa en ejecución"
+      ]
+    },
+    {
+      "t": "Servicio de directorio",
+      "e": "📇",
+      "items": [
+        "Guarda **usuarios y recursos** de la red",
+        "Optimizado para **lecturas**, esquema extensible",
+        "**DN** = nombre único de una entrada",
+        "**X.500** (UIT-T) · **X.509** = certificados"
+      ]
+    },
+    {
+      "t": "LDAP",
+      "e": "🪶",
+      "items": [
+        "Protocolo ligero de **aplicación** (X.500-lite)",
+        "**LDAPv3 · RFC 4511**",
+        "Puertos **389** y **636** (LDAPS)",
+        "Operaciones: **Bind**, Search, Compare, Unbind…"
+      ]
+    },
+    {
+      "t": "Active Directory",
+      "e": "🪟",
+      "items": [
+        "Directorio de **Microsoft**; desde 2008 **AD DS**",
+        "Usa **LDAP, DNS, DHCP, Kerberos**",
+        "**Bosque → árbol → dominio → OU**",
+        "Requisitos: Windows Server, **IP fija**, DNS, NTFS",
+        "DN: **CN, OU, DC** · GUID 128 bits · UPN"
+      ]
+    },
+    {
+      "t": "Administrador de sistemas",
+      "e": "👷",
+      "items": [
+        "**Copias**: periodicidad, tipo, soporte, fuera del centro",
+        "Actualizar: **WSUS** · apt-get update/upgrade",
+        "Cuentas, monitorización y **seguridad**",
+        "Atención por **tickets** y **documentar** todo"
+      ]
+    },
+    {
+      "t": "Comandos y shells",
+      "e": "🐚",
+      "items": [
+        "cmd (.bat) vs **PowerShell** (objetos, cmdlets)",
+        "**ipconfig, ping, tracert, netstat, nslookup**",
+        "**netsh** (red) · **Netcat** (navaja suiza)",
+        "**Bash** (Brian Fox, GNU) · Shellshock 2014",
+        "ExecutionPolicy por defecto: **Restricted**"
+      ]
+    },
+    {
+      "t": "Mantenimiento y móviles",
+      "e": "📲",
+      "items": [
+        "**sfc /scannow** repara archivos de sistema",
+        "**Puppet**: configuración declarativa",
+        "**BYOD**: trae tu propio dispositivo",
+        "**MDM**: gestión remota de móviles",
+        "Enrolamiento: manual, automático, QR/NFC, cuenta"
+      ]
+    }
+  ]
+}

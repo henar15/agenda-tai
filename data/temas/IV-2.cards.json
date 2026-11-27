@@ -1,0 +1,729 @@
+{
+  "tema": "IV-2",
+  "cards": [
+    {
+      "id": "iv2c1",
+      "n": "1",
+      "e": "🗃️",
+      "t": false,
+      "q": "¿Qué es una base de datos?",
+      "a": "Un conjunto de **datos estructurados e interrelacionados**, sin redundancia, almacenados en un soporte informático y que representan el **mundo real**"
+    },
+    {
+      "id": "iv2c2",
+      "n": "2",
+      "e": "🎯",
+      "t": true,
+      "q": "Objetivos de un sistema de bases de datos",
+      "a": "Visión **abstracta** de los datos, **independencia** datos-aplicaciones, evitar **redundancia e inconsistencia**, **integridad**, **atomicidad**, seguridad y **acceso concurrente**"
+    },
+    {
+      "id": "iv2c3",
+      "n": "3",
+      "e": "⚛️",
+      "t": false,
+      "q": "¿Qué es la atomicidad?",
+      "a": "Un proceso ocurre **entero o no ocurre**: si falla a medias, se vuelve al **estado consistente anterior**"
+    },
+    {
+      "id": "iv2c4",
+      "n": "4",
+      "e": "🧩",
+      "t": true,
+      "q": "Componentes de un sistema de bases de datos",
+      "a": "La **base de datos**, el **SGBD**, el **diccionario de datos**, el **DBA** y los **usuarios**"
+    },
+    {
+      "id": "iv2c5",
+      "n": "5",
+      "e": "📖",
+      "t": false,
+      "q": "¿Qué contiene el diccionario de datos?",
+      "a": "La lista de **campos** con su descripción, longitud y valores posibles; también representación física, formas de acceso e **índices**"
+    },
+    {
+      "id": "iv2c6",
+      "n": "6",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es un SGBD?",
+      "a": "Conjunto de programas y lenguajes para **describir, manipular y usar** los datos manteniendo **integridad, confidencialidad y seguridad**"
+    },
+    {
+      "id": "iv2c7",
+      "n": "7",
+      "e": "👨‍🔬",
+      "t": false,
+      "q": "¿Quién definió las reglas del modelo relacional?",
+      "a": "**Edgar F. Codd**: **13 reglas** (numeradas de la **0 a la 12**), conocidas como las \"12 reglas de Codd\""
+    },
+    {
+      "id": "iv2c8",
+      "n": "8",
+      "e": "0️⃣",
+      "t": false,
+      "q": "Regla 0 de Codd",
+      "a": "**Fundación**: un sistema relacional debe gestionar sus bases de datos **solo con capacidades relacionales**"
+    },
+    {
+      "id": "iv2c9",
+      "n": "9",
+      "e": "📊",
+      "t": true,
+      "q": "Reglas 1 y 2 de Codd",
+      "a": "**1. Información**: todo se representa con **valores en tablas**. **2. Acceso garantizado**: cada dato se localiza con **tabla + columna + clave primaria**"
+    },
+    {
+      "id": "iv2c10",
+      "n": "10",
+      "e": "⭕",
+      "t": false,
+      "q": "Regla 3 de Codd",
+      "a": "**Tratamiento sistemático de los nulos**: debe haber una representación de la información que falta, distinta de cualquier valor"
+    },
+    {
+      "id": "iv2c11",
+      "n": "11",
+      "e": "📚",
+      "t": false,
+      "q": "Reglas 4 a 7 de Codd",
+      "a": "**4.** Catálogo dinámico en línea · **5.** Sublenguaje de datos completo · **6.** Actualización de **vistas** · **7.** Inserción, actualización y borrado **de alto nivel** (sobre conjuntos)"
+    },
+    {
+      "id": "iv2c12",
+      "n": "12",
+      "e": "🔓",
+      "t": true,
+      "q": "Reglas 8 y 9 de Codd",
+      "a": "**8. Independencia física** (cambiar el almacenamiento no afecta a las aplicaciones) y **9. Independencia lógica** (cambiar las tablas base tampoco). La lógica es **más difícil**"
+    },
+    {
+      "id": "iv2c13",
+      "n": "13",
+      "e": "🛡️",
+      "t": false,
+      "q": "Reglas 10, 11 y 12 de Codd",
+      "a": "**10.** Independencia de la **integridad** · **11.** Independencia de la **distribución** · **12.** **No subversión** (una interfaz de bajo nivel no puede saltarse las reglas)"
+    },
+    {
+      "id": "iv2c14",
+      "n": "14",
+      "e": "📐",
+      "t": false,
+      "q": "Fases del diseño de una base de datos",
+      "a": "Estudio inicial (**requisitos**) → **diseño conceptual** → **diseño lógico** → **diseño físico**"
+    },
+    {
+      "id": "iv2c15",
+      "n": "15",
+      "e": "🧾",
+      "t": false,
+      "q": "Instrucciones DDL de SQL para crear estructuras",
+      "a": "**CREATE DATABASE**, CREATE TABLE, CREATE SCHEMA, CREATE VIEW, CREATE INDEX"
+    },
+    {
+      "id": "iv2c16",
+      "n": "16",
+      "e": "👔",
+      "t": true,
+      "q": "Administrador de datos vs DBA",
+      "a": "**Administrador de datos**: gerente, decide qué datos guardar y sus políticas (toda la organización). **DBA**: técnico que **pone en práctica** esas decisiones"
+    },
+    {
+      "id": "iv2c17",
+      "n": "17",
+      "e": "🏛️",
+      "t": false,
+      "q": "Los tres niveles de ANSI/X3/SPARC",
+      "a": "**Externo** (vistas de usuario), **conceptual** (estructura de la BD) e **interno** (almacenamiento físico)",
+      "h": "Buscan separar **datos y aplicaciones**"
+    },
+    {
+      "id": "iv2c18",
+      "n": "18",
+      "e": "👁️",
+      "t": false,
+      "q": "¿Qué hace una vista en el nivel externo?",
+      "a": "Muestra a cada usuario **solo la información relevante** o permitida y oculta el resto; no muestra la estructura real"
+    },
+    {
+      "id": "iv2c19",
+      "n": "19",
+      "e": "🔤",
+      "t": false,
+      "q": "Lenguajes que debe conocer un DBA",
+      "a": "**DDL** (definición), **DML** (manipulación), **DCL** (control) y **TCL** (control de transacciones). Sobre todo **SQL**"
+    },
+    {
+      "id": "iv2c20",
+      "n": "20",
+      "e": "📝",
+      "t": true,
+      "q": "Funciones del DBA",
+      "a": "Instalar hardware y SO (con el admin. de sistemas), **elegir e instalar el SGBD**, crear la BD, **usuarios y permisos**, seguridad, **rendimiento**, copias, **integridad**, **disponibilidad**, espacio en disco y documentación"
+    },
+    {
+      "id": "iv2c21",
+      "n": "21",
+      "e": "⏱️",
+      "t": false,
+      "q": "Los dos objetivos de la disponibilidad",
+      "a": "**Maximizar el tiempo entre fallos** y **minimizar el tiempo de recuperación**"
+    },
+    {
+      "id": "iv2c22",
+      "n": "22",
+      "e": "🙅",
+      "t": false,
+      "q": "¿El DBA procesa datos?",
+      "a": "**No**: no es usuario del sistema. Administra la **actividad de datos**, no sus valores (da estándares, guías y procedimientos)"
+    },
+    {
+      "id": "iv2c23",
+      "n": "23",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Qué es el RTO?",
+      "a": "**Recovery Time Objective**: el **tiempo máximo** permitido para recuperar sistemas y datos tras un incidente"
+    },
+    {
+      "id": "iv2c24",
+      "n": "24",
+      "e": "📍",
+      "t": true,
+      "q": "¿Qué es el RPO?",
+      "a": "**Recovery Point Objective**: el **punto en el tiempo** hasta el que se acepta **perder datos**. La redundancia lo **reduce**"
+    },
+    {
+      "id": "iv2c25",
+      "n": "25",
+      "e": "🧮",
+      "t": false,
+      "q": "Medidas técnicas de una política de backup",
+      "a": "**Volumen** a copiar (completa, incremental, diferencial), **tiempo disponible** y **soporte** (hoy discos externos y cintas)"
+    },
+    {
+      "id": "iv2c26",
+      "n": "26",
+      "e": "🗓️",
+      "t": false,
+      "q": "Medidas organizativas de una política de backup",
+      "a": "**Frecuencia** (en principio **diaria**) y lugar, **planificación** (noche o mediodía, automática), **comprobación** (restaurar de prueba) y un **responsable**"
+    },
+    {
+      "id": "iv2c27",
+      "n": "27",
+      "e": "🔢",
+      "t": false,
+      "q": "Esquema de copias con 20 soportes",
+      "a": "**7** diarios + **12** mensuales + **1** anual = **20**"
+    },
+    {
+      "id": "iv2c28",
+      "n": "28",
+      "e": "✅",
+      "t": false,
+      "q": "Exigencias de un buen respaldo",
+      "a": "Ser **confiable**, estar **fuera de línea** en lugar seguro y permitir una **recuperación rápida y eficiente**"
+    },
+    {
+      "id": "iv2c29",
+      "n": "29",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué es el archive bit?",
+      "a": "Una marca que se **activa al modificar** un archivo (o bloque) e indica qué falta por respaldar. Con él funcionan los 3 tipos de copia"
+    },
+    {
+      "id": "iv2c30",
+      "n": "30",
+      "e": "💯",
+      "t": false,
+      "q": "Copia completa (full)",
+      "a": "Guarda **todos** los archivos indicados y **borra el archive bit** de todos"
+    },
+    {
+      "id": "iv2c31",
+      "n": "31",
+      "e": "➕",
+      "t": false,
+      "q": "Copia incremental",
+      "a": "Guarda solo lo **modificado desde la última copia** (archive bit activo) y **borra el archive bit**. Ocupa poco, pero la **recuperación es más complicada**"
+    },
+    {
+      "id": "iv2c32",
+      "n": "32",
+      "e": "🔀",
+      "t": true,
+      "q": "Copia diferencial",
+      "a": "Guarda los archivos modificados desde la **última completa** pero **deja intacto el archive bit**"
+    },
+    {
+      "id": "iv2c33",
+      "n": "33",
+      "e": "👴",
+      "t": false,
+      "q": "¿Qué es la secuencia GFS?",
+      "a": "**Grandfather-Father-Son**: **completa cada semana** e incrementales o diferenciales **cada día**"
+    },
+    {
+      "id": "iv2c34",
+      "n": "34",
+      "e": "🧩",
+      "t": false,
+      "q": "Restaurar con GFS si falla el jueves",
+      "a": "Completa del viernes anterior + **solo la última diferencial**; o bien **todas las incrementales** desde el sábado"
+    },
+    {
+      "id": "iv2c35",
+      "n": "35",
+      "e": "💿",
+      "t": true,
+      "q": "¿Qué es RAID?",
+      "a": "**Redundant Array of Independent Disks**: **2 o más discos** trabajando juntos; mantiene copias en línea y recupera sin intervención del administrador"
+    },
+    {
+      "id": "iv2c36",
+      "n": "36",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es DAS?",
+      "a": "**Direct-Attached Storage**: almacenamiento **conectado directamente** a la máquina (SCSI, FC, SATA, IDE)"
+    },
+    {
+      "id": "iv2c37",
+      "n": "37",
+      "e": "🗂️",
+      "t": true,
+      "q": "¿Qué es NAS?",
+      "a": "**Network Attached Storage**: servidor de **archivos** en la red local (TCP/IP). Pega: compite por el **ancho de banda** con el resto del tráfico"
+    },
+    {
+      "id": "iv2c38",
+      "n": "38",
+      "e": "🛣️",
+      "t": false,
+      "q": "¿Qué es SAN?",
+      "a": "**Storage Area Network**: **red especializada de alta velocidad** de discos y switches que el sistema ve como almacenamiento local; backup **sin congestionar la red**"
+    },
+    {
+      "id": "iv2c39",
+      "n": "39",
+      "e": "🏢",
+      "t": false,
+      "q": "Tipos de replicación entre CPDs",
+      "a": "**Síncrona** (instantánea, **RPO más bajo**, penaliza rendimiento), **asíncrona** (con retraso, RPO mayor) y **por snapshots** (equilibrio)"
+    },
+    {
+      "id": "iv2c40",
+      "n": "40",
+      "e": "⚖️",
+      "t": false,
+      "q": "Inconvenientes de CPDs redundantes",
+      "a": "**Costes**, **complejidad** y **latencia** por la distancia"
+    },
+    {
+      "id": "iv2c41",
+      "n": "41",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿Por qué una VM se puede mover de servidor?",
+      "a": "Porque tiene su propio **hardware virtual**: es **independiente del hardware** físico y portable"
+    },
+    {
+      "id": "iv2c42",
+      "n": "42",
+      "e": "🚚",
+      "t": true,
+      "q": "¿Qué es vMotion?",
+      "a": "Tecnología de **VMware** para **migrar una VM en ejecución** de un servidor a otro **sin tiempo de inactividad**"
+    },
+    {
+      "id": "iv2c43",
+      "n": "43",
+      "e": "🔋",
+      "t": false,
+      "q": "¿Qué hacen DRS, HA y DPM de VMware?",
+      "a": "**DRS**: equilibra recursos moviendo VM. **HA**: restaura VM de un servidor caído en otro. **DPM**: concentra VM y **apaga servidores** para ahorrar energía"
+    },
+    {
+      "id": "iv2c44",
+      "n": "44",
+      "e": "🪞",
+      "t": false,
+      "q": "¿Qué es la virtualización?",
+      "a": "Crear **por software** una versión virtual de un recurso: hardware, sistema operativo, almacenamiento o red"
+    },
+    {
+      "id": "iv2c45",
+      "n": "45",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Qué es una máquina virtual?",
+      "a": "Software que **simula un ordenador** y ejecuta programas como uno real; sus procesos **no pueden escapar** de ella"
+    },
+    {
+      "id": "iv2c46",
+      "n": "46",
+      "e": "🎛️",
+      "t": true,
+      "q": "¿Qué es el hipervisor (VMM)?",
+      "a": "El **monitor de máquinas virtuales**: capa entre el hardware (**host**) y los SO virtuales (**guest**) que reparte **CPU, memoria, periféricos y red**"
+    },
+    {
+      "id": "iv2c47",
+      "n": "47",
+      "e": "🔩",
+      "t": false,
+      "q": "Hipervisor tipo 1 y tipo 2",
+      "a": "**Tipo 1** (nativo, **bare metal**): sobre el **hardware**. **Tipo 2** (hosted): sobre un **sistema operativo**, como un programa más"
+    },
+    {
+      "id": "iv2c48",
+      "n": "48",
+      "e": "💍",
+      "t": true,
+      "q": "Anillos de protección en x86 (32 bits)",
+      "a": "**Ring 0** = modo **kernel** (máximo privilegio) · rings 1 y 2 = drivers · **Ring 3** = modo **usuario**",
+      "h": "Linux 32 bits solo usa los anillos 0 y 3"
+    },
+    {
+      "id": "iv2c49",
+      "n": "49",
+      "e": "🎭",
+      "t": false,
+      "q": "Virtualización completa",
+      "a": "El SO invitado cree controlar el hardware; el hipervisor **intercepta, emula y traduce** las operaciones privilegiadas. Ej.: VMware Workstation, **VirtualBox**"
+    },
+    {
+      "id": "iv2c50",
+      "n": "50",
+      "e": "📞",
+      "t": false,
+      "q": "Paravirtualización",
+      "a": "El SO invitado se **modifica** y usa **hypercalls** al hipervisor; se ahorra la emulación y el hipervisor es más **ligero**. Ej.: **Xen**"
+    },
+    {
+      "id": "iv2c51",
+      "n": "51",
+      "e": "🚀",
+      "t": true,
+      "q": "Virtualización asistida por hardware",
+      "a": "Usa extensiones de CPU **Intel VT-x** (2005) y **AMD-V** (2006); ejecuta SO **sin modificar** con menos sobrecarga"
+    },
+    {
+      "id": "iv2c52",
+      "n": "52",
+      "e": "📦",
+      "t": false,
+      "q": "Virtualización basada en contenedores",
+      "a": "Virtualiza solo lo necesario para **una aplicación**; los contenedores **comparten el kernel** del anfitrión y son más ligeros. Ej.: **Docker, Kubernetes, LXC**"
+    },
+    {
+      "id": "iv2c53",
+      "n": "53",
+      "e": "🗄️",
+      "t": true,
+      "q": "¿Qué es la virtualización de almacenamiento?",
+      "a": "Unir varios dispositivos en red para que parezcan **una sola unidad**, abstrayendo lo lógico de lo físico (**storage pool**). Muy usada en **SAN**",
+      "h": "Por software se llama **SDS**"
+    },
+    {
+      "id": "iv2c54",
+      "n": "54",
+      "e": "🧱",
+      "t": false,
+      "q": "Acceso por bloque y por fichero",
+      "a": "**Bloque**: canal de fibra, SAS, FICON. **Fichero**: **NFS** y **CIFS**"
+    },
+    {
+      "id": "iv2c55",
+      "n": "55",
+      "e": "🗺️",
+      "t": false,
+      "q": "¿Qué son los metadatos en la virtualización de almacenamiento?",
+      "a": "La información de **asignación** lógico↔físico, guardada en la **tabla de mapeo**"
+    },
+    {
+      "id": "iv2c56",
+      "n": "56",
+      "e": "🏭",
+      "t": false,
+      "q": "Algunas soluciones de virtualización de almacenamiento",
+      "a": "**IBM SVC**, HPE StoreVirtual VSA, **VMware vSAN** (mín. 3 hosts para alta disponibilidad) y **DataCore**"
+    },
+    {
+      "id": "iv2c57",
+      "n": "57",
+      "e": "🧊",
+      "t": false,
+      "q": "Thick provisioning",
+      "a": "Reserva **todo el espacio desde el principio**; más **rápido** escribiendo. Subtipos: **lazy zeroed** y **eager zeroed**"
+    },
+    {
+      "id": "iv2c58",
+      "n": "58",
+      "e": "0️⃣",
+      "t": false,
+      "q": "Lazy zeroed vs eager zeroed",
+      "a": "**Lazy**: se crea rápido pero pone a cero al escribir (primeras escrituras lentas). **Eager**: pone a cero al crearse (tarda más), es **más seguro** y admite tolerancia a fallos"
+    },
+    {
+      "id": "iv2c59",
+      "n": "59",
+      "e": "🌱",
+      "t": true,
+      "q": "Thin provisioning",
+      "a": "Ocupa solo **lo que necesita** y crece según la demanda; ahorra espacio pero es **más lento**. Al borrar, el disco **no se reduce** solo"
+    },
+    {
+      "id": "iv2c60",
+      "n": "60",
+      "e": "✂️",
+      "t": false,
+      "q": "¿Qué es el particionamiento (zoning)?",
+      "a": "Dividir un recurso grande (disco, ancho de banda) en **partes más pequeñas** del mismo tipo"
+    },
+    {
+      "id": "iv2c61",
+      "n": "61",
+      "e": "🧬",
+      "t": false,
+      "q": "¿Qué es la virtualización de datos?",
+      "a": "Una capa que **integra datos de fuentes dispersas sin replicarlos**"
+    },
+    {
+      "id": "iv2c62",
+      "n": "62",
+      "e": "🌿",
+      "t": false,
+      "q": "Virtualización y Green IT",
+      "a": "Fusionar máquinas **ahorra energía y CO₂**; los PC virtualizados pueden reducir consumo y costes un **35 %**"
+    },
+    {
+      "id": "iv2c63",
+      "n": "63",
+      "e": "🏗️",
+      "t": false,
+      "q": "¿Qué es una infraestructura virtual?",
+      "a": "El **mapeo dinámico** de los recursos físicos de **todo el entorno TI** (no de un solo ordenador) en pools compartidos"
+    },
+    {
+      "id": "iv2c64",
+      "n": "64",
+      "e": "📈",
+      "t": false,
+      "q": "Ventajas de la virtualización",
+      "a": "**Mayor uso** de servidores (del 10-15 % al **60-80 %**), consolidación, menos energía y espacio, recuperación ante desastres, **aislamiento**, migración en caliente y **alta disponibilidad**"
+    },
+    {
+      "id": "iv2c65",
+      "n": "65",
+      "e": "💰",
+      "t": false,
+      "q": "¿Qué son TCO y ROI?",
+      "a": "**TCO**: coste total de propiedad. **ROI**: retorno de la inversión"
+    },
+    {
+      "id": "iv2c66",
+      "n": "66",
+      "e": "📉",
+      "t": false,
+      "q": "Desventajas de la virtualización",
+      "a": "**Dependencia de un solo equipo físico**, hardware que debe ser **compatible** con el hipervisor y **potente** (caro), y menos recursos por VM al añadir más"
+    },
+    {
+      "id": "iv2c67",
+      "n": "67",
+      "e": "🆓",
+      "t": false,
+      "q": "Software de virtualización por tipo de licencia",
+      "a": "**De pago**: VMware · **Gratuito**: Virtual PC · **Libre**: **Xen, OpenVZ, VirtualBox**"
+    },
+    {
+      "id": "iv2c68",
+      "n": "68",
+      "e": "🖥️",
+      "t": true,
+      "q": "¿Qué es VDI?",
+      "a": "**Virtual Desktop Infrastructure**: el **escritorio completo** (SO, apps y datos) se ejecuta en un **servidor central** y se accede en remoto desde cualquier dispositivo"
+    },
+    {
+      "id": "iv2c69",
+      "n": "69",
+      "e": "🔁",
+      "t": false,
+      "q": "VDI persistente y no persistente",
+      "a": "**Persistente**: cada usuario tiene **su propia imagen** personalizable. **No persistente**: escritorios uniformes que **vuelven al estado original** al cerrar sesión"
+    },
+    {
+      "id": "iv2c70",
+      "n": "70",
+      "e": "🧷",
+      "t": true,
+      "q": "¿Qué es SDI y en qué se diferencia de VDI?",
+      "a": "**SDI** (Software Defined Infrastructure) virtualiza **solo las aplicaciones**; **VDI** virtualiza **todo el escritorio**"
+    },
+    {
+      "id": "iv2c71",
+      "n": "71",
+      "e": "☁️",
+      "t": false,
+      "q": "Cloud, cloud computing y cloud storage",
+      "a": "**Cloud**: tener datos o servicios fuera de la empresa. **Cloud computing**: servicios a los que se accede por Internet. **Cloud storage**: **almacenamiento** en servidores de Internet"
+    },
+    {
+      "id": "iv2c72",
+      "n": "72",
+      "e": "📅",
+      "t": false,
+      "q": "Hitos del origen del cloud",
+      "a": "**1961**: McCarthy, la computación como **servicio público**. **1997**: **Ramnath Chellappa** acuña \"cloud computing\". **1999**: aparece **SaaS**. Comercial desde **2006-2008**"
+    },
+    {
+      "id": "iv2c73",
+      "n": "73",
+      "e": "🇺🇸",
+      "t": true,
+      "q": "Características esenciales del cloud según el NIST",
+      "a": "**Servicio bajo demanda**, **acceso amplio a la red**, **agrupación de recursos**, **elasticidad rápida** y **servicio medido**"
+    },
+    {
+      "id": "iv2c74",
+      "n": "74",
+      "e": "🔒",
+      "t": false,
+      "q": "¿Quién responde de la seguridad en la nube?",
+      "a": "El **proveedor**, de la **seguridad física**; el **usuario**, de la seguridad **a nivel de aplicación**"
+    },
+    {
+      "id": "iv2c75",
+      "n": "75",
+      "e": "⚠️",
+      "t": false,
+      "q": "Riesgos de usar la nube",
+      "a": "**Dependencia del proveedor** y datos guardados **fuera de la organización**"
+    },
+    {
+      "id": "iv2c76",
+      "n": "76",
+      "e": "🐘",
+      "t": false,
+      "q": "Ventajas de unir cloud y Big Data",
+      "a": "**Reducción de costes** (pagar por uso), **agilidad**, procesar datos no estructurados (ej. **Apache Hadoop**) y **escalabilidad**"
+    },
+    {
+      "id": "iv2c77",
+      "n": "77",
+      "e": "🧁",
+      "t": false,
+      "q": "¿Qué es SaaS?",
+      "a": "**Software as a Service**: la capa **más alta**; una **aplicación completa** bajo demanda vía navegador. Ej.: **Google Docs, Office 365**"
+    },
+    {
+      "id": "iv2c78",
+      "n": "78",
+      "e": "🧰",
+      "t": true,
+      "q": "¿Qué es PaaS?",
+      "a": "**Platform as a Service**: capa **intermedia**; plataforma y herramientas para **desarrollar** apps sin controlar la infraestructura. Ej.: **Google App Engine, Azure**"
+    },
+    {
+      "id": "iv2c79",
+      "n": "79",
+      "e": "🏗️",
+      "t": false,
+      "q": "¿Qué es IaaS?",
+      "a": "**Infrastructure as a Service** (o HaaS): capa **inferior**; **servidores, almacenamiento y red** virtuales sobre los que el cliente instala lo que quiera. Ej.: **AWS EC2 y S3**"
+    },
+    {
+      "id": "iv2c80",
+      "n": "80",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué es iPaaS?",
+      "a": "**Integration Platform as a Service**: integra aplicaciones, servicios y datos (B2B con **EDI**, ERP, CRM, APIs REST/SOAP)"
+    },
+    {
+      "id": "iv2c81",
+      "n": "81",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué es SECaaS?",
+      "a": "**Security as a Service**: seguridad por suscripción (antivirus, firewall, **DLP**, **SIEM**, cifrado, recuperación ante desastres)"
+    },
+    {
+      "id": "iv2c82",
+      "n": "82",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es FaaS?",
+      "a": "**Function as a Service** o arquitectura **serverless**: ejecuta funciones en contenedores momentáneos sin gestionar la infraestructura",
+      "h": "Serverless **no** significa \"sin servidor\""
+    },
+    {
+      "id": "iv2c83",
+      "n": "83",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es CaaS?",
+      "a": "**Container as a Service**: contenedores y su orquestación como servicio; está **entre IaaS y PaaS**"
+    },
+    {
+      "id": "iv2c84",
+      "n": "84",
+      "e": "📱",
+      "t": false,
+      "q": "¿Qué es MBaaS?",
+      "a": "**Mobile Backend as a Service** (BaaS): back-end para apps (usuarios, analítica, **notificaciones push**) mediante SDK y API"
+    },
+    {
+      "id": "iv2c85",
+      "n": "85",
+      "e": "🪪",
+      "t": false,
+      "q": "¿Qué es IDaaS?",
+      "a": "**Identity as a Service**: verifica la identidad de los usuarios (autenticación **multifactor**, **SSO**, gestión de identidades, seguridad de acceso)"
+    },
+    {
+      "id": "iv2c86",
+      "n": "86",
+      "e": "🔑",
+      "t": true,
+      "q": "¿Qué es el SSO?",
+      "a": "**Single Sign-On**: con **una sola identificación** se accede a **varios sistemas**. Tipos: Enterprise SSO, **Web SSO**, **Kerberos**, **identidad federada** y **OpenID**"
+    },
+    {
+      "id": "iv2c87",
+      "n": "87",
+      "e": "🌍",
+      "t": false,
+      "q": "Nube pública",
+      "a": "Infraestructura del **proveedor** abierta al público; los datos de varios clientes **se mezclan**. Ej.: AWS, Azure, Google Cloud"
+    },
+    {
+      "id": "iv2c88",
+      "n": "88",
+      "e": "🏠",
+      "t": false,
+      "q": "Nube privada",
+      "a": "Destinada **solo a una organización**: cliente y proveedor coinciden. Puede ser **gestionada** por un tercero o **exclusiva** (una nube dentro de otra)"
+    },
+    {
+      "id": "iv2c89",
+      "n": "89",
+      "e": "🌗",
+      "t": true,
+      "q": "Nube híbrida y nube de comunidad",
+      "a": "**Híbrida**: mezcla de **pública y privada**. **Comunidad**: como la pública pero limitada a **una comunidad** concreta"
+    },
+    {
+      "id": "iv2c90",
+      "n": "90",
+      "e": "🕸️",
+      "t": false,
+      "q": "Intercloud y multicloud",
+      "a": "**Intercloud**: \"nube de nubes\", interoperabilidad entre proveedores. **Multicloud**: usar **al menos dos** servicios de nube. **Toda híbrida es multicloud**, no al revés"
+    }
+  ]
+}

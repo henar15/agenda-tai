@@ -1,0 +1,77 @@
+{
+  "tema": "IV-2",
+  "ramas": [
+    {
+      "t": "Bases de datos y SGBD",
+      "e": "🗃️",
+      "items": [
+        "Objetivos: independencia, integridad, **atomicidad**",
+        "Sistema: BD + **SGBD** + diccionario + DBA + usuarios",
+        "**Codd**: 13 reglas (0 a 12)",
+        "Diseño: conceptual → lógico → físico"
+      ]
+    },
+    {
+      "t": "Arquitectura y DBA",
+      "e": "👔",
+      "items": [
+        "**ANSI/SPARC**: externo, conceptual, interno",
+        "Administrador de datos (gerente) vs **DBA** (técnico)",
+        "DBA: SGBD, permisos, rendimiento, integridad",
+        "Lenguajes: **DDL, DML, DCL, TCL**"
+      ]
+    },
+    {
+      "t": "Backup",
+      "e": "💾",
+      "items": [
+        "**RTO** = tiempo de recuperar · **RPO** = datos perdibles",
+        "**Completa**, **incremental** (borra bit), **diferencial** (no)",
+        "**GFS**: completa semanal + diarias",
+        "20 soportes = **7 + 12 + 1**",
+        "DAS · **NAS** (archivos) · **SAN** (red rápida)"
+      ]
+    },
+    {
+      "t": "Virtualización",
+      "e": "🎛️",
+      "items": [
+        "**Hipervisor** tipo 1 (bare metal) y tipo 2 (hosted)",
+        "Ring 0 = kernel · Ring 3 = usuario",
+        "Completa · **para** (hypercalls) · asistida (VT-x/AMD-V)",
+        "**Contenedores** comparten kernel (Docker)",
+        "**vMotion**: migrar VM en caliente"
+      ]
+    },
+    {
+      "t": "Almacenamiento virtual",
+      "e": "🗄️",
+      "items": [
+        "Varios discos como **un solo pool** (SAN, SDS)",
+        "**Thick**: todo reservado (lazy / eager zeroed)",
+        "**Thin**: crece según demanda, más lento",
+        "Ventaja: uso del 10-15 % al **60-80 %**"
+      ]
+    },
+    {
+      "t": "Escritorios",
+      "e": "🖥️",
+      "items": [
+        "**VDI**: escritorio completo en servidor central",
+        "Persistente vs **no persistente**",
+        "**SDI**: virtualiza solo aplicaciones"
+      ]
+    },
+    {
+      "t": "Cloud",
+      "e": "☁️",
+      "items": [
+        "NIST: bajo demanda, red, pool, **elasticidad**, medido",
+        "**SaaS** (Office 365) · **PaaS** (Azure) · **IaaS** (AWS)",
+        "FaaS = **serverless** · IDaaS = identidad (**SSO**)",
+        "Nubes: **pública, privada, híbrida, comunidad**",
+        "Toda **híbrida es multicloud**, no al revés"
+      ]
+    }
+  ]
+}

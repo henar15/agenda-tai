@@ -318,10 +318,11 @@
   "orden": 1,
   "titulo": "Administración del sistema operativo y del software de base",
   "semana": "2027-03-08",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 108,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-2",
@@ -330,10 +331,11 @@
   "orden": 2,
   "titulo": "Administración de bases de datos, almacenamiento, backup y virtualización",
   "semana": "2027-03-08",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 86,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-3",

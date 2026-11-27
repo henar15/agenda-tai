@@ -1,0 +1,738 @@
+{
+  "tema": "IV-1",
+  "cards": [
+    {
+      "id": "iv1c1",
+      "n": "1",
+      "e": "💽",
+      "t": false,
+      "q": "¿Qué es el software de sistemas o de base?",
+      "a": "El software que hace funcionar el ordenador y sirve de base al resto: **firmware (BIOS/UEFI)** y **sistema operativo**"
+    },
+    {
+      "id": "iv1c2",
+      "n": "2",
+      "e": "🔧",
+      "t": true,
+      "q": "¿Qué es el firmware?",
+      "a": "El software de **más bajo nivel** (\"soporte lógico inalterable\"), integrado con la electrónica, que **controla el hardware** y prepara el arranque del sistema operativo"
+    },
+    {
+      "id": "iv1c3",
+      "n": "3",
+      "e": "🆕",
+      "t": false,
+      "q": "¿Qué firmware sustituye a la BIOS?",
+      "a": "**UEFI** (Unified Extensible Firmware Interface), escrita en **C**: menús gráficos, más diagnósticos y **arranque seguro**"
+    },
+    {
+      "id": "iv1c4",
+      "n": "4",
+      "e": "⚠️",
+      "t": false,
+      "q": "¿Qué riesgo tiene actualizar mal el firmware?",
+      "a": "Una actualización errónea (p. ej. de otro modelo de placa) puede hacer que la **placa base deje de funcionar**"
+    },
+    {
+      "id": "iv1c5",
+      "n": "5",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Son los compiladores software de sistemas?",
+      "a": "Algunos autores los incluyen, pero **no lo son**: necesitan que antes haya un **sistema operativo** instalado"
+    },
+    {
+      "id": "iv1c6",
+      "n": "6",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿Qué es el sistema operativo?",
+      "a": "El software que **arranca el equipo y gestiona sus recursos**, controla el hardware mediante **drivers** y hace de **intermediario** entre hardware y usuario"
+    },
+    {
+      "id": "iv1c7",
+      "n": "7",
+      "e": "🎯",
+      "t": true,
+      "q": "Funciones del sistema operativo",
+      "a": "Aceptar y procesar los trabajos, **interpretar comandos**, **controlar los recursos**, manejar **errores**, **secuenciar tareas** (prioridades) y **proteger** los procesos",
+      "h": "Su función principal la hace el **Gestor de Recursos**"
+    },
+    {
+      "id": "iv1c8",
+      "n": "8",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es un SO monolítico?",
+      "a": "Todo está **al mismo nivel** del núcleo (como **MS-DOS**): si falla un programa, **falla todo el sistema**",
+      "h": "También se llamó estructura modular"
+    },
+    {
+      "id": "iv1c9",
+      "n": "9",
+      "e": "🌰",
+      "t": false,
+      "q": "¿Qué es el kernel?",
+      "a": "El **núcleo** del sistema operativo: se **carga en memoria al arrancar** y permanece ahí hasta que se apaga"
+    },
+    {
+      "id": "iv1c10",
+      "n": "10",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es un proceso?",
+      "a": "Un **programa en ejecución**: el ejecutable, sus datos y el **contexto** en que se ejecuta"
+    },
+    {
+      "id": "iv1c11",
+      "n": "11",
+      "e": "🐧",
+      "t": false,
+      "q": "¿Qué es GNU/Linux?",
+      "a": "La unión de las herramientas del **proyecto GNU** con el núcleo **Linux** (tipo Unix). Es **software libre**"
+    },
+    {
+      "id": "iv1c12",
+      "n": "12",
+      "e": "📱",
+      "t": false,
+      "q": "¿Qué es el software de aplicación?",
+      "a": "El que se usa para una **necesidad concreta** del usuario: gestión de un negocio, antivirus, control de maquinaria…"
+    },
+    {
+      "id": "iv1c13",
+      "n": "13",
+      "e": "📇",
+      "t": true,
+      "q": "¿Qué es un servicio de directorio (SD)?",
+      "a": "Aplicación que **almacena y organiza** la información de los **usuarios** y **recursos** de una red, y permite gestionar el acceso a ellos"
+    },
+    {
+      "id": "iv1c14",
+      "n": "14",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Servicio de directorio y repositorio de directorio son lo mismo?",
+      "a": "**No**: el repositorio es la **base de datos** con la información; el servicio es quien la gestiona y da acceso"
+    },
+    {
+      "id": "iv1c15",
+      "n": "15",
+      "e": "📖",
+      "t": false,
+      "q": "¿Para qué está optimizado un directorio como base de datos?",
+      "a": "Para las **lecturas** y búsquedas por atributos; su **esquema es extensible** y los datos suelen estar **replicados**"
+    },
+    {
+      "id": "iv1c16",
+      "n": "16",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué es el DN en X.500 y LDAP?",
+      "a": "El **Distinguished Name**: el **nombre único** de una entrada del directorio"
+    },
+    {
+      "id": "iv1c17",
+      "n": "17",
+      "e": "🔁",
+      "t": false,
+      "q": "Réplica vs distribución en un directorio",
+      "a": "**Réplica**: los mismos objetos copiados en otro servidor (redundancia, misma autoridad). **Distribución**: los datos se reparten entre varios servidores (escalabilidad y carga)"
+    },
+    {
+      "id": "iv1c18",
+      "n": "18",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es un NOS?",
+      "a": "Un **sistema operativo de red** (Network Operating System): permite interconectar ordenadores para compartir recursos. El SD es una pieza clave del NOS"
+    },
+    {
+      "id": "iv1c19",
+      "n": "19",
+      "e": "📚",
+      "t": true,
+      "q": "¿Qué es X.500?",
+      "a": "Conjunto de estándares de la **UIT-T** sobre **servicios de directorio**, hecho con la ISO para dar soporte al correo **X.400**",
+      "h": "Hasta 1992 la UIT-T se llamaba **CCITT**"
+    },
+    {
+      "id": "iv1c20",
+      "n": "20",
+      "e": "🔑",
+      "t": false,
+      "q": "¿Qué protocolos define X.500?",
+      "a": "**DAP** (acceso al directorio), DSP (sistema de directorio), DISP (ocultación/réplica) y DOP (gestión de enlaces operativos)"
+    },
+    {
+      "id": "iv1c21",
+      "n": "21",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué especificación de X.500 es la más difundida?",
+      "a": "**X.509**: la de **certificados de clave pública** (no trata de directorio)"
+    },
+    {
+      "id": "iv1c22",
+      "n": "22",
+      "e": "🪶",
+      "t": false,
+      "q": "¿Qué es LDAP?",
+      "a": "**Lightweight Directory Access Protocol**: protocolo **de aplicación**, ligero, para acceder a directorios sobre IP. Es una versión ligera de X.500 (\"**X.500-lite**\") que acabó reemplazándolo"
+    },
+    {
+      "id": "iv1c23",
+      "n": "23",
+      "e": "🔢",
+      "t": true,
+      "q": "Versión actual de LDAP y su RFC",
+      "a": "**LDAPv3**, definida en la **RFC 4511** (la RFC 4510 es la hoja de ruta)"
+    },
+    {
+      "id": "iv1c24",
+      "n": "24",
+      "e": "🚪",
+      "t": false,
+      "q": "Puertos de LDAP",
+      "a": "**389** (TCP y UDP) para LDAP y **636** para **LDAPS** (LDAP sobre SSL)"
+    },
+    {
+      "id": "iv1c25",
+      "n": "25",
+      "e": "🧑‍💻",
+      "t": false,
+      "q": "¿Cómo se llama el servidor LDAP?",
+      "a": "**DSA** (Directory System Agent). La información se codifica con **BER**"
+    },
+    {
+      "id": "iv1c26",
+      "n": "26",
+      "e": "📋",
+      "t": true,
+      "q": "Operaciones LDAP principales",
+      "a": "**StartTLS**, **Bind** (autenticar), **Search**, **Compare**, Add/Delete/Modify, **Modify DN**, **Abandon**, operación extendida y **Unbind** (cerrar)"
+    },
+    {
+      "id": "iv1c27",
+      "n": "27",
+      "e": "🧾",
+      "t": false,
+      "q": "¿En qué lenguaje se describe LDAP en sus RFC?",
+      "a": "En **ASN.1** (notación de sintaxis abstracta uno)"
+    },
+    {
+      "id": "iv1c28",
+      "n": "28",
+      "e": "🌳",
+      "t": false,
+      "q": "¿Qué es eDirectory?",
+      "a": "Servicio de directorio de **Novell** (hoy NetIQ), compatible con X.500, antes llamado **NDS**. Base de datos **jerárquica y orientada a objetos**",
+      "h": "NDS salió en **1993** para NetWare 4"
+    },
+    {
+      "id": "iv1c29",
+      "n": "29",
+      "e": "🔐",
+      "t": false,
+      "q": "¿Qué es NMAS?",
+      "a": "**Novell Modular Authentication Service**: autenticación modular de eDirectory (contraseñas, biometría, tarjetas…) apoyada en **LDAP**"
+    },
+    {
+      "id": "iv1c30",
+      "n": "30",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué es Active Directory (AD)?",
+      "a": "El servicio de directorio **propietario de Microsoft** para redes de dominio Windows, con **autenticación y autorización**"
+    },
+    {
+      "id": "iv1c31",
+      "n": "31",
+      "e": "🧰",
+      "t": true,
+      "q": "¿Qué protocolos usa Active Directory?",
+      "a": "Principalmente **LDAP, DNS, DHCP y Kerberos**"
+    },
+    {
+      "id": "iv1c32",
+      "n": "32",
+      "e": "🏔️",
+      "t": true,
+      "q": "Jerarquía de Active Directory",
+      "a": "**Bosque → árbol → dominio → unidad organizativa**"
+    },
+    {
+      "id": "iv1c33",
+      "n": "33",
+      "e": "📛",
+      "t": false,
+      "q": "¿Cómo se llama AD desde Windows Server 2008?",
+      "a": "**AD DS**: Servicios de dominio de Active Directory (Active Directory Domain Services)",
+      "h": "En 2000 y 2003 se llamaba simplemente Active Directory"
+    },
+    {
+      "id": "iv1c34",
+      "n": "34",
+      "e": "📌",
+      "t": true,
+      "q": "Requisitos para crear un dominio de AD",
+      "a": "Un **Windows Server**, **IP fija** (no por DHCP), un **servidor DNS** y disco **NTFS** con más de **250 MB**",
+      "h": "Las versiones de usuario (Windows 10) no sirven"
+    },
+    {
+      "id": "iv1c35",
+      "n": "35",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es ADSI?",
+      "a": "**Active Directory Service Interfaces**: interfaz de programación **orientada a objetos** para crear programas de directorio"
+    },
+    {
+      "id": "iv1c36",
+      "n": "36",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Qué es un dominio en AD?",
+      "a": "Un conjunto de ordenadores en red con un **servidor que administra las cuentas** de usuario y credenciales"
+    },
+    {
+      "id": "iv1c37",
+      "n": "37",
+      "e": "🧱",
+      "t": false,
+      "q": "Los tres tipos de objetos de AD",
+      "a": "**Usuarios**, **recursos** (carpetas, impresoras…) y **servicios** (Internet, correo…)"
+    },
+    {
+      "id": "iv1c38",
+      "n": "38",
+      "e": "📁",
+      "t": false,
+      "q": "¿Qué es una unidad organizativa (OU)?",
+      "a": "Un **contenedor** de objetos (usuarios, grupos, impresoras…) que crea una jerarquía y facilita asignar permisos"
+    },
+    {
+      "id": "iv1c39",
+      "n": "39",
+      "e": "🌲",
+      "t": true,
+      "q": "Árbol y bosque en AD",
+      "a": "**Árbol**: dominios con una **raíz común** (DNS común). **Bosque**: contiene todos los árboles; siempre tiene al menos un **dominio raíz**"
+    },
+    {
+      "id": "iv1c40",
+      "n": "40",
+      "e": "🤝",
+      "t": false,
+      "q": "¿Qué es una relación de confianza (trust)?",
+      "a": "La relación entre dominios que permite a usuarios de uno acceder a recursos de otro. Se crea **automáticamente** y sus límites los marca el **bosque**"
+    },
+    {
+      "id": "iv1c41",
+      "n": "41",
+      "e": "↔️",
+      "t": false,
+      "q": "Tipos de confianza en AD",
+      "a": "**Transitiva** (automática, en ambos sentidos), **de acceso directo** (explícita entre dos dominios) y **entre bosques**. La **externa** es **no transitiva**"
+    },
+    {
+      "id": "iv1c42",
+      "n": "42",
+      "e": "🎫",
+      "t": true,
+      "q": "¿Qué autenticación usa Active Directory?",
+      "a": "**Kerberos V5**; también admite **NTLM** y SSL/TLS para usuarios web"
+    },
+    {
+      "id": "iv1c43",
+      "n": "43",
+      "e": "🏷️",
+      "t": false,
+      "q": "Partes de un DN en AD",
+      "a": "**CN** = nombre común, **OU** = unidad organizativa, **DC** = componente de dominio. Ej.: CN=Imprime,OU=Ventas,DC=foo,DC=org"
+    },
+    {
+      "id": "iv1c44",
+      "n": "44",
+      "e": "🆔",
+      "t": false,
+      "q": "¿Qué son RDN, GUID y UPN?",
+      "a": "**RDN**: busca solo por el CN. **GUID**: identificador de **128 bits**. **UPN**: forma corta **objeto@dominio**"
+    },
+    {
+      "id": "iv1c45",
+      "n": "45",
+      "e": "📗",
+      "t": false,
+      "q": "Novedad de AD frente al dominio de Windows NT",
+      "a": "AD permite **jerarquías de dominios y subdominios** y usa estándares **X.500 y LDAP**"
+    },
+    {
+      "id": "iv1c46",
+      "n": "46",
+      "e": "🆓",
+      "t": false,
+      "q": "Alternativas gratuitas a Active Directory",
+      "a": "**OpenLDAP**, Mandriva Directory Server y **Samba**"
+    },
+    {
+      "id": "iv1c47",
+      "n": "47",
+      "e": "🌍",
+      "t": false,
+      "q": "¿Qué es el catálogo global de AD DS?",
+      "a": "Contiene información de **todos los objetos** del directorio para buscar sin importar en qué dominio estén"
+    },
+    {
+      "id": "iv1c48",
+      "n": "48",
+      "e": "🛠️",
+      "t": false,
+      "q": "Herramientas de terceros para gestionar AD",
+      "a": "SolarWinds, ENow Compass, Anturis, **Quest Active Administrator** y el kit gratuito de **ManageEngine**"
+    },
+    {
+      "id": "iv1c49",
+      "n": "49",
+      "e": "👷",
+      "t": true,
+      "q": "¿Qué debe hacer el administrador de sistemas?",
+      "a": "Que todo el sistema informático **funcione correctamente y de forma óptima** (instalarlo y mantenerlo)"
+    },
+    {
+      "id": "iv1c50",
+      "n": "50",
+      "e": "📝",
+      "t": false,
+      "q": "Tareas habituales del administrador",
+      "a": "**Copias de seguridad**, preparar equipos, cambios de hardware, **actualizar SO y software**, acceso a Internet, **cuentas de usuario**, **monitorizar**, **seguridad**, recuperación, atención a usuarios, informar y **documentar**"
+    },
+    {
+      "id": "iv1c51",
+      "n": "51",
+      "e": "💾",
+      "t": false,
+      "q": "¿Qué incluye la política de copias que diseña el administrador?",
+      "a": "**Periodicidad**, **tipo** (total, incremental…), **soportes** y **dónde guardarlas** (una copia **fuera del centro**, armarios **ignífugos**). Y hacer **pruebas de recuperación**"
+    },
+    {
+      "id": "iv1c52",
+      "n": "52",
+      "e": "🔄",
+      "t": true,
+      "q": "¿Qué es WSUS?",
+      "a": "**Windows Server Update Services**: servidor que permite al administrador **distribuir las actualizaciones de Microsoft** a los equipos de la red"
+    },
+    {
+      "id": "iv1c53",
+      "n": "53",
+      "e": "📐",
+      "t": false,
+      "q": "¿Cómo se configura un cliente para usar WSUS?",
+      "a": "Con **directivas de grupo (GPO)** en un dominio o **gpedit.msc** (directiva local): Windows Update → ubicación del servicio en la intranet"
+    },
+    {
+      "id": "iv1c54",
+      "n": "54",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Cuánto se pueden aplazar las actualizaciones en Windows 10 Pro/Enterprise/Education?",
+      "a": "Hasta **35 días**"
+    },
+    {
+      "id": "iv1c55",
+      "n": "55",
+      "e": "🐧",
+      "t": false,
+      "q": "Actualizar Ubuntu desde la consola",
+      "a": "**sudo apt-get update** (lista de paquetes) y **sudo apt-get upgrade** (instalar)",
+      "h": "APT lo creó el proyecto **Debian**"
+    },
+    {
+      "id": "iv1c56",
+      "n": "56",
+      "e": "🤖",
+      "t": false,
+      "q": "¿Qué paquete hace actualizaciones automáticas en Ubuntu?",
+      "a": "**unattended-upgrades**, configurado en /etc/apt/apt.conf.d/**20archive**"
+    },
+    {
+      "id": "iv1c57",
+      "n": "57",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Dónde se prueba un software nuevo antes de producción?",
+      "a": "En un **entorno de pruebas**"
+    },
+    {
+      "id": "iv1c58",
+      "n": "58",
+      "e": "🙅",
+      "t": false,
+      "q": "¿El administrador de sistemas es ingeniero de software?",
+      "a": "**No**: no diseña aplicaciones, pero sí debe saber programar **scripts** (shell, Perl) para automatizar"
+    },
+    {
+      "id": "iv1c59",
+      "n": "59",
+      "e": "🛡️",
+      "t": true,
+      "q": "Medidas preventivas y paliativas de seguridad",
+      "a": "**Preventivas**: concienciación, antivirus, cortafuegos, parches, cambio de contraseñas. **Paliativas** (tras el ataque): plan de actuación, **restaurar copias**, seguimiento"
+    },
+    {
+      "id": "iv1c60",
+      "n": "60",
+      "e": "🎟️",
+      "t": false,
+      "q": "¿Cómo debe atenderse a los usuarios?",
+      "a": "Con un **sistema de tickets** (help-desk) y formación; el administrador no debe ser el help-desk"
+    },
+    {
+      "id": "iv1c61",
+      "n": "61",
+      "e": "📓",
+      "t": false,
+      "q": "¿Por qué documentar el sistema?",
+      "a": "Porque el administrador puede irse (vacaciones, baja, cambio de trabajo) y otro debe **poder continuar**"
+    },
+    {
+      "id": "iv1c62",
+      "n": "62",
+      "e": "🐚",
+      "t": true,
+      "q": "Los dos shells de Windows",
+      "a": "El **shell de comandos** (cmd, archivos **.bat**) y **PowerShell** (cmdlets). PowerShell puede ejecutar ambos; cmd **no** ejecuta cmdlets"
+    },
+    {
+      "id": "iv1c63",
+      "n": "63",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué hace gpresult?",
+      "a": "Muestra las **directivas aplicadas** a equipos y usuarios (**RSoP**, conjunto resultante de directivas)"
+    },
+    {
+      "id": "iv1c64",
+      "n": "64",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué hace ipconfig?",
+      "a": "Muestra la **configuración TCP/IP**; **/all** da el detalle, **/release** y **/renew** liberan y renuevan la IP, **/flushdns** vacía la caché DNS"
+    },
+    {
+      "id": "iv1c65",
+      "n": "65",
+      "e": "📡",
+      "t": true,
+      "q": "¿Qué hacen ping y tracert?",
+      "a": "**ping**: comprueba conectividad con eco **ICMP**. **tracert**: muestra la **ruta** subiendo el **TTL** de 1 en 1 (máx. **30 saltos** por defecto)",
+      "h": "Un salto que no responde sale como *"
+    },
+    {
+      "id": "iv1c66",
+      "n": "66",
+      "e": "🗺️",
+      "t": false,
+      "q": "¿Qué hacen arp, route, netstat y nslookup?",
+      "a": "**arp**: caché IP↔MAC. **route**: tabla de rutas (print/add/delete). **netstat**: conexiones TCP y puertos. **nslookup**: problemas de **DNS**"
+    },
+    {
+      "id": "iv1c67",
+      "n": "67",
+      "e": "📛",
+      "t": false,
+      "q": "¿Qué hace nbtstat?",
+      "a": "Muestra estadísticas de **NetBIOS sobre TCP/IP** y sus tablas y caché de nombres"
+    },
+    {
+      "id": "iv1c68",
+      "n": "68",
+      "e": "🔧",
+      "t": true,
+      "q": "¿Qué es netsh?",
+      "a": "Herramienta de línea de comandos de Windows para **consultar, cambiar y diagnosticar la red**; con **dump** guarda la configuración y con **exec** la carga"
+    },
+    {
+      "id": "iv1c69",
+      "n": "69",
+      "e": "🔪",
+      "t": false,
+      "q": "¿Qué es Netcat (nc)?",
+      "a": "La \"**navaja suiza**\" de los hackers (Hobbit, **1996**): abrir puertos TCP/UDP a la escucha, escanear puertos, transferir datos…",
+      "h": "-l escucha, -u UDP, -p puerto, -v detalle"
+    },
+    {
+      "id": "iv1c70",
+      "n": "70",
+      "e": "👤",
+      "t": false,
+      "q": "¿Para qué sirve net user?",
+      "a": "Para **gestionar cuentas de usuario** de Windows desde la consola; net user nombre * cambia la contraseña"
+    },
+    {
+      "id": "iv1c71",
+      "n": "71",
+      "e": "🐚",
+      "t": true,
+      "q": "¿Qué es Bash?",
+      "a": "**Bourne-again shell**: shell de Unix escrito por **Brian Fox** para el proyecto **GNU** como reemplazo libre del shell Bourne. Compatible con **POSIX**",
+      "h": "Beta 0.99 en **1989**"
+    },
+    {
+      "id": "iv1c72",
+      "n": "72",
+      "e": "💥",
+      "t": false,
+      "q": "¿Qué fue Shellshock?",
+      "a": "Familia de fallos de **Bash** (también **Bashdoor**) divulgada en **septiembre de 2014** que permitía **ejecutar comandos** arbitrarios vía variables de entorno",
+      "h": "Se comparó con **Heartbleed** (OpenSSL)"
+    },
+    {
+      "id": "iv1c73",
+      "n": "73",
+      "e": "💲",
+      "t": false,
+      "q": "¿Cómo accede un script Bash a sus argumentos?",
+      "a": "**$1, $2…**; **$#** da el número de argumentos y **$@** todos ellos. Bash calcula con **enteros**, no con coma flotante"
+    },
+    {
+      "id": "iv1c74",
+      "n": "74",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué es un bashismo?",
+      "a": "Usar características de Bash **no recogidas en POSIX**; se desaconseja por portabilidad"
+    },
+    {
+      "id": "iv1c75",
+      "n": "75",
+      "e": "⚡",
+      "t": true,
+      "q": "¿Qué es PowerShell?",
+      "a": "Shell y lenguaje de scripts de **Microsoft** (primera versión **2006**), **open source** (licencia **MIT**, 2016) y multiplataforma. Su salida son **objetos .NET**, no texto"
+    },
+    {
+      "id": "iv1c76",
+      "n": "76",
+      "e": "🧱",
+      "t": false,
+      "q": "Los 4 tipos de comandos de PowerShell",
+      "a": "**Cmdlets**, **funciones**, **scripts** y **comandos nativos** de Windows"
+    },
+    {
+      "id": "iv1c77",
+      "n": "77",
+      "e": "🚦",
+      "t": true,
+      "q": "Niveles de Set-ExecutionPolicy",
+      "a": "**Restricted** (por defecto, no ejecuta scripts), **AllSigned**, **RemoteSigned** (firmados los descargados) y **Unrestricted**"
+    },
+    {
+      "id": "iv1c78",
+      "n": "78",
+      "e": "📋",
+      "t": false,
+      "q": "Algunos cmdlets útiles",
+      "a": "**Get-Command**, **Get-Help**, Get-Service, Get-Process / **Stop-Process**, Get-EventLog, ConvertTo-HTML, **Where-Object** (filtra objetos)"
+    },
+    {
+      "id": "iv1c79",
+      "n": "79",
+      "e": "🧰",
+      "t": false,
+      "q": "Otras herramientas del administrador",
+      "a": "**SysInternals** (Process Explorer, Autoruns…), **Clonezilla** (clonar discos), TreeSize, FileZilla, **PuTTY** (SSH), TeamViewer (control remoto), Nagios/PRTG (monitorización)"
+    },
+    {
+      "id": "iv1c80",
+      "n": "80",
+      "e": "🩹",
+      "t": false,
+      "q": "¿Qué hace sfc /scannow?",
+      "a": "**System File Checker**: revisa los archivos de sistema protegidos y **reemplaza los dañados** por una copia en caché",
+      "h": "/verifyonly solo verifica"
+    },
+    {
+      "id": "iv1c81",
+      "n": "81",
+      "e": "⏪",
+      "t": false,
+      "q": "¿Cuándo se puede usar Restaurar sistema?",
+      "a": "Solo si existen **puntos de restauración** creados cuando el sistema funcionaba bien"
+    },
+    {
+      "id": "iv1c82",
+      "n": "82",
+      "e": "🥾",
+      "t": false,
+      "q": "Opciones cuando el sistema no es estable",
+      "a": "**Disco de arranque** (del SO, antivirus o utilidades como **Hiren's Boot CD**), **línea de comandos**, opciones avanzadas de inicio, **restaurar** o **reinstalar**"
+    },
+    {
+      "id": "iv1c83",
+      "n": "83",
+      "e": "🦠",
+      "t": false,
+      "q": "Consejos sobre antivirus",
+      "a": "Tener uno instalado y **nunca más de uno** a la vez (ralentiza y da fallos)"
+    },
+    {
+      "id": "iv1c84",
+      "n": "84",
+      "e": "🎭",
+      "t": true,
+      "q": "¿Qué es Puppet?",
+      "a": "Herramienta **open source** de **gestión de la configuración** de forma **declarativa** (manifiestos), para Unix/Linux y Windows",
+      "h": "Descubre el sistema con **Facter**"
+    },
+    {
+      "id": "iv1c85",
+      "n": "85",
+      "e": "🎒",
+      "t": false,
+      "q": "¿Qué es BYOD?",
+      "a": "**Bring Your Own Device**: los empleados usan sus **propios dispositivos** en el trabajo. También BYOT (Bring Your Own Technology)"
+    },
+    {
+      "id": "iv1c86",
+      "n": "86",
+      "e": "📲",
+      "t": true,
+      "q": "¿Qué es MDM?",
+      "a": "**Mobile Device Management**: software para **asegurar, monitorizar y administrar** móviles de forma remota. Arquitectura: **agente**, servidor y base de datos"
+    },
+    {
+      "id": "iv1c87",
+      "n": "87",
+      "e": "🍏",
+      "t": false,
+      "q": "¿Desde qué versión de iOS hay actualización automática del sistema?",
+      "a": "Desde **iOS 12** (Ajustes → General → Actualización de software)"
+    },
+    {
+      "id": "iv1c88",
+      "n": "88",
+      "e": "✍️",
+      "t": false,
+      "q": "¿Qué es el enrolamiento de móviles?",
+      "a": "El **registro y configuración** del móvil en un sistema de gestión central para administrarlo y aplicarle políticas"
+    },
+    {
+      "id": "iv1c89",
+      "n": "89",
+      "e": "🧾",
+      "t": false,
+      "q": "Tipos de enrolamiento",
+      "a": "**Manual** (típico en BYOD), **automático** (Apple Business Manager, Android Enterprise), por **QR o NFC** y **basado en cuenta**"
+    },
+    {
+      "id": "iv1c90",
+      "n": "90",
+      "e": "👆",
+      "t": false,
+      "q": "¿Qué es Zero-Touch Enrollment?",
+      "a": "Registro previo de dispositivos **Android** para configurarlos **sin intervención manual**. En Apple: **DEP**"
+    }
+  ]
+}
