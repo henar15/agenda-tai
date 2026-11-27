@@ -32,19 +32,45 @@ async function login() {
 }
 async function loadRemote() {
   const snap = await fs.collection('users').doc(uid).collection('kv').get();
+  const subir = new Set(kvPend);
+  kvPend.clear();
   if (snap.empty) {
+    S.remoteOk = true;
+    KEYS.forEach((k) => kvVal(k) != null && subir.add(k));
+    subir.forEach((k) => kvSet(k));
     flash('¡Bienvenida! Empieza cuando quieras');
     return;
   }
   snap.forEach((d) => {
     try {
-      const v = JSON.parse(d.data().v);
+      const rem = JSON.parse(d.data().v);
+      const loc = kvVal(d.id);
+      const v = mergeKV(d.id, loc, rem);
       applyKV(d.id, v);
       lsSet(d.id, v);
+      if (JSON.stringify(v) !== d.data().v) subir.add(d.id);
     } catch (e) {}
   });
+  S.remoteOk = true;
+  subir.forEach((k) => kvSet(k));
+  try {
+    memSeed();
+  } catch (e) {}
   flash('Sincronizado');
 }
+// Al volver a la app (por ejemplo, del móvil al ordenador), se trae y mezcla lo último de la nube
+let ultimaLectura = 0;
+document.addEventListener('visibilitychange', async () => {
+  if (document.visibilityState !== 'visible' || !uid || !fs || Date.now() - ultimaLectura < 30000) return;
+  ultimaLectura = Date.now();
+  try {
+    S.remoteOk = false;
+    await loadRemote();
+    if (!ui.rit && !ui.ex) render();
+  } catch (e) {
+    S.remoteOk = true;
+  }
+});
 function loadScript(src) {
   return new Promise((ok, ko) => {
     const x = document.createElement('script');
@@ -56,7 +82,7 @@ function loadScript(src) {
 }
 (async () => {
   {
-    const V = 25;
+    const V = 26;
     if (+document.documentElement.dataset.v !== V) {
       try {
         if (!sessionStorage.getItem('agendaTAI:rl')) {
@@ -153,8 +179,13 @@ function loadScript(src) {
           });
           render();
           try {
+            S.remoteOk = false;
             await loadRemote();
+            ultimaLectura = Date.now();
           } catch (e) {
+            S.remoteOk = true;
+            kvPend.forEach((k) => kvSet(k));
+            kvPend.clear();
             flash('No se pudo leer de la nube');
           }
         }

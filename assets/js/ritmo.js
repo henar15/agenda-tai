@@ -343,7 +343,7 @@ function ritCommit() {
       );
   }
   R.pend = null;
-  statAdd('q', 1);
+  statAdd(x.k === 'c' ? 'c' : 'q', 1);
   logAct(1);
 }
 
@@ -491,7 +491,9 @@ function vRitmo() {
 
 // La primera vez, pasa lo que ya llevabas en «Tarjetas» al modelo de memoria
 function memSeed() {
-  if (!uid || (S.mem && S.mem.seed) || !Object.keys(S.cards).length) return;
+  if (!uid || !S.remoteOk || !Object.keys(S.cards).length) return;
+  memBackfill();
+  if (S.mem && S.mem.seed) return;
   const items = Object.assign({}, memItems());
   const now = Date.now(),
     EST = [1, 1, 3, 7, 14, 30];
@@ -519,5 +521,31 @@ function memSeed() {
       items[q.id] = { s: 0.4, d: 7, r: 1, x: 1, hc: 0, t: q.tema, k: 'q', l: now - MEM_DIA, due: now };
   });
   S.mem = Object.assign({}, S.mem, { items, seed: 1 });
+  kvSet('mem');
+}
+
+// Las tarjetas repasadas en «A tu ritmo» antes del 27-nov se contaban como preguntas: se recuentan una vez
+function memBackfill() {
+  if ((S.mem || {}).bf1) return;
+  const porDia = {};
+  Object.values(memItems()).forEach((it) => {
+    if (it.k !== 'c' || !it.l) return;
+    const d = dkey(new Date(it.l));
+    porDia[d] = (porDia[d] || 0) + 1;
+  });
+  const dia = Object.assign({}, S.diario);
+  Object.entries(porDia).forEach(([d, n]) => {
+    const t = Object.assign({}, dia[d]);
+    const s = Object.assign({ c: 0, q: 0, p: 0, m: 0 }, t._s);
+    if (s.c < n) {
+      s.q = Math.max(0, s.q - (n - s.c));
+      s.c = n;
+    }
+    t._s = s;
+    dia[d] = t;
+  });
+  S.diario = dia;
+  S.mem = Object.assign({}, S.mem, { bf1: 1 });
+  kvSet('diario');
   kvSet('mem');
 }

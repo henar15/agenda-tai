@@ -172,10 +172,89 @@ function applyKV(k, v) {
   else if (k === 'nivel') S.nivel = v;
   else if (k === 'mem') S.mem = v;
 }
+/* ---------- sincronización entre dispositivos (móvil y ordenador) ----------
+ * Antes de leer la nube no se sube nada (así un dispositivo con datos viejos no pisa los buenos).
+ * Al leer, lo de la nube se MEZCLA con lo de este dispositivo en vez de sustituirlo. */
+const kvPend = new Set();
+const isObj = (o) => o && typeof o === 'object' && !Array.isArray(o);
+function mergeMax(a, b) {
+  const o = Object.assign({}, a);
+  Object.entries(b || {}).forEach(
+    ([k, v]) => (o[k] = typeof v === 'number' ? Math.max(v, o[k] || 0) : o[k] != null ? o[k] : v),
+  );
+  return o;
+}
+function mergeKV(k, loc, rem) {
+  if (loc == null) return rem;
+  if (rem == null) return loc;
+  if (k === 'diario') {
+    const o = Object.assign({}, rem);
+    Object.entries(loc).forEach(([d, L]) => {
+      const R = o[d] || {};
+      const m = Object.assign({}, R, L);
+      m._s = mergeMax(R._s, L._s);
+      if (R._plan && L._plan)
+        m._plan = (R._plan.tareas || []).length >= (L._plan.tareas || []).length ? R._plan : L._plan;
+      o[d] = m;
+    });
+    return o;
+  }
+  if (k === 'mem') {
+    const items = Object.assign({}, rem.items);
+    Object.entries(loc.items || {}).forEach(([id, it]) => {
+      const r = items[id];
+      if (!r || (it.r || 0) > (r.r || 0) || ((it.r || 0) === (r.r || 0) && (it.l || 0) > (r.l || 0)))
+        items[id] = it;
+    });
+    const cal = Object.assign({}, rem.cal);
+    Object.entries(loc.cal || {}).forEach(([c, v]) => {
+      if (!cal[c] || v[1] > cal[c][1]) cal[c] = v;
+    });
+    return Object.assign({}, rem, loc, { items, cal, seed: rem.seed || loc.seed });
+  }
+  if (k === 'actividad' || k === 'lectura') return mergeMax(rem, loc);
+  if (k === 'resultados') {
+    const seen = new Set(),
+      items = [];
+    (rem.items || []).concat(loc.items || []).forEach((r) => {
+      const id = (r.fecha || '') + '|' + (r.testId || '') + '|' + (r.total || '');
+      if (!seen.has(id)) {
+        seen.add(id);
+        items.push(r);
+      }
+    });
+    items.sort((a, b) => String(a.fecha).localeCompare(String(b.fecha)));
+    return Object.assign({}, rem, { items });
+  }
+  if (k === 'records') {
+    const o = Object.assign({}, rem, loc);
+    Object.keys(rem).forEach((x) => {
+      if (typeof rem[x] === 'number') o[x] = Math.max(rem[x], loc[x] || 0);
+      else if (isObj(rem[x]) && isObj(loc[x])) o[x] = Object.assign({}, rem[x], loc[x]);
+    });
+    return o;
+  }
+  if (
+    ['piles', 'srs', 'errores', 'stats', 'nivel', 'estados', 'planHecho'].includes(k) &&
+    isObj(loc) &&
+    isObj(rem)
+  ) {
+    const o = Object.assign({}, rem);
+    Object.entries(loc).forEach(
+      ([x, v]) => (o[x] = isObj(v) && isObj(rem[x]) ? Object.assign({}, rem[x], v) : v),
+    );
+    return o;
+  }
+  return rem; // config, horario, claves…: manda la nube
+}
 const kvT = {};
 function kvSet(k) {
   const v = kvVal(k);
   lsSet(k, v);
+  if (fs && uid && !S.remoteOk) {
+    kvPend.add(k);
+    return;
+  }
   if (fs && uid) {
     clearTimeout(kvT[k]);
     kvT[k] = setTimeout(() => {

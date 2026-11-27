@@ -12,7 +12,7 @@ function statAdd(k, n) {
   S.diario = d;
   kvSet('diario');
 }
-const hechasDe = (o) => Object.keys(o || {}).filter((k) => k !== '_s');
+const hechasDe = (o) => Object.keys(o || {}).filter((k) => k[0] !== '_');
 
 /* ---------- resumen y nota estimada ---------- */
 function notaEstimada() {
@@ -35,8 +35,8 @@ function vResumenDia() {
   const t = today();
   const s = ((S.diario || {})[t] || {})._s || {};
   const hoyRes = S.res.filter((r) => (r.fecha || '').slice(0, 10) === t);
-  const H = planDia(new Date());
-  const done = hechasDe((S.diario || {})[t]);
+  const H = planHoy();
+  const done = hechasDe((S.diario || {})[t]).filter((k) => (H.tareas || []).some((x) => x.k === k));
   const tot = (H.tareas || []).length;
   const tarde = new Date().getHours() >= 20;
   if (!tarde && !(tot && done.length >= tot)) return '';

@@ -152,7 +152,7 @@ function planHoy() {
   const d = (S.diario || {})[today()] || {};
   if (d._plan) return d._plan;
   const H = planDia(new Date());
-  if (!S.temas.length || !Object.keys(S.cards).length || !uid) return H;
+  if (!S.temas.length || !Object.keys(S.cards).length || !uid || !S.remoteOk) return H;
   const snap = {
     descanso: !!H.descanso,
     tareas: (H.tareas || []).map((t) => {
