@@ -1,0 +1,317 @@
+{
+  "tema": "III-5",
+  "preguntas": [
+    {
+      "id": "iii5-01",
+      "tipico": true,
+      "q": "En el desarrollo basado en componentes, la composición tardía es la que se realiza…",
+      "opts": [
+        "Antes de diseñar el componente",
+        "Después de compilar el componente",
+        "Durante la compilación del componente",
+        "Al final de la vida útil del sistema"
+      ],
+      "c": 1,
+      "exp": "Se hace en un tiempo posterior a la compilación."
+    },
+    {
+      "id": "iii5-02",
+      "tipico": true,
+      "q": "La especificación añadida a la interfaz de un componente que fija sus condiciones de uso es el…",
+      "opts": [
+        "Contrato",
+        "Descriptor",
+        "Evento",
+        "Manifiesto"
+      ],
+      "c": 0,
+      "exp": "Es el contrato entre clientes y proveedores."
+    },
+    {
+      "id": "iii5-03",
+      "tipico": false,
+      "q": "¿Cuál NO es uno de los tres nuevos tipos de polimorfismo del DSBC?",
+      "opts": [
+        "Reemplazabilidad",
+        "Polimorfismo paramétrico",
+        "Polimorfismo acotado",
+        "Polimorfismo ad hoc por sobrecarga"
+      ],
+      "c": 3,
+      "exp": "Los tres son reemplazabilidad, paramétrico y acotado."
+    },
+    {
+      "id": "iii5-04",
+      "tipico": false,
+      "q": "La definición formal de componente como unidad de composición independiente en tiempo y espacio se debe a…",
+      "opts": [
+        "Booch (1991)",
+        "Gamma (1994)",
+        "Szyperski (1998)",
+        "Beck (2000)"
+      ],
+      "c": 2,
+      "exp": "Szyperski, 1998."
+    },
+    {
+      "id": "iii5-05",
+      "tipico": true,
+      "q": "Los dos componentes que proporcionan todas las plataformas Java son…",
+      "opts": [
+        "El compilador y el depurador",
+        "La JVM y la API",
+        "El JDK y el IDE",
+        "El servidor de aplicaciones y el contenedor"
+      ],
+      "c": 1,
+      "exp": "Máquina virtual + API."
+    },
+    {
+      "id": "iii5-06",
+      "tipico": true,
+      "q": "La plataforma Java pensada para dispositivos pequeños como móviles es…",
+      "opts": [
+        "Java ME",
+        "Java EE",
+        "Java SE",
+        "Java FX"
+      ],
+      "c": 0,
+      "exp": "Java ME (Micro Edition)."
+    },
+    {
+      "id": "iii5-07",
+      "tipico": true,
+      "q": "¿Qué organización gestiona Java EE desde 2018 con el nombre de Jakarta EE?",
+      "opts": [
+        "Oracle",
+        "Apache Software Foundation",
+        "Sun Microsystems",
+        "Fundación Eclipse"
+      ],
+      "c": 3,
+      "exp": "La Fundación Eclipse; Oracle tiene la marca Java."
+    },
+    {
+      "id": "iii5-08",
+      "tipico": true,
+      "q": "El cambio más destacado de Jakarta EE 9 fue…",
+      "opts": [
+        "Eliminar los EJB",
+        "Abandonar los servlets",
+        "Renombrar los paquetes javax.* a jakarta.*",
+        "Pasar a licencia propietaria"
+      ],
+      "c": 2,
+      "exp": "javax.* pasa a jakarta.*"
+    },
+    {
+      "id": "iii5-09",
+      "tipico": false,
+      "q": "El TCK de una especificación Jakarta sirve para…",
+      "opts": [
+        "Compilar el código",
+        "Probar que una implementación cumple la especificación",
+        "Desplegar aplicaciones en la nube",
+        "Gestionar paquetes"
+      ],
+      "c": 1,
+      "exp": "Kit de compatibilidad tecnológica."
+    },
+    {
+      "id": "iii5-10",
+      "tipico": true,
+      "q": "En la arquitectura Java EE, los EJB se sitúan en el nivel…",
+      "opts": [
+        "De negocio",
+        "Web",
+        "De cliente",
+        "Del sistema de información"
+      ],
+      "c": 0,
+      "exp": "La lógica de negocio va en EJB."
+    },
+    {
+      "id": "iii5-11",
+      "tipico": false,
+      "q": "Los servlets y las JSP pertenecen al nivel…",
+      "opts": [
+        "Del sistema de información",
+        "De negocio",
+        "De cliente",
+        "Web"
+      ],
+      "c": 3,
+      "exp": "Nivel web."
+    },
+    {
+      "id": "iii5-12",
+      "tipico": true,
+      "q": "¿Qué contenedores Java EE se ejecutan en el cliente, sin servidor de aplicaciones?",
+      "opts": [
+        "EJB y web",
+        "Web y applet",
+        "Aplicación cliente y applet",
+        "EJB y aplicación cliente"
+      ],
+      "c": 2,
+      "exp": "Aplicación cliente y applet."
+    },
+    {
+      "id": "iii5-13",
+      "tipico": false,
+      "q": "Un descriptor de despliegue es…",
+      "opts": [
+        "Un fichero .class compilado",
+        "Un fichero XML que describe los componentes",
+        "Un paquete .nupkg",
+        "Una anotación en el código"
+      ],
+      "c": 1,
+      "exp": "Fichero XML."
+    },
+    {
+      "id": "iii5-14",
+      "tipico": false,
+      "q": "En Java, ¿cuántos bytes ocupa un int?",
+      "opts": [
+        "4",
+        "2",
+        "1",
+        "8"
+      ],
+      "c": 0,
+      "exp": "byte 1, short 2, int 4, long 8."
+    },
+    {
+      "id": "iii5-15",
+      "tipico": true,
+      "q": "El servicio de nombres de Java que permite buscar objetos por nombres lógicos es…",
+      "opts": [
+        "JAAS",
+        "JTS",
+        "JPA",
+        "JNDI"
+      ],
+      "c": 3,
+      "exp": "JNDI, paquete javax.naming."
+    },
+    {
+      "id": "iii5-16",
+      "tipico": false,
+      "q": "El driver JDBC que traduce directamente las llamadas al protocolo del SGBD sin componentes adicionales es el…",
+      "opts": [
+        "Tipo 1",
+        "Tipo 2",
+        "Tipo 4",
+        "Tipo 3"
+      ],
+      "c": 2,
+      "exp": "Tipo 4 (thin)."
+    },
+    {
+      "id": "iii5-17",
+      "tipico": true,
+      "q": "¿Qué software basta para EJECUTAR (no desarrollar) un programa Java ya compilado?",
+      "opts": [
+        "JDK",
+        "JRE",
+        "javac",
+        "Javadoc"
+      ],
+      "c": 1,
+      "exp": "JRE = JVM + bibliotecas."
+    },
+    {
+      "id": "iii5-18",
+      "tipico": false,
+      "q": "¿Qué paquete de Java se importa automáticamente?",
+      "opts": [
+        "java.lang",
+        "java.io",
+        "java.util",
+        "java.sql"
+      ],
+      "c": 0,
+      "exp": "java.lang."
+    },
+    {
+      "id": "iii5-19",
+      "tipico": true,
+      "q": "En .NET, la unidad mínima de ejecución, distribución y versionado es…",
+      "opts": [
+        "El namespace",
+        "La BCL",
+        "El DataSet",
+        "El Assembly"
+      ],
+      "c": 3,
+      "exp": "El Assembly (.dll o .exe)."
+    },
+    {
+      "id": "iii5-20",
+      "tipico": false,
+      "q": "Los ensamblados compartidos de .NET se registran en el GAC con la herramienta…",
+      "opts": [
+        "nuget.exe",
+        "msbuild.exe",
+        "gacutil.exe",
+        "javac.exe"
+      ],
+      "c": 2,
+      "exp": "gacutil.exe."
+    },
+    {
+      "id": "iii5-21",
+      "tipico": true,
+      "q": "La implementación de .NET que solo funciona en Windows es…",
+      "opts": [
+        ".NET Core",
+        ".NET Framework",
+        "Mono",
+        ".NET Standard"
+      ],
+      "c": 1,
+      "exp": ".NET Framework, la original."
+    },
+    {
+      "id": "iii5-22",
+      "tipico": false,
+      "q": "En ADO.NET, el objeto que hace de puente entre la fuente de datos y un DataSet es…",
+      "opts": [
+        "DataAdapter",
+        "Connection",
+        "DataReader",
+        "DataView"
+      ],
+      "c": 0,
+      "exp": "DataAdapter."
+    },
+    {
+      "id": "iii5-23",
+      "tipico": true,
+      "q": "El componente de .NET encargado de ejecutar el código gestionado es…",
+      "opts": [
+        "La BCL",
+        "El CLS",
+        "NuGet",
+        "El CLR"
+      ],
+      "c": 3,
+      "exp": "Common Language Runtime."
+    },
+    {
+      "id": "iii5-24",
+      "tipico": false,
+      "q": "Las páginas de ASP.NET (web forms) tienen extensión…",
+      "opts": [
+        ".jsp",
+        ".razor",
+        ".aspx",
+        ".nupkg"
+      ],
+      "c": 2,
+      "exp": ".aspx."
+    }
+  ]
+}

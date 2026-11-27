@@ -1,0 +1,330 @@
+{
+  "tema": "III-6",
+  "preguntas": [
+    {
+      "id": "iii6-01",
+      "tipico": true,
+      "q": "Las tres vistas mínimas de cualquier arquitectura de software son…",
+      "opts": [
+        "Presentación, negocio y datos",
+        "Física, lógica y conceptual",
+        "Cliente, servidor y middleware",
+        "Estática, funcional y dinámica"
+      ],
+      "c": 3,
+      "exp": "Estática, funcional y dinámica."
+    },
+    {
+      "id": "iii6-02",
+      "tipico": false,
+      "q": "La arquitectura en la que varios agentes leen y escriben en un espacio común que los coordina se denomina…",
+      "opts": [
+        "Pipeline",
+        "P2P",
+        "En pizarra",
+        "Basada en el espacio"
+      ],
+      "c": 2,
+      "exp": "Arquitectura en pizarra (sistemas expertos)."
+    },
+    {
+      "id": "iii6-03",
+      "tipico": true,
+      "q": "CORBA es un estándar definido por…",
+      "opts": [
+        "W3C",
+        "OMG",
+        "OASIS",
+        "IETF"
+      ],
+      "c": 1,
+      "exp": "Object Management Group."
+    },
+    {
+      "id": "iii6-04",
+      "tipico": false,
+      "q": "¿Qué versión de CORBA creó el protocolo IIOP?",
+      "opts": [
+        "CORBA 2 (1995)",
+        "CORBA 1 (1991)",
+        "CORBA 3 (2002)",
+        "CORBA 4 (2010)"
+      ],
+      "c": 0,
+      "exp": "CORBA 2, en 1995."
+    },
+    {
+      "id": "iii6-05",
+      "tipico": true,
+      "q": "La arquitectura que construye una aplicación como pequeños servicios desplegados de forma independiente y comunicados con mecanismos ligeros es…",
+      "opts": [
+        "Monolítica",
+        "Pizarra",
+        "Pipeline",
+        "Microservicios"
+      ],
+      "c": 3,
+      "exp": "Microservicios (MSA)."
+    },
+    {
+      "id": "iii6-06",
+      "tipico": false,
+      "q": "En la arquitectura dirigida por eventos, lo que se propaga es…",
+      "opts": [
+        "El propio evento",
+        "El estado global",
+        "La notificación del evento",
+        "Una transacción"
+      ],
+      "c": 2,
+      "exp": "Los eventos no viajan: se propaga su notificación."
+    },
+    {
+      "id": "iii6-07",
+      "tipico": true,
+      "q": "Un conjunto de ordenadores que comparten un estado y ofrecen visión de sistema único es un sistema…",
+      "opts": [
+        "En red",
+        "Distribuido",
+        "De teleproceso",
+        "Por lotes"
+      ],
+      "c": 1,
+      "exp": "Sistema distribuido (estado global)."
+    },
+    {
+      "id": "iii6-08",
+      "tipico": true,
+      "q": "IIOP es…",
+      "opts": [
+        "La implementación de GIOP para TCP/IP",
+        "Un protocolo abstracto entre ORBs",
+        "Un lenguaje de descripción de servicios",
+        "Un registro de servicios web"
+      ],
+      "c": 0,
+      "exp": "GIOP es el abstracto; IIOP lo implementa sobre TCP/IP."
+    },
+    {
+      "id": "iii6-09",
+      "tipico": true,
+      "q": "El objetivo principal de un sistema distribuido es la…",
+      "opts": [
+        "Consistencia",
+        "Escalabilidad",
+        "Concurrencia",
+        "Transparencia"
+      ],
+      "c": 3,
+      "exp": "La transparencia."
+    },
+    {
+      "id": "iii6-10",
+      "tipico": false,
+      "q": "El principal parámetro para medir la disponibilidad es el…",
+      "opts": [
+        "MTTR",
+        "SLA",
+        "MTBF",
+        "RPO"
+      ],
+      "c": 2,
+      "exp": "Tiempo medio entre fallos."
+    },
+    {
+      "id": "iii6-11",
+      "tipico": false,
+      "q": "Si un disco falla con probabilidad 1/100 y lo duplicamos, la probabilidad de que fallen los dos a la vez es…",
+      "opts": [
+        "1/200",
+        "1/10.000",
+        "1/1.000",
+        "1/50"
+      ],
+      "c": 1,
+      "exp": "Disminuye exponencialmente: 1/100²."
+    },
+    {
+      "id": "iii6-12",
+      "tipico": true,
+      "q": "Añadir más servidores o nodos a un sistema es escalabilidad…",
+      "opts": [
+        "Horizontal",
+        "Vertical",
+        "Diagonal",
+        "Funcional"
+      ],
+      "c": 0,
+      "exp": "Horizontal; la vertical mejora el servidor."
+    },
+    {
+      "id": "iii6-13",
+      "tipico": false,
+      "q": "En cliente/servidor, el proceso cliente se conoce también como…",
+      "opts": [
+        "Back-end",
+        "Middleware",
+        "Esclavo",
+        "Front-end"
+      ],
+      "c": 3,
+      "exp": "El cliente es front-end y tiene papel activo."
+    },
+    {
+      "id": "iii6-14",
+      "tipico": false,
+      "q": "Apache Tomcat es un ejemplo de servidor…",
+      "opts": [
+        "Apátrida (stateless)",
+        "De ficheros",
+        "Stateful",
+        "De objetos"
+      ],
+      "c": 2,
+      "exp": "Stateful: recuerda información entre peticiones."
+    },
+    {
+      "id": "iii6-15",
+      "tipico": true,
+      "q": "En un esquema Fat Server (Thin Client)…",
+      "opts": [
+        "Presentación y aplicación van en el cliente",
+        "El cliente solo hace de interfaz y el servidor lleva aplicación y BD",
+        "El servidor solo gestiona la base de datos",
+        "No hay servidor de base de datos"
+      ],
+      "c": 1,
+      "exp": "Thin client: solo interfaz. Se usa en misión crítica."
+    },
+    {
+      "id": "iii6-16",
+      "tipico": false,
+      "q": "El esquema Fat Client (Thin Server) se suele usar en…",
+      "opts": [
+        "Sistemas DSS y EIS",
+        "Sistemas de misión crítica",
+        "Servidores de transacciones",
+        "Cajeros automáticos"
+      ],
+      "c": 0,
+      "exp": "Sistemas de apoyo a la decisión y de información ejecutiva."
+    },
+    {
+      "id": "iii6-17",
+      "tipico": true,
+      "q": "En el patrón MVC, el componente que responde a los eventos del usuario e invoca al modelo es…",
+      "opts": [
+        "La vista",
+        "El middleware",
+        "El modelo",
+        "El controlador"
+      ],
+      "c": 3,
+      "exp": "El controlador hace de intermediario."
+    },
+    {
+      "id": "iii6-18",
+      "tipico": true,
+      "q": "Señale la afirmación correcta sobre capas (layer) y niveles (tier):",
+      "opts": [
+        "Una aplicación de 3 capas siempre tiene 3 niveles",
+        "La capa es una división física y el nivel lógica",
+        "La capa es una división lógica y el nivel física",
+        "Son sinónimos"
+      ],
+      "c": 2,
+      "exp": "Capa = lógica, nivel = físico."
+    },
+    {
+      "id": "iii6-19",
+      "tipico": false,
+      "q": "Los sistemas de dos capas no se ajustan bien a partir de aproximadamente…",
+      "opts": [
+        "10 usuarios",
+        "100 usuarios",
+        "1.000 usuarios",
+        "10.000 usuarios"
+      ],
+      "c": 1,
+      "exp": "Unos 100 usuarios."
+    },
+    {
+      "id": "iii6-20",
+      "tipico": true,
+      "q": "En la pila de protocolos de servicios web, WSDL pertenece al área de…",
+      "opts": [
+        "Descripción del servicio",
+        "Mensajería XML",
+        "Transporte",
+        "Descubrimiento de servicios"
+      ],
+      "c": 0,
+      "exp": "WSDL describe la interfaz pública."
+    },
+    {
+      "id": "iii6-21",
+      "tipico": true,
+      "q": "¿Qué partes de un mensaje SOAP son obligatorias?",
+      "opts": [
+        "Header y Body",
+        "Body y Fault",
+        "Envelope y Header",
+        "Envelope y Body"
+      ],
+      "c": 3,
+      "exp": "Envelope y Body; Header es opcional."
+    },
+    {
+      "id": "iii6-22",
+      "tipico": true,
+      "q": "En UDDI, la información técnica sobre los servicios ofrecidos está en las páginas…",
+      "opts": [
+        "Blancas",
+        "Amarillas",
+        "Verdes",
+        "Azules"
+      ],
+      "c": 2,
+      "exp": "Verdes."
+    },
+    {
+      "id": "iii6-23",
+      "tipico": false,
+      "q": "Mecanismo de descubrimiento de servicios más ligero que UDDI y sin registro centralizado:",
+      "opts": [
+        "WSDL",
+        "WSIL",
+        "XOP",
+        "BEEP"
+      ],
+      "c": 1,
+      "exp": "WSIL."
+    },
+    {
+      "id": "iii6-24",
+      "tipico": true,
+      "q": "En una API REST, el método HTTP usado para editar un recurso es…",
+      "opts": [
+        "PUT",
+        "POST",
+        "GET",
+        "DELETE"
+      ],
+      "c": 0,
+      "exp": "POST crea, GET lee, PUT edita, DELETE elimina."
+    },
+    {
+      "id": "iii6-25",
+      "tipico": false,
+      "q": "Los tres roles de la arquitectura SOA son…",
+      "opts": [
+        "Front-end, back-end y middleware",
+        "Modelo, vista y controlador",
+        "Emisor, consumidor y canal",
+        "Cliente, proveedor y registro del servicio"
+      ],
+      "c": 3,
+      "exp": "Cliente, proveedor y registro."
+    }
+  ]
+}

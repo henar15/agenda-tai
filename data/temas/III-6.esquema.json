@@ -1,0 +1,82 @@
+{
+  "tema": "III-6",
+  "ramas": [
+    {
+      "t": "Tipos de arquitectura",
+      "e": "🏛️",
+      "items": [
+        "Vistas: **estática, funcional, dinámica**",
+        "**Monolítica**: una base de código, poco escalable",
+        "**P2P**: nodos iguales, sin servidor central",
+        "**Pizarra**: agentes en sistemas expertos",
+        "**Microservicios**, **EDA** (eventos), **SOA**"
+      ]
+    },
+    {
+      "t": "Sistemas distribuidos",
+      "e": "🌍",
+      "items": [
+        "**Estado compartido** → visión de sistema único",
+        "**Middleware**: ORB, GIOP, **IIOP** (TCP/IP)",
+        "Propiedades: **transparencia**, escalabilidad…",
+        "…**fiabilidad/tolerancia a fallos** y consistencia",
+        "Disponibilidad medida con **MTBF**"
+      ]
+    },
+    {
+      "t": "Cliente/servidor",
+      "e": "🔀",
+      "items": [
+        "Cliente = **front-end** activo, inicia",
+        "Servidor = **back-end** pasivo, escucha",
+        "**Middleware**: transporte, NOS, servicio",
+        "Escalabilidad **horizontal** y **vertical**",
+        "Servidor **stateless** vs **stateful**"
+      ]
+    },
+    {
+      "t": "Tipos C/S",
+      "e": "🐘",
+      "items": [
+        "**Fat client**: lógica en cliente (DSS, EIS)",
+        "**Fat server**: thin client (misión crítica)",
+        "Servidores: ficheros, BD, **transacciones**…",
+        "…objetos (**ORB**) y web (**HTTP**)",
+        "**MVC**: modelo, vista, controlador"
+      ]
+    },
+    {
+      "t": "Capas y niveles",
+      "e": "🍰",
+      "items": [
+        "**Capa** = lógica · **nivel** = físico",
+        "**Presentación, negocio y datos**",
+        "**2 capas**: cliente ↔ BD (máx. ~100 usuarios)",
+        "**3 capas**: middle tier con la lógica",
+        "**N capas**: inferiores no dependen de superiores"
+      ]
+    },
+    {
+      "t": "Servicios web y SOAP",
+      "e": "🧼",
+      "items": [
+        "Interacción **máquina a máquina** (W3C)",
+        "Pide · **proveedor** · **publicador**",
+        "**SOAP**: Envelope + Body obligatorios",
+        "**WSDL** describe · **UDDI** publica y localiza",
+        "UDDI: páginas **blancas, amarillas, verdes**"
+      ]
+    },
+    {
+      "t": "REST y SOA",
+      "e": "😴",
+      "items": [
+        "**REST**: HTTP, URI, **sin estado**",
+        "**POST** crear · **GET** leer · **PUT** · **DELETE**",
+        "**HATEOAS**: enlaces en la respuesta",
+        "**SOA**: servicios reutilizables",
+        "Roles: **cliente, proveedor y registro**"
+      ]
+    }
+  ]
+}

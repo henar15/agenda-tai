@@ -1,0 +1,693 @@
+{
+  "tema": "III-5",
+  "cards": [
+    {
+      "id": "iii5c1",
+      "n": "1",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Por qué surge el desarrollo basado en componentes (DSBC)?",
+      "a": "Para hacer sistemas **más complejos**, en **menos tiempo** y con **menor coste** humano y económico"
+    },
+    {
+      "id": "iii5c2",
+      "n": "2",
+      "e": "🧱",
+      "t": true,
+      "q": "¿En qué consiste construir una aplicación con DSBC?",
+      "a": "En **buscar y ensamblar piezas prefabricadas** hechas por terceros, de **código cerrado** (no se puede modificar)"
+    },
+    {
+      "id": "iii5c3",
+      "n": "3",
+      "e": "✅",
+      "t": false,
+      "q": "Beneficios del DSBC",
+      "a": "Desarrollo **más sencillo, rápido y barato**, **menos errores** (componentes muy probados) e **ingresos extra** vendiendo componentes"
+    },
+    {
+      "id": "iii5c4",
+      "n": "4",
+      "e": "⏰",
+      "t": false,
+      "q": "¿Qué es la composición tardía?",
+      "a": "La composición que se hace **después de compilar** el componente"
+    },
+    {
+      "id": "iii5c5",
+      "n": "5",
+      "e": "🔔",
+      "t": false,
+      "q": "¿Qué son los eventos en DSBC?",
+      "a": "Mecanismo que **avisa a los componentes** de un **cambio de estado** en su entorno"
+    },
+    {
+      "id": "iii5c6",
+      "n": "6",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué es un contrato en DSBC?",
+      "a": "Especificación añadida a la **interfaz** que fija las **condiciones de uso e implementación** entre clientes y proveedores"
+    },
+    {
+      "id": "iii5c7",
+      "n": "7",
+      "e": "♻️",
+      "t": false,
+      "q": "¿Qué es la reutilización en DSBC?",
+      "a": "Poder usar el componente en **contextos distintos** de aquellos para los que se diseñó"
+    },
+    {
+      "id": "iii5c8",
+      "n": "8",
+      "e": "🔁",
+      "t": true,
+      "q": "Tres nuevos tipos de polimorfismo en DSBC",
+      "a": "**Reemplazabilidad** (inclusión), **paramétrico** (en tiempo de ejecución) y **acotado** (restricciones de tipos)"
+    },
+    {
+      "id": "iii5c9",
+      "n": "9",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es la reemplazabilidad?",
+      "a": "Capacidad de un componente de **sustituir a otro** sin romper los **contratos** con sus clientes"
+    },
+    {
+      "id": "iii5c10",
+      "n": "10",
+      "e": "📦",
+      "t": true,
+      "q": "¿Qué es un componente de software?",
+      "a": "Elemento que ofrece un **servicio predefinido** y se **comunica con otros**; es una **caja negra** conocida por sus **interfaces**"
+    },
+    {
+      "id": "iii5c11",
+      "n": "11",
+      "e": "🎓",
+      "t": false,
+      "q": "¿Quién dio la definición formal de componente?",
+      "a": "**Szyperski (1998)**: unidad de composición desarrollable, adquirible y componible **de forma independiente en tiempo y espacio**"
+    },
+    {
+      "id": "iii5c12",
+      "n": "12",
+      "e": "📋",
+      "t": false,
+      "q": "Características de un componente",
+      "a": "Unidad **compilada reutilizable** con interfaz definida, **un único paquete instalable**, cualquier lenguaje, **muy probado** y **bien documentado**"
+    },
+    {
+      "id": "iii5c13",
+      "n": "13",
+      "e": "⚙️",
+      "t": false,
+      "q": "Los dos componentes de toda plataforma Java",
+      "a": "La **máquina virtual (JVM)** y la **API** (interfaz de programación de aplicaciones)"
+    },
+    {
+      "id": "iii5c14",
+      "n": "14",
+      "e": "🌍",
+      "t": false,
+      "q": "¿Por qué Java es multiplataforma?",
+      "a": "Porque las aplicaciones se comunican con la **máquina virtual**, no con el sistema operativo"
+    },
+    {
+      "id": "iii5c15",
+      "n": "15",
+      "e": "4️⃣",
+      "t": true,
+      "q": "Las cuatro plataformas de Java",
+      "a": "**Java SE** (estándar), **Java ME** (micro), **Java EE** (enterprise) y **Java FX**"
+    },
+    {
+      "id": "iii5c16",
+      "n": "16",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿Qué incluye Java SE?",
+      "a": "La **API básica** (tipos, objetos, redes, seguridad, BD, GUI, XML) y la **máquina virtual** y herramientas"
+    },
+    {
+      "id": "iii5c17",
+      "n": "17",
+      "e": "📱",
+      "t": false,
+      "q": "¿Para qué es Java ME?",
+      "a": "Para **dispositivos pequeños** (móviles): API y máquina virtual **de tamaño reducido**, subconjunto de Java SE"
+    },
+    {
+      "id": "iii5c18",
+      "n": "18",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Sobre qué se construye Java EE?",
+      "a": "Sobre **Java SE**. Sirve para aplicaciones de red **a gran escala, multinivel, escalables y seguras**"
+    },
+    {
+      "id": "iii5c19",
+      "n": "19",
+      "e": "🔀",
+      "t": true,
+      "q": "¿Qué pasa con Java EE el 24 de abril de 2018?",
+      "a": "Java EE (última versión **8**) pasa a la **Fundación Eclipse**, que la llama **Jakarta EE**"
+    },
+    {
+      "id": "iii5c20",
+      "n": "20",
+      "e": "™️",
+      "t": false,
+      "q": "¿Por qué se cambió el nombre a Jakarta EE?",
+      "a": "Porque **Oracle** posee la marca **\"Java\"**. El nombre se eligió por **votación** frente a \"Enterprise Profile\""
+    },
+    {
+      "id": "iii5c21",
+      "n": "21",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Quién compró Sun Microsystems y cuándo?",
+      "a": "**Oracle**, en **2010**"
+    },
+    {
+      "id": "iii5c22",
+      "n": "22",
+      "e": "👥",
+      "t": false,
+      "q": "¿Qué es el JCP (Java Community Process)?",
+      "a": "Proceso formal (desde **1998**) para que los interesados definan futuras versiones de Java mediante **JSR**"
+    },
+    {
+      "id": "iii5c23",
+      "n": "23",
+      "e": "📄",
+      "t": false,
+      "q": "¿Qué es una JSR?",
+      "a": "**Java Specification Request**: documento formal que describe especificaciones propuestas para la plataforma Java"
+    },
+    {
+      "id": "iii5c24",
+      "n": "24",
+      "e": "📦",
+      "t": true,
+      "q": "Cambio más destacado de Jakarta EE 9",
+      "a": "Los paquetes **javax.*** pasan a llamarse **jakarta.*** (publicada en **noviembre de 2020**)"
+    },
+    {
+      "id": "iii5c25",
+      "n": "25",
+      "e": "🆕",
+      "t": false,
+      "q": "Versión actual de Jakarta EE según el temario",
+      "a": "**Jakarta EE 11**, publicada en **noviembre de 2023**"
+    },
+    {
+      "id": "iii5c26",
+      "n": "26",
+      "e": "🧪",
+      "t": false,
+      "q": "¿De qué consta una especificación Jakarta?",
+      "a": "**Documento de especificación y API**, **kit de compatibilidad (TCK)** e **implementación compatible** (la que pasa el TCK)"
+    },
+    {
+      "id": "iii5c27",
+      "n": "27",
+      "e": "🔬",
+      "t": false,
+      "q": "¿Qué es MicroProfile?",
+      "a": "Especificación para **microservicios** Java: APIs ligeras para **resiliencia, escalabilidad y configuración**"
+    },
+    {
+      "id": "iii5c28",
+      "n": "28",
+      "e": "🎨",
+      "t": false,
+      "q": "¿Qué es Jakarta Server Faces (JSF)?",
+      "a": "Marco **MVC** para crear **interfaces de usuario** web basadas en **componentes**. JSF 2 usa **Facelets** como plantillas"
+    },
+    {
+      "id": "iii5c29",
+      "n": "29",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es Jakarta Servlet?",
+      "a": "API del **lado del servidor** para manejar **peticiones y respuestas HTTP**"
+    },
+    {
+      "id": "iii5c30",
+      "n": "30",
+      "e": "🏗️",
+      "t": true,
+      "q": "Niveles de la arquitectura Java EE",
+      "a": "**Cliente**, **web**, **negocio** y **sistema de información**. El flujo va **de arriba abajo**"
+    },
+    {
+      "id": "iii5c31",
+      "n": "31",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Qué hace el nivel web y qué componentes usa?",
+      "a": "Controla la interacción cliente-negocio (datos, navegación, sesión). Usa **servlets y JSP**"
+    },
+    {
+      "id": "iii5c32",
+      "n": "32",
+      "e": "💼",
+      "t": true,
+      "q": "¿Qué componentes usa el nivel de negocio?",
+      "a": "Los **EJB** (Enterprise Java Beans): aquí está la **lógica** de la aplicación"
+    },
+    {
+      "id": "iii5c33",
+      "n": "33",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Qué usa el nivel del sistema de información?",
+      "a": "**JDBC y JPA**. **No tiene lógica**: abstrae la **persistencia** al resto de niveles"
+    },
+    {
+      "id": "iii5c34",
+      "n": "34",
+      "e": "🧬",
+      "t": false,
+      "q": "Conceptos fundamentales de Java EE",
+      "a": "**Componentes** (unidades software), **contenedores** (entorno de ejecución), **interfaces** y **servicios** (los da el contenedor)"
+    },
+    {
+      "id": "iii5c35",
+      "n": "35",
+      "e": "🔢",
+      "t": false,
+      "q": "Tamaño de los enteros en Java",
+      "a": "**byte 1** byte, **short 2**, **int 4** y **long 8** bytes"
+    },
+    {
+      "id": "iii5c36",
+      "n": "36",
+      "e": "🎁",
+      "t": false,
+      "q": "¿Qué son las clases Wrapper?",
+      "a": "Clases que **envuelven** a cada uno de los **8 tipos primitivos** para tratarlos como **objetos** (desde **JDK 5**)"
+    },
+    {
+      "id": "iii5c37",
+      "n": "37",
+      "e": "🧩",
+      "t": true,
+      "q": "Tres tipos de componentes Java EE",
+      "a": "**De cliente** (aplicaciones cliente, applets), **web** (servlets, JSF, JSP) y **de negocio** (**EJB**)"
+    },
+    {
+      "id": "iii5c38",
+      "n": "38",
+      "e": "📥",
+      "t": true,
+      "q": "¿Qué es un contenedor en Java EE?",
+      "a": "La **interfaz entre componentes** y la plataforma de bajo nivel; da servicios de **seguridad, persistencia, conectividad y transacciones**"
+    },
+    {
+      "id": "iii5c39",
+      "n": "39",
+      "e": "📝",
+      "t": false,
+      "q": "¿Qué es un descriptor de despliegue?",
+      "a": "Un **fichero XML** que describe los componentes de la aplicación"
+    },
+    {
+      "id": "iii5c40",
+      "n": "40",
+      "e": "🗃️",
+      "t": true,
+      "q": "Cuatro tipos de contenedores Java EE",
+      "a": "**EJB** y **web** (en el servidor) · **aplicación cliente** y **applet** (en el cliente, sin servidor de aplicaciones)"
+    },
+    {
+      "id": "iii5c41",
+      "n": "41",
+      "e": "🤝",
+      "t": false,
+      "q": "¿Qué es una interfaz en Java?",
+      "a": "Declara **métodos sin implementación**: dice **qué** hacer, no **cómo**. Se declara con **interface**"
+    },
+    {
+      "id": "iii5c42",
+      "n": "42",
+      "e": "🧬",
+      "t": false,
+      "q": "Herencia múltiple en Java",
+      "a": "Las **clases** heredan de **una sola** clase; las **interfaces** pueden heredar de **varias interfaces**"
+    },
+    {
+      "id": "iii5c43",
+      "n": "43",
+      "e": "📚",
+      "t": false,
+      "q": "Subtipos de Collection en Java",
+      "a": "**List** (ordenada, con duplicados), **Set** (sin duplicados), **Queue** (cola **FIFO**). **Map** = pares clave-valor"
+    },
+    {
+      "id": "iii5c44",
+      "n": "44",
+      "e": "🫘",
+      "t": true,
+      "q": "¿Qué son los EJB?",
+      "a": "Componentes de **servidor** que implementan la **lógica de negocio**, se ejecutan en un **contenedor EJB**. Paquete **javax.ejb**"
+    },
+    {
+      "id": "iii5c45",
+      "n": "45",
+      "e": "🔌",
+      "t": false,
+      "q": "Patrón Adapter",
+      "a": "**Convierte la interfaz** de una clase en otra que el cliente espera"
+    },
+    {
+      "id": "iii5c46",
+      "n": "46",
+      "e": "☝️",
+      "t": false,
+      "q": "Patrón Singleton",
+      "a": "Restringe la creación a **un único objeto** (instancia única) de una clase"
+    },
+    {
+      "id": "iii5c47",
+      "n": "47",
+      "e": "🎯",
+      "t": false,
+      "q": "Patrón Strategy",
+      "a": "Permite **elegir el algoritmo** a usar **en tiempo de ejecución**"
+    },
+    {
+      "id": "iii5c48",
+      "n": "48",
+      "e": "🔎",
+      "t": true,
+      "q": "¿Qué es JNDI?",
+      "a": "Servicio de **nombres y directorios** para buscar objetos por **nombres lógicos**. Paquete **javax.naming**"
+    },
+    {
+      "id": "iii5c49",
+      "n": "49",
+      "e": "⚛️",
+      "t": false,
+      "q": "Demarcación de transacciones",
+      "a": "**Declarativa** (mediante descriptores) o **programática** (por código, p. ej. **JTS**)"
+    },
+    {
+      "id": "iii5c50",
+      "n": "50",
+      "e": "🔐",
+      "t": true,
+      "q": "¿Qué es JAAS?",
+      "a": "**Java Authentication and Authorization Service**: autenticación y control de acceso de usuarios y grupos"
+    },
+    {
+      "id": "iii5c51",
+      "n": "51",
+      "e": "🔗",
+      "t": false,
+      "q": "Cuatro tipos de drivers JDBC",
+      "a": "**Tipo 1** puente JDBC-ODBC · **Tipo 2** API nativa · **Tipo 3** protocolo de red · **Tipo 4** thin (directo al SGBD)"
+    },
+    {
+      "id": "iii5c52",
+      "n": "52",
+      "e": "🗺️",
+      "t": false,
+      "q": "¿Qué es un ORM?",
+      "a": "**Mapeo objeto-relacional**: convierte datos entre un lenguaje OO y una BD relacional (crea una **BD virtual OO**)"
+    },
+    {
+      "id": "iii5c53",
+      "n": "53",
+      "e": "🧾",
+      "t": true,
+      "q": "¿Qué es JPA?",
+      "a": "**Java Persistence API**: estándar de mapeo de objetos Java a BD relacional. Incluida en **EJB3**; usa el lenguaje **JPQL**"
+    },
+    {
+      "id": "iii5c54",
+      "n": "54",
+      "e": "🐻",
+      "t": false,
+      "q": "Hibernate",
+      "a": "ORM **para Java** (**NHibernate** para .NET), software libre con licencia **GNU LGPL**"
+    },
+    {
+      "id": "iii5c55",
+      "n": "55",
+      "e": "🐦",
+      "t": false,
+      "q": "MyBatis",
+      "a": "Herramienta de persistencia **para Java y .NET**; mapea SQL con objetos. Licencia **Apache 2.0**"
+    },
+    {
+      "id": "iii5c56",
+      "n": "56",
+      "e": "🧷",
+      "t": false,
+      "q": "Seguridad declarativa vs programática en Java EE",
+      "a": "**Declarativa**: descriptores XML o **anotaciones**. **Programática**: en el código. Se aconseja la **declarativa**"
+    },
+    {
+      "id": "iii5c57",
+      "n": "57",
+      "e": "🛂",
+      "t": false,
+      "q": "¿Qué es el no repudio?",
+      "a": "Guardar **evidencias** de las acciones para que el usuario **no pueda negar** haberlas hecho"
+    },
+    {
+      "id": "iii5c58",
+      "n": "58",
+      "e": "📦",
+      "t": false,
+      "q": "Paquete java.lang",
+      "a": "Se **importa automáticamente**; contiene **Object**, **String** y los wrappers (Integer, Double…)"
+    },
+    {
+      "id": "iii5c59",
+      "n": "59",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Qué es JUnit?",
+      "a": "Framework para **pruebas unitarias** de clases Java (y de regresión), creado por **Erich Gamma y Kent Beck**"
+    },
+    {
+      "id": "iii5c60",
+      "n": "60",
+      "e": "✍️",
+      "t": false,
+      "q": "Lema de Java",
+      "a": "**\"Write once, run anywhere\"**: escribir una vez, ejecutar en cualquier sitio"
+    },
+    {
+      "id": "iii5c61",
+      "n": "61",
+      "e": "🏃",
+      "t": true,
+      "q": "JRE vs JDK",
+      "a": "**JRE** (= JVM + bibliotecas) solo **ejecuta** .class. **JDK** sirve para **desarrollar**: incluye JRE, compilador **javac**, javadoc…"
+    },
+    {
+      "id": "iii5c62",
+      "n": "62",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Java es compilado o interpretado?",
+      "a": "**Ambos**: se compila a **bytecodes** y la **JVM** los interpreta"
+    },
+    {
+      "id": "iii5c63",
+      "n": "63",
+      "e": "🧵",
+      "t": false,
+      "q": "¿Qué comparten los hilos de un proceso?",
+      "a": "El **espacio de memoria** y recursos. Cada hilo tiene su propio **contador de programa, pila** y estado de CPU"
+    },
+    {
+      "id": "iii5c64",
+      "n": "64",
+      "e": "🗑️",
+      "t": false,
+      "q": "Recolector de basura (GC) en Java",
+      "a": "Libera memoria **automáticamente** con el algoritmo **marca y barrido** sobre el **heap**. Se puede invocar con **System.gc()**"
+    },
+    {
+      "id": "iii5c65",
+      "n": "65",
+      "e": "🟦",
+      "t": true,
+      "q": "¿Qué es .NET?",
+      "a": "Plataforma de Microsoft **gratuita, de código abierto y multiplataforma**, creada para **competir con Java**"
+    },
+    {
+      "id": "iii5c66",
+      "n": "66",
+      "e": "🎯",
+      "t": false,
+      "q": "Objetivos de .NET",
+      "a": "Crear componentes en **casi cualquier lenguaje** usables desde otro (con **servicios web como middleware**) y ejecución **distribuida**"
+    },
+    {
+      "id": "iii5c67",
+      "n": "67",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué es .NET Standard?",
+      "a": "Especificación de **API común** a todas las implementaciones .NET: da **portabilidad** entre ellas"
+    },
+    {
+      "id": "iii5c68",
+      "n": "68",
+      "e": "📦",
+      "t": true,
+      "q": "¿Qué es NuGet?",
+      "a": "El **gestor de paquetes** oficial de .NET (gratuito y abierto). Paquetes **.nupkg** (ZIP con DLL y manifiesto)"
+    },
+    {
+      "id": "iii5c69",
+      "n": "69",
+      "e": "🧱",
+      "t": true,
+      "q": "¿Qué es un Assembly en .NET?",
+      "a": "La **unidad mínima** de ejecución, distribución, instalación y versionado. Es un **.dll o .exe**"
+    },
+    {
+      "id": "iii5c70",
+      "n": "70",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué contiene un Assembly?",
+      "a": "Código **MSIL** y **metadatos** (en el **manifiesto**). Son reutilizables, versionables y **autodescriptivos**"
+    },
+    {
+      "id": "iii5c71",
+      "n": "71",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué es el GAC?",
+      "a": "**Global Assembly Cache**: repositorio de **ensamblados compartidos**. Se registran con **gacutil.exe**"
+    },
+    {
+      "id": "iii5c72",
+      "n": "72",
+      "e": "🔍",
+      "t": false,
+      "q": "¿Qué es LINQ?",
+      "a": "**Language-Integrated Query**: añade **consultas nativas** a los lenguajes .NET, independientes del formato de datos"
+    },
+    {
+      "id": "iii5c73",
+      "n": "73",
+      "e": "🗣️",
+      "t": false,
+      "q": "Lenguajes principales de .NET",
+      "a": "**C#**, **F#** (funcional) y **Visual Basic**; soporta **más de 20** gracias a la **CLI**"
+    },
+    {
+      "id": "iii5c74",
+      "n": "74",
+      "e": "4️⃣",
+      "t": true,
+      "q": "Cuatro implementaciones principales de .NET",
+      "a": "**.NET Framework**, **.NET Core**, **Mono** y **UWP**"
+    },
+    {
+      "id": "iii5c75",
+      "n": "75",
+      "e": "🪟",
+      "t": false,
+      "q": ".NET Framework",
+      "a": "La implementación **original**: aplicaciones web, servidor y escritorio **solo en Windows**"
+    },
+    {
+      "id": "iii5c76",
+      "n": "76",
+      "e": "🗂️",
+      "t": true,
+      "q": "¿Qué es ADO.NET?",
+      "a": "Componentes de .NET para **acceder a datos** (sobre todo BD relacionales). **DataSet** = colección de **DataTable**"
+    },
+    {
+      "id": "iii5c77",
+      "n": "77",
+      "e": "🌉",
+      "t": false,
+      "q": "¿Qué hace el DataAdapter en ADO.NET?",
+      "a": "Hace de **puente** para pasar datos entre la **fuente de datos** y un **DataSet**"
+    },
+    {
+      "id": "iii5c78",
+      "n": "78",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es ASP.NET?",
+      "a": "Entorno web de Microsoft (**2002**), sucesor de **ASP**. Sus páginas son **web forms** con extensión **.aspx**"
+    },
+    {
+      "id": "iii5c79",
+      "n": "79",
+      "e": "🐧",
+      "t": true,
+      "q": ".NET Core",
+      "a": "Implementación **multiplataforma** (Windows, macOS, Linux) para web, servidores y consola"
+    },
+    {
+      "id": "iii5c80",
+      "n": "80",
+      "e": "🪒",
+      "t": false,
+      "q": "¿Qué es Razor?",
+      "a": "**Motor de vistas** de ASP.NET Core que mezcla C# y HTML con **@**; se ejecuta **en el servidor**"
+    },
+    {
+      "id": "iii5c81",
+      "n": "81",
+      "e": "📚",
+      "t": false,
+      "q": "¿Qué es la BCL?",
+      "a": "**Base Class Library**: el **corazón** funcional de .NET, organizada en **espacios de nombres** (namespaces)"
+    },
+    {
+      "id": "iii5c82",
+      "n": "82",
+      "e": "❤️",
+      "t": true,
+      "q": "¿Qué es el CLR?",
+      "a": "**Common Language Runtime**: **núcleo** de .NET que **ejecuta** el código (código **gestionado**)"
+    },
+    {
+      "id": "iii5c83",
+      "n": "83",
+      "e": "💥",
+      "t": false,
+      "q": "¿Qué elimina el CLR respecto a las DLL?",
+      "a": "El **\"infierno de las DLLs\"**: coexisten versiones nuevas y viejas"
+    },
+    {
+      "id": "iii5c84",
+      "n": "84",
+      "e": "📏",
+      "t": false,
+      "q": "CLS y CTS",
+      "a": "**CLS**: reglas comunes para que lenguajes distintos **interoperen**. **CTS**: **sistema común de tipos**"
+    },
+    {
+      "id": "iii5c85",
+      "n": "85",
+      "e": "🔑",
+      "t": false,
+      "q": "Seguridad basada en roles en .NET",
+      "a": "Permite que los componentes determinen **qué usuarios** están **autorizados** a operar"
+    },
+    {
+      "id": "iii5c86",
+      "n": "86",
+      "e": "⚖️",
+      "t": true,
+      "q": "Diferencia clave Java vs .NET",
+      "a": "**Java**: un lenguaje, **muchas plataformas**. **.NET**: **muchos lenguajes** que interoperan entre sí"
+    }
+  ]
+}

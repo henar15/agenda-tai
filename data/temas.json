@@ -253,8 +253,9 @@
   "orden": 5,
   "titulo": "Arquitecturas Java EE/Jakarta EE y .NET",
   "semana": "2027-02-15",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 158,
   "pagIni": 3
  },
@@ -265,8 +266,9 @@
   "orden": 6,
   "titulo": "Arquitectura cliente/servidor y multicapa, servicios web",
   "semana": "2027-02-15",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 88,
   "pagIni": 3
  },

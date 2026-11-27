@@ -1,0 +1,82 @@
+{
+  "tema": "III-5",
+  "ramas": [
+    {
+      "t": "Componentes (DSBC)",
+      "e": "🧩",
+      "items": [
+        "Ensamblar **piezas prefabricadas** de código cerrado",
+        "Componente = **caja negra** con **interfaces**",
+        "**Szyperski 1998**: independiente en tiempo y espacio",
+        "Composición **tardía**, **contratos**, reutilización",
+        "Polimorfismo: **reemplazabilidad**, paramétrico, acotado"
+      ]
+    },
+    {
+      "t": "Plataformas Java",
+      "e": "☕",
+      "items": [
+        "**JVM + API** en toda plataforma",
+        "**SE** estándar · **ME** móviles · **EE** empresa · **FX**",
+        "**2018**: Java EE → **Jakarta EE** (Eclipse)",
+        "Jakarta 9: **javax.*** → **jakarta.***",
+        "JCP y **JSR** definen la evolución"
+      ]
+    },
+    {
+      "t": "Arquitectura Java EE",
+      "e": "🏗️",
+      "items": [
+        "Cliente → **web** → **negocio** → **sistema info**",
+        "Web: **servlets, JSP, JSF**",
+        "Negocio: **EJB** (lógica)",
+        "Datos: **JDBC, JPA** (sin lógica)",
+        "Contenedores: **EJB, web, cliente, applet**"
+      ]
+    },
+    {
+      "t": "Servicios y persistencia",
+      "e": "🔧",
+      "items": [
+        "Nombres: **JNDI**",
+        "Transacciones: declarativa o programática (**JTS**)",
+        "Seguridad: **JAAS**; mejor **declarativa**",
+        "**JDBC**: 4 tipos de driver (tipo 4 = thin)",
+        "ORM: **JPA**, **Hibernate**, MyBatis"
+      ]
+    },
+    {
+      "t": "Lenguaje Java",
+      "e": "✍️",
+      "items": [
+        "**Write once, run anywhere**",
+        "**JRE** ejecuta · **JDK** desarrolla (javac)",
+        "Compilado a **bytecode** + interpretado",
+        "int **4 bytes**, long 8 · **8 wrappers**",
+        "**GC**: marca y barrido sobre el heap"
+      ]
+    },
+    {
+      "t": "Plataforma .NET",
+      "e": "🟦",
+      "items": [
+        "Microsoft, **abierta y multiplataforma**",
+        "**Muchos lenguajes**: C#, F#, VB",
+        "**Assembly** (.dll/.exe) + **GAC**",
+        "**NuGet** (.nupkg) · **.NET Standard**",
+        "**CLR** ejecuta · **BCL** · **CLS/CTS**"
+      ]
+    },
+    {
+      "t": "Implementaciones .NET",
+      "e": "🧭",
+      "items": [
+        "**.NET Framework**: original, solo Windows",
+        "**.NET Core**: Windows, macOS, Linux",
+        "**Mono** (móviles) y **UWP**",
+        "**ADO.NET**: DataSet, DataAdapter",
+        "**ASP.NET** (.aspx) y **Razor**"
+      ]
+    }
+  ]
+}

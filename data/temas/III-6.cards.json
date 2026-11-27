@@ -1,0 +1,677 @@
+{
+  "tema": "III-6",
+  "cards": [
+    {
+      "id": "iii6c1",
+      "n": "1",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué es la arquitectura de software?",
+      "a": "Las guías que indican la **estructura, funcionamiento e interacción** entre las partes del software (como los planos de un edificio)"
+    },
+    {
+      "id": "iii6c2",
+      "n": "2",
+      "e": "🎯",
+      "t": false,
+      "q": "¿En base a qué se elige una arquitectura?",
+      "a": "En base a **objetivos** (requisitos, no solo funcionales) y **restricciones** (tecnologías disponibles)"
+    },
+    {
+      "id": "iii6c3",
+      "n": "3",
+      "e": "👁️",
+      "t": true,
+      "q": "Tres vistas mínimas de cualquier arquitectura",
+      "a": "**Estática** (qué componentes), **funcional** (qué hace cada uno) y **dinámica** (cómo se comportan e interactúan en el tiempo)"
+    },
+    {
+      "id": "iii6c4",
+      "n": "4",
+      "e": "🧱",
+      "t": false,
+      "q": "Arquitectura monolítica",
+      "a": "Todas las funciones en **una única base de código** centralizada: fácil y barata, pero **poco escalable**"
+    },
+    {
+      "id": "iii6c5",
+      "n": "5",
+      "e": "🧩",
+      "t": false,
+      "q": "Descomposición modular",
+      "a": "El software se estructura en **grupos funcionales muy acoplados** (refinamientos sucesivos, jerarquía modular)"
+    },
+    {
+      "id": "iii6c6",
+      "n": "6",
+      "e": "🚰",
+      "t": false,
+      "q": "Arquitectura en pipeline",
+      "a": "Transforma un flujo de datos en **fases secuenciales**: la **salida de una es la entrada de la siguiente** (filtros, tuberías)"
+    },
+    {
+      "id": "iii6c7",
+      "n": "7",
+      "e": "🤝",
+      "t": true,
+      "q": "Arquitectura P2P (peer to peer)",
+      "a": "Nodos que se comportan **como iguales**, a la vez **clientes y servidores**, **sin servidor central**"
+    },
+    {
+      "id": "iii6c8",
+      "n": "8",
+      "e": "📝",
+      "t": false,
+      "q": "Arquitectura en pizarra",
+      "a": "Usada en **sistemas expertos** y multiagente: **agentes** que leen y escriben en una **pizarra** común que los coordina"
+    },
+    {
+      "id": "iii6c9",
+      "n": "9",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es CORBA?",
+      "a": "Estándar del **OMG** para que componentes en **distintos lenguajes y máquinas** trabajen juntos. Es un **middleware**"
+    },
+    {
+      "id": "iii6c10",
+      "n": "10",
+      "e": "🔢",
+      "t": false,
+      "q": "Versiones de CORBA",
+      "a": "**1991** la primera, **CORBA 2 (1995)** crea el protocolo **IIOP**, **CORBA 3 (2002)** introduce el modelo de componentes **CCM**"
+    },
+    {
+      "id": "iii6c11",
+      "n": "11",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué es DCOM?",
+      "a": "**Distributed Component Object Model**: tecnología **propietaria de Microsoft** para componentes distribuidos"
+    },
+    {
+      "id": "iii6c12",
+      "n": "12",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Cuándo surge la arquitectura de servicios web?",
+      "a": "A **finales de los 90**, tras el **poco éxito de CORBA**; la define el **W3C**"
+    },
+    {
+      "id": "iii6c13",
+      "n": "13",
+      "e": "🔬",
+      "t": true,
+      "q": "Arquitectura de microservicios (MSA)",
+      "a": "Aplicación como **pequeños servicios** en su propio proceso, con **mecanismos ligeros** (API HTTP) y **despliegue independiente**"
+    },
+    {
+      "id": "iii6c14",
+      "n": "14",
+      "e": "⚡",
+      "t": false,
+      "q": "Arquitectura dirigida por eventos (EDA)",
+      "a": "Producción, detección y reacción a **eventos** (cambio significativo de estado). Se propaga la **notificación**, no el evento"
+    },
+    {
+      "id": "iii6c15",
+      "n": "15",
+      "e": "🌌",
+      "t": false,
+      "q": "Arquitectura basada en el espacio",
+      "a": "Resuelve **escalabilidad y concurrencia** eliminando la **BD central** y usando **datos replicados en memoria**"
+    },
+    {
+      "id": "iii6c16",
+      "n": "16",
+      "e": "6️⃣",
+      "t": false,
+      "q": "Seis tipos de sistemas (históricos)",
+      "a": "**Por lotes**, **centralizados de tiempo compartido**, **personales**, **teleproceso**, **en red** y **distribuidos**"
+    },
+    {
+      "id": "iii6c17",
+      "n": "17",
+      "e": "🖧",
+      "t": false,
+      "q": "Sistemas en red",
+      "a": "Evolución del teleproceso: los terminales **tienen capacidad de cómputo**; **desaparece el ordenador central**"
+    },
+    {
+      "id": "iii6c18",
+      "n": "18",
+      "e": "🌍",
+      "t": true,
+      "q": "¿Qué es un sistema distribuido?",
+      "a": "Ordenadores interconectados que **comparten un estado**, ofreciendo **visión de sistema único**"
+    },
+    {
+      "id": "iii6c19",
+      "n": "19",
+      "e": "⚖️",
+      "t": false,
+      "q": "Sistema en red vs distribuido",
+      "a": "En red: **estados independientes**. Distribuido: **estado global**"
+    },
+    {
+      "id": "iii6c20",
+      "n": "20",
+      "e": "🧰",
+      "t": false,
+      "q": "¿Qué hace falta para la visión de sistema único con componentes heterogéneos?",
+      "a": "Una capa intermedia: el **middleware**"
+    },
+    {
+      "id": "iii6c21",
+      "n": "21",
+      "e": "📨",
+      "t": true,
+      "q": "¿Qué es un ORB?",
+      "a": "**Object Request Broker**: middleware que permite a objetos **llamar a métodos remotos** como si estuvieran en la misma máquina"
+    },
+    {
+      "id": "iii6c22",
+      "n": "22",
+      "e": "🔗",
+      "t": true,
+      "q": "GIOP e IIOP",
+      "a": "**GIOP**: protocolo **abstracto** de comunicación entre ORBs. **IIOP**: su implementación para **TCP/IP**"
+    },
+    {
+      "id": "iii6c23",
+      "n": "23",
+      "e": "📋",
+      "t": false,
+      "q": "Tres características de los sistemas distribuidos",
+      "a": "**Concurrencia**, **carencia de reloj global** y **fallos independientes** de los componentes"
+    },
+    {
+      "id": "iii6c24",
+      "n": "24",
+      "e": "4️⃣",
+      "t": true,
+      "q": "Cuatro propiedades de un sistema distribuido",
+      "a": "**Transparencia**, **escalabilidad**, **fiabilidad y tolerancia a fallos** y **consistencia**"
+    },
+    {
+      "id": "iii6c25",
+      "n": "25",
+      "e": "🫥",
+      "t": true,
+      "q": "Objetivo principal de un sistema distribuido",
+      "a": "La **transparencia**: ver los recursos como si los gestionara **una sola máquina**"
+    },
+    {
+      "id": "iii6c26",
+      "n": "26",
+      "e": "🏷️",
+      "t": false,
+      "q": "Las dos transparencias más importantes",
+      "a": "**De identificación** (nombres independientes de la topología) y **de ubicación física** (no se sabe si el recurso es local o remoto)"
+    },
+    {
+      "id": "iii6c27",
+      "n": "27",
+      "e": "📈",
+      "t": false,
+      "q": "¿Cuándo es escalable un sistema?",
+      "a": "Cuando se pueden **ampliar o reducir recursos** con poco esfuerzo, **sin más complejidad** ni **menos rendimiento**"
+    },
+    {
+      "id": "iii6c28",
+      "n": "28",
+      "e": "⏱️",
+      "t": false,
+      "q": "¿Qué mide el MTBF?",
+      "a": "El **tiempo medio entre fallos**: principal parámetro para medir la **disponibilidad**"
+    },
+    {
+      "id": "iii6c29",
+      "n": "29",
+      "e": "🛟",
+      "t": false,
+      "q": "¿Qué es la tolerancia a fallos?",
+      "a": "Seguir operando ante el fallo de un componente **enmascarándolo** al usuario: **detectar** el fallo y **continuar** el servicio"
+    },
+    {
+      "id": "iii6c30",
+      "n": "30",
+      "e": "💽",
+      "t": false,
+      "q": "Probabilidad de fallo con replicación",
+      "a": "Disminuye **exponencialmente**: si un disco falla con 1/100, que fallen dos a la vez es **1/10.000**"
+    },
+    {
+      "id": "iii6c31",
+      "n": "31",
+      "e": "🧮",
+      "t": false,
+      "q": "Consistencia en sistemas distribuidos",
+      "a": "Los clientes deben obtener **los mismos resultados** con los mismos datos. A veces se **relaja** para mantener rendimiento"
+    },
+    {
+      "id": "iii6c32",
+      "n": "32",
+      "e": "🕸️",
+      "t": false,
+      "q": "Computación grid",
+      "a": "Sistema distribuido que comparte recursos **no centrados geográficamente** (máquinas ociosas en redes amplias)"
+    },
+    {
+      "id": "iii6c33",
+      "n": "33",
+      "e": "🎯",
+      "t": false,
+      "q": "Objetivos de las aplicaciones distribuidas",
+      "a": "**Alto rendimiento**, **tolerancia a fallos**, **alta disponibilidad**, **movilidad** y **ubicuidad**"
+    },
+    {
+      "id": "iii6c34",
+      "n": "34",
+      "e": "🔀",
+      "t": false,
+      "q": "¿Qué es la arquitectura cliente/servidor?",
+      "a": "Reparto de tareas entre **servidores** (proveedores de servicios) y **clientes** (demandantes). Separación **lógica**"
+    },
+    {
+      "id": "iii6c35",
+      "n": "35",
+      "e": "🧭",
+      "t": false,
+      "q": "Unidad básica de diseño en cliente/servidor",
+      "a": "El **servicio**: el servidor lo ofrece y el cliente lo solicita"
+    },
+    {
+      "id": "iii6c36",
+      "n": "36",
+      "e": "↔️",
+      "t": false,
+      "q": "Protocolos asimétricos en cliente/servidor",
+      "a": "Los **clientes inician** la conversación; los **servidores escuchan**"
+    },
+    {
+      "id": "iii6c37",
+      "n": "37",
+      "e": "📏",
+      "t": true,
+      "q": "Escalabilidad horizontal vs vertical",
+      "a": "**Horizontal**: **añadir servidores** o nodos. **Vertical**: **mejorar el servidor** (CPU, RAM, disco)"
+    },
+    {
+      "id": "iii6c38",
+      "n": "38",
+      "e": "⏸️",
+      "t": false,
+      "q": "Comunicación síncrona vs asíncrona",
+      "a": "**Síncrona**: el cliente **queda bloqueado** esperando. **Asíncrona**: recupera el control **inmediatamente**"
+    },
+    {
+      "id": "iii6c39",
+      "n": "39",
+      "e": "3️⃣",
+      "t": true,
+      "q": "Tres componentes básicos del modelo cliente/servidor",
+      "a": "**Cliente** (inicia el diálogo), **servidor** (espera peticiones) y **middleware** (conectividad)"
+    },
+    {
+      "id": "iii6c40",
+      "n": "40",
+      "e": "🎭",
+      "t": true,
+      "q": "Front-end y back-end",
+      "a": "El **cliente** es el **front-end** (papel **activo**, maestro). El **servidor** es el **back-end** (papel **pasivo**, esclavo)"
+    },
+    {
+      "id": "iii6c41",
+      "n": "41",
+      "e": "🧠",
+      "t": false,
+      "q": "Servidor stateless vs stateful",
+      "a": "**Apátrida (stateless)**: no guarda información entre peticiones (HTTP de páginas estáticas). **Stateful**: la recuerda (**Apache Tomcat**)"
+    },
+    {
+      "id": "iii6c42",
+      "n": "42",
+      "e": "🧱",
+      "t": false,
+      "q": "Tres niveles del middleware",
+      "a": "**Protocolo de transporte** (TCP/IP), **sistema operativo de red NOS** (RPC, Samba) y **protocolo del servicio** (HTTP, ORB)"
+    },
+    {
+      "id": "iii6c43",
+      "n": "43",
+      "e": "🐘",
+      "t": true,
+      "q": "Fat Client (Thin Server)",
+      "a": "Presentación y aplicación **en el cliente**; el servidor solo gestiona la **BD**. Para **DSS y EIS**, no para misión crítica"
+    },
+    {
+      "id": "iii6c44",
+      "n": "44",
+      "e": "🪶",
+      "t": true,
+      "q": "Fat Server (Thin Client)",
+      "a": "El cliente solo es **interfaz**; aplicación y BD **en el servidor**. Usado en **sistemas de misión crítica**"
+    },
+    {
+      "id": "iii6c45",
+      "n": "45",
+      "e": "🗂️",
+      "t": false,
+      "q": "Tipos de servidores por el servicio",
+      "a": "**De ficheros**, **de bases de datos**, **de transacciones**, **de objetos** y **web**"
+    },
+    {
+      "id": "iii6c46",
+      "n": "46",
+      "e": "💾",
+      "t": false,
+      "q": "¿Qué aportan los procedimientos almacenados en cliente/servidor?",
+      "a": "Llevan la **lógica de aplicación al servidor de BD**, permitiendo un sistema de **dos niveles**"
+    },
+    {
+      "id": "iii6c47",
+      "n": "47",
+      "e": "🏧",
+      "t": false,
+      "q": "Servidor de transacciones",
+      "a": "Todas las operaciones van en **un único mensaje** de solicitud/respuesta como **unidad lógica**: o se hace todo o nada (ej. **cajero**)"
+    },
+    {
+      "id": "iii6c48",
+      "n": "48",
+      "e": "📮",
+      "t": false,
+      "q": "¿Cómo se comunican los objetos en un servidor de objetos?",
+      "a": "Mediante un **ORB** (Object Request Broker)"
+    },
+    {
+      "id": "iii6c49",
+      "n": "49",
+      "e": "🎛️",
+      "t": true,
+      "q": "Patrón MVC",
+      "a": "**Modelo** (datos y lógica de negocio), **Vista** (presentación) y **Controlador** (responde a eventos, intermediario)"
+    },
+    {
+      "id": "iii6c50",
+      "n": "50",
+      "e": "🧱",
+      "t": true,
+      "q": "Capa (layer) vs nivel (tier)",
+      "a": "**Capa**: división **lógica** del código. **Nivel**: división **física** del despliegue. 3 capas **no implica** 3 niveles"
+    },
+    {
+      "id": "iii6c51",
+      "n": "51",
+      "e": "🍰",
+      "t": false,
+      "q": "Las tres capas del software",
+      "a": "**Presentación** (la que ve el usuario), **negocio** (reglas, lógica) y **datos** (gestores de BD)"
+    },
+    {
+      "id": "iii6c52",
+      "n": "52",
+      "e": "2️⃣",
+      "t": false,
+      "q": "Modelo de dos capas",
+      "a": "El cliente habla **directamente con el servidor de BD**; la lógica está en el cliente o en **procedimientos almacenados**"
+    },
+    {
+      "id": "iii6c53",
+      "n": "53",
+      "e": "👥",
+      "t": false,
+      "q": "Límite de los sistemas de dos capas",
+      "a": "No escalan bien a partir de unos **100 usuarios**"
+    },
+    {
+      "id": "iii6c54",
+      "n": "54",
+      "e": "3️⃣",
+      "t": true,
+      "q": "Modelo de tres capas",
+      "a": "**Presentación** (cliente fino), **negocio** (servidor de aplicaciones, **middle tier**) y **datos** (servidor de BD)"
+    },
+    {
+      "id": "iii6c55",
+      "n": "55",
+      "e": "👍",
+      "t": false,
+      "q": "Ventajas del modelo de tres capas",
+      "a": "**Escalabilidad**, sistemas críticos fiables, mantenimiento sencillo, **menos usuarios conectados a la BD**; si cambia la lógica, solo se toca el **servidor**"
+    },
+    {
+      "id": "iii6c56",
+      "n": "56",
+      "e": "👎",
+      "t": false,
+      "q": "Inconvenientes del modelo de tres capas",
+      "a": "Puede ser **más complejo** y puede **aumentar el tráfico de red**"
+    },
+    {
+      "id": "iii6c57",
+      "n": "57",
+      "e": "🪜",
+      "t": false,
+      "q": "Modelo de N capas",
+      "a": "Reparto **jerárquico** de responsabilidades; las **capas inferiores no dependen de las superiores**; bajo acoplamiento"
+    },
+    {
+      "id": "iii6c58",
+      "n": "58",
+      "e": "🛠️",
+      "t": false,
+      "q": "Beneficios del modelo de N capas",
+      "a": "**Abstracción**, **aislamiento**, **rendimiento**, **testeabilidad** e **independencia**"
+    },
+    {
+      "id": "iii6c59",
+      "n": "59",
+      "e": "🧩",
+      "t": false,
+      "q": "Tres partes de la arquitectura de servicios web",
+      "a": "**El que pide** el servicio, el **proveedor** y el **publicador**"
+    },
+    {
+      "id": "iii6c60",
+      "n": "60",
+      "e": "📖",
+      "t": false,
+      "q": "Definición de servicio web del W3C",
+      "a": "Sistema software para la interacción **máquina a máquina** a través de una red de forma **interoperable**"
+    },
+    {
+      "id": "iii6c61",
+      "n": "61",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Qué organismos regulan los servicios web?",
+      "a": "**OASIS** y **W3C**; el **WS-I** mejora la **interoperabilidad**"
+    },
+    {
+      "id": "iii6c62",
+      "n": "62",
+      "e": "📍",
+      "t": false,
+      "q": "¿Qué es un end-point?",
+      "a": "Un **punto de acceso** a un servicio; en servicios web se identifica con una **URI**"
+    },
+    {
+      "id": "iii6c63",
+      "n": "63",
+      "e": "🚪",
+      "t": false,
+      "q": "¿Por qué se usan los servicios web sobre HTTP?",
+      "a": "Porque los **firewalls** suelen dejar abierto el **puerto 80**"
+    },
+    {
+      "id": "iii6c64",
+      "n": "64",
+      "e": "🥞",
+      "t": true,
+      "q": "Cuatro áreas de la pila de protocolos de servicios web",
+      "a": "**Transporte** (HTTP, SMTP, FTP, BEEP), **mensajería XML** (SOAP, XML-RPC, REST), **descripción** (**WSDL**) y **descubrimiento** (**UDDI**)"
+    },
+    {
+      "id": "iii6c65",
+      "n": "65",
+      "e": "🧼",
+      "t": false,
+      "q": "¿Qué es SOAP?",
+      "a": "**Simple Object Access Protocol**: protocolo para que objetos en distintos procesos se comuniquen **intercambiando XML**. Recomendación del **W3C**"
+    },
+    {
+      "id": "iii6c66",
+      "n": "66",
+      "e": "📜",
+      "t": false,
+      "q": "¿De qué protocolo deriva SOAP?",
+      "a": "De **XML-RPC** (Dave Winer, **1998**). SOAP lo crearon **Microsoft, IBM** y otros"
+    },
+    {
+      "id": "iii6c67",
+      "n": "67",
+      "e": "✨",
+      "t": false,
+      "q": "Tres características de SOAP",
+      "a": "**Extensibilidad**, **neutralidad** (sobre HTTP, SMTP, JMS…) e **independencia** (cualquier modelo de programación)"
+    },
+    {
+      "id": "iii6c68",
+      "n": "68",
+      "e": "✉️",
+      "t": true,
+      "q": "Partes de un mensaje SOAP",
+      "a": "**Envelope** (obligatorio), **Header** (opcional), **Body** (obligatorio) y **Fault** (errores)"
+    },
+    {
+      "id": "iii6c69",
+      "n": "69",
+      "e": "📎",
+      "t": false,
+      "q": "¿Qué es XOP en SOAP?",
+      "a": "Especificación de **SOAP 1.2** que envía los **binarios adjuntos aparte** (vía **MIME**) y los referencia en el Body"
+    },
+    {
+      "id": "iii6c70",
+      "n": "70",
+      "e": "📒",
+      "t": false,
+      "q": "¿Qué es UDDI?",
+      "a": "Estándar XML para **describir, publicar y localizar** servicios web; un **directorio** de servicios descritos en WSDL"
+    },
+    {
+      "id": "iii6c71",
+      "n": "71",
+      "e": "📄",
+      "t": true,
+      "q": "Páginas de UDDI",
+      "a": "**Blancas**: datos de la organización. **Amarillas**: clasificación. **Verdes**: información **técnica** de los servicios"
+    },
+    {
+      "id": "iii6c72",
+      "n": "72",
+      "e": "🔍",
+      "t": false,
+      "q": "¿Qué es WSIL?",
+      "a": "**Web Services Inspection Language**: descubrimiento de servicios **alternativo a UDDI**, más ligero y **sin registro centralizado**"
+    },
+    {
+      "id": "iii6c73",
+      "n": "73",
+      "e": "📐",
+      "t": true,
+      "q": "¿Qué es WSDL?",
+      "a": "Lenguaje **XML** que describe la **interfaz pública** de un servicio web: cómo llamarlo, parámetros y respuestas"
+    },
+    {
+      "id": "iii6c74",
+      "n": "74",
+      "e": "🏗️",
+      "t": false,
+      "q": "Elementos de un WSDL",
+      "a": "**types**, **message**, **portType** (operaciones), **binding** (protocolos) y **service** (puertos y direcciones)"
+    },
+    {
+      "id": "iii6c75",
+      "n": "75",
+      "e": "🧾",
+      "t": false,
+      "q": "Parte abstracta vs concreta del WSDL",
+      "a": "**Abstracta**: **qué** hace (operaciones, mensajes, tipos). **Concreta**: **cómo y dónde** (binding y dirección)"
+    },
+    {
+      "id": "iii6c76",
+      "n": "76",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué es WS-Security?",
+      "a": "Especificación para la seguridad en servicios **SOAP**: **autenticación, firma digital, cifrado** y tokens"
+    },
+    {
+      "id": "iii6c77",
+      "n": "77",
+      "e": "📬",
+      "t": false,
+      "q": "WS-ReliableMessaging",
+      "a": "Garantiza la **entrega fiable** y el **orden correcto** de los mensajes SOAP"
+    },
+    {
+      "id": "iii6c78",
+      "n": "78",
+      "e": "😴",
+      "t": false,
+      "q": "¿Qué es REST?",
+      "a": "Arquitectura sobre **HTTP** que usa sus métodos para operar con **recursos identificados por URI**, **sin estado**"
+    },
+    {
+      "id": "iii6c79",
+      "n": "79",
+      "e": "✏️",
+      "t": true,
+      "q": "Métodos HTTP de una API REST",
+      "a": "**POST** crear · **GET** leer · **PUT** editar · **DELETE** eliminar"
+    },
+    {
+      "id": "iii6c80",
+      "n": "80",
+      "e": "🔗",
+      "t": true,
+      "q": "¿Qué es HATEOAS?",
+      "a": "**Hypermedia As The Engine Of Application State**: la respuesta incluye **enlaces** a otros recursos"
+    },
+    {
+      "id": "iii6c81",
+      "n": "81",
+      "e": "☕",
+      "t": false,
+      "q": "API de Java para servicios REST",
+      "a": "**JAX-RS**"
+    },
+    {
+      "id": "iii6c82",
+      "n": "82",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Qué es SOA?",
+      "a": "**Arquitectura Orientada a Servicios**: funciones como **servicios independientes** con interfaces estándar, orientada a la **reutilización**"
+    },
+    {
+      "id": "iii6c83",
+      "n": "83",
+      "e": "👤",
+      "t": true,
+      "q": "Tres roles en SOA",
+      "a": "**Cliente** del servicio, **proveedor** del servicio y **registro** del servicio"
+    },
+    {
+      "id": "iii6c84",
+      "n": "84",
+      "e": "🎯",
+      "t": false,
+      "q": "Objetivos de SOA",
+      "a": "**Alinear TI con el negocio** y responder rápido a **cambios de requisitos**. Se rige por el **Manifiesto SOA**"
+    }
+  ]
+}
