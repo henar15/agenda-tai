@@ -152,8 +152,10 @@ function ritmo() {
 function enlaceTarea(t) {
   const x = plain(t).toLowerCase();
   const b = (attrs, txt) => `<button class="mini ghost wgo" ${attrs}>${txt || 'Hacer →'}</button>`;
-  if (/trampa/.test(x) && (S.tests || []).some((z) => z.id === 't-trampa'))
-    return b('data-act="tstart" data-id="t-trampa"');
+  if (/trampa/.test(x)) {
+    const id = /trampa 2|art\. 22/.test(x) ? 't-trampa2' : 't-trampa';
+    if ((S.tests || []).some((z) => z.id === id)) return b(`data-act="tstart" data-id="${id}"`);
+  }
   const tm = [...x.matchAll(/\b(i{1,3}|iv)\.(\d+)/g)]
     .map((m) => m[1].toUpperCase() + '-' + m[2])
     .filter((id) => bank(id).length);
