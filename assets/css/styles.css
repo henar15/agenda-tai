@@ -3530,3 +3530,23 @@ body.focus {
 .mz-nota {
   margin: 8px 0 0;
 }
+.extras {
+  margin: 8px 0 12px;
+}
+.extras-home {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+.extras .mode {
+  background: var(--bg);
+  border: 2px solid var(--line);
+  margin: 0;
+}
+.extras .mode:not(:disabled):hover {
+  border-color: var(--acc);
+}
+.extras {
+  display: grid;
+  gap: 10px;
+}

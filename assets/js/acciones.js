@@ -623,7 +623,19 @@ document.addEventListener('click', (e) => {
       ses: 1,
     };
     render();
+  } else if (a === 'exadel') {
+    startAdelantar();
+  } else if (a === 'exsabes') {
+    startSabes();
+  } else if (a === 'exexpres') {
+    startExpres(el.dataset.b);
   } else if (a === 'sesritfin') {
+    // ritmo automático: según cómo te han ido las tarjetas nuevas
+    const pa = ui.ses.pasos[ui.ses.i];
+    if (pa && pa.tipo === 'nuevas') {
+      const r = ajustarRitmo(ui.rit.ok, ui.rit.n);
+      if (r) ui.ses.ritmo = r;
+    }
     ritSave();
     ui.rit = null;
     sesAvanzar();

@@ -267,7 +267,7 @@ function vSesion() {
     cuerpo = `${tit()}<p>Una partida rápida${t ? ` con el tema <b>${esc(t.codigo)}</b>` : ''} para acabar con buen sabor de boca.</p><div class="acts"><button class="btn" data-act="sesjuego" data-k="vf">⚡ Verdadero o falso (1 min)</button><button class="btn ghost" data-act="sesjuego" data-k="cf">✍️ Completa la frase</button></div>${seguir('Ya he jugado →')}`;
   } else {
     const st = ((S.diario || {})[today()] || {})._s || {};
-    cuerpo = `<h2>🎉 ¡Sesión terminada!</h2><div class="kpis"><div class="kpi"><b>${st.c || 0}</b><span>tarjetas</span></div><div class="kpi"><b>${st.q || 0}</b><span>preguntas</span></div><div class="kpi"><b>${st.p || 0}</b><span>páginas</span></div></div><p>${esc(mascName())} está orgulloso. Mañana te espera lo siguiente; si te apetece más, tienes los exámenes y los juegos libres.</p><div class="acts"><a class="btn" href="#inicio">Volver al inicio</a></div>`;
+    cuerpo = `<h2>🎉 ¡Sesión terminada!</h2><div class="kpis"><div class="kpi"><b>${st.c || 0}</b><span>tarjetas</span></div><div class="kpi"><b>${st.q || 0}</b><span>preguntas</span></div><div class="kpi"><b>${st.p || 0}</b><span>páginas</span></div></div>${s.ritmo ? `<p class="rit-fbk ${s.ritmo === 'sube' ? 'ok' : 'mid'}">${s.ritmo === 'sube' ? '🚀 Te las sabías casi todas: a partir de mañana te pongo más tarjetas nuevas cada día.' : '🐢 Hoy ha costado: mañana te pongo algunas menos para que se asienten.'}</p>` : ''}<p>${esc(mascName())} está orgulloso. ¿Te ha sabido a poco?</p>${vExtras()}<div class="acts"><a class="btn ghost" href="#inicio">Volver al inicio</a></div>`;
   }
   const reset = `<button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
   return `<div class="ses">${vSesStepper(s)}<div class="card ses-card">${cuerpo}</div>${reset}</div>`;
@@ -275,7 +275,7 @@ function vSesion() {
 function vSesBoton() {
   const s = sesHoy();
   if (s && s.pasos[s.i].tipo === 'fin' && s.hechos[s.i - 1])
-    return `<a class="ses-cta done" href="#sesion"><b>✅ Sesión de hoy hecha</b><span>Ver resumen</span></a><button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
+    return `<a class="ses-cta done" href="#sesion"><b>✅ Sesión de hoy hecha</b><span>Ver resumen</span></a><div class="card extras-home"><b>¿Te ha sabido a poco?</b>${vExtras()}</div><button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
   if (s) {
     const p = s.pasos[s.i];
     return `<a class="ses-cta" href="#sesion"><b>▶ Seguir con mi sesión</b><span>Paso ${s.i + 1} de ${s.pasos.length}: ${esc(PASO[p.tipo].t)}</span></a><button class="mini ghost ses-reset" data-act="sesreset">${ui.sesReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de hoy de 0'}</button>`;
@@ -290,4 +290,74 @@ function reiniciarSesion() {
   ui.ses = null;
   lsSet('ses', null);
   crearSesion();
+}
+
+/* ---------- más estudio cuando la sesión se queda corta ---------- */
+// Temas que ya llevas (has visto alguna tarjeta suya)
+function temasEmpezados() {
+  const ids = new Set(Object.values(memItems()).map((it) => it.t));
+  Object.entries(S.piles || {}).forEach(([t, p]) => Object.keys(p || {}).length && ids.add(t));
+  return S.temas.filter((t) => ids.has(t.id)).sort(ordT);
+}
+// Siguientes tarjetas sin ver: primero del tema que llevas, luego de los siguientes del plan
+function siguientesNuevas(n) {
+  const orden = S.temas
+    .filter((t) => (S.cards[t.id] || []).length)
+    .sort((a, b) => String(a.semana).localeCompare(String(b.semana)) || ordT(a, b));
+  const out = [];
+  for (const t of orden) {
+    const p = S.piles[t.id] || {};
+    for (const c of temaCards(t.id)) {
+      if (out.length >= n) return out;
+      if (!p[c.id] && !memItems()[c.id]) out.push({ id: c.id, k: 'c', t: t.id, nueva: true });
+    }
+  }
+  return out;
+}
+function vExtras() {
+  const sig = siguientesNuevas(25);
+  const temaSig = sig.length ? S.temas.find((t) => t.id === sig[0].t) : null;
+  const emp = temasEmpezados();
+  const nq = emp.length ? emp.flatMap((t) => preguntasTema(t.id)).length : 0;
+  const bl = (emp[emp.length - 1] || temaSig || { bloque: 'I' }).bloque;
+  const nofi = ofiQs(true).filter((q) => q.bloque === bl).length;
+  return `<div class="modes extras">
+  <button class="mode" data-act="exadel"${sig.length ? '' : ' disabled'}><b>➕ Adelantar ${sig.length} tarjetas</b><span>${temaSig ? `Lo siguiente: tema ${esc(temaSig.codigo)}. El plan se recoloca solo.` : 'Ya has visto todas las tarjetas.'}</span></button>
+  <button class="mode" data-act="exsabes"${nq ? '' : ' disabled'}><b>📝 Test de lo que ya sabes</b><span>15 preguntas oficiales y de la web de los temas que llevas${emp.length ? ` (${esc(emp.map((t) => t.codigo).join(', '))})` : ''}.</span></button>
+  <button class="mode" data-act="exexpres" data-b="${bl}"${nofi >= 10 ? '' : ' disabled'}><b>⏱️ Examen exprés del Bloque ${bl}</b><span>20 preguntas oficiales en 24 minutos, como el real.</span></button></div>`;
+}
+function startAdelantar() {
+  const cola = siguientesNuevas(25);
+  if (!cola.length) return;
+  ui.rit = { cola, i: 0, paso: 'q', ok: 0, n: 0, reint: {}, hc: 0, ini: cola.length, extra: 1 };
+  location.hash = 'tarjetas';
+  ui.ttab = 'ritmo';
+  render();
+}
+function startSabes() {
+  const emp = temasEmpezados().map((t) => t.id);
+  const ofi = shuffle(ofiQs(true).filter((q) => emp.includes(q.tema)));
+  const web = shuffle(emp.flatMap((t) => bank(t)));
+  const qs = ofi.slice(0, 10).concat(web).slice(0, 15);
+  if (!qs.length) return;
+  startExam({
+    kind: 'gen',
+    titulo: 'Test de lo que ya sabes',
+    qs: shuffle(qs),
+    modo: 'momento',
+    tiempo: 'libre',
+    pistas: 'no',
+  });
+}
+function startExpres(b) {
+  const qs = shuffle(ofiQs(true).filter((q) => q.bloque === b)).slice(0, 20);
+  if (!qs.length) return;
+  startExam({
+    kind: 'gen',
+    titulo: 'Examen exprés · Bloque ' + b,
+    qs,
+    modo: 'final',
+    tiempo: 'oficial',
+    pistas: 'no',
+  });
 }

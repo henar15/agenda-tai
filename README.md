@@ -15,7 +15,7 @@ Organiza el estudio, te pone a prueba con exámenes oficiales y te mantiene moti
 
 | Sección | Para qué sirve |
 |---|---|
-| ▶ **Sesión guiada** | Un botón que te lleva paso a paso por lo de hoy: leer y subrayar las páginas, las tarjetas nuevas de lo leído, un test de eso mismo, el repaso que toca y un juego para cerrar. |
+| ▶ **Sesión guiada** | Un botón que te lleva paso a paso por lo de hoy: leer y subrayar las páginas, las tarjetas nuevas de lo leído, un test de eso mismo, el repaso que toca y un juego para cerrar. El ritmo de tarjetas nuevas se ajusta solo según cuánto aciertas y, si te sabe a poco, puedes adelantar tarjetas, hacer un test de lo que ya sabes o un examen exprés del bloque. |
 | 🏠 **Inicio** | Pipo y tu racha, lo que toca hoy, cuenta atrás al examen, nota estimada, retos de la semana y resumen del día. |
 | 🗓️ **Plan** | *Semana*, *Mes* y tu *Horario* editable (lo de cada día va en la sesión guiada, que se puede «empezar de 0» deshaciendo también las tarjetas de ese día). Si te retrasas, lo pendiente se reparte en los días siguientes. |
 | 📚 **Temas** | Los 34 temas por bloque, con tarjetas, test y **esquema visual** de cada tema, que se puede **imprimir** o guardar en PDF (uno por hoja A4). |

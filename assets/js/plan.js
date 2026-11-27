@@ -76,7 +76,8 @@ function planDia(ref, sim) {
     const p = S.piles[t.id] || {};
     const nuevas = cs.filter((c) => !p[c.id] && (!dom || c.t)).length - (sim.cards[t.id] || 0);
     if (nuevas > 0) {
-      const n = Math.min(25, Math.ceil(nuevas / dias));
+      // ritmo automático: si las aciertas casi todas, te pone más; si fallas mucho, menos
+      const n = Math.min(nuevas, 60, Math.ceil((nuevas / dias) * ritmoFactor()));
       out.push({
         k: 'c-' + t.id + '-' + dkey(day),
         tipo: 'cards',
@@ -146,6 +147,19 @@ function ritmo() {
       pag += t.pags - Math.max(0, (S.lectura || {})[t.id] || (t.pagIni || 1) - 1);
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };
+}
+const ritmoFactor = () => (S.config || {}).ritmo || 1;
+function ajustarRitmo(aciertos, total) {
+  if (total < 8) return null;
+  const pct = aciertos / total;
+  const f0 = ritmoFactor();
+  let f = f0;
+  if (pct >= 0.9) f = Math.min(2.5, f0 + 0.25);
+  else if (pct < 0.6) f = Math.max(0.6, f0 - 0.2);
+  if (f === f0) return null;
+  S.config = Object.assign({}, S.config, { ritmo: Math.round(f * 100) / 100 });
+  kvSet('config');
+  return f > f0 ? 'sube' : 'baja';
 }
 // ¿Estudias leyendo los apuntes? Si no, el plan va solo con tarjetas y tests.
 const leeApuntes = () => (S.config || {}).leer !== false;
