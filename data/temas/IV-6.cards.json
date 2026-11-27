@@ -1,0 +1,727 @@
+{
+  "tema": "IV-6",
+  "cards": [
+    {
+      "id": "iv6c1",
+      "n": "1",
+      "e": "🎯",
+      "t": false,
+      "q": "Las 4 características de la efectividad de la comunicación",
+      "a": "**Entrega**, **exactitud**, **puntualidad** y **jitter** (retardo variable)"
+    },
+    {
+      "id": "iv6c2",
+      "n": "2",
+      "e": "🧩",
+      "t": true,
+      "q": "Los 5 componentes de un sistema de transmisión de datos",
+      "a": "**Mensaje**, **emisor**, **receptor**, **medio** y **protocolo**"
+    },
+    {
+      "id": "iv6c3",
+      "n": "3",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué es un protocolo?",
+      "a": "Conjunto de **reglas** que gobiernan la transmisión de datos; sin él, dos equipos conectados no se entienden"
+    },
+    {
+      "id": "iv6c4",
+      "n": "4",
+      "e": "🏛️",
+      "t": false,
+      "q": "Organismos de estandarización importantes",
+      "a": "**ISO**, **ITU-T** (antes CCITT), **ANSI**, **IEEE** y **EIA**"
+    },
+    {
+      "id": "iv6c5",
+      "n": "5",
+      "e": "📏",
+      "t": false,
+      "q": "Estándar de facto vs de jure",
+      "a": "**De facto**: adoptado por su gran difusión. **De jure**: aprobado por un organismo oficial"
+    },
+    {
+      "id": "iv6c6",
+      "n": "6",
+      "e": "🔀",
+      "t": false,
+      "q": "¿Qué es la multiplexación?",
+      "a": "Transmitir **varias señales a la vez** por un **único enlace**; necesita multiplexor y demultiplexor"
+    },
+    {
+      "id": "iv6c7",
+      "n": "7",
+      "e": "📻",
+      "t": true,
+      "q": "FDM, WDM y TDM",
+      "a": "**FDM**: división en **frecuencia** (analógico). **WDM**: por **longitud de onda** en fibra. **TDM**: división en el **tiempo** (digital)"
+    },
+    {
+      "id": "iv6c8",
+      "n": "8",
+      "e": "⏲️",
+      "t": false,
+      "q": "TDM síncrona vs asíncrona (estadística)",
+      "a": "**Síncrona**: cada equipo tiene siempre su ranura. **Asíncrona**: ranuras asignadas **bajo demanda**"
+    },
+    {
+      "id": "iv6c9",
+      "n": "9",
+      "e": "〰️",
+      "t": false,
+      "q": "¿Qué es la modulación?",
+      "a": "Variar un parámetro de la **onda portadora** según la señal moduladora. La **demodulación** es lo inverso"
+    },
+    {
+      "id": "iv6c10",
+      "n": "10",
+      "e": "📶",
+      "t": true,
+      "q": "Modulaciones con portadora analógica",
+      "a": "Moduladora analógica: **AM, FM, PM**. Moduladora digital: **ASK, FSK, PSK**"
+    },
+    {
+      "id": "iv6c11",
+      "n": "11",
+      "e": "🎚️",
+      "t": false,
+      "q": "Modulaciones con portadora digital y moduladora analógica",
+      "a": "**PAM, PDM, PPM, PCM, PWM** y modulación **Delta**"
+    },
+    {
+      "id": "iv6c12",
+      "n": "12",
+      "e": "➡️",
+      "t": true,
+      "q": "Simplex, semidúplex y dúplex",
+      "a": "**Simplex**: un solo sentido (teclado, TV). **Semidúplex**: ambos sentidos pero **no a la vez** (walkie-talkie). **Dúplex**: a la vez (teléfono)"
+    },
+    {
+      "id": "iv6c13",
+      "n": "13",
+      "e": "👥",
+      "t": true,
+      "q": "Unicast, multicast, broadcast y anycast",
+      "a": "**Unicast**: uno a uno. **Multicast**: a un **grupo** interesado. **Broadcast**: a **todos**. **Anycast**: al destino **más cercano**"
+    },
+    {
+      "id": "iv6c14",
+      "n": "14",
+      "e": "🧑‍🤝‍🧑",
+      "t": false,
+      "q": "¿Qué protocolo gestiona los grupos multicast?",
+      "a": "**IGMP** (los nodos se unen y abandonan el grupo)"
+    },
+    {
+      "id": "iv6c15",
+      "n": "15",
+      "e": "📣",
+      "t": false,
+      "q": "Un ejemplo de uso de broadcast",
+      "a": "El protocolo **ARP**"
+    },
+    {
+      "id": "iv6c16",
+      "n": "16",
+      "e": "🛣️",
+      "t": false,
+      "q": "Transmisión paralela vs serie",
+      "a": "**Paralela**: varios bits por ciclo, más cara, solo distancias cortas. **Serie**: **un bit** por ciclo, un solo canal"
+    },
+    {
+      "id": "iv6c17",
+      "n": "17",
+      "e": "🚦",
+      "t": false,
+      "q": "¿Cómo funciona la transmisión asíncrona?",
+      "a": "Cada byte lleva un **bit de inicio** (0) y **bits de parada** (1). Más lenta y barata. Ej.: **teclado**"
+    },
+    {
+      "id": "iv6c18",
+      "n": "18",
+      "e": "⚡",
+      "t": false,
+      "q": "¿Qué es la transmisión síncrona?",
+      "a": "Los bits van seguidos **sin bits de inicio ni parada**; el receptor los agrupa. Más **rápida**"
+    },
+    {
+      "id": "iv6c19",
+      "n": "19",
+      "e": "🎬",
+      "t": false,
+      "q": "¿Qué es la transmisión isócrona?",
+      "a": "Garantiza que los datos llegan a una **tasa fija**; para **audio y vídeo en tiempo real**"
+    },
+    {
+      "id": "iv6c20",
+      "n": "20",
+      "e": "🧵",
+      "t": false,
+      "q": "Medios guiados vs no guiados",
+      "a": "**Guiados**: par trenzado, coaxial y fibra. **No guiados**: aire, vacío o agua (radio, microondas, luz)"
+    },
+    {
+      "id": "iv6c21",
+      "n": "21",
+      "e": "🌐",
+      "t": false,
+      "q": "Estándar IEEE de Ethernet y de Fast Ethernet",
+      "a": "Ethernet (**10 Mbps**): **802.3**. Fast Ethernet (**100 Mbps**): **802.3u**"
+    },
+    {
+      "id": "iv6c22",
+      "n": "22",
+      "e": "🚀",
+      "t": false,
+      "q": "Estándares de Gigabit y 10 Gigabit Ethernet",
+      "a": "Gigabit: **802.3ab** (cobre) y **802.3z** (fibra). 10 Gigabit: **802.3ae**"
+    },
+    {
+      "id": "iv6c23",
+      "n": "23",
+      "e": "🪢",
+      "t": false,
+      "q": "¿Por qué se trenza el par trenzado?",
+      "a": "Para que las ondas **se cancelen** y haya **menos interferencias**"
+    },
+    {
+      "id": "iv6c24",
+      "n": "24",
+      "e": "🔢",
+      "t": true,
+      "q": "Ancho de banda de las categorías de cable",
+      "a": "**Cat 5 y 5e: 100 MHz**, **Cat 6: 250 MHz**, **Cat 6a: 500 MHz**, **Cat 7: 600 MHz**, **Cat 8: hasta 2 GHz**"
+    },
+    {
+      "id": "iv6c25",
+      "n": "25",
+      "e": "🏎️",
+      "t": false,
+      "q": "¿Qué categoría hace falta para 10GBASE-T?",
+      "a": "**Cat 6a** (10.000 Mbps)"
+    },
+    {
+      "id": "iv6c26",
+      "n": "26",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué significa U/UTP y S/FTP?",
+      "a": "**UTP**: sin apantallar (el más usado en Europa). **S/FTP**: pantalla global y cada par con lámina (el más usado en EE. UU.)",
+      "h": "A la izquierda de / el blindaje global; a la derecha el de cada par"
+    },
+    {
+      "id": "iv6c27",
+      "n": "27",
+      "e": "📐",
+      "t": false,
+      "q": "Clases de la ISO/IEC 11801",
+      "a": "**D 100 MHz**, **E 250 MHz**, **EA 500 MHz**, **F 600 MHz**, **FA 1.000 MHz**. Impedancia: **100 Ω**"
+    },
+    {
+      "id": "iv6c28",
+      "n": "28",
+      "e": "🎨",
+      "t": false,
+      "q": "Orden de colores T568B",
+      "a": "**Blanco/naranja, naranja, blanco/verde, azul, blanco/azul, verde, blanco/marrón, marrón**",
+      "h": "La T568A cambia el naranja por el verde"
+    },
+    {
+      "id": "iv6c29",
+      "n": "29",
+      "e": "🔁",
+      "t": false,
+      "q": "Cable directo vs cruzado",
+      "a": "**Directo**: misma norma en los dos extremos (PC-switch). **Cruzado**: una norma distinta en cada extremo (PC-PC), cruza TX y RX"
+    },
+    {
+      "id": "iv6c30",
+      "n": "30",
+      "e": "🧲",
+      "t": false,
+      "q": "Partes del cable coaxial",
+      "a": "**Conductor de cobre**, **aislante dieléctrico**, **malla metálica** y **cubierta de plástico**"
+    },
+    {
+      "id": "iv6c31",
+      "n": "31",
+      "e": "📺",
+      "t": true,
+      "q": "Coaxial fino vs grueso",
+      "a": "**Fino: 10Base2**, segmento de **185 m**, conector **BNC**. **Grueso: 10Base5**, segmento de **500 m**, conector **tipo N**"
+    },
+    {
+      "id": "iv6c32",
+      "n": "32",
+      "e": "💡",
+      "t": false,
+      "q": "Partes de la fibra óptica",
+      "a": "**Núcleo**, **revestimiento** (índice de refracción menor, reflexión total interna) y **cubierta**"
+    },
+    {
+      "id": "iv6c33",
+      "n": "33",
+      "e": "1️⃣",
+      "t": true,
+      "q": "Fibra monomodo vs multimodo",
+      "a": "**Monomodo**: un solo modo, sin dispersión modal, largas distancias (**1310 y 1550 nm**). **Multimodo**: varios modos, núcleo mayor, **menos de 2 km**"
+    },
+    {
+      "id": "iv6c34",
+      "n": "34",
+      "e": "📉",
+      "t": false,
+      "q": "Multimodo de índice escalonado vs gradual",
+      "a": "**Escalonado**: índice constante y **alta** dispersión modal. **Gradual**: índice variable y **menor** dispersión"
+    },
+    {
+      "id": "iv6c35",
+      "n": "35",
+      "e": "🌈",
+      "t": false,
+      "q": "DWDM vs CWDM",
+      "a": "**DWDM**: denso, **más de 8** longitudes de onda (banda C, 1550 nm). **CWDM**: aproximado, **menos de 8**"
+    },
+    {
+      "id": "iv6c36",
+      "n": "36",
+      "e": "🏷️",
+      "t": false,
+      "q": "Tipos de fibra multimodo OM",
+      "a": "**OM1** (62,5/125) y **OM2** (50/125): LED, hasta 1 Gb. **OM3**: láser, 10 Gb. **OM4**: láser, 100 Gb"
+    },
+    {
+      "id": "iv6c37",
+      "n": "37",
+      "e": "📏",
+      "t": false,
+      "q": "1000BASE-SX y 1000BASE-LX",
+      "a": "**SX**: multimodo, láser **850 nm**, **< 550 m**. **LX**: multimodo y monomodo, **1310 nm**, **< 10 km**"
+    },
+    {
+      "id": "iv6c38",
+      "n": "38",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Qué es FTTH?",
+      "a": "**Fibra hasta el hogar**; ofrece **Triple Play** (telefonía, Internet y TV). Usa redes **PON** con **splitters** pasivos"
+    },
+    {
+      "id": "iv6c39",
+      "n": "39",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es GPON y la ONT?",
+      "a": "**GPON**: red óptica pasiva con capacidad de gigabit. **ONT**: equipo del usuario que convierte la señal óptica en Ethernet"
+    },
+    {
+      "id": "iv6c40",
+      "n": "40",
+      "e": "📡",
+      "t": false,
+      "q": "Transmisión direccional vs omnidireccional",
+      "a": "**Direccional**: antenas alineadas. **Omnidireccional**: emite en **todas las direcciones**"
+    },
+    {
+      "id": "iv6c41",
+      "n": "41",
+      "e": "📻",
+      "t": false,
+      "q": "Características de las ondas de radio",
+      "a": "**Omnidireccionales**, viajan lejos, **atraviesan paredes** y **no necesitan licencia**"
+    },
+    {
+      "id": "iv6c42",
+      "n": "42",
+      "e": "🗼",
+      "t": false,
+      "q": "Microondas terrestres",
+      "a": "Frecuencias de **1 a 100 GHz**, **direccionales**, antenas **parabólicas** que deben **verse** entre sí; las absorbe la lluvia"
+    },
+    {
+      "id": "iv6c43",
+      "n": "43",
+      "e": "🛰️",
+      "t": false,
+      "q": "¿Qué hace el transpondedor de un satélite?",
+      "a": "**Recibe**, **amplifica** y **reemite** la señal en **otra frecuencia** (canal ascendente y descendente)"
+    },
+    {
+      "id": "iv6c44",
+      "n": "44",
+      "e": "🔦",
+      "t": false,
+      "q": "Infrarrojos, VLC (Li-Fi) y FSO",
+      "a": "**Infrarrojos**: alineados, corto alcance, no atraviesan paredes. **VLC**: datos con **bombillas LED**. **FSO**: luz por la atmósfera"
+    },
+    {
+      "id": "iv6c45",
+      "n": "45",
+      "e": "🔋",
+      "t": true,
+      "q": "¿Qué es la atenuación?",
+      "a": "**Pérdida de potencia** de la señal en el medio; se mide en **decibelios** y se corrige con **repetidores**"
+    },
+    {
+      "id": "iv6c46",
+      "n": "46",
+      "e": "🔊",
+      "t": false,
+      "q": "Ruido y diafonía",
+      "a": "**Ruido**: perturbaciones eléctricas impredecibles. **Diafonía**: parte de la señal de un circuito **aparece en otro**"
+    },
+    {
+      "id": "iv6c47",
+      "n": "47",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Qué es la latencia?",
+      "a": "La **suma de retardos** temporales dentro de una red"
+    },
+    {
+      "id": "iv6c48",
+      "n": "48",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es la encapsulación?",
+      "a": "Cada capa **añade un encabezado** al bajar; la capa de enlace añade además el **FCS** para detectar errores. Desencapsular es lo inverso"
+    },
+    {
+      "id": "iv6c49",
+      "n": "49",
+      "e": "↕️",
+      "t": false,
+      "q": "Interfaz vs protocolo (comunicación vertical y horizontal)",
+      "a": "**Interfaz**: entre capas **adyacentes** del mismo equipo (vertical). **Protocolo**: entre la misma capa de dos equipos (horizontal)"
+    },
+    {
+      "id": "iv6c50",
+      "n": "50",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué es un SAP?",
+      "a": "**Punto de acceso al servicio**: por donde una capa inferior presta servicios a la superior"
+    },
+    {
+      "id": "iv6c51",
+      "n": "51",
+      "e": "🗺️",
+      "t": true,
+      "q": "Redes según su cobertura",
+      "a": "**PAN** (personal), **LAN** (local), **MAN** (metropolitana), **WAN** (extensa) y **GAN** (global, como Internet)"
+    },
+    {
+      "id": "iv6c52",
+      "n": "52",
+      "e": "🔵",
+      "t": false,
+      "q": "¿Qué es una piconet?",
+      "a": "Red **Bluetooth** con un **maestro** y hasta **7 esclavos**. Varias piconets forman una **scatternet**"
+    },
+    {
+      "id": "iv6c53",
+      "n": "53",
+      "e": "🏡",
+      "t": false,
+      "q": "Tecnologías de WPAN",
+      "a": "**Bluetooth**, **ZigBee**, **Z-Wave**, **Insteon**, **IrDA**, **NFC** y **RFID**"
+    },
+    {
+      "id": "iv6c54",
+      "n": "54",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es una VLAN?",
+      "a": "Dividir una LAN física en varias **LAN lógicas**; los **broadcast** de una no llegan a las otras"
+    },
+    {
+      "id": "iv6c55",
+      "n": "55",
+      "e": "🌍",
+      "t": true,
+      "q": "¿Qué es WiMAX?",
+      "a": "Red **MAN inalámbrica** del estándar **IEEE 802.16**; de **2,5 a 5,8 GHz** y hasta **70 km**. Útil en zonas rurales"
+    },
+    {
+      "id": "iv6c56",
+      "n": "56",
+      "e": "🔗",
+      "t": false,
+      "q": "Línea dedicada vs VPN en una WAN",
+      "a": "**Línea dedicada**: se alquila una línea propia. **VPN**: usa **Internet**, más **barata** y suele ir **cifrada**"
+    },
+    {
+      "id": "iv6c57",
+      "n": "57",
+      "e": "🐜",
+      "t": false,
+      "q": "¿Qué es LPWAN?",
+      "a": "Red de **bajo consumo** y largo alcance para **IoT**: **LoRaWAN**, **Sigfox**, **NB-IoT** y **LTE-M**"
+    },
+    {
+      "id": "iv6c58",
+      "n": "58",
+      "e": "🧭",
+      "t": false,
+      "q": "Encaminamiento estático vs dinámico",
+      "a": "**Estático**: tablas configuradas a mano. **Dinámico (adaptativo)**: centralizado, aislado o **distribuido** (el más usado, vector de distancias)"
+    },
+    {
+      "id": "iv6c59",
+      "n": "59",
+      "e": "📮",
+      "t": false,
+      "q": "Las 3 técnicas de conmutación",
+      "a": "**Mensajes** (se guarda el mensaje entero en cada nodo), **circuitos** (canal reservado toda la llamada) y **paquetes**"
+    },
+    {
+      "id": "iv6c60",
+      "n": "60",
+      "e": "🧳",
+      "t": false,
+      "q": "Conmutación de paquetes: datagrama vs circuito virtual",
+      "a": "**Datagrama**: cada paquete va por su cuenta con la dirección completa. **Circuito virtual**: se establece la ruta antes y los paquetes llevan un **ID de conexión**"
+    },
+    {
+      "id": "iv6c61",
+      "n": "61",
+      "e": "🐢",
+      "t": false,
+      "q": "¿Qué es X.25?",
+      "a": "Protocolos **ITU-T** de conmutación de paquetes entre **DTE y DCE**; 3 niveles (físico, enlace con **LAP-B** y paquete). Usa **SVC y PVC**"
+    },
+    {
+      "id": "iv6c62",
+      "n": "62",
+      "e": "🖼️",
+      "t": false,
+      "q": "¿Qué es Frame Relay?",
+      "a": "Evolución de **X.25** con menos control de errores; circuitos virtuales identificados por el **DLCI**"
+    },
+    {
+      "id": "iv6c63",
+      "n": "63",
+      "e": "🧊",
+      "t": true,
+      "q": "¿Cómo son las celdas ATM?",
+      "a": "De tamaño fijo de **53 bytes**: **5 de cabecera** y **48 de datos**. Ofrece **QoS** garantizada"
+    },
+    {
+      "id": "iv6c64",
+      "n": "64",
+      "e": "📊",
+      "t": false,
+      "q": "Categorías de servicio de ATM",
+      "a": "**CBR**, **VBR**, **ABR** y **UBR**"
+    },
+    {
+      "id": "iv6c65",
+      "n": "65",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué es MPLS?",
+      "a": "Conmutación por **etiquetas** (IETF, **RFC 3031**) entre las capas de **enlace y red**; sustituyó a Frame Relay y ATM"
+    },
+    {
+      "id": "iv6c66",
+      "n": "66",
+      "e": "🧑‍✈️",
+      "t": false,
+      "q": "Elementos de MPLS",
+      "a": "**LER** (router frontera), **LSR** (conmuta etiquetas), **LSP** (camino, unidireccional), **LDP** (distribuye etiquetas) y **FEC**"
+    },
+    {
+      "id": "iv6c67",
+      "n": "67",
+      "e": "📢",
+      "t": false,
+      "q": "¿Qué es una red de difusión?",
+      "a": "Un **único canal compartido**: todos reciben el paquete y cada equipo mira si va dirigido a él"
+    },
+    {
+      "id": "iv6c68",
+      "n": "68",
+      "e": "🖥️",
+      "t": true,
+      "q": "DTE vs DCE",
+      "a": "**DTE (ETD)**: equipo fuente o destino de los datos (ordenador). **DCE**: adapta la señal al canal; ejemplo, el **módem**"
+    },
+    {
+      "id": "iv6c69",
+      "n": "69",
+      "e": "📢",
+      "t": false,
+      "q": "¿Qué hace un repetidor?",
+      "a": "Une dos segmentos y **amplifica y regenera** la señal; copia también el ruido y **no filtra** tráfico"
+    },
+    {
+      "id": "iv6c70",
+      "n": "70",
+      "e": "⭐",
+      "t": true,
+      "q": "¿Cómo funciona un hub?",
+      "a": "Repetidor **multipuerto**: estrella física y **bus lógico**; reenvía a todos los puertos. **No divide** dominios de colisión ni de broadcast"
+    },
+    {
+      "id": "iv6c71",
+      "n": "71",
+      "e": "🔀",
+      "t": true,
+      "q": "Switch: dominios de colisión y broadcast",
+      "a": "**Divide el dominio de colisión** (uno por puerto) pero **no el de broadcast**. Aprende las **MAC** de cada puerto"
+    },
+    {
+      "id": "iv6c72",
+      "n": "72",
+      "e": "🌉",
+      "t": false,
+      "q": "¿Qué hace un puente (bridge)?",
+      "a": "Une o divide LAN usando una **tabla de MAC**; divide el dominio de colisión pero **no** el de broadcast"
+    },
+    {
+      "id": "iv6c73",
+      "n": "73",
+      "e": "🧭",
+      "t": true,
+      "q": "¿Qué hace un router?",
+      "a": "Trabaja en la **capa de red**, elige la **mejor ruta** (menor métrica) y **divide** dominios de colisión **y** de broadcast"
+    },
+    {
+      "id": "iv6c74",
+      "n": "74",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es una pasarela (gateway)?",
+      "a": "**Traductor** entre redes **completamente distintas** (protocolos, formatos o arquitecturas diferentes)"
+    },
+    {
+      "id": "iv6c75",
+      "n": "75",
+      "e": "📱",
+      "t": false,
+      "q": "1G y 2G",
+      "a": "**1G**: solo voz, analógica. **2G**: **GSM**, añade SMS. Mejoras: **2.5G GPRS** y **2.75G EDGE**"
+    },
+    {
+      "id": "iv6c76",
+      "n": "76",
+      "e": "📲",
+      "t": true,
+      "q": "¿Qué es UMTS?",
+      "a": "Estándar **3G** de Europa y Japón, basado en **W-CDMA**; elementos: **UE**, **núcleo de red** y **UTRAN**"
+    },
+    {
+      "id": "iv6c77",
+      "n": "77",
+      "e": "⬇️",
+      "t": false,
+      "q": "HSDPA, HSUPA y HSPA+",
+      "a": "**HSDPA (3.5G)**: bajada hasta **14,4 Mbps**. **HSUPA (3.75G)**: mejora la subida. **HSPA+**: hasta **42 Mbps** de bajada"
+    },
+    {
+      "id": "iv6c78",
+      "n": "78",
+      "e": "4️⃣",
+      "t": true,
+      "q": "¿Qué exige la UIT para el 4G?",
+      "a": "**100 Mbit/s** en movimiento y **1 Gbit/s** en reposo; es **todo IP**. El LTE estricto no cumple: el 4G real es **LTE-Advanced**"
+    },
+    {
+      "id": "iv6c79",
+      "n": "79",
+      "e": "5️⃣",
+      "t": true,
+      "q": "Mejoras del 5G",
+      "a": "Hasta **20 Gbps** teóricos, latencia de **1 ms**, **network slicing** y muchos más dispositivos conectados"
+    },
+    {
+      "id": "iv6c80",
+      "n": "80",
+      "e": "🍰",
+      "t": false,
+      "q": "¿Qué es el network slicing?",
+      "a": "Crear **varias redes virtuales** independientes sobre la **misma infraestructura física**"
+    },
+    {
+      "id": "iv6c81",
+      "n": "81",
+      "e": "✈️",
+      "t": false,
+      "q": "¿Qué es el roaming?",
+      "a": "Usar una **red móvil distinta** de la de tu operador (normalmente en el extranjero), gracias a la **SIM** y acuerdos entre operadores"
+    },
+    {
+      "id": "iv6c82",
+      "n": "82",
+      "e": "📶",
+      "t": true,
+      "q": "Estándares Wi-Fi 802.11a, b y g",
+      "a": "**a**: **5 GHz**, 54 Mbps. **b**: **2,4 GHz**, **11 Mbps**. **g**: **2,4 GHz**, 54 Mbps y compatible con b"
+    },
+    {
+      "id": "iv6c83",
+      "n": "83",
+      "e": "📡",
+      "t": true,
+      "q": "¿Qué aportó 802.11n?",
+      "a": "Más velocidad gracias a **MIMO** (varias antenas)"
+    },
+    {
+      "id": "iv6c84",
+      "n": "84",
+      "e": "🧾",
+      "t": false,
+      "q": "Para qué sirven 802.11e, 802.11i y 802.11s",
+      "a": "**e**: **calidad de servicio (QoS)**. **i**: **seguridad** (WPA2). **s**: redes **malladas (mesh)**"
+    },
+    {
+      "id": "iv6c85",
+      "n": "85",
+      "e": "🆔",
+      "t": true,
+      "q": "SSID vs BSSID",
+      "a": "**SSID**: identifica la **red inalámbrica** (uno por red). **BSSID**: identifica cada **punto de acceso** (puede haber varios)"
+    },
+    {
+      "id": "iv6c86",
+      "n": "86",
+      "e": "🔐",
+      "t": true,
+      "q": "WEP, WPA y WPA2",
+      "a": "**WEP**: RC4, inseguro. **WPA**: RC4 con **TKIP**. **WPA2** (802.11i): **CCMP con AES**; en empresa con **RADIUS**"
+    },
+    {
+      "id": "iv6c87",
+      "n": "87",
+      "e": "🔘",
+      "t": false,
+      "q": "¿Qué es WPS?",
+      "a": "**Wi-Fi Protected Setup**: conectar sin escribir la clave (**PIN** de 8 dígitos, **botón**, NFC o USB)"
+    },
+    {
+      "id": "iv6c88",
+      "n": "88",
+      "e": "🦷",
+      "t": true,
+      "q": "Banda y estándar de Bluetooth",
+      "a": "Banda **ISM de 2,4 GHz**; es una **WPAN** y su grupo IEEE es el **802.15** (802.15.1)"
+    },
+    {
+      "id": "iv6c89",
+      "n": "89",
+      "e": "🚓",
+      "t": true,
+      "q": "¿Qué es TETRA?",
+      "a": "Radio digital del **ETSI** para **comunicaciones críticas** (seguridad, emergencias, transporte); usa acceso **TDMA**"
+    },
+    {
+      "id": "iv6c90",
+      "n": "90",
+      "e": "📻",
+      "t": false,
+      "q": "Ventajas de TETRA frente a GSM",
+      "a": "Frecuencias **más bajas** (menos repetidores), **red propia**, modo **terminal a terminal** y **llamadas de grupo** con prioridades"
+    }
+  ]
+}

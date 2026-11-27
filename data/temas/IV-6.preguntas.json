@@ -1,0 +1,317 @@
+{
+  "tema": "IV-6",
+  "preguntas": [
+    {
+      "id": "iv6-01",
+      "tipico": true,
+      "q": "¿Cuál NO es uno de los 5 componentes de un sistema de transmisión de datos?",
+      "opts": [
+        "Mensaje",
+        "Protocolo",
+        "Medio",
+        "Multiplexor"
+      ],
+      "c": 3,
+      "exp": "Son mensaje, emisor, receptor, medio y protocolo."
+    },
+    {
+      "id": "iv6-02",
+      "tipico": true,
+      "q": "La multiplexación por división en longitud de onda que se usa en fibra óptica es…",
+      "opts": [
+        "FDM",
+        "WDM",
+        "TDM",
+        "PCM"
+      ],
+      "c": 1,
+      "exp": "WDM es como FDM pero con señales luminosas."
+    },
+    {
+      "id": "iv6-03",
+      "tipico": false,
+      "q": "ASK, FSK y PSK son modulaciones con…",
+      "opts": [
+        "Portadora analógica y moduladora digital",
+        "Portadora y moduladora analógicas",
+        "Portadora digital y moduladora analógica",
+        "Portadora y moduladora digitales"
+      ],
+      "c": 0,
+      "exp": "AM, FM y PM son analógica-analógica."
+    },
+    {
+      "id": "iv6-04",
+      "tipico": true,
+      "q": "Un walkie-talkie es un ejemplo de comunicación…",
+      "opts": [
+        "Simplex",
+        "Dúplex",
+        "Semidúplex",
+        "Anycast"
+      ],
+      "c": 2,
+      "exp": "Ambos sentidos, pero no a la vez."
+    },
+    {
+      "id": "iv6-05",
+      "tipico": true,
+      "q": "En anycast el paquete se entrega…",
+      "opts": [
+        "A todos los nodos de la subred",
+        "Al nodo más cercano",
+        "A un grupo interesado",
+        "Siempre al router por defecto"
+      ],
+      "c": 1,
+      "exp": "Anycast: al mejor destino según la topología."
+    },
+    {
+      "id": "iv6-06",
+      "tipico": false,
+      "q": "La transmisión que añade un bit de inicio y bits de parada a cada byte es la…",
+      "opts": [
+        "Síncrona",
+        "Isócrona",
+        "Paralela",
+        "Asíncrona"
+      ],
+      "c": 3,
+      "exp": "Asíncrona: más lenta y barata, ej. el teclado."
+    },
+    {
+      "id": "iv6-07",
+      "tipico": true,
+      "q": "¿Qué ancho de banda tiene el cable de categoría 6?",
+      "opts": [
+        "100 MHz",
+        "250 MHz",
+        "500 MHz",
+        "600 MHz"
+      ],
+      "c": 1,
+      "exp": "Cat 5/5e 100, Cat 6 250, Cat 6a 500, Cat 7 600 MHz."
+    },
+    {
+      "id": "iv6-08",
+      "tipico": false,
+      "q": "El primer color de la norma T568B es…",
+      "opts": [
+        "Blanco/naranja",
+        "Blanco/verde",
+        "Azul",
+        "Naranja"
+      ],
+      "c": 0,
+      "exp": "T568A empieza por blanco/verde."
+    },
+    {
+      "id": "iv6-09",
+      "tipico": true,
+      "q": "El cable coaxial grueso (10Base5) admite segmentos de hasta…",
+      "opts": [
+        "185 m",
+        "100 m",
+        "500 m",
+        "2 km"
+      ],
+      "c": 2,
+      "exp": "El fino (10Base2) llega a 185 m con BNC."
+    },
+    {
+      "id": "iv6-10",
+      "tipico": true,
+      "q": "La fibra monomodo se caracteriza por…",
+      "opts": [
+        "Tener el núcleo mayor que la multimodo",
+        "Evitar la dispersión modal",
+        "Usar solo emisores LED",
+        "Usarse solo a menos de 2 km"
+      ],
+      "c": 1,
+      "exp": "Un solo modo, sin dispersión modal."
+    },
+    {
+      "id": "iv6-11",
+      "tipico": false,
+      "q": "La fibra OM1 tiene un diámetro de…",
+      "opts": [
+        "50/125",
+        "9/125",
+        "62,5/125",
+        "100/140"
+      ],
+      "c": 2,
+      "exp": "OM1 es 62,5/125; OM2, OM3 y OM4 son 50/125."
+    },
+    {
+      "id": "iv6-12",
+      "tipico": false,
+      "q": "La pérdida de potencia de una señal en el medio se llama…",
+      "opts": [
+        "Diafonía",
+        "Latencia",
+        "Jitter",
+        "Atenuación"
+      ],
+      "c": 3,
+      "exp": "Se mide en decibelios y se corrige con repetidores."
+    },
+    {
+      "id": "iv6-13",
+      "tipico": true,
+      "q": "WiMAX se define en el estándar…",
+      "opts": [
+        "IEEE 802.16",
+        "IEEE 802.11",
+        "IEEE 802.15",
+        "IEEE 802.3"
+      ],
+      "c": 0,
+      "exp": "802.11 es Wi-Fi y 802.15 las WPAN."
+    },
+    {
+      "id": "iv6-14",
+      "tipico": true,
+      "q": "¿Cuántos bytes ocupa una celda ATM?",
+      "opts": [
+        "48",
+        "53",
+        "64",
+        "128"
+      ],
+      "c": 1,
+      "exp": "53 bytes: 5 de cabecera y 48 de datos. Trampa: 48 es solo la carga."
+    },
+    {
+      "id": "iv6-15",
+      "tipico": false,
+      "q": "En Frame Relay los circuitos virtuales se identifican con el…",
+      "opts": [
+        "DLCI",
+        "FEC",
+        "VPI",
+        "SSID"
+      ],
+      "c": 0,
+      "exp": "DLCI = Data Link Connection Identifier."
+    },
+    {
+      "id": "iv6-16",
+      "tipico": true,
+      "q": "MPLS trabaja…",
+      "opts": [
+        "Solo en la capa física",
+        "En la capa de aplicación",
+        "Entre la capa de enlace y la de red",
+        "Solo en la capa de transporte"
+      ],
+      "c": 2,
+      "exp": "Conmuta etiquetas entre capa 2 y capa 3 (RFC 3031)."
+    },
+    {
+      "id": "iv6-17",
+      "tipico": true,
+      "q": "¿Qué dispositivo divide el dominio de broadcast?",
+      "opts": [
+        "Hub",
+        "Switch",
+        "Puente",
+        "Router"
+      ],
+      "c": 3,
+      "exp": "Switch y puente solo dividen el de colisión."
+    },
+    {
+      "id": "iv6-18",
+      "tipico": false,
+      "q": "El módem es un ejemplo de…",
+      "opts": [
+        "DTE",
+        "DCE",
+        "Gateway",
+        "Hub pasivo"
+      ],
+      "c": 1,
+      "exp": "El DCE adapta la señal del DTE al canal."
+    },
+    {
+      "id": "iv6-19",
+      "tipico": true,
+      "q": "¿Qué velocidad mínima exige la UIT al 4G en movimiento?",
+      "opts": [
+        "100 Mbit/s",
+        "1 Gbit/s",
+        "14,4 Mbit/s",
+        "20 Gbit/s"
+      ],
+      "c": 0,
+      "exp": "100 Mbit/s en movimiento y 1 Gbit/s en reposo."
+    },
+    {
+      "id": "iv6-20",
+      "tipico": false,
+      "q": "El estándar 3G usado en Europa y Japón es…",
+      "opts": [
+        "GSM",
+        "UMTS",
+        "EDGE",
+        "LTE"
+      ],
+      "c": 1,
+      "exp": "UMTS, basado en W-CDMA."
+    },
+    {
+      "id": "iv6-21",
+      "tipico": true,
+      "q": "El estándar 802.11b funciona en la banda de…",
+      "opts": [
+        "5 GHz",
+        "900 MHz",
+        "2,4 GHz",
+        "60 GHz"
+      ],
+      "c": 2,
+      "exp": "b y g usan 2,4 GHz; a usa 5 GHz."
+    },
+    {
+      "id": "iv6-22",
+      "tipico": true,
+      "q": "WPA2 cifra con…",
+      "opts": [
+        "RC4 y WEP",
+        "TKIP sobre RC4",
+        "DES",
+        "CCMP basado en AES"
+      ],
+      "c": 3,
+      "exp": "WPA usa TKIP; WPA2 usa CCMP con AES."
+    },
+    {
+      "id": "iv6-23",
+      "tipico": false,
+      "q": "El identificador de cada punto de acceso de una red Wi-Fi es el…",
+      "opts": [
+        "SSID",
+        "BSSID",
+        "DLCI",
+        "SAP"
+      ],
+      "c": 1,
+      "exp": "Un SSID por red; un BSSID por punto de acceso."
+    },
+    {
+      "id": "iv6-24",
+      "tipico": false,
+      "q": "TETRA es un estándar definido por…",
+      "opts": [
+        "El ETSI",
+        "El IEEE",
+        "La Wi-Fi Alliance",
+        "El 3GPP"
+      ],
+      "c": 0,
+      "exp": "ETSI, para comunicaciones críticas."
+    }
+  ]
+}

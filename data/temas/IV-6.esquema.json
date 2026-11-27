@@ -1,0 +1,83 @@
+{
+  "tema": "IV-6",
+  "ramas": [
+    {
+      "t": "Modos de comunicación",
+      "e": "🔀",
+      "items": [
+        "Multiplexar: **FDM** (frecuencia) · **WDM** (luz) · **TDM** (tiempo)",
+        "Modulación analógica: AM, FM, PM · digital: **ASK, FSK, PSK**",
+        "**Simplex** · **semidúplex** · **dúplex**",
+        "Unicast · multicast (IGMP) · broadcast (ARP) · **anycast**",
+        "Serie: **asíncrona** (bits inicio/parada), síncrona, isócrona"
+      ]
+    },
+    {
+      "t": "Cobre",
+      "e": "🧵",
+      "items": [
+        "Cat 5/5e **100 MHz** · Cat 6 **250** · Cat 6a **500**",
+        "UTP sin pantalla · S/FTP pantalla global + pares",
+        "T568B: **blanco/naranja, naranja**…",
+        "Directo = misma norma · **cruzado** = PC a PC",
+        "Coaxial fino **10Base2** (BNC) · grueso **10Base5** (N)"
+      ]
+    },
+    {
+      "t": "Fibra e inalámbricos",
+      "e": "💡",
+      "items": [
+        "**Monomodo**: lejos, sin dispersión modal",
+        "**Multimodo**: < 2 km · OM1 **62,5/125**",
+        "1000BASE-**SX** 550 m · **LX** 10 km",
+        "**FTTH** con PON, splitters y ONT",
+        "Microondas: **1-100 GHz**, antenas que se ven"
+      ]
+    },
+    {
+      "t": "Perturbaciones y capas",
+      "e": "⚠️",
+      "items": [
+        "**Atenuación** (dB, repetidores) · ruido · diafonía",
+        "**Latencia** = suma de retardos",
+        "Encapsular: cabecera por capa + **FCS** en enlace",
+        "Interfaz = vertical · protocolo = horizontal"
+      ]
+    },
+    {
+      "t": "Redes",
+      "e": "🗺️",
+      "items": [
+        "**PAN · LAN · MAN · WAN · GAN**",
+        "Piconet: **1 maestro + 7 esclavos**",
+        "**VLAN**: LAN lógicas · **WiMAX 802.16**",
+        "LPWAN: LoRaWAN, Sigfox, NB-IoT",
+        "Conmutación de **mensajes, circuitos y paquetes**",
+        "X.25 → Frame Relay (DLCI) → ATM (**53 bytes**) → **MPLS**"
+      ]
+    },
+    {
+      "t": "Equipos",
+      "e": "🧰",
+      "items": [
+        "**DTE** = ordenador · **DCE** = módem",
+        "**Hub**: no divide nada",
+        "**Switch/puente**: dividen colisión, no broadcast",
+        "**Router**: divide colisión **y** broadcast",
+        "**Gateway**: traduce redes muy distintas"
+      ]
+    },
+    {
+      "t": "Móviles e inalámbricas",
+      "e": "📱",
+      "items": [
+        "2G **GSM** → GPRS → EDGE → 3G **UMTS**",
+        "4G: **100 Mbps** en movimiento · todo IP",
+        "5G: **20 Gbps**, **1 ms**, network slicing",
+        "Wi-Fi: a **5 GHz** · b/g **2,4 GHz** · n **MIMO**",
+        "WEP → WPA (TKIP) → **WPA2 (AES)**",
+        "Bluetooth **2,4 GHz** · **TETRA** del ETSI"
+      ]
+    }
+  ]
+}

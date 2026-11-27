@@ -383,8 +383,9 @@
   "orden": 6,
   "titulo": "Comunicaciones: medios de transmisión, equipos y redes, incluidas móviles e inalámbricas",
   "semana": "2027-03-29",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 162,
   "pagIni": 3
  },
