@@ -422,10 +422,11 @@
   "orden": 9,
   "titulo": "Seguridad en redes: perimetral, acceso remoto, VPN y puesto de usuario",
   "semana": "2027-04-05",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 96,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-10",

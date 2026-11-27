@@ -1,0 +1,622 @@
+{
+  "tema": "IV-9",
+  "cards": [
+    {
+      "id": "iv9c1",
+      "n": "1",
+      "e": "🛡️",
+      "t": true,
+      "q": "Las 3 dimensiones (pilares) de la seguridad de la información",
+      "a": "**Confidencialidad**, **integridad** y **disponibilidad** (CID)",
+      "h": "Según la ISO/IEC 27002"
+    },
+    {
+      "id": "iv9c2",
+      "n": "2",
+      "e": "🤫",
+      "t": false,
+      "q": "¿Qué es la confidencialidad?",
+      "a": "Que la información solo sea accesible por el **personal autorizado**. Se relaciona con el principio **need-to-know**"
+    },
+    {
+      "id": "iv9c3",
+      "n": "3",
+      "e": "✍️",
+      "t": false,
+      "q": "¿Qué añaden algunos estándares como objetivo extra?",
+      "a": "El **no repudio**: garantiza la **participación de las partes** en una comunicación (nadie puede negar que envió algo)"
+    },
+    {
+      "id": "iv9c4",
+      "n": "4",
+      "e": "✂️",
+      "t": true,
+      "q": "Ataque de interrupción: ¿qué dimensión afecta?",
+      "a": "La **disponibilidad**: un recurso deja de estar disponible"
+    },
+    {
+      "id": "iv9c5",
+      "n": "5",
+      "e": "👂",
+      "t": true,
+      "q": "Ataque de intercepción: ¿qué dimensión afecta?",
+      "a": "La **confidencialidad**: un intruso accede a la información"
+    },
+    {
+      "id": "iv9c6",
+      "n": "6",
+      "e": "✏️",
+      "t": false,
+      "q": "Ataque de modificación: ¿qué dimensión afecta?",
+      "a": "La **integridad**: la información se altera sin autorización"
+    },
+    {
+      "id": "iv9c7",
+      "n": "7",
+      "e": "🕳️",
+      "t": false,
+      "q": "¿Qué es una vulnerabilidad?",
+      "a": "Una **deficiencia de un activo** que puede ser explotada por una amenaza. Ej.: malas contraseñas, falta de formación"
+    },
+    {
+      "id": "iv9c8",
+      "n": "8",
+      "e": "⚠️",
+      "t": false,
+      "q": "¿Qué es una amenaza?",
+      "a": "Todo elemento o acción capaz de **atentar contra la seguridad**. Solo existe si hay una **vulnerabilidad** que aprovechar"
+    },
+    {
+      "id": "iv9c9",
+      "n": "9",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Cuál es el elemento más vulnerable de la seguridad?",
+      "a": "Los **usuarios** (las personas). El ataque típico contra ellos es la **ingeniería social**"
+    },
+    {
+      "id": "iv9c10",
+      "n": "10",
+      "e": "💯",
+      "t": false,
+      "q": "¿Existe la seguridad absoluta?",
+      "a": "**No**. Es un compromiso entre **nivel de seguridad**, **recursos disponibles** y **funcionalidad** deseada"
+    },
+    {
+      "id": "iv9c11",
+      "n": "11",
+      "e": "📉",
+      "t": true,
+      "q": "¿Qué es el riesgo residual?",
+      "a": "El riesgo que **queda tras aplicar** las medidas de reducción de riesgo"
+    },
+    {
+      "id": "iv9c12",
+      "n": "12",
+      "e": "📶",
+      "t": false,
+      "q": "¿Qué protege TRANSEC?",
+      "a": "Los **canales de transmisión** (contra interceptación, radiolocalización y análisis de señales)"
+    },
+    {
+      "id": "iv9c13",
+      "n": "13",
+      "e": "💻",
+      "t": false,
+      "q": "¿Qué protegen COMPUSEC y NETSEC?",
+      "a": "**COMPUSEC**: los **ordenadores** (proceso de datos). **NETSEC**: los **elementos de red**"
+    },
+    {
+      "id": "iv9c14",
+      "n": "14",
+      "e": "📻",
+      "t": false,
+      "q": "¿Qué protegen EMSEC y CRYPTOSEC?",
+      "a": "**EMSEC**: frente a **emisiones** de radiaciones no deseadas. **CRYPTOSEC**: protección mediante **criptografía**"
+    },
+    {
+      "id": "iv9c15",
+      "n": "15",
+      "e": "🗂️",
+      "t": false,
+      "q": "Controles según su carácter",
+      "a": "**Técnicos**, **organizativos** y **normativos**"
+    },
+    {
+      "id": "iv9c16",
+      "n": "16",
+      "e": "⏱️",
+      "t": false,
+      "q": "Controles según el momento en que actúan",
+      "a": "**Prevención**, **detección** y **respuesta**"
+    },
+    {
+      "id": "iv9c17",
+      "n": "17",
+      "e": "🪜",
+      "t": false,
+      "q": "4 pasos comunes de una estrategia de seguridad",
+      "a": "1) Crear la **política de seguridad**, 2) **análisis de riesgos**, 3) aplicar **salvaguardas**, 4) **concienciar** a los usuarios"
+    },
+    {
+      "id": "iv9c18",
+      "n": "18",
+      "e": "🇪🇸",
+      "t": true,
+      "q": "¿Qué es el CCN y de quién depende?",
+      "a": "El **Centro Criptológico Nacional**, integrado en el **CNI** (Centro Nacional de Inteligencia). Regulado por el **RD 421/2004**, de 12 de marzo"
+    },
+    {
+      "id": "iv9c19",
+      "n": "19",
+      "e": "🚨",
+      "t": true,
+      "q": "¿Qué es el CCN-CERT?",
+      "a": "El equipo de respuesta a incidentes del CCN, creado en **2006**, para la ciberseguridad de las **AAPP** y empresas estratégicas"
+    },
+    {
+      "id": "iv9c20",
+      "n": "20",
+      "e": "👩",
+      "t": true,
+      "q": "¿Qué tienen en común las herramientas del CCN-CERT?",
+      "a": "Tienen **nombre de mujer** (excepto **CCNDroid**)"
+    },
+    {
+      "id": "iv9c21",
+      "n": "21",
+      "e": "🦠",
+      "t": false,
+      "q": "Herramientas CCN: ADA y MARTA",
+      "a": "**ADA**: análisis avanzado de **malware**. **MARTA**: análisis de ficheros con **multi-sandboxing**"
+    },
+    {
+      "id": "iv9c22",
+      "n": "22",
+      "e": "📊",
+      "t": false,
+      "q": "Herramientas CCN: PILAR, CLARA y LUCIA",
+      "a": "**PILAR**: análisis y **gestión de riesgos**. **CLARA**: auditoría de cumplimiento **ENS** en **Windows**. **LUCIA**: gestión de **ciberincidentes**"
+    },
+    {
+      "id": "iv9c23",
+      "n": "23",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué es la SGAD?",
+      "a": "La **Secretaría General de Administración Digital** (antes **DTIC**), con rango de **Subsecretaría**; impulsa la transformación digital de la AGE"
+    },
+    {
+      "id": "iv9c24",
+      "n": "24",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué es el ENS y qué norma lo regula hoy?",
+      "a": "El **Esquema Nacional de Seguridad**: política de seguridad en el uso de medios electrónicos en las AAPP. Hoy: **RD 311/2022, de 3 de mayo**"
+    },
+    {
+      "id": "iv9c25",
+      "n": "25",
+      "e": "🕰️",
+      "t": false,
+      "q": "Historia del ENS",
+      "a": "Previsto en la **Ley 11/2007**, regulado por el **RD 3/2010**, modificado por el **RD 951/2015** y sustituido por el **RD 311/2022**"
+    },
+    {
+      "id": "iv9c26",
+      "n": "26",
+      "e": "🎯",
+      "t": false,
+      "q": "¿A quién se aplica el ENS?",
+      "a": "A **todo el sector público** (art. 2 Ley 40/2015), a los sistemas con **información clasificada** y a **empresas privadas** que presten servicios al sector público"
+    },
+    {
+      "id": "iv9c27",
+      "n": "27",
+      "e": "🎲",
+      "t": true,
+      "q": "¿Qué es MAGERIT?",
+      "a": "La **Metodología de Análisis y Gestión de Riesgos** de los Sistemas de Información (versión **3**). La mantiene la **SGAD** con el **CCN**"
+    },
+    {
+      "id": "iv9c28",
+      "n": "28",
+      "e": "🧮",
+      "t": false,
+      "q": "Partes de MAGERIT: MAR, PAR y PS",
+      "a": "**MAR**: método de análisis de riesgos. **PAR**: proyectos de análisis de riesgos. **PS**: **plan de seguridad** (documento final)"
+    },
+    {
+      "id": "iv9c29",
+      "n": "29",
+      "e": "📑",
+      "t": false,
+      "q": "¿Cómo se llama el plan de seguridad en el ENS?",
+      "a": "**Plan de Adecuación**"
+    },
+    {
+      "id": "iv9c30",
+      "n": "30",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es la seguridad perimetral?",
+      "a": "**Asegurar el perímetro**: reducir la superficie de exposición y crear **puntos controlados de acceso** donde centrar las defensas"
+    },
+    {
+      "id": "iv9c31",
+      "n": "31",
+      "e": "🔓",
+      "t": false,
+      "q": "Alternativas seguras a protocolos inseguros",
+      "a": "**HTTP→HTTPS**, **FTP→SFTP**, **Telnet→SSH**, **SNMP→SNMPv3**"
+    },
+    {
+      "id": "iv9c32",
+      "n": "32",
+      "e": "🧩",
+      "t": false,
+      "q": "Componentes de la seguridad perimetral",
+      "a": "**Enrutadores** y reglas de filtrado, **cortafuegos**, **VPN**, **dispositivos de red**, **servidores** y **sistemas de usuario/móviles**"
+    },
+    {
+      "id": "iv9c33",
+      "n": "33",
+      "e": "🛣️",
+      "t": false,
+      "q": "2 estrategias para proteger la red con enrutadores",
+      "a": "**Filtrado** (permitir/denegar: **ACL**, RPF, rutas nulas) y **conformado/limitado** (umbrales de calidad de servicio)"
+    },
+    {
+      "id": "iv9c34",
+      "n": "34",
+      "e": "🔥",
+      "t": false,
+      "q": "¿Qué es un cortafuegos (firewall)?",
+      "a": "Sistema que hace cumplir una **política de control de acceso** entre zonas de red: **permitir** o **denegar** según **juegos de reglas** (rulesets)"
+    },
+    {
+      "id": "iv9c35",
+      "n": "35",
+      "e": "1️⃣",
+      "t": false,
+      "q": "1.ª generación de cortafuegos",
+      "a": "**Packet Filter**: filtra por **IP** origen/destino y **puertos** TCP/UDP"
+    },
+    {
+      "id": "iv9c36",
+      "n": "36",
+      "e": "2️⃣",
+      "t": false,
+      "q": "2.ª generación de cortafuegos",
+      "a": "**Application Layer Gateway**: filtra a **nivel de aplicación** (depende del protocolo)"
+    },
+    {
+      "id": "iv9c37",
+      "n": "37",
+      "e": "3️⃣",
+      "t": false,
+      "q": "3.ª generación de cortafuegos",
+      "a": "**Stateful Inspection**: guarda los flujos de tráfico en una **tabla de estado**"
+    },
+    {
+      "id": "iv9c38",
+      "n": "38",
+      "e": "🧰",
+      "t": true,
+      "q": "¿Qué es un UTM?",
+      "a": "**Unified Threat Management**: un solo equipo con cortafuegos + **VPN**, **antivirus**, **antispam**, filtro de contenidos e **IDS/IPS**. Es la **tendencia actual**"
+    },
+    {
+      "id": "iv9c39",
+      "n": "39",
+      "e": "🦘",
+      "t": false,
+      "q": "¿Qué es el VLAN Hopping?",
+      "a": "**Salto de VLAN**: meter tráfico sin autorización de una VLAN a otra. Ojo: las VLAN **no se crearon por seguridad**"
+    },
+    {
+      "id": "iv9c40",
+      "n": "40",
+      "e": "↩️",
+      "t": false,
+      "q": "¿Qué es un proxy inverso?",
+      "a": "Se sitúa **delante de un grupo de servidores**: los clientes los ven como uno solo. Sirve para **balanceo de carga**, ocultar la red y **caché**"
+    },
+    {
+      "id": "iv9c41",
+      "n": "41",
+      "e": "👻",
+      "t": false,
+      "q": "¿Qué es un proxy transparente?",
+      "a": "Intercepta y redirige el tráfico **sin configurar nada en los clientes**. Controla el tráfico **saliente**"
+    },
+    {
+      "id": "iv9c42",
+      "n": "42",
+      "e": "🌐",
+      "t": false,
+      "q": "¿Qué es un WAF?",
+      "a": "**Web Application Firewall**: protege el tráfico **web** (HTTP) y detecta **inyección SQL**, **XSS** y manipulación de cookies/cabeceras"
+    },
+    {
+      "id": "iv9c43",
+      "n": "43",
+      "e": "📶",
+      "t": false,
+      "q": "Medidas para una red WiFi segura",
+      "a": "Control de acceso, regeneración de claves (**TKIP**) y cifrado **AES**. Evitar **WEP** y **WPA**"
+    },
+    {
+      "id": "iv9c44",
+      "n": "44",
+      "e": "🏰",
+      "t": true,
+      "q": "¿Qué es una DMZ (zona desmilitarizada)?",
+      "a": "Zona **entre la red interna e Internet** donde están los **servidores** públicos. Desde la DMZ **no se permite** entrar a la red interna"
+    },
+    {
+      "id": "iv9c45",
+      "n": "45",
+      "e": "🚔",
+      "t": true,
+      "q": "¿Qué es un IDS?",
+      "a": "**Sistema de detección de intrusiones**: detecta accesos no autorizados y **alerta**, pero **no los bloquea** (es **reactivo**)"
+    },
+    {
+      "id": "iv9c46",
+      "n": "46",
+      "e": "🌐",
+      "t": false,
+      "q": "NIDS vs HIDS",
+      "a": "**NIDS**: basado en **red**, vigila varias máquinas. **HIDS**: basado en **host**, protege **un solo sistema**"
+    },
+    {
+      "id": "iv9c47",
+      "n": "47",
+      "e": "🍯",
+      "t": false,
+      "q": "¿Qué es un honeypot?",
+      "a": "Un **tarro de miel** o sistema de **engaño**: simula fallos de seguridad para atraer al atacante y **registrar lo que hace**"
+    },
+    {
+      "id": "iv9c48",
+      "n": "48",
+      "e": "📈",
+      "t": false,
+      "q": "Detección de anomalías vs usos indebidos",
+      "a": "**Anomalías**: perfil de lo normal y detecta lo raro (estadística). **Usos indebidos**: busca **patrones de ataques conocidos**"
+    },
+    {
+      "id": "iv9c49",
+      "n": "49",
+      "e": "🧬",
+      "t": false,
+      "q": "Inconveniente de un IDS basado en firmas",
+      "a": "Hay que **actualizar las firmas**; un ataque nuevo no se detecta hasta que se añade a la base de datos"
+    },
+    {
+      "id": "iv9c50",
+      "n": "50",
+      "e": "🛑",
+      "t": true,
+      "q": "¿Qué es un IPS?",
+      "a": "**Sistema de prevención de intrusiones**: actúa de forma **preventiva** en tiempo real; además de alertar, puede **descartar paquetes** y **cortar conexiones**"
+    },
+    {
+      "id": "iv9c51",
+      "n": "51",
+      "e": "🗃️",
+      "t": false,
+      "q": "Los 4 tipos de IPS",
+      "a": "**HIPS** (host), **NIPS** (red), **NBA** (análisis del comportamiento de la red) y **WIPS** (inalámbrico)"
+    },
+    {
+      "id": "iv9c52",
+      "n": "52",
+      "e": "📡",
+      "t": false,
+      "q": "¿Para qué es imprescindible un WIPS?",
+      "a": "Para las políticas **BYOD**. Detecta **Rogue AP**, **Evil Twins**, APs mal configurados, MAC spoofing y DoS en la WiFi"
+    },
+    {
+      "id": "iv9c53",
+      "n": "53",
+      "e": "👯",
+      "t": true,
+      "q": "Rogue AP vs Evil Twin",
+      "a": "**Rogue AP**: nombre **parecido** al real. **Evil Twin**: **mismo nombre** y señal **más potente**"
+    },
+    {
+      "id": "iv9c54",
+      "n": "54",
+      "e": "🧠",
+      "t": true,
+      "q": "¿Qué es un SIEM?",
+      "a": "**Security Information and Event Management**: **centraliza y correla logs** de muchos sistemas y analiza alertas en **tiempo real**"
+    },
+    {
+      "id": "iv9c55",
+      "n": "55",
+      "e": "🚇",
+      "t": false,
+      "q": "¿Qué es una VPN?",
+      "a": "**Red privada virtual**: una red privada que usa una **red pública** (Internet) creando un **túnel cifrado**"
+    },
+    {
+      "id": "iv9c56",
+      "n": "56",
+      "e": "🔐",
+      "t": true,
+      "q": "Modos de IPsec",
+      "a": "**Túnel**: cifra **cabecera y carga** del paquete. **Transporte**: cifra **solo la carga**"
+    },
+    {
+      "id": "iv9c57",
+      "n": "57",
+      "e": "📞",
+      "t": false,
+      "q": "¿Qué es L2TP?",
+      "a": "**Layer 2 Tunneling Protocol**, sucesor de **PPTP** y **L2F**, estándar IETF (**RFC 2661**). No cifra: se usa con **IPsec** (L2TP/IPsec)"
+    },
+    {
+      "id": "iv9c58",
+      "n": "58",
+      "e": "🔑",
+      "t": true,
+      "q": "PAP vs CHAP",
+      "a": "**PAP**: envía la contraseña **sin cifrar** (inseguro). **CHAP**: autenticación por **desafío** (RFC **1994**)"
+    },
+    {
+      "id": "iv9c59",
+      "n": "59",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es EAP?",
+      "a": "**Extensible Authentication Protocol**: un **marco** de autenticación (no un método concreto), muy usado en **WiFi**. Métodos: EAP-TLS, EAP-MD5…"
+    },
+    {
+      "id": "iv9c60",
+      "n": "60",
+      "e": "🤝",
+      "t": true,
+      "q": "¿Qué puerto usa IKE?",
+      "a": "**UDP 500** y/o **4500**. Negocia las asociaciones de seguridad (**SA**) de IPsec"
+    },
+    {
+      "id": "iv9c61",
+      "n": "61",
+      "e": "🪢",
+      "t": false,
+      "q": "Fases de IKE",
+      "a": "**1.ª**: canal seguro con **Diffie-Hellman** (IKE_SA). **2.ª**: establece las SA de IPsec (**CHILD_SA**)"
+    },
+    {
+      "id": "iv9c62",
+      "n": "62",
+      "e": "⚡",
+      "t": false,
+      "q": "¿Qué es WireGuard?",
+      "a": "Protocolo VPN de **código abierto** con criptografía moderna; usa **solo UDP**"
+    },
+    {
+      "id": "iv9c63",
+      "n": "63",
+      "e": "🔓",
+      "t": false,
+      "q": "¿Qué es OpenVPN?",
+      "a": "Protocolo **y** software VPN de **código abierto** (2001, James Yonan) que usa **SSL/TLS** (OpenSSL) sobre **UDP o TCP**"
+    },
+    {
+      "id": "iv9c64",
+      "n": "64",
+      "e": "🏃",
+      "t": false,
+      "q": "VPN de acceso remoto (Road Warrior / VPDN)",
+      "a": "Conexión **usuario → red de la empresa**, para quien trabaja desde fuera"
+    },
+    {
+      "id": "iv9c65",
+      "n": "65",
+      "e": "🏢",
+      "t": false,
+      "q": "VPN sitio a sitio (Site-to-site)",
+      "a": "Une **dos sedes** (router a router). Entre sedes propias: **intranet**; con otras empresas: **extranet**. Suele usar **IPsec**"
+    },
+    {
+      "id": "iv9c66",
+      "n": "66",
+      "e": "🔒",
+      "t": false,
+      "q": "VPN SSL/TLS",
+      "a": "El **navegador** hace de cliente y el acceso se limita a **aplicaciones concretas**, no a toda la red"
+    },
+    {
+      "id": "iv9c67",
+      "n": "67",
+      "e": "🏷️",
+      "t": false,
+      "q": "VPN MPLS",
+      "a": "Usa **conmutación de etiquetas multiprotocolo** del mismo **ISP**; más difícil y **cara**. La **híbrida** combina MPLS con IPsec de respaldo"
+    },
+    {
+      "id": "iv9c68",
+      "n": "68",
+      "e": "📡",
+      "t": true,
+      "q": "¿Qué es RADIUS y qué puerto usa?",
+      "a": "Protocolo de **autenticación y autorización** de acceso a red. Puerto **UDP 1812**"
+    },
+    {
+      "id": "iv9c69",
+      "n": "69",
+      "e": "📜",
+      "t": false,
+      "q": "RFC actuales de RADIUS",
+      "a": "**RFC 2865** (autenticación y autorización) y **RFC 2866** (accounting/contabilidad)"
+    },
+    {
+      "id": "iv9c70",
+      "n": "70",
+      "e": "🧾",
+      "t": false,
+      "q": "¿Qué añade RADIUS además de autenticar?",
+      "a": "**Gestiona sesiones** (inicio y fin): permite **contabilizar** el consumo y **facturar** (accounting)"
+    },
+    {
+      "id": "iv9c71",
+      "n": "71",
+      "e": "🎟️",
+      "t": true,
+      "q": "¿Qué es Kerberos?",
+      "a": "Protocolo de **autenticación** de red creado por el **MIT**, con **autenticación mutua** mediante **tiques**"
+    },
+    {
+      "id": "iv9c72",
+      "n": "72",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Qué es el 2FA?",
+      "a": "**Doble factor de autenticación**: dos de estas categorías: **conocimiento** (contraseña), **posesión** (token, SMS) e **identidad personal** (huella, iris)"
+    },
+    {
+      "id": "iv9c73",
+      "n": "73",
+      "e": "☕",
+      "t": false,
+      "q": "¿Qué es un portal cautivo?",
+      "a": "Página web a la que se redirige al usuario de una **WiFi pública** para que se **autentique** y acepte condiciones"
+    },
+    {
+      "id": "iv9c74",
+      "n": "74",
+      "e": "🤏",
+      "t": true,
+      "q": "¿Qué es el principio del mínimo privilegio?",
+      "a": "Cada usuario accede **solo** a la información **estrictamente necesaria** para su trabajo"
+    },
+    {
+      "id": "iv9c75",
+      "n": "75",
+      "e": "💽",
+      "t": true,
+      "q": "Copia completa, incremental y diferencial",
+      "a": "**Completa**: todo. **Incremental**: lo cambiado desde la **última copia (completa o incremental)**. **Diferencial**: lo cambiado desde la **última completa**"
+    },
+    {
+      "id": "iv9c76",
+      "n": "76",
+      "e": "🔐",
+      "t": false,
+      "q": "¿Longitud mínima recomendada de una contraseña?",
+      "a": "**8 caracteres**, mezclando mayúsculas, minúsculas, números y signos; sin palabras de diccionario ni reutilizarla"
+    },
+    {
+      "id": "iv9c77",
+      "n": "77",
+      "e": "🚪",
+      "t": false,
+      "q": "¿Qué es el Single Sign-On (SSO)?",
+      "a": "Acceder a **varios sistemas** con **una sola identificación**"
+    }
+  ]
+}

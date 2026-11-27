@@ -1,0 +1,82 @@
+{
+  "tema": "IV-9",
+  "ramas": [
+    {
+      "t": "Conceptos básicos",
+      "e": "🛡️",
+      "items": [
+        "Pilares: **confidencialidad, integridad, disponibilidad**",
+        "Ataques: interrupción, intercepción, modificación, fabricación",
+        "Vulnerabilidad = debilidad · Amenaza = quien la explota",
+        "Eslabón más débil: el **usuario** (ingeniería social)",
+        "Controles: prevención, detección y respuesta"
+      ]
+    },
+    {
+      "t": "Organismos y normas",
+      "e": "🇪🇸",
+      "items": [
+        "**CCN**: dentro del **CNI** (RD 421/2004)",
+        "**CCN-CERT** (2006): herramientas con nombre de mujer",
+        "**ENS**: RD 311/2022 · Plan de Adecuación",
+        "**MAGERIT v3**: análisis y gestión de riesgos",
+        "**SGAD**: transformación digital de la AGE"
+      ]
+    },
+    {
+      "t": "Seguridad perimetral",
+      "e": "🧱",
+      "items": [
+        "Router: filtrado con **ACL**",
+        "Firewall: packet filter → ALG → **stateful** → **UTM**",
+        "**DMZ**: servidores públicos aislados de la red interna",
+        "**WAF** (web) y firewall de BD (SQL)",
+        "Proxy inverso, transparente, caché y NAT"
+      ]
+    },
+    {
+      "t": "Detección y prevención",
+      "e": "🚨",
+      "items": [
+        "**IDS**: detecta y alerta (reactivo)",
+        "NIDS (red) · HIDS (host) · **honeypot**",
+        "Anomalías vs firmas (usos indebidos)",
+        "**IPS**: bloquea · HIPS, NIPS, NBA, **WIPS**",
+        "**SIEM**: centraliza y correla logs"
+      ]
+    },
+    {
+      "t": "VPN",
+      "e": "🚇",
+      "items": [
+        "Túnel cifrado sobre red pública",
+        "**IPsec**: modo túnel (todo) / transporte (carga)",
+        "**L2TP**+IPsec · **IKE** UDP 500/4500",
+        "**OpenVPN** (SSL/TLS) · **WireGuard** (UDP)",
+        "Tipos: acceso remoto, **sitio a sitio**, SSL, MPLS"
+      ]
+    },
+    {
+      "t": "Acceso remoto",
+      "e": "🔑",
+      "items": [
+        "**RADIUS**: UDP **1812** · RFC 2865/2866",
+        "PAP (en claro) · CHAP · **EAP**",
+        "**Kerberos** (MIT): tiques y autenticación mutua",
+        "**2FA**: saber + tener + ser",
+        "Portal cautivo en WiFi públicas"
+      ]
+    },
+    {
+      "t": "Puesto de usuario",
+      "e": "💻",
+      "items": [
+        "Principio del **mínimo privilegio**",
+        "Copias: completa, incremental, diferencial",
+        "Contraseñas: mínimo **8 caracteres** y variadas",
+        "**SSO**: un login para varios sistemas",
+        "Token de seguridad = llave física"
+      ]
+    }
+  ]
+}

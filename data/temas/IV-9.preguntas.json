@@ -1,0 +1,330 @@
+{
+  "tema": "IV-9",
+  "preguntas": [
+    {
+      "id": "iv9-01",
+      "tipico": true,
+      "q": "¿Qué dimensión de la seguridad se ve afectada por un ataque de intercepción?",
+      "opts": [
+        "Disponibilidad",
+        "Integridad",
+        "No repudio",
+        "Confidencialidad"
+      ],
+      "c": 3,
+      "exp": "La intercepción afecta a la confidencialidad; la interrupción a la disponibilidad y la modificación a la integridad."
+    },
+    {
+      "id": "iv9-02",
+      "tipico": true,
+      "q": "El riesgo que queda una vez aplicadas las medidas de reducción se denomina…",
+      "opts": [
+        "Riesgo inherente",
+        "Riesgo potencial",
+        "Riesgo residual",
+        "Impacto"
+      ],
+      "c": 2,
+      "exp": "Riesgo residual."
+    },
+    {
+      "id": "iv9-03",
+      "tipico": false,
+      "q": "Las medidas que protegen los canales de transmisión frente a interceptación y análisis de señales son…",
+      "opts": [
+        "COMPUSEC",
+        "TRANSEC",
+        "EMSEC",
+        "CRYPTOSEC"
+      ],
+      "c": 1,
+      "exp": "TRANSEC = seguridad de las transmisiones. EMSEC protege frente a emisiones."
+    },
+    {
+      "id": "iv9-04",
+      "tipico": true,
+      "q": "El Centro Criptológico Nacional (CCN) está integrado en…",
+      "opts": [
+        "El CNI",
+        "La SGAD",
+        "El INCIBE",
+        "El Ministerio de Defensa como agencia independiente"
+      ],
+      "c": 0,
+      "exp": "El CCN forma parte del CNI y lo regula el RD 421/2004."
+    },
+    {
+      "id": "iv9-05",
+      "tipico": true,
+      "q": "Herramienta del CCN-CERT para el análisis y gestión de riesgos:",
+      "opts": [
+        "CLARA",
+        "GLORIA",
+        "LUCIA",
+        "PILAR"
+      ],
+      "c": 3,
+      "exp": "PILAR: análisis y gestión de riesgos. CLARA audita ENS en Windows; LUCIA gestiona ciberincidentes; GLORIA es tipo SIEM."
+    },
+    {
+      "id": "iv9-06",
+      "tipico": true,
+      "q": "El Esquema Nacional de Seguridad vigente está regulado por el…",
+      "opts": [
+        "RD 3/2010",
+        "RD 951/2015",
+        "RD 311/2022",
+        "RD 421/2004"
+      ],
+      "c": 2,
+      "exp": "RD 311/2022, de 3 de mayo. El RD 3/2010 fue el primero y lo modificó el RD 951/2015."
+    },
+    {
+      "id": "iv9-07",
+      "tipico": false,
+      "q": "En el contexto del ENS, el plan de seguridad recibe el nombre de…",
+      "opts": [
+        "Plan Director",
+        "Plan de Adecuación",
+        "Plan de Contingencia",
+        "Plan Estratégico"
+      ],
+      "c": 1,
+      "exp": "Plan de Adecuación."
+    },
+    {
+      "id": "iv9-08",
+      "tipico": false,
+      "q": "MAGERIT es…",
+      "opts": [
+        "Una metodología de análisis y gestión de riesgos",
+        "Un cortafuegos de nueva generación",
+        "Un protocolo VPN",
+        "Una guía CCN-STIC de contraseñas"
+      ],
+      "c": 0,
+      "exp": "Metodología de Análisis y Gestión de Riesgos de los SI, versión 3."
+    },
+    {
+      "id": "iv9-09",
+      "tipico": true,
+      "q": "¿Qué generación de cortafuegos mantiene una tabla de estado de los flujos de tráfico?",
+      "opts": [
+        "Packet Filter",
+        "Application Layer Gateway",
+        "Proxy caché",
+        "Stateful Inspection"
+      ],
+      "c": 3,
+      "exp": "La 3.ª generación, Stateful Inspection."
+    },
+    {
+      "id": "iv9-10",
+      "tipico": true,
+      "q": "Un dispositivo que integra cortafuegos, VPN, antivirus, antispam e IDS/IPS es un…",
+      "opts": [
+        "WAF",
+        "NIDS",
+        "UTM",
+        "SIEM"
+      ],
+      "c": 2,
+      "exp": "UTM: gestión unificada de amenazas."
+    },
+    {
+      "id": "iv9-11",
+      "tipico": true,
+      "q": "En una DMZ…",
+      "opts": [
+        "Se sitúan los equipos de los usuarios internos",
+        "Se sitúan los servidores que deben comunicarse con Internet",
+        "Se permite la comunicación desde la DMZ hacia la red interna",
+        "No puede haber servidores web"
+      ],
+      "c": 1,
+      "exp": "La DMZ aloja los servidores públicos y no se admite tráfico desde ella hacia la red interna."
+    },
+    {
+      "id": "iv9-12",
+      "tipico": true,
+      "q": "Un IDS, al detectar actividad sospechosa…",
+      "opts": [
+        "Emite una alerta, pero no mitiga la intrusión",
+        "Bloquea siempre la conexión",
+        "Cifra el tráfico",
+        "Reinicia el sistema"
+      ],
+      "c": 0,
+      "exp": "El IDS es reactivo: detecta y alerta. Bloquear es propio del IPS."
+    },
+    {
+      "id": "iv9-13",
+      "tipico": false,
+      "q": "Un honeypot es…",
+      "opts": [
+        "Un verificador de integridad de archivos",
+        "Un tipo de VPN",
+        "Un monitor de ficheros de log",
+        "Un sistema de engaño que atrae al atacante para registrar su actividad"
+      ],
+      "c": 3,
+      "exp": "Tarro de miel o sistema de engaño."
+    },
+    {
+      "id": "iv9-14",
+      "tipico": false,
+      "q": "La detección basada en usos indebidos (misuse detection)…",
+      "opts": [
+        "Crea un perfil de comportamiento normal",
+        "Solo funciona en redes WiFi",
+        "Busca patrones de ataques conocidos",
+        "No necesita firmas"
+      ],
+      "c": 2,
+      "exp": "Usa patrones de ataques conocidos; la de anomalías se basa en el perfil de lo normal."
+    },
+    {
+      "id": "iv9-15",
+      "tipico": true,
+      "q": "Un punto de acceso falso que usa el MISMO nombre que el legítimo y una señal más potente es un…",
+      "opts": [
+        "Rogue AP",
+        "Evil Twin",
+        "Cliente puente",
+        "Jammer"
+      ],
+      "c": 1,
+      "exp": "Evil Twin. El Rogue AP usa un nombre parecido."
+    },
+    {
+      "id": "iv9-16",
+      "tipico": true,
+      "q": "¿Qué tipo de IPS es imprescindible para políticas BYOD?",
+      "opts": [
+        "WIPS",
+        "NIPS",
+        "NBA",
+        "HIPS"
+      ],
+      "c": 0,
+      "exp": "WIPS, el IPS inalámbrico."
+    },
+    {
+      "id": "iv9-17",
+      "tipico": false,
+      "q": "El sistema que centraliza y correla los logs de distintos sistemas para detectar incidentes es el…",
+      "opts": [
+        "HIDS",
+        "WAF",
+        "UTM",
+        "SIEM"
+      ],
+      "c": 3,
+      "exp": "SIEM: Security Information and Event Management."
+    },
+    {
+      "id": "iv9-18",
+      "tipico": true,
+      "q": "En IPsec, el modo que cifra la cabecera y la carga del paquete es el modo…",
+      "opts": [
+        "Transporte",
+        "Agresivo",
+        "Túnel",
+        "Principal"
+      ],
+      "c": 2,
+      "exp": "Túnel cifra todo el paquete; transporte solo la carga."
+    },
+    {
+      "id": "iv9-19",
+      "tipico": true,
+      "q": "¿Qué protocolo envía la contraseña sin cifrar?",
+      "opts": [
+        "CHAP",
+        "PAP",
+        "EAP-TLS",
+        "Kerberos"
+      ],
+      "c": 1,
+      "exp": "PAP transmite la contraseña en claro; por eso es inseguro."
+    },
+    {
+      "id": "iv9-20",
+      "tipico": true,
+      "q": "IKE trabaja sobre…",
+      "opts": [
+        "UDP 500 y/o 4500",
+        "TCP 443",
+        "UDP 1812",
+        "TCP 22"
+      ],
+      "c": 0,
+      "exp": "UDP 500/4500. UDP 1812 es RADIUS."
+    },
+    {
+      "id": "iv9-21",
+      "tipico": false,
+      "q": "¿Qué protocolo VPN de código abierto usa SSL/TLS y puede ir sobre UDP o TCP?",
+      "opts": [
+        "PPTP",
+        "WireGuard",
+        "L2TP",
+        "OpenVPN"
+      ],
+      "c": 3,
+      "exp": "OpenVPN usa SSL/TLS (OpenSSL). WireGuard solo usa UDP."
+    },
+    {
+      "id": "iv9-22",
+      "tipico": true,
+      "q": "Una VPN que une la red de la oficina principal con sus sucursales es una VPN…",
+      "opts": [
+        "De acceso remoto (Road Warrior)",
+        "Sitio a sitio basada en extranet",
+        "Sitio a sitio basada en intranet",
+        "SSL de navegador"
+      ],
+      "c": 2,
+      "exp": "Sitio a sitio entre sedes propias = intranet; con otras empresas = extranet."
+    },
+    {
+      "id": "iv9-23",
+      "tipico": true,
+      "q": "RADIUS usa por defecto el puerto…",
+      "opts": [
+        "TCP 389",
+        "UDP 1812",
+        "UDP 500",
+        "TCP 88"
+      ],
+      "c": 1,
+      "exp": "UDP 1812. Sus RFC actuales son la 2865 y la 2866."
+    },
+    {
+      "id": "iv9-24",
+      "tipico": false,
+      "q": "Kerberos es un protocolo de autenticación creado por…",
+      "opts": [
+        "El MIT",
+        "El IETF como sucesor de RADIUS",
+        "Microsoft",
+        "El CCN"
+      ],
+      "c": 0,
+      "exp": "Lo creó el MIT y ofrece autenticación mutua con tiques."
+    },
+    {
+      "id": "iv9-25",
+      "tipico": true,
+      "q": "La copia que guarda lo modificado desde la última copia COMPLETA es la…",
+      "opts": [
+        "Incremental",
+        "Espejo",
+        "Completa",
+        "Diferencial"
+      ],
+      "c": 3,
+      "exp": "Diferencial. La incremental copia lo cambiado desde la última copia, sea completa o incremental."
+    }
+  ]
+}
