@@ -346,13 +346,17 @@ function preguntasCubiertas(fuente) {
       .map((x) => x.q)
   );
 }
-// Siguientes tarjetas sin ver: primero del tema que llevas, luego de los siguientes del plan
+// Tema(s) que tocan ahora según el plan (o, si no hay, el último que has estudiado)
+function temasActuales() {
+  const ts = temasEnCurso(new Date()).filter((t) => (S.cards[t.id] || []).length);
+  if (ts.length) return ts;
+  const emp = temasEmpezados();
+  return emp.length ? [emp[emp.length - 1]] : [];
+}
+// Siguientes tarjetas sin ver, SOLO de los temas que tocan ahora (no se salta al tema siguiente)
 function siguientesNuevas(n) {
-  const orden = S.temas
-    .filter((t) => (S.cards[t.id] || []).length)
-    .sort((a, b) => String(a.semana).localeCompare(String(b.semana)) || ordT(a, b));
   const out = [];
-  for (const t of orden) {
+  for (const t of temasActuales()) {
     const p = S.piles[t.id] || {};
     for (const c of temaCards(t.id)) {
       if (out.length >= n) return out;
@@ -361,9 +365,26 @@ function siguientesNuevas(n) {
   }
   return out;
 }
+// Tarjetas de los temas actuales que no te sabes bien (fallos, dudas o poco asentadas)
+function flojas() {
+  const out = [];
+  temasActuales().forEach((t) => {
+    const p = S.piles[t.id] || {};
+    temaCards(t.id).forEach((c) => {
+      const it = memItems()[c.id];
+      if (p[c.id] === 1 || p[c.id] === 2 || (it && (it.s < 3 || it.x > 0)))
+        out.push({ id: c.id, k: 'c', t: t.id });
+    });
+  });
+  return out;
+}
+function todasActuales() {
+  return temasActuales().flatMap((t) => temaCards(t.id).map((c) => ({ id: c.id, k: 'c', t: t.id })));
+}
 function vExtras() {
   const sig = siguientesNuevas(25);
-  const temaSig = sig.length ? S.temas.find((t) => t.id === sig[0].t) : null;
+  const act = temasActuales();
+  const nom = act.map((t) => t.codigo).join(', ');
   const okOfi = preguntasCubiertas(ofiQs(true));
   const okWeb = preguntasCubiertas(Object.keys(S.cards).flatMap((t) => bank(t)));
   const nq = okOfi.length + okWeb.length;
@@ -371,10 +392,34 @@ function vExtras() {
     .map((id) => S.temas.find((t) => t.id === id))
     .filter(Boolean)
     .sort(ordT);
+  const fl = flojas(),
+    todas = todasActuales();
+  // Si aún quedan tarjetas sin ver del tema de ahora: adelantar. Si ya están todas: repasar.
+  const primero = sig.length
+    ? `<button class="mode" data-act="exadel"><b>➕ Adelantar ${sig.length} tarjetas</b><span>Las siguientes del tema ${esc(nom)}. El plan se recoloca solo.</span></button>`
+    : `<button class="mode" data-act="exflojas"${fl.length ? '' : ' disabled'}><b>🔁 Repasa las que no te sabes (${fl.length})</b><span>${fl.length ? `Las que fallaste, dudaste o están poco asentadas del tema ${esc(nom)}.` : `¡Te sabes todo el tema ${esc(nom)}!`}</span></button>
+  <button class="mode" data-act="extodas"${todas.length ? '' : ' disabled'}><b>🔄 Vuelve a comprobarlas todas (${todas.length})</b><span>Pasa otra vez todas las tarjetas del tema ${esc(nom)}, con su test.</span></button>`;
   return `<div class="modes extras">
-  <button class="mode" data-act="exadel"${sig.length ? '' : ' disabled'}><b>➕ Adelantar ${sig.length} tarjetas</b><span>${temaSig ? `Lo siguiente: tema ${esc(temaSig.codigo)}. El plan se recoloca solo.` : 'Ya has visto todas las tarjetas.'}</span></button>
+  ${primero}
   <button class="mode" data-act="exsabes"${nq >= 5 ? '' : ' disabled'}><b>📝 Test de lo que ya sabes</b><span>${nq >= 5 ? `${Math.min(15, nq)} preguntas (oficiales y de la web) que se contestan con las tarjetas que ya has estudiado${temas.length ? ` · ${esc(temas.map((t) => t.codigo).join(', '))}` : ''}.` : 'Cuando estudies más tarjetas, aquí saldrán preguntas sobre ellas.'}</span></button>
   <button class="mode" data-act="exexpres"${nq >= 10 ? '' : ' disabled'}><b>⏱️ Examen exprés de lo que llevas</b><span>${nq >= 10 ? `${Math.min(20, nq)} preguntas (primero las oficiales) a 1,2 minutos cada una, como el real. Corrige al final.` : `Hacen falta al menos 10 preguntas de lo que has estudiado (ahora hay ${nq}).`}</span></button></div>`;
+}
+function startCola(cola) {
+  if (!cola.length) return;
+  ui.rit = {
+    cola: shuffle(cola),
+    i: 0,
+    paso: 'q',
+    ok: 0,
+    n: 0,
+    reint: {},
+    hc: 0,
+    ini: cola.length,
+    extra: 1,
+  };
+  ui.ttab = 'ritmo';
+  location.hash = 'tarjetas';
+  render();
 }
 function startAdelantar() {
   const cola = siguientesNuevas(25);

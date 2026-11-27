@@ -625,6 +625,10 @@ document.addEventListener('click', (e) => {
     render();
   } else if (a === 'exadel') {
     startAdelantar();
+  } else if (a === 'exflojas') {
+    startCola(flojas());
+  } else if (a === 'extodas') {
+    startCola(todasActuales());
   } else if (a === 'exsabes') {
     startSabes();
   } else if (a === 'exexpres') {
