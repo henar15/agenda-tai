@@ -1,328 +1,327 @@
 {
- "fases": [
-  {
-   "id": "v1a",
-   "nombre": "1ª vuelta · Bloque I",
-   "corto": "1ª vuelta",
-   "cuando": "dic – mediados de ene",
-   "semanas": 7,
-   "color": "#7c3aed"
-  },
-  {
-   "id": "v1b",
-   "nombre": "1ª vuelta · Bloques II y III",
-   "corto": "1ª vuelta",
-   "cuando": "mediados de ene – feb",
-   "semanas": 8,
-   "color": "#2563eb"
-  },
-  {
-   "id": "v1c",
-   "nombre": "1ª vuelta · Bloque IV",
-   "corto": "1ª vuelta",
-   "cuando": "marzo – mediados de abr",
-   "semanas": 6,
-   "color": "#ea580c"
-  },
-  {
-   "id": "v2",
-   "nombre": "2ª vuelta + simulacros",
-   "corto": "2ª vuelta",
-   "cuando": "mediados de abr – mayo",
-   "semanas": 4,
-   "color": "#0d9488"
-  },
-  {
-   "id": "fin",
-   "nombre": "Vuelta exprés",
-   "corto": "Final",
-   "cuando": "última semana",
-   "semanas": 1,
-   "color": "#e11d48"
-  }
- ],
- "rutina": [
-  {
-   "t": "10 min · Mis errores",
-   "d": "Empieza por lo que fallaste otros días."
-  },
-  {
-   "t": "1 h 30 min · Tema nuevo",
-   "d": "Primero entiéndelo con la explicación fácil y luego pasa sus tarjetas."
-  },
-  {
-   "t": "20 min · Repaso",
-   "d": "Tarjetas en «Dudo» y «No me la sé» de temas anteriores."
-  },
-  {
-   "t": "Una vez por semana · Test",
-   "d": "Un test más largo para ver cómo vas, con la penalización del examen."
-  }
- ],
- "semanas": [
-  {
-   "lunes": "2026-11-23",
-   "fase": "v1a",
-   "titulo": "I.1 Constitución (primera vuelta)",
-   "tareas": [
-    "Tarjetas 1‑70 del tema I.1: entenderlas, no memorizarlo todo",
-    "Tarjetas extra E1‑E20",
-    "Test «Tarjetas 1 a 70» y test trampa"
-   ]
-  },
-  {
-   "lunes": "2026-11-30",
-   "fase": "v1a",
-   "titulo": "I.1 terminar + I.2 Cortes, TC y Defensor",
-   "tareas": [
-    "**Inscribirme en IPS** y pagar la tasa (15,57 €)",
-    "Tarjetas 71‑98 del I.1 (deberes, garantías, Corona)",
-    "Tema I.2: tarjetas 1‑30 (Cortes)",
-    "Tema I.2: tarjetas 31‑54 (Tribunal Constitucional y Defensor del Pueblo)",
-    "Viernes: 10 preguntas del I.1 y 10 del I.2"
-   ]
-  },
-  {
-   "lunes": "2026-12-07",
-   "fase": "v1a",
-   "titulo": "I.3 Gobierno + I.4 Estatuto del Empleado Público",
-   "tareas": [
-    "Tema I.3: Gobierno (lunes y martes, el 8 es festivo)",
-    "Tema I.4: EBEP y transparencia",
-    "Repaso: típicas del I.1 y el I.2",
-    "Viernes: test del I.3"
-   ]
-  },
-  {
-   "lunes": "2026-12-14",
-   "fase": "v1a",
-   "titulo": "I.5 Igualdad + I.6 Sociedad de la información",
-   "tareas": [
-    "Tema I.5: igualdad, violencia de género, LGTBI, discapacidad y dependencia",
-    "Tema I.6: sociedad de la información, firma electrónica, DNI electrónico",
-    "Repaso: Mis errores",
-    "Viernes: test del I.4"
-   ]
-  },
-  {
-   "lunes": "2026-12-21",
-   "fase": "rep",
-   "titulo": "Repaso de Navidad: temas I.1 a I.6",
-   "tareas": [
-    "Semana ligera: 1 hora al día basta",
-    "Vuelta rápida a las tarjetas típicas de I.1 a I.6",
-    "Simulacro corto solo del Bloque I",
-    "Comprobar que la inscripción está hecha (plazo hasta el 29‑dic)"
-   ]
-  },
-  {
-   "lunes": "2026-12-28",
-   "fase": "v1a",
-   "titulo": "I.7 Protección de datos",
-   "tareas": [
-    "Tema I.7: RGPD, LOPDGDD y reglamento europeo de IA",
-    "Repaso: Mis errores",
-    "Viernes: test del I.7"
-   ]
-  },
-  {
-   "lunes": "2027-01-04",
-   "fase": "v1a",
-   "titulo": "I.8 Acceso electrónico + I.9 Sedes e identificación",
-   "tareas": [
-    "Tema I.8: acceso electrónico, ENS, ENI",
-    "Tema I.9: sedes electrónicas, identificación y autenticación",
-    "Viernes: simulacro del Bloque I completo"
-   ]
-  },
-  {
-   "lunes": "2027-01-11",
-   "fase": "v1b",
-   "titulo": "II.1 Informática básica + II.2 Periféricos",
-   "tareas": [
-    "Tema II.1 (lo tienes de DAM: ve rápido)",
-    "Tema II.2",
-    "Repaso: típicas del Bloque I (primer repaso espaciado)"
-   ]
-  },
-  {
-   "lunes": "2027-01-18",
-   "fase": "v1b",
-   "titulo": "II.3 Estructuras de datos + III.1 Modelado de datos",
-   "tareas": [
-    "Tema II.3",
-    "Tema III.1",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-01-25",
-   "fase": "v1b",
-   "titulo": "II.4 Sistemas operativos + III.2 Lenguajes de programación",
-   "tareas": [
-    "Tema II.4",
-    "Tema III.2",
-    "Viernes: 10 preguntas de II y 10 de III"
-   ]
-  },
-  {
-   "lunes": "2027-02-01",
-   "fase": "v1b",
-   "titulo": "II.5 Bases de datos + III.3 SQL",
-   "tareas": [
-    "Tema II.5",
-    "Tema III.3 (SQL: practica consultas)",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-02-08",
-   "fase": "v1b",
-   "titulo": "II.6 Inteligencia artificial + III.4 POO",
-   "tareas": [
-    "Tema II.6 (nuevo en 2026)",
-    "Tema III.4",
-    "Repaso: típicas del Bloque I (segundo repaso espaciado)"
-   ]
-  },
-  {
-   "lunes": "2027-02-15",
-   "fase": "v1b",
-   "titulo": "III.5 Java EE/.NET + III.6 Arquitecturas",
-   "tareas": [
-    "Tema III.5",
-    "Tema III.6",
-    "Viernes: test del Bloque II"
-   ]
-  },
-  {
-   "lunes": "2027-02-22",
-   "fase": "v1b",
-   "titulo": "III.7 Web + III.8 Accesibilidad",
-   "tareas": [
-    "Tema III.7",
-    "Tema III.8",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-03-01",
-   "fase": "rep",
-   "titulo": "III.9 Repositorios + repaso de los Bloques II y III",
-   "tareas": [
-    "Tema III.9",
-    "**Primer supuesto práctico de los Bloques II y III**",
-    "Repaso: típicas de los Bloques II y III"
-   ]
-  },
-  {
-   "lunes": "2027-03-08",
-   "fase": "v1c",
-   "titulo": "IV.1 Administración del SO + IV.2 Administración de BBDD",
-   "tareas": [
-    "Tema IV.1",
-    "Tema IV.2",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-03-15",
-   "fase": "v1c",
-   "titulo": "IV.3 Correo y cloud + IV.4 Redes de área local",
-   "tareas": [
-    "Tema IV.3",
-    "Tema IV.4",
-    "Repaso: típicas del Bloque I (tercer repaso espaciado)"
-   ]
-  },
-  {
-   "lunes": "2027-03-22",
-   "fase": "v1c",
-   "titulo": "IV.5 Seguridad (Semana Santa)",
-   "tareas": [
-    "Semana ligera: tema IV.5",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-03-29",
-   "fase": "v1c",
-   "titulo": "IV.6 Comunicaciones + IV.7 TCP/IP y OSI",
-   "tareas": [
-    "Tema IV.6",
-    "Tema IV.7 (cae mucho: capas y protocolos)",
-    "Viernes: test del Bloque III"
-   ]
-  },
-  {
-   "lunes": "2027-04-05",
-   "fase": "v1c",
-   "titulo": "IV.8 Internet + IV.9 Seguridad en redes",
-   "tareas": [
-    "Tema IV.8",
-    "Tema IV.9",
-    "Repaso: Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-04-12",
-   "fase": "v1c",
-   "titulo": "IV.10 Redes locales + supuesto II y IV",
-   "tareas": [
-    "Tema IV.10",
-    "**Primer supuesto práctico de los Bloques II y IV**",
-    "Elegir qué supuesto harás en el examen"
-   ]
-  },
-  {
-   "lunes": "2027-04-19",
-   "fase": "v2",
-   "titulo": "2ª vuelta: Bloque I + simulacro 1",
-   "tareas": [
-    "Repasar todas las tarjetas del Bloque I (solo las que no sabes)",
-    "**Simulacro 1** cronometrado (120 min)",
-    "Mis errores"
-   ]
-  },
-  {
-   "lunes": "2027-04-26",
-   "fase": "v2",
-   "titulo": "2ª vuelta: Bloques II y III + simulacro 2",
-   "tareas": [
-    "Repasar tarjetas de los Bloques II y III",
-    "**Simulacro 2**",
-    "Supuesto práctico de tu bloque elegido"
-   ]
-  },
-  {
-   "lunes": "2027-05-03",
-   "fase": "v2",
-   "titulo": "2ª vuelta: Bloque IV + simulacro 3",
-   "tareas": [
-    "Repasar tarjetas del Bloque IV",
-    "**Simulacro 3**",
-    "Supuesto práctico"
-   ]
-  },
-  {
-   "lunes": "2027-05-10",
-   "fase": "v2",
-   "titulo": "Simulacro 4 + Mis errores a cero",
-   "tareas": [
-    "**Simulacro 4**",
-    "Vaciar «Mis errores»",
-    "Repasar las típicas de examen de todos los temas"
-   ]
-  },
-  {
-   "lunes": "2027-05-17",
-   "fase": "fin",
-   "titulo": "Vuelta exprés antes del examen",
-   "tareas": [
-    "Solo típicas de examen y Mis errores",
-    "Nada nuevo esta semana",
-    "El día antes: descansar"
-   ]
-  }
- ]
+  "fases": [
+    {
+      "id": "v1a",
+      "nombre": "1ª vuelta · Bloque I",
+      "corto": "1ª vuelta",
+      "cuando": "dic – mediados de ene",
+      "semanas": 7,
+      "color": "#7c3aed"
+    },
+    {
+      "id": "v1b",
+      "nombre": "1ª vuelta · Bloques II y III",
+      "corto": "1ª vuelta",
+      "cuando": "mediados de ene – feb",
+      "semanas": 8,
+      "color": "#2563eb"
+    },
+    {
+      "id": "v1c",
+      "nombre": "1ª vuelta · Bloque IV",
+      "corto": "1ª vuelta",
+      "cuando": "marzo – mediados de abr",
+      "semanas": 6,
+      "color": "#ea580c"
+    },
+    {
+      "id": "v2",
+      "nombre": "2ª vuelta + simulacros",
+      "corto": "2ª vuelta",
+      "cuando": "mediados de abr – mayo",
+      "semanas": 4,
+      "color": "#0d9488"
+    },
+    {
+      "id": "fin",
+      "nombre": "Vuelta exprés",
+      "corto": "Final",
+      "cuando": "última semana",
+      "semanas": 1,
+      "color": "#e11d48"
+    }
+  ],
+  "rutina": [
+    {
+      "t": "10 min · Mis errores",
+      "d": "Empieza por lo que fallaste otros días."
+    },
+    {
+      "t": "1 h 30 min · Tema nuevo",
+      "d": "Primero entiéndelo con la explicación fácil y luego pasa sus tarjetas."
+    },
+    {
+      "t": "20 min · Repaso",
+      "d": "Tarjetas en «Dudo» y «No me la sé» de temas anteriores."
+    },
+    {
+      "t": "Una vez por semana · Test",
+      "d": "Un test más largo para ver cómo vas, con la penalización del examen."
+    }
+  ],
+  "semanas": [
+    {
+      "lunes": "2026-11-23",
+      "fase": "v1a",
+      "titulo": "I.1 Constitución (primera vuelta)",
+      "tareas": [
+        "Tarjetas del tema I.1 (en tu sesión guiada de cada día)",
+        "Test del tema I.1",
+        "Test trampa: preguntas de nivel examen hasta el art. 21"
+      ]
+    },
+    {
+      "lunes": "2026-11-30",
+      "fase": "v1a",
+      "titulo": "I.1 terminar + I.2 Cortes, TC y Defensor",
+      "tareas": [
+        "**Inscribirme en IPS** y pagar la tasa (15,57 €)",
+        "Repaso: las tarjetas del I.1 que no te sabes",
+        "Tarjetas del tema I.2: Cortes, Tribunal Constitucional y Defensor del Pueblo (en tu sesión guiada)",
+        "Viernes: test del I.1 y test del I.2"
+      ]
+    },
+    {
+      "lunes": "2026-12-07",
+      "fase": "v1a",
+      "titulo": "I.3 Gobierno + I.4 Estatuto del Empleado Público",
+      "tareas": [
+        "Tema I.3: Gobierno (lunes y martes, el 8 es festivo)",
+        "Tema I.4: EBEP y transparencia",
+        "Repaso: típicas del I.1 y el I.2",
+        "Viernes: test del I.3"
+      ]
+    },
+    {
+      "lunes": "2026-12-14",
+      "fase": "v1a",
+      "titulo": "I.5 Igualdad + I.6 Sociedad de la información",
+      "tareas": [
+        "Tema I.5: igualdad, violencia de género, LGTBI, discapacidad y dependencia",
+        "Tema I.6: sociedad de la información, firma electrónica, DNI electrónico",
+        "Repaso: Mis errores",
+        "Viernes: test del I.4"
+      ]
+    },
+    {
+      "lunes": "2026-12-21",
+      "fase": "rep",
+      "titulo": "Repaso de Navidad: temas I.1 a I.6",
+      "tareas": [
+        "Semana ligera: 1 hora al día basta",
+        "Vuelta rápida a las tarjetas típicas de I.1 a I.6",
+        "Simulacro corto solo del Bloque I",
+        "Comprobar que la inscripción está hecha (plazo hasta el 29‑dic)"
+      ]
+    },
+    {
+      "lunes": "2026-12-28",
+      "fase": "v1a",
+      "titulo": "I.7 Protección de datos",
+      "tareas": [
+        "Tema I.7: RGPD, LOPDGDD y reglamento europeo de IA",
+        "Repaso: Mis errores",
+        "Viernes: test del I.7"
+      ]
+    },
+    {
+      "lunes": "2027-01-04",
+      "fase": "v1a",
+      "titulo": "I.8 Acceso electrónico + I.9 Sedes e identificación",
+      "tareas": [
+        "Tema I.8: acceso electrónico, ENS, ENI",
+        "Tema I.9: sedes electrónicas, identificación y autenticación",
+        "Viernes: simulacro del Bloque I completo"
+      ]
+    },
+    {
+      "lunes": "2027-01-11",
+      "fase": "v1b",
+      "titulo": "II.1 Informática básica + II.2 Periféricos",
+      "tareas": [
+        "Tema II.1 (lo tienes de DAM: ve rápido)",
+        "Tema II.2",
+        "Repaso: típicas del Bloque I (primer repaso espaciado)"
+      ]
+    },
+    {
+      "lunes": "2027-01-18",
+      "fase": "v1b",
+      "titulo": "II.3 Estructuras de datos + III.1 Modelado de datos",
+      "tareas": [
+        "Tema II.3",
+        "Tema III.1",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-01-25",
+      "fase": "v1b",
+      "titulo": "II.4 Sistemas operativos + III.2 Lenguajes de programación",
+      "tareas": [
+        "Tema II.4",
+        "Tema III.2",
+        "Viernes: 10 preguntas de II y 10 de III"
+      ]
+    },
+    {
+      "lunes": "2027-02-01",
+      "fase": "v1b",
+      "titulo": "II.5 Bases de datos + III.3 SQL",
+      "tareas": [
+        "Tema II.5",
+        "Tema III.3 (SQL: practica consultas)",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-02-08",
+      "fase": "v1b",
+      "titulo": "II.6 Inteligencia artificial + III.4 POO",
+      "tareas": [
+        "Tema II.6 (nuevo en 2026)",
+        "Tema III.4",
+        "Repaso: típicas del Bloque I (segundo repaso espaciado)"
+      ]
+    },
+    {
+      "lunes": "2027-02-15",
+      "fase": "v1b",
+      "titulo": "III.5 Java EE/.NET + III.6 Arquitecturas",
+      "tareas": [
+        "Tema III.5",
+        "Tema III.6",
+        "Viernes: test del Bloque II"
+      ]
+    },
+    {
+      "lunes": "2027-02-22",
+      "fase": "v1b",
+      "titulo": "III.7 Web + III.8 Accesibilidad",
+      "tareas": [
+        "Tema III.7",
+        "Tema III.8",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-03-01",
+      "fase": "rep",
+      "titulo": "III.9 Repositorios + repaso de los Bloques II y III",
+      "tareas": [
+        "Tema III.9",
+        "**Primer supuesto práctico de los Bloques II y III**",
+        "Repaso: típicas de los Bloques II y III"
+      ]
+    },
+    {
+      "lunes": "2027-03-08",
+      "fase": "v1c",
+      "titulo": "IV.1 Administración del SO + IV.2 Administración de BBDD",
+      "tareas": [
+        "Tema IV.1",
+        "Tema IV.2",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-03-15",
+      "fase": "v1c",
+      "titulo": "IV.3 Correo y cloud + IV.4 Redes de área local",
+      "tareas": [
+        "Tema IV.3",
+        "Tema IV.4",
+        "Repaso: típicas del Bloque I (tercer repaso espaciado)"
+      ]
+    },
+    {
+      "lunes": "2027-03-22",
+      "fase": "v1c",
+      "titulo": "IV.5 Seguridad (Semana Santa)",
+      "tareas": [
+        "Semana ligera: tema IV.5",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-03-29",
+      "fase": "v1c",
+      "titulo": "IV.6 Comunicaciones + IV.7 TCP/IP y OSI",
+      "tareas": [
+        "Tema IV.6",
+        "Tema IV.7 (cae mucho: capas y protocolos)",
+        "Viernes: test del Bloque III"
+      ]
+    },
+    {
+      "lunes": "2027-04-05",
+      "fase": "v1c",
+      "titulo": "IV.8 Internet + IV.9 Seguridad en redes",
+      "tareas": [
+        "Tema IV.8",
+        "Tema IV.9",
+        "Repaso: Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-04-12",
+      "fase": "v1c",
+      "titulo": "IV.10 Redes locales + supuesto II y IV",
+      "tareas": [
+        "Tema IV.10",
+        "**Primer supuesto práctico de los Bloques II y IV**",
+        "Elegir qué supuesto harás en el examen"
+      ]
+    },
+    {
+      "lunes": "2027-04-19",
+      "fase": "v2",
+      "titulo": "2ª vuelta: Bloque I + simulacro 1",
+      "tareas": [
+        "Repasar todas las tarjetas del Bloque I (solo las que no sabes)",
+        "**Simulacro 1** cronometrado (120 min)",
+        "Mis errores"
+      ]
+    },
+    {
+      "lunes": "2027-04-26",
+      "fase": "v2",
+      "titulo": "2ª vuelta: Bloques II y III + simulacro 2",
+      "tareas": [
+        "Repasar tarjetas de los Bloques II y III",
+        "**Simulacro 2**",
+        "Supuesto práctico de tu bloque elegido"
+      ]
+    },
+    {
+      "lunes": "2027-05-03",
+      "fase": "v2",
+      "titulo": "2ª vuelta: Bloque IV + simulacro 3",
+      "tareas": [
+        "Repasar tarjetas del Bloque IV",
+        "**Simulacro 3**",
+        "Supuesto práctico"
+      ]
+    },
+    {
+      "lunes": "2027-05-10",
+      "fase": "v2",
+      "titulo": "Simulacro 4 + Mis errores a cero",
+      "tareas": [
+        "**Simulacro 4**",
+        "Vaciar «Mis errores»",
+        "Repasar las típicas de examen de todos los temas"
+      ]
+    },
+    {
+      "lunes": "2027-05-17",
+      "fase": "fin",
+      "titulo": "Vuelta exprés antes del examen",
+      "tareas": [
+        "Solo típicas de examen y Mis errores",
+        "Nada nuevo esta semana",
+        "El día antes: descansar"
+      ]
+    }
+  ]
 }

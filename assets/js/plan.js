@@ -148,6 +148,24 @@ function ritmo() {
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };
 }
+// Botón «Ir» para las tareas de la semana que se pueden hacer en la web
+function enlaceTarea(t) {
+  const x = plain(t).toLowerCase();
+  const b = (attrs, txt) => `<button class="mini ghost wgo" ${attrs}>${txt || 'Hacer →'}</button>`;
+  if (/trampa/.test(x) && (S.tests || []).some((z) => z.id === 't-trampa'))
+    return b('data-act="tstart" data-id="t-trampa"');
+  const tm = [...x.matchAll(/\b(i{1,3}|iv)\.(\d+)/g)]
+    .map((m) => m[1].toUpperCase() + '-' + m[2])
+    .filter((id) => bank(id).length);
+  if (/test|preguntas/.test(x) && tm.length)
+    return tm
+      .map((id) => b(`data-act="wtema" data-id="${id}"`, 'Test ' + id.replace('-', '.') + ' →'))
+      .join('');
+  if (/simulacro/.test(x)) return b('data-act="dgo" data-go="sim"', 'Ir →');
+  if (/mis errores/.test(x)) return b('data-act="merr"', 'Ir →');
+  if (/tarjetas/.test(x)) return b('data-act="sesgo"', 'Sesión →');
+  return '';
+}
 const ritmoFactor = () => (S.config || {}).ritmo || 1;
 function ajustarRitmo(aciertos, total) {
   if (total < 8) return null;
@@ -435,7 +453,7 @@ function vPlan() {
     )
       .map((t, i) => {
         const k = w.lunes + '-' + i;
-        return `<li><label><input type="checkbox" data-task="${esc(k)}"${done[k] ? ' checked' : ''}><span class="${done[k] ? 'ok' : ''}">${rich(t)}</span></label></li>`;
+        return `<li><label><input type="checkbox" data-task="${esc(k)}"${done[k] ? ' checked' : ''}><span class="${done[k] ? 'ok' : ''}">${rich(t)}</span></label>${enlaceTarea(t)}</li>`;
       })
       .join('')}</ul></div></div>`;
   };
@@ -463,7 +481,7 @@ function vPlan() {
       const l = Math.max(0, ((S.lectura || {})[t.id] || ini - 1) - ini + 1),
         tot = Math.max(1, t.pags - ini + 1);
       const cp = cardPct(t.id);
-      return `<div class="row"><span class="tag" style="background:${BL[t.bloque].c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b>${t.pags ? `<div class="pbar"><span>📖 Lectura</span><div class="tr"><i style="width:${Math.min(100, (l / tot) * 100)}%"></i></div><small>${Math.min(l, tot)}/${tot} págs.</small></div>` : ''}${cp ? `<div class="pbar"><span>🃏 Tarjetas</span><div class="tr"><i style="width:${(cp.s / cp.n) * 100}%;background:#22c55e"></i></div><small>${cp.s}/${cp.n}</small></div>` : ''}</div><button class="pill p-${esc(t.estado || 'pendiente')}" data-act="estado" data-id="${esc(t.id)}">${ESTN[t.estado] || 'Pendiente'}</button></div>`;
+      return `<div class="row"><span class="tag" style="background:${BL[t.bloque].c}">${esc(t.codigo)}</span><div class="t"><b>${esc(t.titulo)}</b>${t.pags && leeApuntes() ? `<div class="pbar"><span>📖 Lectura</span><div class="tr"><i style="width:${Math.min(100, (l / tot) * 100)}%"></i></div><small>${Math.min(l, tot)}/${tot} págs.</small></div>` : ''}${cp ? `<div class="pbar"><span>🃏 Tarjetas</span><div class="tr"><i style="width:${(cp.s / cp.n) * 100}%;background:#22c55e"></i></div><small>${cp.s}/${cp.n}</small></div>` : ''}</div><button class="pill p-${esc(t.estado || 'pendiente')}" data-act="estado" data-id="${esc(t.id)}">${ESTN[t.estado] || 'Pendiente'}</button></div>`;
     };
     const dias = [0, 1, 2, 3, 4, 5, 6]
       .map((k) => {

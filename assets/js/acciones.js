@@ -512,6 +512,14 @@ document.addEventListener('click', (e) => {
     startRun('Típicas de examen', '', shuffle(bank().filter((q) => q.tipico)).slice(0, 30), 'tipicas');
   } else if (a === 'msim') {
     startRun('Simulacro', '', shuffle(bank()).slice(0, 40), 'simulacro');
+  } else if (a === 'wtema') {
+    const t = S.temas.find((x) => x.id === el.dataset.id);
+    startRun(
+      'Test del tema ' + (t ? t.codigo : ''),
+      el.dataset.id,
+      shuffle(bank(el.dataset.id)).slice(0, 20),
+      'practica-' + el.dataset.id,
+    );
   } else if (a === 'mtema' || a === 'mtemaall') {
     const qs = shuffle(bank(ui.scope));
     const t = S.temas.find((x) => x.id === ui.scope);

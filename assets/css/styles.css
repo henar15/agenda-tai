@@ -3550,3 +3550,12 @@ body.focus {
   display: grid;
   gap: 10px;
 }
+.week li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.wgo {
+  margin-left: auto;
+}
