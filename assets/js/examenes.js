@@ -228,9 +228,31 @@ function secScore(X, si, skipDud) {
   const n = a + f + b;
   return { a, f, b, n, nota: n ? (Math.max(0, a - f / 3) / n) * 10 : 0 };
 }
-function finishExam() {
+// Corrige solo las preguntas respondidas (para tests largos que no terminas)
+function recortarExamen(X) {
+  const keep = X.items.map((_, i) => i).filter((i) => X.ans[i] != null);
+  const total = X.items.length;
+  const ans = {},
+    dud = {},
+    pis = {};
+  const usadas = [...new Set(keep.map((i) => X.items[i].s))];
+  X.items = keep.map((i, j) => {
+    if (X.ans[i] != null) ans[j] = X.ans[i];
+    if (X.dud[i]) dud[j] = X.dud[i];
+    if (X.pis && X.pis[i]) pis[j] = X.pis[i];
+    return Object.assign({}, X.items[i], { s: usadas.indexOf(X.items[i].s) });
+  });
+  X.secs = usadas.map((s) => X.secs[s]);
+  X.ans = ans;
+  X.dud = dud;
+  X.pis = pis;
+  X.titulo += ` (${keep.length} de ${total} respondidas)`;
+  X.parcial = true;
+}
+function finishExam(parcial) {
   const X = ui.ex;
   if (!X || X.done) return;
+  if (parcial) recortarExamen(X);
   clearInterval(exTimer);
   X.done = true;
   X.secsR = X.secs.map((_, si) => secScore(X, si, false));
@@ -318,7 +340,12 @@ function vExam() {
   <div aria-live="polite">${shown ? `<div class="exp">${ans === q.c ? '<b>¡Correcto!</b> ' : '<b>No era esa.</b> La buena es la ' + 'abcd'[q.c] + '). '}${rich(q.exp || '')}</div>` : ''}</div>
   <div class="xact"><button class="mini${X.dud[X.i] ? ' hi' : ''}" data-act="xdud" aria-pressed="${!!X.dud[X.i]}">${X.dud[X.i] ? '★ Dudosa' : '☆ Marcar dudosa'}</button>${X.pistas && !shown && hid == null ? `<button class="mini" data-act="xpis">💡 Pista</button>` : ''}${ans != null && !shown ? `<button class="mini ghost" data-act="xclr">Dejar en blanco</button>` : ''}</div>
   <div class="xnav"><button class="btn ghost" data-act="xprev"${X.i ? '' : ' disabled'}>‹ Anterior</button>${X.i + 1 < X.items.length ? `<button class="btn" data-act="xnext">Siguiente ›</button>` : `<button class="btn" data-act="xfin">Entregar</button>`}</div>
-  </section><aside class="xside"><h3>Preguntas</h3><div class="xgrid">${grid}</div><p class="fine">Morado: respondida · ★: dudosa</p><button class="btn ${X.conf ? '' : 'ghost'}" data-act="xfin">${X.conf ? '¿Seguro? Pulsa otra vez para entregar' : 'Entregar examen'}</button> <button class="mini ghost" data-act="xquit">Salir sin guardar</button></aside></div></div>`;
+  </section><aside class="xside"><h3>Preguntas</h3><div class="xgrid">${grid}</div><p class="fine">Morado: respondida · ★: dudosa</p><button class="btn ${X.conf ? '' : 'ghost'}" data-act="xfin">${X.conf ? '¿Seguro? Pulsa otra vez para entregar' : 'Entregar examen'}</button>${(() => {
+    const n = Object.keys(X.ans).length;
+    return n && n < X.items.length
+      ? `<button class="btn ghost" data-act="xparcial">Corregir solo las ${n} respondidas</button>`
+      : '';
+  })()} <button class="mini ghost" data-act="xquit">Salir sin guardar</button></aside></div></div>`;
 }
 function vExamEnd() {
   const X = ui.ex;

@@ -398,6 +398,20 @@ document.addEventListener('click', (e) => {
       return;
     }
     finishExam();
+  } else if (a === 'xparcial') {
+    finishExam(true);
+  } else if (a === 'leer') {
+    setLeer(el.dataset.v === '1');
+    render();
+  } else if (a === 'statsreset') {
+    if (!ui.stReset) {
+      ui.stReset = 1;
+      render();
+      return;
+    }
+    ui.stReset = 0;
+    resetEstadisticas();
+    render();
   } else if (a === 'xquit') {
     clearInterval(exTimer);
     ui.ex = null;

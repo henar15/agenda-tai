@@ -133,7 +133,9 @@ function vHistorial() {
 /* ---------- resultados ---------- */
 function vResultados() {
   if (!S.res.length)
-    return vProgreso() + '<p class="empty">Cuando hagas tests, tus notas aparecerán aquí.</p>';
+    return (
+      vProgreso() + '<p class="empty">Cuando hagas tests, tus notas aparecerán aquí.</p>' + vResetStats()
+    );
   const rs = S.res.slice().sort((a, b) => (a.fecha || '').localeCompare(b.fecha || ''));
   return (
     vProgreso() +
@@ -145,7 +147,7 @@ function vResultados() {
       (r) =>
         `<tr><td>${esc(fmtD((r.fecha || '').slice(0, 10)))}</td><td>${esc(r.titulo)}</td><td class="n">${r.aciertos}</td><td class="n">${r.fallos}</td><td class="n">${r.blanco || 0}</td><td class="n"><b>${n1(nota(r))}</b></td></tr>`,
     )
-    .join('')}</tbody></table></div>`
+    .join('')}</tbody></table></div>${vResetStats()}`
   );
 }
 function drawChart() {
@@ -183,3 +185,20 @@ function drawChart() {
   s.innerHTML = g;
 }
 const chartRO = new ResizeObserver(drawChart);
+
+// «Poner las estadísticas a cero»: borra notas, historial y gráficas. Lo que ya sabes de las tarjetas se queda.
+function resetEstadisticas() {
+  S.res = [];
+  S.stats = {};
+  S.act = {};
+  S.rec = {};
+  const d = {};
+  const hoy = (S.diario || {})[today()];
+  if (hoy) d[today()] = Object.assign({}, hoy, { _s: { c: 0, q: 0, p: 0, m: 0 } });
+  S.diario = d;
+  S.mem = Object.assign({}, S.mem, { cal: {} });
+  ['resultados', 'stats', 'actividad', 'records', 'diario', 'mem'].forEach(kvSet);
+}
+function vResetStats() {
+  return `<div class="card reset-st"><p class="fine" style="margin:0">¿Quieres empezar las gráficas de cero? Se borran tus notas, el historial y las estadísticas. Lo que ya sabes de las tarjetas se queda.</p><button class="mini ghost" data-act="statsreset">${ui.stReset ? '¿Seguro? Pulsa otra vez' : '🧹 Poner las estadísticas a cero'}</button></div>`;
+}

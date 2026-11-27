@@ -50,7 +50,7 @@ function planDia(ref, sim) {
         sub: 'ya lo dominas, no hace falta leerlo entero',
         go: 'temas',
       });
-    if (t.pags && !dom) {
+    if (t.pags && !dom && leeApuntes()) {
       const ini = t.pagIni || 1;
       const leida = Math.max(
         ini - 1,
@@ -146,6 +146,24 @@ function ritmo() {
       pag += t.pags - Math.max(0, (S.lectura || {})[t.id] || (t.pagIni || 1) - 1);
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };
+}
+// ¿Estudias leyendo los apuntes? Si no, el plan va solo con tarjetas y tests.
+const leeApuntes = () => (S.config || {}).leer !== false;
+function setLeer(v) {
+  S.config = Object.assign({}, S.config, { leer: v });
+  kvSet('config');
+  // el plan de hoy se rehace con la nueva forma de estudiar
+  const d = Object.assign({}, S.diario);
+  if (d[today()]) {
+    d[today()] = Object.assign({}, d[today()]);
+    delete d[today()]._plan;
+    S.diario = d;
+    kvSet('diario');
+  }
+  if (ui.ses && ui.ses.fecha === today() && !Object.keys(ui.ses.hechos).length) {
+    ui.ses = null;
+    lsSet('ses', null);
+  }
 }
 // Marca (o desmarca) una tarea de hoy. Las lecturas avanzan (o devuelven) las páginas leídas.
 function marcarTarea(dk, on) {
@@ -246,7 +264,7 @@ function vHoyPlan(compact) {
   const hech = (H.tareas || []).filter((t) => done[t.k]).length,
     tot = (H.tareas || []).length;
   const R2 = ritmo();
-  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${compact ? '' : `<button class="mini ghost" data-act="hoyreset" style="margin-left:8px">${ui.hoyReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de 0'}</button>`}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>${hech === tot ? '<p class="hoyok">🎉 <b>¡Hoy ya está!</b> Lo de mañana, mañana. Si aún te apetece, una sesión corta «A tu ritmo» nunca sobra.</p>' : ''}` : '<p class="empty">¡Nada pendiente! Si te apetece, haz una sesión «A tu ritmo».</p>'}
+  return `<div class="card hoyplan"><h3>Hoy toca ${tot ? `<small>${hech}/${tot} hechas</small>` : ''}${compact ? '' : `<button class="mini ghost" data-act="leer" data-v="${leeApuntes() ? 0 : 1}" style="margin-left:8px">${leeApuntes() ? '📖 Leo los apuntes · cambiar' : '🃏 Solo tarjetas · cambiar'}</button>`}${compact ? '' : `<button class="mini ghost" data-act="hoyreset" style="margin-left:8px">${ui.hoyReset ? '¿Seguro? Pulsa otra vez' : '↺ Empezar el día de 0'}</button>`}${ui.pomo ? '' : '<button class="mini hi" data-act="pomo" style="margin-left:auto">🍅 Pomodoro</button>'}</h3>${H.descanso ? '<p class="empty">Hoy es día de descanso 😴</p>' : tot ? `<ul class="dlist">${H.tareas.map((t) => li(t, true)).join('')}</ul>${hech === tot ? '<p class="hoyok">🎉 <b>¡Hoy ya está!</b> Lo de mañana, mañana. Si aún te apetece, una sesión corta «A tu ritmo» nunca sobra.</p>' : ''}` : '<p class="empty">¡Nada pendiente! Si te apetece, haz una sesión «A tu ritmo».</p>'}
   ${compact ? '' : `<h3 style="margin-top:18px">Mañana</h3>${M.descanso ? '<p class="fine">Mañana descansas 😴</p>' : `<ul class="dlist">${(M.tareas || []).map((t) => li(t, false)).join('') || '<li class="fine">Nada todavía</li>'}</ul>`}`}
   <p class="fine" style="margin-top:12px">🎯 Para tenerlo todo leído para mayo: <b>${R2.pd} páginas al día</b> (${R2.pag} páginas en ${R2.dias} días de estudio). Lo que no hagas hoy se reparte en los próximos días.</p></div>`;
 }

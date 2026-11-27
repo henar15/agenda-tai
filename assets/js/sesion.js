@@ -63,18 +63,81 @@ function tpElegir(k, v) {
 }
 
 /* ---------- comprobar una tarjeta: «me la sé» → test rápido; si fallas, ves la respuesta ---------- */
+// Respuestas falsas que se PARECEN a la buena: mismos textos con otro número (art. 13.2 → 13.1, 23.2…)
+function variantesNum(m) {
+  const out = new Set();
+  if (/\//.test(m)) {
+    const [x, y] = m.split('/');
+    out
+      .add(+x + 1 + '/' + y)
+      .add(Math.max(1, +x - 1) + '/' + y)
+      .add(x + '/' + (+y + 1))
+      .add(x + '/' + (+y - 1));
+  } else if (/^\d+[.,]\d+$/.test(m)) {
+    const [x, y] = m.split(/[.,]/);
+    const sep = m.includes(',') ? ',' : '.';
+    out
+      .add(x + sep + (+y + 1))
+      .add(+y > 1 ? x + sep + (+y - 1) : x + sep + (+y + 2))
+      .add(+x + 10 + sep + y)
+      .add(x + y);
+  } else {
+    const n = +m;
+    if (n >= 1900 && n <= 2100) [n - 1, n + 1, n - 2, n + 3].forEach((v) => out.add(String(v)));
+    else if (n <= 12) [n + 1, n - 1, n + 2, n * 2].filter((v) => v >= 0).forEach((v) => out.add(String(v)));
+    else
+      [n + 1, n - 1, n + 10, Math.round(n * 1.5), n - 10]
+        .filter((v) => v > 0)
+        .forEach((v) => out.add(String(v)));
+  }
+  out.delete(m);
+  return [...out];
+}
+function mutaciones(a) {
+  const re = /\d+(?:[.,/]\d+)?/g;
+  const ms = [...String(a).matchAll(re)];
+  if (!ms.length) return [];
+  const res = new Set();
+  // se cambia un solo número cada vez, para que se parezca mucho a la buena
+  shuffle(ms).forEach((m) => {
+    const tras = a.slice(m.index + m[0].length);
+    // un día del mes tiene que seguir siendo un día válido
+    const esDia =
+      /^\**\s*de\s+(enero|febrero|marzo|abril|mayo|junio|julio|agosto|septiembre|octubre|noviembre|diciembre)/i.test(
+        tras,
+      );
+    const vs = esDia
+      ? [+m[0] + 1, +m[0] - 1, +m[0] + 7, +m[0] - 7].filter((v) => v >= 1 && v <= 28).map(String)
+      : variantesNum(m[0]);
+    vs.forEach((v) => res.add(a.slice(0, m.index) + v + tras));
+  });
+  res.delete(a);
+  return shuffle([...res]);
+}
 function opcionesTarjeta(c, tema) {
-  const tieneNum = /\d/.test(c.a);
   const base = plain(c.a);
-  const otras = shuffle(
-    (S.cards[tema] || []).filter((x) => x.id !== c.id && plain(x.a) !== base && plain(x.a).length < 160),
-  );
-  // primero las que se parecen (con números si la buena los tiene), para que no sea obvio
-  otras.sort((a, b) => (/\d/.test(b.a) === tieneNum) - (/\d/.test(a.a) === tieneNum));
   const dist = [];
-  for (const x of otras) {
-    if (dist.length >= 3) break;
-    if (!dist.some((d) => plain(d) === plain(x.a))) dist.push(x.a);
+  const add = (a) => {
+    if (dist.length < 3 && plain(a) !== base && !dist.some((d) => plain(d) === plain(a))) dist.push(a);
+  };
+  // 1) si hay números (artículos, años, plazos, %), cambio solo el número
+  mutaciones(c.a).forEach(add);
+  // 2) si no, respuestas de tarjetas del mismo tema que se parecen (palabras y longitud)
+  if (dist.length < 3) {
+    const mio = new Set(toks(c.q + ' ' + c.a).filter((w) => w.length > 3 && !STOP.has(w)));
+    const len = base.length;
+    (S.cards[tema] || [])
+      .filter((x) => x.id !== c.id && plain(x.a).length < 180)
+      .map((x) => ({
+        x,
+        p:
+          toks(x.q + ' ' + x.a).filter((w) => mio.has(w)).length * 2 -
+          Math.abs(plain(x.a).length - len) / 25 +
+          (/\d/.test(x.a) === /\d/.test(c.a) ? 1 : 0) +
+          Math.random(),
+      }))
+      .sort((a, b) => b.p - a.p)
+      .forEach(({ x }) => add(x.a));
   }
   return shuffle([{ a: c.a, ok: true }].concat(dist.map((a) => ({ a, ok: false }))));
 }
@@ -189,7 +252,7 @@ function vSesion() {
   let cuerpo = '';
   if (p.tipo === 'leer') {
     const t = S.temas.find((x) => x.id === p.tema) || {};
-    cuerpo = `${tit()}<p class="ses-big">Tema <b>${esc(t.codigo || '')}</b> · págs. <b>${p.a}–${p.b}</b></p><p class="sub">${esc(t.titulo || '')}</p><p>Léelo con calma y subraya lo importante. Si te ayuda, pon un pomodoro de 25 minutos.</p><div class="acts"><button class="btn ghost" data-act="pomo">🍅 Pomodoro 25 min</button>${S.esq[p.tema] ? `<button class="btn ghost" data-act="esq" data-id="${esc(p.tema)}">🗺️ Ver esquema</button>` : ''}</div>${seguir('Ya lo he leído →')}`;
+    cuerpo = `${tit()}<p class="ses-big">Tema <b>${esc(t.codigo || '')}</b> · págs. <b>${p.a}–${p.b}</b></p><p class="sub">${esc(t.titulo || '')}</p><p>Léelo con calma y subraya lo importante. Si te ayuda, pon un pomodoro de 25 minutos.</p><div class="acts"><button class="btn ghost" data-act="pomo">🍅 Pomodoro 25 min</button>${S.esq[p.tema] ? `<button class="btn ghost" data-act="esq" data-id="${esc(p.tema)}">🗺️ Ver esquema</button>` : ''}</div>${seguir('Ya lo he leído →')}<button class="mini ghost" data-act="leer" data-v="0">No leo los apuntes: quitar este paso siempre</button>`;
   } else if (p.tipo === 'nuevas' || p.tipo === 'test' || p.tipo === 'repaso') {
     const n = p.cola.length;
     const expl = {
