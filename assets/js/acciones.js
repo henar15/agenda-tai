@@ -496,6 +496,83 @@ document.addEventListener('click', (e) => {
     ui.hoyReset = 0;
     reiniciarHoy();
     render();
+  } else if (a === 'ckclaim') {
+    const R = ui.rit,
+      x = R.cola[R.i],
+      c = memFind(x.id, x.k, x.t);
+    R.claim = el.dataset.v;
+    R.ops = null;
+    R.sel = null;
+    if (R.claim === 'no') ckResultado(x, 'no', false);
+    else {
+      R.ops = opcionesTarjeta(c, x.t);
+      if (R.ops.length < 2) ckResultado(x, R.claim, true);
+      else R.paso = 'test';
+    }
+    render();
+    const f = document.querySelector('.rit .opt, [data-act="ritnext"]');
+    if (f) f.focus();
+  } else if (a === 'ckopt') {
+    const R = ui.rit;
+    R.sel = +el.dataset.i;
+    ckResultado(R.cola[R.i], R.claim, R.ops[R.sel].ok);
+    render();
+    const f = document.querySelector('[data-act="ritnext"]');
+    if (f) f.focus();
+  } else if (a === 'ckpista') {
+    ui.rit.pista = 1;
+    render();
+  } else if (a === 'sesgo') {
+    if (!sesHoy()) crearSesion();
+    if (location.hash !== '#sesion') location.hash = 'sesion';
+    else render();
+  } else if (a === 'sesnext' || a === 'sesskip') {
+    if (a === 'sesskip') {
+      ui.ses.i = Math.min(ui.ses.pasos.length - 1, ui.ses.i + 1);
+      sesGuardar();
+    } else sesAvanzar();
+    render();
+    scrollTo(0, 0);
+  } else if (a === 'sesrit') {
+    const p = ui.ses.pasos[ui.ses.i];
+    const cola = p.cola.filter((x) => memFind(x.id, x.k, x.t));
+    if (!cola.length) {
+      sesAvanzar();
+      render();
+      return;
+    }
+    ui.rit = {
+      cola: cola.map((x) => Object.assign({}, x)),
+      i: 0,
+      paso: 'q',
+      ok: 0,
+      n: 0,
+      reint: {},
+      hc: 0,
+      ini: cola.length,
+      ses: 1,
+    };
+    render();
+  } else if (a === 'sesritfin') {
+    ritSave();
+    ui.rit = null;
+    sesAvanzar();
+    render();
+    scrollTo(0, 0);
+  } else if (a === 'sesjuego') {
+    const p = ui.ses.pasos[ui.ses.i];
+    ui.gscope = p.tema || '';
+    ui.volverSes = 1;
+    location.hash = 'juegos';
+    setTimeout(() => {
+      const b = document.querySelector(el.dataset.k === 'vf' ? '[data-act="gvf"]' : '[data-act="gcf"]');
+      if (b && !b.disabled) b.click();
+    }, 50);
+  } else if (a === 'tpb') {
+    ui.tpb = Object.assign({}, ui.tpb, { [el.dataset.k]: el.dataset.v });
+    render();
+  } else if (a === 'tpick') {
+    tpElegir(el.dataset.k, el.dataset.v);
   } else if (a === 'ritnose') {
     const R = ui.rit;
     ritEvaluar(R.cola[R.i], 'nose', Date.now() - (R.t0 || Date.now()));
@@ -523,13 +600,17 @@ document.addEventListener('click', (e) => {
     ritCommit();
     R.t0 = 0;
     R.t1 = 0;
+    R.pista = 0;
+    R.ops = null;
+    R.claim = null;
     R.i++;
     R.paso = 'q';
     R.sel = null;
     R.conf = null;
     if (R.i % 5 === 0) ritSave();
     render();
-    const b = document.querySelector('#ritin') || document.querySelector('.rit .opt');
+    const b =
+      document.querySelector('.rit [data-act="ckclaim"][data-v="si"]') || document.querySelector('.rit .opt');
     if (b) b.focus();
   } else if (a === 'ritfin') {
     if (ui.rit && ui.rit.pend) ritCommit();
@@ -939,35 +1020,7 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('change', (e) => {
   const dk = e.target.dataset && e.target.dataset.dk;
   if (dk) {
-    const d = Object.assign({}, S.diario || {});
-    const t = Object.assign({}, d[today()] || {});
-    if (e.target.checked) {
-      t[dk] = 1;
-      logAct(2);
-      const m = dk.match(/^l-(.+)-(\d+)$/);
-      if (m) {
-        const tt = S.temas.find((x) => x.id === m[1]);
-        const prevp = (S.lectura || {})[m[1]] || ((tt && tt.pagIni) || 1) - 1;
-        statAdd('p', Math.max(0, +m[2] - prevp));
-        t['_prev:' + m[1]] = t['_prev:' + m[1]] != null ? t['_prev:' + m[1]] : prevp;
-        S.lectura = Object.assign({}, S.lectura, { [m[1]]: +m[2] });
-        kvSet('lectura');
-      }
-    } else {
-      delete t[dk];
-      // desmarcar una lectura devuelve las páginas a como estaban
-      const m = dk.match(/^l-(.+)-(\d+)$/);
-      if (m && t['_prev:' + m[1]] != null) {
-        S.lectura = Object.assign({}, S.lectura, { [m[1]]: t['_prev:' + m[1]] });
-        delete t['_prev:' + m[1]];
-        kvSet('lectura');
-      }
-    }
-    d[today()] = t;
-    const ks = Object.keys(d).sort();
-    while (ks.length > 40) delete d[ks.shift()];
-    S.diario = d;
-    kvSet('diario');
+    marcarTarea(dk, e.target.checked);
     render();
     return;
   }

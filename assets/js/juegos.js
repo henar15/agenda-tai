@@ -37,10 +37,7 @@ function vScope() {
     `<button class="chip2${sc === v ? ' on' : ''}" data-act="gscope" data-v="${esc(v)}" aria-pressed="${sc === v}">${l}</button>`;
   return `<section class="card gscope" aria-label="De qué quieres jugar">
     <h3>🎯 ¿De qué quieres jugar?</h3>
-    <div class="chips">${chip('', 'Todo')}${['I', 'II', 'III', 'IV'].map((b) => chip('B:' + b, 'Bloque ' + b)).join('')}</div>
-    <label class="picker"><select id="gscope-tema" aria-label="Un tema concreto">
-      <option value="">…o elige un tema</option>${temas.map((t) => `<option value="${esc(t.id)}"${sc === t.id ? ' selected' : ''}>${esc(t.codigo + ' · ' + t.titulo)}</option>`).join('')}
-    </select></label>
+    ${vTemaPicker({ k: 'gscope', sel: sc, ids: temas.map((t) => t.id), todo: 'Todo el temario', bloques: true })}
     <p class="sub">Jugando con <b>${esc(scopeLabel())}</b>: ${nc} tarjetas y ${nq} preguntas.</p>
   </section>`;
 }
@@ -264,7 +261,9 @@ function vJuegos() {
       : `<button class="btn" disabled>Jugar</button><p class="sub">${falta}</p>`;
   const sinT = 'Aún no hay tarjetas ' + esc(deScope()) + '.',
     sinP = 'Aún no hay preguntas ' + esc(deScope()) + '.';
-  return `<h2>Juegos</h2><p class="sub">Para repasar jugando, en ratos cortos.</p>
+  const volver =
+    ui.volverSes && sesHoy() ? '<a class="ses-back" href="#sesion">← Volver a mi sesión de hoy</a>' : '';
+  return `${volver}<h2>Juegos</h2><p class="sub">Para repasar jugando, en ratos cortos.</p>
   ${vScope()}
   <div class="grid">
    <div class="card"><h3>⚡ Verdadero o falso exprés</h3><p>60 segundos. Te enseño una pregunta con una respuesta: ¿es la buena? Cada fallo te quita 5 segundos.</p><p class="sub">Récord: <b>${rec.vf || 0}</b> aciertos</p>${play('gvf', nq, '', sinP)}</div>

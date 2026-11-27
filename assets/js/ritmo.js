@@ -301,19 +301,26 @@ function ritEvaluar(x, tipo, ms, extra) {
   const nueva = !!x.nueva;
   let r;
   if (tipo === 'nose') r = { ok: false, nota: 1, conf: 'azar', hc: false };
-  else {
-    const fast = rapida(x.k, ms);
-    if (tipo === 'ok')
-      r = { ok: true, nota: fast ? (nueva ? 3 : 4) : x.k === 'q' ? 2 : 3, conf: fast ? 'seg' : 'dudo' };
-    else if (tipo === 'casi') r = { ok: true, parcial: true, nota: 2, conf: 'dudo' };
-    else r = { ok: false, nota: 1, conf: fast ? 'seg' : 'dudo', hc: fast };
-    memTiempo(x.k, ms);
-  }
+  else if (tipo === 'ok') r = { ok: true, nota: nueva ? 3 : 3, conf: 'test' };
+  else if (tipo === 'casi') r = { ok: true, parcial: true, nota: 2, conf: 'test' };
+  else r = { ok: false, nota: 1, conf: 'test', hc: false };
   ui.rit.pend = Object.assign(r, extra || {});
   ui.rit.last = ui.rit.pend;
   ui.rit.paso = 'fb';
 }
 
+// Resultado de una tarjeta según lo que dijiste y el test
+function ckResultado(x, claim, ok) {
+  let r;
+  if (claim === 'no') r = { ok: false, nota: 1, conf: 'azar', hc: false };
+  else if (ok)
+    r =
+      claim === 'si' ? { ok: true, nota: x.nueva ? 3 : 4, conf: 'seg' } : { ok: true, nota: 2, conf: 'dudo' };
+  else r = { ok: false, nota: 1, conf: claim === 'si' ? 'seg' : 'dudo', hc: claim === 'si' };
+  ui.rit.pend = r;
+  ui.rit.last = r;
+  ui.rit.paso = 'fb';
+}
 function ritCommit() {
   const R = ui.rit,
     x = R.cola[R.i],
@@ -360,12 +367,12 @@ function vCalib() {
     if (!v || v[1] < 5) return '';
     return `<li>${t}: aciertas el <b>${Math.round((v[0] / v[1]) * 100)} %</b></li>`;
   };
-  const html = fila('seg', '⚡ Cuando respondes rápido') + fila('dudo', '🐢 Cuando te lo piensas');
+  const html = fila('seg', '💪 Cuando dices «me la sé»') + fila('dudo', '🤔 Cuando dices «creo que sí»');
   if (!html) return '';
   const s = c.seg;
   const aviso =
     s && s[1] >= 10 && s[0] / s[1] < 0.8
-      ? '<p class="fine">Ojo: a veces respondes muy rápido y fallas. Esas preguntas te las vuelvo a poner mañana.</p>'
+      ? '<p class="fine">Ojo: a veces dices «me la sé» y fallas el test. Esas te las vuelvo a poner mañana.</p>'
       : '';
   return `<div class="card"><h3>🎯 Tu seguridad</h3><ul class="calib">${html}</ul>${aviso}</div>`;
 }
@@ -389,7 +396,7 @@ function vRitmoInicio() {
         : '';
     })
     .join('');
-  return `<div class="rit-home"><p class="sub">Te pregunto lo que estás a punto de olvidar. En las tarjetas <b>escribes tu respuesta</b> y la corrijo yo: así no hay trampa. Lo que fallas vuelve hasta que lo aciertas y, de vez en cuando, te rescato algo que te costó.</p>
+  return `<div class="rit-home"><p class="sub">Te pregunto lo que estás a punto de olvidar. En las tarjetas, si dices que te la sabes, <b>te lo compruebo con un test</b> antes de enseñarte la respuesta: así no hay trampa. Lo que fallas vuelve hasta que lo aciertas y, de vez en cuando, te rescato algo que te costó.</p>
   <div class="card rit-hero"><div class="rit-big"><b>${due}</b><span>${due === 1 ? 'concepto toca' : 'conceptos tocan'} hoy</span></div>
   <div class="acts"><button class="btn" data-act="ritgo" data-n="10">Sesión corta (10)</button><button class="btn" data-act="ritgo" data-n="20">Normal (20)</button><button class="btn ghost" data-act="ritgo" data-n="40">Larga (40)</button></div>
   <p class="fine">Si no hay suficientes repasos, añado tarjetas nuevas de los temas que estás estudiando.</p></div>
@@ -398,9 +405,9 @@ function vRitmoInicio() {
   ${dificiles ? `<div class="card"><h3>🧗 Lo que más te ha costado</h3><ul class="costo">${dificiles}</ul><p class="fine">Estos vuelven a salir de vez en cuando aunque ya los sepas.</p></div>` : ''}
   <details class="card"><summary><b>¿Cómo funciona?</b></summary><ul class="fine">
   <li><b>Repaso espaciado:</b> cada concepto vuelve justo antes de que lo olvides; cuanto mejor lo sabes, más tarda en volver.</li>
-  <li><b>Corrección automática:</b> en las tarjetas escribes lo que crees. Compruebo si están las <b>ideas clave</b> (lo que va en negrita), aunque lo digas con otras palabras o con alguna falta. Los números y artículos tienen que estar exactos.</li>
+  <li><b>Comprobación:</b> piensas la respuesta y dices si te la sabes. Si dices que sí, te sale un test de 4 opciones sobre esa tarjeta <b>antes</b> de ver la respuesta. Si aciertas, cuenta como sabida; si fallas o no te la sabes, le das la vuelta.</li>
   <li><b>Tu seguridad, sin preguntarte:</b> la mido por lo que tardas en <b>empezar a escribir</b> (lo que tardas en recordar, no en teclear), comparado con lo normal en ti. Acertar rápido = lo sabes; acertar tras pensarlo mucho = vuelve antes.</li>
-  <li><b>Errores «seguros»:</b> si fallas algo respondiendo rápido, es que creías saberlo. Te lo destaco y te lo vuelvo a poner mañana: está estudiado que esos errores se corrigen muy bien si se repasan.</li>
+  <li><b>Errores «seguros»:</b> si dices «me la sé» y fallas el test, es que creías saberlo. Te lo destaco y te lo vuelvo a poner mañana: está estudiado que esos errores se corrigen muy bien si se repasan.</li>
   <li><b>Hasta acertarlo:</b> lo que fallas (o aciertas a medias) vuelve a salir en la misma sesión.</li>
   <li><b>Rescate:</b> lo que te costó aprender reaparece de vez en cuando.</li></ul></details></div>`;
 }
@@ -414,6 +421,8 @@ function vRitmoSesion() {
     const msg = R.hc
       ? `Has corregido <b>${R.hc}</b> ${R.hc === 1 ? 'error' : 'errores'} que creías saber: mañana te ${R.hc === 1 ? 'lo' : 'los'} vuelvo a preguntar.`
       : 'Lo que has fallado volverá pronto; lo que sabías, dentro de más días.';
+    if (R.ses)
+      return `<div class="card rit-fin"><h2>👏 Paso terminado</h2><div class="kpis"><div class="kpi"><b>${R.ini}</b><span>conceptos</span></div><div class="kpi"><b>${pct} %</b><span>de aciertos</span></div></div><p>${msg}</p><div class="acts"><button class="btn" data-act="sesritfin">Siguiente paso →</button></div></div>`;
     return `<div class="card rit-fin"><h2>🎉 Sesión terminada</h2><div class="kpis"><div class="kpi"><b>${R.ini}</b><span>conceptos</span></div><div class="kpi"><b>${pct} %</b><span>de aciertos</span></div></div><p>${msg}</p><div class="acts"><button class="btn" data-act="ritfin">Volver</button><button class="btn ghost" data-act="ritgo" data-n="10">10 más</button></div></div>`;
   }
   if (R.paso === 'q' && !R.t0) R.t0 = Date.now();
@@ -427,24 +436,27 @@ function vRitmoSesion() {
         : '';
   const top = `<div class="rit-top"><span>${Math.min(R.i + 1, R.cola.length)}/${R.cola.length}</span><div class="pbar"><i style="width:${(R.i / R.cola.length) * 100}%"></i></div><button class="mini ghost" data-act="ritfin" aria-label="Terminar sesión">✕</button></div>`;
   const cab = `${top}<div class="rit-meta"><small>${esc(temaName(x.t))}</small>${etiqueta}</div>`;
-  // Tarjeta: escribe lo que crees y se corrige sola
+  // Tarjeta: piensa la respuesta. Si dices que te la sabes, te lo compruebo con un test rápido
+  // ANTES de enseñarte la respuesta; si fallas o no te la sabes, le das la vuelta.
   if (x.k === 'c') {
+    const frente = `<div class="rit-q"><span class="emo" aria-hidden="true">${esc(c.e || '🃏')}</span><h2>${rich(c.q)}</h2>${c.h && R.pista ? `<p class="fine">💡 ${esc(c.h)}</p>` : ''}</div>`;
     if (R.paso === 'q')
-      return `<div class="card rit">${cab}<div class="rit-q"><span class="emo" aria-hidden="true">${esc(c.e || '🃏')}</span><h2>${rich(c.q)}</h2></div>
-      <form class="rit-form" data-ritform="1"><label for="ritin" class="sub">Escribe lo que recuerdes (no hace falta que sea literal):</label><textarea id="ritin" rows="3" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Tu respuesta…"></textarea>
-      <div class="rit-conf"><button class="btn" type="submit">Comprobar</button><button class="btn ghost" type="button" data-act="ritnose">🤷 No lo sé</button></div></form></div>`;
-    const L = R.last;
-    const claves = L.claves
-      ? `<ul class="rit-keys">${L.claves.map((k) => `<li class="${k.ok ? 'ok' : 'ko'}${k.extra ? ' extra' : ''}">${k.ok ? '✅' : '❌'} ${esc(k.k)}${k.tuyo ? ` <small>(pusiste ${esc(k.tuyo)})</small>` : ''}</li>`).join('')}</ul>`
+      return `<div class="card rit">${cab}${frente}<p class="sub">Piensa la respuesta. ¿Te la sabes?</p><div class="rit-conf"><button class="btn bad" data-act="ckclaim" data-v="no">✖ No me la sé</button><button class="btn" data-act="ckclaim" data-v="dudo">🤔 Creo que sí</button><button class="btn ok" data-act="ckclaim" data-v="si">✔ Me la sé</button></div>${c.h && !R.pista ? '<button class="mini ghost" data-act="ckpista">💡 Pista</button>' : ''}</div>`;
+    if (R.paso === 'test') {
+      const ops = R.ops
+        .map(
+          (o, i) =>
+            `<button class="opt" data-act="ckopt" data-i="${i}"><b>${'abcd'[i]})</b> ${rich(o.a)}</button>`,
+        )
+        .join('');
+      return `<div class="card rit">${cab}${frente}<p class="sub">Demuéstralo: ¿cuál es la respuesta?</p><div class="opts">${ops}</div></div>`;
+    }
+    const ops = R.ops
+      ? `<div class="opts">${R.ops.map((o, i) => `<div class="opt ${o.ok ? 'ok' : i === R.sel ? 'ko' : ''}"><b>${'abcd'[i]})</b> ${rich(o.a)}</div>`).join('')}</div>`
       : '';
-    const tuya = L.txt ? `<div class="rit-tuya"><small>Tu respuesta</small><p>${esc(L.txt)}</p></div>` : '';
-    const otra =
-      L.txt && (!L.ok || L.parcial) && !L.override
-        ? '<button class="mini ghost" data-act="ritoverride">Lo había puesto bien con otras palabras</button>'
-        : '';
     return vRitFb(
       cab,
-      `<div class="rit-q"><h2>${rich(c.q)}</h2></div>${tuya}<div class="rit-a">${rich(c.a)}</div>${claves}${otra}`,
+      `${frente}${R.last.ok ? ops : `<div class="rit-a flip"><small>Respuesta</small>${rich(c.a)}${c.h ? `<p class="fine">💡 ${esc(c.h)}</p>` : ''}</div>`}`,
     );
   }
   // Pregunta tipo test: elige y se corrige (sin preguntar seguridad)
@@ -472,13 +484,13 @@ function vRitmoSesion() {
 function vRitFb(cab, cuerpo) {
   const L = ui.rit.last;
   const msg = L.hc
-    ? '<div class="rit-hc">😮 <b>¡Ojo! Has respondido rápido, como si lo supieras, y no era así.</b> Fíjate bien: estos errores son los que mejor se corrigen. Te lo vuelvo a preguntar en un rato y mañana.</div>'
+    ? '<div class="rit-hc">😮 <b>¡Ojo! Creías que te la sabías y no era así.</b> Fíjate bien: estos errores son los que mejor se corrigen. Te la vuelvo a preguntar en un rato y mañana.</div>'
     : L.conf === 'azar'
       ? '<div class="rit-fbk ko">📌 Míratelo bien: vuelve a salir en esta misma sesión.</div>'
       : L.parcial
         ? '<div class="rit-fbk mid">🟡 Casi: te falta alguna idea clave. Volverá en un rato.</div>'
         : L.ok && L.conf === 'dudo'
-          ? '<div class="rit-fbk ok">✅ ¡Bien! Has tardado un poco en recordarlo, así que volverá algo antes que si te saliera al momento.</div>'
+          ? '<div class="rit-fbk ok">✅ ¡Bien! Como dudabas, volverá algo antes que si estuvieras segura.</div>'
           : L.ok
             ? '<div class="rit-fbk ok">💪 ¡Perfecto! Tardará más en volver.</div>'
             : '<div class="rit-fbk ko">📌 No pasa nada: vuelve a salir en esta misma sesión.</div>';
@@ -486,13 +498,18 @@ function vRitFb(cab, cuerpo) {
 }
 
 function vRitmo() {
-  return ui.rit ? vRitmoSesion() : vRitmoInicio();
+  return ui.rit && !ui.rit.ses ? vRitmoSesion() : vRitmoInicio();
 }
 
 // La primera vez, pasa lo que ya llevabas en «Tarjetas» al modelo de memoria
 function memSeed() {
   if (!uid || !S.remoteOk || !Object.keys(S.cards).length) return;
   memBackfill();
+  if (!(S.mem || {}).cal2) {
+    // la seguridad antes se medía por velocidad: se empieza de cero con «me la sé» + test
+    S.mem = Object.assign({}, S.mem, { cal: {}, cal2: 1 });
+    kvSet('mem');
+  }
   if (S.mem && S.mem.seed) return;
   const items = Object.assign({}, memItems());
   const now = Date.now(),

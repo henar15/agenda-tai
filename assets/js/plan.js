@@ -76,7 +76,7 @@ function planDia(ref, sim) {
     const p = S.piles[t.id] || {};
     const nuevas = cs.filter((c) => !p[c.id] && (!dom || c.t)).length - (sim.cards[t.id] || 0);
     if (nuevas > 0) {
-      const n = Math.min(40, Math.ceil(nuevas / dias));
+      const n = Math.min(25, Math.ceil(nuevas / dias));
       out.push({
         k: 'c-' + t.id + '-' + dkey(day),
         tipo: 'cards',
@@ -146,6 +146,41 @@ function ritmo() {
       pag += t.pags - Math.max(0, (S.lectura || {})[t.id] || (t.pagIni || 1) - 1);
   });
   return { dias, pag, pd: dias ? Math.ceil(pag / dias) : pag };
+}
+// Marca (o desmarca) una tarea de hoy. Las lecturas avanzan (o devuelven) las páginas leídas.
+function marcarTarea(dk, on) {
+  const d = Object.assign({}, S.diario || {});
+  const t = Object.assign({}, d[today()] || {});
+  if (on) {
+    if (t[dk]) return;
+    t[dk] = 1;
+    logAct(2);
+    const m = dk.match(/^l-(.+)-(\d+)$/);
+    if (m) {
+      const tt = S.temas.find((x) => x.id === m[1]);
+      const prevp = (S.lectura || {})[m[1]] || ((tt && tt.pagIni) || 1) - 1;
+      statAdd('p', Math.max(0, +m[2] - prevp));
+      const d2 = S.diario[today()] || {};
+      Object.assign(t, { _s: d2._s });
+      t['_prev:' + m[1]] = t['_prev:' + m[1]] != null ? t['_prev:' + m[1]] : prevp;
+      S.lectura = Object.assign({}, S.lectura, { [m[1]]: +m[2] });
+      kvSet('lectura');
+    }
+  } else {
+    delete t[dk];
+    const m = dk.match(/^l-(.+)-(\d+)$/);
+    if (m && t['_prev:' + m[1]] != null) {
+      S.lectura = Object.assign({}, S.lectura, { [m[1]]: t['_prev:' + m[1]] });
+      delete t['_prev:' + m[1]];
+      kvSet('lectura');
+    }
+  }
+  Object.assign(t, { _s: (S.diario[today()] || {})._s || t._s });
+  d[today()] = t;
+  const ks = Object.keys(d).sort();
+  while (ks.length > 40) delete d[ks.shift()];
+  S.diario = d;
+  kvSet('diario');
 }
 // El plan de hoy se calcula una vez y se guarda: marcar algo no lo cambia ni trae lo de mañana
 function planHoy() {

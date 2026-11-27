@@ -57,7 +57,7 @@ function vTests() {
    <button class="mode" data-act="mtip"${tip.length ? '' : ' disabled'}><b>Típicas de examen</b><span>Las preguntas que más caen, de todos los temas.</span><span class="cnt">${tip.length}</span></button>
    <button class="mode" data-act="msim"${all.length ? '' : ' disabled'}><b>Mezcla de la web</b><span>${Math.min(40, all.length)} preguntas al azar de todos los temas con tarjetas.</span><span class="cnt">${all.length}</span></button>
   </div>
-  <div class="card" style="margin-bottom:28px"><h3>Practicar un tema</h3><div class="picker"><select id="scope" aria-label="Tema">${ts.map((t) => `<option value="${esc(t.id)}"${t.id === ui.scope ? ' selected' : ''}>${esc(t.codigo + ' · ' + t.titulo)}</option>`).join('')}</select><button class="btn" data-act="mtema"${nScope ? '' : ' disabled'}>10 preguntas al azar</button><button class="btn ghost" data-act="mtemaall"${nScope ? '' : ' disabled'}>Todas (${nScope})</button></div></div>
+  <div class="card" style="margin-bottom:28px"><h3>Practicar un tema</h3>${vTemaPicker({ k: 'scope', sel: ui.scope, ids: ts.map((t) => t.id) })}<div class="acts" style="margin-top:12px"><button class="btn" data-act="mtema"${nScope ? '' : ' disabled'}>10 preguntas al azar</button><button class="btn ghost" data-act="mtemaall"${nScope ? '' : ' disabled'}>Todas (${nScope})</button></div></div>
   ${
     S.tests.length
       ? `<h3>Tests guardados</h3><div class="list">${S.tests

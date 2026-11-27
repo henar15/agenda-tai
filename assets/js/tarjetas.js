@@ -55,17 +55,18 @@ function vTarjetas() {
   memSeed();
   const tab = ui.ttab || 'ritmo';
   const n = memDueCount();
-  const tabs = ui.rit
-    ? ''
-    : `<h2>Repasar</h2><div class="ptabs" role="tablist">${[
-        ['ritmo', `🧠 A tu ritmo${n ? ` (${n})` : ''}`],
-        ['mazo', '🃏 Por tema'],
-      ]
-        .map(
-          ([k, l]) =>
-            `<button role="tab" aria-selected="${tab === k}" class="${tab === k ? 'on' : ''}" data-act="ttab" data-v="${k}">${l}</button>`,
-        )
-        .join('')}</div>`;
+  const tabs =
+    ui.rit && !ui.rit.ses
+      ? ''
+      : `<h2>Repasar</h2><div class="ptabs" role="tablist">${[
+          ['ritmo', `🧠 A tu ritmo${n ? ` (${n})` : ''}`],
+          ['mazo', '🃏 Por tema'],
+        ]
+          .map(
+            ([k, l]) =>
+              `<button role="tab" aria-selected="${tab === k}" class="${tab === k ? 'on' : ''}" data-act="ttab" data-v="${k}">${l}</button>`,
+          )
+          .join('')}</div>`;
   return tabs + (tab === 'ritmo' ? vRitmo() : vMazos());
 }
 function vMazos() {
@@ -85,12 +86,7 @@ function vMazos() {
   const c = list[ui.idx];
   const b = temaBl(ui.mazo);
   return `<div class="study tar"><div class="tside"><p class="sub hide-m">Toca la tarjeta para darle la vuelta y elige en qué montón va.</p>
-  <div class="picker"><select id="mazo" aria-label="Tema">${temasConCartas()
-    .map(
-      (x) => `<option value="${esc(x.id)}"${x.id === ui.mazo ? ' selected' : ''}>${esc(x.titulo)}</option>`,
-    )
-    .join('')}</select>
-  </div><div class="chips" role="group" aria-label="Qué tarjetas ver">${[['hoy', '📅 Toca hoy', cardsDueHoy(ui.mazo), ''], ['todas', 'Todas', cs.length, ''], ...(nt ? [['tipica', '⭐ Típicas', nt, '']] : []), ['nueva', 'Nuevas', cnt[0], ''], ['1', 'No me la sé', cnt[1], 'c1'], ['2', 'Dudo', cnt[2], 'c2'], ['3', 'Me la sé', cnt[3], 'c3']].map(([v, t, n, c]) => `<button class="chip2 ${c}${ui.filtro === v ? ' on' : ''}" data-filtro="${v}" aria-pressed="${ui.filtro === v}">${t} <b>${n}</b></button>`).join('')}</div>
+  ${vTemaPicker({ k: 'mazo', sel: ui.mazo, ids: temasConCartas().map((x) => x.id) })}<div class="chips" role="group" aria-label="Qué tarjetas ver">${[['hoy', '📅 Toca hoy', cardsDueHoy(ui.mazo), ''], ['todas', 'Todas', cs.length, ''], ...(nt ? [['tipica', '⭐ Típicas', nt, '']] : []), ['nueva', 'Nuevas', cnt[0], ''], ['1', 'No me la sé', cnt[1], 'c1'], ['2', 'Dudo', cnt[2], 'c2'], ['3', 'Me la sé', cnt[3], 'c3']].map(([v, t, n, c]) => `<button class="chip2 ${c}${ui.filtro === v ? ' on' : ''}" data-filtro="${v}" aria-pressed="${ui.filtro === v}">${t} <b>${n}</b></button>`).join('')}</div>
   <div class="tbarw"><div class="stack3"><i style="width:${(cnt[3] / tot) * 100}%;background:#22c55e"></i><i style="width:${(cnt[2] / tot) * 100}%;background:#f59e0b"></i><i style="width:${(cnt[1] / tot) * 100}%;background:#ef4444"></i></div></div>
   </div><div class="tmain">${
     c

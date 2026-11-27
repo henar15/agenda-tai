@@ -10,6 +10,7 @@ const V = {
   tests: vTests,
   juegos: vJuegos,
   resultados: vResultados,
+  sesion: vSesion,
 };
 function view() {
   const h = location.hash.slice(1);
