@@ -1,0 +1,718 @@
+{
+  "tema": "IV-7",
+  "cards": [
+    {
+      "id": "iv7c1",
+      "n": "1",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué organismos dieron origen al modelo OSI?",
+      "a": "La **ISO** y el **CCITT**: sus dos proyectos de los años 70 se fusionaron en el modelo **OSI** (Open System Interconnection)"
+    },
+    {
+      "id": "iv7c2",
+      "n": "2",
+      "e": "📘",
+      "t": false,
+      "q": "¿Qué norma recoge la versión más reciente del modelo OSI?",
+      "a": "La **ISO/IEC 7498-1:1994**"
+    },
+    {
+      "id": "iv7c3",
+      "n": "3",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué tipo de modelo es OSI?",
+      "a": "Un **modelo de referencia**: describe las funciones de cada capa, pero **no su implementación**",
+      "h": "Ningún protocolo muy usado lo sigue al pie de la letra"
+    },
+    {
+      "id": "iv7c4",
+      "n": "4",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Cuántas capas tiene el modelo OSI?",
+      "a": "**7 capas**: física, enlace, red, transporte, sesión, presentación y aplicación",
+      "h": "De abajo arriba: Física, Enlace, Red, Transporte, Sesión, Presentación, Aplicación"
+    },
+    {
+      "id": "iv7c5",
+      "n": "5",
+      "e": "↕️",
+      "t": false,
+      "q": "Comunicación vertical y horizontal en OSI",
+      "a": "**Vertical**: cada capa da servicios a la de arriba (usa **encapsulación**). **Horizontal**: entre capas del mismo nivel mediante **protocolos**"
+    },
+    {
+      "id": "iv7c6",
+      "n": "6",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué comunicación horizontal es física (no lógica)?",
+      "a": "Solo la de la **capa física**; las demás comunicaciones horizontales son **lógicas**"
+    },
+    {
+      "id": "iv7c7",
+      "n": "7",
+      "e": "⚡",
+      "t": false,
+      "q": "Capa física (nivel 1): ¿qué hace y qué unidad usa?",
+      "a": "Interfaz física y reglas de transmisión de **bits**. Unidad: el **bit**"
+    },
+    {
+      "id": "iv7c8",
+      "n": "8",
+      "e": "🔧",
+      "t": false,
+      "q": "Las 4 características de la capa física",
+      "a": "**Mecánicas**, **eléctricas**, **funcionales** y **de procedimiento**"
+    },
+    {
+      "id": "iv7c9",
+      "n": "9",
+      "e": "🔗",
+      "t": false,
+      "q": "Capa de enlace (nivel 2): ¿qué hace y qué unidad usa?",
+      "a": "Agrupa bits en **tramas**, da un enlace **libre de errores**, **direccionamiento físico** (MAC) y acceso al medio. Unidad: la **trama**",
+      "h": "Subcapas MAC y LLC"
+    },
+    {
+      "id": "iv7c10",
+      "n": "10",
+      "e": "🌳",
+      "t": true,
+      "q": "¿Para qué sirve el protocolo STP?",
+      "a": "Evita los **bucles** en redes con enlaces redundantes, convirtiendo la malla en un **árbol** lógico. Es de **capa 2**",
+      "h": "Spanning Tree Protocol"
+    },
+    {
+      "id": "iv7c11",
+      "n": "11",
+      "e": "👩‍💻",
+      "t": false,
+      "q": "¿Quién diseñó el algoritmo de STP?",
+      "a": "**Radia Perlman**, conocida como la «Madre de Internet»"
+    },
+    {
+      "id": "iv7c12",
+      "n": "12",
+      "e": "📏",
+      "t": true,
+      "q": "¿Qué norma IEEE estandariza STP?",
+      "a": "La **IEEE 802.1D** (no compatible con la versión original DEC STP)"
+    },
+    {
+      "id": "iv7c13",
+      "n": "13",
+      "e": "✉️",
+      "t": false,
+      "q": "¿Cómo se comunican los puentes en STP?",
+      "a": "Con mensajes de configuración llamados **BPDU** (Bridge Protocol Data Units)"
+    },
+    {
+      "id": "iv7c14",
+      "n": "14",
+      "e": "👑",
+      "t": false,
+      "q": "¿Cómo se elige el puente raíz en STP?",
+      "a": "El de **menor BID** (prioridad + MAC). Si empatan, el de **menor MAC**",
+      "h": "Prioridad por defecto **32768**"
+    },
+    {
+      "id": "iv7c15",
+      "n": "15",
+      "e": "🔢",
+      "t": false,
+      "q": "¿Cómo se cambia la prioridad de un switch en STP?",
+      "a": "Con un valor menor que **32768** y que sea **múltiplo de 4096**"
+    },
+    {
+      "id": "iv7c16",
+      "n": "16",
+      "e": "🚪",
+      "t": false,
+      "q": "Puertos en STP: raíz, designado y bloqueado",
+      "a": "**Raíz**: el de menor coste hacia el puente raíz. **Designado**: uno por segmento. Los demás se **bloquean** para evitar bucles"
+    },
+    {
+      "id": "iv7c17",
+      "n": "17",
+      "e": "📣",
+      "t": false,
+      "q": "¿Qué BPDU avisa de un cambio de topología en STP?",
+      "a": "La **TCN** (notificación de cambio de topología); se responde con el bit **TCA**"
+    },
+    {
+      "id": "iv7c18",
+      "n": "18",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué norma define las VLAN?",
+      "a": "La **IEEE 802.1Q**: añade una etiqueta VLAN a las tramas (tramas **tagged**)",
+      "h": "Las VLAN NO son parte de 802.1D"
+    },
+    {
+      "id": "iv7c19",
+      "n": "19",
+      "e": "🚀",
+      "t": false,
+      "q": "RSTP y MSTP: ¿qué normas son?",
+      "a": "**RSTP** (convergencia rápida) = **802.1w**. **MSTP** (varias instancias, para muchas VLAN) = **802.1s**"
+    },
+    {
+      "id": "iv7c20",
+      "n": "20",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué son los Jumbo Frames?",
+      "a": "Tramas Ethernet mayores de **1.500 bytes**, hasta **9.000** o más. Útiles en NAS/SAN y Big Data"
+    },
+    {
+      "id": "iv7c21",
+      "n": "21",
+      "e": "🧷",
+      "t": false,
+      "q": "Protocolos de Ethernet: control de flujo, agregación y QoS",
+      "a": "Control de flujo: **802.3x**. Agregación de enlaces (EtherChannel): **LACP, 802.3ad**. QoS: **802.1p**"
+    },
+    {
+      "id": "iv7c22",
+      "n": "22",
+      "e": "🔒",
+      "t": false,
+      "q": "¿Qué hace Port Security?",
+      "a": "Controla el acceso a los puertos del switch según **direcciones MAC** permitidas"
+    },
+    {
+      "id": "iv7c23",
+      "n": "23",
+      "e": "🗺️",
+      "t": false,
+      "q": "Capa de red (nivel 3): ¿qué hace y qué unidad usa?",
+      "a": "**Enrutamiento** y **direccionamiento lógico** entre redes. Unidad: el **paquete**",
+      "h": "En enlaces punto a punto no hace falta"
+    },
+    {
+      "id": "iv7c24",
+      "n": "24",
+      "e": "🚚",
+      "t": true,
+      "q": "Capa de transporte (nivel 4): ¿qué hace y qué unidad usa?",
+      "a": "Envío **extremo a extremo** del mensaje, segmenta, multiplexa y controla errores. Unidad: el **segmento**",
+      "h": "TCP fiable, UDP no"
+    },
+    {
+      "id": "iv7c25",
+      "n": "25",
+      "e": "🤝",
+      "t": false,
+      "q": "Capa de sesión (nivel 5): funciones",
+      "a": "Establece, mantiene y finaliza **sesiones**, **control de diálogo** (full/half dúplex) y **puntos de comprobación** para recuperar datos"
+    },
+    {
+      "id": "iv7c26",
+      "n": "26",
+      "e": "📞",
+      "t": false,
+      "q": "Protocolos de la capa de sesión que cita el temario",
+      "a": "**RPC** (llamada a procedimiento remoto), **SCP** (copia segura sobre SSH) y **ASP** (AppleTalk)"
+    },
+    {
+      "id": "iv7c27",
+      "n": "27",
+      "e": "🎨",
+      "t": true,
+      "q": "Capa de presentación (nivel 6): funciones",
+      "a": "**Formato** y sintaxis de los datos: **conversión**, **cifrado** y **compresión**"
+    },
+    {
+      "id": "iv7c28",
+      "n": "28",
+      "e": "📱",
+      "t": false,
+      "q": "Capa de aplicación (nivel 7): funciones",
+      "a": "Lleva los servicios de red al **usuario**: transferencia de archivos, correo, conexión remota, contraseñas…"
+    },
+    {
+      "id": "iv7c29",
+      "n": "29",
+      "e": "🚪",
+      "t": false,
+      "q": "¿Qué es un SAP?",
+      "a": "**Service Access Point**: punto, con dirección única, por el que una capa accede a los servicios de la inferior. La **interfaz** agrupa SAPs"
+    },
+    {
+      "id": "iv7c30",
+      "n": "30",
+      "e": "🔁",
+      "t": true,
+      "q": "Las 4 primitivas de servicio en OSI",
+      "a": "**Request** (solicitud), **Indication** (indicación), **Response** (respuesta) y **Confirmation** (confirmación)"
+    },
+    {
+      "id": "iv7c31",
+      "n": "31",
+      "e": "✅",
+      "t": false,
+      "q": "¿Qué primitivas usa un servicio no confirmado o no orientado a conexión?",
+      "a": "Solo **Request** e **Indication**. Los confirmados y orientados a conexión usan las **4**"
+    },
+    {
+      "id": "iv7c32",
+      "n": "32",
+      "e": "☎️",
+      "t": false,
+      "q": "Ejemplos de servicio orientado y no orientado a conexión",
+      "a": "Orientado: la **telefonía**. No orientado: el **correo postal**"
+    },
+    {
+      "id": "iv7c33",
+      "n": "33",
+      "e": "📮",
+      "t": false,
+      "q": "¿Cómo es el protocolo IP?",
+      "a": "**No orientado a conexión** y **no fiable**: envía **datagramas** sin garantizar entrega ni orden"
+    },
+    {
+      "id": "iv7c34",
+      "n": "34",
+      "e": "🔢",
+      "t": false,
+      "q": "¿Cómo es una dirección IPv4?",
+      "a": "**32 bits**: 4 números de un byte (**0 a 255**) separados por puntos",
+      "h": "2^32 ≈ 4.294 millones de direcciones"
+    },
+    {
+      "id": "iv7c35",
+      "n": "35",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Quién asigna las direcciones IP públicas?",
+      "a": "La **ICANN**, a través de la **IANA**, que da bloques a los **RIR**, y estos a los **ISP**"
+    },
+    {
+      "id": "iv7c36",
+      "n": "36",
+      "e": "🧩",
+      "t": false,
+      "q": "Las 2 partes de una dirección IP",
+      "a": "**Net ID** (identificador de red, a la izquierda) y **Host ID** (equipo, a la derecha)"
+    },
+    {
+      "id": "iv7c37",
+      "n": "37",
+      "e": "📡",
+      "t": false,
+      "q": "¿Qué es la dirección de broadcast?",
+      "a": "La que tiene **todos los bits de host a 1**: llega a todos los equipos de la red. Ej.: **172.16.255.255**"
+    },
+    {
+      "id": "iv7c38",
+      "n": "38",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es 127.0.0.1?",
+      "a": "La dirección de **loopback** o **localhost**: la propia máquina; no sale a la red"
+    },
+    {
+      "id": "iv7c39",
+      "n": "39",
+      "e": "🅰️",
+      "t": false,
+      "q": "Clase A de IPv4",
+      "a": "1 byte de red, primer bit **0**, de **0** a **126** (127 reservada), **16.777.214** hosts por red"
+    },
+    {
+      "id": "iv7c40",
+      "n": "40",
+      "e": "🅱️",
+      "t": false,
+      "q": "Clase B de IPv4",
+      "a": "2 bytes de red, empieza por **10**, de **128** a **191**, **65.534** hosts por red"
+    },
+    {
+      "id": "iv7c41",
+      "n": "41",
+      "e": "©️",
+      "t": true,
+      "q": "Clase C de IPv4",
+      "a": "3 bytes de red, empieza por **110**, de **192** a **223**, **254** hosts por red"
+    },
+    {
+      "id": "iv7c42",
+      "n": "42",
+      "e": "🎯",
+      "t": false,
+      "q": "Clases D y E de IPv4",
+      "a": "**D** (224-239): **multidifusión**. **E** (240-255): **investigación**"
+    },
+    {
+      "id": "iv7c43",
+      "n": "43",
+      "e": "🏠",
+      "t": true,
+      "q": "Rangos de IP privadas",
+      "a": "**10.0.0.0/8**, **172.16.0.0 a 172.31.255.255** y **192.168.0.0/16**",
+      "h": "No son accesibles desde Internet"
+    },
+    {
+      "id": "iv7c44",
+      "n": "44",
+      "e": "🎭",
+      "t": false,
+      "q": "¿Para qué sirve la máscara de subred?",
+      "a": "Para saber qué bits son de **red** y cuáles de **host**"
+    },
+    {
+      "id": "iv7c45",
+      "n": "45",
+      "e": "✂️",
+      "t": false,
+      "q": "¿Cómo se crean subredes?",
+      "a": "Se «roban» bits de la parte de **host**: con **n** bits salen **2^n subredes**",
+      "h": "A más subredes, menos hosts por subred"
+    },
+    {
+      "id": "iv7c46",
+      "n": "46",
+      "e": "🧮",
+      "t": true,
+      "q": "Hosts útiles con n bits de host",
+      "a": "**2^n − 2** (se restan la dirección de **red** y la de **broadcast**)",
+      "h": "Con 4 bits: 16 − 2 = 14"
+    },
+    {
+      "id": "iv7c47",
+      "n": "47",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué es la notación CIDR?",
+      "a": "Indica con **/n** los bits de red. Ej.: 255.255.192.0 = **/18**"
+    },
+    {
+      "id": "iv7c48",
+      "n": "48",
+      "e": "🃏",
+      "t": false,
+      "q": "¿Qué es una máscara wildcard?",
+      "a": "La **inversa** de la máscara (255.255.255.0 → **0.0.0.255**). **0** = comprobar el bit, **1** = no importa. Se usa en **ACL** y **OSPF**"
+    },
+    {
+      "id": "iv7c49",
+      "n": "49",
+      "e": "📋",
+      "t": true,
+      "q": "Tamaño de la cabecera IPv4",
+      "a": "Mínimo **20 bytes**, máximo **60 bytes**",
+      "h": "Campo IHL en palabras de 32 bits: de 5 a 15"
+    },
+    {
+      "id": "iv7c50",
+      "n": "50",
+      "e": "⏳",
+      "t": false,
+      "q": "¿Qué es el TTL de IPv4?",
+      "a": "**Tiempo de vida** (8 bits): máximo de routers que puede atravesar; baja en cada salto y a **0** se descarta",
+      "h": "Suele valer 64 o 128"
+    },
+    {
+      "id": "iv7c51",
+      "n": "51",
+      "e": "🚩",
+      "t": false,
+      "q": "Flags de fragmentación en IPv4",
+      "a": "**DF** (no fragmentar) y **MF** (más fragmentos). El primer bit es reservado (0)"
+    },
+    {
+      "id": "iv7c52",
+      "n": "52",
+      "e": "🎚️",
+      "t": false,
+      "q": "¿En qué se dividió el campo ToS de IPv4?",
+      "a": "En **DSCP** (6 bits, QoS) y **ECN** (2 bits, notificación de congestión)"
+    },
+    {
+      "id": "iv7c53",
+      "n": "53",
+      "e": "6️⃣",
+      "t": true,
+      "q": "¿Cómo es una dirección IPv6?",
+      "a": "**128 bits**: **8 campos de 16 bits** en **hexadecimal** separados por dos puntos"
+    },
+    {
+      "id": "iv7c54",
+      "n": "54",
+      "e": "🧱",
+      "t": false,
+      "q": "Partes de una dirección IPv6 global",
+      "a": "Prefijo de sitio (**48 bits**), ID de subred (**16 bits**) e ID de interfaz (**64 bits**)"
+    },
+    {
+      "id": "iv7c55",
+      "n": "55",
+      "e": "📋",
+      "t": true,
+      "q": "Tamaño de la cabecera IPv6",
+      "a": "Fija de **40 bytes**: más simple que la de IPv4"
+    },
+    {
+      "id": "iv7c56",
+      "n": "56",
+      "e": "🦘",
+      "t": false,
+      "q": "¿Qué campo de IPv6 equivale al TTL?",
+      "a": "El **límite de saltos** (8 bits)"
+    },
+    {
+      "id": "iv7c57",
+      "n": "57",
+      "e": "🏷️",
+      "t": false,
+      "q": "Campos propios de la cabecera IPv6",
+      "a": "**Clase de tráfico** (8 bits), **etiqueta de flujo** (20 bits) y **cabecera siguiente** (8 bits)"
+    },
+    {
+      "id": "iv7c58",
+      "n": "58",
+      "e": "✂️",
+      "t": true,
+      "q": "¿Quién fragmenta en IPv6?",
+      "a": "Solo el **nodo origen** (no los routers). MTU mínima: **1280 bytes**"
+    },
+    {
+      "id": "iv7c59",
+      "n": "59",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué son las cabeceras de extensión de IPv6?",
+      "a": "Sustituyen a las opciones de IPv4; van entre la cabecera IPv6 y la de transporte, enlazadas por **Next Header**, con longitud múltiplo de **8 bytes**"
+    },
+    {
+      "id": "iv7c60",
+      "n": "60",
+      "e": "🦶",
+      "t": false,
+      "q": "¿Qué cabecera de extensión procesan todos los nodos del camino?",
+      "a": "La de **opciones Hop-by-Hop** (va justo tras la cabecera IPv6)"
+    },
+    {
+      "id": "iv7c61",
+      "n": "61",
+      "e": "🔁",
+      "t": false,
+      "q": "Direcciones IPv6 especiales",
+      "a": "**::/128** indefinida, **::1** loopback, **::/0** ruta por defecto"
+    },
+    {
+      "id": "iv7c62",
+      "n": "62",
+      "e": "🏘️",
+      "t": false,
+      "q": "fe80::/10 y fc00::/7 en IPv6",
+      "a": "**fe80::/10**: enlace-local (solo en la red local). **fc00::/7**: locales únicas (ULA), como las privadas de IPv4"
+    },
+    {
+      "id": "iv7c63",
+      "n": "63",
+      "e": "📢",
+      "t": false,
+      "q": "Multicast y documentación en IPv6",
+      "a": "**ff00::/8** multicast. **2001:db8::/32** reservado para documentación",
+      "h": "IPv6 no tiene broadcast"
+    },
+    {
+      "id": "iv7c64",
+      "n": "64",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es SLAAC?",
+      "a": "**Configuración automática sin estado**: el nodo crea solo su dirección (enlace-local fe80::/64) usando **NDP**"
+    },
+    {
+      "id": "iv7c65",
+      "n": "65",
+      "e": "🪪",
+      "t": false,
+      "q": "¿Cómo se forma el EUI-64 modificado?",
+      "a": "Se parte la **MAC** (48 bits), se inserta **FF:FE** en medio y se invierte el **7.º bit** (U/L)"
+    },
+    {
+      "id": "iv7c66",
+      "n": "66",
+      "e": "👯",
+      "t": false,
+      "q": "¿Cómo detecta IPv6 direcciones duplicadas?",
+      "a": "Con mensajes ICMPv6 **135** (Neighbor Solicitation) y **136** (Neighbor Advertisement); mientras, la dirección es **tentativa**"
+    },
+    {
+      "id": "iv7c67",
+      "n": "67",
+      "e": "🔤",
+      "t": true,
+      "q": "¿Qué registro DNS guarda direcciones IPv6?",
+      "a": "El registro **AAAA** (cuádruple A). Resolución inversa en **ip6.arpa**"
+    },
+    {
+      "id": "iv7c68",
+      "n": "68",
+      "e": "🌍",
+      "t": true,
+      "q": "Los 5 RIR",
+      "a": "**ARIN** (Norteamérica), **RIPE NCC** (Europa, Oriente Medio, Asia Central), **APNIC** (Asia-Pacífico), **LACNIC** (Latinoamérica) y **AfriNIC** (África)"
+    },
+    {
+      "id": "iv7c69",
+      "n": "69",
+      "e": "🪖",
+      "t": false,
+      "q": "¿Quién desarrolló TCP/IP?",
+      "a": "**DARPA**, para el **Departamento de Defensa** de EE. UU.; evolucionó de **ARPANET**",
+      "h": "También se llama modelo Internet, DoD o DARPA"
+    },
+    {
+      "id": "iv7c70",
+      "n": "70",
+      "e": "🔢",
+      "t": false,
+      "q": "¿Cuántas capas tiene TCP/IP?",
+      "a": "**4**: interfaz de red (acceso a la red), **internet**, **transporte** y **aplicación**"
+    },
+    {
+      "id": "iv7c71",
+      "n": "71",
+      "e": "🔗",
+      "t": true,
+      "q": "Correspondencia TCP/IP ↔ OSI",
+      "a": "Interfaz de red = OSI **1 y 2**. Internet = **3**. Transporte = **4**. Aplicación = **5, 6 y 7**"
+    },
+    {
+      "id": "iv7c72",
+      "n": "72",
+      "e": "🔍",
+      "t": true,
+      "q": "¿Qué hace ARP?",
+      "a": "Traduce direcciones **IP** a direcciones **MAC**. En IPv6 lo sustituye **NDP**"
+    },
+    {
+      "id": "iv7c73",
+      "n": "73",
+      "e": "🚇",
+      "t": false,
+      "q": "¿Qué es L2TP?",
+      "a": "Protocolo de **túneles** para VPN del IETF (**RFC 2661**), que corrige PPTP y L2F; usa **PPP**"
+    },
+    {
+      "id": "iv7c74",
+      "n": "74",
+      "e": "⚠️",
+      "t": false,
+      "q": "¿Qué es ICMP?",
+      "a": "Protocolo de **control y notificación de errores** de IP (ej.: host inalcanzable)"
+    },
+    {
+      "id": "iv7c75",
+      "n": "75",
+      "e": "👪",
+      "t": false,
+      "q": "¿Qué es IGMP?",
+      "a": "Gestiona la pertenencia a **grupos de multidifusión** (multicast)"
+    },
+    {
+      "id": "iv7c76",
+      "n": "76",
+      "e": "🛡️",
+      "t": true,
+      "q": "¿Qué es IPsec y en qué capa actúa?",
+      "a": "Protocolos que **autentican y/o cifran** cada paquete IP. Actúa en la **capa de red** (3), a diferencia de SSL/TLS y SSH"
+    },
+    {
+      "id": "iv7c77",
+      "n": "77",
+      "e": "🚧",
+      "t": false,
+      "q": "Modos de IPsec",
+      "a": "**Transporte**: solo cifra la **carga útil** (equipo a equipo). **Túnel**: cifra **todo el paquete** y lo encapsula en otro (VPN red a red)"
+    },
+    {
+      "id": "iv7c78",
+      "n": "78",
+      "e": "🔐",
+      "t": true,
+      "q": "Los 3 protocolos de IPsec",
+      "a": "**AH** (integridad y autenticación, sin confidencialidad), **ESP** (confidencialidad + autenticación) e **IKE** (intercambio de claves **Diffie-Hellman**)"
+    },
+    {
+      "id": "iv7c79",
+      "n": "79",
+      "e": "🔢",
+      "t": false,
+      "q": "Números de protocolo IP de AH y ESP",
+      "a": "**AH = 51** y **ESP = 50**"
+    },
+    {
+      "id": "iv7c80",
+      "n": "80",
+      "e": "📦",
+      "t": false,
+      "q": "TCP: características",
+      "a": "**Orientado a conexión** y **fiable**: entrega sin errores y **en orden**, con control de flujo y retransmisión"
+    },
+    {
+      "id": "iv7c81",
+      "n": "81",
+      "e": "💨",
+      "t": false,
+      "q": "UDP: características",
+      "a": "**No orientado a conexión** y **no fiable**: sin confirmación ni control de flujo, pero **más rápido**"
+    },
+    {
+      "id": "iv7c82",
+      "n": "82",
+      "e": "🔐",
+      "t": true,
+      "q": "Diferencia entre FTPS y SFTP",
+      "a": "**FTPS**: FTP + **SSL/TLS** (puerto **990** implícito o **21** explícito). **SFTP**: basado en **SSH**, un solo puerto (**22**)"
+    },
+    {
+      "id": "iv7c83",
+      "n": "83",
+      "e": "🖥️",
+      "t": false,
+      "q": "SSH y Telnet",
+      "a": "**SSH**: acceso remoto **cifrado**. **Telnet**: acceso remoto **sin cifrar**, puerto **23**"
+    },
+    {
+      "id": "iv7c84",
+      "n": "84",
+      "e": "🧰",
+      "t": false,
+      "q": "DHCP, DNS y SNMP",
+      "a": "**DHCP**: asigna IP automáticamente. **DNS**: traduce nombres ↔ IP. **SNMP**: gestión de dispositivos de red"
+    },
+    {
+      "id": "iv7c85",
+      "n": "85",
+      "e": "🛣️",
+      "t": false,
+      "q": "¿Cómo funciona RIP?",
+      "a": "Protocolo de **vector de distancia** que cuenta **saltos**; usa **horizonte dividido** (split horizon) para evitar bucles"
+    },
+    {
+      "id": "iv7c86",
+      "n": "86",
+      "e": "🍪",
+      "t": false,
+      "q": "¿Por qué HTTP usa cookies?",
+      "a": "Porque HTTP es **sin estado**: no guarda nada de conexiones anteriores"
+    },
+    {
+      "id": "iv7c87",
+      "n": "87",
+      "e": "⚖️",
+      "t": true,
+      "q": "Ventajas y desventajas de OSI frente a TCP/IP",
+      "a": "OSI: fácil de **entender** y modular, pero **muchas capas** y difícil de implementar. TCP/IP: fácil de **implementar y extender**, pero **no define la capa física**",
+      "h": "OSI es conceptual; TCP/IP: primero los protocolos, luego el modelo"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "tema": "IV-7",
+  "ramas": [
+    {
+      "t": "Modelo OSI",
+      "e": "🧱",
+      "items": [
+        "Origen: **ISO** + **CCITT** · norma ISO/IEC 7498-1",
+        "Modelo de **referencia**, no de implementación",
+        "**7 capas**: F · E · R · T · S · P · A",
+        "Primitivas: request, indication, response, confirm"
+      ]
+    },
+    {
+      "t": "Capas OSI",
+      "e": "🪜",
+      "items": [
+        "1 Física: **bits**",
+        "2 Enlace: **tramas**, MAC, STP, VLAN",
+        "3 Red: **paquetes**, enrutamiento",
+        "4 Transporte: **segmentos**, extremo a extremo",
+        "5 Sesión · 6 Presentación (cifrado) · 7 Aplicación"
+      ]
+    },
+    {
+      "t": "Capa 2 avanzada",
+      "e": "🌳",
+      "items": [
+        "STP **802.1D**: evita bucles (puente raíz = menor BID)",
+        "RSTP **802.1w** · MSTP **802.1s**",
+        "VLAN **802.1Q** · QoS **802.1p**",
+        "LACP **802.3ad** · control de flujo **802.3x**"
+      ]
+    },
+    {
+      "t": "IPv4",
+      "e": "4️⃣",
+      "items": [
+        "**32 bits**, no orientado a conexión",
+        "Clases A (0-126), B (128-191), C (192-223), D, E",
+        "Privadas: **10/8**, **172.16-31**, **192.168/16**",
+        "Hosts = **2^n − 2** · CIDR /n",
+        "Cabecera **20-60 bytes** · TTL"
+      ]
+    },
+    {
+      "t": "IPv6",
+      "e": "6️⃣",
+      "items": [
+        "**128 bits**, 8 grupos hex de 16 bits",
+        "Cabecera fija **40 bytes** + extensiones",
+        "fe80::/10 enlace-local · ff00::/8 multicast",
+        "SLAAC + **EUI-64** (FF:FE) · DNS **AAAA**",
+        "Fragmenta solo el **origen**"
+      ]
+    },
+    {
+      "t": "Modelo TCP/IP",
+      "e": "🌐",
+      "items": [
+        "Creado por **DARPA** (DoD), viene de ARPANET",
+        "**4 capas**: red, internet, transporte, aplicación",
+        "Internet: IP, **ICMP**, **IGMP**, **IPsec**",
+        "Transporte: **TCP** fiable · **UDP** rápido",
+        "Aplicación: HTTP, DNS, DHCP, SSH, FTP, SMTP"
+      ]
+    },
+    {
+      "t": "IPsec y comparación",
+      "e": "🛡️",
+      "items": [
+        "Modos **transporte** y **túnel**",
+        "**AH** (51) autentica · **ESP** (50) cifra · **IKE** claves",
+        "OSI conceptual · TCP/IP práctico",
+        "TCP/IP no define la capa física",
+        "5 RIR: ARIN, RIPE NCC, APNIC, LACNIC, AfriNIC"
+      ]
+    }
+  ]
+}

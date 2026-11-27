@@ -1,0 +1,330 @@
+{
+  "tema": "IV-7",
+  "preguntas": [
+    {
+      "id": "iv7-01",
+      "tipico": true,
+      "q": "¿Cuántas capas tiene el modelo OSI?",
+      "opts": [
+        "4",
+        "5",
+        "7",
+        "8"
+      ],
+      "c": 2,
+      "exp": "Física, enlace, red, transporte, sesión, presentación y aplicación."
+    },
+    {
+      "id": "iv7-02",
+      "tipico": true,
+      "q": "La unidad de información de la capa de transporte es…",
+      "opts": [
+        "El segmento",
+        "El paquete",
+        "La trama",
+        "El bit"
+      ],
+      "c": 0,
+      "exp": "Enlace: trama; red: paquete; transporte: segmento."
+    },
+    {
+      "id": "iv7-03",
+      "tipico": true,
+      "q": "¿Qué capa OSI se encarga del cifrado y la compresión?",
+      "opts": [
+        "Sesión",
+        "Transporte",
+        "Aplicación",
+        "Presentación"
+      ],
+      "c": 3,
+      "exp": "La de presentación: formato, conversión, cifrado y compresión."
+    },
+    {
+      "id": "iv7-04",
+      "tipico": true,
+      "q": "El protocolo STP está estandarizado en la norma…",
+      "opts": [
+        "IEEE 802.1Q",
+        "IEEE 802.1D",
+        "IEEE 802.1w",
+        "IEEE 802.3ad"
+      ],
+      "c": 1,
+      "exp": "802.1D. 802.1Q son las VLAN y 802.1w es RSTP."
+    },
+    {
+      "id": "iv7-05",
+      "tipico": false,
+      "q": "En STP, el puente raíz es el que tiene…",
+      "opts": [
+        "El mayor BID",
+        "Más puertos",
+        "El menor BID",
+        "La mayor MAC"
+      ],
+      "c": 2,
+      "exp": "Menor BID (prioridad + MAC); si empatan, menor MAC."
+    },
+    {
+      "id": "iv7-06",
+      "tipico": true,
+      "q": "Las VLAN se definen en la norma…",
+      "opts": [
+        "IEEE 802.1Q",
+        "IEEE 802.1D",
+        "IEEE 802.1s",
+        "IEEE 802.3x"
+      ],
+      "c": 0,
+      "exp": "Trampa: las VLAN no son parte de 802.1D sino de 802.1Q."
+    },
+    {
+      "id": "iv7-07",
+      "tipico": false,
+      "q": "En un servicio no confirmado, ¿qué primitivas se usan?",
+      "opts": [
+        "Las cuatro",
+        "Request y Confirmation",
+        "Indication y Response",
+        "Request e Indication"
+      ],
+      "c": 3,
+      "exp": "Solo Request e Indication; los confirmados usan las cuatro."
+    },
+    {
+      "id": "iv7-08",
+      "tipico": true,
+      "q": "La dirección 192.168.10.5 pertenece a la clase…",
+      "opts": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ],
+      "c": 1,
+      "exp": "La clase C va de 192 a 223."
+    },
+    {
+      "id": "iv7-09",
+      "tipico": true,
+      "q": "¿Cuál NO es un rango de IP privadas?",
+      "opts": [
+        "10.0.0.0 – 10.255.255.255",
+        "172.16.0.0 – 172.31.255.255",
+        "172.32.0.0 – 172.40.255.255",
+        "192.168.0.0 – 192.168.255.255"
+      ],
+      "c": 2,
+      "exp": "El rango privado de clase B acaba en 172.31.255.255."
+    },
+    {
+      "id": "iv7-10",
+      "tipico": true,
+      "q": "¿Cuántos hosts útiles tiene una subred con 4 bits de host?",
+      "opts": [
+        "14",
+        "16",
+        "15",
+        "8"
+      ],
+      "c": 0,
+      "exp": "2^4 − 2 = 14 (se restan red y broadcast)."
+    },
+    {
+      "id": "iv7-11",
+      "tipico": false,
+      "q": "La máscara 255.255.192.0 en notación CIDR es…",
+      "opts": [
+        "/16",
+        "/22",
+        "/20",
+        "/18"
+      ],
+      "c": 3,
+      "exp": "16 bits + 2 bits robados = /18."
+    },
+    {
+      "id": "iv7-12",
+      "tipico": false,
+      "q": "La máscara wildcard de 255.255.255.0 es…",
+      "opts": [
+        "255.255.255.255",
+        "0.0.0.255",
+        "255.0.0.0",
+        "0.255.255.255"
+      ],
+      "c": 1,
+      "exp": "La wildcard es la inversa de la máscara."
+    },
+    {
+      "id": "iv7-13",
+      "tipico": true,
+      "q": "El tamaño de la cabecera IPv4 va de…",
+      "opts": [
+        "20 a 40 bytes",
+        "40 bytes fijos",
+        "20 a 60 bytes",
+        "8 a 60 bytes"
+      ],
+      "c": 2,
+      "exp": "Mínimo 20 y máximo 60 bytes. La de IPv6 es fija de 40."
+    },
+    {
+      "id": "iv7-14",
+      "tipico": true,
+      "q": "Una dirección IPv6 tiene…",
+      "opts": [
+        "128 bits",
+        "32 bits",
+        "64 bits",
+        "256 bits"
+      ],
+      "c": 0,
+      "exp": "128 bits en 8 campos de 16 bits en hexadecimal."
+    },
+    {
+      "id": "iv7-15",
+      "tipico": true,
+      "q": "En IPv6, ¿quién puede fragmentar los paquetes?",
+      "opts": [
+        "Cualquier router",
+        "El ISP",
+        "Solo el nodo destino",
+        "Solo el nodo origen"
+      ],
+      "c": 3,
+      "exp": "En IPv6 solo fragmenta el origen; en IPv4 también los routers."
+    },
+    {
+      "id": "iv7-16",
+      "tipico": true,
+      "q": "El prefijo fe80::/10 en IPv6 corresponde a…",
+      "opts": [
+        "Multicast",
+        "Direcciones de enlace-local",
+        "Loopback",
+        "Documentación"
+      ],
+      "c": 1,
+      "exp": "fe80::/10 enlace-local; ff00::/8 multicast; ::1 loopback."
+    },
+    {
+      "id": "iv7-17",
+      "tipico": false,
+      "q": "Para formar el EUI-64 a partir de la MAC se inserta…",
+      "opts": [
+        "00:00",
+        "FE:80",
+        "FF:FE",
+        "FF:FF"
+      ],
+      "c": 2,
+      "exp": "Se inserta FF:FE en medio y se invierte el 7.º bit."
+    },
+    {
+      "id": "iv7-18",
+      "tipico": true,
+      "q": "El registro DNS que asocia un nombre a una IPv6 es…",
+      "opts": [
+        "AAAA",
+        "PTR",
+        "A",
+        "MX"
+      ],
+      "c": 0,
+      "exp": "AAAA o cuádruple A."
+    },
+    {
+      "id": "iv7-19",
+      "tipico": true,
+      "q": "El RIR responsable de Europa es…",
+      "opts": [
+        "ARIN",
+        "APNIC",
+        "LACNIC",
+        "RIPE NCC"
+      ],
+      "c": 3,
+      "exp": "RIPE NCC: Europa, Oriente Medio y Asia Central."
+    },
+    {
+      "id": "iv7-20",
+      "tipico": true,
+      "q": "La capa de aplicación de TCP/IP equivale en OSI a las capas…",
+      "opts": [
+        "6 y 7",
+        "5, 6 y 7",
+        "Solo la 7",
+        "4 y 5"
+      ],
+      "c": 1,
+      "exp": "Aplicación de TCP/IP = sesión, presentación y aplicación de OSI."
+    },
+    {
+      "id": "iv7-21",
+      "tipico": true,
+      "q": "IPsec actúa en la capa OSI…",
+      "opts": [
+        "2",
+        "4",
+        "3",
+        "7"
+      ],
+      "c": 2,
+      "exp": "Capa de red; SSL/TLS y SSH actúan en la de aplicación."
+    },
+    {
+      "id": "iv7-22",
+      "tipico": true,
+      "q": "¿Qué protocolo de IPsec NO ofrece confidencialidad?",
+      "opts": [
+        "AH",
+        "ESP",
+        "IKE en modo túnel",
+        "Ninguno"
+      ],
+      "c": 0,
+      "exp": "AH da integridad y autenticación, pero no cifra."
+    },
+    {
+      "id": "iv7-23",
+      "tipico": false,
+      "q": "El número de protocolo IP de ESP es…",
+      "opts": [
+        "17",
+        "51",
+        "6",
+        "50"
+      ],
+      "c": 3,
+      "exp": "ESP = 50, AH = 51."
+    },
+    {
+      "id": "iv7-24",
+      "tipico": true,
+      "q": "¿Qué protocolo traduce direcciones IP a direcciones MAC?",
+      "opts": [
+        "DNS",
+        "ARP",
+        "DHCP",
+        "ICMP"
+      ],
+      "c": 1,
+      "exp": "ARP; en IPv6 lo hace NDP."
+    },
+    {
+      "id": "iv7-25",
+      "tipico": false,
+      "q": "SFTP se basa en…",
+      "opts": [
+        "SSL/TLS",
+        "Telnet",
+        "SSH",
+        "FTP con TLS"
+      ],
+      "c": 2,
+      "exp": "SFTP usa SSH (puerto 22). FTPS es FTP + SSL/TLS."
+    }
+  ]
+}
