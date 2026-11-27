@@ -92,7 +92,19 @@ function vMazos() {
     c
       ? `<div class="flip${ui.flip ? ' on' : ''}" id="flip" role="button" tabindex="0" aria-label="Girar tarjeta" style="--cc:${b.hex};--cl:${b.l}"><div class="fc"><div class="face f" aria-hidden="${!!ui.flip}">${c.t ? '<span class="tp">Típica de examen</span>' : ''}<span class="n" aria-hidden="true">${esc(c.n || '')}</span><div class="em" aria-hidden="true">${esc(c.e || '')}</div><div class="q">${rich(c.q)}</div><span class="hint">Toca para ver la respuesta</span></div><div class="face b" aria-hidden="${!ui.flip}"><span class="n" aria-hidden="true">${esc(c.n || '')}</span><div class="a">${rich(c.a)}</div>${c.h ? `<div class="h">${rich(c.h)}</div>` : ''}</div></div></div>
   <div class="cnav"><button class="nb" data-act="prev" aria-label="Tarjeta anterior">‹</button><span>${ui.idx + 1} / ${list.length}</span><button class="nb" data-act="next" aria-label="Tarjeta siguiente">›</button></div>
-  <div class="piles"><button class="pl1" data-pile="1"><i aria-hidden="true">✗</i>No me la sé</button><button class="pl2" data-pile="2"><i aria-hidden="true">?</i>Dudo</button><button class="pl3" data-pile="3"><i aria-hidden="true">✓</i>Me la sé</button></div>`
+  ${vMzCheck(c)}`
       : '<p class="empty">No hay tarjetas en este montón.</p>'
   }</div></div>`;
+}
+
+// Debajo de la tarjeta: los 3 botones o, si has dicho que te la sabes, el test para comprobarlo
+function vMzCheck(c) {
+  const R = ui.mzck && ui.mzck.cid === c.id ? ui.mzck : null;
+  if (!R)
+    return `<div class="piles"><button class="pl1" data-pile="1"><i aria-hidden="true">✗</i>No me la sé</button><button class="pl2" data-pile="2"><i aria-hidden="true">?</i>Creo que sí</button><button class="pl3" data-pile="3"><i aria-hidden="true">✓</i>Me la sé</button></div>${ui.flip ? '<p class="fine mz-nota">Ya has visto la respuesta: «Me la sé» contará como «creo que sí». Para que cuente como sabida, contesta antes de darle la vuelta.</p>' : ''}`;
+  if (R.nose)
+    return `<div class="acts mz-sig"><button class="btn" data-act="mzsig">Siguiente →</button></div>`;
+  if (R.sel == null)
+    return `<div class="mzck"><p class="sub">Demuéstralo: ¿cuál es la respuesta?</p><div class="opts">${R.ops.map((o, i) => `<button class="opt" data-act="mzopt" data-i="${i}"><b>${'abcd'[i]})</b> ${rich(o.a)}</button>`).join('')}</div></div>`;
+  return `<div class="mzck"><div class="opts">${R.ops.map((o, i) => `<div class="opt ${o.ok ? 'ok' : i === R.sel ? 'ko' : ''}"><b>${'abcd'[i]})</b> ${rich(o.a)}</div>`).join('')}</div><div class="rit-fbk ${R.ok ? 'ok' : 'ko'}">${R.ok ? (R.claim === 3 ? '💪 ¡Sabida!' : '👍 Bien: como dudabas, volverá antes.') : '😮 No era esa. Mira la respuesta en la tarjeta: volverá pronto.'}</div><div class="acts mz-sig"><button class="btn" data-act="mzsig">Siguiente →</button></div></div>`;
 }

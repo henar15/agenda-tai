@@ -37,21 +37,27 @@ function vTests() {
     ts = temasConBanco();
   if (!ui.scope || !ts.find((t) => t.id === ui.scope)) ui.scope = ts.length ? ts[0].id : '';
   const nScope = ui.scope ? bank(ui.scope).length : 0;
+  // 3 pestañas (más la del grupo, solo para quien tiene la clave)
+  const MAPA = { web: 'pra', sim: 'pra', ofi: 'ofc', pre: 'ofc', sup: 'ofc' };
+  ui.xtab = MAPA[ui.xtab] || ui.xtab || 'ofc';
+  if (!['ofc', 'pra', 'niv', 'gru'].includes(ui.xtab)) ui.xtab = 'ofc';
   const TB = [
-    ['web', '✏️ Tests de la web', 'por tema'],
-    ['ofi', '📄 Exámenes oficiales', 'completos'],
-    ['pre', '🗂️ Preguntas oficiales', 'por tema'],
-    ['sup', '📋 Supuestos', '2.ª parte'],
-    ...(S.grupo ? [['gru', '👥 Tests del grupo', 'solo para ti']] : []),
-    ['sim', '🎯 Simulacros', 'y el semanal'],
+    ['ofc', '📄 Oficiales', 'exámenes, por tema y supuestos'],
+    ['pra', '✏️ Practicar', 'tests, simulacros y semanal'],
     ['niv', '🧭 Lo que ya sé', 'test de nivel'],
+    ...(S.grupo ? [['gru', '👥 Grupo', 'solo para ti']] : []),
   ];
   const tabs = `<div class="xtabs" role="tablist">${TB.map(([k, t, d]) => `<button role="tab" aria-selected="${ui.xtab === k}" class="${ui.xtab === k ? 'on' : ''}" data-xtab="${k}"><b>${t}</b><small>${d}</small></button>`).join('')}</div>`;
   const head = `<h2>Exámenes y tests</h2><p class="sub">Cada fallo resta un tercio de acierto y las preguntas en blanco no restan. Lo que falles va a «Mis errores».</p><p class="supsel">Tu supuesto: <b>${esc(supTxt(supDe()))}</b> <button class="mini ghost" data-act="supcfg">Cambiar a ${esc(supTxt(supDe() === 'III' ? 'IV' : 'III'))}</button></p>${tabs}${ui.xcfg ? vExCfg() : ''}`;
-  if (ui.xtab !== 'web') return head + vExamenesHub(ui.xtab);
+  if (ui.xtab === 'ofc')
+    return (
+      head +
+      `<h3 class="xsec">📄 Exámenes completos</h3>${vExamenesHub('ofi')}<h3 class="xsec">🗂️ Preguntas oficiales por tema</h3>${vExamenesHub('pre')}<h3 class="xsec">📋 Supuestos (2.ª parte)</h3>${vExamenesHub('sup')}`
+    );
+  if (ui.xtab !== 'pra') return head + vExamenesHub(ui.xtab);
   return (
     head +
-    `<p class="sub">Preguntas hechas a partir de tus tarjetas, tema a tema. Cada pregunta se puede responder con lo que pone en las tarjetas.</p>
+    `<h3 class="xsec">🎯 Simulacros</h3>${vExamenesHub('sim')}<h3 class="xsec">✏️ Tests de la web</h3><p class="sub">Preguntas hechas a partir de tus tarjetas, tema a tema. Cada pregunta se puede responder con lo que pone en las tarjetas.</p>
   <div class="modes">
    <button class="mode red" data-act="merr"${errs.length ? '' : ' disabled'}><b>Mis errores</b><span>Como en la autoescuela: salen de aquí cuando las aciertas 2 veces seguidas.</span><span class="cnt">${errs.length}</span></button>
    <button class="mode" data-act="mtip"${tip.length ? '' : ' disabled'}><b>Típicas de examen</b><span>Las preguntas que más caen, de todos los temas.</span><span class="cnt">${tip.length}</span></button>

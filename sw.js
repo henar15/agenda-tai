@@ -3,7 +3,7 @@
  * Estrategia: red primero (siempre lo último) y, si no hay conexión, lo guardado en caché.
  * Al publicar una versión nueva, sube VERSION (y ?v= en index.html y V en assets/js/main.js).
  */
-const VERSION = 29;
+const VERSION = 30;
 const CACHE = `agenda-tai-v${VERSION}`;
 const SCRIPTS = [
   'firebase-config',

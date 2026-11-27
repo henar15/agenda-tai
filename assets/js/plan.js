@@ -218,6 +218,26 @@ function planHoy() {
   kvSet('diario');
   return snap;
 }
+// Guarda cómo estaba una tarjeta antes del primer cambio de hoy (para poder «empezar el día de 0»)
+function guardarPrevio(tipo, clave, valor) {
+  const d = Object.assign({}, S.diario || {});
+  const t = Object.assign({}, d[today()] || {});
+  const k = tipo === 'mem' ? '_memPrev' : '_pilPrev';
+  const prev = Object.assign({}, t[k]);
+  if (clave in prev) return;
+  prev[clave] = valor == null ? null : valor;
+  t[k] = prev;
+  d[today()] = t;
+  // solo hace falta el de hoy
+  Object.keys(d).forEach((x) => {
+    if (x !== today() && (d[x]._memPrev || d[x]._pilPrev)) {
+      d[x] = Object.assign({}, d[x]);
+      delete d[x]._memPrev;
+      delete d[x]._pilPrev;
+    }
+  });
+  S.diario = d;
+}
 // «Empezar el día de 0»: quita lo marcado hoy, devuelve las páginas leídas hoy y rehace el plan
 function reiniciarHoy() {
   const d = Object.assign({}, S.diario || {});
@@ -237,7 +257,27 @@ function reiniciarHoy() {
     lect[tema] = Math.max(ini, Math.min(lect[tema] || ini, prev));
   });
   S.lectura = lect;
+  // las tarjetas vuelven a como estaban esta mañana
+  const items = Object.assign({}, (S.mem || {}).items);
+  Object.entries(t._memPrev || {}).forEach(([id, v]) => {
+    if (v) items[id] = v;
+    else delete items[id];
+  });
+  S.mem = Object.assign({}, S.mem, { items });
+  const piles = Object.assign({}, S.piles);
+  Object.entries(t._pilPrev || {}).forEach(([k, v]) => {
+    const [tema, id] = k.split('|');
+    const p = Object.assign({}, piles[tema]);
+    if (v) p[id] = v;
+    else delete p[id];
+    piles[tema] = p;
+  });
+  S.piles = piles;
+  kvSet('mem');
+  kvSet('piles');
   const s = Object.assign({}, t._s || {});
+  s.c = 0;
+  s.q = 0;
   s.p = 0;
   d[today()] = { _s: s };
   S.diario = d;
@@ -393,12 +433,11 @@ function vPlan() {
     (byMonth[m] = byMonth[m] || []).push(w);
   });
   const PT = [
-    ['hoy', '📌 Hoy'],
     ['sem', '📅 Semana'],
     ['mes', '🗓️ Mes'],
     ['hor', '⏰ Horario'],
   ];
-  if (!ui.ptab) ui.ptab = 'hoy';
+  if (!ui.ptab || ui.ptab === 'hoy') ui.ptab = 'sem';
   const tabs = `<div class="ptabs" role="tablist">${PT.map(([k, t]) => `<button role="tab" aria-selected="${ui.ptab === k}" class="${ui.ptab === k ? 'on' : ''}" data-ptab="${k}">${t}</button>`).join('')}</div>`;
   let body = '';
   if (ui.ptab === 'hoy') body = vHoyPlan(false);

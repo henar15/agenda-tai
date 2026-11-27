@@ -8,9 +8,11 @@ function markPile(n) {
   if (!c) return;
   const id = c.mz;
   const piles = Object.assign({}, S.piles[id] || {});
+  guardarPrevio('pil', id + '|' + c.id, piles[c.id]);
   piles[c.id] = n;
   S.piles = Object.assign({}, S.piles, { [id]: piles });
   ui.flip = false;
+  ui.mzck = null;
   srsMark(id, c.id, n);
   memMark(c.id, id, 'c', n === 3 ? 3 : n === 2 ? 2 : 1);
   kvSet('mem');
@@ -153,7 +155,11 @@ document.addEventListener('click', (e) => {
   const el = e.target.closest('[data-act],[data-pile],[data-opt],#flip,[data-ml],[data-mr]');
   if (!el) return;
   if (el.id === 'flip') {
+    // mientras haces el test de «me la sé», la tarjeta no se gira
+    if (ui.mzck && ui.mzck.sel == null && !ui.mzck.nose) return;
     ui.flip = !ui.flip;
+    if (!ui.flip && ui.mzck) return render();
+    if (ui.flip && !ui.mzck) render();
     el.classList.toggle('on', ui.flip);
     el.querySelector('.face.f').setAttribute('aria-hidden', ui.flip);
     el.querySelector('.face.b').setAttribute('aria-hidden', !ui.flip);
@@ -164,7 +170,30 @@ document.addEventListener('click', (e) => {
     return;
   }
   if (el.dataset.pile) {
-    markPile(+el.dataset.pile);
+    const n = +el.dataset.pile;
+    const list = deckCards(),
+      c = list[ui.idx];
+    if (!c || ui.mzck) return;
+    if (n === 1) {
+      // «No me la sé»: le das la vuelta y pasas cuando quieras
+      if (!ui.flip) {
+        ui.flip = true;
+        ui.mzck = { cid: c.id, claim: 1, final: 1, ok: false, nose: 1 };
+        render();
+      } else markPile(1);
+    } else if (ui.flip) {
+      // ya has visto la respuesta: no se puede comprobar, cuenta como «dudo»
+      markPile(2);
+    } else {
+      const ops = opcionesTarjeta(c, c.mz);
+      if (ops.length < 2) markPile(n);
+      else {
+        ui.mzck = { cid: c.id, claim: n, ops };
+        render();
+        const m = document.querySelector('.mzck');
+        if (m) m.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
     return;
   }
   if (el.dataset.opt !== undefined) {
@@ -223,10 +252,12 @@ document.addEventListener('click', (e) => {
   } else if (a === 'next') {
     ui.idx++;
     ui.flip = false;
+    ui.mzck = null;
     render();
   } else if (a === 'prev') {
     ui.idx = Math.max(0, ui.idx - 1);
     ui.flip = false;
+    ui.mzck = null;
     render();
   } else if (a === 'login') {
     login();
@@ -398,6 +429,20 @@ document.addEventListener('click', (e) => {
       return;
     }
     finishExam();
+  } else if (a === 'xmodo') {
+    ui.ex.modo = el.dataset.v;
+    render();
+  } else if (a === 'mzsig') {
+    const R = ui.mzck;
+    ui.mzck = null;
+    markPile(R.final);
+  } else if (a === 'mzopt') {
+    const R = ui.mzck;
+    R.sel = +el.dataset.i;
+    R.ok = R.ops[R.sel].ok;
+    R.final = R.ok ? R.claim : 1;
+    if (!R.ok) ui.flip = true;
+    render();
   } else if (a === 'xparcial') {
     finishExam(true);
   } else if (a === 'leer') {
@@ -973,6 +1018,7 @@ document.addEventListener('click', (e) => {
     ui.filtro = f.dataset.filtro;
     ui.idx = 0;
     ui.flip = false;
+    ui.mzck = null;
     render();
   }
 });
@@ -1068,11 +1114,13 @@ document.addEventListener('change', (e) => {
     ui.mazo = e.target.value;
     ui.idx = 0;
     ui.flip = false;
+    ui.mzck = null;
     render();
   } else if (id === 'filtro') {
     ui.filtro = e.target.value;
     ui.idx = 0;
     ui.flip = false;
+    ui.mzck = null;
     render();
   } else if (id === 'scope') {
     ui.scope = e.target.value;

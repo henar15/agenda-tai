@@ -54,6 +54,7 @@ function tpElegir(k, v) {
     ui.mazo = v;
     ui.idx = 0;
     ui.flip = false;
+    ui.mzck = null;
   } else if (k === 'scope') ui.scope = v;
   else if (k === 'gscope') {
     setGScope(v);

@@ -3507,3 +3507,26 @@ body.focus {
   display: block;
   margin: -6px auto 16px;
 }
+.xsec {
+  margin: 28px 0 10px;
+}
+.xmodo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin: 8px 0 12px;
+  font-weight: 700;
+}
+.mzck {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+.mz-sig {
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.mz-nota {
+  margin: 8px 0 0;
+}

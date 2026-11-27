@@ -17,10 +17,10 @@ Organiza el estudio, te pone a prueba con exámenes oficiales y te mantiene moti
 |---|---|
 | ▶ **Sesión guiada** | Un botón que te lleva paso a paso por lo de hoy: leer y subrayar las páginas, las tarjetas nuevas de lo leído, un test de eso mismo, el repaso que toca y un juego para cerrar. |
 | 🏠 **Inicio** | Pipo y tu racha, lo que toca hoy, cuenta atrás al examen, nota estimada, retos de la semana y resumen del día. |
-| 🗓️ **Plan** | *Hoy* (lo que toca hoy y nada más: se fija por la mañana, lo vas tachando y se puede «empezar de 0»), *Semana*, *Mes* y tu *Horario* editable. Si te retrasas, lo pendiente se reparte en los días siguientes. |
+| 🗓️ **Plan** | *Semana*, *Mes* y tu *Horario* editable (lo de cada día va en la sesión guiada, que se puede «empezar de 0» deshaciendo también las tarjetas de ese día). Si te retrasas, lo pendiente se reparte en los días siguientes. |
 | 📚 **Temas** | Los 34 temas por bloque, con tarjetas, test y **esquema visual** de cada tema, que se puede **imprimir** o guardar en PDF (uno por hoja A4). |
 | 🧠 **A tu ritmo** | Repaso adaptativo: un modelo de memoria tipo FSRS decide qué preguntarte cada día. Si dices «me la sé», te sale un **test de 4 opciones** sobre esa tarjeta antes de ver la respuesta, así que no hay trampa. Los errores cometidos diciendo «me la sé» se destacan y vuelven al día siguiente (efecto de hipercorrección), lo fallado se repite en la misma sesión hasta acertarlo (reaprendizaje sucesivo) y lo que te costó aprender reaparece de vez en cuando. |
-| 🃏 **Tarjetas por tema** | Tarjetas cortas y visuales para estudiar tema a tema. |
+| 🃏 **Tarjetas por tema** | Tarjetas cortas y visuales para estudiar tema a tema; «Me la sé» también se comprueba con un test. |
 | 📝 **Exámenes** | Exámenes oficiales completos (2019–2025), preguntas oficiales por tema y bloque, tests de la web, **supuestos** (2.ª parte, primero los de tu supuesto: II+III o II+IV) y simulacros a medida. Con pistas, corrección al momento o al final, dudosas y penalización de −1/3. |
 | 🎯 **Simulacro semanal** | Un examen completo como el real (80 preguntas + tu supuesto, 120 min) que cambia cada lunes y te dice si habrías pasado la **nota de corte** de convocatorias anteriores. |
 | 🧭 **Lo que ya sé** | Indicas tus estudios previos (DAM, DAW, ASIR, SMR, grado) y haces un **test de nivel** general o por tema. Los temas que dominas pasan a repaso rápido en el plan. |

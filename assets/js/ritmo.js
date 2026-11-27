@@ -31,6 +31,7 @@ function memMark(id, tema, kind, nota, extra) {
   extra = extra || {};
   const items = Object.assign({}, memItems());
   const now = Date.now();
+  guardarPrevio('mem', id, items[id] || null);
   const it = Object.assign({ s: 0, d: 5, r: 0, x: 0, hc: 0, t: tema, k: kind }, items[id]);
   if (!it.s) {
     it.s = [0, 0.4, 1.2, 3, 8][nota];
@@ -332,6 +333,7 @@ function ritCommit() {
     statTema(x.t, r.ok);
     if (x.k === 'c') {
       const piles = Object.assign({}, S.piles[x.t] || {});
+      guardarPrevio('pil', x.t + '|' + x.id, piles[x.id]);
       piles[x.id] = !r.ok ? 1 : r.nota >= 3 ? 3 : 2;
       S.piles = Object.assign({}, S.piles, { [x.t]: piles });
     } else recordErr(Object.assign({}, memFind(x.id, x.k, x.t), { id: x.id, tema: x.t, _rit: 1 }), r.ok);
