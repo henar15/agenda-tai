@@ -293,17 +293,58 @@ function reiniciarSesion() {
 }
 
 /* ---------- más estudio cuando la sesión se queda corta ---------- */
-// Temas que ya llevas (has visto alguna tarjeta suya)
-// (solo cuentan las TARJETAS que has estudiado; los fallos en exámenes oficiales no)
+// Tarjetas que has estudiado (por tema)
+function tarjetasVistas() {
+  const v = {};
+  const add = (t, id) => (v[t] = v[t] || new Set()).add(id);
+  Object.entries(memItems()).forEach(([id, it]) => it.k === 'c' && it.t && add(it.t, id));
+  Object.entries(S.piles || {}).forEach(([t, p]) => Object.keys(p || {}).forEach((id) => add(t, id)));
+  return v;
+}
+// Temas que ya llevas: has estudiado al menos la mitad de sus tarjetas
 function temasEmpezados() {
-  const n = {};
-  Object.values(memItems()).forEach((it) => it.k === 'c' && it.t && (n[it.t] = (n[it.t] || 0) + 1));
-  Object.entries(S.piles || {}).forEach(([t, p]) => {
-    const k = Object.keys(p || {}).length;
-    if (k) n[t] = Math.max(n[t] || 0, k);
+  const v = tarjetasVistas();
+  return S.temas
+    .filter((t) => v[t.id] && v[t.id].size >= Math.max(5, (S.cards[t.id] || []).length * 0.5))
+    .sort(ordT);
+}
+// Preguntas que se pueden contestar con las tarjetas que YA has estudiado:
+// la respuesta buena y parte de la pregunta tienen que aparecer en esas tarjetas
+function preguntasCubiertas(fuente) {
+  const v = tarjetasVistas();
+  const vocab = {};
+  Object.entries(v).forEach(([t, ids]) => {
+    const set = new Set();
+    (S.cards[t] || []).forEach(
+      (c) =>
+        ids.has(c.id) &&
+        toks(c.q + ' ' + c.a + ' ' + (c.h || '')).forEach((w) => w.length > 3 && !STOP.has(w) && set.add(w)),
+    );
+    vocab[t] = set;
   });
-  // un tema cuenta si has visto al menos 5 tarjetas suyas
-  return S.temas.filter((t) => (n[t.id] || 0) >= 5).sort(ordT);
+  return (
+    fuente
+      // solo temas de los que has visto al menos un 30 % de las tarjetas
+      .filter(
+        (q) =>
+          q.tema &&
+          vocab[q.tema] &&
+          v[q.tema].size >= (S.cards[q.tema] || []).length * 0.3 &&
+          q.opts &&
+          q.opts[q.c] != null,
+      )
+      .map((q) => {
+        const V = vocab[q.tema];
+        const resp = toks(q.opts[q.c]).filter((w) => (w.length > 3 && !STOP.has(w)) || /^\d/.test(w));
+        const preg = toks(q.q).filter((w) => w.length > 3 && !STOP.has(w));
+        const r = resp.length ? resp.filter((w) => V.has(w)).length / resp.length : 0;
+        const pq = preg.length ? preg.filter((w) => V.has(w)).length / preg.length : 0;
+        return { q, sc: r * 2 + pq, ok: r >= 0.5 && pq >= 0.25 };
+      })
+      .filter((x) => x.ok)
+      .sort((a, b) => b.sc - a.sc)
+      .map((x) => x.q)
+  );
 }
 // Siguientes tarjetas sin ver: primero del tema que llevas, luego de los siguientes del plan
 function siguientesNuevas(n) {
@@ -323,15 +364,17 @@ function siguientesNuevas(n) {
 function vExtras() {
   const sig = siguientesNuevas(25);
   const temaSig = sig.length ? S.temas.find((t) => t.id === sig[0].t) : null;
-  const emp = temasEmpezados();
-  const nq = emp.length ? emp.flatMap((t) => preguntasTema(t.id)).length : 0;
-  // el bloque del tema que estás estudiando ahora
-  const bl = (temaSig || emp[emp.length - 1] || { bloque: 'I' }).bloque;
-  const nofi = ofiQs(true).filter((q) => q.bloque === bl).length;
+  const okOfi = preguntasCubiertas(ofiQs(true));
+  const okWeb = preguntasCubiertas(Object.keys(S.cards).flatMap((t) => bank(t)));
+  const nq = okOfi.length + okWeb.length;
+  const temas = [...new Set(okOfi.concat(okWeb).map((q) => q.tema))]
+    .map((id) => S.temas.find((t) => t.id === id))
+    .filter(Boolean)
+    .sort(ordT);
   return `<div class="modes extras">
   <button class="mode" data-act="exadel"${sig.length ? '' : ' disabled'}><b>➕ Adelantar ${sig.length} tarjetas</b><span>${temaSig ? `Lo siguiente: tema ${esc(temaSig.codigo)}. El plan se recoloca solo.` : 'Ya has visto todas las tarjetas.'}</span></button>
-  <button class="mode" data-act="exsabes"${nq ? '' : ' disabled'}><b>📝 Test de lo que ya sabes</b><span>15 preguntas oficiales y de la web de los temas que llevas${emp.length ? ` (${esc(emp.map((t) => t.codigo).join(', '))})` : ''}.</span></button>
-  <button class="mode" data-act="exexpres" data-b="${bl}"${nofi >= 10 ? '' : ' disabled'}><b>⏱️ Examen exprés del Bloque ${bl}</b><span>20 preguntas oficiales en 24 minutos, como el real.</span></button></div>`;
+  <button class="mode" data-act="exsabes"${nq >= 5 ? '' : ' disabled'}><b>📝 Test de lo que ya sabes</b><span>${nq >= 5 ? `${Math.min(15, nq)} preguntas (oficiales y de la web) que se contestan con las tarjetas que ya has estudiado${temas.length ? ` · ${esc(temas.map((t) => t.codigo).join(', '))}` : ''}.` : 'Cuando estudies más tarjetas, aquí saldrán preguntas sobre ellas.'}</span></button>
+  <button class="mode" data-act="exexpres"${nq >= 10 ? '' : ' disabled'}><b>⏱️ Examen exprés de lo que llevas</b><span>${nq >= 10 ? `${Math.min(20, nq)} preguntas (primero las oficiales) a 1,2 minutos cada una, como el real. Corrige al final.` : `Hacen falta al menos 10 preguntas de lo que has estudiado (ahora hay ${nq}).`}</span></button></div>`;
 }
 function startAdelantar() {
   const cola = siguientesNuevas(25);
@@ -342,9 +385,8 @@ function startAdelantar() {
   render();
 }
 function startSabes() {
-  const emp = temasEmpezados().map((t) => t.id);
-  const ofi = shuffle(ofiQs(true).filter((q) => emp.includes(q.tema)));
-  const web = shuffle(emp.flatMap((t) => bank(t)));
+  const ofi = shuffle(preguntasCubiertas(ofiQs(true)));
+  const web = shuffle(preguntasCubiertas(Object.keys(S.cards).flatMap((t) => bank(t))));
   const qs = ofi.slice(0, 10).concat(web).slice(0, 15);
   if (!qs.length) return;
   startExam({
@@ -356,12 +398,16 @@ function startSabes() {
     pistas: 'no',
   });
 }
-function startExpres(b) {
-  const qs = shuffle(ofiQs(true).filter((q) => q.bloque === b)).slice(0, 20);
+function startExpres() {
+  const qs = shuffle(
+    shuffle(preguntasCubiertas(ofiQs(true)))
+      .concat(shuffle(preguntasCubiertas(Object.keys(S.cards).flatMap((t) => bank(t)))))
+      .slice(0, 20),
+  );
   if (!qs.length) return;
   startExam({
     kind: 'gen',
-    titulo: 'Examen exprés · Bloque ' + b,
+    titulo: 'Examen exprés de lo que llevas',
     qs,
     modo: 'final',
     tiempo: 'oficial',
