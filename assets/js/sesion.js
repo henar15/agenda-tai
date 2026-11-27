@@ -294,10 +294,16 @@ function reiniciarSesion() {
 
 /* ---------- más estudio cuando la sesión se queda corta ---------- */
 // Temas que ya llevas (has visto alguna tarjeta suya)
+// (solo cuentan las TARJETAS que has estudiado; los fallos en exámenes oficiales no)
 function temasEmpezados() {
-  const ids = new Set(Object.values(memItems()).map((it) => it.t));
-  Object.entries(S.piles || {}).forEach(([t, p]) => Object.keys(p || {}).length && ids.add(t));
-  return S.temas.filter((t) => ids.has(t.id)).sort(ordT);
+  const n = {};
+  Object.values(memItems()).forEach((it) => it.k === 'c' && it.t && (n[it.t] = (n[it.t] || 0) + 1));
+  Object.entries(S.piles || {}).forEach(([t, p]) => {
+    const k = Object.keys(p || {}).length;
+    if (k) n[t] = Math.max(n[t] || 0, k);
+  });
+  // un tema cuenta si has visto al menos 5 tarjetas suyas
+  return S.temas.filter((t) => (n[t.id] || 0) >= 5).sort(ordT);
 }
 // Siguientes tarjetas sin ver: primero del tema que llevas, luego de los siguientes del plan
 function siguientesNuevas(n) {
@@ -319,7 +325,8 @@ function vExtras() {
   const temaSig = sig.length ? S.temas.find((t) => t.id === sig[0].t) : null;
   const emp = temasEmpezados();
   const nq = emp.length ? emp.flatMap((t) => preguntasTema(t.id)).length : 0;
-  const bl = (emp[emp.length - 1] || temaSig || { bloque: 'I' }).bloque;
+  // el bloque del tema que estás estudiando ahora
+  const bl = (temaSig || emp[emp.length - 1] || { bloque: 'I' }).bloque;
   const nofi = ofiQs(true).filter((q) => q.bloque === bl).length;
   return `<div class="modes extras">
   <button class="mode" data-act="exadel"${sig.length ? '' : ' disabled'}><b>➕ Adelantar ${sig.length} tarjetas</b><span>${temaSig ? `Lo siguiente: tema ${esc(temaSig.codigo)}. El plan se recoloca solo.` : 'Ya has visto todas las tarjetas.'}</span></button>
