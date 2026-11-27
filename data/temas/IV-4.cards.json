@@ -1,0 +1,726 @@
+{
+  "tema": "IV-4",
+  "cards": [
+    {
+      "id": "iv4c1",
+      "n": "1",
+      "e": "🧑‍🔧",
+      "t": false,
+      "q": "Tareas del administrador de red",
+      "a": "Esquema de red, **integración de sistemas**, gestión de **usuarios**, **dispositivos**, servicios y seguridad, **monitorización del tráfico** y **documentación**"
+    },
+    {
+      "id": "iv4c2",
+      "n": "2",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿Qué es un NMS?",
+      "a": "**Network Management System**: software para **supervisar y administrar** los componentes de una red a partir de datos de **telemetría**"
+    },
+    {
+      "id": "iv4c3",
+      "n": "3",
+      "e": "🆓",
+      "t": false,
+      "q": "Ejemplos de NMS de código abierto",
+      "a": "**Zabbix**, **Nagios**, **Zenoss**, **OpenNMS**, **Cacti** y **Pandora FMS**"
+    },
+    {
+      "id": "iv4c4",
+      "n": "4",
+      "e": "🧱",
+      "t": false,
+      "q": "Tres elementos del esquema de red con seguridad",
+      "a": "**Enrutador** (router), **red interna** y **red perimetral** (zona neutra o DMZ)"
+    },
+    {
+      "id": "iv4c5",
+      "n": "5",
+      "e": "⚠️",
+      "t": false,
+      "q": "¿Por qué es inseguro el esquema básico (red interna + router)?",
+      "a": "Porque **toda la seguridad reside en el enrutador**: si atacan un servidor, el atacante entra en la **red interna**"
+    },
+    {
+      "id": "iv4c6",
+      "n": "6",
+      "e": "🛡️",
+      "t": true,
+      "q": "¿Qué es una DMZ?",
+      "a": "**Zona desmilitarizada** o red perimetral: **subred entre la red interna y la externa** (Internet) donde van los servidores accesibles desde fuera"
+    },
+    {
+      "id": "iv4c7",
+      "n": "7",
+      "e": "🚦",
+      "t": true,
+      "q": "Reglas de tráfico de una DMZ",
+      "a": "Se permiten conexiones de la **red interna y la externa hacia la DMZ**; en general **no desde la DMZ hacia la red interna**",
+      "h": "Para un intruso es un callejón sin salida"
+    },
+    {
+      "id": "iv4c8",
+      "n": "8",
+      "e": "🌍",
+      "t": false,
+      "q": "Servidores típicos de la DMZ",
+      "a": "**Correo**, **web** y **DNS**"
+    },
+    {
+      "id": "iv4c9",
+      "n": "9",
+      "e": "🔀",
+      "t": true,
+      "q": "¿Qué es PAT?",
+      "a": "**Port Address Translation**: variante de **NAT** que traduce IP **y puerto**; permite que **una sola IP** sirva a varias máquinas"
+    },
+    {
+      "id": "iv4c10",
+      "n": "10",
+      "e": "🔱",
+      "t": false,
+      "q": "¿Qué es el cortafuegos en trípode?",
+      "a": "**Three-legged firewall**: un cortafuegos con un puerto para cada red (interna, DMZ e Internet) para crear la DMZ"
+    },
+    {
+      "id": "iv4c11",
+      "n": "11",
+      "e": "🔁",
+      "t": false,
+      "q": "Esquema DMZ con dos enrutadores",
+      "a": "El **exterior** deja entrar desde Internet a los servidores; el **interior** solo permite **tráfico saliente**"
+    },
+    {
+      "id": "iv4c12",
+      "n": "12",
+      "e": "1️⃣",
+      "t": false,
+      "q": "Esquema con DMZ y un solo enrutador",
+      "a": "Un router con **tres interfaces** (red interna, zona neutra e Internet). **Peor** que con dos routers pero **mejor** que el básico"
+    },
+    {
+      "id": "iv4c13",
+      "n": "13",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Cuándo usar varias redes internas o varias DMZ?",
+      "a": "**Varias redes internas** para equipos con distintas políticas de seguridad; **varias DMZ** para aislar servicios bien diferenciados"
+    },
+    {
+      "id": "iv4c14",
+      "n": "14",
+      "e": "🔗",
+      "t": false,
+      "q": "Los 3 niveles de integración de sistemas",
+      "a": "**Red** (que se comuniquen), **datos** (compartir información) y **servicios** (acceder a ellos sea cual sea el SO)"
+    },
+    {
+      "id": "iv4c15",
+      "n": "15",
+      "e": "📡",
+      "t": true,
+      "q": "Servicios mínimos para que funcione una red",
+      "a": "**Enrutamiento**, **servidor DHCP** y **servidor DNS**"
+    },
+    {
+      "id": "iv4c16",
+      "n": "16",
+      "e": "🎟️",
+      "t": false,
+      "q": "¿Qué hace el servidor DHCP?",
+      "a": "**Asigna automáticamente la configuración IP** a los clientes y aprovecha mejor las direcciones: los equipos apagados las **liberan**"
+    },
+    {
+      "id": "iv4c17",
+      "n": "17",
+      "e": "🏷️",
+      "t": true,
+      "q": "¿Qué es la dirección MAC?",
+      "a": "El identificador **físico** de una tarjeta de red: **48 bits**, en **6 bloques** de dos caracteres hexadecimales"
+    },
+    {
+      "id": "iv4c18",
+      "n": "18",
+      "e": "🔄",
+      "t": true,
+      "q": "ARP frente a RARP",
+      "a": "**ARP** (RFC **826**) obtiene la MAC a partir de la IP; **RARP** (RFC **903**) obtiene la **IP a partir de la MAC**"
+    },
+    {
+      "id": "iv4c19",
+      "n": "19",
+      "e": "🥾",
+      "t": false,
+      "q": "¿Qué dejó obsoleto a RARP?",
+      "a": "**BOOTP**, porque usa **UDP** (atraviesa routers) y da más información que solo la IP"
+    },
+    {
+      "id": "iv4c20",
+      "n": "20",
+      "e": "🎭",
+      "t": false,
+      "q": "¿Qué es el MAC spoofing?",
+      "a": "**Suplantar la dirección MAC**: hacer creer al SO que la tarjeta tiene otra MAC; permite saltarse **listas de control de acceso**"
+    },
+    {
+      "id": "iv4c21",
+      "n": "21",
+      "e": "🔒",
+      "t": false,
+      "q": "IP privada frente a IP pública",
+      "a": "**Privada**: identifica al equipo dentro de su red local. **Pública**: la que se ve desde fuera; la **comparten** todos los equipos tras el mismo router"
+    },
+    {
+      "id": "iv4c22",
+      "n": "22",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué muestra ipconfig sin parámetros?",
+      "a": "Las direcciones **IPv4 e IPv6**, la **máscara de subred** y la **puerta de enlace** de cada adaptador"
+    },
+    {
+      "id": "iv4c23",
+      "n": "23",
+      "e": "📋",
+      "t": true,
+      "q": "Parámetros clave de ipconfig",
+      "a": "**/all** (todo), **/release** y **/renew** (liberar y renovar DHCP), **/flushdns** (vaciar caché DNS), **/displaydns** (ver caché DNS), **/registerdns**"
+    },
+    {
+      "id": "iv4c24",
+      "n": "24",
+      "e": "🐧",
+      "t": false,
+      "q": "Equivalente de ipconfig en Linux",
+      "a": "**ifconfig** (configuración de interfaz); las interfaces suelen llamarse **eth0, eth1…**"
+    },
+    {
+      "id": "iv4c25",
+      "n": "25",
+      "e": "📦",
+      "t": true,
+      "q": "¿Qué es la MTU y su valor en Ethernet?",
+      "a": "**Unidad máxima de transferencia**: máximo de octetos por transacción. En Ethernet, **1500** por defecto (SLIP: **296**)"
+    },
+    {
+      "id": "iv4c26",
+      "n": "26",
+      "e": "👂",
+      "t": true,
+      "q": "¿Qué es el modo promiscuo?",
+      "a": "La interfaz **recibe todos los paquetes**, vayan o no dirigidos a ella (**ifconfig promisc**); lo usan herramientas como **tcpdump**"
+    },
+    {
+      "id": "iv4c27",
+      "n": "27",
+      "e": "📁",
+      "t": true,
+      "q": "Samba frente a NFS",
+      "a": "**Samba**: comparte archivos e impresoras entre **Windows y Linux**. **NFS**: pensado para compartir archivos entre sistemas **Linux**"
+    },
+    {
+      "id": "iv4c28",
+      "n": "28",
+      "e": "🗄️",
+      "t": false,
+      "q": "¿Qué es un NAS?",
+      "a": "**Network Attached Storage**: almacenamiento en red dedicado que sustituye a los servidores de archivos"
+    },
+    {
+      "id": "iv4c29",
+      "n": "29",
+      "e": "💻",
+      "t": true,
+      "q": "Acceso remoto en modo terminal",
+      "a": "**Telnet** o **SSH**. Se usa **SSH** porque es **seguro**; Telnet no cifra"
+    },
+    {
+      "id": "iv4c30",
+      "n": "30",
+      "e": "🖱️",
+      "t": false,
+      "q": "Acceso remoto en modo gráfico",
+      "a": "**VNC** (software libre, cliente-servidor, multiplataforma) y **TeamViewer** (privado, gratis para particulares)"
+    },
+    {
+      "id": "iv4c31",
+      "n": "31",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Qué es un dominio (directorio activo)?",
+      "a": "Una agrupación de **máquinas y usuarios** con gestión **centralizada** en el **Controlador de Dominio**; te autenticas una vez y accedes a todos sus recursos"
+    },
+    {
+      "id": "iv4c32",
+      "n": "32",
+      "e": "📚",
+      "t": false,
+      "q": "Protocolos que usa Active Directory",
+      "a": "Principalmente **LDAP**, **DNS**, **DHCP** y **Kerberos**"
+    },
+    {
+      "id": "iv4c33",
+      "n": "33",
+      "e": "🔄",
+      "t": true,
+      "q": "¿Qué es WSUS?",
+      "a": "**Windows Server Update Services**: permite decidir **qué actualizaciones de Microsoft** se instalan en los equipos de la red"
+    },
+    {
+      "id": "iv4c34",
+      "n": "34",
+      "e": "🆔",
+      "t": false,
+      "q": "¿Qué es el SID en Windows?",
+      "a": "El **identificador de seguridad** asociado a cada cuenta de usuario"
+    },
+    {
+      "id": "iv4c35",
+      "n": "35",
+      "e": "👤",
+      "t": false,
+      "q": "Cuentas predefinidas en Windows",
+      "a": "**Administrador** (todos los permisos) e **Invitado** (acceso ocasional; mejor **no usarla**)"
+    },
+    {
+      "id": "iv4c36",
+      "n": "36",
+      "e": "🌐",
+      "t": false,
+      "q": "Cuenta local frente a cuenta de dominio",
+      "a": "**Local**: solo sirve en esa máquina. **De dominio**: en las máquinas del dominio o de dominios con **relación de confianza**"
+    },
+    {
+      "id": "iv4c37",
+      "n": "37",
+      "e": "🔑",
+      "t": false,
+      "q": "Requisitos de contraseña robusta",
+      "a": "Mínimo **8 caracteres**, sin palabras de diccionario, con **mayúsculas, minúsculas, números y signos**, sin reutilizar. En Windows: **directivas de contraseña**"
+    },
+    {
+      "id": "iv4c38",
+      "n": "38",
+      "e": "👑",
+      "t": true,
+      "q": "Tipos de usuario en Linux",
+      "a": "**root** (administrador, UID/GID **0:0**), **usuarios** normales y **usuarios asociados a servicios** (no inician sesión)"
+    },
+    {
+      "id": "iv4c39",
+      "n": "39",
+      "e": "⌨️",
+      "t": false,
+      "q": "Comandos Linux para usuarios",
+      "a": "**adduser/useradd** (alta), **usermod** (modificar), **userdel** (borrar), **passwd** (contraseña), **chage** (vigencia), **su** (cambiar), **sudo** (como root)"
+    },
+    {
+      "id": "iv4c40",
+      "n": "40",
+      "e": "👥",
+      "t": false,
+      "q": "Comandos Linux para grupos",
+      "a": "**groupadd** (alta, POSIX), **groupmod**, **groupdel** (borra el grupo, no sus usuarios) y **groups** (grupos del usuario)"
+    },
+    {
+      "id": "iv4c41",
+      "n": "41",
+      "e": "📄",
+      "t": true,
+      "q": "Ficheros de usuarios en Linux",
+      "a": "**/etc/passwd** (cuentas), **/etc/shadow** (contraseñas **cifradas** y su vigencia) y **/etc/group** (grupos)"
+    },
+    {
+      "id": "iv4c42",
+      "n": "42",
+      "e": "💽",
+      "t": false,
+      "q": "Funciones del Administrador de discos de Windows",
+      "a": "Gestionar **particiones y volúmenes**, asignar **letras**, **formatear**; además liberar espacio, **desfragmentar**, comprobar errores y poner **cuotas**"
+    },
+    {
+      "id": "iv4c43",
+      "n": "43",
+      "e": "🧰",
+      "t": false,
+      "q": "Programas de particiones en Windows",
+      "a": "**EaseUS Partition Master** y **MiniTool Partition Wizard** (convierten FAT↔NTFS, recuperan particiones…)"
+    },
+    {
+      "id": "iv4c44",
+      "n": "44",
+      "e": "🐧",
+      "t": false,
+      "q": "Herramientas de particiones en Linux",
+      "a": "Línea de comandos: **fdisk** y **parted** (aplica los cambios **al instante**). Gráficas: **GParted**, GNOME Disks y KDE Partition Manager"
+    },
+    {
+      "id": "iv4c45",
+      "n": "45",
+      "e": "🖨️",
+      "t": false,
+      "q": "Formas de compartir una impresora",
+      "a": "**Compartir la impresora** (servicio Compartir archivos e impresoras) o un **servidor de impresión** (supervisa colas). Hoy muchas lo traen integrado y se gestionan **por navegador**"
+    },
+    {
+      "id": "iv4c46",
+      "n": "46",
+      "e": "📊",
+      "t": false,
+      "q": "¿Qué es la monitorización de red?",
+      "a": "Un sistema que **recoge y analiza datos** de la red buscando componentes **defectuosos o lentos** y **avisa** al administrador"
+    },
+    {
+      "id": "iv4c47",
+      "n": "47",
+      "e": "⚖️",
+      "t": false,
+      "q": "¿Qué es el balanceo de carga?",
+      "a": "Repartir el trabajo entre **varios servidores** (server farm o pool) para evitar **cuellos de botella**; si uno falla, el tráfico va a los demás"
+    },
+    {
+      "id": "iv4c48",
+      "n": "48",
+      "e": "🔩",
+      "t": false,
+      "q": "Balanceadores hardware frente a software",
+      "a": "**Hardware**: servidor dedicado o tipo **switch** (capa 2 o 3). **Software**: más **flexible**; ej. **LVS** (Linux Virtual Server), **Keepalived**"
+    },
+    {
+      "id": "iv4c49",
+      "n": "49",
+      "e": "🧮",
+      "t": false,
+      "q": "¿Entre qué capas OSI actúa el balanceo de carga?",
+      "a": "Desde la **capa 4** (transporte) hasta la **capa 7** (aplicación)"
+    },
+    {
+      "id": "iv4c50",
+      "n": "50",
+      "e": "🔄",
+      "t": true,
+      "q": "Algoritmo Round Robin",
+      "a": "Reparte las peticiones **por turnos** a partes iguales sin mirar el estado de los servidores. Variantes: **con peso** y **dinámico**"
+    },
+    {
+      "id": "iv4c51",
+      "n": "51",
+      "e": "📉",
+      "t": false,
+      "q": "Algoritmo Least Connections",
+      "a": "Envía la petición al servidor con **menos conexiones activas**; útil con **conexiones persistentes**"
+    },
+    {
+      "id": "iv4c52",
+      "n": "52",
+      "e": "#️⃣",
+      "t": false,
+      "q": "Algoritmo IP Hash",
+      "a": "Usa la **IP del cliente** (o un hash de origen/destino o de la **URL**) para elegir el servidor"
+    },
+    {
+      "id": "iv4c53",
+      "n": "53",
+      "e": "📶",
+      "t": false,
+      "q": "Algoritmo de menor ancho de banda",
+      "a": "Elige el servidor con **menos consumo de ancho de banda** en los últimos **14 minutos**"
+    },
+    {
+      "id": "iv4c54",
+      "n": "54",
+      "e": "🧾",
+      "t": false,
+      "q": "Algoritmo LOR de capa de aplicación",
+      "a": "**Least Outstanding Requests**: envía al servidor con **menos solicitudes HTTP pendientes**; útil ante **picos** repentinos"
+    },
+    {
+      "id": "iv4c55",
+      "n": "55",
+      "e": "🕰️",
+      "t": false,
+      "q": "Generaciones de balanceo de carga",
+      "a": "**1ª**: **passive polling**, detecta problemas a posteriori. **2ª**: enrutamiento **proactivo** (mira CPU, RAM y conexiones antes de que lleguen peticiones)"
+    },
+    {
+      "id": "iv4c56",
+      "n": "56",
+      "e": "🛒",
+      "t": true,
+      "q": "¿Qué es la persistencia de sesión?",
+      "a": "Enviar **todas las peticiones de un usuario al mismo servidor** durante la sesión (p. ej. un carrito de compra)"
+    },
+    {
+      "id": "iv4c57",
+      "n": "57",
+      "e": "🎯",
+      "t": false,
+      "q": "Balanceo por destino frente a por paquete",
+      "a": "**Por destino**: cada destino va siempre por la misma ruta (**mantiene el orden**). **Por paquete**: alterna rutas paquete a paquete (**carga equitativa**, pero pueden llegar **desordenados**)"
+    },
+    {
+      "id": "iv4c58",
+      "n": "58",
+      "e": "🔧",
+      "t": false,
+      "q": "Métodos de redirección del balanceador",
+      "a": "**MAT** (cambia la **MAC** de destino), **NAT** (cambia la **IP** de destino y oculta la del servidor) y **puerta de enlace TCP**"
+    },
+    {
+      "id": "iv4c59",
+      "n": "59",
+      "e": "🤝",
+      "t": false,
+      "q": "¿Cómo funciona la puerta de enlace TCP?",
+      "a": "El balanceador abre una conexión **TCP con el cliente** y otra **con el servidor** elegido, y hace de intermediario"
+    },
+    {
+      "id": "iv4c60",
+      "n": "60",
+      "e": "🫂",
+      "t": false,
+      "q": "¿Qué es un clúster?",
+      "a": "Un conjunto de ordenadores (**nodos**) que se comporta como **una única unidad**"
+    },
+    {
+      "id": "iv4c61",
+      "n": "61",
+      "e": "🗂️",
+      "t": true,
+      "q": "Tipos de clúster",
+      "a": "**Alto rendimiento (HPC)**, **alta disponibilidad (HA)**, **alta eficiencia (HT)** y **balanceo de carga**. **HT**: el **máximo de tareas en el menor tiempo**"
+    },
+    {
+      "id": "iv4c62",
+      "n": "62",
+      "e": "🆙",
+      "t": false,
+      "q": "¿Qué busca un clúster de alta disponibilidad (HA)?",
+      "a": "**Máxima disponibilidad y confiabilidad**: detectar fallos y recuperarse, sin **punto único de fallo**"
+    },
+    {
+      "id": "iv4c63",
+      "n": "63",
+      "e": "🧪",
+      "t": false,
+      "q": "Librerías de clúster en GNU/Linux",
+      "a": "**PVM** (Parallel Virtual Machine) y **MPI** (Message Passing Interface); **openMosix** reparte procesos entre nodos"
+    },
+    {
+      "id": "iv4c64",
+      "n": "64",
+      "e": "🧰",
+      "t": false,
+      "q": "Software de balanceo de carga citado",
+      "a": "**NGINX / NGINX Plus** (HTTP, TCP y UDP), **SafeKit**, **KEMP Free LoadMaster** y **Snapt** (con WAF)"
+    },
+    {
+      "id": "iv4c65",
+      "n": "65",
+      "e": "🔭",
+      "t": false,
+      "q": "Herramientas externas de monitorización de red",
+      "a": "**Nagios**, **Pandora FMS**, **SolarWinds**, **Zabbix**, **Zenoss**, **Icinga**, **OpManager** y **Wireshark**"
+    },
+    {
+      "id": "iv4c66",
+      "n": "66",
+      "e": "🦈",
+      "t": false,
+      "q": "¿Qué es Wireshark?",
+      "a": "Un **analizador de paquetes** gratuito y de código abierto, **multiplataforma**; antes se llamaba **Ethereal**"
+    },
+    {
+      "id": "iv4c67",
+      "n": "67",
+      "e": "🗺️",
+      "t": false,
+      "q": "Rasgos de SolarWinds y Zabbix",
+      "a": "**SolarWinds**: **mapeo automático** de redes. **Zabbix**: hasta **10.000 nodos** sin agentes"
+    },
+    {
+      "id": "iv4c68",
+      "n": "68",
+      "e": "📞",
+      "t": false,
+      "q": "Los 3 protocolos de gestión de red del tema",
+      "a": "**CMIP**, **LDAP** y **SNMP**"
+    },
+    {
+      "id": "iv4c69",
+      "n": "69",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué es CMIP?",
+      "a": "**Common Management Information Protocol**: gestión de red basada en el **modelo OSI** (ITU-T **X.700**); operaciones CREATE, DELETE, GET, SET, ACTION y EVENT_REPORT"
+    },
+    {
+      "id": "iv4c70",
+      "n": "70",
+      "e": "📒",
+      "t": false,
+      "q": "¿Qué es LDAP?",
+      "a": "**Lightweight Directory Access Protocol**: protocolo de **aplicación** para acceder a un **servicio de directorio** jerárquico; suele guardar datos de **autenticación**"
+    },
+    {
+      "id": "iv4c71",
+      "n": "71",
+      "e": "📡",
+      "t": true,
+      "q": "¿Qué es SNMP?",
+      "a": "**Simple Network Management Protocol**: protocolo de **aplicación** para consultar y controlar los elementos de la red (routers, switches, impresoras…)"
+    },
+    {
+      "id": "iv4c72",
+      "n": "72",
+      "e": "🧩",
+      "t": false,
+      "q": "Componentes de una red gestionada con SNMP",
+      "a": "**NMS** (estación gestora), **dispositivos administrados** y **agentes** (software en cada dispositivo)"
+    },
+    {
+      "id": "iv4c73",
+      "n": "73",
+      "e": "❓",
+      "t": false,
+      "q": "Sondeo (polling) frente a trap en SNMP",
+      "a": "**Polling**: el gestor pregunta y el agente responde (carga la red). **Trap**: el agente **avisa por su cuenta** (asíncrono) ante un evento"
+    },
+    {
+      "id": "iv4c74",
+      "n": "74",
+      "e": "⌨️",
+      "t": true,
+      "q": "Comandos básicos de SNMP",
+      "a": "**GET** (leer), **SET** (escribir), **TRAP** (notificar) y operaciones transversales **GETNEXT** y **GETBULK**"
+    },
+    {
+      "id": "iv4c75",
+      "n": "75",
+      "e": "🌳",
+      "t": true,
+      "q": "¿Qué es la MIB?",
+      "a": "**Management Information Base**: colección **jerárquica** (en árbol) de objetos administrados, descrita en **ASN.1** e identificados por un **OID**"
+    },
+    {
+      "id": "iv4c76",
+      "n": "76",
+      "e": "🔢",
+      "t": true,
+      "q": "Puertos de SNMP",
+      "a": "El agente recibe en **UDP 161**; el gestor recibe traps en **UDP 162** (con TLS: **10161** y **10162**)"
+    },
+    {
+      "id": "iv4c77",
+      "n": "77",
+      "e": "📨",
+      "t": false,
+      "q": "¿Por qué SNMP usa UDP?",
+      "a": "Al ser **no orientado a conexión**, la gestión **no afecta al rendimiento** de la red"
+    },
+    {
+      "id": "iv4c78",
+      "n": "78",
+      "e": "🏘️",
+      "t": true,
+      "q": "Comunidades SNMP por defecto",
+      "a": "**public** para **lectura** y **private** para **escritura**"
+    },
+    {
+      "id": "iv4c79",
+      "n": "79",
+      "e": "📦",
+      "t": false,
+      "q": "Las 5 PDU de SNMPv1",
+      "a": "**GetRequest**, **GetNextRequest**, **SetRequest**, **GetResponse** y **Trap**"
+    },
+    {
+      "id": "iv4c80",
+      "n": "80",
+      "e": "🧊",
+      "t": false,
+      "q": "Tipos genéricos de trap",
+      "a": "**Cold start (0)**, **warm start (1)**, **link down (2)**, **link up (3)**, **authentication failure (4)**, EGP neighbor loss (5) y enterprise (6)"
+    },
+    {
+      "id": "iv4c81",
+      "n": "81",
+      "e": "1️⃣",
+      "t": false,
+      "q": "SNMPv1: año y punto débil",
+      "a": "RFC de **1988**. Autenticación solo con la **cadena de comunidad** en **texto plano**"
+    },
+    {
+      "id": "iv4c82",
+      "n": "82",
+      "e": "2️⃣",
+      "t": false,
+      "q": "Novedades de SNMPv2",
+      "a": "Añade **GetBulkRequest** e **InformRequest**. La versión aceptada fue **SNMPv2c** (seguridad por comunidad, como v1)"
+    },
+    {
+      "id": "iv4c83",
+      "n": "83",
+      "e": "3️⃣",
+      "t": true,
+      "q": "¿Qué aporta SNMPv3?",
+      "a": "**Seguridad**: **autenticación**, **integridad** y **confidencialidad** (cifrado). Estándar actual (RFC **3411-3418**, 2004)"
+    },
+    {
+      "id": "iv4c84",
+      "n": "84",
+      "e": "🛡️",
+      "t": false,
+      "q": "Modelos de seguridad de SNMPv3",
+      "a": "**USM** (basado en usuario: autenticación y cifrado), **VACM** (control de acceso por vistas) y **TSM** (seguridad de transporte: SSH o TLS/DTLS)"
+    },
+    {
+      "id": "iv4c85",
+      "n": "85",
+      "e": "🔐",
+      "t": false,
+      "q": "Niveles de seguridad de USM",
+      "a": "**noAuthNoPriv**, **authNoPriv** y **authPriv**"
+    },
+    {
+      "id": "iv4c86",
+      "n": "86",
+      "e": "🚫",
+      "t": false,
+      "q": "¿Qué hacer con SNMP si no se usa?",
+      "a": "**Deshabilitarlo**: crea una vulnerabilidad y consume ancho de banda y CPU"
+    },
+    {
+      "id": "iv4c87",
+      "n": "87",
+      "e": "🔍",
+      "t": true,
+      "q": "¿Qué es Nmap?",
+      "a": "Herramienta de código abierto de **Gordon Lyon (Fyodor)**, de **1997**, para **escanear puertos**, descubrir equipos y servicios y detectar el **SO** (fingerprinting)"
+    },
+    {
+      "id": "iv4c88",
+      "n": "88",
+      "e": "🖼️",
+      "t": false,
+      "q": "Interfaz gráfica oficial de Nmap",
+      "a": "**Zenmap**"
+    },
+    {
+      "id": "iv4c89",
+      "n": "89",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué hacen tracert y traceroute?",
+      "a": "Muestran la **ruta** de los paquetes y la **latencia** de cada salto. **tracert** en Windows; **traceroute** en Linux/Mac"
+    },
+    {
+      "id": "iv4c90",
+      "n": "90",
+      "e": "⏳",
+      "t": true,
+      "q": "¿Cómo funciona tracert?",
+      "a": "Envía paquetes **ICMP** aumentando el **TTL** (1, 2, 3…); cada nodo donde el TTL llega a **0** descarta el paquete y responde"
+    }
+  ]
+}

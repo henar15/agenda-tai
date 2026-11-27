@@ -1,0 +1,742 @@
+{
+  "tema": "IV-3",
+  "cards": [
+    {
+      "id": "iv3c1",
+      "n": "1",
+      "e": "📧",
+      "t": false,
+      "q": "¿Qué es el correo electrónico?",
+      "a": "Un **servicio de red** para enviar y recibir mensajes. Funciona con un modelo de **almacenamiento y reenvío**: no hace falta que los dos extremos estén conectados a la vez",
+      "h": "El servidor de correo guarda el mensaje mientras tanto"
+    },
+    {
+      "id": "iv3c2",
+      "n": "2",
+      "e": "🧩",
+      "t": false,
+      "q": "Elementos que intervienen en un correo electrónico",
+      "a": "**Cliente (MUA)**, **mensajes**, **direcciones**, **cuentas** y **servidor DNS**"
+    },
+    {
+      "id": "iv3c3",
+      "n": "3",
+      "e": "💻",
+      "t": false,
+      "q": "¿Qué es el MUA?",
+      "a": "**Mail User Agent**: el **cliente de correo**, el programa para leer y enviar correos (Outlook, Thunderbird…)",
+      "h": "Webmail: Roundcube, SquirrelMail, Horde"
+    },
+    {
+      "id": "iv3c4",
+      "n": "4",
+      "e": "🚚",
+      "t": true,
+      "q": "¿Qué es el MTA?",
+      "a": "**Mail Transfer Agent**: el servidor de **correo saliente**; transporta el mensaje hasta el MTA del destinatario usando **SMTP**",
+      "h": "Las oficinas de correos de la analogía"
+    },
+    {
+      "id": "iv3c5",
+      "n": "5",
+      "e": "📬",
+      "t": true,
+      "q": "¿Qué es el MDA?",
+      "a": "**Mail Delivery Agent**: el servidor de **correo entrante**; **almacena** el correo hasta que el usuario lo recoge",
+      "h": "Los buzones de la analogía"
+    },
+    {
+      "id": "iv3c6",
+      "n": "6",
+      "e": "🔁",
+      "t": false,
+      "q": "Recorrido de un correo",
+      "a": "**MUA** → **MTA** (SMTP) → MTA del destinatario → **MDA** → el usuario lo lee con su **MUA** por **POP3 o IMAP**"
+    },
+    {
+      "id": "iv3c7",
+      "n": "7",
+      "e": "✉️",
+      "t": false,
+      "q": "Partes básicas de un mensaje de correo",
+      "a": "**Para** (destinatario), **Asunto** (opcional) y **Mensaje**; además se pueden **adjuntar** archivos"
+    },
+    {
+      "id": "iv3c8",
+      "n": "8",
+      "e": "👀",
+      "t": true,
+      "q": "Diferencia entre CC y CCO",
+      "a": "**CC** (copia de carbón): reciben copia y se ve. **CCO** (copia oculta): nadie ve la lista de esos destinatarios"
+    },
+    {
+      "id": "iv3c9",
+      "n": "9",
+      "e": "🏷️",
+      "t": false,
+      "q": "Estructura de una dirección de correo",
+      "a": "**usuario@dominio**. La **@** es obligatoria (RFC **5321**) y **no distingue mayúsculas de minúsculas**"
+    },
+    {
+      "id": "iv3c10",
+      "n": "10",
+      "e": "🌐",
+      "t": false,
+      "q": "Puerto y protocolo de transporte del DNS",
+      "a": "**Puerto 53**, con **TCP y UDP** (casi todas las consultas son una petición y una respuesta **UDP**)"
+    },
+    {
+      "id": "iv3c11",
+      "n": "11",
+      "e": "📮",
+      "t": true,
+      "q": "¿Qué es el registro MX?",
+      "a": "**Mail Exchange**: registro DNS con los **servidores de correo** de un dominio y su **prioridad** (preferencia)",
+      "h": "El MTA emisor lo pide al DNS para el dominio tras la @"
+    },
+    {
+      "id": "iv3c12",
+      "n": "12",
+      "e": "🖥️",
+      "t": false,
+      "q": "Ejemplos de MTA / servidores de correo",
+      "a": "**Exim** (Univ. de Cambridge, GPL), **Postfix** (Wietse Venema, alternativa a **Sendmail**) y **Microsoft Exchange Server**"
+    },
+    {
+      "id": "iv3c13",
+      "n": "13",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué es SMTP?",
+      "a": "**Simple Mail Transfer Protocol**: protocolo de la **capa de aplicación**, de texto **ASCII** y modelo **cliente-servidor**, para **enviar** correo entre servidores"
+    },
+    {
+      "id": "iv3c14",
+      "n": "14",
+      "e": "🔌",
+      "t": true,
+      "q": "Puertos de SMTP",
+      "a": "Sin cifrar: **25**, **587** y **2525**. Cifrados: **465** y **25025**",
+      "h": "El 587 puede pasar a cifrado con STARTTLS"
+    },
+    {
+      "id": "iv3c15",
+      "n": "15",
+      "e": "🔐",
+      "t": true,
+      "q": "¿Qué hace STARTTLS?",
+      "a": "Negocia con el servidor pasar la conexión a **cifrada (TLS)**; lo anterior (HELO, MAIL FROM, RCPT TO) va en **texto plano**"
+    },
+    {
+      "id": "iv3c16",
+      "n": "16",
+      "e": "📅",
+      "t": false,
+      "q": "RFC de SMTP",
+      "a": "Primero **RFC 821** (1982, transferencia) y **RFC 822** (mensaje) → 2821/2822 → hoy **RFC 5321** y **RFC 5322**"
+    },
+    {
+      "id": "iv3c17",
+      "n": "17",
+      "e": "🔢",
+      "t": false,
+      "q": "Comandos de una transacción SMTP",
+      "a": "**MAIL FROM** (remitente), **RCPT TO** (destinatario) y **DATA** (el mensaje)"
+    },
+    {
+      "id": "iv3c18",
+      "n": "18",
+      "e": "🏁",
+      "t": false,
+      "q": "¿Cómo termina el cuerpo del mensaje en SMTP?",
+      "a": "Con una línea que solo tiene un **punto** (<CRLF>.<CRLF>)"
+    },
+    {
+      "id": "iv3c19",
+      "n": "19",
+      "e": "📨",
+      "t": false,
+      "q": "Partes de un mensaje SMTP",
+      "a": "**Cabecera** (subject, from, to) y **cuerpo**. Ojo: from/to de la cabecera **no son** MAIL FROM/RCPT TO del protocolo"
+    },
+    {
+      "id": "iv3c20",
+      "n": "20",
+      "e": "1️⃣",
+      "t": true,
+      "q": "Significado del primer dígito del código SMTP",
+      "a": "**1** positiva preliminar · **2** finalización positiva · **3** positiva intermedia · **4** negativa **temporal** · **5** negativa **permanente**",
+      "h": "4xx: reintenta; 5xx: rechazado"
+    },
+    {
+      "id": "iv3c21",
+      "n": "21",
+      "e": "2️⃣",
+      "t": false,
+      "q": "Significado del segundo dígito del código SMTP",
+      "a": "**0** sintaxis · **1** información · **2** conexiones · **5** sistema de correo"
+    },
+    {
+      "id": "iv3c22",
+      "n": "22",
+      "e": "✅",
+      "t": true,
+      "q": "Códigos SMTP típicos",
+      "a": "**220** servicio disponible · **250** acción completada · **354** empieza a escribir el correo · **221** cerrando conexión · **421** servicio no disponible"
+    },
+    {
+      "id": "iv3c23",
+      "n": "23",
+      "e": "👋",
+      "t": true,
+      "q": "¿Para qué sirven HELO y EHLO?",
+      "a": "**HELO** inicia el diálogo e identifica al cliente. **EHLO** hace lo mismo y además pide al servidor sus **extensiones** (RFC **1651**)"
+    },
+    {
+      "id": "iv3c24",
+      "n": "24",
+      "e": "🛠️",
+      "t": false,
+      "q": "Comandos SMTP VRFY, EXPN, RSET, NOOP y QUIT",
+      "a": "**VRFY** verifica un usuario · **EXPN** expande una lista de correo · **RSET** aborta la transacción · **NOOP** mantiene viva la conexión · **QUIT** cierra"
+    },
+    {
+      "id": "iv3c25",
+      "n": "25",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué hace el comando TURN?",
+      "a": "**Invierte los papeles** de cliente y servidor. Es inseguro; **ETRN** (RFC 1985) lo hace de forma más segura"
+    },
+    {
+      "id": "iv3c26",
+      "n": "26",
+      "e": "🛡️",
+      "t": true,
+      "q": "¿Qué es SPF?",
+      "a": "**Sender Policy Framework**: indica en el **DNS** qué servidores SMTP están **autorizados** a enviar correo de un dominio; protege contra la **falsificación** y el spam"
+    },
+    {
+      "id": "iv3c27",
+      "n": "27",
+      "e": "⚠️",
+      "t": false,
+      "q": "Punto débil de seguridad de SMTP",
+      "a": "No tiene comando de **entrada al sistema**: cualquiera puede enviar correo con un **remitente falso**",
+      "h": "Siempre quedan logs para rastrear"
+    },
+    {
+      "id": "iv3c28",
+      "n": "28",
+      "e": "📥",
+      "t": false,
+      "q": "¿Qué es POP3?",
+      "a": "**Post Office Protocol** v3: **descarga** el correo del servidor al cliente y, por defecto, lo **borra** del servidor. Solo **recibe**, no envía"
+    },
+    {
+      "id": "iv3c29",
+      "n": "29",
+      "e": "🔌",
+      "t": true,
+      "q": "Puertos de POP3",
+      "a": "**110** sin cifrar y **995** cifrado"
+    },
+    {
+      "id": "iv3c30",
+      "n": "30",
+      "e": "🔄",
+      "t": true,
+      "q": "Los 3 estados de una sesión POP3",
+      "a": "**Autorización** → **Transacción** → **Actualización**",
+      "h": "Los mensajes marcados se borran en Actualización, tras QUIT"
+    },
+    {
+      "id": "iv3c31",
+      "n": "31",
+      "e": "🔑",
+      "t": false,
+      "q": "Formas de autenticarse en POP3",
+      "a": "Con **USER** y **PASS** o con **APOP**; el servidor responde **+OK** o **-ERR**"
+    },
+    {
+      "id": "iv3c32",
+      "n": "32",
+      "e": "📋",
+      "t": true,
+      "q": "Comandos POP3 de la fase de transacción",
+      "a": "**STAT** (nº y tamaño), **LIST** (lista), **RETR** (descarga), **DELE** (marca para borrar), **RSET** (desmarca), **TOP** (cabecera + n líneas), **UIDL** (id único)"
+    },
+    {
+      "id": "iv3c33",
+      "n": "33",
+      "e": "🗑️",
+      "t": false,
+      "q": "¿Cuándo borra realmente POP3 los mensajes con DELE?",
+      "a": "Solo al enviar **QUIT** y pasar al estado de **Actualización**; si la sesión acaba de otra forma, **no se borra nada**"
+    },
+    {
+      "id": "iv3c34",
+      "n": "34",
+      "e": "🧂",
+      "t": false,
+      "q": "¿Qué aporta APOP?",
+      "a": "Evita enviar la contraseña en claro: envía un **digest MD5** del timestamp del servidor + una clave secreta"
+    },
+    {
+      "id": "iv3c35",
+      "n": "35",
+      "e": "☁️",
+      "t": false,
+      "q": "¿Qué es IMAP?",
+      "a": "**Internet Message Access Protocol**: accede al correo **guardado en el servidor** y sincroniza su estado (leído, borrado…) entre varios clientes"
+    },
+    {
+      "id": "iv3c36",
+      "n": "36",
+      "e": "🔌",
+      "t": true,
+      "q": "Puertos de IMAP",
+      "a": "**143** sin cifrar y **993** cifrado con TLS"
+    },
+    {
+      "id": "iv3c37",
+      "n": "37",
+      "e": "⚖️",
+      "t": true,
+      "q": "Ventajas de IMAP sobre POP",
+      "a": "Permite **carpetas en el servidor** y **ver los mensajes en remoto sin descargarlos**"
+    },
+    {
+      "id": "iv3c38",
+      "n": "38",
+      "e": "📎",
+      "t": false,
+      "q": "¿Qué es MIME?",
+      "a": "**Multipurpose Internet Mail Extensions** (1991): permite **adjuntos** no de texto, juegos de caracteres **no ASCII** y mensajes **multiparte**"
+    },
+    {
+      "id": "iv3c39",
+      "n": "39",
+      "e": "🔏",
+      "t": true,
+      "q": "¿Qué es S/MIME?",
+      "a": "MIME **seguro**: usa **criptografía asimétrica** (clave pública y privada) para **cifrar** y **firmar** correos; ayuda contra el **phishing**"
+    },
+    {
+      "id": "iv3c40",
+      "n": "40",
+      "e": "📛",
+      "t": false,
+      "q": "¿Qué define el RFC 2142?",
+      "a": "Los **nombres estándar de buzones** de una organización (1997): **postmaster**, **abuse**, **webmaster**, **hostmaster**…",
+      "h": "No distinguen mayúsculas"
+    },
+    {
+      "id": "iv3c41",
+      "n": "41",
+      "e": "📮",
+      "t": false,
+      "q": "¿Qué buzón exige SMTP en todo host con servidor SMTP?",
+      "a": "**POSTMASTER@dominio** (RFC 5321)"
+    },
+    {
+      "id": "iv3c42",
+      "n": "42",
+      "e": "📊",
+      "t": false,
+      "q": "Herramientas de monitorización de correo",
+      "a": "**Nagios** (GPL v2, usa **SNMP** o **NRPE**), **Check_MK** (sobre Nagios) y **Pandora FMS** (código abierto)"
+    },
+    {
+      "id": "iv3c43",
+      "n": "43",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Dónde se ubican los servidores de correo expuestos a Internet?",
+      "a": "En la **DMZ** (zona desmilitarizada), aislada con **cortafuegos**, según el **CCN-CERT**"
+    },
+    {
+      "id": "iv3c44",
+      "n": "44",
+      "e": "🚧",
+      "t": false,
+      "q": "Regla de cortafuegos recomendada para SMTP saliente",
+      "a": "Limitar el **tráfico SMTP saliente** solo a **nuestro servidor de correo** y abrir únicamente SMTP, POP e IMAP"
+    },
+    {
+      "id": "iv3c45",
+      "n": "45",
+      "e": "🔓",
+      "t": true,
+      "q": "¿Qué es un ataque Open Relay?",
+      "a": "Usar un **MTA como puente** para enviar spam desde IP bloqueadas. Se evita permitiendo enviar solo a **clientes autenticados**",
+      "h": "Los Open Relay acaban en listas negras"
+    },
+    {
+      "id": "iv3c46",
+      "n": "46",
+      "e": "🧑‍💻",
+      "t": false,
+      "q": "Medidas de seguridad en los clientes de correo",
+      "a": "**SSL/TLS** al enviar y recibir, **desactivar contenido externo** (JavaScript, ActiveX) y **no guardar contraseñas**"
+    },
+    {
+      "id": "iv3c47",
+      "n": "47",
+      "e": "📱",
+      "t": false,
+      "q": "¿Qué es Exchange ActiveSync?",
+      "a": "Protocolo de sincronización de Exchange para **móviles** basado en **HTTP y XML**; permite el **borrado remoto** (Remote Wipe)"
+    },
+    {
+      "id": "iv3c48",
+      "n": "48",
+      "e": "🔒",
+      "t": false,
+      "q": "Requisitos de una contraseña robusta",
+      "a": "Mínimo **8 caracteres**, sin palabras del diccionario, con **mayúsculas, minúsculas, números y signos** y **sin reutilizarla**"
+    },
+    {
+      "id": "iv3c49",
+      "n": "49",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es la arquitectura de microservicios (MSA)?",
+      "a": "Una aplicación formada por **pequeños servicios independientes**, cada uno en su propio proceso, que se comunican por **APIs (HTTP)**",
+      "h": "\"Haz una sola cosa y hazla bien\""
+    },
+    {
+      "id": "iv3c50",
+      "n": "50",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué necesita una arquitectura de microservicios para existir?",
+      "a": "**Contenedores** y **orquestadores**"
+    },
+    {
+      "id": "iv3c51",
+      "n": "51",
+      "e": "♾️",
+      "t": false,
+      "q": "¿Qué es DevOps?",
+      "a": "Prácticas que unen **desarrollo (Dev)** y **operaciones de TI (Ops)**: automatización, ciclos cortos y entrega continua **CI/CD**"
+    },
+    {
+      "id": "iv3c52",
+      "n": "52",
+      "e": "🚀",
+      "t": false,
+      "q": "Ventajas de los microservicios",
+      "a": "**Especialización** del equipo, alta **escalabilidad**, **independencia** de tecnologías (APIs **políglotas**), **aislamiento de fallos** y **rapidez** de actualización"
+    },
+    {
+      "id": "iv3c53",
+      "n": "53",
+      "e": "🪨",
+      "t": true,
+      "q": "Microservicios frente a monolito",
+      "a": "El **monolito** junta todo en una pieza y escala en bloque; los **microservicios** escalan y fallan **por separado**"
+    },
+    {
+      "id": "iv3c54",
+      "n": "54",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿De qué arquitectura es evolución la de microservicios?",
+      "a": "De **SOA** (arquitectura orientada a servicios), que depende de un **ESB** (bus de servicio empresarial)"
+    },
+    {
+      "id": "iv3c55",
+      "n": "55",
+      "e": "⏱️",
+      "t": false,
+      "q": "¿Qué busca una empresa al pasar a microservicios?",
+      "a": "Reducir el **time-to-market** (plazo de lanzamiento) y ganar **agilidad**"
+    },
+    {
+      "id": "iv3c56",
+      "n": "56",
+      "e": "🧗",
+      "t": false,
+      "q": "Desafíos de los microservicios",
+      "a": "**Seguridad**, **resiliencia de la red**, **política de comunicación** y **observabilidad**",
+      "h": "Los resuelve la malla de servicios"
+    },
+    {
+      "id": "iv3c57",
+      "n": "57",
+      "e": "📦",
+      "t": false,
+      "q": "Formas de aislar microservicios",
+      "a": "**Contenedores** (la más común y ligera), **máquinas virtuales** o un **servidor físico** por servicio (no práctico)"
+    },
+    {
+      "id": "iv3c58",
+      "n": "58",
+      "e": "🎬",
+      "t": false,
+      "q": "Ejemplos de empresas con microservicios",
+      "a": "**Netflix** (desde **2008**, usa **Conductor**), **Spotify** (más de **800** microservicios, casi todo **Java**) y **eBay**"
+    },
+    {
+      "id": "iv3c59",
+      "n": "59",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es un contenedor?",
+      "a": "Un paquete con **todo lo necesario** para ejecutar un servicio, **aislado** e independiente del anfitrión; **comparte el kernel** del SO (más ligero que una VM)"
+    },
+    {
+      "id": "iv3c60",
+      "n": "60",
+      "e": "🖼️",
+      "t": false,
+      "q": "¿Qué es una imagen de contenedor?",
+      "a": "Agrupa la **aplicación**, sus **dependencias** y su **entorno de ejecución**; el contenedor se crea **a partir de la imagen**"
+    },
+    {
+      "id": "iv3c61",
+      "n": "61",
+      "e": "🐳",
+      "t": true,
+      "q": "Docker frente a Kubernetes",
+      "a": "**Docker**: runtime de contenedores en **un nodo**. **Kubernetes**: **orquestador** que gestiona contenedores en un **clúster**"
+    },
+    {
+      "id": "iv3c62",
+      "n": "62",
+      "e": "🎼",
+      "t": false,
+      "q": "¿Qué hace un orquestador de contenedores?",
+      "a": "Agrupa hosts en **clústeres** y automatiza **escalado**, **tolerancia a fallos**, descubrimiento, **balanceo** y actualizaciones sin parada"
+    },
+    {
+      "id": "iv3c63",
+      "n": "63",
+      "e": "🛡️",
+      "t": false,
+      "q": "Herramientas de seguridad en contenedores",
+      "a": "**IPS** en cada host (con **parche virtual**), **anti-malware** en tiempo real y **RASP** (autoprotección en tiempo de ejecución)"
+    },
+    {
+      "id": "iv3c64",
+      "n": "64",
+      "e": "☁️",
+      "t": false,
+      "q": "Tipos de nube donde se despliegan contenedores",
+      "a": "**Nube privada**, **pública** o **híbrida** (además de on-premise y máquinas físicas o virtuales)"
+    },
+    {
+      "id": "iv3c65",
+      "n": "65",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Qué es una malla de servicios (service mesh)?",
+      "a": "La **capa de infraestructura** que gestiona la **comunicación** entre microservicios; cada servicio tiene su **proxy sidecar**",
+      "h": "Ejemplo de proxy: Envoy"
+    },
+    {
+      "id": "iv3c66",
+      "n": "66",
+      "e": "🏍️",
+      "t": true,
+      "q": "¿Qué es un sidecar?",
+      "a": "Un **proxy** que acompaña a **cada instancia** de un servicio; el servicio solo habla con su proxy local"
+    },
+    {
+      "id": "iv3c67",
+      "n": "67",
+      "e": "✈️",
+      "t": false,
+      "q": "Planos de una malla de servicios",
+      "a": "**Plano de datos**: los proxies que mueven el tráfico. **Plano de control**: la autoridad que da **políticas y configuración** a los proxies"
+    },
+    {
+      "id": "iv3c68",
+      "n": "68",
+      "e": "🧰",
+      "t": false,
+      "q": "Funciones que da una malla de servicios",
+      "a": "**Descubrimiento**, **balanceo de carga**, **autenticación/autorización**, **métricas**, **rotura de circuito**, limitación de tasa y seguimiento distribuido"
+    },
+    {
+      "id": "iv3c69",
+      "n": "69",
+      "e": "🚫",
+      "t": false,
+      "q": "Confianza cero en la malla de servicios",
+      "a": "**Nada se da por fiable**: todo se verifica con certificados de una **autoridad central** y **TLS mutuo**",
+      "h": "Concepto popularizado por Forrester en 2010"
+    },
+    {
+      "id": "iv3c70",
+      "n": "70",
+      "e": "📈",
+      "t": false,
+      "q": "Las 4 señales de oro de las métricas de servicio",
+      "a": "**Latencia**, **tráfico**, **errores** y **saturación**"
+    },
+    {
+      "id": "iv3c71",
+      "n": "71",
+      "e": "🐤",
+      "t": true,
+      "q": "¿Qué es un despliegue Canary?",
+      "a": "Lanzar la versión nueva primero a un **pequeño porcentaje** de servidores (p. ej. 2 %) para probarla; si falla, se revierte"
+    },
+    {
+      "id": "iv3c72",
+      "n": "72",
+      "e": "🔵",
+      "t": true,
+      "q": "¿Qué es un despliegue azul-verde?",
+      "a": "Pasar el tráfico de la versión anterior (**azul**) a la nueva (**verde**), con las dos en producción; la azul queda para volver atrás"
+    },
+    {
+      "id": "iv3c73",
+      "n": "73",
+      "e": "🔌",
+      "t": false,
+      "q": "Medidas de resiliencia de la malla",
+      "a": "**Tiempo de espera**, **reintentos** (por defecto **2** en HTTP), **disyuntores** (circuit breaker) e inyección de fallos (**demora** o **aborto**)"
+    },
+    {
+      "id": "iv3c74",
+      "n": "74",
+      "e": "⛵",
+      "t": false,
+      "q": "Ejemplos de mallas de servicios",
+      "a": "**Istio** (proxies **Envoy**, plano de control **istiod**), **Linkerd** (CNCF) y **Anthos Service Mesh** (Google Cloud)"
+    },
+    {
+      "id": "iv3c75",
+      "n": "75",
+      "e": "🐋",
+      "t": false,
+      "q": "Datos básicos de Docker",
+      "a": "Código abierto (**Apache 2.0**), escrito en **Go**, creado por **Solomon Hykes**, lanzado en **marzo de 2013**"
+    },
+    {
+      "id": "iv3c76",
+      "n": "76",
+      "e": "🧬",
+      "t": false,
+      "q": "¿Qué usa Docker del kernel Linux para aislar?",
+      "a": "**Namespaces** (aíslan la vista del entorno) y **cgroups** (aíslan recursos: CPU, memoria, E/S, red)",
+      "h": "Desde la 0.9 usa libcontainer en vez de LXC"
+    },
+    {
+      "id": "iv3c77",
+      "n": "77",
+      "e": "▶️",
+      "t": false,
+      "q": "docker run frente a docker create",
+      "a": "**docker create** crea el contenedor sin arrancarlo; **docker run** lo **crea y arranca** a la vez"
+    },
+    {
+      "id": "iv3c78",
+      "n": "78",
+      "e": "📃",
+      "t": false,
+      "q": "Comandos Docker de información",
+      "a": "**docker ps** (en ejecución; **-a** todos), **docker logs**, **docker inspect**, **docker stats**, **docker top**"
+    },
+    {
+      "id": "iv3c79",
+      "n": "79",
+      "e": "🏗️",
+      "t": false,
+      "q": "Comandos Docker de imágenes",
+      "a": "**docker pull** (descarga), **docker build** (desde un **Dockerfile**), **docker images**, **docker rmi** (borra), **docker push**"
+    },
+    {
+      "id": "iv3c80",
+      "n": "80",
+      "e": "📄",
+      "t": false,
+      "q": "¿Qué es un Dockerfile?",
+      "a": "Un fichero con las **instrucciones** para construir una imagen Docker con **docker build**"
+    },
+    {
+      "id": "iv3c81",
+      "n": "81",
+      "e": "☸️",
+      "t": false,
+      "q": "¿Qué es Kubernetes?",
+      "a": "Plataforma de **orquestación** de contenedores de código abierto, creada por **Google** y mantenida por la **CNCF**"
+    },
+    {
+      "id": "iv3c82",
+      "n": "82",
+      "e": "🫛",
+      "t": true,
+      "q": "¿Qué es un pod?",
+      "a": "La **unidad más pequeña** de Kubernetes: uno o varios **contenedores** que comparten recursos"
+    },
+    {
+      "id": "iv3c83",
+      "n": "83",
+      "e": "📚",
+      "t": false,
+      "q": "Objetos básicos de Kubernetes",
+      "a": "**Pod**, **Service**, **ReplicaSet** (nº de réplicas), **Deployment** (estado deseado), **Namespace**, **ConfigMap/Secret** y **Volume/PV/PVC**"
+    },
+    {
+      "id": "iv3c84",
+      "n": "84",
+      "e": "🔐",
+      "t": false,
+      "q": "ConfigMap frente a Secret",
+      "a": "**ConfigMap** guarda configuración; **Secret** guarda datos **confidenciales** (contraseñas, tokens)"
+    },
+    {
+      "id": "iv3c85",
+      "n": "85",
+      "e": "🧭",
+      "t": false,
+      "q": "Objetos avanzados de Kubernetes",
+      "a": "**StatefulSet** (apps con estado), **DaemonSet** (un pod en **cada nodo**) y **Job/CronJob** (trabajos programados)"
+    },
+    {
+      "id": "iv3c86",
+      "n": "86",
+      "e": "🌐",
+      "t": false,
+      "q": "Protocolos destacados en Kubernetes",
+      "a": "HTTP/HTTPS, **gRPC** (HTTP/2 + protobuf), TCP, UDP, **VXLAN** (redes CNI) y DNS interno con **CoreDNS**"
+    },
+    {
+      "id": "iv3c87",
+      "n": "87",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué son los Hyper-V Containers?",
+      "a": "Contenedores de Microsoft (**Windows Server 2016**) con **copia propia del kernel de Windows**: aislamiento tipo máquina virtual"
+    },
+    {
+      "id": "iv3c88",
+      "n": "88",
+      "e": "🎩",
+      "t": false,
+      "q": "¿Qué es OpenShift?",
+      "a": "Plataforma de contenedores de **Red Hat** (PaaS): Docker orquestado por **Kubernetes**"
+    },
+    {
+      "id": "iv3c89",
+      "n": "89",
+      "e": "🧭",
+      "t": false,
+      "q": "Otros orquestadores de contenedores",
+      "a": "**Amazon ECS**, **Azure AKS/ACI**, **Azure Service Fabric**, **Marathon** (Mesos), **Nomad** (HashiCorp) y **Docker Swarm**"
+    },
+    {
+      "id": "iv3c90",
+      "n": "90",
+      "e": "☁️",
+      "t": true,
+      "q": "Modelos de servicio del cloud computing (IaaS…)",
+      "a": "**IaaS** (infraestructura), **PaaS** (plataforma) y **SaaS** (software como servicio)",
+      "h": "OpenShift es un ejemplo de PaaS"
+    }
+  ]
+}

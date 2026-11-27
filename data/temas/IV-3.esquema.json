@@ -1,0 +1,82 @@
+{
+  "tema": "IV-3",
+  "ramas": [
+    {
+      "t": "Correo: piezas",
+      "e": "📧",
+      "items": [
+        "**MUA**: cliente de correo (Outlook, Thunderbird)",
+        "**MTA**: transporta el correo con **SMTP**",
+        "**MDA**: buzón que guarda el correo entrante",
+        "**MX** en el DNS: servidores de correo del dominio",
+        "**CC** se ve · **CCO** oculto"
+      ]
+    },
+    {
+      "t": "SMTP (enviar)",
+      "e": "📤",
+      "items": [
+        "Puertos **25, 587, 2525** · cifrados **465, 25025**",
+        "**RFC 5321** (antes 821 y 2821)",
+        "**HELO/EHLO → MAIL FROM → RCPT TO → DATA → QUIT**",
+        "Códigos: **2xx** ok · **4xx** temporal · **5xx** permanente",
+        "**STARTTLS** cifra · **SPF** evita remitentes falsos"
+      ]
+    },
+    {
+      "t": "POP3 e IMAP (recibir)",
+      "e": "📥",
+      "items": [
+        "**POP3**: 110 / 995 · descarga y borra",
+        "Estados: **Autorización → Transacción → Actualización**",
+        "Comandos: **USER, PASS, STAT, LIST, RETR, DELE, QUIT**",
+        "**IMAP**: 143 / 993 · el correo queda en el servidor",
+        "**MIME** adjuntos · **S/MIME** cifra y firma"
+      ]
+    },
+    {
+      "t": "Administrar el correo",
+      "e": "🛡️",
+      "items": [
+        "Monitorizar: **Nagios, Check_MK, Pandora FMS**",
+        "Servidores en la **DMZ** con cortafuegos (CCN-CERT)",
+        "**Open Relay**: solo enviar autenticado",
+        "Clientes: **TLS**, sin contenido externo",
+        "Contraseñas: **≥ 8** caracteres y variadas"
+      ]
+    },
+    {
+      "t": "Microservicios",
+      "e": "🧱",
+      "items": [
+        "Servicios **pequeños e independientes** con APIs HTTP",
+        "\"**Haz una sola cosa y hazla bien**\"",
+        "Ventajas: **escalan** y **fallan por separado**",
+        "Retos: seguridad, resiliencia, políticas, observabilidad",
+        "Evolución de **SOA** · encaja con **DevOps** y CI/CD"
+      ]
+    },
+    {
+      "t": "Contenedores y orquestación",
+      "e": "🐳",
+      "items": [
+        "Contenedor: app + dependencias, **comparte kernel**",
+        "Se crea a partir de una **imagen** (Dockerfile)",
+        "**Docker**: un nodo · Go · Apache 2.0 · 2013",
+        "**Kubernetes**: orquestador de **clúster** (Google, CNCF)",
+        "**Pod**, Service, ReplicaSet, Deployment, Namespace"
+      ]
+    },
+    {
+      "t": "Malla de servicios",
+      "e": "🕸️",
+      "items": [
+        "Capa que gestiona la **comunicación** entre servicios",
+        "Un **proxy sidecar** (Envoy) por instancia",
+        "**Plano de datos** + **plano de control**",
+        "**Confianza cero** con **TLS mutuo**",
+        "Despliegues **Canary** y **azul-verde** · Istio, Linkerd"
+      ]
+    }
+  ]
+}

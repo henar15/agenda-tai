@@ -1,0 +1,330 @@
+{
+  "tema": "IV-4",
+  "preguntas": [
+    {
+      "id": "iv4-01",
+      "tipico": true,
+      "q": "¿Qué esquema de red es el más inseguro?",
+      "opts": [
+        "Red interna y un solo enrutador, sin zona neutra",
+        "Zona neutra con dos enrutadores",
+        "Varias zonas neutras",
+        "Zona neutra y varias redes internas"
+      ],
+      "c": 0,
+      "exp": "En el esquema básico toda la seguridad reside en el enrutador."
+    },
+    {
+      "id": "iv4-02",
+      "tipico": true,
+      "q": "En una DMZ, en general, NO se permiten las conexiones…",
+      "opts": [
+        "De la red externa a la DMZ",
+        "De la DMZ a la red interna",
+        "De la red interna a la DMZ",
+        "De la red interna a Internet"
+      ],
+      "c": 1,
+      "exp": "Así la DMZ es un callejón sin salida para un intruso."
+    },
+    {
+      "id": "iv4-03",
+      "tipico": false,
+      "q": "¿Qué servidores se suelen ubicar en la DMZ?",
+      "opts": [
+        "Controladores de dominio",
+        "Correo, web y DNS",
+        "Bases de datos internas",
+        "Equipos de usuario"
+      ],
+      "c": 1,
+      "exp": "Son los que deben ser accesibles desde fuera."
+    },
+    {
+      "id": "iv4-04",
+      "tipico": true,
+      "q": "La técnica que traduce IP y puerto y permite que una sola IP sirva a varias máquinas es…",
+      "opts": [
+        "ARP",
+        "PAT",
+        "DHCP",
+        "RARP"
+      ],
+      "c": 1,
+      "exp": "PAT (Port Address Translation) es una variante de NAT."
+    },
+    {
+      "id": "iv4-05",
+      "tipico": false,
+      "q": "Un esquema con DMZ y un solo enrutador necesita que este tenga…",
+      "opts": [
+        "Una interfaz",
+        "Tres interfaces",
+        "Dos interfaces",
+        "Cuatro interfaces"
+      ],
+      "c": 1,
+      "exp": "Red interna, zona neutra e Internet."
+    },
+    {
+      "id": "iv4-06",
+      "tipico": true,
+      "q": "¿Cuál NO es uno de los tres niveles de integración de sistemas?",
+      "opts": [
+        "Red",
+        "Hardware",
+        "Servicios",
+        "Datos"
+      ],
+      "c": 1,
+      "exp": "Los tres niveles son red, datos y servicios."
+    },
+    {
+      "id": "iv4-07",
+      "tipico": true,
+      "q": "Una dirección MAC tiene…",
+      "opts": [
+        "32 bits",
+        "48 bits",
+        "64 bits",
+        "128 bits"
+      ],
+      "c": 1,
+      "exp": "48 bits, en 6 bloques de dos caracteres hexadecimales."
+    },
+    {
+      "id": "iv4-08",
+      "tipico": true,
+      "q": "El protocolo que obtiene la IP a partir de la MAC es…",
+      "opts": [
+        "ARP",
+        "DNS",
+        "RARP",
+        "SNMP"
+      ],
+      "c": 2,
+      "exp": "RARP (RFC 903) es el inverso de ARP (RFC 826)."
+    },
+    {
+      "id": "iv4-09",
+      "tipico": false,
+      "q": "Para vaciar la caché de resolución DNS en Windows se usa…",
+      "opts": [
+        "ipconfig /release",
+        "ipconfig /renew",
+        "ipconfig /displaydns",
+        "ipconfig /flushdns"
+      ],
+      "c": 3,
+      "exp": "/displaydns solo la muestra."
+    },
+    {
+      "id": "iv4-10",
+      "tipico": true,
+      "q": "El valor por defecto de la MTU en Ethernet es…",
+      "opts": [
+        "296",
+        "576",
+        "1500",
+        "9000"
+      ],
+      "c": 2,
+      "exp": "1500 bytes; 296 es el de SLIP."
+    },
+    {
+      "id": "iv4-11",
+      "tipico": false,
+      "q": "El modo en el que la interfaz recibe todos los paquetes, vayan o no dirigidos a ella, es el…",
+      "opts": [
+        "Modo promiscuo",
+        "Modo multicast",
+        "Modo broadcast",
+        "Modo punto a punto"
+      ],
+      "c": 0,
+      "exp": "Se activa con ifconfig promisc; lo usa tcpdump."
+    },
+    {
+      "id": "iv4-12",
+      "tipico": true,
+      "q": "Para compartir archivos e impresoras entre Windows y Linux se usa…",
+      "opts": [
+        "Samba",
+        "NFS",
+        "NAS",
+        "WSUS"
+      ],
+      "c": 0,
+      "exp": "NFS está pensado sobre todo para Linux."
+    },
+    {
+      "id": "iv4-13",
+      "tipico": false,
+      "q": "¿Qué servicio permite decidir qué actualizaciones de Microsoft se instalan en los equipos?",
+      "opts": [
+        "VNC",
+        "Active Directory",
+        "WSUS",
+        "Samba"
+      ],
+      "c": 2,
+      "exp": "Windows Server Update Services."
+    },
+    {
+      "id": "iv4-14",
+      "tipico": true,
+      "q": "En Linux, las contraseñas cifradas de los usuarios están en…",
+      "opts": [
+        "/etc/passwd",
+        "/etc/group",
+        "/etc/users",
+        "/etc/shadow"
+      ],
+      "c": 3,
+      "exp": "/etc/passwd tiene las cuentas y /etc/group los grupos."
+    },
+    {
+      "id": "iv4-15",
+      "tipico": false,
+      "q": "En Linux, el usuario root tiene UID y GID…",
+      "opts": [
+        "1:1",
+        "1000:1000",
+        "100:100",
+        "0:0"
+      ],
+      "c": 3,
+      "exp": "root es 0:0."
+    },
+    {
+      "id": "iv4-16",
+      "tipico": true,
+      "q": "El algoritmo que envía la petición al servidor con menos conexiones activas es…",
+      "opts": [
+        "Least Connections",
+        "IP Hash",
+        "Round Robin",
+        "Least Outstanding Requests"
+      ],
+      "c": 0,
+      "exp": "Útil con conexiones persistentes."
+    },
+    {
+      "id": "iv4-17",
+      "tipico": false,
+      "q": "El balanceo de carga por paquete…",
+      "opts": [
+        "Mantiene siempre el orden de los paquetes",
+        "Envía siempre por la misma ruta a cada destino",
+        "Reparte la carga por igual, pero los paquetes pueden llegar desordenados",
+        "Solo funciona en la capa 7"
+      ],
+      "c": 2,
+      "exp": "El balanceo por destino es el que mantiene el orden."
+    },
+    {
+      "id": "iv4-18",
+      "tipico": true,
+      "q": "Enviar todas las peticiones de un usuario al mismo servidor durante su sesión se llama…",
+      "opts": [
+        "Alta disponibilidad",
+        "Round Robin dinámico",
+        "Passive polling",
+        "Persistencia de sesión"
+      ],
+      "c": 3,
+      "exp": "Ejemplo típico: el carrito de la compra."
+    },
+    {
+      "id": "iv4-19",
+      "tipico": false,
+      "q": "¿Qué tipo de clúster busca ejecutar el mayor número de tareas en el menor tiempo?",
+      "opts": [
+        "Alto rendimiento (HPC)",
+        "Alta disponibilidad (HA)",
+        "Alta eficiencia (HT)",
+        "Balanceo de carga"
+      ],
+      "c": 2,
+      "exp": "High Throughput."
+    },
+    {
+      "id": "iv4-20",
+      "tipico": true,
+      "q": "El agente SNMP recibe las solicitudes en el puerto…",
+      "opts": [
+        "UDP 161",
+        "UDP 162",
+        "TCP 161",
+        "TCP 389"
+      ],
+      "c": 0,
+      "exp": "Las traps llegan al gestor por el 162."
+    },
+    {
+      "id": "iv4-21",
+      "tipico": true,
+      "q": "¿Qué comando SNMP usa el agente para avisar por su cuenta de un evento?",
+      "opts": [
+        "GET",
+        "SET",
+        "GETNEXT",
+        "TRAP"
+      ],
+      "c": 3,
+      "exp": "Es una comunicación asíncrona."
+    },
+    {
+      "id": "iv4-22",
+      "tipico": false,
+      "q": "La MIB se describe con la notación…",
+      "opts": [
+        "ASN.1",
+        "XML",
+        "JSON",
+        "GDMO"
+      ],
+      "c": 0,
+      "exp": "Abstract Syntax Notation One."
+    },
+    {
+      "id": "iv4-23",
+      "tipico": true,
+      "q": "La versión de SNMP que añade autenticación y cifrado es…",
+      "opts": [
+        "SNMPv1",
+        "SNMPv2c",
+        "SNMPv3",
+        "SNMPv2u"
+      ],
+      "c": 2,
+      "exp": "v1 y v2c usan la cadena de comunidad en texto plano."
+    },
+    {
+      "id": "iv4-24",
+      "tipico": false,
+      "q": "El protocolo de gestión de red basado en el modelo OSI (ITU-T X.700) es…",
+      "opts": [
+        "CMIP",
+        "LDAP",
+        "SNMP",
+        "ICMP"
+      ],
+      "c": 0,
+      "exp": "Common Management Information Protocol."
+    },
+    {
+      "id": "iv4-25",
+      "tipico": true,
+      "q": "tracert descubre los nodos del camino jugando con el campo…",
+      "opts": [
+        "Checksum TCP",
+        "Puerto de destino",
+        "Dirección MAC",
+        "TTL de la cabecera IP"
+      ],
+      "c": 3,
+      "exp": "Envía ICMP con TTL 1, 2, 3…; donde llega a 0, el nodo responde."
+    }
+  ]
+}

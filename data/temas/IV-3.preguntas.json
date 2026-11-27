@@ -1,0 +1,330 @@
+{
+  "tema": "IV-3",
+  "preguntas": [
+    {
+      "id": "iv3-01",
+      "tipico": true,
+      "q": "¿Qué agente almacena el correo entrante hasta que el usuario lo recoge?",
+      "opts": [
+        "MUA",
+        "MDA",
+        "MTA",
+        "DNS"
+      ],
+      "c": 1,
+      "exp": "El MDA (Mail Delivery Agent) es el buzón; el MTA transporta y el MUA es el cliente."
+    },
+    {
+      "id": "iv3-02",
+      "tipico": true,
+      "q": "Los MTA se comunican entre sí mediante el protocolo…",
+      "opts": [
+        "POP3",
+        "IMAP",
+        "MIME",
+        "SMTP"
+      ],
+      "c": 3,
+      "exp": "SMTP transporta el correo entre servidores; POP3 e IMAP sirven para recogerlo."
+    },
+    {
+      "id": "iv3-03",
+      "tipico": true,
+      "q": "¿Qué registro DNS indica los servidores de correo de un dominio y su prioridad?",
+      "opts": [
+        "A",
+        "SOA",
+        "CNAME",
+        "MX"
+      ],
+      "c": 3,
+      "exp": "El registro MX (Mail Exchange)."
+    },
+    {
+      "id": "iv3-04",
+      "tipico": true,
+      "q": "¿Cuál de estos puertos de SMTP es cifrado por defecto?",
+      "opts": [
+        "465",
+        "587",
+        "2525",
+        "25"
+      ],
+      "c": 0,
+      "exp": "465 y 25025 van cifrados; 25, 587 y 2525 no (587 puede usar STARTTLS)."
+    },
+    {
+      "id": "iv3-05",
+      "tipico": false,
+      "q": "Con STARTTLS en el puerto 587, ¿qué viaja en texto plano?",
+      "opts": [
+        "HELO/EHLO, MAIL FROM y RCPT TO antes de negociar TLS",
+        "Nada, todo va cifrado desde el principio",
+        "Solo el cuerpo del mensaje",
+        "Las credenciales de inicio de sesión"
+      ],
+      "c": 0,
+      "exp": "Hasta que se negocia TLS, los comandos iniciales son visibles."
+    },
+    {
+      "id": "iv3-06",
+      "tipico": true,
+      "q": "Un código de respuesta SMTP que empieza por 4 indica…",
+      "opts": [
+        "Respuesta positiva intermedia",
+        "Respuesta positiva preliminar",
+        "Finalización negativa permanente",
+        "Finalización negativa temporal"
+      ],
+      "c": 3,
+      "exp": "4xx: rechazado pero se puede reintentar; 5xx: rechazo permanente."
+    },
+    {
+      "id": "iv3-07",
+      "tipico": false,
+      "q": "Tras enviar el comando DATA, el servidor SMTP responde con el código…",
+      "opts": [
+        "220",
+        "250",
+        "354",
+        "221"
+      ],
+      "c": 2,
+      "exp": "354: empieza a escribir el correo y termina con <CRLF>.<CRLF>."
+    },
+    {
+      "id": "iv3-08",
+      "tipico": true,
+      "q": "El comando que, además de saludar, pide al servidor la lista de extensiones es…",
+      "opts": [
+        "HELO",
+        "VRFY",
+        "EHLO",
+        "EXPN"
+      ],
+      "c": 2,
+      "exp": "EHLO (RFC 1651) sustituye a HELO y devuelve las extensiones."
+    },
+    {
+      "id": "iv3-09",
+      "tipico": false,
+      "q": "La norma SMTP actualmente en vigor es el…",
+      "opts": [
+        "RFC 5321",
+        "RFC 822",
+        "RFC 2821",
+        "RFC 821"
+      ],
+      "c": 0,
+      "exp": "821 → 2821 → 5321. El RFC 5322 regula el formato del mensaje."
+    },
+    {
+      "id": "iv3-10",
+      "tipico": true,
+      "q": "¿Qué mecanismo publica en el DNS los servidores autorizados a enviar correo de un dominio?",
+      "opts": [
+        "IMAP",
+        "MIME",
+        "SPF",
+        "ODMR"
+      ],
+      "c": 2,
+      "exp": "SPF (Sender Policy Framework) protege contra la falsificación del remitente."
+    },
+    {
+      "id": "iv3-11",
+      "tipico": true,
+      "q": "Puerto de POP3 sin cifrar:",
+      "opts": [
+        "143",
+        "110",
+        "995",
+        "993"
+      ],
+      "c": 1,
+      "exp": "POP3: 110 y 995 cifrado. IMAP: 143 y 993."
+    },
+    {
+      "id": "iv3-12",
+      "tipico": true,
+      "q": "Orden correcta de los estados de una sesión POP3:",
+      "opts": [
+        "Transacción, autorización, actualización",
+        "Autorización, transacción, actualización",
+        "Autorización, actualización, transacción",
+        "Actualización, autorización, transacción"
+      ],
+      "c": 1,
+      "exp": "Los mensajes marcados con DELE se borran en la fase de Actualización."
+    },
+    {
+      "id": "iv3-13",
+      "tipico": false,
+      "q": "En POP3, el comando que descarga un mensaje concreto es…",
+      "opts": [
+        "RETR",
+        "STAT",
+        "LIST",
+        "TOP"
+      ],
+      "c": 0,
+      "exp": "RETR descarga; LIST lista; STAT da número y tamaño; TOP da cabecera y n líneas."
+    },
+    {
+      "id": "iv3-14",
+      "tipico": false,
+      "q": "Si una sesión POP3 termina sin enviar QUIT…",
+      "opts": [
+        "No se borra ningún mensaje",
+        "Se borran los mensajes marcados con DELE",
+        "Se borran todos los mensajes",
+        "Se reenvían los mensajes al MTA"
+      ],
+      "c": 0,
+      "exp": "Sin QUIT no se entra en Actualización y no se borra nada."
+    },
+    {
+      "id": "iv3-15",
+      "tipico": true,
+      "q": "Una ventaja de IMAP sobre POP3 es que…",
+      "opts": [
+        "Permite carpetas en el servidor y ver mensajes sin descargarlos",
+        "Sirve también para enviar correo",
+        "Borra siempre los mensajes del servidor",
+        "No necesita autenticación"
+      ],
+      "c": 0,
+      "exp": "IMAP mantiene el correo en el servidor y sincroniza varios clientes."
+    },
+    {
+      "id": "iv3-16",
+      "tipico": true,
+      "q": "¿Qué permite cifrar y firmar digitalmente los correos con criptografía asimétrica?",
+      "opts": [
+        "MIME",
+        "POP3",
+        "SMTP",
+        "S/MIME"
+      ],
+      "c": 3,
+      "exp": "S/MIME es la versión segura de MIME."
+    },
+    {
+      "id": "iv3-17",
+      "tipico": false,
+      "q": "MIME sirve para…",
+      "opts": [
+        "Cifrar el correo",
+        "Enviar adjuntos no textuales y caracteres no ASCII",
+        "Recibir correo",
+        "Resolver nombres de dominio"
+      ],
+      "c": 1,
+      "exp": "Multipurpose Internet Mail Extensions, de 1991."
+    },
+    {
+      "id": "iv3-18",
+      "tipico": true,
+      "q": "Usar un MTA como puente para mandar spam desde IP bloqueadas es un ataque de…",
+      "opts": [
+        "DNS Sinkhole",
+        "Denegación de servicio",
+        "Phishing",
+        "Open Relay"
+      ],
+      "c": 3,
+      "exp": "Se evita permitiendo enviar solo a clientes autenticados."
+    },
+    {
+      "id": "iv3-19",
+      "tipico": false,
+      "q": "Según el CCN-CERT, los servidores de correo expuestos a Internet deben ubicarse en…",
+      "opts": [
+        "La red de usuarios",
+        "La nube pública",
+        "La DMZ",
+        "El mismo segmento que las bases de datos"
+      ],
+      "c": 2,
+      "exp": "La DMZ, aislada con cortafuegos."
+    },
+    {
+      "id": "iv3-20",
+      "tipico": false,
+      "q": "¿Cuál NO es una herramienta de monitorización citada en el tema?",
+      "opts": [
+        "Nagios",
+        "Postfix",
+        "Pandora FMS",
+        "Check_MK"
+      ],
+      "c": 1,
+      "exp": "Postfix es un MTA (servidor de correo)."
+    },
+    {
+      "id": "iv3-21",
+      "tipico": true,
+      "q": "¿Qué diferencia a Docker de Kubernetes?",
+      "opts": [
+        "Docker orquesta clústeres y Kubernetes ejecuta contenedores en un nodo",
+        "Kubernetes solo funciona en Windows",
+        "Son el mismo producto con dos nombres",
+        "Docker es un runtime de contenedores y Kubernetes un orquestador de clúster"
+      ],
+      "c": 3,
+      "exp": "Docker se ejecuta en un nodo; Kubernetes coordina contenedores en un clúster."
+    },
+    {
+      "id": "iv3-22",
+      "tipico": false,
+      "q": "Un contenedor, frente a una máquina virtual…",
+      "opts": [
+        "Necesita su propio sistema operativo completo",
+        "Es siempre más pesado",
+        "Comparte el kernel del sistema operativo anfitrión",
+        "No se puede mover a otra máquina"
+      ],
+      "c": 2,
+      "exp": "Por eso es una virtualización muy ligera."
+    },
+    {
+      "id": "iv3-23",
+      "tipico": true,
+      "q": "En Kubernetes, la unidad más pequeña que agrupa uno o varios contenedores es el…",
+      "opts": [
+        "Namespace",
+        "Pod",
+        "Deployment",
+        "ReplicaSet"
+      ],
+      "c": 1,
+      "exp": "El pod es la unidad básica."
+    },
+    {
+      "id": "iv3-24",
+      "tipico": false,
+      "q": "¿Qué objeto de Kubernetes garantiza que haya un pod en cada nodo del clúster?",
+      "opts": [
+        "StatefulSet",
+        "CronJob",
+        "DaemonSet",
+        "ConfigMap"
+      ],
+      "c": 2,
+      "exp": "DaemonSet; útil para logs o monitorización."
+    },
+    {
+      "id": "iv3-25",
+      "tipico": true,
+      "q": "Lanzar la nueva versión primero a un pequeño porcentaje de servidores se llama despliegue…",
+      "opts": [
+        "Canary",
+        "Azul-verde",
+        "Monolítico",
+        "Rolling back"
+      ],
+      "c": 0,
+      "exp": "El canario de las minas: si falla, se revierte."
+    }
+  ]
+}

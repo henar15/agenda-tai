@@ -1,0 +1,81 @@
+{
+  "tema": "IV-4",
+  "ramas": [
+    {
+      "t": "Esquemas de red",
+      "e": "🛡️",
+      "items": [
+        "Básico: red interna + router (**el más inseguro**)",
+        "**DMZ**: subred entre red interna e Internet",
+        "DMZ: entra desde fuera, **no sale a la red interna**",
+        "Dos routers: el **exterior** abre, el **interior** solo sale",
+        "**PAT**: una IP pública para muchas máquinas"
+      ]
+    },
+    {
+      "t": "Integración de sistemas",
+      "e": "🔗",
+      "items": [
+        "3 niveles: **red, datos y servicios**",
+        "Mínimos: **enrutamiento, DHCP y DNS**",
+        "**MAC**: 48 bits · **ARP** IP→MAC · **RARP** MAC→IP",
+        "**ipconfig** (Windows) · **ifconfig** (Linux)",
+        "**Samba** Win↔Linux · **NFS** Linux · **SSH** mejor que Telnet"
+      ]
+    },
+    {
+      "t": "Usuarios y dispositivos",
+      "e": "👥",
+      "items": [
+        "Windows: cuentas con **SID**, dominio con **Controlador**",
+        "**WSUS**: actualizaciones centralizadas",
+        "Linux: **root 0:0**, usuarios y de servicio",
+        "**/etc/passwd** · **/etc/shadow** · **/etc/group**",
+        "Discos: Administrador de discos · **fdisk, parted, GParted**"
+      ]
+    },
+    {
+      "t": "Balanceo de carga",
+      "e": "⚖️",
+      "items": [
+        "Reparte peticiones entre servidores (capas **4 a 7**)",
+        "**Round Robin** · **Least Connections** · **IP Hash**",
+        "**Persistencia de sesión**: siempre el mismo servidor",
+        "Por **destino** (orden) o por **paquete** (equitativo)",
+        "Métodos: **MAT, NAT** y **puerta de enlace TCP**"
+      ]
+    },
+    {
+      "t": "Clústeres",
+      "e": "🫂",
+      "items": [
+        "Varios **nodos** que actúan como uno",
+        "Tipos: **HPC, HA, HT** y **balanceo de carga**",
+        "HA: sin **punto único de fallo**",
+        "Linux: **PVM**, **MPI**, openMosix"
+      ]
+    },
+    {
+      "t": "Monitorización y protocolos",
+      "e": "📡",
+      "items": [
+        "NMS: **Nagios, Zabbix, Pandora FMS, SolarWinds**",
+        "**Wireshark** (antes Ethereal): analiza paquetes",
+        "**CMIP** (OSI, X.700) · **LDAP** (directorio)",
+        "**SNMP**: NMS + agentes + **MIB** (ASN.1)",
+        "**GET, SET, TRAP** · UDP **161** / **162**",
+        "v1/v2c: **public/private** en claro · **v3** cifra (USM)"
+      ]
+    },
+    {
+      "t": "Herramientas de red",
+      "e": "🔍",
+      "items": [
+        "**Nmap**: escanea puertos y detecta el SO",
+        "Interfaz gráfica: **Zenmap**",
+        "**tracert** (Windows) / **traceroute** (Linux)",
+        "Usa **ICMP** y el **TTL** para ver cada salto"
+      ]
+    }
+  ]
+}
