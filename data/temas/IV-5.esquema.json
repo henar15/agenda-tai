@@ -1,0 +1,85 @@
+{
+  "tema": "IV-5",
+  "ramas": [
+    {
+      "t": "Conceptos básicos",
+      "e": "🛡️",
+      "items": [
+        "Pilares: **disponibilidad, integridad, confidencialidad**",
+        "No repudio en **origen** y en **destino**",
+        "Activo, vulnerabilidad, amenaza, impacto",
+        "**Riesgo = Probabilidad × Impacto**",
+        "Medidas: preventivas, detectivas, correctivas"
+      ]
+    },
+    {
+      "t": "Gestión del riesgo",
+      "e": "⚖️",
+      "items": [
+        "Riesgo: **disminuir, asumir o transferir**",
+        "Análisis **cuantitativo** (cifras) o **cualitativo**",
+        "**SoA**: controles del anexo A de ISO 27001",
+        "**DMZ**: servidores públicos aislados",
+        "Pentest: caja **negra, blanca y gris**"
+      ]
+    },
+    {
+      "t": "Ataques y malware",
+      "e": "🦠",
+      "items": [
+        "Virus (anfitrión) · **gusano** (sin anfitrión) · troyano",
+        "**Ransomware** cifra y pide rescate",
+        "Phishing · **smishing** · **vishing** · **whaling**",
+        "DoS / **DDoS** con botnets",
+        "MitM, **pharming**, spoofing (IP, DNS, ARP)",
+        "Web: **SQLi, XSS, CSRF** (tokens + SameSite)"
+      ]
+    },
+    {
+      "t": "Criptografía",
+      "e": "🔑",
+      "items": [
+        "**Simétrica**: 1 clave (DES, 3DES, **AES**, RC4)",
+        "**Asimétrica**: pública + privada (**RSA**, DH, DSA, ECC)",
+        "**Híbrida**: PGP y GnuPG",
+        "Hash: **MD5 128** · **SHA-1 160** bits",
+        "Firma: CAdES · XAdES · **PAdES** · ASiC",
+        "Certificados DV/OV/EV · revocados en **CRL**"
+      ]
+    },
+    {
+      "t": "CPD (TIA-942)",
+      "e": "🏢",
+      "items": [
+        "Tier I **99,671** · II **99,741** %",
+        "Tier III **99,982** · IV **99,995** %",
+        "Cuenta el subsistema con el **Tier más bajo**",
+        "Sala: **18-24 °C** y humedad **40-60 %**",
+        "SAI **online** = doble conversión",
+        "PUE = consumo total / consumo IT"
+      ]
+    },
+    {
+      "t": "Incidencias e ITIL",
+      "e": "🎫",
+      "items": [
+        "**SLA** = acuerdo; SLO = objetivos medibles",
+        "Prioridad = **urgencia + impacto**",
+        "Escalado **funcional** y **jerárquico**",
+        "ITIL: estrategia, diseño, transición, operación, mejora",
+        "**Service Desk** = punto único de contacto",
+        "Incidente ≠ **problema** (la causa)"
+      ]
+    },
+    {
+      "t": "Control remoto",
+      "e": "🖥️",
+      "items": [
+        "Gestión **en banda** vs **fuera de banda** (IPMI, AMT)",
+        "**Telnet 23** · **SSH 22** · RDP **3389**",
+        "**Wake on LAN**: paquete mágico con la MAC",
+        "**PXE**: arranque por red con DHCP + TFTP"
+      ]
+    }
+  ]
+}

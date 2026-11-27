@@ -370,8 +370,9 @@
   "orden": 5,
   "titulo": "Seguridad de los sistemas de información, criptografía, firma digital, CPD e incidencias",
   "semana": "2027-03-22",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
+  "esquema": true,
   "pags": 228,
   "pagIni": 3
  },

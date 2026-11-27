@@ -1,0 +1,330 @@
+{
+  "tema": "IV-5",
+  "preguntas": [
+    {
+      "id": "iv5-01",
+      "tipico": true,
+      "q": "¿Cuáles son las tres dimensiones básicas de la seguridad de la información?",
+      "opts": [
+        "Disponibilidad, integridad y confidencialidad",
+        "Autenticación, autorización y auditoría",
+        "Integridad, trazabilidad y no repudio",
+        "Confidencialidad, cifrado y copia de seguridad"
+      ],
+      "c": 0,
+      "exp": "Son los 3 pilares (ISO/IEC 27002)."
+    },
+    {
+      "id": "iv5-02",
+      "tipico": true,
+      "q": "El nivel de riesgo se calcula como…",
+      "opts": [
+        "Amenaza + Vulnerabilidad",
+        "Probabilidad × Impacto",
+        "Impacto / Vulnerabilidad",
+        "Activo × Criticidad"
+      ],
+      "c": 1,
+      "exp": "Riesgo = Amenaza × Vulnerabilidad × Impacto = Probabilidad × Impacto."
+    },
+    {
+      "id": "iv5-03",
+      "tipico": false,
+      "q": "Un sistema de detección de intrusos (IDS) es una medida…",
+      "opts": [
+        "Preventiva",
+        "Correctiva",
+        "Detectiva",
+        "Disuasoria"
+      ],
+      "c": 2,
+      "exp": "Las detectivas actúan durante el ataque: logs, auditoría, IDS."
+    },
+    {
+      "id": "iv5-04",
+      "tipico": true,
+      "q": "Contratar una póliza de seguros frente a un riesgo es…",
+      "opts": [
+        "Asumir el riesgo",
+        "Eliminar el riesgo",
+        "Disminuir el riesgo",
+        "Transferir el riesgo"
+      ],
+      "c": 3,
+      "exp": "Transferir: a una empresa especializada o a un seguro."
+    },
+    {
+      "id": "iv5-05",
+      "tipico": false,
+      "q": "En un pentest de caja gris el evaluador…",
+      "opts": [
+        "No tiene ninguna información",
+        "Tiene información limitada, como un empleado",
+        "Conoce todo el sistema",
+        "Solo analiza la seguridad física"
+      ],
+      "c": 1,
+      "exp": "Caja gris simula a un empleado con datos limitados."
+    },
+    {
+      "id": "iv5-06",
+      "tipico": true,
+      "q": "¿Qué malware NO necesita un archivo anfitrión para reproducirse?",
+      "opts": [
+        "Gusano",
+        "Virus",
+        "Troyano",
+        "Rootkit"
+      ],
+      "c": 0,
+      "exp": "El gusano se propaga solo; el virus necesita anfitrión y el troyano no se replica."
+    },
+    {
+      "id": "iv5-07",
+      "tipico": true,
+      "q": "El phishing realizado mediante llamadas telefónicas se llama…",
+      "opts": [
+        "Smishing",
+        "Whaling",
+        "Vishing",
+        "Pharming"
+      ],
+      "c": 2,
+      "exp": "Vishing = voice + phishing."
+    },
+    {
+      "id": "iv5-08",
+      "tipico": false,
+      "q": "El pharming redirige a webs falsas manipulando…",
+      "opts": [
+        "Las cookies",
+        "El DNS o el archivo hosts",
+        "La tabla ARP",
+        "El certificado SSL"
+      ],
+      "c": 1,
+      "exp": "Pharming explota la resolución de nombres."
+    },
+    {
+      "id": "iv5-09",
+      "tipico": true,
+      "q": "Para evitar CSRF se usan…",
+      "opts": [
+        "Tokens CSRF y el atributo SameSite",
+        "Cifrado RC4",
+        "Contraseñas más largas",
+        "El puerto 23"
+      ],
+      "c": 0,
+      "exp": "Tokens únicos por petición y cookies SameSite."
+    },
+    {
+      "id": "iv5-10",
+      "tipico": true,
+      "q": "¿Cuál de estos algoritmos es ASIMÉTRICO?",
+      "opts": [
+        "AES",
+        "Blowfish",
+        "3DES",
+        "RSA"
+      ],
+      "c": 3,
+      "exp": "AES, Blowfish y 3DES son simétricos."
+    },
+    {
+      "id": "iv5-11",
+      "tipico": true,
+      "q": "AES trabaja con claves de…",
+      "opts": [
+        "56 bits",
+        "64 o 112 bits",
+        "128, 192 o 256 bits",
+        "Solo 512 bits"
+      ],
+      "c": 2,
+      "exp": "Bloques de 128 bits y claves de 128, 192 o 256."
+    },
+    {
+      "id": "iv5-12",
+      "tipico": false,
+      "q": "La longitud efectiva de la clave de 3DES es de…",
+      "opts": [
+        "56 bits",
+        "112 bits",
+        "168 bits",
+        "256 bits"
+      ],
+      "c": 1,
+      "exp": "Usa 168 bits (3×56), pero su eficacia es de 112. Trampa: 168."
+    },
+    {
+      "id": "iv5-13",
+      "tipico": true,
+      "q": "Para que solo el destinatario pueda leer un mensaje, el emisor lo cifra con…",
+      "opts": [
+        "La clave pública del destinatario",
+        "Su propia clave privada",
+        "Su propia clave pública",
+        "La clave privada del destinatario"
+      ],
+      "c": 0,
+      "exp": "Cifrar con la pública del destinatario da confidencialidad."
+    },
+    {
+      "id": "iv5-14",
+      "tipico": false,
+      "q": "PGP y GnuPG son ejemplos de criptografía…",
+      "opts": [
+        "Simétrica",
+        "Asimétrica pura",
+        "Híbrida",
+        "Hash"
+      ],
+      "c": 2,
+      "exp": "Combinan asimétrica (clave) y simétrica (mensaje)."
+    },
+    {
+      "id": "iv5-15",
+      "tipico": true,
+      "q": "¿Cuántos bits produce SHA-1?",
+      "opts": [
+        "128",
+        "160",
+        "256",
+        "384"
+      ],
+      "c": 1,
+      "exp": "MD5: 128; SHA-1: 160."
+    },
+    {
+      "id": "iv5-16",
+      "tipico": false,
+      "q": "DSA es un algoritmo que sirve para…",
+      "opts": [
+        "Cifrar y firmar",
+        "Solo cifrar",
+        "Generar hashes",
+        "Solo firmar"
+      ],
+      "c": 3,
+      "exp": "DSA firma pero no cifra."
+    },
+    {
+      "id": "iv5-17",
+      "tipico": false,
+      "q": "El formato de firma avanzada para documentos PDF es…",
+      "opts": [
+        "XAdES",
+        "PAdES",
+        "CAdES",
+        "ASiC"
+      ],
+      "c": 1,
+      "exp": "PAdES = PDF Advanced Electronic Signature."
+    },
+    {
+      "id": "iv5-18",
+      "tipico": true,
+      "q": "El Centro Criptológico Nacional está adscrito al…",
+      "opts": [
+        "Ministerio del Interior",
+        "INCIBE",
+        "CNI",
+        "Ministerio de Defensa directamente"
+      ],
+      "c": 2,
+      "exp": "El CCN forma parte del CNI (RD 421/2004)."
+    },
+    {
+      "id": "iv5-19",
+      "tipico": true,
+      "q": "¿Qué disponibilidad tiene un CPD Tier III?",
+      "opts": [
+        "99,671 %",
+        "99,741 %",
+        "99,995 %",
+        "99,982 %"
+      ],
+      "c": 3,
+      "exp": "Tier III: 99,982 %, mantenimiento concurrente."
+    },
+    {
+      "id": "iv5-20",
+      "tipico": false,
+      "q": "Un CPD con todos los subsistemas Tier IV salvo el eléctrico, que es Tier II, se clasifica como…",
+      "opts": [
+        "Tier II",
+        "Tier III",
+        "Tier IV",
+        "No se clasifica"
+      ],
+      "c": 0,
+      "exp": "La clasificación global es la del subsistema más bajo."
+    },
+    {
+      "id": "iv5-21",
+      "tipico": true,
+      "q": "¿Qué tipo de SAI ofrece la mayor protección mediante doble conversión?",
+      "opts": [
+        "Offline",
+        "Línea interactiva",
+        "Online",
+        "Standby"
+      ],
+      "c": 2,
+      "exp": "El online convierte a continua y otra vez a alterna."
+    },
+    {
+      "id": "iv5-22",
+      "tipico": true,
+      "q": "Según ITIL, la causa de uno o varios incidentes es…",
+      "opts": [
+        "Un problema",
+        "Un cambio",
+        "Un evento",
+        "Una petición de servicio"
+      ],
+      "c": 0,
+      "exp": "Problema = causa (o posible causa) de varios incidentes."
+    },
+    {
+      "id": "iv5-23",
+      "tipico": false,
+      "q": "¿Cuál NO es una fase del ciclo de vida de ITIL?",
+      "opts": [
+        "Estrategia",
+        "Transición",
+        "Mejora continua",
+        "Auditoría"
+      ],
+      "c": 3,
+      "exp": "Son estrategia, diseño, transición, operación y mejora continua."
+    },
+    {
+      "id": "iv5-24",
+      "tipico": true,
+      "q": "El paquete mágico de Wake on LAN contiene 6 bytes FF seguidos de…",
+      "opts": [
+        "La IP del equipo 4 veces",
+        "16 repeticiones de la MAC",
+        "El nombre del equipo",
+        "Un token cifrado"
+      ],
+      "c": 1,
+      "exp": "102 bytes: 6×FF + 16×MAC."
+    },
+    {
+      "id": "iv5-25",
+      "tipico": false,
+      "q": "PXE utiliza para localizar el servidor y descargar el arranque…",
+      "opts": [
+        "DNS y FTP",
+        "DHCP y TFTP",
+        "ARP y HTTP",
+        "SNMP y SSH"
+      ],
+      "c": 1,
+      "exp": "DHCP localiza el servidor; TFTP descarga el programa de arranque."
+    }
+  ]
+}

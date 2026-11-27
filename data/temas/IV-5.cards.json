@@ -1,0 +1,711 @@
+{
+  "tema": "IV-5",
+  "cards": [
+    {
+      "id": "iv5c1",
+      "n": "1",
+      "e": "🛡️",
+      "t": true,
+      "q": "Las 3 dimensiones de la seguridad de la información (ISO/IEC 27002)",
+      "a": "**Disponibilidad**, **integridad** y **confidencialidad**",
+      "h": "Las siglas en inglés forman CIA"
+    },
+    {
+      "id": "iv5c2",
+      "n": "2",
+      "e": "✅",
+      "t": false,
+      "q": "¿Qué es la disponibilidad?",
+      "a": "Que los usuarios autorizados puedan **acceder a la información cuando la necesitan**"
+    },
+    {
+      "id": "iv5c3",
+      "n": "3",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es la integridad?",
+      "a": "Que la información sea **precisa y completa**, sin modificaciones no autorizadas ni errores"
+    },
+    {
+      "id": "iv5c4",
+      "n": "4",
+      "e": "🔒",
+      "t": false,
+      "q": "¿Qué es la confidencialidad?",
+      "a": "Que solo accede a la información el **personal autorizado** (need-to-know)"
+    },
+    {
+      "id": "iv5c5",
+      "n": "5",
+      "e": "✍️",
+      "t": false,
+      "q": "No repudio en origen y en destino",
+      "a": "**Origen**: el emisor no puede negar que envió el mensaje. **Destino**: el receptor no puede negar que lo recibió",
+      "h": "Importante en comercio electrónico y temas legales"
+    },
+    {
+      "id": "iv5c6",
+      "n": "6",
+      "e": "💎",
+      "t": false,
+      "q": "¿Qué es un activo?",
+      "a": "Un **bien que hay que proteger**: personas, hardware, software e información"
+    },
+    {
+      "id": "iv5c7",
+      "n": "7",
+      "e": "🕳️",
+      "t": false,
+      "q": "Vulnerabilidad vs amenaza",
+      "a": "**Vulnerabilidad**: deficiencia de un activo que puede ser explotada. **Amenaza**: elemento o acción capaz de atentar contra la seguridad (solo existe si hay una vulnerabilidad)",
+      "h": "Ej. vulnerabilidad: mala elección de contraseñas"
+    },
+    {
+      "id": "iv5c8",
+      "n": "8",
+      "e": "💥",
+      "t": false,
+      "q": "¿Qué es el impacto?",
+      "a": "La **magnitud de las consecuencias** cuando una amenaza explota una vulnerabilidad (pérdida de dinero, sanciones, daño a la imagen…)"
+    },
+    {
+      "id": "iv5c9",
+      "n": "9",
+      "e": "🧮",
+      "t": true,
+      "q": "Fórmula del nivel de riesgo",
+      "a": "**Riesgo = Amenaza × Vulnerabilidad × Impacto = Probabilidad × Impacto**",
+      "h": "Probabilidad = Amenaza × Vulnerabilidad"
+    },
+    {
+      "id": "iv5c10",
+      "n": "10",
+      "e": "⏱️",
+      "t": true,
+      "q": "Las 3 clases de medidas de seguridad según el momento",
+      "a": "**Preventivas** (antes: política, formación, cifrado), **detectivas** (durante: logs, IDS) y **correctivas** (después: copias, plan de contingencias)"
+    },
+    {
+      "id": "iv5c11",
+      "n": "11",
+      "e": "⚖️",
+      "t": true,
+      "q": "Opciones ante un riesgo tras el análisis",
+      "a": "**Disminuirlo** (controles), **asumirlo** o **transferirlo** (empresa especializada o seguro). El riesgo **nunca se elimina del todo**"
+    },
+    {
+      "id": "iv5c12",
+      "n": "12",
+      "e": "📊",
+      "t": false,
+      "q": "Análisis de riesgos cuantitativo vs cualitativo",
+      "a": "**Cuantitativo**: cifras concretas (coste económico). **Cualitativo**: términos subjetivos (muy alto, alto, medio, bajo…)"
+    },
+    {
+      "id": "iv5c13",
+      "n": "13",
+      "e": "📄",
+      "t": false,
+      "q": "¿Qué es la SoA?",
+      "a": "**Declaración de aplicabilidad**: documento que enumera los controles del anexo A de la **ISO/IEC 27001**"
+    },
+    {
+      "id": "iv5c14",
+      "n": "14",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Qué es una DMZ o zona neutra?",
+      "a": "Una red entre dos redes para **proteger la red interna**; ahí se ponen los **servidores accesibles desde el exterior**",
+      "h": "Con 2 enrutadores es más segura; con 1 de tres patas es más barata"
+    },
+    {
+      "id": "iv5c15",
+      "n": "15",
+      "e": "🔍",
+      "t": false,
+      "q": "¿Qué es el análisis forense?",
+      "a": "Investigación detallada para **detectar y documentar** el curso, motivos, culpables y consecuencias de un incidente; suele servir como **prueba ante tribunales**"
+    },
+    {
+      "id": "iv5c16",
+      "n": "16",
+      "e": "🧪",
+      "t": true,
+      "q": "Tipos de test de intrusión (pentest)",
+      "a": "**Caja negra** (sin información), **caja blanca** (conocimiento total) y **caja gris** (como un empleado con información limitada)"
+    },
+    {
+      "id": "iv5c17",
+      "n": "17",
+      "e": "📡",
+      "t": false,
+      "q": "Los 4 tipos de ataques según su efecto",
+      "a": "**Interrupción**, **intercepción**, **modificación** y **fabricación**",
+      "h": "Fabricación: crear algo falso que parece auténtico"
+    },
+    {
+      "id": "iv5c18",
+      "n": "18",
+      "e": "🎩",
+      "t": false,
+      "q": "Black hat, white hat y grey hat",
+      "a": "**Black hat**: ciberdelincuentes. **White hat**: hackers éticos que notifican fallos. **Grey hat**: su ética varía según el encargo"
+    },
+    {
+      "id": "iv5c19",
+      "n": "19",
+      "e": "👃",
+      "t": false,
+      "q": "¿Qué hace un sniffer?",
+      "a": "Analiza el tráfico de la red para capturar información; usa el **modo promiscuo** de la tarjeta de red"
+    },
+    {
+      "id": "iv5c20",
+      "n": "20",
+      "e": "💉",
+      "t": false,
+      "q": "¿Qué es la inyección SQL?",
+      "a": "Meter código SQL en una entrada **no validada** para ver, modificar o borrar datos de la base de datos"
+    },
+    {
+      "id": "iv5c21",
+      "n": "21",
+      "e": "🎣",
+      "t": true,
+      "q": "Variantes del phishing",
+      "a": "**Smishing** (SMS), **vishing** (llamadas de voz) y **whaling** (contra altos cargos, \"peces gordos\")"
+    },
+    {
+      "id": "iv5c22",
+      "n": "22",
+      "e": "🚪",
+      "t": false,
+      "q": "Tailgating o piggybacking",
+      "a": "Colarse **detrás de una persona autorizada** para entrar físicamente en una zona restringida"
+    },
+    {
+      "id": "iv5c23",
+      "n": "23",
+      "e": "🧲",
+      "t": false,
+      "q": "Baiting, quid pro quo y pretexto",
+      "a": "**Baiting**: cebo tentador (USB infectado). **Quid pro quo**: algo a cambio de información. **Pretexto**: historia falsa para obtener datos"
+    },
+    {
+      "id": "iv5c24",
+      "n": "24",
+      "e": "💧",
+      "t": false,
+      "q": "Watering hole y shoulder surfing",
+      "a": "**Watering hole**: infectar webs que visita la víctima. **Shoulder surfing**: mirar por encima del hombro para ver contraseñas"
+    },
+    {
+      "id": "iv5c25",
+      "n": "25",
+      "e": "🌊",
+      "t": false,
+      "q": "DoS vs DDoS",
+      "a": "**DoS**: saturar un recurso con peticiones. **DDoS**: lo mismo desde **muchos dispositivos** a la vez, normalmente una **botnet**"
+    },
+    {
+      "id": "iv5c26",
+      "n": "26",
+      "e": "🦠",
+      "t": true,
+      "q": "Virus vs gusano",
+      "a": "El **virus** necesita un **archivo anfitrión**; el **gusano** se reproduce **sin anfitrión** y se propaga por la red"
+    },
+    {
+      "id": "iv5c27",
+      "n": "27",
+      "e": "🐴",
+      "t": false,
+      "q": "¿Qué es un troyano?",
+      "a": "Programa **disfrazado de aplicación útil** que hace acciones maliciosas; **no se replica** por sí mismo (puede abrir puertas traseras o ser keylogger)"
+    },
+    {
+      "id": "iv5c28",
+      "n": "28",
+      "e": "💰",
+      "t": true,
+      "q": "¿Qué es el ransomware?",
+      "a": "Malware que **cifra los datos** y pide un **rescate** para desbloquearlos"
+    },
+    {
+      "id": "iv5c29",
+      "n": "29",
+      "e": "🕵️",
+      "t": false,
+      "q": "Spyware y adware",
+      "a": "**Spyware**: recoge información del usuario sin su consentimiento. **Adware**: muestra **publicidad intrusiva**"
+    },
+    {
+      "id": "iv5c30",
+      "n": "30",
+      "e": "🐛",
+      "t": false,
+      "q": "¿Qué es un rootkit?",
+      "a": "Conjunto de programas para que el atacante **no sea detectado**; sustituye archivos del sistema o instala un **módulo de kernel**"
+    },
+    {
+      "id": "iv5c31",
+      "n": "31",
+      "e": "🤖",
+      "t": false,
+      "q": "¿Qué es una botnet?",
+      "a": "Red de equipos infectados (**zombis**) controlados por un atacante"
+    },
+    {
+      "id": "iv5c32",
+      "n": "32",
+      "e": "🕴️",
+      "t": false,
+      "q": "¿Qué es un ataque Man-in-the-Middle?",
+      "a": "El atacante se pone **entre dos partes** que se comunican para capturar, leer o modificar el tráfico (p. ej. con **ARP spoofing**)"
+    },
+    {
+      "id": "iv5c33",
+      "n": "33",
+      "e": "🌾",
+      "t": false,
+      "q": "¿Qué es el pharming?",
+      "a": "Redirigir a webs falsas manipulando el **DNS** o el **archivo hosts**; busca **robar información**",
+      "h": "phishing + farming"
+    },
+    {
+      "id": "iv5c34",
+      "n": "34",
+      "e": "🎭",
+      "t": false,
+      "q": "Tipos de spoofing",
+      "a": "**IP spoofing** (falsea la IP origen), **DNS spoofing** (respuestas DNS falsas) y **ARP spoofing** (asocia su MAC a una IP legítima)"
+    },
+    {
+      "id": "iv5c35",
+      "n": "35",
+      "e": "🩸",
+      "t": false,
+      "q": "¿Qué es Heartbleed?",
+      "a": "Fallo de **OpenSSL** que permite **leer la memoria** de servidores y clientes (incluso claves privadas)"
+    },
+    {
+      "id": "iv5c36",
+      "n": "36",
+      "e": "📜",
+      "t": false,
+      "q": "¿Qué es XSS?",
+      "a": "**Cross-Site Scripting**: inyectar código (normalmente **JavaScript**) en una web para que lo ejecuten los visitantes. Puede ser **persistente** o **reflejado**",
+      "h": "La cookie HttpOnly ayuda a prevenirlo"
+    },
+    {
+      "id": "iv5c37",
+      "n": "37",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué es CSRF y cómo se evita?",
+      "a": "Hacer que un usuario autenticado envíe una **petición no deseada** a otra web. Se evita con **tokens CSRF** y el atributo de cookie **SameSite**"
+    },
+    {
+      "id": "iv5c38",
+      "n": "38",
+      "e": "🌊",
+      "t": false,
+      "q": "Cifrado en flujo vs por bloques",
+      "a": "**Flujo**: bit a bit. **Bloques**: el mensaje se divide en bloques de la misma longitud"
+    },
+    {
+      "id": "iv5c39",
+      "n": "39",
+      "e": "🔑",
+      "t": true,
+      "q": "¿Qué es la criptografía simétrica?",
+      "a": "Usa **una sola clave** que conocen emisor y receptor para cifrar y descifrar. Problema: **intercambiar la clave**"
+    },
+    {
+      "id": "iv5c40",
+      "n": "40",
+      "e": "📋",
+      "t": false,
+      "q": "Algoritmos simétricos",
+      "a": "**DES, 3DES, RC2, RC4, RC5, IDEA, AES, Blowfish, ChaCha20 y Twofish**"
+    },
+    {
+      "id": "iv5c41",
+      "n": "41",
+      "e": "🧓",
+      "t": true,
+      "q": "DES y 3DES",
+      "a": "**DES**: clave de **56 bits**, hoy inseguro. **3DES**: triple cifrado, clave de **168 bits** (eficacia de **112 bits**), bloques de **64 bits**"
+    },
+    {
+      "id": "iv5c42",
+      "n": "42",
+      "e": "🇧🇪",
+      "t": true,
+      "q": "Características de AES",
+      "a": "También llamado **Rijndael**; cifrado por **bloques de 128 bits** y claves de **128, 192 o 256 bits**"
+    },
+    {
+      "id": "iv5c43",
+      "n": "43",
+      "e": "💨",
+      "t": false,
+      "q": "RC4 y ChaCha20",
+      "a": "Ambos son cifrados de **flujo**. **RC4** se usó en WEP y TLS y hoy es inseguro; **ChaCha20** es sucesor de Salsa20 (RFC 7539)"
+    },
+    {
+      "id": "iv5c44",
+      "n": "44",
+      "e": "🗝️",
+      "t": false,
+      "q": "¿Qué es la criptografía asimétrica?",
+      "a": "Usa **dos claves**: **pública** (se reparte) y **privada** (solo la tiene el propietario)"
+    },
+    {
+      "id": "iv5c45",
+      "n": "45",
+      "e": "✉️",
+      "t": true,
+      "q": "¿Qué clave usar para cifrar y para firmar?",
+      "a": "**Confidencialidad**: se cifra con la **pública del destinatario**. **Firma/autenticación**: se cifra con la **privada del emisor**"
+    },
+    {
+      "id": "iv5c46",
+      "n": "46",
+      "e": "📋",
+      "t": false,
+      "q": "Algoritmos asimétricos",
+      "a": "**Diffie-Hellman** (acuerdo de claves), **RSA**, **ElGamal**, **DSA** y **curva elíptica (ECC)**"
+    },
+    {
+      "id": "iv5c47",
+      "n": "47",
+      "e": "🔢",
+      "t": false,
+      "q": "¿En qué se basa la seguridad de RSA y de ElGamal?",
+      "a": "**RSA**: en la **factorización** de números enteros. **ElGamal**: en el **logaritmo discreto**"
+    },
+    {
+      "id": "iv5c48",
+      "n": "48",
+      "e": "🔀",
+      "t": true,
+      "q": "¿Qué es la criptografía híbrida?",
+      "a": "Usa la **asimétrica para compartir la clave** y la **simétrica para cifrar el mensaje**. Ejemplos: **PGP** y **GnuPG**"
+    },
+    {
+      "id": "iv5c49",
+      "n": "49",
+      "e": "🇪🇸",
+      "t": true,
+      "q": "¿Qué es el CCN?",
+      "a": "El **Centro Criptológico Nacional**, adscrito al **CNI**, regulado por el **RD 421/2004**. Incluye el **CCN-CERT**"
+    },
+    {
+      "id": "iv5c50",
+      "n": "50",
+      "e": "🖋️",
+      "t": false,
+      "q": "¿Qué garantiza la firma digital?",
+      "a": "**Autenticación de origen**, **no repudio** e **integridad** del mensaje"
+    },
+    {
+      "id": "iv5c51",
+      "n": "51",
+      "e": "#️⃣",
+      "t": false,
+      "q": "¿Qué es una función hash?",
+      "a": "Transforma datos de cualquier longitud en una cadena de **longitud fija**; es **irreversible** y cualquier cambio altera el resultado"
+    },
+    {
+      "id": "iv5c52",
+      "n": "52",
+      "e": "📏",
+      "t": true,
+      "q": "Tamaños de MD5, SHA-1 y SHA-384",
+      "a": "**MD5**: **128 bits**. **SHA-1**: **160 bits**. **SHA-384** (familia SHA-2): **384 bits**"
+    },
+    {
+      "id": "iv5c53",
+      "n": "53",
+      "e": "✒️",
+      "t": false,
+      "q": "¿Para qué sirve DSA?",
+      "a": "Sirve para **firmar**, pero **no para cifrar**. Es estándar FIPS (DSS, FIPS 186)"
+    },
+    {
+      "id": "iv5c54",
+      "n": "54",
+      "e": "📑",
+      "t": true,
+      "q": "Formatos de firma avanzada",
+      "a": "**CAdES** (basado en CMS), **XAdES** (XML), **PAdES** (PDF) y **ASiC** (contenedor de varios documentos)",
+      "h": "XAdES: facturación electrónica"
+    },
+    {
+      "id": "iv5c55",
+      "n": "55",
+      "e": "🔐",
+      "t": false,
+      "q": "Protocolos seguros recomendados",
+      "a": "**SSH** en vez de Telnet, **SFTP/FTPS** para ficheros y **HTTPS** para la web"
+    },
+    {
+      "id": "iv5c56",
+      "n": "56",
+      "e": "🪪",
+      "t": false,
+      "q": "¿Qué es un certificado digital?",
+      "a": "Documento electrónico que, con una **PKI**, vincula una **clave pública** a una identidad; lo emite una **Autoridad de Certificación (CA)**"
+    },
+    {
+      "id": "iv5c57",
+      "n": "57",
+      "e": "🏷️",
+      "t": false,
+      "q": "Certificados DV, OV y EV",
+      "a": "**DV**: valida el dominio. **OV**: valida la organización. **EV**: validación extendida, la de más confianza (bancos, webs públicas)"
+    },
+    {
+      "id": "iv5c58",
+      "n": "58",
+      "e": "🚫",
+      "t": false,
+      "q": "¿Dónde se publican los certificados revocados?",
+      "a": "En la **CRL** (Certificate Revocation List)"
+    },
+    {
+      "id": "iv5c59",
+      "n": "59",
+      "e": "🌳",
+      "t": false,
+      "q": "Jerarquía de CA",
+      "a": "**CA raíz** (certificado autofirmado, casi siempre offline), **CA intermedias** y a veces **subordinadas**"
+    },
+    {
+      "id": "iv5c60",
+      "n": "60",
+      "e": "🎟️",
+      "t": false,
+      "q": "¿Qué es el Single Sign-On (SSO)?",
+      "a": "Autenticarse **una sola vez** para acceder a varios sistemas. Tipos: **E-SSO, Web-SSO, Kerberos, identidad federada y OpenID**"
+    },
+    {
+      "id": "iv5c61",
+      "n": "61",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Qué estándar regula el diseño de los CPD?",
+      "a": "La **TIA-942** (publicada en **2005**)"
+    },
+    {
+      "id": "iv5c62",
+      "n": "62",
+      "e": "🏗️",
+      "t": false,
+      "q": "Los 4 subsistemas de un CPD (TIA-942)",
+      "a": "**Telecomunicaciones**, **arquitectura**, **eléctrico** y **mecánico**"
+    },
+    {
+      "id": "iv5c63",
+      "n": "63",
+      "e": "🥇",
+      "t": true,
+      "q": "Disponibilidad de cada Tier",
+      "a": "**Tier I 99,671 %**, **Tier II 99,741 %**, **Tier III 99,982 %**, **Tier IV 99,995 %**"
+    },
+    {
+      "id": "iv5c64",
+      "n": "64",
+      "e": "🔧",
+      "t": false,
+      "q": "Nombre de cada Tier",
+      "a": "**I** básico, **II** componentes redundantes, **III** mantenimiento concurrente (**N+1**), **IV** tolerante a fallos (**2(N+1)**)"
+    },
+    {
+      "id": "iv5c65",
+      "n": "65",
+      "e": "📉",
+      "t": true,
+      "q": "Si un subsistema es Tier III y el resto Tier IV, ¿qué Tier tiene el CPD?",
+      "a": "**Tier III**: cuenta el subsistema con el **Tier más bajo**"
+    },
+    {
+      "id": "iv5c66",
+      "n": "66",
+      "e": "⚡",
+      "t": false,
+      "q": "¿Qué es el PUE?",
+      "a": "**Consumo eléctrico total del CPD / consumo de los equipos IT**"
+    },
+    {
+      "id": "iv5c67",
+      "n": "67",
+      "e": "🌡️",
+      "t": false,
+      "q": "Condiciones ambientales de la sala",
+      "a": "**18-24 °C** (nominal **21 °C**) y humedad relativa **40-60 %** (nominal **50 %**)"
+    },
+    {
+      "id": "iv5c68",
+      "n": "68",
+      "e": "🔥",
+      "t": false,
+      "q": "Sistemas fijos de extinción",
+      "a": "**Rociadores (sprinklers)** de tubería húmeda o seca, e **inundación total** con un **gas inerte** que desplaza el oxígeno"
+    },
+    {
+      "id": "iv5c69",
+      "n": "69",
+      "e": "🔋",
+      "t": true,
+      "q": "Tipos de SAI",
+      "a": "**Offline** (solo cortes), **línea interactiva** (también subidas y bajadas de tensión) y **online** (doble conversión, la mayor protección, uso profesional)"
+    },
+    {
+      "id": "iv5c70",
+      "n": "70",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué potencia debe tener un SAI?",
+      "a": "**Igual o superior al 150 %** de la potencia que consume la carga"
+    },
+    {
+      "id": "iv5c71",
+      "n": "71",
+      "e": "🚪",
+      "t": false,
+      "q": "¿Qué es un man-trap?",
+      "a": "Esclusa de **dos puertas**: la primera debe cerrarse antes de que se abra la segunda. Evita colarse detrás de otro"
+    },
+    {
+      "id": "iv5c72",
+      "n": "72",
+      "e": "🎫",
+      "t": false,
+      "q": "Incidencia y SLA",
+      "a": "**Incidencia**: evento anómalo que afecta al funcionamiento normal. **SLA**: acuerdo de nivel de servicio (contrato); los **SLO** son sus objetivos medibles"
+    },
+    {
+      "id": "iv5c73",
+      "n": "73",
+      "e": "🧭",
+      "t": false,
+      "q": "¿De qué depende la prioridad de una incidencia?",
+      "a": "De la **urgencia** y del **impacto** (usuarios afectados y criticidad)"
+    },
+    {
+      "id": "iv5c74",
+      "n": "74",
+      "e": "📈",
+      "t": false,
+      "q": "Escalado funcional vs jerárquico",
+      "a": "**Funcional**: pasa la incidencia al grupo resolutor adecuado. **Jerárquico**: avisa a los responsables. La incidencia sigue siendo del **Service Desk**"
+    },
+    {
+      "id": "iv5c75",
+      "n": "75",
+      "e": "📚",
+      "t": false,
+      "q": "¿Qué es ITIL?",
+      "a": "**Information Technology Infrastructure Library**: buenas prácticas de **gestión de servicios TI**"
+    },
+    {
+      "id": "iv5c76",
+      "n": "76",
+      "e": "🔄",
+      "t": true,
+      "q": "Las 5 fases del ciclo de vida de ITIL",
+      "a": "**Estrategia, diseño, transición, operación y mejora continua**",
+      "h": "La gestión de incidencias está en Operación"
+    },
+    {
+      "id": "iv5c77",
+      "n": "77",
+      "e": "☎️",
+      "t": false,
+      "q": "¿Qué es el Service Desk?",
+      "a": "Función de ITIL que es el **punto único de contacto (SPOC)** entre usuarios y TI; evolución del help desk"
+    },
+    {
+      "id": "iv5c78",
+      "n": "78",
+      "e": "🧠",
+      "t": true,
+      "q": "Incidente vs problema (ITIL)",
+      "a": "**Incidente**: interrupción no planificada; se restaura el servicio rápido. **Problema**: la **causa** de uno o varios incidentes"
+    },
+    {
+      "id": "iv5c79",
+      "n": "79",
+      "e": "🗂️",
+      "t": false,
+      "q": "¿Qué es un error conocido y la KEDB?",
+      "a": "**Error conocido**: problema con causa raíz o **solución alternativa** conocida. **KEDB**: base de datos de errores conocidos"
+    },
+    {
+      "id": "iv5c80",
+      "n": "80",
+      "e": "🐟",
+      "t": false,
+      "q": "Técnicas de análisis de problemas",
+      "a": "**Kepner-Tregoe**, **Ishikawa** (espina de pescado), **Pareto** (80/20) y **5 porqués**"
+    },
+    {
+      "id": "iv5c81",
+      "n": "81",
+      "e": "🖥️",
+      "t": false,
+      "q": "Administración en banda vs fuera de banda",
+      "a": "**En banda** (VNC, SSH): necesita el SO arrancado. **Fuera de banda (OOB)**: canal aparte; funciona aunque el equipo esté apagado"
+    },
+    {
+      "id": "iv5c82",
+      "n": "82",
+      "e": "🧰",
+      "t": false,
+      "q": "¿Qué es IPMI?",
+      "a": "Interfaz para **gestionar fuera de banda** un equipo con independencia de CPU, BIOS y sistema operativo"
+    },
+    {
+      "id": "iv5c83",
+      "n": "83",
+      "e": "🔢",
+      "t": true,
+      "q": "Puertos de Telnet, SSH y Escritorio remoto",
+      "a": "**Telnet 23** (sin cifrar), **SSH 22** (cifrado) y Escritorio remoto de Windows **3389**"
+    },
+    {
+      "id": "iv5c84",
+      "n": "84",
+      "e": "✨",
+      "t": true,
+      "q": "¿Qué es Wake on LAN?",
+      "a": "Encender un equipo apagado enviándole un **paquete mágico** con su **MAC**; requiere activarlo en la **BIOS** y fuente **ATX**"
+    },
+    {
+      "id": "iv5c85",
+      "n": "85",
+      "e": "📦",
+      "t": false,
+      "q": "¿Cómo es el paquete mágico?",
+      "a": "**102 bytes**: 6 bytes **FF** seguidos de **16 repeticiones de la MAC**; suele ir por **UDP puerto 7 o 9**"
+    },
+    {
+      "id": "iv5c86",
+      "n": "86",
+      "e": "🧬",
+      "t": false,
+      "q": "¿Qué es Intel AMT?",
+      "a": "Tecnología de **vPro** para administración remota **fuera de banda**; se ejecuta en el **Intel Management Engine**"
+    },
+    {
+      "id": "iv5c87",
+      "n": "87",
+      "e": "🌐",
+      "t": true,
+      "q": "¿Qué es PXE y qué protocolos usa?",
+      "a": "**Preboot eXecution Environment**: arrancar e instalar el SO **por red**. Usa **DHCP** (localizar servidor) y **TFTP** (descargar el arranque)"
+    }
+  ]
+}
