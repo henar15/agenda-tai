@@ -1,0 +1,330 @@
+{
+  "tema": "III-3",
+  "preguntas": [
+    {
+      "id": "iii3-01",
+      "tipico": true,
+      "q": "SQL es un lenguaje…",
+      "opts": [
+        "Declarativo",
+        "Procedimental",
+        "Imperativo puro",
+        "Orientado a objetos"
+      ],
+      "c": 0,
+      "exp": "Declarativo: se indica qué se quiere, no cómo."
+    },
+    {
+      "id": "iii3-02",
+      "tipico": true,
+      "q": "ANSI adoptó SQL como estándar en…",
+      "opts": [
+        "1977",
+        "1979",
+        "1986",
+        "1992"
+      ],
+      "c": 2,
+      "exp": "ANSI en octubre de 1986; ISO en 1987 (SQL/86)."
+    },
+    {
+      "id": "iii3-03",
+      "tipico": false,
+      "q": "El lenguaje del que deriva SQL, creado por IBM para System R, es…",
+      "opts": [
+        "QUEL",
+        "SEQUEL",
+        "QBE",
+        "Datalog"
+      ],
+      "c": 1,
+      "exp": "SEQUEL (Structured English QUEry Language)."
+    },
+    {
+      "id": "iii3-04",
+      "tipico": true,
+      "q": "¿Qué versión del estándar incorporó la sentencia TRUNCATE?",
+      "opts": [
+        "SQL:1999",
+        "SQL:2003",
+        "SQL:2016",
+        "SQL:2008"
+      ],
+      "c": 3,
+      "exp": "SQL:2008 añadió TRUNCATE y los triggers INSTEAD OF."
+    },
+    {
+      "id": "iii3-05",
+      "tipico": false,
+      "q": "El soporte de JSON se incorporó en…",
+      "opts": [
+        "SQL:2006",
+        "SQL:2011",
+        "SQL:2019",
+        "SQL:2016"
+      ],
+      "c": 3,
+      "exp": "SQL:2016: JSON, funciones de tabla y patrones por filas."
+    },
+    {
+      "id": "iii3-06",
+      "tipico": true,
+      "q": "¿Cuál NO es un comando DDL?",
+      "opts": [
+        "MERGE",
+        "ALTER",
+        "TRUNCATE",
+        "CREATE"
+      ],
+      "c": 0,
+      "exp": "MERGE es DML."
+    },
+    {
+      "id": "iii3-07",
+      "tipico": true,
+      "q": "GRANT y REVOKE pertenecen a…",
+      "opts": [
+        "DDL",
+        "DML",
+        "DCL",
+        "TCL"
+      ],
+      "c": 2,
+      "exp": "DCL controla los permisos."
+    },
+    {
+      "id": "iii3-08",
+      "tipico": true,
+      "q": "El orden lógico de ejecución de una consulta empieza por…",
+      "opts": [
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "ORDER BY"
+      ],
+      "c": 1,
+      "exp": "Primero FROM/JOIN, luego WHERE, GROUP BY, HAVING, SELECT y ORDER BY."
+    },
+    {
+      "id": "iii3-09",
+      "tipico": true,
+      "q": "En LIKE, el comodín que sustituye exactamente un carácter es…",
+      "opts": [
+        "_",
+        "%",
+        "*",
+        "#"
+      ],
+      "c": 0,
+      "exp": "_ = un carácter; % = cualquier número."
+    },
+    {
+      "id": "iii3-10",
+      "tipico": false,
+      "q": "Un campo con valor 0 o con una cadena vacía…",
+      "opts": [
+        "Es NULL",
+        "Es UNKNOWN",
+        "No es NULL",
+        "Solo es NULL si es numérico"
+      ],
+      "c": 2,
+      "exp": "Un espacio, cadena vacía o cero no son NULL."
+    },
+    {
+      "id": "iii3-11",
+      "tipico": true,
+      "q": "Para filtrar grupos según una función de agregado se usa…",
+      "opts": [
+        "WHERE",
+        "HAVING",
+        "DISTINCT",
+        "ORDER BY"
+      ],
+      "c": 1,
+      "exp": "HAVING filtra grupos y va con GROUP BY."
+    },
+    {
+      "id": "iii3-12",
+      "tipico": false,
+      "q": "COUNT(*)…",
+      "opts": [
+        "No cuenta nulos",
+        "Admite DISTINCT",
+        "Solo vale en columnas numéricas",
+        "Cuenta todas las filas, con nulos y duplicados"
+      ],
+      "c": 3,
+      "exp": "COUNT(*) cuenta cada fila; COUNT(DISTINCT) cuenta únicos no nulos."
+    },
+    {
+      "id": "iii3-13",
+      "tipico": true,
+      "q": "¿Qué diferencia a UNION de UNION ALL?",
+      "opts": [
+        "UNION ALL elimina duplicados",
+        "No hay diferencia",
+        "UNION solo une dos tablas",
+        "UNION elimina duplicados"
+      ],
+      "c": 3,
+      "exp": "UNION quita repetidos; UNION ALL los muestra y es más rápida."
+    },
+    {
+      "id": "iii3-14",
+      "tipico": true,
+      "q": "El producto cartesiano de dos tablas se obtiene con…",
+      "opts": [
+        "CROSS JOIN",
+        "FULL JOIN",
+        "INNER JOIN",
+        "LEFT JOIN"
+      ],
+      "c": 0,
+      "exp": "CROSS JOIN combina cada fila con todas las de la otra tabla."
+    },
+    {
+      "id": "iii3-15",
+      "tipico": false,
+      "q": "Un FULL JOIN puede simularse con…",
+      "opts": [
+        "INNER JOIN + CROSS JOIN",
+        "Dos INNER JOIN",
+        "LEFT JOIN UNION RIGHT JOIN",
+        "Una subconsulta con ANY"
+      ],
+      "c": 2,
+      "exp": "Unión de un LEFT y un RIGHT JOIN."
+    },
+    {
+      "id": "iii3-16",
+      "tipico": true,
+      "q": "Sobre PRIMARY KEY y UNIQUE, es FALSO que…",
+      "opts": [
+        "Solo puede haber una PRIMARY KEY por tabla",
+        "PRIMARY KEY admite nulos",
+        "Puede haber varios UNIQUE",
+        "UNIQUE admite nulos"
+      ],
+      "c": 1,
+      "exp": "La PK exige valores únicos y no nulos."
+    },
+    {
+      "id": "iii3-17",
+      "tipico": false,
+      "q": "Una vista creada con CREATE VIEW…",
+      "opts": [
+        "No almacena datos y muestra siempre los actuales",
+        "Almacena una copia de los datos",
+        "Solo puede usar una tabla",
+        "No puede consultarse con SELECT"
+      ],
+      "c": 0,
+      "exp": "Es una consulta guardada; no guarda datos físicamente."
+    },
+    {
+      "id": "iii3-18",
+      "tipico": true,
+      "q": "TRUNCATE TABLE…",
+      "opts": [
+        "Elimina la tabla y su estructura",
+        "Admite WHERE",
+        "Borra todas las filas y deja la estructura",
+        "Es un comando DCL"
+      ],
+      "c": 2,
+      "exp": "Vacía la tabla, deja la estructura y no admite WHERE."
+    },
+    {
+      "id": "iii3-19",
+      "tipico": true,
+      "q": "La 'I' de ACID significa…",
+      "opts": [
+        "Integridad",
+        "Aislamiento",
+        "Indexación",
+        "Inmediatez"
+      ],
+      "c": 1,
+      "exp": "Atomicidad, Consistencia, aIslamiento y Durabilidad."
+    },
+    {
+      "id": "iii3-20",
+      "tipico": false,
+      "q": "Para deshacer solo parte de una transacción se usa…",
+      "opts": [
+        "COMMIT",
+        "SET TRANSACTION",
+        "RELEASE SAVEPOINT",
+        "ROLLBACK TO SAVEPOINT"
+      ],
+      "c": 3,
+      "exp": "SAVEPOINT marca un punto al que volver sin revertirlo todo."
+    },
+    {
+      "id": "iii3-21",
+      "tipico": false,
+      "q": "Si @@FETCH_STATUS devuelve -1…",
+      "opts": [
+        "El FETCH fue correcto",
+        "La fila desapareció",
+        "El cursor está cerrado",
+        "El FETCH falló"
+      ],
+      "c": 3,
+      "exp": "0 = éxito, -1 = fallo, -2 = fila desaparecida."
+    },
+    {
+      "id": "iii3-22",
+      "tipico": true,
+      "q": "Los procedimientos almacenados del sistema empiezan por…",
+      "opts": [
+        "sp_",
+        "spu_",
+        "sys_",
+        "proc_"
+      ],
+      "c": 0,
+      "exp": "Sistema: sp_; de usuario se recomienda spu_."
+    },
+    {
+      "id": "iii3-23",
+      "tipico": true,
+      "q": "Un trigger asociado a DELETE puede usar…",
+      "opts": [
+        "Solo NEW",
+        "OLD y NEW",
+        "Solo OLD",
+        "Ninguno"
+      ],
+      "c": 2,
+      "exp": "En DELETE no hay registro nuevo: solo OLD."
+    },
+    {
+      "id": "iii3-24",
+      "tipico": true,
+      "q": "¿Cuál de estas afirmaciones sobre los triggers es correcta?",
+      "opts": [
+        "Se invocan con EXECUTE",
+        "Se ejecutan automáticamente ante INSERT, UPDATE o DELETE",
+        "Reciben parámetros de entrada",
+        "Pueden ejecutar COMMIT"
+      ],
+      "c": 1,
+      "exp": "No se invocan ni reciben parámetros; se disparan solos."
+    },
+    {
+      "id": "iii3-25",
+      "tipico": false,
+      "q": "El SQL dinámico, frente al estático…",
+      "opts": [
+        "Es más flexible pero menos eficiente",
+        "Se compila antes de ejecutarse",
+        "Es más eficiente",
+        "Usa EXEC SQL obligatoriamente"
+      ],
+      "c": 0,
+      "exp": "Se construye en ejecución: flexible pero menos eficiente."
+    }
+  ]
+}

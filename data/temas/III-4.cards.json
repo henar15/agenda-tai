@@ -1,0 +1,701 @@
+{
+  "tema": "III-4",
+  "cards": [
+    {
+      "id": "iii4c1",
+      "n": "1",
+      "e": "🧱",
+      "t": false,
+      "q": "¿Por qué surge la POO?",
+      "a": "Por las **limitaciones de la programación estructurada**. Su uso se popularizó a principios de los **años 90**"
+    },
+    {
+      "id": "iii4c2",
+      "n": "2",
+      "e": "🌍",
+      "t": false,
+      "q": "¿Qué es la programación orientada a objetos?",
+      "a": "Un **paradigma** que usa **objetos** y sus interacciones: un conjunto de objetos que se **envían mensajes**"
+    },
+    {
+      "id": "iii4c3",
+      "n": "3",
+      "e": "🧬",
+      "t": false,
+      "q": "Idea fundamental de la POO",
+      "a": "Combinar en **una sola entidad (objeto)** los **datos** y las **funciones** que actúan sobre ellos"
+    },
+    {
+      "id": "iii4c4",
+      "n": "4",
+      "e": "🏷️",
+      "t": false,
+      "q": "Atributos y comportamiento",
+      "a": "**Atributos** = características (datos) · **Comportamiento** = acciones (métodos)"
+    },
+    {
+      "id": "iii4c5",
+      "n": "5",
+      "e": "🧠",
+      "t": false,
+      "q": "Paradigma declarativo",
+      "a": "Describe **qué calcular sin indicar cómo**; no hay sentencia de asignación y las variables son **inmutables**"
+    },
+    {
+      "id": "iii4c6",
+      "n": "6",
+      "e": "🪜",
+      "t": false,
+      "q": "Etapas para modelar un sistema OO",
+      "a": "1º **identificar objetos** · 2º agruparlos en **clases** · 3º definir **atributos y operaciones** · 4º identificar **relaciones** entre clases"
+    },
+    {
+      "id": "iii4c7",
+      "n": "7",
+      "e": "🎯",
+      "t": true,
+      "q": "Los 3 elementos de un objeto",
+      "a": "**Estado**, **comportamiento** e **identidad**"
+    },
+    {
+      "id": "iii4c8",
+      "n": "8",
+      "e": "📸",
+      "t": false,
+      "q": "Estado de un objeto",
+      "a": "Conjunto de **valores de sus atributos** en un instante; es **dinámico** (cambia con el tiempo)"
+    },
+    {
+      "id": "iii4c9",
+      "n": "9",
+      "e": "🪪",
+      "t": false,
+      "q": "Identidad de un objeto",
+      "a": "Lo **distingue** de cualquier otro, aunque tengan los **mismos valores**; cada objeto ocupa su propia posición en memoria"
+    },
+    {
+      "id": "iii4c10",
+      "n": "10",
+      "e": "🟣",
+      "t": false,
+      "q": "LPOO puros",
+      "a": "**Smalltalk** (de los primeros, tipado dinámico) y **Scala** (cada valor es un objeto; usa **mixins**)"
+    },
+    {
+      "id": "iii4c11",
+      "n": "11",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es un componente software?",
+      "a": "Elemento que ofrece un **servicio predefinido**, se **comunica** con otros y es **reutilizable**"
+    },
+    {
+      "id": "iii4c12",
+      "n": "12",
+      "e": "✉️",
+      "t": false,
+      "q": "¿Qué es un mensaje?",
+      "a": "La **petición** a un objeto para que realice una acción: **invoca un método**. Sintaxis: objeto.método(parámetros)"
+    },
+    {
+      "id": "iii4c13",
+      "n": "13",
+      "e": "3️⃣",
+      "t": false,
+      "q": "Partes de un mensaje",
+      "a": "1 **objeto destino** · 2 **método** (operación) · 3 **argumentos**"
+    },
+    {
+      "id": "iii4c14",
+      "n": "14",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Qué es un método?",
+      "a": "Una **operación** definida para un objeto; equivale a una **función** de la programación estructurada"
+    },
+    {
+      "id": "iii4c15",
+      "n": "15",
+      "e": "📐",
+      "t": false,
+      "q": "¿Qué es una clase?",
+      "a": "Una **plantilla** para crear objetos: describe sus **atributos** y sus **operaciones**"
+    },
+    {
+      "id": "iii4c16",
+      "n": "16",
+      "e": "🐣",
+      "t": true,
+      "q": "¿Qué es una instancia?",
+      "a": "Un **objeto concreto** creado a partir de una clase. **Objeto e instancia** son **sinónimos**"
+    },
+    {
+      "id": "iii4c17",
+      "n": "17",
+      "e": "🏁",
+      "t": false,
+      "q": "¿Qué es instanciar una clase?",
+      "a": "**Crear un objeto** nuevo de ella: ya **ocupa memoria** y se puede usar. La clase sola es solo un concepto"
+    },
+    {
+      "id": "iii4c18",
+      "n": "18",
+      "e": "📦",
+      "t": false,
+      "q": "TAD y clase",
+      "a": "El **tipo abstracto de datos (TAD)** se corresponde con la **clase** en POO"
+    },
+    {
+      "id": "iii4c19",
+      "n": "19",
+      "e": "6️⃣",
+      "t": true,
+      "q": "Técnicas básicas de la POO",
+      "a": "**Herencia**, **abstracción**, **polimorfismo**, **acoplamiento**, **cohesión** y **encapsulamiento**"
+    },
+    {
+      "id": "iii4c20",
+      "n": "20",
+      "e": "👪",
+      "t": false,
+      "q": "¿Qué es la herencia?",
+      "a": "Crear **nuevas clases** a partir de otras existentes: la **subclase** obtiene los métodos y atributos de la **superclase**"
+    },
+    {
+      "id": "iii4c21",
+      "n": "21",
+      "e": "🏷️",
+      "t": false,
+      "q": "Nombres de la clase de la que se hereda",
+      "a": "**Clase base**, **padre**, **superclase**, **principal** o **ancestro**. La que hereda: **subclase** o **clase derivada**"
+    },
+    {
+      "id": "iii4c22",
+      "n": "22",
+      "e": "☝️",
+      "t": true,
+      "q": "Herencia simple vs múltiple",
+      "a": "**Simple**: **una** superclase · **Múltiple**: **dos o más** superclases (puede causar **conflicto de nombres**)"
+    },
+    {
+      "id": "iii4c23",
+      "n": "23",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Qué es el enlace dinámico (tardío)?",
+      "a": "Decidir **en tiempo de ejecución** qué método se invoca al recibir un mensaje"
+    },
+    {
+      "id": "iii4c24",
+      "n": "24",
+      "e": "🔼",
+      "t": false,
+      "q": "Generalización",
+      "a": "Relación de herencia definida con **'es-un'** (una cama **es un** mueble). Se representa con un **triángulo**"
+    },
+    {
+      "id": "iii4c25",
+      "n": "25",
+      "e": "🔽",
+      "t": false,
+      "q": "Especialización",
+      "a": "Lo **opuesto** a la generalización; también 'es un' y es **transitiva** (perro → canino → mamífero)"
+    },
+    {
+      "id": "iii4c26",
+      "n": "26",
+      "e": "🔭",
+      "t": false,
+      "q": "¿Qué es la abstracción?",
+      "a": "Quedarse con lo **más significativo** de un problema y **omitir lo irrelevante**: importa **qué hace**, no **cómo**"
+    },
+    {
+      "id": "iii4c27",
+      "n": "27",
+      "e": "🎭",
+      "t": true,
+      "q": "¿Qué es el polimorfismo?",
+      "a": "Un **mismo mensaje** produce **conductas distintas** según el objeto que lo recibe (encender un PC, una cerilla…)"
+    },
+    {
+      "id": "iii4c28",
+      "n": "28",
+      "e": "➕",
+      "t": true,
+      "q": "¿Qué es la sobrecarga?",
+      "a": "Dos o más métodos con el **mismo nombre** y **distintos parámetros** (número o tipo). Deriva del **polimorfismo**"
+    },
+    {
+      "id": "iii4c29",
+      "n": "29",
+      "e": "🪢",
+      "t": false,
+      "q": "¿Qué es el acoplamiento?",
+      "a": "El **grado de interdependencia** entre módulos. Debe ser **BAJO**"
+    },
+    {
+      "id": "iii4c30",
+      "n": "30",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Qué es la cohesión?",
+      "a": "Que cada módulo se refiera a **un único proceso o entidad**. Debe ser **ALTA**"
+    },
+    {
+      "id": "iii4c31",
+      "n": "31",
+      "e": "⚖️",
+      "t": true,
+      "q": "Regla de oro del buen diseño",
+      "a": "**Bajo acoplamiento** y **alta cohesión**"
+    },
+    {
+      "id": "iii4c32",
+      "n": "32",
+      "e": "💊",
+      "t": false,
+      "q": "¿Qué es el encapsulamiento?",
+      "a": "Reunir en una unidad (objeto) **datos y funciones** y mostrar solo una **interfaz pública**"
+    },
+    {
+      "id": "iii4c33",
+      "n": "33",
+      "e": "🙈",
+      "t": false,
+      "q": "Ocultación de datos",
+      "a": "Solo se accede a los datos de un objeto **a través de sus métodos**; la clase actúa como una **caja negra**"
+    },
+    {
+      "id": "iii4c34",
+      "n": "34",
+      "e": "🔓",
+      "t": false,
+      "q": "Modificador public",
+      "a": "Accesible **desde cualquier punto**: **no hay encapsulamiento**"
+    },
+    {
+      "id": "iii4c35",
+      "n": "35",
+      "e": "🔒",
+      "t": false,
+      "q": "Modificador private",
+      "a": "Acceso **solo desde la propia clase**"
+    },
+    {
+      "id": "iii4c36",
+      "n": "36",
+      "e": "🛡️",
+      "t": true,
+      "q": "Modificador protected",
+      "a": "Acceso desde la **propia clase**, clases del **mismo paquete** y **subclases**"
+    },
+    {
+      "id": "iii4c37",
+      "n": "37",
+      "e": "♻️",
+      "t": false,
+      "q": "Ventajas de la reutilización de código",
+      "a": "**Menos código**, se implementa **una vez**, se corrige **una vez** y **menos tiempo y coste**"
+    },
+    {
+      "id": "iii4c38",
+      "n": "38",
+      "e": "🔗",
+      "t": false,
+      "q": "Los 4 tipos de relación entre clases",
+      "a": "**Asociación**, **agregación**, **composición** y **herencia/generalización**"
+    },
+    {
+      "id": "iii4c39",
+      "n": "39",
+      "e": "🤝",
+      "t": false,
+      "q": "Asociación",
+      "a": "Une dos clases **independientes** que colaboran: relación **'usa un'** (un programador usa un ordenador). **Línea continua**"
+    },
+    {
+      "id": "iii4c40",
+      "n": "40",
+      "e": "🧺",
+      "t": true,
+      "q": "Agregación",
+      "a": "Relación **todo-parte** **débil** ('tiene un'): las partes **pueden compartirse** y **sobreviven** al todo. **Rombo hueco**"
+    },
+    {
+      "id": "iii4c41",
+      "n": "41",
+      "e": "🧱",
+      "t": true,
+      "q": "Composición",
+      "a": "Relación todo-parte **fuerte**: si el todo **desaparece**, las partes **también**; no se comparten. **Rombo relleno**"
+    },
+    {
+      "id": "iii4c42",
+      "n": "42",
+      "e": "🔢",
+      "t": false,
+      "q": "Multiplicidades en UML",
+      "a": "**1:1** (ciudadano-DNI) · **1:N** (cliente-pedidos) · **M:N** (músicos-orquestas)"
+    },
+    {
+      "id": "iii4c43",
+      "n": "43",
+      "e": "🗑️",
+      "t": false,
+      "q": "Recolección de basura (garbage collection)",
+      "a": "El entorno **destruye automáticamente** los objetos **sin referencias** y libera su memoria. **C++** no la tiene"
+    },
+    {
+      "id": "iii4c44",
+      "n": "44",
+      "e": "⬛",
+      "t": false,
+      "q": "Caja negra",
+      "a": "Se estudia por sus **entradas y salidas** sin importar cómo funciona por dentro; su **interfaz** debe estar bien definida"
+    },
+    {
+      "id": "iii4c45",
+      "n": "45",
+      "e": "👍",
+      "t": false,
+      "q": "Ventajas de la POO",
+      "a": "**Reutilización**, **modularidad**, relación directa con el **mundo real**, **mantenimiento** y documentación más fáciles"
+    },
+    {
+      "id": "iii4c46",
+      "n": "46",
+      "e": "👎",
+      "t": false,
+      "q": "Desventajas de la POO",
+      "a": "Adaptación difícil, mucha **documentación**, **menor velocidad** de ejecución y se **hereda código innecesario**"
+    },
+    {
+      "id": "iii4c47",
+      "n": "47",
+      "e": "📘",
+      "t": false,
+      "q": "¿Qué es un patrón de diseño?",
+      "a": "Una solución **probada y reutilizable** a un **problema de diseño frecuente**"
+    },
+    {
+      "id": "iii4c48",
+      "n": "48",
+      "e": "👥",
+      "t": true,
+      "q": "¿Qué es GoF?",
+      "a": "**Gang of Four**: Gamma, Helm, Johnson y Vlissides; libro **Design Patterns** (**1994**) con **23 patrones**"
+    },
+    {
+      "id": "iii4c49",
+      "n": "49",
+      "e": "4️⃣",
+      "t": false,
+      "q": "Elementos de un patrón de diseño",
+      "a": "**Nombre**, **problema**, **solución** y **consecuencias**"
+    },
+    {
+      "id": "iii4c50",
+      "n": "50",
+      "e": "🗃️",
+      "t": false,
+      "q": "Tipos de patrones según su finalidad",
+      "a": "**Estructurales**, **de creación**, **de comportamiento** y **de interacción**"
+    },
+    {
+      "id": "iii4c51",
+      "n": "51",
+      "e": "🏛️",
+      "t": true,
+      "q": "Patrones estructurales",
+      "a": "Resuelven la **composición de clases y objetos**: **Adapter**, **Bridge**, **Composite**, **Decorator**, **Facade**, **Flyweight** y **Proxy**"
+    },
+    {
+      "id": "iii4c52",
+      "n": "52",
+      "e": "🔌",
+      "t": true,
+      "q": "Adapter (Wrapper)",
+      "a": "Hace que **interfaces incompatibles** trabajen juntas: convierte una interfaz en la que el cliente **espera**"
+    },
+    {
+      "id": "iii4c53",
+      "n": "53",
+      "e": "🌉",
+      "t": true,
+      "q": "Bridge (Handle/Body)",
+      "a": "**Desacopla una abstracción de su implementación** para que varíen **independientemente**"
+    },
+    {
+      "id": "iii4c54",
+      "n": "54",
+      "e": "🌳",
+      "t": false,
+      "q": "Composite",
+      "a": "Compone objetos en **árbol** y trata igual a los elementos **simples y compuestos**"
+    },
+    {
+      "id": "iii4c55",
+      "n": "55",
+      "e": "🎀",
+      "t": true,
+      "q": "Decorator",
+      "a": "**Añade funcionalidades** a un objeto **dinámicamente** sin cambiar su estructura (por **composición**, no herencia)"
+    },
+    {
+      "id": "iii4c56",
+      "n": "56",
+      "e": "🏠",
+      "t": false,
+      "q": "Facade (Fachada)",
+      "a": "Da una **interfaz simple** de alto nivel a un **sistema complejo**"
+    },
+    {
+      "id": "iii4c57",
+      "n": "57",
+      "e": "🪶",
+      "t": false,
+      "q": "Flyweight (Peso ligero)",
+      "a": "**Comparte** objetos con datos comunes para **ahorrar memoria**"
+    },
+    {
+      "id": "iii4c58",
+      "n": "58",
+      "e": "🚪",
+      "t": false,
+      "q": "Proxy",
+      "a": "**Intermediario** que **controla el acceso** a un objeto real (carga diferida, control de acceso…)"
+    },
+    {
+      "id": "iii4c59",
+      "n": "59",
+      "e": "🏭",
+      "t": true,
+      "q": "Patrones de creación",
+      "a": "**Abstract Factory**, **Builder**, **Factory Method**, **Prototype** y **Singleton**"
+    },
+    {
+      "id": "iii4c60",
+      "n": "60",
+      "e": "1️⃣",
+      "t": true,
+      "q": "Singleton",
+      "a": "Garantiza **una única instancia** de una clase con un **acceso global** a ella"
+    },
+    {
+      "id": "iii4c61",
+      "n": "61",
+      "e": "🐑",
+      "t": false,
+      "q": "Prototype",
+      "a": "Crea objetos **clonando** una instancia existente"
+    },
+    {
+      "id": "iii4c62",
+      "n": "62",
+      "e": "🏗️",
+      "t": false,
+      "q": "Builder vs Factory Method",
+      "a": "**Builder**: centraliza la creación de un **objeto complejo** · **Factory Method**: las **subclases** deciden qué clase crear"
+    },
+    {
+      "id": "iii4c63",
+      "n": "63",
+      "e": "🧰",
+      "t": false,
+      "q": "Abstract Factory",
+      "a": "Crea **familias de objetos** relacionados sin mezclarlas (ej.: ventanas, menús y botones de un mismo estilo)"
+    },
+    {
+      "id": "iii4c64",
+      "n": "64",
+      "e": "🎬",
+      "t": false,
+      "q": "Patrones de comportamiento",
+      "a": "Interacción y responsabilidades: Chain of Responsibility, Command, Interpreter, **Iterator**, Mediator, Memento, **Observer**, State, **Strategy**, Template Method, Visitor"
+    },
+    {
+      "id": "iii4c65",
+      "n": "65",
+      "e": "👀",
+      "t": true,
+      "q": "Observer",
+      "a": "Dependencia **uno-a-muchos**: cuando un objeto **cambia de estado**, se **notifica** a todos los que dependen de él"
+    },
+    {
+      "id": "iii4c66",
+      "n": "66",
+      "e": "♟️",
+      "t": false,
+      "q": "Strategy",
+      "a": "Varios algoritmos para un problema y se **elige cuál usar en ejecución**"
+    },
+    {
+      "id": "iii4c67",
+      "n": "67",
+      "e": "⏪",
+      "t": false,
+      "q": "Memento",
+      "a": "Permite **volver a estados anteriores**"
+    },
+    {
+      "id": "iii4c68",
+      "n": "68",
+      "e": "🖥️",
+      "t": false,
+      "q": "Patrones de interacción",
+      "a": "Para **interfaces de usuario** y webs. Pioneros: **Ward Cunningham y Kent Beck** (Window per task, Few panes, Short Menu…)"
+    },
+    {
+      "id": "iii4c69",
+      "n": "69",
+      "e": "📏",
+      "t": false,
+      "q": "¿Qué es GRASP y quién lo propone?",
+      "a": "Patrones para **asignar responsabilidades** en diseño OO, propuestos por **Craig Larman**"
+    },
+    {
+      "id": "iii4c70",
+      "n": "70",
+      "e": "🎮",
+      "t": false,
+      "q": "GRASP: Controlador y Creador",
+      "a": "**Controlador**: recibe un **evento** y coordina · **Creador**: decide qué clase **crea instancias** de otra"
+    },
+    {
+      "id": "iii4c71",
+      "n": "71",
+      "e": "🧑‍🏫",
+      "t": false,
+      "q": "GRASP: Experto en información",
+      "a": "Asignar la tarea a la clase que **tiene la información** necesaria"
+    },
+    {
+      "id": "iii4c72",
+      "n": "72",
+      "e": "🖍️",
+      "t": true,
+      "q": "¿Qué es UML?",
+      "a": "**Unified Modeling Language**: lenguaje **gráfico** para **especificar, diseñar y documentar** software. **No es un lenguaje de programación**"
+    },
+    {
+      "id": "iii4c73",
+      "n": "73",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Quién respalda UML?",
+      "a": "El **OMG** (Object Management Group)"
+    },
+    {
+      "id": "iii4c74",
+      "n": "74",
+      "e": "👨‍👨‍👦",
+      "t": true,
+      "q": "Creadores de UML",
+      "a": "**Rumbaugh**, **Booch** y **Jacobson**"
+    },
+    {
+      "id": "iii4c75",
+      "n": "75",
+      "e": "🔢",
+      "t": false,
+      "q": "Primera y última versión de UML",
+      "a": "**UML 1.1** (1997) · la última es **UML 2.5.1** (**diciembre de 2017**)"
+    },
+    {
+      "id": "iii4c76",
+      "n": "76",
+      "e": "🧷",
+      "t": false,
+      "q": "Mecanismos de extensión de UML",
+      "a": "**Estereotipos**, **valores etiquetados** y **restricciones**"
+    },
+    {
+      "id": "iii4c77",
+      "n": "77",
+      "e": "🔗",
+      "t": true,
+      "q": "Las 4 relaciones de UML",
+      "a": "**Dependencia**, **asociación**, **generalización** e **implementación**"
+    },
+    {
+      "id": "iii4c78",
+      "n": "78",
+      "e": "↪️",
+      "t": false,
+      "q": "include vs extend (casos de uso)",
+      "a": "**include**: un caso de uso **incluye** a otro · **extend**: inserta comportamiento **en ciertas condiciones**. Ambos con **flecha discontinua**"
+    },
+    {
+      "id": "iii4c79",
+      "n": "79",
+      "e": "🏛️",
+      "t": true,
+      "q": "Diagramas UML estructurales",
+      "a": "**Clases**, **componentes**, **estructura compuesta**, **implementación (despliegue)**, **objetos**, **paquetes** y **perfil**"
+    },
+    {
+      "id": "iii4c80",
+      "n": "80",
+      "e": "🎞️",
+      "t": false,
+      "q": "Diagramas UML de comportamiento",
+      "a": "**Actividades**, **comunicación**, **panorama de interacciones**, **secuencia**, **máquina de estados**, **temporización** y **casos de uso**"
+    },
+    {
+      "id": "iii4c81",
+      "n": "81",
+      "e": "⭐",
+      "t": false,
+      "q": "Diagrama UML más usado",
+      "a": "El **diagrama de clases**: rectángulo en 3 partes (**nombre**, **atributos**, **operaciones**)"
+    },
+    {
+      "id": "iii4c82",
+      "n": "82",
+      "e": "⏳",
+      "t": false,
+      "q": "Secuencia vs comunicación",
+      "a": "**Secuencia**: el **orden temporal** de los mensajes · **Comunicación (colaboración)**: los **mensajes entre objetos**, numerados"
+    },
+    {
+      "id": "iii4c83",
+      "n": "83",
+      "e": "🚦",
+      "t": false,
+      "q": "Diagrama de máquina de estados",
+      "a": "Estados que atraviesa un objeto: **círculo lleno** = inicio, rectángulo redondeado = estado, flecha = **transición**"
+    },
+    {
+      "id": "iii4c84",
+      "n": "84",
+      "e": "🧍",
+      "t": false,
+      "q": "Diagrama de casos de uso",
+      "a": "Muestra las **funcionalidades** del sistema y los **actores**. Relaciones: **include**, **extend** y **generalización**"
+    },
+    {
+      "id": "iii4c85",
+      "n": "85",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es RUP?",
+      "a": "**Rational Unified Process**: proceso de desarrollo de **Rational** (hoy **IBM**); con **UML** es la metodología OO más usada"
+    },
+    {
+      "id": "iii4c86",
+      "n": "86",
+      "e": "🌀",
+      "t": false,
+      "q": "Ciclo de vida de RUP",
+      "a": "Implementación del desarrollo en **espiral**, organizado en **fases e iteraciones**"
+    },
+    {
+      "id": "iii4c87",
+      "n": "87",
+      "e": "4️⃣",
+      "t": true,
+      "q": "Fases de RUP",
+      "a": "**Iniciación**, **elaboración**, **construcción** y **transición**"
+    }
+  ]
+}

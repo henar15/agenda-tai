@@ -1,0 +1,317 @@
+{
+  "tema": "III-4",
+  "preguntas": [
+    {
+      "id": "iii4-01",
+      "tipico": true,
+      "q": "Los tres elementos fundamentales de un objeto son…",
+      "opts": [
+        "Estado, comportamiento e identidad",
+        "Clase, método y mensaje",
+        "Atributo, herencia y polimorfismo",
+        "Nombre, tipo y valor"
+      ],
+      "c": 0,
+      "exp": "Estado, comportamiento e identidad."
+    },
+    {
+      "id": "iii4-02",
+      "tipico": false,
+      "q": "El conjunto de valores de los atributos de un objeto en un instante es su…",
+      "opts": [
+        "Identidad",
+        "Comportamiento",
+        "Estado",
+        "Interfaz"
+      ],
+      "c": 2,
+      "exp": "El estado es dinámico y cambia con el tiempo."
+    },
+    {
+      "id": "iii4-03",
+      "tipico": true,
+      "q": "En POO, objeto e instancia son…",
+      "opts": [
+        "Conceptos opuestos",
+        "Sinónimos",
+        "Una instancia es una clase",
+        "Un objeto es una plantilla"
+      ],
+      "c": 1,
+      "exp": "Una instancia es un objeto concreto de una clase."
+    },
+    {
+      "id": "iii4-04",
+      "tipico": false,
+      "q": "Un mensaje en POO…",
+      "opts": [
+        "Crea una clase nueva",
+        "Define un atributo",
+        "Destruye un objeto",
+        "Invoca un método de un objeto"
+      ],
+      "c": 3,
+      "exp": "El mensaje invoca el método que realiza la acción."
+    },
+    {
+      "id": "iii4-05",
+      "tipico": true,
+      "q": "Una clase que puede tener dos o más superclases usa…",
+      "opts": [
+        "Herencia simple",
+        "Especialización",
+        "Composición",
+        "Herencia múltiple"
+      ],
+      "c": 3,
+      "exp": "Herencia múltiple (C++, Python…); no todos los lenguajes la ofrecen."
+    },
+    {
+      "id": "iii4-06",
+      "tipico": true,
+      "q": "Que un mismo mensaje provoque conductas distintas según el objeto que lo recibe es…",
+      "opts": [
+        "Polimorfismo",
+        "Abstracción",
+        "Encapsulamiento",
+        "Cohesión"
+      ],
+      "c": 0,
+      "exp": "Polimorfismo: 'encender' un PC, una cerilla, una lámpara…"
+    },
+    {
+      "id": "iii4-07",
+      "tipico": true,
+      "q": "Tener varios métodos con el mismo nombre y distintos parámetros es…",
+      "opts": [
+        "Agregación",
+        "Herencia",
+        "Sobrecarga",
+        "Enlace estático"
+      ],
+      "c": 2,
+      "exp": "La sobrecarga deriva del polimorfismo."
+    },
+    {
+      "id": "iii4-08",
+      "tipico": true,
+      "q": "Un buen diseño de software busca…",
+      "opts": [
+        "Alto acoplamiento y alta cohesión",
+        "Bajo acoplamiento y alta cohesión",
+        "Bajo acoplamiento y baja cohesión",
+        "Alto acoplamiento y baja cohesión"
+      ],
+      "c": 1,
+      "exp": "Módulos poco dependientes y muy centrados en una tarea."
+    },
+    {
+      "id": "iii4-09",
+      "tipico": false,
+      "q": "El modificador que permite el acceso desde la propia clase, el mismo paquete y las subclases es…",
+      "opts": [
+        "protected",
+        "private",
+        "public",
+        "default"
+      ],
+      "c": 0,
+      "exp": "protected; default no incluye subclases de otros paquetes."
+    },
+    {
+      "id": "iii4-10",
+      "tipico": true,
+      "q": "Si al destruir el todo se destruyen también las partes, la relación es de…",
+      "opts": [
+        "Asociación",
+        "Agregación",
+        "Composición",
+        "Dependencia"
+      ],
+      "c": 2,
+      "exp": "Composición: rombo relleno; las partes no se comparten."
+    },
+    {
+      "id": "iii4-11",
+      "tipico": false,
+      "q": "En UML la agregación se representa con…",
+      "opts": [
+        "Un rombo relleno",
+        "Un rombo hueco",
+        "Un triángulo",
+        "Una flecha discontinua"
+      ],
+      "c": 1,
+      "exp": "Rombo hueco en el 'todo'; la composición, rombo relleno."
+    },
+    {
+      "id": "iii4-12",
+      "tipico": false,
+      "q": "La recolección de basura…",
+      "opts": [
+        "La hace el programador a mano en Java",
+        "Borra las clases no usadas",
+        "Existe de serie en C++",
+        "Destruye automáticamente los objetos sin referencias"
+      ],
+      "c": 3,
+      "exp": "El entorno libera la memoria de objetos sin referencias."
+    },
+    {
+      "id": "iii4-13",
+      "tipico": true,
+      "q": "El libro de los patrones GoF (1994) recoge…",
+      "opts": [
+        "12 patrones",
+        "7 patrones",
+        "32 patrones",
+        "23 patrones"
+      ],
+      "c": 3,
+      "exp": "Gamma, Helm, Johnson y Vlissides: 23 patrones."
+    },
+    {
+      "id": "iii4-14",
+      "tipico": true,
+      "q": "¿Cuál de estos patrones es de creación?",
+      "opts": [
+        "Singleton",
+        "Observer",
+        "Facade",
+        "Proxy"
+      ],
+      "c": 0,
+      "exp": "Singleton es de creación; Facade y Proxy, estructurales; Observer, de comportamiento."
+    },
+    {
+      "id": "iii4-15",
+      "tipico": true,
+      "q": "El patrón que hace que dos interfaces incompatibles trabajen juntas es…",
+      "opts": [
+        "Composite",
+        "Bridge",
+        "Adapter",
+        "Flyweight"
+      ],
+      "c": 2,
+      "exp": "Adapter (Wrapper) convierte una interfaz en la que espera el cliente."
+    },
+    {
+      "id": "iii4-16",
+      "tipico": true,
+      "q": "Desacoplar una abstracción de su implementación para que varíen de forma independiente es el patrón…",
+      "opts": [
+        "Decorator",
+        "Bridge",
+        "Facade",
+        "Prototype"
+      ],
+      "c": 1,
+      "exp": "Bridge, también llamado Handle/Body."
+    },
+    {
+      "id": "iii4-17",
+      "tipico": false,
+      "q": "El patrón que notifica a todos los dependientes cuando un objeto cambia de estado es…",
+      "opts": [
+        "Observer",
+        "Memento",
+        "Strategy",
+        "State"
+      ],
+      "c": 0,
+      "exp": "Observer: dependencia uno-a-muchos."
+    },
+    {
+      "id": "iii4-18",
+      "tipico": false,
+      "q": "El patrón que crea objetos clonando una instancia existente es…",
+      "opts": [
+        "Builder",
+        "Factory Method",
+        "Prototype",
+        "Singleton"
+      ],
+      "c": 2,
+      "exp": "Prototype."
+    },
+    {
+      "id": "iii4-19",
+      "tipico": false,
+      "q": "GRASP fue propuesto por…",
+      "opts": [
+        "Grady Booch",
+        "Craig Larman",
+        "Kent Beck",
+        "Erich Gamma"
+      ],
+      "c": 1,
+      "exp": "Craig Larman: patrones de asignación de responsabilidades."
+    },
+    {
+      "id": "iii4-20",
+      "tipico": true,
+      "q": "Sobre UML, es FALSO que…",
+      "opts": [
+        "Lo respalda el OMG",
+        "Es un lenguaje gráfico de modelado",
+        "Lo crearon Rumbaugh, Booch y Jacobson",
+        "Es un lenguaje de programación"
+      ],
+      "c": 3,
+      "exp": "UML no es un lenguaje de programación."
+    },
+    {
+      "id": "iii4-21",
+      "tipico": false,
+      "q": "Los mecanismos de extensión de UML son…",
+      "opts": [
+        "Clases, objetos y paquetes",
+        "Elementos, relaciones y diagramas",
+        "Include, extend y generalización",
+        "Estereotipos, valores etiquetados y restricciones"
+      ],
+      "c": 3,
+      "exp": "Estereotipos, valores etiquetados y restricciones."
+    },
+    {
+      "id": "iii4-22",
+      "tipico": true,
+      "q": "¿Cuál es un diagrama UML estructural?",
+      "opts": [
+        "Diagrama de paquetes",
+        "Diagrama de casos de uso",
+        "Diagrama de secuencia",
+        "Diagrama de actividades"
+      ],
+      "c": 0,
+      "exp": "Paquetes es estructural; los otros, de comportamiento."
+    },
+    {
+      "id": "iii4-23",
+      "tipico": false,
+      "q": "El diagrama UML que destaca el orden temporal de los mensajes es el de…",
+      "opts": [
+        "Clases",
+        "Componentes",
+        "Secuencia",
+        "Objetos"
+      ],
+      "c": 2,
+      "exp": "Secuencia: ordenación temporal de los mensajes."
+    },
+    {
+      "id": "iii4-24",
+      "tipico": true,
+      "q": "Las fases de RUP son…",
+      "opts": [
+        "Análisis, diseño, código y pruebas",
+        "Iniciación, elaboración, construcción y transición",
+        "Planificación, ejecución, control y cierre",
+        "Requisitos, diseño, implantación y mantenimiento"
+      ],
+      "c": 1,
+      "exp": "Iniciación, elaboración, construcción y transición."
+    }
+  ]
+}

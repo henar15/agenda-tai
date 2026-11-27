@@ -1,0 +1,81 @@
+{
+  "tema": "III-3",
+  "ramas": [
+    {
+      "t": "SQL: origen y versiones",
+      "e": "📜",
+      "items": [
+        "**Declarativo**: qué, no cómo",
+        "Basado en **Codd (1970)**; IBM **SEQUEL** → System R",
+        "**ANSI 1986** / **ISO 1987** → SQL/86",
+        "**SQL:1999** triggers y recursividad · **2008** TRUNCATE",
+        "**2016** JSON · **2019** arrays multidimensionales"
+      ]
+    },
+    {
+      "t": "Sublenguajes",
+      "e": "🧩",
+      "items": [
+        "**DDL**: CREATE, ALTER, DROP, TRUNCATE",
+        "**DML**: INSERT, UPDATE, DELETE, MERGE",
+        "**DQL**: SELECT",
+        "**DCL**: GRANT, REVOKE",
+        "**TCL**: COMMIT, ROLLBACK, SAVEPOINT · **CCL**: cursores"
+      ]
+    },
+    {
+      "t": "Tablas y restricciones",
+      "e": "🏗️",
+      "items": [
+        "**PK**: única y no nula, una por tabla",
+        "**FK** + REFERENCES → integridad referencial",
+        "**UNIQUE** admite nulos · **CHECK** · **DEFAULT**",
+        "**Índices**: consultas rápidas, pero ocupan espacio",
+        "**Vista**: consulta guardada, sin datos propios"
+      ]
+    },
+    {
+      "t": "Consultas",
+      "e": "🔍",
+      "items": [
+        "SELECT-FROM-WHERE-GROUP BY-HAVING-ORDER BY",
+        "LIKE: **%** varios · **_** uno",
+        "**WHERE** filtra filas · **HAVING** filtra grupos",
+        "AVG, COUNT, SUM, MAX, MIN",
+        "**UNION** sin repetidos · **UNION ALL** con todos"
+      ]
+    },
+    {
+      "t": "JOIN",
+      "e": "🤝",
+      "items": [
+        "**INNER**: solo coincidencias",
+        "**LEFT** / **RIGHT**: todo un lado + coincidencias",
+        "**FULL**: todo, con NULL sin pareja",
+        "**CROSS**: producto cartesiano"
+      ]
+    },
+    {
+      "t": "Transacciones y cursores",
+      "e": "🔄",
+      "items": [
+        "**ACID**: atomicidad, consistencia, aislamiento, durabilidad",
+        "**COMMIT** confirma · **ROLLBACK** deshace",
+        "**SAVEPOINT**: volver a un punto intermedio",
+        "Cursor: DECLARE → OPEN → FETCH → CLOSE",
+        "@@FETCH_STATUS: 0 ok · -1 fallo · -2 fila perdida"
+      ]
+    },
+    {
+      "t": "Procedimientos y triggers",
+      "e": "🔫",
+      "items": [
+        "Procedimiento: **precompilado** y guardado en la BD",
+        "Parámetros **IN / OUT / INOUT** con @",
+        "Trigger: automático ante **INSERT/UPDATE/DELETE**",
+        "**BEFORE · AFTER · INSTEAD OF**",
+        "INSERT→**NEW** · DELETE→**OLD** · UPDATE→ambos"
+      ]
+    }
+  ]
+}

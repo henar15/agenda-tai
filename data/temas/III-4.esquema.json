@@ -1,0 +1,78 @@
+{
+  "tema": "III-4",
+  "ramas": [
+    {
+      "t": "Conceptos básicos",
+      "e": "🧱",
+      "items": [
+        "Objeto = **estado + comportamiento + identidad**",
+        "**Clase**: plantilla · **instancia** = objeto",
+        "**Mensaje** → invoca un **método**",
+        "Combinar **datos y funciones** en el objeto"
+      ]
+    },
+    {
+      "t": "Técnicas de la POO",
+      "e": "🛠️",
+      "items": [
+        "**Herencia**: simple o múltiple ('es-un')",
+        "**Abstracción**: qué hace, no cómo",
+        "**Polimorfismo** · **sobrecarga** (mismo nombre)",
+        "**Encapsulamiento**: public/private/protected",
+        "**Bajo acoplamiento** + **alta cohesión**"
+      ]
+    },
+    {
+      "t": "Relaciones entre clases",
+      "e": "🔗",
+      "items": [
+        "**Asociación**: 'usa un', línea continua",
+        "**Agregación**: todo-parte débil, rombo hueco",
+        "**Composición**: fuerte, rombo relleno",
+        "**Generalización**: herencia, triángulo",
+        "Multiplicidad: **1:1 · 1:N · M:N**"
+      ]
+    },
+    {
+      "t": "Patrones GoF",
+      "e": "🧩",
+      "items": [
+        "**GoF 1994**: 4 autores, **23 patrones**",
+        "Estructurales: Adapter, Bridge, Facade, Proxy…",
+        "Creación: **Singleton**, Prototype, Builder…",
+        "Comportamiento: **Observer**, Strategy, Memento…",
+        "Interacción: interfaces (Cunningham y Beck)"
+      ]
+    },
+    {
+      "t": "GRASP",
+      "e": "📏",
+      "items": [
+        "**Craig Larman**: asignar responsabilidades",
+        "Controlador · Creador · **Experto en información**",
+        "Bajo acoplamiento · alta cohesión",
+        "Polimorfismo · fabricación pura"
+      ]
+    },
+    {
+      "t": "UML",
+      "e": "🖍️",
+      "items": [
+        "Lenguaje **gráfico**, respaldado por **OMG**",
+        "Creadores: **Rumbaugh, Booch y Jacobson**",
+        "Extensión: estereotipos, valores etiquetados, restricciones",
+        "Estructurales: **clases**, objetos, paquetes…",
+        "Comportamiento: **secuencia**, casos de uso…"
+      ]
+    },
+    {
+      "t": "RUP",
+      "e": "🔄",
+      "items": [
+        "**Rational** (hoy **IBM**) + UML",
+        "Ciclo de vida en **espiral**, iterativo",
+        "Fases: **iniciación, elaboración, construcción, transición**"
+      ]
+    }
+  ]
+}

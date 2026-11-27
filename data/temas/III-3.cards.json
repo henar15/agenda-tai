@@ -1,0 +1,701 @@
+{
+  "tema": "III-3",
+  "cards": [
+    {
+      "id": "iii3c1",
+      "n": "1",
+      "e": "🔎",
+      "t": false,
+      "q": "¿Qué es un lenguaje de interrogación (QL, Query Language)?",
+      "a": "Cualquier lenguaje que **solicita y recupera datos de una BD** mediante el envío de **consultas**. También se llaman **lenguajes de consulta**"
+    },
+    {
+      "id": "iii3c2",
+      "n": "2",
+      "e": "⚙️",
+      "t": false,
+      "q": "Lenguajes de consulta procedimentales",
+      "a": "El usuario indica **órdenes** al sistema para obtener la información. Ejemplo: el **álgebra relacional**"
+    },
+    {
+      "id": "iii3c3",
+      "n": "3",
+      "e": "🧠",
+      "t": true,
+      "q": "Álgebra relacional vs cálculo relacional",
+      "a": "**Álgebra** = **procedimental**; **cálculo** = **declarativo** (no procedimental). Ambos son lenguajes formales que logran los mismos resultados"
+    },
+    {
+      "id": "iii3c4",
+      "n": "4",
+      "e": "📊",
+      "t": false,
+      "q": "¿Para qué sirven MDX, SPARQL, XQuery y OQL?",
+      "a": "**MDX**: BD **OLAP** · **SPARQL**: grafos **RDF** · **XQuery**: datos **XML** · **OQL**: BD **orientadas a objetos** (ODMG)"
+    },
+    {
+      "id": "iii3c5",
+      "n": "5",
+      "e": "💬",
+      "t": true,
+      "q": "¿Qué significa SQL y qué tipo de lenguaje es?",
+      "a": "**Structured Query Language**. Es **declarativo**: se dice **qué** se quiere, no **cómo** conseguirlo"
+    },
+    {
+      "id": "iii3c6",
+      "n": "6",
+      "e": "🏦",
+      "t": false,
+      "q": "¿En qué trabajo se basa SQL?",
+      "a": "En el **modelo relacional** de **Edgar F. Codd** (artículo de **1970**)"
+    },
+    {
+      "id": "iii3c7",
+      "n": "7",
+      "e": "🏢",
+      "t": false,
+      "q": "Origen de SQL",
+      "a": "**IBM** (San José) creó **SEQUEL** a mediados de los 70 y lo implementó en **1977** para **System R**"
+    },
+    {
+      "id": "iii3c8",
+      "n": "8",
+      "e": "🔶",
+      "t": false,
+      "q": "¿Qué empresa lanzó en 1979 la primera versión comercial de SQL?",
+      "a": "**Relational Software** (luego **Oracle**), con **Oracle V**"
+    },
+    {
+      "id": "iii3c9",
+      "n": "9",
+      "e": "📅",
+      "t": true,
+      "q": "¿Cuándo se estandarizó SQL?",
+      "a": "**ANSI** en **octubre de 1986** e **ISO** en **1987** → **SQL/86**"
+    },
+    {
+      "id": "iii3c10",
+      "n": "10",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué añadió SQL:1999 (SQL3)?",
+      "a": "**Expresiones regulares**, **consultas recursivas**, **triggers** y características **orientadas a objetos**"
+    },
+    {
+      "id": "iii3c11",
+      "n": "11",
+      "e": "🧾",
+      "t": false,
+      "q": "¿Qué añadió SQL:2003?",
+      "a": "Características **XML**, estandarización de **SEQUENCE** y columnas **autonuméricas**"
+    },
+    {
+      "id": "iii3c12",
+      "n": "12",
+      "e": "✂️",
+      "t": true,
+      "q": "¿Qué añadió SQL:2008?",
+      "a": "La sentencia **TRUNCATE**, ORDER BY fuera de cursores y triggers **INSTEAD OF**"
+    },
+    {
+      "id": "iii3c13",
+      "n": "13",
+      "e": "🆕",
+      "t": false,
+      "q": "Novedades de SQL:2011, 2016 y 2019",
+      "a": "**2011**: datos **temporales** · **2016**: **JSON** y coincidencia de patrones · **2019**: **arrays multidimensionales**"
+    },
+    {
+      "id": "iii3c14",
+      "n": "14",
+      "e": "⚡",
+      "t": true,
+      "q": "SQL dinámico",
+      "a": "Sentencias que se **construyen y compilan en tiempo de ejecución**: **más flexible** pero **menos eficiente**"
+    },
+    {
+      "id": "iii3c15",
+      "n": "15",
+      "e": "🧱",
+      "t": false,
+      "q": "SQL estático (incrustado)",
+      "a": "Sentencias **ya escritas** que **no cambian** en ejecución: menos flexible pero **más rápido** (se valida una sola vez)"
+    },
+    {
+      "id": "iii3c16",
+      "n": "16",
+      "e": "📥",
+      "t": false,
+      "q": "Métodos de SQL estático",
+      "a": "**Interactivo**, **embebido** (inmerso en un programa) y **modular**"
+    },
+    {
+      "id": "iii3c17",
+      "n": "17",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Cómo se marca el SQL embebido en un programa?",
+      "a": "Con **EXEC SQL** sentencia, y usa **variables anfitrionas** para intercambiar datos con el SGBD"
+    },
+    {
+      "id": "iii3c18",
+      "n": "18",
+      "e": "🎯",
+      "t": false,
+      "q": "¿Qué es un dominio en SQL?",
+      "a": "El **conjunto de valores posibles** de un atributo. Restringe los valores, así que es una **restricción** (integridad)"
+    },
+    {
+      "id": "iii3c19",
+      "n": "19",
+      "e": "🔤",
+      "t": false,
+      "q": "CHAR vs VARCHAR",
+      "a": "**CHAR**: longitud **fija** · **VARCHAR**: longitud **variable**. n entre **1 y 8000** bytes"
+    },
+    {
+      "id": "iii3c20",
+      "n": "20",
+      "e": "🗑️",
+      "t": false,
+      "q": "¿Qué pasa con text, ntext e image?",
+      "a": "Se prevé **quitarlos** en versiones futuras. Se recomienda **varchar(max)**, **nvarchar(max)** y **varbinary(max)**"
+    },
+    {
+      "id": "iii3c21",
+      "n": "21",
+      "e": "🔢",
+      "t": false,
+      "q": "Rangos de TINYINT y SMALLINT",
+      "a": "**TINYINT**: de **0 a 255** · **SMALLINT**: unos **±32.000** (2 bytes)"
+    },
+    {
+      "id": "iii3c22",
+      "n": "22",
+      "e": "🎚️",
+      "t": false,
+      "q": "DECIMAL(p,s): ¿qué son p y s?",
+      "a": "**p = precisión**: total de dígitos · **s = escala**: dígitos tras el punto decimal. Ej.: decimal(5,2) → máx. **999.99**"
+    },
+    {
+      "id": "iii3c23",
+      "n": "23",
+      "e": "📆",
+      "t": false,
+      "q": "DATETIME vs DATETIME2",
+      "a": "**DATETIME**: desde **1753** hasta 9999 · **DATETIME2**: desde el **año 1** hasta 9999 y más precisión"
+    },
+    {
+      "id": "iii3c24",
+      "n": "24",
+      "e": "❝",
+      "t": false,
+      "q": "¿Cómo se escriben las constantes en SQL?",
+      "a": "**Cadenas y fechas** entre **comillas simples** · **binarias** con prefijo **0x** sin comillas · **números** sin comillas"
+    },
+    {
+      "id": "iii3c25",
+      "n": "25",
+      "e": "🆔",
+      "t": false,
+      "q": "¿Qué es un GUID (uniqueidentifier)?",
+      "a": "Un **identificador único global**: número de **16 bytes**"
+    },
+    {
+      "id": "iii3c26",
+      "n": "26",
+      "e": "🗃️",
+      "t": true,
+      "q": "Comandos DDL",
+      "a": "**CREATE**, **DROP**, **ALTER** y **TRUNCATE** (definen la **estructura**)"
+    },
+    {
+      "id": "iii3c27",
+      "n": "27",
+      "e": "✏️",
+      "t": false,
+      "q": "Comandos DML",
+      "a": "**INSERT**, **UPDATE**, **DELETE** y **MERGE** (y SELECT para consultar)"
+    },
+    {
+      "id": "iii3c28",
+      "n": "28",
+      "e": "🔐",
+      "t": true,
+      "q": "Comandos DCL",
+      "a": "**GRANT** (dar permisos) y **REVOKE** (quitarlos)"
+    },
+    {
+      "id": "iii3c29",
+      "n": "29",
+      "e": "🔄",
+      "t": false,
+      "q": "Comandos TCL",
+      "a": "**COMMIT**, **ROLLBACK**, **SAVEPOINT** (también RELEASE SAVEPOINT y SET TRANSACTION)"
+    },
+    {
+      "id": "iii3c30",
+      "n": "30",
+      "e": "📏",
+      "t": false,
+      "q": "Orden de escritura de una consulta",
+      "a": "**SELECT – FROM – WHERE – GROUP BY – HAVING – ORDER BY**"
+    },
+    {
+      "id": "iii3c31",
+      "n": "31",
+      "e": "🧭",
+      "t": true,
+      "q": "Orden lógico de ejecución de una consulta",
+      "a": "1º **FROM/JOIN** · 2º **WHERE** · 3º **GROUP BY** · 4º **HAVING** · 5º **SELECT** · 6º **ORDER BY**"
+    },
+    {
+      "id": "iii3c32",
+      "n": "32",
+      "e": "❓",
+      "t": false,
+      "q": "¿Qué es un predicado?",
+      "a": "Expresión que se evalúa como **TRUE**, **FALSE** o **UNKNOWN**"
+    },
+    {
+      "id": "iii3c33",
+      "n": "33",
+      "e": "🔀",
+      "t": false,
+      "q": "Operadores lógicos en SQL",
+      "a": "**AND**, **OR**, **NOT** y **XOR**; se evalúan de **izquierda a derecha**. Con **NULL** el resultado es **UNKNOWN**"
+    },
+    {
+      "id": "iii3c34",
+      "n": "34",
+      "e": "🃏",
+      "t": true,
+      "q": "Comodines de LIKE",
+      "a": "**%** = **cualquier número** de caracteres (incluso ninguno) · **_** = **un solo** carácter · **[ ]** = rango (SQL Server)"
+    },
+    {
+      "id": "iii3c35",
+      "n": "35",
+      "e": "📋",
+      "t": false,
+      "q": "Operador IN",
+      "a": "Comprueba si un valor está en una **lista** de valores o en el resultado de una **subconsulta**. Va en el **WHERE**"
+    },
+    {
+      "id": "iii3c36",
+      "n": "36",
+      "e": "↔️",
+      "t": false,
+      "q": "BETWEEN",
+      "a": "Especifica un **intervalo**; incluye **ambos extremos**"
+    },
+    {
+      "id": "iii3c37",
+      "n": "37",
+      "e": "🕳️",
+      "t": false,
+      "q": "¿Cómo se buscan valores nulos?",
+      "a": "Con **IS NULL** / **IS NOT NULL**. Un espacio, cadena vacía o **cero NO son NULL**"
+    },
+    {
+      "id": "iii3c38",
+      "n": "38",
+      "e": "📈",
+      "t": true,
+      "q": "Las 5 funciones de agregado básicas",
+      "a": "**AVG**, **COUNT**, **SUM**, **MAX** y **MIN**: devuelven **un solo valor** por grupo"
+    },
+    {
+      "id": "iii3c39",
+      "n": "39",
+      "e": "🧮",
+      "t": false,
+      "q": "COUNT(*) vs COUNT(DISTINCT campo)",
+      "a": "**COUNT(*)** cuenta **todas las filas** (con nulos y duplicados) · **COUNT(DISTINCT)** cuenta valores **únicos no nulos**"
+    },
+    {
+      "id": "iii3c40",
+      "n": "40",
+      "e": "🔁",
+      "t": false,
+      "q": "¿Qué es una transacción?",
+      "a": "Una **unidad única de trabajo**: o se **confirman todos** los cambios o se **deshacen todos**. Ej.: una transferencia bancaria"
+    },
+    {
+      "id": "iii3c41",
+      "n": "41",
+      "e": "🧪",
+      "t": true,
+      "q": "Propiedades ACID",
+      "a": "**A**tomicidad, **C**onsistencia, a**I**slamiento y **D**urabilidad"
+    },
+    {
+      "id": "iii3c42",
+      "n": "42",
+      "e": "🏗️",
+      "t": false,
+      "q": "CREATE TABLE: ¿qué añade NOT NULL?",
+      "a": "Hace el atributo **obligatorio** (no admite nulos). Por defecto una columna **sí admite NULL**"
+    },
+    {
+      "id": "iii3c43",
+      "n": "43",
+      "e": "🧹",
+      "t": true,
+      "q": "TRUNCATE vs DROP vs DELETE",
+      "a": "**TRUNCATE** vacía la tabla y **deja la estructura** (no admite WHERE, muy rápido) · **DROP** **elimina** el objeto · **DELETE** borra filas (admite WHERE)"
+    },
+    {
+      "id": "iii3c44",
+      "n": "44",
+      "e": "🛠️",
+      "t": false,
+      "q": "ALTER TABLE",
+      "a": "Modifica la estructura: **ADD** (añadir columna), **ALTER/MODIFY COLUMN** (cambiar dominio) y **DROP** (borrar columna)"
+    },
+    {
+      "id": "iii3c45",
+      "n": "45",
+      "e": "🔢",
+      "t": false,
+      "q": "Campos autoincrementales",
+      "a": "**CREATE SEQUENCE** (START WITH, INCREMENT) o tipos como **AUTO_INCREMENT** (**IDENTITY** en SQL Server)"
+    },
+    {
+      "id": "iii3c46",
+      "n": "46",
+      "e": "📑",
+      "t": false,
+      "q": "¿Para qué sirve un índice?",
+      "a": "Para **acelerar las consultas**. Inconveniente: **ocupa espacio** y se actualiza en cada INSERT/UPDATE; demasiados índices **bajan el rendimiento**"
+    },
+    {
+      "id": "iii3c47",
+      "n": "47",
+      "e": "🗝️",
+      "t": true,
+      "q": "PRIMARY KEY",
+      "a": "Identifica **de forma única** cada fila: valores **únicos y no nulos**. **Solo una** por tabla (puede ser compuesta)"
+    },
+    {
+      "id": "iii3c48",
+      "n": "48",
+      "e": "🔗",
+      "t": true,
+      "q": "FOREIGN KEY y REFERENCES",
+      "a": "La clave ajena solo admite valores que **existan en la PK** de otra tabla → garantiza la **integridad referencial**"
+    },
+    {
+      "id": "iii3c49",
+      "n": "49",
+      "e": "☝️",
+      "t": false,
+      "q": "UNIQUE vs PRIMARY KEY",
+      "a": "**UNIQUE** exige valores distintos pero **admite nulos** y puede haber **varios** por tabla"
+    },
+    {
+      "id": "iii3c50",
+      "n": "50",
+      "e": "✅",
+      "t": false,
+      "q": "CHECK y DEFAULT",
+      "a": "**CHECK**: los valores deben cumplir una **condición** · **DEFAULT**: valor **por defecto** si no se indica"
+    },
+    {
+      "id": "iii3c51",
+      "n": "51",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Con qué cláusula se crean restricciones?",
+      "a": "Con **CONSTRAINT**, dentro de **CREATE TABLE** o **ALTER TABLE**"
+    },
+    {
+      "id": "iii3c52",
+      "n": "52",
+      "e": "🪟",
+      "t": true,
+      "q": "¿Qué es una vista (CREATE VIEW)?",
+      "a": "Una **consulta guardada**: **no almacena datos** físicamente; muestra siempre los **datos reales** del momento"
+    },
+    {
+      "id": "iii3c53",
+      "n": "53",
+      "e": "🗒️",
+      "t": false,
+      "q": "Operaciones CRUD",
+      "a": "**Create** (INSERT), **Read** (SELECT), **Update** (UPDATE) y **Delete** (DELETE)"
+    },
+    {
+      "id": "iii3c54",
+      "n": "54",
+      "e": "🔍",
+      "t": false,
+      "q": "¿Qué es DQL?",
+      "a": "**Data Query Language**: las consultas de **selección** (**SELECT**), que **no modifican** datos"
+    },
+    {
+      "id": "iii3c55",
+      "n": "55",
+      "e": "🎭",
+      "t": false,
+      "q": "Alias (AS)",
+      "a": "Muestra otro **nombre** para un campo; solo existe **mientras dura la consulta**"
+    },
+    {
+      "id": "iii3c56",
+      "n": "56",
+      "e": "🚫",
+      "t": false,
+      "q": "DISTINCT",
+      "a": "Elimina las filas **duplicadas** del resultado"
+    },
+    {
+      "id": "iii3c57",
+      "n": "57",
+      "e": "⬆️",
+      "t": false,
+      "q": "ORDER BY: ¿cuál es el orden por defecto?",
+      "a": "**ASC** (ascendente). Para descendente: **DESC**"
+    },
+    {
+      "id": "iii3c58",
+      "n": "58",
+      "e": "🪆",
+      "t": false,
+      "q": "Subconsultas: reglas básicas",
+      "a": "Van **entre paréntesis** y se ejecutan **antes** que la consulta principal"
+    },
+    {
+      "id": "iii3c59",
+      "n": "59",
+      "e": "🎲",
+      "t": false,
+      "q": "IN, ALL y ANY en subconsultas",
+      "a": "**IN**: está en la lista · **ALL**: se cumple con **todos** · **ANY**: se cumple con **alguno**"
+    },
+    {
+      "id": "iii3c60",
+      "n": "60",
+      "e": "👥",
+      "t": true,
+      "q": "WHERE vs HAVING",
+      "a": "**WHERE** filtra **filas** · **HAVING** filtra **grupos** (va con **GROUP BY** y usa funciones de agregado)"
+    },
+    {
+      "id": "iii3c61",
+      "n": "61",
+      "e": "➕",
+      "t": true,
+      "q": "UNION vs UNION ALL",
+      "a": "**UNION** quita repetidos · **UNION ALL** muestra **todas** las filas (más rápida). Las SELECT deben tener **mismas columnas, tipos y orden**"
+    },
+    {
+      "id": "iii3c62",
+      "n": "62",
+      "e": "🤝",
+      "t": false,
+      "q": "Tipos de JOIN del estándar ANSI",
+      "a": "**INNER**, **LEFT OUTER**, **RIGHT OUTER**, **FULL OUTER** y **CROSS** (5)"
+    },
+    {
+      "id": "iii3c63",
+      "n": "63",
+      "e": "🎯",
+      "t": false,
+      "q": "INNER JOIN",
+      "a": "Solo las filas que **coinciden en ambas** tablas. JOIN a secas equivale a **INNER JOIN**"
+    },
+    {
+      "id": "iii3c64",
+      "n": "64",
+      "e": "⬅️",
+      "t": true,
+      "q": "LEFT JOIN vs RIGHT JOIN",
+      "a": "**LEFT**: todas las filas de la tabla **izquierda** + coincidencias · **RIGHT**: todas las de la **derecha**"
+    },
+    {
+      "id": "iii3c65",
+      "n": "65",
+      "e": "🌐",
+      "t": false,
+      "q": "FULL JOIN",
+      "a": "Todas las filas de **ambas** tablas, con **NULL** donde no hay pareja. Se simula con **LEFT JOIN UNION RIGHT JOIN**"
+    },
+    {
+      "id": "iii3c66",
+      "n": "66",
+      "e": "✖️",
+      "t": true,
+      "q": "CROSS JOIN",
+      "a": "El **producto cartesiano**: cada fila de una tabla con **cada fila** de la otra"
+    },
+    {
+      "id": "iii3c67",
+      "n": "67",
+      "e": "📝",
+      "t": false,
+      "q": "Reglas de INSERT",
+      "a": "Agrega filas a **una sola tabla**; mismo número de **columnas y valores**; si falta un valor se usa el **predeterminado**"
+    },
+    {
+      "id": "iii3c68",
+      "n": "68",
+      "e": "🔃",
+      "t": false,
+      "q": "MERGE",
+      "a": "Hace **INSERT, UPDATE y DELETE** en una tabla destino según la combinación con una tabla **origen**. Es **determinista**"
+    },
+    {
+      "id": "iii3c69",
+      "n": "69",
+      "e": "🎟️",
+      "t": false,
+      "q": "Permisos más usados con GRANT",
+      "a": "**SELECT**, **INSERT**, **UPDATE** y **DELETE** (ALL por compatibilidad)"
+    },
+    {
+      "id": "iii3c70",
+      "n": "70",
+      "e": "💾",
+      "t": true,
+      "q": "COMMIT vs ROLLBACK",
+      "a": "**COMMIT** **confirma** y hace visibles los cambios · **ROLLBACK** los **deshace** y vuelve al estado inicial"
+    },
+    {
+      "id": "iii3c71",
+      "n": "71",
+      "e": "📍",
+      "t": false,
+      "q": "SAVEPOINT",
+      "a": "**Punto de guardado** dentro de una transacción para hacer **ROLLBACK TO SAVEPOINT** sin deshacerlo todo. Se elimina con **RELEASE SAVEPOINT**"
+    },
+    {
+      "id": "iii3c72",
+      "n": "72",
+      "e": "👉",
+      "t": false,
+      "q": "¿Qué es un cursor (CCL)?",
+      "a": "Una estructura que **recorre fila a fila** el resultado de una consulta (también se llama **puntero**)"
+    },
+    {
+      "id": "iii3c73",
+      "n": "73",
+      "e": "🔄",
+      "t": false,
+      "q": "Ciclo de vida de un cursor",
+      "a": "**DECLARE** → **OPEN** → **FETCH** → **CLOSE** → **DEALLOCATE**"
+    },
+    {
+      "id": "iii3c74",
+      "n": "74",
+      "e": "📤",
+      "t": false,
+      "q": "FETCH absoluto vs relativo",
+      "a": "**Absoluto**: FIRST, LAST, ABSOLUTE n · **Relativo**: NEXT, PRIOR, RELATIVE n"
+    },
+    {
+      "id": "iii3c75",
+      "n": "75",
+      "e": "📡",
+      "t": false,
+      "q": "Valores de @@FETCH_STATUS",
+      "a": "**0** = éxito · **-1** = fallo · **-2** = la fila desapareció"
+    },
+    {
+      "id": "iii3c76",
+      "n": "76",
+      "e": "🏪",
+      "t": true,
+      "q": "¿Qué es un procedimiento almacenado?",
+      "a": "Un **programa precompilado** guardado **en la propia BD**, que se ejecuta en el servidor; es **reutilizable** y mejora el rendimiento"
+    },
+    {
+      "id": "iii3c77",
+      "n": "77",
+      "e": "🏷️",
+      "t": false,
+      "q": "Prefijos de procedimientos almacenados",
+      "a": "**Del sistema**: **sp_** · **De usuario**: se recomienda **spu_**"
+    },
+    {
+      "id": "iii3c78",
+      "n": "78",
+      "e": "↕️",
+      "t": false,
+      "q": "Parámetros IN, OUT e INOUT",
+      "a": "**IN** = entrada · **OUT/OUTPUT** = salida · **INOUT** = entrada y salida. Los parámetros empiezan por **@**"
+    },
+    {
+      "id": "iii3c79",
+      "n": "79",
+      "e": "📞",
+      "t": false,
+      "q": "¿Cómo se invoca un procedimiento?",
+      "a": "Con **EXECUTE** (o **CALL**). Se crea con **CREATE PROCEDURE**"
+    },
+    {
+      "id": "iii3c80",
+      "n": "80",
+      "e": "🔫",
+      "t": true,
+      "q": "¿Qué es un trigger (disparador)?",
+      "a": "Un procedimiento especial asociado a una **tabla** que se ejecuta **automáticamente** ante **INSERT, UPDATE o DELETE**"
+    },
+    {
+      "id": "iii3c81",
+      "n": "81",
+      "e": "⏱️",
+      "t": false,
+      "q": "BEFORE, AFTER e INSTEAD OF",
+      "a": "El trigger se dispara **antes**, **después** o **en lugar de** la sentencia que lo provoca"
+    },
+    {
+      "id": "iii3c82",
+      "n": "82",
+      "e": "🧱",
+      "t": false,
+      "q": "Modelo de un trigger",
+      "a": "**Evento-Condición-Acción** (ECA)"
+    },
+    {
+      "id": "iii3c83",
+      "n": "83",
+      "e": "🔂",
+      "t": false,
+      "q": "FOR EACH ROW",
+      "a": "Trigger de **nivel de fila**: se dispara por **cada fila** afectada. El de nivel de **orden** se dispara **una vez**"
+    },
+    {
+      "id": "iii3c84",
+      "n": "84",
+      "e": "🚷",
+      "t": false,
+      "q": "Diferencias trigger vs procedimiento",
+      "a": "El trigger **no se invoca directamente**, **no recibe ni devuelve parámetros** y no puede usar COMMIT ni ROLLBACK"
+    },
+    {
+      "id": "iii3c85",
+      "n": "85",
+      "e": "🆚",
+      "t": true,
+      "q": "OLD y NEW en triggers",
+      "a": "**INSERT**: solo **NEW** · **DELETE**: solo **OLD** · **UPDATE**: **OLD** y **NEW**. OLD es de **solo lectura**"
+    },
+    {
+      "id": "iii3c86",
+      "n": "86",
+      "e": "🐬",
+      "t": false,
+      "q": "¿Desde qué versión de MySQL hay triggers?",
+      "a": "Desde **MySQL 5.0.2**"
+    },
+    {
+      "id": "iii3c87",
+      "n": "87",
+      "e": "📸",
+      "t": false,
+      "q": "Snapshot vs ROLLBACK",
+      "a": "**Snapshot**: **instantánea** de la BD en el momento que elijamos, **fuera** de las transacciones · **ROLLBACK**: revierte una transacción incompleta"
+    }
+  ]
+}

@@ -227,10 +227,11 @@
   "orden": 3,
   "titulo": "SQL, procedimientos almacenados, eventos y disparadores",
   "semana": "2027-02-01",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 124,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-4",
@@ -239,10 +240,11 @@
   "orden": 4,
   "titulo": "Programación orientada a objetos, patrones de diseño y UML",
   "semana": "2027-02-08",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 72,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-5",
