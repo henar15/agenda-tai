@@ -396,10 +396,11 @@
   "orden": 7,
   "titulo": "Modelos TCP/IP y OSI",
   "semana": "2027-03-29",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 88,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-8",
@@ -408,10 +409,11 @@
   "orden": 8,
   "titulo": "Internet: arquitectura, servicios, HTTP, HTTPS y SSL/TLS",
   "semana": "2027-04-05",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 94,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "IV-9",

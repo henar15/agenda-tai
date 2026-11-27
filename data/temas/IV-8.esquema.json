@@ -1,0 +1,79 @@
+{
+  "tema": "IV-8",
+  "ramas": [
+    {
+      "t": "Arquitectura",
+      "e": "🏗️",
+      "items": [
+        "Red de redes con **TCP/IP**; WWW es solo un servicio",
+        "3 tiers: **a menor número, más categoría**",
+        "Tier 1 global · Tier 2 regional · Tier 3 = ISP",
+        "**Tránsito** (se paga) vs **peering** (gratis) · **IXP**"
+      ]
+    },
+    {
+      "t": "DNS",
+      "e": "📖",
+      "items": [
+        "Dominio → IP",
+        "**A** (IPv4) · **AAAA** (IPv6) · **CNAME** (alias)",
+        "**MX** correo · **NS** · **PTR** inversa",
+        "**SOA** autoridad · SRV · TXT"
+      ]
+    },
+    {
+      "t": "Historia",
+      "e": "📅",
+      "items": [
+        "**1958** ARPA · **1969** ARPANET (4 universidades)",
+        "**1972** correo (Tomlinson) · **1973** TCP/IP",
+        "**1983** MILNET y DNS · **1988** IANA y CERT",
+        "**1991** WWW (Berners-Lee) · **1993** Mosaic",
+        "**1995** NSFNET desaparece, Internet llega a casa"
+      ]
+    },
+    {
+      "t": "Servicios",
+      "e": "🧰",
+      "items": [
+        "Cliente/servidor · URI = URL + URN",
+        "Web 1.0 estática · **2.0** colaborativa · **3.0** semántica",
+        "Directorios vs motores · multi vs metabuscador",
+        "Webmail · FTP · VNC · VoIP (**SIP**, RTP) · **XMPP**",
+        "**NTP** UDP 123 · hora **ROA** · eduroam"
+      ]
+    },
+    {
+      "t": "HTTP",
+      "e": "🌍",
+      "items": [
+        "**Sin estado** (cookies) · puerto **80**",
+        "0.9 solo GET · 1.0 GET/HEAD/POST · 1.1 persistente",
+        "**HTTP/2** binario, multiplexa, HPACK · **HTTP/3** UDP",
+        "GET · POST crear · PUT · PATCH parcial · DELETE",
+        "1xx info · 2xx OK · 3xx redir · **4xx cliente · 5xx servidor**"
+      ]
+    },
+    {
+      "t": "HTTPS y SSL/TLS",
+      "e": "🔒",
+      "items": [
+        "HTTPS = HTTP + SSL/TLS · puerto **443**",
+        "Asimétrica para la clave, simétrica para datos",
+        "Certificado de **CA** contra man-in-the-middle · **HSTS**",
+        "SSL (Netscape) → TLS (IETF) · TLS 1.3 = **RFC 8446**",
+        "Forward secrecy: solo **DHE** y **ECDHE**"
+      ]
+    },
+    {
+      "t": "OSPF",
+      "e": "🛣️",
+      "items": [
+        "IGP de **estado de enlace** con **Dijkstra**",
+        "Áreas unidas al **backbone**",
+        "DR y BDR en Ethernet",
+        "Sobre **IP (89)** · multicast 224.0.0.5/6"
+      ]
+    }
+  ]
+}

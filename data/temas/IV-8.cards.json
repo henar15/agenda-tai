@@ -1,0 +1,719 @@
+{
+  "tema": "IV-8",
+  "cards": [
+    {
+      "id": "iv8c1",
+      "n": "1",
+      "e": "🌐",
+      "t": false,
+      "q": "¿De dónde viene la palabra Internet?",
+      "a": "De **Interconnected Networks**: «redes interconectadas». Es la **red de redes** que usa **TCP/IP**"
+    },
+    {
+      "id": "iv8c2",
+      "n": "2",
+      "e": "🕸️",
+      "t": false,
+      "q": "¿Internet y la WWW son lo mismo?",
+      "a": "**No**: la **WWW** es solo **uno de los servicios** de Internet (el más importante)",
+      "h": "Otros: FTP, Telnet, correo, foros…"
+    },
+    {
+      "id": "iv8c3",
+      "n": "3",
+      "e": "🏗️",
+      "t": false,
+      "q": "¿Qué red hizo de red troncal en los primeros años de Internet?",
+      "a": "La **NSFNET** (National Science Foundation NET). En **1995** cedió esa función y empezó la descentralización"
+    },
+    {
+      "id": "iv8c4",
+      "n": "4",
+      "e": "🪜",
+      "t": true,
+      "q": "¿Cómo es la estructura actual de Internet?",
+      "a": "**Jerárquica** en 3 niveles o **tiers**: a **menor número, mayor categoría**",
+      "h": "Al revés que los Tier de los CPD"
+    },
+    {
+      "id": "iv8c5",
+      "n": "5",
+      "e": "🥇",
+      "t": true,
+      "q": "¿Qué es una red Tier 1?",
+      "a": "Gran operador **global** con fibra en al menos **2 continentes**; llega a **cualquier punto** de Internet y se conecta directamente con las demás Tier 1",
+      "h": "Ej.: AT&T, Verizon, Telefónica (TIWS)"
+    },
+    {
+      "id": "iv8c6",
+      "n": "6",
+      "e": "🥈",
+      "t": false,
+      "q": "¿Qué es una red Tier 2?",
+      "a": "Operador **regional o nacional**: necesita **pagar** a una Tier 1 para llegar a todo Internet y da conectividad a las Tier 3",
+      "h": "Ej.: Vodafone, British Telecom"
+    },
+    {
+      "id": "iv8c7",
+      "n": "7",
+      "e": "🥉",
+      "t": false,
+      "q": "¿Qué es una red Tier 3?",
+      "a": "Los **ISP** que dan acceso a empresas y hogares; **no tienen red propia** y compran servicio a las Tier 2",
+      "h": "Ej.: MásMóvil, Yoigo"
+    },
+    {
+      "id": "iv8c8",
+      "n": "8",
+      "e": "💸",
+      "t": false,
+      "q": "Conexión de tránsito entre operadores",
+      "a": "Entre operadores de **distinta jerarquía**: el mayor (**proveedor**) **vende** acceso a todas sus rutas al menor (**cliente**)"
+    },
+    {
+      "id": "iv8c9",
+      "n": "9",
+      "e": "🤝",
+      "t": true,
+      "q": "Conexión de peering",
+      "a": "Intercambio de tráfico **sin coste** entre dos operadores; cada uno publica **solo sus rutas**. Puede ser **público** (en un IXP) o **privado**"
+    },
+    {
+      "id": "iv8c10",
+      "n": "10",
+      "e": "🔀",
+      "t": true,
+      "q": "¿Qué es un IXP?",
+      "a": "**Internet eXchange Point**: infraestructura física donde los ISP **intercambian tráfico** mediante **peering**"
+    },
+    {
+      "id": "iv8c11",
+      "n": "11",
+      "e": "📖",
+      "t": false,
+      "q": "¿Qué es el DNS?",
+      "a": "**Domain Name System**: base de datos que da la **IP** asociada a un **dominio**"
+    },
+    {
+      "id": "iv8c12",
+      "n": "12",
+      "e": "📬",
+      "t": true,
+      "q": "¿Para qué sirve el registro MX?",
+      "a": "Indica los **servidores de correo** del dominio con su **prioridad**; el MTA lo consulta antes de conectar por **SMTP**"
+    },
+    {
+      "id": "iv8c13",
+      "n": "13",
+      "e": "🅰️",
+      "t": true,
+      "q": "Registros DNS A y AAAA",
+      "a": "**A**: dominio → **IPv4** (32 bits). **AAAA**: dominio → **IPv6** (128 bits)"
+    },
+    {
+      "id": "iv8c14",
+      "n": "14",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Qué es el registro CNAME?",
+      "a": "**Nombre canónico**: hace que un dominio sea un **alias** de otro"
+    },
+    {
+      "id": "iv8c15",
+      "n": "15",
+      "e": "🗂️",
+      "t": false,
+      "q": "Registros DNS NS, PTR, SRV y TXT",
+      "a": "**NS**: servidor de nombres autorizado. **PTR**: resolución **inversa**. **SRV**: servicio. **TXT**: texto libre"
+    },
+    {
+      "id": "iv8c16",
+      "n": "16",
+      "e": "👑",
+      "t": false,
+      "q": "¿Qué es el registro SOA?",
+      "a": "**Start of Authority** (comienzo de autoridad): datos esenciales de la zona, como el **administrador** y la **última actualización**"
+    },
+    {
+      "id": "iv8c17",
+      "n": "17",
+      "e": "🪖",
+      "t": false,
+      "q": "¿Cuándo se creó ARPA y quién la creó?",
+      "a": "En **1958**, el **Departamento de Defensa** de EE. UU."
+    },
+    {
+      "id": "iv8c18",
+      "n": "18",
+      "e": "📦",
+      "t": false,
+      "q": "¿Quién publicó en 1961 el primer trabajo sobre conmutación de paquetes?",
+      "a": "**Leonard Kleinrock**"
+    },
+    {
+      "id": "iv8c19",
+      "n": "19",
+      "e": "🌌",
+      "t": false,
+      "q": "¿Quién habló de la «Galactic Network»?",
+      "a": "**Licklider** (MIT), en **1962**: ordenadores interconectados"
+    },
+    {
+      "id": "iv8c20",
+      "n": "20",
+      "e": "📞",
+      "t": false,
+      "q": "¿Cuál fue la primera red WAN?",
+      "a": "En **1965**, Merrill y Roberts conectaron dos ordenadores por línea telefónica a **1200 bps**"
+    },
+    {
+      "id": "iv8c21",
+      "n": "21",
+      "e": "🎓",
+      "t": false,
+      "q": "¿Cuándo se conectaron los primeros ordenadores de ARPANET?",
+      "a": "En **1969**, entre **4 universidades** de EE. UU. mediante los **IMP**",
+      "h": "Los IMP los desarrolló BBN"
+    },
+    {
+      "id": "iv8c22",
+      "n": "22",
+      "e": "🔌",
+      "t": false,
+      "q": "¿Qué era NCP?",
+      "a": "**Network Control Protocol** (1970), el protocolo **antecesor de TCP/IP**"
+    },
+    {
+      "id": "iv8c23",
+      "n": "23",
+      "e": "🏝️",
+      "t": false,
+      "q": "¿Qué era ALOHA?",
+      "a": "Protocolo de la Universidad de **Hawái** (1970), por **radio**, antecesor de las redes locales y de **Ethernet**"
+    },
+    {
+      "id": "iv8c24",
+      "n": "24",
+      "e": "📧",
+      "t": false,
+      "q": "¿Quién creó el correo electrónico y cuándo?",
+      "a": "**Ray Tomlinson** (BBN), en **1972**, en ARPANET"
+    },
+    {
+      "id": "iv8c25",
+      "n": "25",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Cuándo se desarrolló TCP/IP?",
+      "a": "En **1973**, por **Kahn**: redes independientes, «best effort», sin control central y **32 bits** de direcciones"
+    },
+    {
+      "id": "iv8c26",
+      "n": "26",
+      "e": "🔗",
+      "t": false,
+      "q": "¿Quién describió Ethernet y cuándo?",
+      "a": "**Bob Metcalfe**, en **1973** (se llamó «Alto Aloha Network»). Después fundó **3COM**"
+    },
+    {
+      "id": "iv8c27",
+      "n": "27",
+      "e": "📏",
+      "t": false,
+      "q": "¿Qué velocidad tenía Ethernet v1.0 (1980)?",
+      "a": "**10 Mbps**, especificada por la alianza **DEC-Intel-Xerox**"
+    },
+    {
+      "id": "iv8c28",
+      "n": "28",
+      "e": "🏁",
+      "t": false,
+      "q": "¿Cuándo se adoptó TCP/IP como protocolo base de ARPANET?",
+      "a": "En **1982**; en **1981** se pasó de NCP a TCP y se crearon las **clases A, B y C**"
+    },
+    {
+      "id": "iv8c29",
+      "n": "29",
+      "e": "🪖",
+      "t": true,
+      "q": "¿Cuándo se separó MILNET de ARPANET?",
+      "a": "En **1983**: **ARPANET** para uso civil y **MILNET** para uso militar"
+    },
+    {
+      "id": "iv8c30",
+      "n": "30",
+      "e": "📛",
+      "t": false,
+      "q": "¿Cuándo se definió el DNS?",
+      "a": "En **1983**, porque ya no se podía mantener una tabla centralizada de nombres"
+    },
+    {
+      "id": "iv8c31",
+      "n": "31",
+      "e": "📝",
+      "t": false,
+      "q": "¿Cuál fue el primer dominio de Internet?",
+      "a": "**symbolics.com**, en **1985**"
+    },
+    {
+      "id": "iv8c32",
+      "n": "32",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Cuál fue el primer ISP privado?",
+      "a": "**UUNet**, en **1987**"
+    },
+    {
+      "id": "iv8c33",
+      "n": "33",
+      "e": "🐛",
+      "t": false,
+      "q": "¿Qué pasó en 1988?",
+      "a": "Primer **gusano** de Internet, se creó el **CERT** y la **IANA**, y apareció el **IRC**"
+    },
+    {
+      "id": "iv8c34",
+      "n": "34",
+      "e": "👋",
+      "t": false,
+      "q": "¿Cuándo desapareció ARPANET?",
+      "a": "En **1990**: ya solo se habla de Internet"
+    },
+    {
+      "id": "iv8c35",
+      "n": "35",
+      "e": "🕸️",
+      "t": true,
+      "q": "¿Quién presentó la WWW y cuándo?",
+      "a": "**Tim Berners-Lee**, del **CERN**, en **1991**; el CERN liberó el código gratis"
+    },
+    {
+      "id": "iv8c36",
+      "n": "36",
+      "e": "🖼️",
+      "t": false,
+      "q": "¿Cuál fue el primer navegador gráfico?",
+      "a": "**Mosaic**, en **1993**. Le sucedió **Netscape** (1994)"
+    },
+    {
+      "id": "iv8c37",
+      "n": "37",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Qué pasó en 1995?",
+      "a": "La **WWW supera a FTP**, Internet llega a los hogares y **desaparece la NSFNET**"
+    },
+    {
+      "id": "iv8c38",
+      "n": "38",
+      "e": "👥",
+      "t": false,
+      "q": "¿Cuándo alcanzó Internet los mil millones de usuarios?",
+      "a": "En **2005** (año en que nace YouTube)"
+    },
+    {
+      "id": "iv8c39",
+      "n": "39",
+      "e": "⚖️",
+      "t": false,
+      "q": "¿Qué es la brecha digital?",
+      "a": "La **desigualdad en el acceso** a Internet entre países o sectores"
+    },
+    {
+      "id": "iv8c40",
+      "n": "40",
+      "e": "💬",
+      "t": false,
+      "q": "¿Qué es un SNS?",
+      "a": "**Social Networking Service**: servicio de **red social** en una plataforma web"
+    },
+    {
+      "id": "iv8c41",
+      "n": "41",
+      "e": "🖥️",
+      "t": false,
+      "q": "¿Cómo funciona la arquitectura cliente/servidor?",
+      "a": "El **cliente pide** un servicio, el **servidor** (que escucha) lo procesa y **devuelve** el resultado. Es **distribuida**"
+    },
+    {
+      "id": "iv8c42",
+      "n": "42",
+      "e": "📍",
+      "t": true,
+      "q": "Diferencia entre URL, URN y URI",
+      "a": "**URI**: identifica un recurso de forma unívoca. **URL**: dice **dónde** está (puede cambiar). **URN**: lo **nombra** sin decir dónde",
+      "h": "Un URI puede ser URL, URN o ambos"
+    },
+    {
+      "id": "iv8c43",
+      "n": "43",
+      "e": "🧩",
+      "t": false,
+      "q": "Partes de un URI",
+      "a": "**Esquema** (http:), **autoridad** (//www...), **ruta**, **consulta** (empieza por **?**) y **fragmento** (empieza por **#**)"
+    },
+    {
+      "id": "iv8c44",
+      "n": "44",
+      "e": "🔎",
+      "t": false,
+      "q": "Directorios frente a motores de búsqueda",
+      "a": "**Directorios**: los ordenan **personas**, resultados **precisos** pero poco exhaustivos. **Motores**: usan **crawlers**, resultados **exhaustivos** pero poco precisos"
+    },
+    {
+      "id": "iv8c45",
+      "n": "45",
+      "e": "🔭",
+      "t": false,
+      "q": "Diferencia entre multibuscador y metabuscador",
+      "a": "**Multibuscador**: lista de buscadores para usar uno. **Metabuscador**: busca en **todos a la vez** y **combina** los resultados"
+    },
+    {
+      "id": "iv8c46",
+      "n": "46",
+      "e": "📰",
+      "t": true,
+      "q": "Web 1.0 y Web 2.0",
+      "a": "**1.0**: páginas **estáticas**, sin interacción. **2.0**: **colaborativa**, el usuario **crea y comparte** contenido (redes sociales, wikis)"
+    },
+    {
+      "id": "iv8c47",
+      "n": "47",
+      "e": "🧠",
+      "t": false,
+      "q": "¿Qué es la Web 3.0?",
+      "a": "La **web semántica**: contenidos semánticos, búsquedas en **lenguaje natural**, acceso sin navegar e **inteligencia artificial**"
+    },
+    {
+      "id": "iv8c48",
+      "n": "48",
+      "e": "✉️",
+      "t": false,
+      "q": "¿Qué es el webmail?",
+      "a": "Correo al que se accede con el **navegador**, sin descargar los mensajes. Ej.: Gmail, Hotmail, Yahoo",
+      "h": "Desventaja: necesita conexión"
+    },
+    {
+      "id": "iv8c49",
+      "n": "49",
+      "e": "📁",
+      "t": false,
+      "q": "Modos de transmisión de FTP",
+      "a": "**ASCII** para texto (convierte saltos de línea) y **binario** para el resto (imágenes, ejecutables…)"
+    },
+    {
+      "id": "iv8c50",
+      "n": "50",
+      "e": "🖱️",
+      "t": false,
+      "q": "Formas de acceso remoto",
+      "a": "**Modo terminal** (ej.: Telnet) y **modo gráfico** (ej.: **VNC**, libre, o **TeamViewer**)"
+    },
+    {
+      "id": "iv8c51",
+      "n": "51",
+      "e": "☎️",
+      "t": false,
+      "q": "Protocolos de telefonía IP (VoIP)",
+      "a": "**SIP**, **H.323**, **RTP**, **RTCP**, **SRTP** y **SDP**"
+    },
+    {
+      "id": "iv8c52",
+      "n": "52",
+      "e": "💭",
+      "t": false,
+      "q": "¿Qué es XMPP?",
+      "a": "Protocolo **abierto** de mensajería instantánea y presencia basado en **XML**"
+    },
+    {
+      "id": "iv8c53",
+      "n": "53",
+      "e": "⏰",
+      "t": false,
+      "q": "¿Qué es NTP y qué puerto usa?",
+      "a": "Protocolo para **sincronizar relojes**; usa **UDP**, puerto **123**"
+    },
+    {
+      "id": "iv8c54",
+      "n": "54",
+      "e": "🇪🇸",
+      "t": false,
+      "q": "¿Quién da la hora oficial de España?",
+      "a": "El **ROA** (Real Instituto y Observatorio de la Armada, San Fernando, Cádiz), por **NTP**"
+    },
+    {
+      "id": "iv8c55",
+      "n": "55",
+      "e": "🎒",
+      "t": false,
+      "q": "¿Qué es eduroam?",
+      "a": "Servicio de **roaming WiFi** para la comunidad educativa; en España forma parte de **RedIRIS**"
+    },
+    {
+      "id": "iv8c56",
+      "n": "56",
+      "e": "🌍",
+      "t": true,
+      "q": "¿Cómo es el protocolo HTTP?",
+      "a": "Protocolo de la **WWW**, de tipo **petición-respuesta** y **sin estado** (por eso se usan **cookies**)"
+    },
+    {
+      "id": "iv8c57",
+      "n": "57",
+      "e": "🚪",
+      "t": true,
+      "q": "Puertos de HTTP",
+      "a": "**80/tcp** por defecto; alternativo **8080**; **3128** para cachés (Squid)"
+    },
+    {
+      "id": "iv8c58",
+      "n": "58",
+      "e": "0️⃣",
+      "t": false,
+      "q": "¿Cómo era HTTP/0.9 (1991)?",
+      "a": "Solo el método **GET**, sin cabeceras y sin número de versión"
+    },
+    {
+      "id": "iv8c59",
+      "n": "59",
+      "e": "1️⃣",
+      "t": false,
+      "q": "¿Qué aportó HTTP/1.0 (1996)?",
+      "a": "Primera versión que **indica su versión**; métodos **GET, HEAD y POST**"
+    },
+    {
+      "id": "iv8c60",
+      "n": "60",
+      "e": "🔁",
+      "t": true,
+      "q": "¿Qué aportó HTTP/1.1 (1999)?",
+      "a": "**Conexiones persistentes** (keep-alive) por defecto y **pipelining**. Es la más compatible"
+    },
+    {
+      "id": "iv8c61",
+      "n": "61",
+      "e": "2️⃣",
+      "t": true,
+      "q": "Características de HTTP/2 (2015)",
+      "a": "Protocolo **binario**, **una sola conexión**, **multiplexación**, **server push**, compresión de cabeceras **HPACK** y priorización de flujos",
+      "h": "TLS opcional, aunque los navegadores lo exigen"
+    },
+    {
+      "id": "iv8c62",
+      "n": "62",
+      "e": "3️⃣",
+      "t": true,
+      "q": "¿Qué cambia en HTTP/3 (2018)?",
+      "a": "Usa **UDP** en lugar de **TCP** como transporte"
+    },
+    {
+      "id": "iv8c63",
+      "n": "63",
+      "e": "✉️",
+      "t": false,
+      "q": "Partes de un mensaje HTTP",
+      "a": "**Línea inicial**, **cabeceras** (acaban en línea en blanco) y **cuerpo** opcional"
+    },
+    {
+      "id": "iv8c64",
+      "n": "64",
+      "e": "📥",
+      "t": false,
+      "q": "Métodos GET y HEAD",
+      "a": "**GET**: pide un recurso (solo recupera datos). **HEAD**: igual que GET pero **sin el cuerpo**"
+    },
+    {
+      "id": "iv8c65",
+      "n": "65",
+      "e": "📤",
+      "t": true,
+      "q": "Diferencia entre POST, PUT y PATCH",
+      "a": "**POST**: **crear** (datos en el cuerpo). **PUT**: **actualizar/sustituir** el recurso. **PATCH**: modificación **parcial**"
+    },
+    {
+      "id": "iv8c66",
+      "n": "66",
+      "e": "🛠️",
+      "t": false,
+      "q": "Métodos DELETE, TRACE, OPTIONS y CONNECT",
+      "a": "**DELETE** borra. **TRACE** devuelve lo recibido (depuración). **OPTIONS** dice los métodos admitidos. **CONNECT** crea un **túnel** (SSL vía proxy)"
+    },
+    {
+      "id": "iv8c67",
+      "n": "67",
+      "e": "🔢",
+      "t": true,
+      "q": "Familias de códigos de respuesta HTTP",
+      "a": "**1xx** informativos, **2xx** correctos, **3xx** redirección, **4xx** error del **cliente**, **5xx** error del **servidor**"
+    },
+    {
+      "id": "iv8c68",
+      "n": "68",
+      "e": "🏷️",
+      "t": false,
+      "q": "Ejemplos de cabeceras HTTP",
+      "a": "**Accept**, **User-Agent**, **Content-Type**, **Content-Length**, **Host**, **Set-Cookie/Cookie**, **Authorization**, **Cache-Control**"
+    },
+    {
+      "id": "iv8c69",
+      "n": "69",
+      "e": "⬇️",
+      "t": false,
+      "q": "¿Qué es Wget?",
+      "a": "Herramienta de **línea de comandos** que descarga por HTTP archivos o sitios enteros, con **descarga recursiva**"
+    },
+    {
+      "id": "iv8c70",
+      "n": "70",
+      "e": "🔒",
+      "t": true,
+      "q": "¿Qué es HTTPS y qué puerto usa?",
+      "a": "**HTTP sobre SSL/TLS** (datos cifrados). Puerto **443/tcp**"
+    },
+    {
+      "id": "iv8c71",
+      "n": "71",
+      "e": "↪️",
+      "t": false,
+      "q": "¿Por qué se recomienda dejar abierto el puerto 80?",
+      "a": "Para **redirigir** automáticamente al **443** (HTTPS); lo recomienda **Let's Encrypt**"
+    },
+    {
+      "id": "iv8c72",
+      "n": "72",
+      "e": "🔑",
+      "t": false,
+      "q": "¿Cómo se establece la clave en HTTPS?",
+      "a": "Con cifrado **asimétrico** se intercambia una clave, y luego los datos se cifran con esa clave **simétrica**"
+    },
+    {
+      "id": "iv8c73",
+      "n": "73",
+      "e": "📜",
+      "t": true,
+      "q": "¿Cómo evita HTTPS el ataque man-in-the-middle?",
+      "a": "Con un **certificado** emitido por una **Autoridad de Certificación (CA)** que garantiza la identidad del servidor"
+    },
+    {
+      "id": "iv8c74",
+      "n": "74",
+      "e": "🛡️",
+      "t": true,
+      "q": "¿Qué es HSTS?",
+      "a": "**HTTP Strict Transport Security**: cabecera que obliga a acceder a la web **solo por HTTPS** durante un tiempo"
+    },
+    {
+      "id": "iv8c75",
+      "n": "75",
+      "e": "👴",
+      "t": false,
+      "q": "Relación entre SSL y TLS",
+      "a": "**SSL** (de **Netscape**) es el **predecesor** de **TLS** (del **IETF**)"
+    },
+    {
+      "id": "iv8c76",
+      "n": "76",
+      "e": "🧱",
+      "t": false,
+      "q": "¿En qué capa OSI estaría SSL?",
+      "a": "Entre la capa de **transporte** y la de **aplicación**"
+    },
+    {
+      "id": "iv8c77",
+      "n": "77",
+      "e": "🔐",
+      "t": false,
+      "q": "Las 3 fases de SSL",
+      "a": "1) **Negociar algoritmos**. 2) Intercambio de claves públicas y **autenticación con certificados**. 3) **Cifrado simétrico** del tráfico"
+    },
+    {
+      "id": "iv8c78",
+      "n": "78",
+      "e": "✅",
+      "t": false,
+      "q": "Ventajas de SSL para un sitio web",
+      "a": "Protege la información, **identifica** el sitio, garantiza la **integridad** y el **no repudio**"
+    },
+    {
+      "id": "iv8c79",
+      "n": "79",
+      "e": "👋",
+      "t": false,
+      "q": "¿Cómo empieza el handshake de SSL/TLS?",
+      "a": "El cliente envía **ClientHello** (cifrados y versión) y el servidor responde **ServerHello**; certificados **X.509**"
+    },
+    {
+      "id": "iv8c80",
+      "n": "80",
+      "e": "📅",
+      "t": true,
+      "q": "Versiones de TLS",
+      "a": "**TLS 1.0** (RFC 2246, 1999), **1.1** (RFC 4346, 2006), **1.2** (RFC 5246, 2008) y **1.3** (RFC 8446, agosto de **2018**)"
+    },
+    {
+      "id": "iv8c81",
+      "n": "81",
+      "e": "🐩",
+      "t": false,
+      "q": "¿Qué vulnerabilidad afectó a SSL 3.0 en 2014?",
+      "a": "**POODLE**"
+    },
+    {
+      "id": "iv8c82",
+      "n": "82",
+      "e": "⚡",
+      "t": false,
+      "q": "Novedades de TLS 1.3",
+      "a": "Modo **0-RTT**, handshake **1-RTT**, elimina la **compresión**, el intercambio **RSA estático** y los cifrados no AEAD"
+    },
+    {
+      "id": "iv8c83",
+      "n": "83",
+      "e": "♾️",
+      "t": false,
+      "q": "¿Qué métodos de TLS dan secreto perfecto hacia adelante?",
+      "a": "Solo **TLS_DHE** y **TLS_ECDHE**",
+      "h": "TLS_DH_anon casi no se usa: es vulnerable a suplantación"
+    },
+    {
+      "id": "iv8c84",
+      "n": "84",
+      "e": "🛣️",
+      "t": true,
+      "q": "¿Qué es OSPF?",
+      "a": "Protocolo de enrutamiento **de estado de enlace** e **IGP**, que usa el algoritmo de **Dijkstra**; su métrica es el **coste**"
+    },
+    {
+      "id": "iv8c85",
+      "n": "85",
+      "e": "🦴",
+      "t": false,
+      "q": "Áreas en OSPF",
+      "a": "La red se divide en **áreas**, todas conectadas al **área backbone** (si no, con un **enlace virtual**)"
+    },
+    {
+      "id": "iv8c86",
+      "n": "86",
+      "e": "🎯",
+      "t": false,
+      "q": "Router designado en OSPF",
+      "a": "En Ethernet se eligen un **DR** (router designado) y un **BDR** (de respaldo) para reducir tráfico"
+    },
+    {
+      "id": "iv8c87",
+      "n": "87",
+      "e": "🔢",
+      "t": true,
+      "q": "¿Cómo se transporta OSPF?",
+      "a": "Directamente sobre **IP** (protocolo **89**), **sin TCP ni UDP**. Multicast **224.0.0.5** y **224.0.0.6**"
+    },
+    {
+      "id": "iv8c88",
+      "n": "88",
+      "e": "🔄",
+      "t": false,
+      "q": "OSPF frente a IS-IS",
+      "a": "Ambos de estado de enlace con **Dijkstra**. **IS-IS** opera sobre la capa **2** y se usa en grandes proveedores; **OSPF** en capa **3** con paquetes IP"
+    }
+  ]
+}

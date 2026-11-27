@@ -1,0 +1,330 @@
+{
+  "tema": "IV-8",
+  "preguntas": [
+    {
+      "id": "iv8-01",
+      "tipico": true,
+      "q": "En la jerarquía de Internet, una red Tier 1…",
+      "opts": [
+        "Es un ISP para hogares sin red propia",
+        "Es de ámbito regional y paga a otras",
+        "Llega a cualquier punto de Internet y tiene fibra en al menos 2 continentes",
+        "Es lo mismo que un Tier 1 de un CPD: la de menor categoría"
+      ],
+      "c": 2,
+      "exp": "Tier 1: operadores globales. En Internet, a menor número, mayor categoría."
+    },
+    {
+      "id": "iv8-02",
+      "tipico": true,
+      "q": "La conexión de intercambio de tráfico sin coste entre dos operadores se llama…",
+      "opts": [
+        "Peering",
+        "Tránsito",
+        "Roaming",
+        "Backbone"
+      ],
+      "c": 0,
+      "exp": "El tránsito se paga; el peering es sin coste."
+    },
+    {
+      "id": "iv8-03",
+      "tipico": true,
+      "q": "Un IXP es…",
+      "opts": [
+        "Un proveedor Tier 3",
+        "Un protocolo de enrutamiento",
+        "Un registro DNS",
+        "Un punto de intercambio de tráfico entre ISP"
+      ],
+      "c": 3,
+      "exp": "Internet eXchange Point: los ISP intercambian tráfico por peering."
+    },
+    {
+      "id": "iv8-04",
+      "tipico": true,
+      "q": "El registro DNS que convierte un dominio en una dirección IPv6 es…",
+      "opts": [
+        "A",
+        "AAAA",
+        "CNAME",
+        "MX"
+      ],
+      "c": 1,
+      "exp": "A es IPv4, AAAA es IPv6."
+    },
+    {
+      "id": "iv8-05",
+      "tipico": true,
+      "q": "El registro DNS que indica los servidores de correo de un dominio es…",
+      "opts": [
+        "SOA",
+        "NS",
+        "MX",
+        "PTR"
+      ],
+      "c": 2,
+      "exp": "MX (Mail Exchange), con prioridad."
+    },
+    {
+      "id": "iv8-06",
+      "tipico": false,
+      "q": "El registro DNS que define un alias de otro dominio es…",
+      "opts": [
+        "CNAME",
+        "SRV",
+        "TXT",
+        "SOA"
+      ],
+      "c": 0,
+      "exp": "CNAME = nombre canónico."
+    },
+    {
+      "id": "iv8-07",
+      "tipico": true,
+      "q": "¿En qué año se separó MILNET de ARPANET?",
+      "opts": [
+        "1969",
+        "1972",
+        "1990",
+        "1983"
+      ],
+      "c": 3,
+      "exp": "En 1983: ARPANET civil y MILNET militar."
+    },
+    {
+      "id": "iv8-08",
+      "tipico": true,
+      "q": "La World Wide Web la presentó Tim Berners-Lee en el CERN en…",
+      "opts": [
+        "1989",
+        "1991",
+        "1993",
+        "1995"
+      ],
+      "c": 1,
+      "exp": "En 1991. Mosaic, el primer navegador gráfico, es de 1993."
+    },
+    {
+      "id": "iv8-09",
+      "tipico": false,
+      "q": "¿Quién creó el correo electrónico en 1972?",
+      "opts": [
+        "Leonard Kleinrock",
+        "Bob Metcalfe",
+        "Ray Tomlinson",
+        "Tim Berners-Lee"
+      ],
+      "c": 2,
+      "exp": "Ray Tomlinson (BBN). Metcalfe describió Ethernet."
+    },
+    {
+      "id": "iv8-10",
+      "tipico": true,
+      "q": "En un URI, ¿qué carácter indica el comienzo del fragmento?",
+      "opts": [
+        "#",
+        "?",
+        "&",
+        "/"
+      ],
+      "c": 0,
+      "exp": "? empieza la consulta y # el fragmento."
+    },
+    {
+      "id": "iv8-11",
+      "tipico": false,
+      "q": "Los motores de búsqueda, frente a los directorios, dan resultados…",
+      "opts": [
+        "Muy precisos y poco exhaustivos",
+        "Creados antes de la consulta",
+        "Ordenados a mano",
+        "Muy exhaustivos y poco precisos"
+      ],
+      "c": 3,
+      "exp": "Usan crawlers: exhaustivos pero poco precisos."
+    },
+    {
+      "id": "iv8-12",
+      "tipico": true,
+      "q": "NTP usa como transporte…",
+      "opts": [
+        "TCP, puerto 123",
+        "UDP, puerto 123",
+        "UDP, puerto 53",
+        "TCP, puerto 443"
+      ],
+      "c": 1,
+      "exp": "NTP: UDP, puerto 123."
+    },
+    {
+      "id": "iv8-13",
+      "tipico": true,
+      "q": "¿Qué versión de HTTP usa UDP en lugar de TCP?",
+      "opts": [
+        "HTTP/1.1",
+        "HTTP/2",
+        "HTTP/3",
+        "HTTP/1.0"
+      ],
+      "c": 2,
+      "exp": "HTTP/3 (2018)."
+    },
+    {
+      "id": "iv8-14",
+      "tipico": true,
+      "q": "¿Qué característica NO es de HTTP/2?",
+      "opts": [
+        "Usar UDP como transporte",
+        "Multiplexación",
+        "Server push",
+        "Protocolo binario"
+      ],
+      "c": 0,
+      "exp": "HTTP/2 sigue sobre TCP; UDP llega con HTTP/3."
+    },
+    {
+      "id": "iv8-15",
+      "tipico": true,
+      "q": "El algoritmo de compresión de cabeceras de HTTP/2 es…",
+      "opts": [
+        "GZIP",
+        "DEFLATE",
+        "LZ77",
+        "HPACK"
+      ],
+      "c": 3,
+      "exp": "HPACK."
+    },
+    {
+      "id": "iv8-16",
+      "tipico": true,
+      "q": "Las conexiones persistentes por defecto llegan con…",
+      "opts": [
+        "HTTP/0.9",
+        "HTTP/1.1",
+        "HTTP/1.0",
+        "HTTP/3"
+      ],
+      "c": 1,
+      "exp": "HTTP/1.1 (1999), con keep-alive y pipelining."
+    },
+    {
+      "id": "iv8-17",
+      "tipico": true,
+      "q": "El método HTTP pensado para modificaciones parciales es…",
+      "opts": [
+        "PUT",
+        "POST",
+        "PATCH",
+        "HEAD"
+      ],
+      "c": 2,
+      "exp": "PATCH: parcial; PUT sustituye el recurso."
+    },
+    {
+      "id": "iv8-18",
+      "tipico": true,
+      "q": "Un código de respuesta 404 pertenece a la familia de…",
+      "opts": [
+        "Errores del cliente",
+        "Errores del servidor",
+        "Redirecciones",
+        "Respuestas informativas"
+      ],
+      "c": 0,
+      "exp": "4xx = errores del cliente; 5xx = del servidor."
+    },
+    {
+      "id": "iv8-19",
+      "tipico": true,
+      "q": "HTTPS usa por defecto el puerto…",
+      "opts": [
+        "80",
+        "8080",
+        "3128",
+        "443"
+      ],
+      "c": 3,
+      "exp": "443/tcp. HTTP usa el 80."
+    },
+    {
+      "id": "iv8-20",
+      "tipico": false,
+      "q": "HSTS sirve para…",
+      "opts": [
+        "Comprimir cabeceras",
+        "Obligar a acceder solo por HTTPS",
+        "Sincronizar relojes",
+        "Resolver nombres"
+      ],
+      "c": 1,
+      "exp": "HTTP Strict Transport Security."
+    },
+    {
+      "id": "iv8-21",
+      "tipico": true,
+      "q": "TLS 1.3 se definió en…",
+      "opts": [
+        "RFC 2246 (1999)",
+        "RFC 5246 (2008)",
+        "RFC 8446 (2018)",
+        "RFC 4346 (2006)"
+      ],
+      "c": 2,
+      "exp": "TLS 1.3: RFC 8446, agosto de 2018."
+    },
+    {
+      "id": "iv8-22",
+      "tipico": false,
+      "q": "¿Qué métodos de intercambio de claves de TLS dan secreto perfecto hacia adelante?",
+      "opts": [
+        "TLS_DHE y TLS_ECDHE",
+        "TLS_RSA y TLS_DH",
+        "TLS_DH_anon",
+        "TLS_PSK"
+      ],
+      "c": 0,
+      "exp": "Solo DHE y ECDHE."
+    },
+    {
+      "id": "iv8-23",
+      "tipico": true,
+      "q": "OSPF calcula las rutas con el algoritmo de…",
+      "opts": [
+        "Bellman-Ford",
+        "Spanning Tree",
+        "Vector distancia",
+        "Dijkstra"
+      ],
+      "c": 3,
+      "exp": "OSPF es de estado de enlace y usa Dijkstra."
+    },
+    {
+      "id": "iv8-24",
+      "tipico": true,
+      "q": "OSPF se encapsula…",
+      "opts": [
+        "Sobre TCP",
+        "Directamente sobre IP (protocolo 89)",
+        "Sobre UDP",
+        "Sobre HTTP"
+      ],
+      "c": 1,
+      "exp": "No usa TCP ni UDP: va sobre IP con el número 89."
+    },
+    {
+      "id": "iv8-25",
+      "tipico": false,
+      "q": "En SSL, ¿para qué se usa la criptografía asimétrica?",
+      "opts": [
+        "Para cifrar todo el tráfico",
+        "Para comprimir los datos",
+        "Para intercambiar las claves",
+        "No se usa"
+      ],
+      "c": 2,
+      "exp": "La asimétrica intercambia claves; el tráfico va con cifrado simétrico."
+    }
+  ]
+}
