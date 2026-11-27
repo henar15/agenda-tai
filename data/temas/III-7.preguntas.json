@@ -1,0 +1,330 @@
+{
+  "tema": "III-7",
+  "preguntas": [
+    {
+      "id": "iii7-01",
+      "tipico": true,
+      "q": "Una URI puede estar formada por…",
+      "opts": [
+        "Solo una URL",
+        "Una URL y una IP",
+        "Solo una URN",
+        "Una URL, una URN o ambas"
+      ],
+      "c": 3,
+      "exp": "La URI identifica el recurso y la componen una URL, una URN o las dos."
+    },
+    {
+      "id": "iii7-02",
+      "tipico": true,
+      "q": "Un código ISBN de un libro es un ejemplo de…",
+      "opts": [
+        "URN",
+        "URL",
+        "DNS",
+        "DOM"
+      ],
+      "c": 0,
+      "exp": "La URN nombra el recurso en sí (ISBN, DOI); la URL indica dónde está."
+    },
+    {
+      "id": "iii7-03",
+      "tipico": true,
+      "q": "SGML se definió en la norma…",
+      "opts": [
+        "ISO 9001",
+        "ISO 27001",
+        "ISO 8879",
+        "ISO 8601"
+      ],
+      "c": 2,
+      "exp": "ISO 8879 de 1986."
+    },
+    {
+      "id": "iii7-04",
+      "tipico": false,
+      "q": "El DOM representa un documento HTML o XML como…",
+      "opts": [
+        "Una tabla relacional",
+        "Un árbol jerárquico de nodos",
+        "Una lista de eventos",
+        "Un fichero binario"
+      ],
+      "c": 1,
+      "exp": "Permite navegar de un nodo a su padre, hijos o hermanos."
+    },
+    {
+      "id": "iii7-05",
+      "tipico": true,
+      "q": "¿Qué motor de renderizado usa Google Chrome desde 2013?",
+      "opts": [
+        "Gecko",
+        "WebKit",
+        "EdgeHTML",
+        "Blink"
+      ],
+      "c": 3,
+      "exp": "Blink es una bifurcación de WebKit; Edge lo adoptó en 2020."
+    },
+    {
+      "id": "iii7-06",
+      "tipico": false,
+      "q": "En la técnica de hidratación…",
+      "opts": [
+        "El servidor envía HTML ya renderizado y luego el JavaScript lo hace interactivo",
+        "El cliente renderiza todo desde cero",
+        "Se usan solo páginas estáticas",
+        "Se elimina JavaScript"
+      ],
+      "c": 0,
+      "exp": "Combina SSR con la interactividad del cliente."
+    },
+    {
+      "id": "iii7-07",
+      "tipico": true,
+      "q": "HTTP es un protocolo…",
+      "opts": [
+        "Con estado",
+        "Orientado a sesión",
+        "Sin estado",
+        "Solo de correo"
+      ],
+      "c": 2,
+      "exp": "No guarda nada de conexiones anteriores; para la sesión se usan cookies."
+    },
+    {
+      "id": "iii7-08",
+      "tipico": true,
+      "q": "La especificación de HTTP/1.1 se recoge en el…",
+      "opts": [
+        "RFC 1945",
+        "RFC 2616",
+        "RFC 7540",
+        "RFC 1058"
+      ],
+      "c": 1,
+      "exp": "RFC 1945 es HTTP/1.0 y RFC 7540 es HTTP/2."
+    },
+    {
+      "id": "iii7-09",
+      "tipico": true,
+      "q": "El método HTTP que pide solo los metadatos de un recurso es…",
+      "opts": [
+        "GET",
+        "POST",
+        "TRACE",
+        "HEAD"
+      ],
+      "c": 3,
+      "exp": "HEAD es como GET pero sin el cuerpo del recurso."
+    },
+    {
+      "id": "iii7-10",
+      "tipico": false,
+      "q": "¿Cuál de estos métodos NO estaba ya en HTTP 1.0?",
+      "opts": [
+        "DELETE",
+        "POST",
+        "HEAD",
+        "GET"
+      ],
+      "c": 0,
+      "exp": "DELETE llega con HTTP 1.1, junto a OPTIONS, PUT, TRACE y CONNECT."
+    },
+    {
+      "id": "iii7-11",
+      "tipico": true,
+      "q": "El patrón que garantiza una única instancia de una clase es…",
+      "opts": [
+        "Prototype",
+        "Facade",
+        "Singleton",
+        "Observer"
+      ],
+      "c": 2,
+      "exp": "Singleton: una instancia y acceso global."
+    },
+    {
+      "id": "iii7-12",
+      "tipico": false,
+      "q": "¿Cuál de estos es un patrón GoF estructural?",
+      "opts": [
+        "Builder",
+        "Adapter",
+        "Observer",
+        "Singleton"
+      ],
+      "c": 1,
+      "exp": "Builder y Singleton son de creación; Observer, de comportamiento."
+    },
+    {
+      "id": "iii7-13",
+      "tipico": true,
+      "q": "Todo documento HTML5 debe empezar por…",
+      "opts": [
+        "<html>",
+        "<head>",
+        "<?xml?>",
+        "<!DOCTYPE html>"
+      ],
+      "c": 3,
+      "exp": "La declaración del tipo de documento va al principio."
+    },
+    {
+      "id": "iii7-14",
+      "tipico": false,
+      "q": "¿Cuál de estas etiquetas está obsoleta en HTML5?",
+      "opts": [
+        "<font>",
+        "<nav>",
+        "<article>",
+        "<aside>"
+      ],
+      "c": 0,
+      "exp": "<font>, <center> o <frame> desaparecen; las otras son semánticas nuevas."
+    },
+    {
+      "id": "iii7-15",
+      "tipico": true,
+      "q": "La forma recomendada de añadir CSS a un sitio es…",
+      "opts": [
+        "En línea con style",
+        "Interna con <style>",
+        "Un fichero externo .css",
+        "Con atributos de HTML"
+      ],
+      "c": 2,
+      "exp": "Así se cambia el estilo de todas las páginas desde un solo sitio."
+    },
+    {
+      "id": "iii7-16",
+      "tipico": true,
+      "q": "En especificidad CSS, ¿qué tiene más prioridad?",
+      "opts": [
+        "Un selector de clase",
+        "Un selector #id",
+        "Un selector de etiqueta",
+        "Un pseudoelemento"
+      ],
+      "c": 1,
+      "exp": "Orden: en línea > id > clase/atributo/pseudoclase > etiqueta/pseudoelemento."
+    },
+    {
+      "id": "iii7-17",
+      "tipico": false,
+      "q": "La unidad CSS relativa al tamaño de fuente del elemento raíz es…",
+      "opts": [
+        "em",
+        "vh",
+        "px",
+        "rem"
+      ],
+      "c": 3,
+      "exp": "em es relativa al elemento padre."
+    },
+    {
+      "id": "iii7-18",
+      "tipico": true,
+      "q": "En JavaScript, el operador === compara…",
+      "opts": [
+        "Valor y tipo, sin conversión",
+        "Solo el valor, convirtiendo tipos",
+        "Solo el tipo",
+        "Referencias de memoria siempre"
+      ],
+      "c": 0,
+      "exp": "=== es estricto; == convierte tipos antes de comparar."
+    },
+    {
+      "id": "iii7-19",
+      "tipico": true,
+      "q": "El objeto que usa AJAX para intercambiar datos asíncronamente es…",
+      "opts": [
+        "DOMParser",
+        "JSON.parse",
+        "XMLHttpRequest",
+        "WebSocket"
+      ],
+      "c": 2,
+      "exp": "AJAX combina HTML/CSS, DOM, XMLHttpRequest y XML."
+    },
+    {
+      "id": "iii7-20",
+      "tipico": false,
+      "q": "El primer sistema para crear páginas dinámicas en el servidor fue…",
+      "opts": [
+        "PHP",
+        "CGI",
+        "JSP",
+        "Node.js"
+      ],
+      "c": 1,
+      "exp": "CGI, hoy obsoleto, escrito sobre todo en Perl."
+    },
+    {
+      "id": "iii7-21",
+      "tipico": false,
+      "q": "Node.js se basa en el motor de JavaScript…",
+      "opts": [
+        "SpiderMonkey",
+        "Gecko",
+        "Chakra",
+        "V8"
+      ],
+      "c": 3,
+      "exp": "El motor V8 de Chrome."
+    },
+    {
+      "id": "iii7-22",
+      "tipico": true,
+      "q": "Un documento XML que además cumple su DTD o XSD es…",
+      "opts": [
+        "Válido",
+        "Bien formado",
+        "Canónico",
+        "Raíz"
+      ],
+      "c": 0,
+      "exp": "Bien formado = sintaxis correcta; válido = además cumple el esquema."
+    },
+    {
+      "id": "iii7-23",
+      "tipico": false,
+      "q": "¿Cuál NO es una de las 5 entidades predefinidas de XML?",
+      "opts": [
+        "&lt;",
+        "&amp;",
+        "&nbsp;",
+        "&apos;"
+      ],
+      "c": 2,
+      "exp": "Son &lt;, &gt;, &amp;, &quot; y &apos;."
+    },
+    {
+      "id": "iii7-24",
+      "tipico": true,
+      "q": "Frente a DOM, el análisis SAX de XML…",
+      "opts": [
+        "Carga todo el árbol en memoria",
+        "Es secuencial y por eventos",
+        "Solo sirve para HTML",
+        "Necesita un XSD"
+      ],
+      "c": 1,
+      "exp": "SAX es más rápido y usa menos memoria."
+    },
+    {
+      "id": "iii7-25",
+      "tipico": false,
+      "q": "JSON.stringify() sirve para…",
+      "opts": [
+        "Convertir una cadena JSON en objeto",
+        "Enviar una petición HTTP",
+        "Validar un XML",
+        "Convertir un objeto JavaScript en cadena JSON"
+      ],
+      "c": 3,
+      "exp": "JSON.parse() hace lo contrario."
+    }
+  ]
+}

@@ -1,0 +1,705 @@
+{
+  "tema": "III-7",
+  "cards": [
+    {
+      "id": "iii7c1",
+      "n": "1",
+      "e": "🆔",
+      "t": true,
+      "q": "¿Qué es una URI?",
+      "a": "**Uniform Resource Identifier**: cadena que **identifica de forma única** un recurso. Está formada por una **URL**, una **URN** o ambas"
+    },
+    {
+      "id": "iii7c2",
+      "n": "2",
+      "e": "📍",
+      "t": true,
+      "q": "URL vs. URN",
+      "a": "**URL**: indica **dónde está** el recurso (su contenido puede cambiar). **URN**: **nombra el recurso en sí** (ej. **ISBN**, **DOI**)",
+      "h": "Metáfora URL: librería, estante y ubicación"
+    },
+    {
+      "id": "iii7c3",
+      "n": "3",
+      "e": "👤",
+      "t": false,
+      "q": "¿Quién usó por primera vez las URL y cuándo?",
+      "a": "**Tim Berners-Lee** en **1991**"
+    },
+    {
+      "id": "iii7c4",
+      "n": "4",
+      "e": "🏷️",
+      "t": false,
+      "q": "¿Es un lenguaje de marcado un lenguaje de programación?",
+      "a": "**No**: marca secciones del documento con **etiquetas**, pero **no tiene variables ni funciones aritméticas**"
+    },
+    {
+      "id": "iii7c5",
+      "n": "5",
+      "e": "🌳",
+      "t": true,
+      "q": "¿Qué es el DOM?",
+      "a": "**Document Object Model**: representación en **árbol jerárquico** de documentos **HTML y XML** para modificarlos dinámicamente (con **JavaScript**)"
+    },
+    {
+      "id": "iii7c6",
+      "n": "6",
+      "e": "💲",
+      "t": false,
+      "q": "¿Qué es jQuery?",
+      "a": "Biblioteca de **JavaScript** (**2006**, **John Resig**) para manipular el **DOM** de forma sencilla y hacer peticiones AJAX"
+    },
+    {
+      "id": "iii7c7",
+      "n": "7",
+      "e": "👥",
+      "t": false,
+      "q": "¿Qué es el Shadow DOM?",
+      "a": "Cápsula **aislada** dentro del DOM con su propia raíz (**Shadow Root**) y estilo; uno de los **4 pilares de los componentes web** (W3C, **2012**)",
+      "h": "Frontera: Shadow Boundary · elemento anfitrión: Shadow Host"
+    },
+    {
+      "id": "iii7c8",
+      "n": "8",
+      "e": "🎨",
+      "t": false,
+      "q": "¿Para qué sirven las hojas de estilo (CSS)?",
+      "a": "Para **separar el contenido (HTML) de la presentación** (fuente, color, márgenes…)"
+    },
+    {
+      "id": "iii7c9",
+      "n": "9",
+      "e": "📜",
+      "t": true,
+      "q": "¿Qué es SGML?",
+      "a": "**Standard Generalized Markup Language**: estándar para **definir lenguajes de marcado**. Norma **ISO 8879** de **1986**",
+      "h": "HTML y XML derivan de él"
+    },
+    {
+      "id": "iii7c10",
+      "n": "10",
+      "e": "📱",
+      "t": false,
+      "q": "¿Qué es una SPA y el CSR?",
+      "a": "**SPA**: aplicación de **una sola página** que se actualiza sin recargar. **CSR**: el contenido se **renderiza en el cliente** con JavaScript"
+    },
+    {
+      "id": "iii7c11",
+      "n": "11",
+      "e": "💧",
+      "t": false,
+      "q": "¿Qué es SSR y la hidratación?",
+      "a": "**SSR**: el **servidor** envía la página ya renderizada. **Hidratación**: luego el **JavaScript** del navegador la hace **interactiva**"
+    },
+    {
+      "id": "iii7c12",
+      "n": "12",
+      "e": "🦎",
+      "t": true,
+      "q": "Motores de renderizado y navegadores",
+      "a": "**Gecko** (Mozilla, **1998**) · **WebKit** (**2002**, Safari) · **Blink** (**2013**, Chrome; bifurcación de WebKit) · EdgeHTML (2015) sustituido por **Blink** en **2020**"
+    },
+    {
+      "id": "iii7c13",
+      "n": "13",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué es una aplicación web?",
+      "a": "Aplicación **cliente/servidor** que se usa con un **navegador** accediendo a un servidor web. Ventaja: no hay que instalarla"
+    },
+    {
+      "id": "iii7c14",
+      "n": "14",
+      "e": "🧱",
+      "t": false,
+      "q": "Los 3 elementos de una aplicación web",
+      "a": "**Front-end** (cliente, el navegador), **back-end** (el servidor) y el **protocolo** (HTTP)"
+    },
+    {
+      "id": "iii7c15",
+      "n": "15",
+      "e": "🏗️",
+      "t": false,
+      "q": "Los 3 niveles de una aplicación web",
+      "a": "**Presentación** (cliente), **lógica de negocio** (servidor) y **datos** (BD gestionada por un SGBD)"
+    },
+    {
+      "id": "iii7c16",
+      "n": "16",
+      "e": "📨",
+      "t": true,
+      "q": "¿Qué es HTTP?",
+      "a": "**Protocolo de transferencia de hipertexto** de la Web. Es un protocolo **sin estado**",
+      "h": "Para mantener sesión se usan cookies"
+    },
+    {
+      "id": "iii7c17",
+      "n": "17",
+      "e": "🍪",
+      "t": false,
+      "q": "¿Cómo se mantiene el estado si HTTP no lo guarda?",
+      "a": "Con **cookies**: información que el **servidor** guarda en el **cliente**"
+    },
+    {
+      "id": "iii7c18",
+      "n": "18",
+      "e": "📅",
+      "t": true,
+      "q": "Versiones de HTTP",
+      "a": "**0.9** (1991) · **1.0** (1996, RFC 1945) · **1.1** (1997, **RFC 2616**) · **2.0** (2015, RFC 7540) · **3.0** (2019)"
+    },
+    {
+      "id": "iii7c19",
+      "n": "19",
+      "e": "📥",
+      "t": true,
+      "q": "Métodos HTTP de la versión 1.0",
+      "a": "**GET** (obtener recurso), **HEAD** (solo **metadatos**) y **POST** (enviar datos, p. ej. formularios)"
+    },
+    {
+      "id": "iii7c20",
+      "n": "20",
+      "e": "🆕",
+      "t": true,
+      "q": "Métodos añadidos en HTTP 1.1",
+      "a": "**OPTIONS, PUT, DELETE, TRACE y CONNECT**"
+    },
+    {
+      "id": "iii7c21",
+      "n": "21",
+      "e": "🔧",
+      "t": false,
+      "q": "¿Para qué sirven PUT, OPTIONS y TRACE?",
+      "a": "**PUT**: crea o **reemplaza** un recurso. **OPTIONS**: qué métodos admite. **TRACE**: monitoriza mensajes (diagnóstico)"
+    },
+    {
+      "id": "iii7c22",
+      "n": "22",
+      "e": "🪶",
+      "t": false,
+      "q": "¿Qué es Apache?",
+      "a": "Servidor web **HTTP** de **código abierto**, gratuito y **multiplataforma**; el más extendido",
+      "h": "Pila LAMP: Linux, Apache, MySQL, PHP"
+    },
+    {
+      "id": "iii7c23",
+      "n": "23",
+      "e": "🪟",
+      "t": false,
+      "q": "¿Qué es IIS?",
+      "a": "**Internet Information Services**: servidor web de **Microsoft** para Windows",
+      "h": "Reiniciar: iisreset"
+    },
+    {
+      "id": "iii7c24",
+      "n": "24",
+      "e": "👬",
+      "t": false,
+      "q": "¿Qué son los patrones GoF?",
+      "a": "Patrones de diseño de la «**pandilla de los cuatro**» (Gamma, Helm, Johnson y Vlissides). Buscan la **reutilización**"
+    },
+    {
+      "id": "iii7c25",
+      "n": "25",
+      "e": "🗂️",
+      "t": false,
+      "q": "Tipos de patrones GoF (según el temario)",
+      "a": "**Estructurales**, **de creación**, **de comportamiento** y **de interacción**"
+    },
+    {
+      "id": "iii7c26",
+      "n": "26",
+      "e": "🔌",
+      "t": false,
+      "q": "Patrones estructurales GoF",
+      "a": "**Adapter**, **Bridge**, **Composite**, **Decorator**, **Facade**, **Flyweight** y **Proxy**"
+    },
+    {
+      "id": "iii7c27",
+      "n": "27",
+      "e": "🏭",
+      "t": true,
+      "q": "Patrones de creación GoF",
+      "a": "**Abstract Factory**, **Builder**, **Factory Method**, **Prototype** y **Singleton**"
+    },
+    {
+      "id": "iii7c28",
+      "n": "28",
+      "e": "1️⃣",
+      "t": true,
+      "q": "Patrón Singleton",
+      "a": "Garantiza **una única instancia** de una clase con un **acceso global** a ella"
+    },
+    {
+      "id": "iii7c29",
+      "n": "29",
+      "e": "👀",
+      "t": false,
+      "q": "Patrón Observer",
+      "a": "Dependencia **uno a muchos**: cuando un objeto cambia, se **notifica** a todos los que dependen de él"
+    },
+    {
+      "id": "iii7c30",
+      "n": "30",
+      "e": "🏛️",
+      "t": false,
+      "q": "Facade, Proxy y Decorator",
+      "a": "**Facade**: interfaz única y simple para un subsistema. **Proxy**: intermediario que controla el acceso. **Decorator**: añade funcionalidad dinámicamente"
+    },
+    {
+      "id": "iii7c31",
+      "n": "31",
+      "e": "🧪",
+      "t": false,
+      "q": "¿Qué es Selenium WebDriver?",
+      "a": "Herramienta **de código abierto** para **automatizar pruebas** de aplicaciones web en distintos navegadores"
+    },
+    {
+      "id": "iii7c32",
+      "n": "32",
+      "e": "🎨",
+      "t": false,
+      "q": "Los 3 lenguajes clave del front-end",
+      "a": "**HTML**, **CSS** y **JavaScript**"
+    },
+    {
+      "id": "iii7c33",
+      "n": "33",
+      "e": "📝",
+      "t": false,
+      "q": "¿Qué es HTML?",
+      "a": "**HyperText Markup Language**: lenguaje **de marcado** (no de programación) que da la **estructura** de las páginas web"
+    },
+    {
+      "id": "iii7c34",
+      "n": "34",
+      "e": "📋",
+      "t": true,
+      "q": "¿Con qué debe empezar todo documento HTML5?",
+      "a": "Con **<!DOCTYPE html>**"
+    },
+    {
+      "id": "iii7c35",
+      "n": "35",
+      "e": "✨",
+      "t": true,
+      "q": "Novedades de HTML5",
+      "a": "**Geolocalización**, arrastrar y soltar, **almacenamiento local**, caché de aplicación, **Web Workers**, etiquetas **semánticas**, **<canvas>** y **audio/vídeo nativo**"
+    },
+    {
+      "id": "iii7c36",
+      "n": "36",
+      "e": "⚙️",
+      "t": false,
+      "q": "¿Para qué sirven los Web Workers?",
+      "a": "Para ejecutar scripts en **segundo plano** sin bloquear la página"
+    },
+    {
+      "id": "iii7c37",
+      "n": "37",
+      "e": "🧩",
+      "t": true,
+      "q": "Etiquetas semánticas de HTML5",
+      "a": "**<header>**, **<footer>**, **<nav>**, **<article>**, **<section>**, **<aside>** y **<main>**"
+    },
+    {
+      "id": "iii7c38",
+      "n": "38",
+      "e": "🚫",
+      "t": false,
+      "q": "Etiquetas obsoletas en HTML5",
+      "a": "**<font>**, **<center>**, **<big>**, **<strike>**, **<frame>/<frameset>**, **<applet>**, **<acronym>** (sustituida por **<abbr>**)…"
+    },
+    {
+      "id": "iii7c39",
+      "n": "39",
+      "e": "🔄",
+      "t": false,
+      "q": "¿Qué es XSL?",
+      "a": "**eXtensible Stylesheet Language**: hojas de estilo para **XML** (como CSS para HTML) escritas en XML",
+      "h": "Familia: XSLT, XSL-FO y XPath"
+    },
+    {
+      "id": "iii7c40",
+      "n": "40",
+      "e": "👗",
+      "t": false,
+      "q": "¿Qué es CSS?",
+      "a": "**Cascading Style Sheets** (hojas de estilo en cascada): definen la **presentación** de HTML o XML. Las especifica el **W3C**"
+    },
+    {
+      "id": "iii7c41",
+      "n": "41",
+      "e": "➕",
+      "t": true,
+      "q": "Formas de añadir CSS a HTML",
+      "a": "**En línea** (atributo **style**), **interno** (etiqueta **<style>** en el **<head>**) y **externo** (fichero **.css**, lo recomendado)"
+    },
+    {
+      "id": "iii7c42",
+      "n": "42",
+      "e": "🎯",
+      "t": true,
+      "q": "Especificidad CSS: orden de prioridad",
+      "a": "**Estilo en línea** > **#id** > **.clase / atributo / pseudoclase** > **etiqueta / pseudoelemento**",
+      "h": "Formato a-b-c-d"
+    },
+    {
+      "id": "iii7c43",
+      "n": "43",
+      "e": "📏",
+      "t": false,
+      "q": "Unidades CSS em y rem",
+      "a": "**em**: relativa a la fuente del **elemento padre**. **rem**: relativa a la fuente de la **raíz** (<html>)"
+    },
+    {
+      "id": "iii7c44",
+      "n": "44",
+      "e": "🖥️",
+      "t": false,
+      "q": "Unidades vw y vh",
+      "a": "**vw**: 1 % del **ancho** del viewport. **vh**: 1 % de la **altura** del viewport"
+    },
+    {
+      "id": "iii7c45",
+      "n": "45",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es Flexbox?",
+      "a": "Diseño de **caja flexible** CSS, **unidimensional** (filas o columnas). Se activa con **display: flex**"
+    },
+    {
+      "id": "iii7c46",
+      "n": "46",
+      "e": "⚡",
+      "t": false,
+      "q": "¿Cómo es JavaScript?",
+      "a": "Lenguaje **interpretado**, dialecto de **ECMAScript**, orientado a objetos **basado en prototipos**, **débilmente tipado** y **dinámico**"
+    },
+    {
+      "id": "iii7c47",
+      "n": "47",
+      "e": "🔤",
+      "t": false,
+      "q": "¿Qué devuelve typeof con null?",
+      "a": "**object** (null se considera un objeto en JavaScript)"
+    },
+    {
+      "id": "iii7c48",
+      "n": "48",
+      "e": "🟰",
+      "t": true,
+      "q": "Diferencia entre == y === en JavaScript",
+      "a": "**==** compara **convirtiendo tipos** (abstracta). **===** es **estricta**: mismo tipo y mismo valor"
+    },
+    {
+      "id": "iii7c49",
+      "n": "49",
+      "e": "🅰️",
+      "t": false,
+      "q": "Angular",
+      "a": "Framework JS de **Google** para crear **SPA** con enlace de datos bidireccional (MVC). Forma parte del stack **MEAN**",
+      "h": "MEAN: MongoDB, Express, Angular, Node"
+    },
+    {
+      "id": "iii7c50",
+      "n": "50",
+      "e": "⚛️",
+      "t": false,
+      "q": "React",
+      "a": "Biblioteca de **Facebook** para interfaces; usa el **DOM virtual**"
+    },
+    {
+      "id": "iii7c51",
+      "n": "51",
+      "e": "📅",
+      "t": false,
+      "q": "¿Quién creó JavaScript y cuándo?",
+      "a": "**Brendan Eich** en **Netscape** en **1995** (en 10 días). ECMAScript **ES1** se publicó en **1997**"
+    },
+    {
+      "id": "iii7c52",
+      "n": "52",
+      "e": "7️⃣",
+      "t": false,
+      "q": "Novedades de ECMAScript 7 (2016)",
+      "a": "**Array.includes()** y el operador de potencia **\\*\\***",
+      "h": "4*3**2 = 36"
+    },
+    {
+      "id": "iii7c53",
+      "n": "53",
+      "e": "🅱️",
+      "t": false,
+      "q": "¿Qué es Bootstrap?",
+      "a": "Framework front-end de **Twitter** (código abierto en **2011**), sobre todo **CSS**, para diseño **responsivo** con cuadrícula",
+      "h": "Rejilla: xs, sm (576), md (768), lg (992), xl (1200), xxl (1400)"
+    },
+    {
+      "id": "iii7c54",
+      "n": "54",
+      "e": "🔄",
+      "t": true,
+      "q": "¿Qué es AJAX?",
+      "a": "**Asynchronous JavaScript And XML**: comunicación **asíncrona** con el servidor en segundo plano **sin recargar** la página"
+    },
+    {
+      "id": "iii7c55",
+      "n": "55",
+      "e": "🧪",
+      "t": false,
+      "q": "Tecnologías que combina AJAX",
+      "a": "**HTML/XHTML + CSS**, **DOM** con JavaScript, el objeto **XMLHttpRequest** y **XML** (u otro formato, como JSON)"
+    },
+    {
+      "id": "iii7c56",
+      "n": "56",
+      "e": "🆕",
+      "t": false,
+      "q": "¿Qué reemplazó a AJAX como opción moderna?",
+      "a": "La **Fetch API**"
+    },
+    {
+      "id": "iii7c57",
+      "n": "57",
+      "e": "🦕",
+      "t": true,
+      "q": "¿Qué es CGI?",
+      "a": "**Common Gateway Interface**: el **primer sistema** de páginas dinámicas en servidor; hoy **obsoleto**. Se escribía sobre todo en **Perl**"
+    },
+    {
+      "id": "iii7c58",
+      "n": "58",
+      "e": "🔷",
+      "t": false,
+      "q": "ASP.NET",
+      "a": "Plataforma web de **Microsoft**; ficheros **.aspx**; se programa en **C#**, VB.NET o J#"
+    },
+    {
+      "id": "iii7c59",
+      "n": "59",
+      "e": "☕",
+      "t": false,
+      "q": "JSP",
+      "a": "**Java Server Pages**: páginas dinámicas en **Java**; ficheros **.jsp**; se compilan en la **primera petición** y necesitan **Tomcat**"
+    },
+    {
+      "id": "iii7c60",
+      "n": "60",
+      "e": "🟢",
+      "t": true,
+      "q": "Node.js",
+      "a": "Entorno de ejecución **JavaScript en el servidor** basado en el motor **V8** de Chrome. Framework principal: **Express.js**"
+    },
+    {
+      "id": "iii7c61",
+      "n": "61",
+      "e": "🐘",
+      "t": false,
+      "q": "PHP",
+      "a": "**PHP: Hypertext Preprocessor** (acrónimo recursivo): lenguaje del **lado servidor**; el cliente solo recibe el **HTML** resultante"
+    },
+    {
+      "id": "iii7c62",
+      "n": "62",
+      "e": "🐍",
+      "t": false,
+      "q": "Rasgo típico de Python",
+      "a": "Los bloques se delimitan con **indentación** (sangrado), no con llaves; usa **not, or, and**"
+    },
+    {
+      "id": "iii7c63",
+      "n": "63",
+      "e": "🐪",
+      "t": false,
+      "q": "Perl",
+      "a": "Lenguaje de scripts fuerte en **procesamiento de texto**; popularizó las **expresiones regulares**"
+    },
+    {
+      "id": "iii7c64",
+      "n": "64",
+      "e": "🥞",
+      "t": false,
+      "q": "¿Qué es un desarrollador full stack?",
+      "a": "Quien domina **front-end y back-end**; popularizado por **Facebook**"
+    },
+    {
+      "id": "iii7c65",
+      "n": "65",
+      "e": "📦",
+      "t": false,
+      "q": "¿Qué es XML?",
+      "a": "**eXtensible Markup Language**: lenguaje de marcas del **W3C** para **almacenar y transportar datos**; **no tiene etiquetas predefinidas**"
+    },
+    {
+      "id": "iii7c66",
+      "n": "66",
+      "e": "✔️",
+      "t": true,
+      "q": "XML bien formado vs. válido",
+      "a": "**Bien formado**: cumple la **sintaxis** XML. **Válido**: además cumple su **DTD o XSD**"
+    },
+    {
+      "id": "iii7c67",
+      "n": "67",
+      "e": "🌲",
+      "t": false,
+      "q": "¿Cuántos elementos raíz puede tener un XML?",
+      "a": "**Solo uno**"
+    },
+    {
+      "id": "iii7c68",
+      "n": "68",
+      "e": "&",
+      "t": true,
+      "q": "Las 5 entidades predefinidas de XML",
+      "a": "**&lt;** (<), **&gt;** (>), **&amp;** (&), **&quot;** (\") y **&apos;** (')"
+    },
+    {
+      "id": "iii7c69",
+      "n": "69",
+      "e": "📐",
+      "t": true,
+      "q": "DTD vs. XSD",
+      "a": "Ambas definen la estructura de un XML. **XSD** está escrito **en XML**, admite **tipos de datos** y **namespaces** (W3C, **2001**)"
+    },
+    {
+      "id": "iii7c70",
+      "n": "70",
+      "e": "🧭",
+      "t": false,
+      "q": "¿Qué es XPath?",
+      "a": "Lenguaje **declarativo** del W3C para **localizar nodos** en el árbol de un documento XML"
+    },
+    {
+      "id": "iii7c71",
+      "n": "71",
+      "e": "❓",
+      "t": false,
+      "q": "¿Qué es XQuery?",
+      "a": "Lenguaje para **consultar** documentos XML como si fueran una **base de datos** (como SQL)"
+    },
+    {
+      "id": "iii7c72",
+      "n": "72",
+      "e": "⚖️",
+      "t": true,
+      "q": "DOM vs. SAX para leer XML",
+      "a": "**DOM**: carga **todo el árbol en memoria**. **SAX**: lectura **secuencial por eventos**, más rápida y con menos memoria"
+    },
+    {
+      "id": "iii7c73",
+      "n": "73",
+      "e": "🛡️",
+      "t": false,
+      "q": "¿Qué es SAML?",
+      "a": "**Security Assertion Markup Language**: estándar XML de **OASIS** para intercambiar datos de **autenticación y autorización**",
+      "h": "Roles: principal, proveedor de identidad y proveedor de servicio"
+    },
+    {
+      "id": "iii7c74",
+      "n": "74",
+      "e": "🗒️",
+      "t": false,
+      "q": "¿Qué es JSON?",
+      "a": "**JavaScript Object Notation**: formato de **texto** sencillo para **intercambiar datos**; alternativa a XML"
+    },
+    {
+      "id": "iii7c75",
+      "n": "75",
+      "e": "🔢",
+      "t": false,
+      "q": "Tipos de datos de JSON",
+      "a": "**Números**, **cadenas**, **booleanos**, **null**, **arrays** [ ] y **objetos** { }"
+    },
+    {
+      "id": "iii7c76",
+      "n": "76",
+      "e": "🔃",
+      "t": false,
+      "q": "JSON.parse() vs. JSON.stringify()",
+      "a": "**parse()**: cadena JSON → **objeto** JavaScript. **stringify()**: objeto → **cadena** JSON"
+    },
+    {
+      "id": "iii7c77",
+      "n": "77",
+      "e": "🗂️",
+      "t": false,
+      "q": "¿Qué es un CMS?",
+      "a": "**Sistema de Gestión de Contenidos**: crear y gestionar una web **sin saber programar**, separando contenido y diseño. Ej.: **Magnolia** (Java)"
+    },
+    {
+      "id": "iii7c78",
+      "n": "78",
+      "e": "📲",
+      "t": false,
+      "q": "Los 3 tipos de apps móviles",
+      "a": "**Nativas**, **web** e **híbridas**"
+    },
+    {
+      "id": "iii7c79",
+      "n": "79",
+      "e": "🏎️",
+      "t": false,
+      "q": "App nativa",
+      "a": "Hecha para **un SO concreto**: acceso total al dispositivo, **offline** y notificaciones **push**, pero **más cara** y lenta de desarrollar"
+    },
+    {
+      "id": "iii7c80",
+      "n": "80",
+      "e": "🌍",
+      "t": false,
+      "q": "App web",
+      "a": "Funciona en el **navegador** de cualquier SO, no ocupa memoria y siempre está actualizada, pero **necesita Internet**"
+    },
+    {
+      "id": "iii7c81",
+      "n": "81",
+      "e": "🔀",
+      "t": true,
+      "q": "App híbrida",
+      "a": "Mezcla lo mejor de **nativa y web**. Framework: **Ionic** (2013, sobre AngularJS y **Apache Cordova**)"
+    },
+    {
+      "id": "iii7c82",
+      "n": "82",
+      "e": "🛠️",
+      "t": false,
+      "q": "Plataformas de desarrollo multiplataforma",
+      "a": "**Xamarin** (Microsoft) → **.NET MAUI**, **PhoneGap** (Adobe), AppMachine, Appcelerator"
+    },
+    {
+      "id": "iii7c83",
+      "n": "83",
+      "e": "🤖",
+      "t": false,
+      "q": "Android SDK vs. NDK",
+      "a": "**SDK**: desarrollo normal en **Java y Kotlin**. **NDK**: partes en **C y C++** para alto rendimiento (juegos 3D…), vía **JNI**"
+    },
+    {
+      "id": "iii7c84",
+      "n": "84",
+      "e": "🍎",
+      "t": false,
+      "q": "Herramientas de desarrollo para iOS",
+      "a": "**Xcode** (IDE de Apple), **SwiftUI** (interfaces declarativas) e **iOS SDK**"
+    },
+    {
+      "id": "iii7c85",
+      "n": "85",
+      "e": "🧩",
+      "t": false,
+      "q": "¿Qué es un plug-in de navegador?",
+      "a": "Aplicación que **añade una función** al navegador (también add-on, conector o extensión)"
+    },
+    {
+      "id": "iii7c86",
+      "n": "86",
+      "e": "🌐",
+      "t": false,
+      "q": "Navegadores y su año",
+      "a": "**Safari** (Apple, **2003**, código cerrado) · **Firefox** (Mozilla, **2004**, motor **Gecko**) · **Chrome** (Google, **2008**, el más usado)"
+    }
+  ]
+}

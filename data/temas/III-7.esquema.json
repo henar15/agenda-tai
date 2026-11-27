@@ -1,0 +1,80 @@
+{
+  "tema": "III-7",
+  "ramas": [
+    {
+      "t": "Conceptos básicos",
+      "e": "🧠",
+      "items": [
+        "**URI** = **URL** (dónde) y/o **URN** (qué: ISBN)",
+        "**DOM**: árbol de HTML/XML que maneja JavaScript",
+        "**SGML**: ISO **8879** (1986), padre de HTML y XML",
+        "**SPA/CSR** en cliente · **SSR** + hidratación",
+        "Motores: **Gecko**, **WebKit**, **Blink** (Chrome)"
+      ]
+    },
+    {
+      "t": "HTTP y servidores",
+      "e": "📨",
+      "items": [
+        "HTTP **sin estado** → **cookies**",
+        "**1.1** = **RFC 2616** · HTTP/2 2015 · HTTP/3 2019",
+        "1.0: **GET, HEAD, POST**",
+        "1.1: OPTIONS, PUT, DELETE, TRACE, CONNECT",
+        "**Apache** (libre) · **IIS** (Microsoft)"
+      ]
+    },
+    {
+      "t": "Patrones GoF",
+      "e": "👬",
+      "items": [
+        "Estructurales: **Adapter**, Facade, **Proxy**…",
+        "Creación: **Singleton**, **Factory**, Builder…",
+        "Comportamiento: **Observer** (uno a muchos)",
+        "También de **interacción** (interfaces)"
+      ]
+    },
+    {
+      "t": "Front-end",
+      "e": "🎨",
+      "items": [
+        "**HTML**: estructura · empieza por **<!DOCTYPE html>**",
+        "HTML5: **semánticas**, canvas, audio/vídeo, local storage",
+        "**CSS**: en línea, interno o **externo**",
+        "Especificidad: **línea > #id > .clase > etiqueta**",
+        "JS: **===** estricto · **AJAX** con **XMLHttpRequest**"
+      ]
+    },
+    {
+      "t": "Back-end",
+      "e": "🖥️",
+      "items": [
+        "**CGI** (Perl): el primero, obsoleto",
+        "**ASP.NET** (.aspx) · **JSP** (.jsp, Tomcat)",
+        "**PHP** · **Node.js** (motor **V8**)",
+        "Full stack: front-end + back-end"
+      ]
+    },
+    {
+      "t": "XML y JSON",
+      "e": "📦",
+      "items": [
+        "XML: sin etiquetas predefinidas, **una raíz**",
+        "**Bien formado** vs. **válido** (DTD/XSD)",
+        "5 entidades: **&lt; &gt; &amp; &quot; &apos;**",
+        "**XPath** localiza · **XQuery** consulta",
+        "**DOM** (árbol) vs. **SAX** (eventos) · **SAML**",
+        "**JSON**: parse() y stringify()"
+      ]
+    },
+    {
+      "t": "Móvil y navegadores",
+      "e": "📱",
+      "items": [
+        "Apps **nativas**, **web** e **híbridas** (Ionic)",
+        "Android: **SDK** (Java/Kotlin) y **NDK** (C/C++)",
+        "iOS: **Xcode**, SwiftUI, iOS SDK",
+        "Safari 2003 · Firefox 2004 · **Chrome 2008**"
+      ]
+    }
+  ]
+}

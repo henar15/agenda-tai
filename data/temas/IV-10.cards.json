@@ -1,0 +1,721 @@
+{
+  "tema": "IV-10",
+  "cards": [
+    {
+      "id": "iv10c1",
+      "n": "1",
+      "e": "🏠",
+      "t": false,
+      "q": "¿Qué es una LAN?",
+      "a": "Una **red de área local** (Local Area Network) que une desde **dos hasta miles** de dispositivos en una casa, empresa o institución"
+    },
+    {
+      "id": "iv10c2",
+      "n": "2",
+      "e": "🔌",
+      "t": false,
+      "q": "Si hay más de dos ordenadores en una LAN, ¿qué componentes se necesitan?",
+      "a": "**Concentradores (hubs)**, **puentes (bridges)** y **conmutadores (switches)**; y un **enrutador** para salir a Internet"
+    },
+    {
+      "id": "iv10c3",
+      "n": "3",
+      "e": "🧱",
+      "t": true,
+      "q": "¿Qué es una VLAN?",
+      "a": "Una **LAN virtual**: dividir una LAN física grande en varias **LAN lógicas** más pequeñas",
+      "h": "Los broadcast de una VLAN no llegan a las demás"
+    },
+    {
+      "id": "iv10c4",
+      "n": "4",
+      "e": "🏢",
+      "t": false,
+      "q": "¿Para qué sirve una VLAN?",
+      "a": "Para **aislar segmentos** de la red: los paquetes de **difusión** de una red lógica no llegan a las otras, aunque compartan la red física"
+    },
+    {
+      "id": "iv10c5",
+      "n": "5",
+      "e": "🧵",
+      "t": true,
+      "q": "¿Qué estándar es Ethernet (LAN con cable)?",
+      "a": "**IEEE 802.3**, el tipo más común de LAN alámbrica",
+      "h": "Obsoletas: ARCNET, FDDI y Token Ring"
+    },
+    {
+      "id": "iv10c6",
+      "n": "6",
+      "e": "📶",
+      "t": true,
+      "q": "¿Qué normas definen las WLAN (wifi)?",
+      "a": "Las **IEEE 802.11**"
+    },
+    {
+      "id": "iv10c7",
+      "n": "7",
+      "e": "🔄",
+      "t": false,
+      "q": "Asignación de canal estática",
+      "a": "Se divide el tiempo en intervalos con un algoritmo por turnos (**Round-Robin**). Problema: se **desperdicia** canal si quien tiene el turno no transmite"
+    },
+    {
+      "id": "iv10c8",
+      "n": "8",
+      "e": "⚖️",
+      "t": false,
+      "q": "Asignación de canal dinámica: tipos",
+      "a": "**Centralizada** (una entidad central decide el turno) y **descentralizada** (cada máquina decide; hay que evitar colisiones). Es la **más usada**"
+    },
+    {
+      "id": "iv10c9",
+      "n": "9",
+      "e": "🏛️",
+      "t": false,
+      "q": "¿Qué es el proyecto IEEE 802?",
+      "a": "Proyecto del IEEE que crea estándares de **LAN y MAN** en las **dos capas inferiores de OSI** (física y enlace)"
+    },
+    {
+      "id": "iv10c10",
+      "n": "10",
+      "e": "✂️",
+      "t": true,
+      "q": "¿En qué subniveles divide IEEE 802 la capa de enlace?",
+      "a": "**LLC** (Control de Enlace Lógico, recogido en **802.2**) y **MAC** (Control de Acceso al Medio)"
+    },
+    {
+      "id": "iv10c11",
+      "n": "11",
+      "e": "🗺️",
+      "t": false,
+      "q": "Topología física vs. lógica",
+      "a": "**Física**: cómo se conectan los equipos. **Lógica**: cómo se accede a la información de la red"
+    },
+    {
+      "id": "iv10c12",
+      "n": "12",
+      "e": "🔗",
+      "t": false,
+      "q": "Topología punto a punto",
+      "a": "Cada canal comunica **dos nodos**; los equipos actúan como **iguales (pares)** y pueden ser emisor o receptor"
+    },
+    {
+      "id": "iv10c13",
+      "n": "13",
+      "e": "➡️",
+      "t": false,
+      "q": "Comunicación simplex",
+      "a": "**Unidireccional**: uno solo transmite y el otro solo recibe. Ej.: **impresora** o escáner"
+    },
+    {
+      "id": "iv10c14",
+      "n": "14",
+      "e": "📻",
+      "t": true,
+      "q": "Comunicación semidúplex (half-duplex)",
+      "a": "Ambos envían y reciben, pero **no a la vez**. Ej.: **walkie-talkie**"
+    },
+    {
+      "id": "iv10c15",
+      "n": "15",
+      "e": "📞",
+      "t": false,
+      "q": "Comunicación dúplex (full-duplex)",
+      "a": "Ambos envían y reciben **simultáneamente**. Ej.: **teléfono**",
+      "h": "Con dos caminos físicos o con distintas frecuencias"
+    },
+    {
+      "id": "iv10c16",
+      "n": "16",
+      "e": "👍",
+      "t": false,
+      "q": "Ventajas de las redes punto a punto",
+      "a": "**Fáciles** de configurar, **menos complejas** y **más baratas** (no necesitan servidores dedicados)"
+    },
+    {
+      "id": "iv10c17",
+      "n": "17",
+      "e": "👎",
+      "t": false,
+      "q": "Desventajas de las redes punto a punto",
+      "a": "Administración **no centralizada**, **poco seguras** y **no escalables**"
+    },
+    {
+      "id": "iv10c18",
+      "n": "18",
+      "e": "🚌",
+      "t": false,
+      "q": "Topología en bus",
+      "a": "Un **único cable común** (tronco) al que se conectan todos; todos ven todas las señales"
+    },
+    {
+      "id": "iv10c19",
+      "n": "19",
+      "e": "💥",
+      "t": false,
+      "q": "Principal problema del bus",
+      "a": "Si se **rompe el cable** los equipos quedan desconectados; además hay **colisiones** y la red empeora al crecer"
+    },
+    {
+      "id": "iv10c20",
+      "n": "20",
+      "e": "💰",
+      "t": false,
+      "q": "Principal ventaja del bus",
+      "a": "**Facilidad de instalación** y es **muy económica**"
+    },
+    {
+      "id": "iv10c21",
+      "n": "21",
+      "e": "⭐",
+      "t": true,
+      "q": "Topología en estrella",
+      "a": "Todos se conectan a un **nodo central** (hub o switch) con enlace punto a punto. Es la **más usada** en LAN"
+    },
+    {
+      "id": "iv10c22",
+      "n": "22",
+      "e": "⚠️",
+      "t": true,
+      "q": "Punto débil de la estrella",
+      "a": "Si **falla el nodo central** (hub o switch), **toda la red** deja de transmitir"
+    },
+    {
+      "id": "iv10c23",
+      "n": "23",
+      "e": "🌟",
+      "t": false,
+      "q": "Estrella extendida",
+      "a": "Cada nodo conectado al central es a su vez **centro de otra estrella**. Muy jerárquica; la usa el **sistema telefónico**"
+    },
+    {
+      "id": "iv10c24",
+      "n": "24",
+      "e": "💍",
+      "t": false,
+      "q": "Topología en anillo",
+      "a": "Equipos en **círculo**, sin extremos; la señal va en **una dirección** y cada nodo actúa de **repetidor**",
+      "h": "Asociada a Token Ring"
+    },
+    {
+      "id": "iv10c25",
+      "n": "25",
+      "e": "🐌",
+      "t": false,
+      "q": "Desventaja del anillo",
+      "a": "Los datos pasan por **todas las estaciones intermedias**: más lento y todas pueden ver lo enviado"
+    },
+    {
+      "id": "iv10c26",
+      "n": "26",
+      "e": "💞",
+      "t": false,
+      "q": "Anillo doble",
+      "a": "Dos anillos **concéntricos** (no conectados entre sí); da **tolerancia a fallos** y se llega a un nodo por dos sentidos"
+    },
+    {
+      "id": "iv10c27",
+      "n": "27",
+      "e": "🕸️",
+      "t": false,
+      "q": "Topología en malla",
+      "a": "Cada nodo conectado a **todos** los demás: muy **fiable** y redundante, pero **cara** de instalar"
+    },
+    {
+      "id": "iv10c28",
+      "n": "28",
+      "e": "🌳",
+      "t": false,
+      "q": "Topología en árbol (jerárquica)",
+      "a": "Como varias estrellas unidas pero **sin nodo central**: tiene un **nodo troncal**; si cae un nodo, caen los que cuelgan de él"
+    },
+    {
+      "id": "iv10c29",
+      "n": "29",
+      "e": "📡",
+      "t": false,
+      "q": "Topología celular",
+      "a": "Zona dividida en **celdas** (circulares o hexagonales) con un nodo en el centro; **sin enlaces físicos**, solo ondas",
+      "h": "Desventaja: seguridad"
+    },
+    {
+      "id": "iv10c30",
+      "n": "30",
+      "e": "🔢",
+      "t": false,
+      "q": "Transmisión paralela vs. serie",
+      "a": "**Paralela**: varios bits por pulso de reloj (n hilos, distancias cortas). **Serie**: **un bit** por pulso (un solo canal, más barata)"
+    },
+    {
+      "id": "iv10c31",
+      "n": "31",
+      "e": "⏱️",
+      "t": false,
+      "q": "Transmisión asíncrona",
+      "a": "Cada grupo (normalmente 8 bits) lleva **bit de inicio** (un 0) y **bits de parada** (unos). Más lenta, barata. Ej.: **teclado**"
+    },
+    {
+      "id": "iv10c32",
+      "n": "32",
+      "e": "🚄",
+      "t": true,
+      "q": "Transmisión síncrona",
+      "a": "Bits seguidos **sin bits de inicio/parada**; el receptor los agrupa. **Mayor velocidad**; la temporización es clave"
+    },
+    {
+      "id": "iv10c33",
+      "n": "33",
+      "e": "🎬",
+      "t": true,
+      "q": "Transmisión isócrona",
+      "a": "Garantiza que los datos llegan a una **tasa fija**: para **audio y vídeo en tiempo real**"
+    },
+    {
+      "id": "iv10c34",
+      "n": "34",
+      "e": "🎛️",
+      "t": false,
+      "q": "¿Qué es la multiplexación?",
+      "a": "Enviar **varias señales a la vez** por un único enlace. Necesita **multiplexor** (emisor) y **demultiplexor** (receptor)"
+    },
+    {
+      "id": "iv10c35",
+      "n": "35",
+      "e": "📻",
+      "t": false,
+      "q": "FDM",
+      "a": "Multiplexación por **división de frecuencia**: normalmente señales **analógicas**; usa **bandas de seguridad**"
+    },
+    {
+      "id": "iv10c36",
+      "n": "36",
+      "e": "💡",
+      "t": true,
+      "q": "WDM",
+      "a": "Multiplexación por **división de onda**: como FDM pero con **luz** por **fibra óptica**"
+    },
+    {
+      "id": "iv10c37",
+      "n": "37",
+      "e": "⏲️",
+      "t": false,
+      "q": "TDM",
+      "a": "Multiplexación por **división en el tiempo**: normalmente señales **digitales**",
+      "h": "Síncrona (ranura fija) o asíncrona/estadística (bajo demanda)"
+    },
+    {
+      "id": "iv10c38",
+      "n": "38",
+      "e": "🎚️",
+      "t": false,
+      "q": "TDM síncrona vs. asíncrona",
+      "a": "**Síncrona**: siempre la misma ranura aunque no se transmita. **Asíncrona o estadística**: ranuras asignadas **bajo demanda**"
+    },
+    {
+      "id": "iv10c39",
+      "n": "39",
+      "e": "〰️",
+      "t": false,
+      "q": "¿Qué es la banda base?",
+      "a": "Señales **sin modular**, transmitidas en su **frecuencia original** (se codifican). Para **cortas distancias**"
+    },
+    {
+      "id": "iv10c40",
+      "n": "40",
+      "e": "➕",
+      "t": false,
+      "q": "Señales unipolares, polares y bipolares",
+      "a": "**Unipolar**: el 0 vale 0. **Polar**: + para 1 y − para 0, nunca 0. **Bipolar**: un dígito alterna polaridad y el otro es 0"
+    },
+    {
+      "id": "iv10c41",
+      "n": "41",
+      "e": "🔀",
+      "t": true,
+      "q": "Codificación Manchester",
+      "a": "También **bifase-L**: hay una **transición en cada tiempo de bit**"
+    },
+    {
+      "id": "iv10c42",
+      "n": "42",
+      "e": "🔁",
+      "t": false,
+      "q": "Código AMI",
+      "a": "Los **unos** con pulsos de **polaridad alterna** y los ceros sin pulso. **Sin componente continua** y detecta errores"
+    },
+    {
+      "id": "iv10c43",
+      "n": "43",
+      "e": "📞",
+      "t": false,
+      "q": "2B1Q",
+      "a": "Código **multinivel**: 2 bits por 1 elemento de señal. Se usa en líneas **xDSL**"
+    },
+    {
+      "id": "iv10c44",
+      "n": "44",
+      "e": "🌊",
+      "t": false,
+      "q": "¿Qué es la modulación?",
+      "a": "Variar un parámetro de una **onda portadora** según la señal moduladora. La **demodulación** es lo inverso"
+    },
+    {
+      "id": "iv10c45",
+      "n": "45",
+      "e": "📶",
+      "t": false,
+      "q": "Portadora analógica + moduladora digital",
+      "a": "**ASK** (amplitud), **FSK** (frecuencia) y **PSK** (fase)",
+      "h": "Si las dos son analógicas: AM, FM y PM"
+    },
+    {
+      "id": "iv10c46",
+      "n": "46",
+      "e": "🧮",
+      "t": false,
+      "q": "Portadora digital + moduladora analógica",
+      "a": "**PAM, PDM, PPM, PCM, PWM** y modulación **Delta**"
+    },
+    {
+      "id": "iv10c47",
+      "n": "47",
+      "e": "🔊",
+      "t": false,
+      "q": "Ruido térmico o blanco",
+      "a": "También **Johnson-Nyquist**; uniforme en todas las frecuencias. Fórmula **N = KTB**"
+    },
+    {
+      "id": "iv10c48",
+      "n": "48",
+      "e": "🗣️",
+      "t": false,
+      "q": "¿Qué es la diafonía (crosstalk)?",
+      "a": "Interferencia entre **medios adyacentes**: una señal perturba la de al lado (cruce de conversaciones)"
+    },
+    {
+      "id": "iv10c49",
+      "n": "49",
+      "e": "⚡",
+      "t": false,
+      "q": "Ruido impulsivo (EMI)",
+      "a": "**Picos de tensión** impredecibles; en señales digitales puede causar **pérdida de datos**"
+    },
+    {
+      "id": "iv10c50",
+      "n": "50",
+      "e": "📉",
+      "t": false,
+      "q": "¿Qué es la atenuación?",
+      "a": "**Pérdida de potencia** por la longitud del medio: a más distancia, menos potencia recibida"
+    },
+    {
+      "id": "iv10c51",
+      "n": "51",
+      "e": "1️⃣",
+      "t": false,
+      "q": "Unicast",
+      "a": "Comunicación **uno a uno**; la forma más común y eficiente"
+    },
+    {
+      "id": "iv10c52",
+      "n": "52",
+      "e": "👥",
+      "t": true,
+      "q": "Multicast",
+      "a": "**Uno a muchos** (o muchos a muchos), solo a los **interesados** del grupo. Los grupos se gestionan con **IGMP**"
+    },
+    {
+      "id": "iv10c53",
+      "n": "53",
+      "e": "📢",
+      "t": true,
+      "q": "Broadcast",
+      "a": "**Un mensaje a todos** los nodos de la subred. Menos eficiente. Ejemplo: **ARP**"
+    },
+    {
+      "id": "iv10c54",
+      "n": "54",
+      "e": "🎯",
+      "t": true,
+      "q": "Anycast",
+      "a": "Se entrega al destino **más cercano** (menor latencia) de un grupo; solo lo recibe **un nodo**"
+    },
+    {
+      "id": "iv10c55",
+      "n": "55",
+      "e": "🚦",
+      "t": false,
+      "q": "¿Qué son los métodos de acceso al medio (MAC)?",
+      "a": "Reglas para que varios equipos **compartan un medio común**; están en la capa de **enlace de datos** de OSI"
+    },
+    {
+      "id": "iv10c56",
+      "n": "56",
+      "e": "💥",
+      "t": false,
+      "q": "¿Qué es una colisión?",
+      "a": "Cuando **dos estaciones transmiten a la vez** y se dañan las tramas de ambas"
+    },
+    {
+      "id": "iv10c57",
+      "n": "57",
+      "e": "📂",
+      "t": false,
+      "q": "Clasificación de los métodos de acceso",
+      "a": "**Repartición** (estático: FDM, TDM) y **compartición** (dinámico: contienda, reserva, selección e híbridos)"
+    },
+    {
+      "id": "iv10c58",
+      "n": "58",
+      "e": "🍕",
+      "t": false,
+      "q": "Características de la repartición",
+      "a": "Sin interferencias y simple; eficiente con **pocos usuarios y tráfico alto**, ineficiente con muchos"
+    },
+    {
+      "id": "iv10c59",
+      "n": "59",
+      "e": "🎲",
+      "t": false,
+      "q": "Métodos de contienda",
+      "a": "Acceso **aleatorio**: sin jerarquía, compiten por el medio y puede haber **colisiones**. Buenos con **baja carga**"
+    },
+    {
+      "id": "iv10c60",
+      "n": "60",
+      "e": "🌺",
+      "t": false,
+      "q": "ALOHA puro",
+      "a": "De la **Universidad de Hawái**; método **sordo** (no escucha el canal): transmite y, si no hay confirmación, reintenta tras un tiempo aleatorio"
+    },
+    {
+      "id": "iv10c61",
+      "n": "61",
+      "e": "🎰",
+      "t": false,
+      "q": "ALOHA ranurado",
+      "a": "Tiempo dividido en **ranuras**; solo se transmite **al inicio de una ranura** (requiere sincronización)"
+    },
+    {
+      "id": "iv10c62",
+      "n": "62",
+      "e": "👂",
+      "t": false,
+      "q": "CSMA (no persistente)",
+      "a": "**Escucha antes** de transmitir; si está ocupado, espera un **tiempo aleatorio** y vuelve a escuchar"
+    },
+    {
+      "id": "iv10c63",
+      "n": "63",
+      "e": "🙋",
+      "t": false,
+      "q": "CSMA persistente y p-persistente",
+      "a": "**Persistente**: sigue escuchando y transmite en cuanto queda libre (más colisiones). **p-persistente**: transmite con **probabilidad p**"
+    },
+    {
+      "id": "iv10c64",
+      "n": "64",
+      "e": "🔍",
+      "t": true,
+      "q": "CSMA/CD",
+      "a": "Detección de portadora con **detección de colisiones**. Lo usa **802.3 / Ethernet**. No sirve en inalámbricas",
+      "h": "Escucha mientras transmite; si choca, para y espera aleatoriamente"
+    },
+    {
+      "id": "iv10c65",
+      "n": "65",
+      "e": "📅",
+      "t": false,
+      "q": "Métodos de reserva",
+      "a": "Se pide una reserva y no se transmite hasta que se concede: **sin colisiones en los datos**. Para **tráfico continuo**"
+    },
+    {
+      "id": "iv10c66",
+      "n": "66",
+      "e": "🔄",
+      "t": false,
+      "q": "Métodos de selección",
+      "a": "Acceso **por turnos** (rotación). Más estaciones = más espera, pero buen rendimiento con **carga alta**"
+    },
+    {
+      "id": "iv10c67",
+      "n": "67",
+      "e": "🎫",
+      "t": true,
+      "q": "Token Ring (paso de testigo)",
+      "a": "Un **testigo** circula por el anillo; solo transmite quien lo tiene. Norma **IEEE 802.5**",
+      "h": "Bit T=1 ocupado, T=0 libre"
+    },
+    {
+      "id": "iv10c68",
+      "n": "68",
+      "e": "🚍",
+      "t": false,
+      "q": "Token Bus",
+      "a": "Bus **físico** pero anillo **lógico** con testigo; **sin colisiones** y cable **coaxial**"
+    },
+    {
+      "id": "iv10c69",
+      "n": "69",
+      "e": "📣",
+      "t": false,
+      "q": "Repetidor",
+      "a": "Une **dos segmentos** de la misma red: **amplifica y regenera** la señal (copia también el ruido); **no filtra** tráfico"
+    },
+    {
+      "id": "iv10c70",
+      "n": "70",
+      "e": "🔘",
+      "t": false,
+      "q": "Concentrador (hub)",
+      "a": "**Repetidor multipuerto**: físicamente estrella, lógicamente **bus**. Reenvía a **todos los puertos** menos al de origen"
+    },
+    {
+      "id": "iv10c71",
+      "n": "71",
+      "e": "🧨",
+      "t": true,
+      "q": "¿Divide el hub dominios de colisión o broadcast?",
+      "a": "**No divide ninguno**: ni colisión ni broadcast"
+    },
+    {
+      "id": "iv10c72",
+      "n": "72",
+      "e": "🔋",
+      "t": false,
+      "q": "Hub activo vs. pasivo",
+      "a": "**Activo**: regenera la señal. **Pasivo**: solo interconecta, no regenera"
+    },
+    {
+      "id": "iv10c73",
+      "n": "73",
+      "e": "🔀",
+      "t": false,
+      "q": "Conmutador (switch)",
+      "a": "Conecta equipos **aprendiendo las MAC** de cada puerto; da ancho de banda dedicado",
+      "h": "Si no conoce la MAC destino, envía por todos los puertos"
+    },
+    {
+      "id": "iv10c74",
+      "n": "74",
+      "e": "🧩",
+      "t": true,
+      "q": "Switch: dominios de colisión y broadcast",
+      "a": "**Divide** el dominio de **colisión** (uno por boca) pero **no** el de **broadcast**"
+    },
+    {
+      "id": "iv10c75",
+      "n": "75",
+      "e": "🌉",
+      "t": false,
+      "q": "Puente (bridge)",
+      "a": "Conecta **varias LAN** con una **tabla de direcciones MAC**; divide colisión pero **no broadcast**"
+    },
+    {
+      "id": "iv10c76",
+      "n": "76",
+      "e": "🧭",
+      "t": false,
+      "q": "Enrutador (router)",
+      "a": "Interconecta **redes** a nivel de **red**; elige la **mejor ruta** con su tabla y la **métrica** más baja"
+    },
+    {
+      "id": "iv10c77",
+      "n": "77",
+      "e": "✂️",
+      "t": true,
+      "q": "Router: dominios",
+      "a": "**Divide** el dominio de **colisión** y también el de **broadcast**"
+    },
+    {
+      "id": "iv10c78",
+      "n": "78",
+      "e": "📐",
+      "t": false,
+      "q": "Factores de la métrica de un router",
+      "a": "Ancho de banda, **retardo**, carga, confiabilidad, **número de saltos** y coste"
+    },
+    {
+      "id": "iv10c79",
+      "n": "79",
+      "e": "🌐",
+      "t": false,
+      "q": "BGP",
+      "a": "Protocolo de **pasarela exterior** entre **sistemas autónomos**; de **vector de ruta**; funciona sobre **TCP**",
+      "h": "iBGP dentro de un AS, eBGP entre AS. Sustituyó a EGP"
+    },
+    {
+      "id": "iv10c80",
+      "n": "80",
+      "e": "🦘",
+      "t": true,
+      "q": "RIP",
+      "a": "IGP de **vector de distancia**; métrica = **número de saltos**; más de **15 saltos** = inalcanzable; mensajes cada **30 s**; sobre **UDP**"
+    },
+    {
+      "id": "iv10c81",
+      "n": "81",
+      "e": "🆚",
+      "t": true,
+      "q": "RIP v1, v2 y RIPng",
+      "a": "**v1**: sin subredes ni CIDR (RFC 1058). **v2**: con subredes, CIDR, VLSM y autenticación **MD5**. **RIPng**: para **IPv6**"
+    },
+    {
+      "id": "iv10c82",
+      "n": "82",
+      "e": "🏁",
+      "t": false,
+      "q": "IS-IS",
+      "a": "IGP que usa el **algoritmo de Dijkstra** (RFC **1142**); se ejecuta en la **capa 2**"
+    },
+    {
+      "id": "iv10c83",
+      "n": "83",
+      "e": "🏷️",
+      "t": false,
+      "q": "IGRP y EIGRP",
+      "a": "Protocolos **propietarios de Cisco**. IGRP: vector distancia, actualiza cada **90 s**, con clase. **EIGRP** mejora IGRP (algoritmo **DUAL**)"
+    },
+    {
+      "id": "iv10c84",
+      "n": "84",
+      "e": "🏠",
+      "t": true,
+      "q": "Ejemplos de IGP (interior)",
+      "a": "**OSPF**, **RIP**, **IS-IS** y **EIGRP**",
+      "h": "Exterior: BGP"
+    },
+    {
+      "id": "iv10c85",
+      "n": "85",
+      "e": "🔁",
+      "t": false,
+      "q": "Compuerta (gateway)",
+      "a": "**Traductor** entre redes **completamente distintas** (protocolos, formatos, arquitecturas)"
+    },
+    {
+      "id": "iv10c86",
+      "n": "86",
+      "e": "🔌",
+      "t": true,
+      "q": "Potencias PoE",
+      "a": "**PoE (802.3af)**: hasta **15,4 W**. **PoE+ (802.3at)**: hasta **30 W**. **PoE++ (802.3bt)**: **60 W** (tipo 3) y **90 W** (tipo 4)"
+    },
+    {
+      "id": "iv10c87",
+      "n": "87",
+      "e": "📷",
+      "t": false,
+      "q": "¿Para qué sirve PoE?",
+      "a": "Enviar **energía eléctrica junto con datos** por cable Ethernet (cámaras, teléfonos IP, puntos de acceso)"
+    },
+    {
+      "id": "iv10c88",
+      "n": "88",
+      "e": "🤖",
+      "t": false,
+      "q": "¿Qué es oneM2M?",
+      "a": "Iniciativa global (**2012**) de **8 organizaciones** de estándares (ETSI, ARIB…) para la interoperabilidad de **M2M e IoT**"
+    }
+  ]
+}

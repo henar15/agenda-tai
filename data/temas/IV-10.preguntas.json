@@ -1,0 +1,330 @@
+{
+  "tema": "IV-10",
+  "preguntas": [
+    {
+      "id": "iv10-01",
+      "tipico": true,
+      "q": "El estándar IEEE de Ethernet (LAN cableada) es el…",
+      "opts": [
+        "802.3",
+        "802.11",
+        "802.5",
+        "802.2"
+      ],
+      "c": 0,
+      "exp": "802.3 es Ethernet; 802.11 es wifi y 802.5 Token Ring."
+    },
+    {
+      "id": "iv10-02",
+      "tipico": true,
+      "q": "IEEE 802 divide la capa de enlace en dos subniveles:",
+      "opts": [
+        "LLC y TCP",
+        "MAC y PHY",
+        "LLC y MAC",
+        "IP y MAC"
+      ],
+      "c": 2,
+      "exp": "Control de Enlace Lógico (LLC, 802.2) y Control de Acceso al Medio (MAC)."
+    },
+    {
+      "id": "iv10-03",
+      "tipico": false,
+      "q": "¿Qué normas definen las redes WLAN?",
+      "opts": [
+        "IEEE 802.3",
+        "IEEE 802.5",
+        "IEEE 802.2",
+        "IEEE 802.11"
+      ],
+      "c": 3,
+      "exp": "Las WLAN (wifi) se rigen por IEEE 802.11."
+    },
+    {
+      "id": "iv10-04",
+      "tipico": true,
+      "q": "Un walkie-talkie es un ejemplo de comunicación…",
+      "opts": [
+        "Simplex",
+        "Semidúplex",
+        "Dúplex",
+        "Isócrona"
+      ],
+      "c": 1,
+      "exp": "Ambos pueden enviar y recibir, pero no a la vez."
+    },
+    {
+      "id": "iv10-05",
+      "tipico": true,
+      "q": "¿En qué topología, si falla el nodo central, deja de funcionar toda la red?",
+      "opts": [
+        "Estrella",
+        "Anillo doble",
+        "Malla",
+        "Celular"
+      ],
+      "c": 0,
+      "exp": "En estrella todo pasa por el hub o switch central."
+    },
+    {
+      "id": "iv10-06",
+      "tipico": false,
+      "q": "La topología en la que cada nodo está conectado con todos los demás es…",
+      "opts": [
+        "Árbol",
+        "Bus",
+        "Malla",
+        "Estrella extendida"
+      ],
+      "c": 2,
+      "exp": "La malla es muy fiable y redundante, pero cara."
+    },
+    {
+      "id": "iv10-07",
+      "tipico": false,
+      "q": "La topología en anillo doble aporta sobre todo…",
+      "opts": [
+        "Menor coste",
+        "Un nodo central",
+        "Ausencia de cableado",
+        "Tolerancia a fallos"
+      ],
+      "c": 3,
+      "exp": "Un segundo anillo redundante permite llegar en dos sentidos."
+    },
+    {
+      "id": "iv10-08",
+      "tipico": true,
+      "q": "La transmisión que añade bit de inicio y bits de parada a cada grupo es la…",
+      "opts": [
+        "Síncrona",
+        "Asíncrona",
+        "Isócrona",
+        "Paralela"
+      ],
+      "c": 1,
+      "exp": "La asíncrona usa bit de inicio (0) y de parada (1); ej.: teclado."
+    },
+    {
+      "id": "iv10-09",
+      "tipico": true,
+      "q": "Para audio y vídeo en tiempo real se usa la transmisión…",
+      "opts": [
+        "Isócrona",
+        "Asíncrona",
+        "Simplex",
+        "Paralela"
+      ],
+      "c": 0,
+      "exp": "La isócrona garantiza una tasa fija de llegada."
+    },
+    {
+      "id": "iv10-10",
+      "tipico": false,
+      "q": "La multiplexación que aplica la idea de FDM a señales luminosas por fibra es…",
+      "opts": [
+        "TDM",
+        "PCM",
+        "WDM",
+        "CDM"
+      ],
+      "c": 2,
+      "exp": "WDM: multiplexación por división de onda."
+    },
+    {
+      "id": "iv10-11",
+      "tipico": false,
+      "q": "En la TDM asíncrona o estadística…",
+      "opts": [
+        "Cada equipo tiene siempre la misma ranura",
+        "Se usan bandas de seguridad",
+        "Se divide por frecuencias",
+        "Las ranuras se asignan bajo demanda"
+      ],
+      "c": 3,
+      "exp": "La síncrona asigna siempre la misma ranura; la estadística, bajo demanda."
+    },
+    {
+      "id": "iv10-12",
+      "tipico": false,
+      "q": "La codificación Manchester se caracteriza por…",
+      "opts": [
+        "No tener transiciones",
+        "Una transición en cada tiempo de bit",
+        "Codificar 2 bits por señal",
+        "Usarse en xDSL"
+      ],
+      "c": 1,
+      "exp": "También llamada bifase-L."
+    },
+    {
+      "id": "iv10-13",
+      "tipico": false,
+      "q": "Las modulaciones ASK, FSK y PSK usan…",
+      "opts": [
+        "Portadora analógica y moduladora digital",
+        "Portadora y moduladora analógicas",
+        "Portadora digital y moduladora analógica",
+        "Ambas digitales"
+      ],
+      "c": 0,
+      "exp": "Con ambas analógicas serían AM, FM y PM."
+    },
+    {
+      "id": "iv10-14",
+      "tipico": true,
+      "q": "El protocolo ARP es un ejemplo de comunicación…",
+      "opts": [
+        "Unicast",
+        "Multicast",
+        "Broadcast",
+        "Anycast"
+      ],
+      "c": 2,
+      "exp": "ARP envía un mensaje a todos los nodos de la subred."
+    },
+    {
+      "id": "iv10-15",
+      "tipico": true,
+      "q": "En anycast el paquete se entrega a…",
+      "opts": [
+        "Todos los nodos de la subred",
+        "Los nodos suscritos al grupo",
+        "Un nodo al azar",
+        "El nodo más cercano del grupo"
+      ],
+      "c": 3,
+      "exp": "Lo recibe un solo nodo: el más próximo en latencia."
+    },
+    {
+      "id": "iv10-16",
+      "tipico": false,
+      "q": "El protocolo que gestiona los grupos multicast es…",
+      "opts": [
+        "ARP",
+        "IGMP",
+        "RIP",
+        "BGP"
+      ],
+      "c": 1,
+      "exp": "IGMP comunica nodos y conmutadores para unirse o dejar grupos."
+    },
+    {
+      "id": "iv10-17",
+      "tipico": true,
+      "q": "El método de acceso que usa Ethernet (802.3) es…",
+      "opts": [
+        "CSMA/CD",
+        "ALOHA puro",
+        "Token Ring",
+        "Token Bus"
+      ],
+      "c": 0,
+      "exp": "Detección de portadora con detección de colisiones."
+    },
+    {
+      "id": "iv10-18",
+      "tipico": false,
+      "q": "El método ALOHA puro se considera ‘sordo’ porque…",
+      "opts": [
+        "No detecta colisiones",
+        "Solo funciona en anillo",
+        "No escucha el estado del canal",
+        "Usa ranuras de tiempo"
+      ],
+      "c": 2,
+      "exp": "Transmite sin escuchar; el ranurado ya tiene capacidad de escucha."
+    },
+    {
+      "id": "iv10-19",
+      "tipico": true,
+      "q": "El paso de testigo en anillo (Token Ring) es la norma…",
+      "opts": [
+        "IEEE 802.3",
+        "IEEE 802.11",
+        "IEEE 802.2",
+        "IEEE 802.5"
+      ],
+      "c": 3,
+      "exp": "Token Ring: IEEE 802.5."
+    },
+    {
+      "id": "iv10-20",
+      "tipico": true,
+      "q": "¿Qué dispositivo NO divide ni el dominio de colisión ni el de broadcast?",
+      "opts": [
+        "Switch",
+        "Hub",
+        "Puente",
+        "Router"
+      ],
+      "c": 1,
+      "exp": "El hub reenvía a todos los puertos."
+    },
+    {
+      "id": "iv10-21",
+      "tipico": true,
+      "q": "Un switch…",
+      "opts": [
+        "Divide colisión pero no broadcast",
+        "Divide colisión y broadcast",
+        "No divide ninguno",
+        "Divide broadcast pero no colisión"
+      ],
+      "c": 0,
+      "exp": "Tiene un dominio de colisión por boca, pero un solo dominio de broadcast."
+    },
+    {
+      "id": "iv10-22",
+      "tipico": false,
+      "q": "El dispositivo que divide también el dominio de broadcast es el…",
+      "opts": [
+        "Repetidor",
+        "Puente",
+        "Router",
+        "Hub"
+      ],
+      "c": 2,
+      "exp": "El router trabaja a nivel de red."
+    },
+    {
+      "id": "iv10-23",
+      "tipico": true,
+      "q": "En RIP, una ruta es inalcanzable si tiene más de…",
+      "opts": [
+        "10 saltos",
+        "90 saltos",
+        "30 saltos",
+        "15 saltos"
+      ],
+      "c": 3,
+      "exp": "Métrica = saltos; más de 15 es inalcanzable. Envía mensajes cada 30 s."
+    },
+    {
+      "id": "iv10-24",
+      "tipico": false,
+      "q": "¿Cuál de estos es un protocolo de pasarela exterior (entre sistemas autónomos)?",
+      "opts": [
+        "OSPF",
+        "BGP",
+        "IS-IS",
+        "RIP"
+      ],
+      "c": 1,
+      "exp": "OSPF, RIP, IS-IS y EIGRP son interiores (IGP)."
+    },
+    {
+      "id": "iv10-25",
+      "tipico": true,
+      "q": "La potencia máxima de PoE+ (IEEE 802.3at) es de…",
+      "opts": [
+        "30 W",
+        "15,4 W",
+        "60 W",
+        "90 W"
+      ],
+      "c": 0,
+      "exp": "PoE 15,4 W; PoE+ 30 W; PoE++ 60 W (tipo 3) o 90 W (tipo 4)."
+    }
+  ]
+}

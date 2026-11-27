@@ -1,0 +1,77 @@
+{
+  "tema": "IV-10",
+  "ramas": [
+    {
+      "t": "Tipos de LAN",
+      "e": "🗺️",
+      "items": [
+        "LAN con cable: **Ethernet, IEEE 802.3**",
+        "WLAN (wifi): **IEEE 802.11**",
+        "**VLAN**: varias LAN lógicas en una física",
+        "IEEE 802 divide enlace en **LLC (802.2)** y **MAC**"
+      ]
+    },
+    {
+      "t": "Topologías",
+      "e": "⭐",
+      "items": [
+        "**Bus**: un cable común, barato",
+        "**Estrella**: nodo central, la más usada",
+        "**Anillo**: Token Ring; **anillo doble** redundante",
+        "**Malla**: todos con todos, fiable y cara",
+        "**Árbol** jerárquico y **celular** sin cables"
+      ]
+    },
+    {
+      "t": "Sentido y modo",
+      "e": "↔️",
+      "items": [
+        "**Simplex** (impresora) · **semidúplex** (walkie)",
+        "**Dúplex**: los dos a la vez (teléfono)",
+        "**Asíncrona**: bits de inicio y parada",
+        "**Síncrona**: rápida · **isócrona**: tasa fija"
+      ]
+    },
+    {
+      "t": "Señal y multiplexación",
+      "e": "🎛️",
+      "items": [
+        "**FDM** frecuencia · **WDM** luz · **TDM** tiempo",
+        "Banda base: sin modular, **Manchester**, AMI",
+        "Modulación: **ASK, FSK, PSK**",
+        "Ruido **N = KTB**, diafonía, **atenuación**"
+      ]
+    },
+    {
+      "t": "Flujo de datos",
+      "e": "📢",
+      "items": [
+        "**Unicast**: uno a uno",
+        "**Multicast**: a un grupo (**IGMP**)",
+        "**Broadcast**: a todos (ej. **ARP**)",
+        "**Anycast**: al más cercano"
+      ]
+    },
+    {
+      "t": "Acceso al medio",
+      "e": "🚦",
+      "items": [
+        "**Repartición** (FDM/TDM) y **compartición**",
+        "Contienda: **ALOHA**, CSMA, **CSMA/CD** (Ethernet)",
+        "Reserva: sin colisiones en los datos",
+        "Selección: **Token Ring 802.5**, Token Bus"
+      ]
+    },
+    {
+      "t": "Dispositivos",
+      "e": "🔀",
+      "items": [
+        "**Hub**: no divide ningún dominio",
+        "**Switch/puente**: dividen colisión, no broadcast",
+        "**Router**: divide colisión y broadcast",
+        "**RIP** máx. **15 saltos** · **BGP** entre AS",
+        "**PoE** 15,4 W · **PoE+** 30 W · **PoE++** 60/90 W"
+      ]
+    }
+  ]
+}

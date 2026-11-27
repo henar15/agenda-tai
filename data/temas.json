@@ -279,10 +279,11 @@
   "orden": 7,
   "titulo": "Aplicaciones web front-end y de servidor, HTML, XML y lenguajes de script",
   "semana": "2027-02-22",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 220,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  },
  {
   "id": "III-8",
@@ -423,9 +424,10 @@
   "orden": 10,
   "titulo": "Redes locales: tipología, técnicas de transmisión, métodos de acceso y dispositivos",
   "semana": "2027-04-12",
-  "tarjetas": false,
-  "preguntas": false,
+  "tarjetas": true,
+  "preguntas": true,
   "pags": 78,
-  "pagIni": 3
+  "pagIni": 3,
+  "esquema": true
  }
 ]
